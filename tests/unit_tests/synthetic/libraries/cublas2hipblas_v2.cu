@@ -2974,6 +2974,34 @@ int main() {
   // CHECK-NEXT: blasStatus = hipblasZsymm_v2_64(blasHandle, blasSideMode, blasFillMode, m_64, n_64, &dcomplexa, &dcomplexA, lda_64, &dcomplexB, ldb_64, &dcomplexb, &dcomplexC, ldc_64);
   blasStatus = cublasZsymm_64(blasHandle, blasSideMode, blasFillMode, m_64, n_64, &dcomplexa, &dcomplexA, lda_64, &dcomplexB, ldb_64, &dcomplexb, &dcomplexC, ldc_64);
   blasStatus = cublasZsymm_v2_64(blasHandle, blasSideMode, blasFillMode, m_64, n_64, &dcomplexa, &dcomplexA, lda_64, &dcomplexB, ldb_64, &dcomplexb, &dcomplexC, ldc_64);
+
+  // CUDA: CUBLASAPI cublasStatus_t CUBLASWINAPI cublasSsyrk_v2_64(cublasHandle_t handle, cublasFillMode_t uplo, cublasOperation_t trans, int64_t n, int64_t k, const float* alpha, const float* A, int64_t lda, const float* beta, float* C, int64_t ldc);
+  // HIP: HIPBLAS_EXPORT hipblasStatus_t hipblasSsyrk_64(hipblasHandle_t handle, hipblasFillMode_t uplo, hipblasOperation_t transA, int64_t n, int64_t k, const float* alpha, const float* AP, int64_t lda, const float* beta, float* CP, int64_t ldc);
+  // CHECK: blasStatus = hipblasSsyrk_64(blasHandle, blasFillMode, blasOperation, n_64, k_64, &fa, &fA, lda_64, &fb, &fC, ldc_64);
+  // CHECK-NEXT: blasStatus = hipblasSsyrk_64(blasHandle, blasFillMode, blasOperation, n_64, k_64, &fa, &fA, lda_64, &fb, &fC, ldc_64);
+  blasStatus = cublasSsyrk_64(blasHandle, blasFillMode, blasOperation, n_64, k_64, &fa, &fA, lda_64, &fb, &fC, ldc_64);
+  blasStatus = cublasSsyrk_v2_64(blasHandle, blasFillMode, blasOperation, n_64, k_64, &fa, &fA, lda_64, &fb, &fC, ldc_64);
+
+  // CUDA: CUBLASAPI cublasStatus_t CUBLASWINAPI cublasDsyrk_v2_64(cublasHandle_t handle, cublasFillMode_t uplo, cublasOperation_t trans, int64_t n, int64_t k, const double* alpha, const double* A, int64_t lda, const double* beta, double* C, int64_t ldc);
+  // HIP: HIPBLAS_EXPORT hipblasStatus_t hipblasDsyrk_64(hipblasHandle_t handle, hipblasFillMode_t uplo, hipblasOperation_t transA, int64_t n, int64_t k, const double* alpha, const double* AP, int64_t lda, const double* beta, double* CP, int64_t ldc);
+  // CHECK: blasStatus = hipblasDsyrk_64(blasHandle, blasFillMode, blasOperation, n_64, k_64, &da, &dA, lda_64, &db, &dC, ldc_64);
+  // CHECK-NEXT: blasStatus = hipblasDsyrk_64(blasHandle, blasFillMode, blasOperation, n_64, k_64, &da, &dA, lda_64, &db, &dC, ldc_64);
+  blasStatus = cublasDsyrk_64(blasHandle, blasFillMode, blasOperation, n_64, k_64, &da, &dA, lda_64, &db, &dC, ldc_64);
+  blasStatus = cublasDsyrk_v2_64(blasHandle, blasFillMode, blasOperation, n_64, k_64, &da, &dA, lda_64, &db, &dC, ldc_64);
+
+  // CUDA: CUBLASAPI cublasStatus_t CUBLASWINAPI cublasCsyrk_v2_64(cublasHandle_t handle, cublasFillMode_t uplo, cublasOperation_t trans, int64_t n, int64_t k, const cuComplex* alpha, const cuComplex* A, int64_t lda, const cuComplex* beta, cuComplex* C, int64_t ldc);
+  // HIP: HIPBLAS_EXPORT hipblasStatus_t hipblasCsyrk_v2_64(hipblasHandle_t handle, hipblasFillMode_t uplo, hipblasOperation_t transA, int64_t n, int64_t k, const hipComplex* alpha, const hipComplex* AP, int64_t lda, const hipComplex* beta, hipComplex* CP, int64_t ldc);
+  // CHECK: blasStatus = hipblasCsyrk_v2_64(blasHandle, blasFillMode, blasOperation, n_64, k_64, &complexa, &complexA, lda_64, &complexb, &complexC, ldc_64);
+  // CHECK-NEXT: blasStatus = hipblasCsyrk_v2_64(blasHandle, blasFillMode, blasOperation, n_64, k_64, &complexa, &complexA, lda_64, &complexb, &complexC, ldc_64);
+  blasStatus = cublasCsyrk_64(blasHandle, blasFillMode, blasOperation, n_64, k_64, &complexa, &complexA, lda_64, &complexb, &complexC, ldc_64);
+  blasStatus = cublasCsyrk_v2_64(blasHandle, blasFillMode, blasOperation, n_64, k_64, &complexa, &complexA, lda_64, &complexb, &complexC, ldc_64);
+
+  // CUDA: CUBLASAPI cublasStatus_t CUBLASWINAPI cublasZsyrk_v2_64(cublasHandle_t handle, cublasFillMode_t uplo, cublasOperation_t trans, int64_t n, int64_t k, const cuDoubleComplex* alpha, const cuDoubleComplex* A, int64_t lda, const cuDoubleComplex* beta, cuDoubleComplex* C, int64_t ldc);
+  // HIP: HIPBLAS_EXPORT hipblasStatus_t hipblasZsyrk_v2_64(hipblasHandle_t handle, hipblasFillMode_t uplo, hipblasOperation_t transA, int64_t n, int64_t k, const hipDoubleComplex* alpha, const hipDoubleComplex* AP, int64_t lda, const hipDoubleComplex* beta, hipDoubleComplex* CP, int64_t ldc);
+  // CHECK: blasStatus = hipblasZsyrk_v2_64(blasHandle, blasFillMode, blasOperation, n_64, k_64, &dcomplexa, &dcomplexA, lda_64, &dcomplexb, &dcomplexC, ldc_64);
+  // CHECK-NEXT: blasStatus = hipblasZsyrk_v2_64(blasHandle, blasFillMode, blasOperation, n_64, k_64, &dcomplexa, &dcomplexA, lda_64, &dcomplexb, &dcomplexC, ldc_64);
+  blasStatus = cublasZsyrk_64(blasHandle, blasFillMode, blasOperation, n_64, k_64, &dcomplexa, &dcomplexA, lda_64, &dcomplexb, &dcomplexC, ldc_64);
+  blasStatus = cublasZsyrk_v2_64(blasHandle, blasFillMode, blasOperation, n_64, k_64, &dcomplexa, &dcomplexA, lda_64, &dcomplexb, &dcomplexC, ldc_64);
 #endif
 
   return 0;

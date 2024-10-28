@@ -3179,6 +3179,34 @@ int main() {
   // CHECK-NEXT: blasStatus = rocblas_zsymm_64(blasHandle, blasSideMode, blasFillMode, m_64, n_64, &dcomplexa, &dcomplexA, lda_64, &dcomplexB, ldb_64, &dcomplexb, &dcomplexC, ldc_64);
   blasStatus = cublasZsymm_64(blasHandle, blasSideMode, blasFillMode, m_64, n_64, &dcomplexa, &dcomplexA, lda_64, &dcomplexB, ldb_64, &dcomplexb, &dcomplexC, ldc_64);
   blasStatus = cublasZsymm_v2_64(blasHandle, blasSideMode, blasFillMode, m_64, n_64, &dcomplexa, &dcomplexA, lda_64, &dcomplexB, ldb_64, &dcomplexb, &dcomplexC, ldc_64);
+
+  // CUDA: CUBLASAPI cublasStatus_t CUBLASWINAPI cublasSsyrk_v2_64(cublasHandle_t handle, cublasFillMode_t uplo, cublasOperation_t trans, int64_t n, int64_t k, const float* alpha, const float* A, int64_t lda, const float* beta, float* C, int64_t ldc);
+  // ROC: ROCBLAS_EXPORT rocblas_status rocblas_ssyrk_64(rocblas_handle handle, rocblas_fill uplo, rocblas_operation transA, int64_t n, int64_t k, const float* alpha, const float* A, int64_t lda, const float* beta, float* C, int64_t ldc);
+  // CHECK: blasStatus = rocblas_ssyrk_64(blasHandle, blasFillMode, blasOperation, n_64, k_64, &fa, &fA, lda_64, &fb, &fC, ldc_64);
+  // CHECK-NEXT: blasStatus = rocblas_ssyrk_64(blasHandle, blasFillMode, blasOperation, n_64, k_64, &fa, &fA, lda_64, &fb, &fC, ldc_64);
+  blasStatus = cublasSsyrk_64(blasHandle, blasFillMode, blasOperation, n_64, k_64, &fa, &fA, lda_64, &fb, &fC, ldc_64);
+  blasStatus = cublasSsyrk_v2_64(blasHandle, blasFillMode, blasOperation, n_64, k_64, &fa, &fA, lda_64, &fb, &fC, ldc_64);
+
+  // CUDA: CUBLASAPI cublasStatus_t CUBLASWINAPI cublasDsyrk_v2_64(cublasHandle_t handle, cublasFillMode_t uplo, cublasOperation_t trans, int64_t n, int64_t k, const double* alpha, const double* A, int64_t lda, const double* beta, double* C, int64_t ldc);
+  // ROC: ROCBLAS_EXPORT rocblas_status rocblas_dsyrk_64(rocblas_handle handle, rocblas_fill uplo, rocblas_operation transA, int64_t n, int64_t k, const double* alpha, const double* A, int64_t lda, const double* beta, double* C, int64_t ldc);
+  // CHECK: blasStatus = rocblas_dsyrk_64(blasHandle, blasFillMode, blasOperation, n_64, k_64, &da, &dA, lda_64, &db, &dC, ldc_64);
+  // CHECK-NEXT: blasStatus = rocblas_dsyrk_64(blasHandle, blasFillMode, blasOperation, n_64, k_64, &da, &dA, lda_64, &db, &dC, ldc_64);
+  blasStatus = cublasDsyrk_64(blasHandle, blasFillMode, blasOperation, n_64, k_64, &da, &dA, lda_64, &db, &dC, ldc_64);
+  blasStatus = cublasDsyrk_v2_64(blasHandle, blasFillMode, blasOperation, n_64, k_64, &da, &dA, lda_64, &db, &dC, ldc_64);
+
+  // CUDA: CUBLASAPI cublasStatus_t CUBLASWINAPI cublasCsyrk_v2_64(cublasHandle_t handle, cublasFillMode_t uplo, cublasOperation_t trans, int64_t n, int64_t k, const cuComplex* alpha, const cuComplex* A, int64_t lda, const cuComplex* beta, cuComplex* C, int64_t ldc);
+  // ROC: ROCBLAS_EXPORT rocblas_status rocblas_csyrk_64(rocblas_handle handle, rocblas_fill uplo, rocblas_operation transA, int64_t n, int64_t k, const rocblas_float_complex* alpha, const rocblas_float_complex* A, int64_t lda, const rocblas_float_complex* beta, rocblas_float_complex* C, int64_t ldc);
+  // CHECK: blasStatus = rocblas_csyrk_64(blasHandle, blasFillMode, blasOperation, n_64, k_64, &complexa, &complexA, lda_64, &complexb, &complexC, ldc_64);
+  // CHECK-NEXT: blasStatus = rocblas_csyrk_64(blasHandle, blasFillMode, blasOperation, n_64, k_64, &complexa, &complexA, lda_64, &complexb, &complexC, ldc_64);
+  blasStatus = cublasCsyrk_64(blasHandle, blasFillMode, blasOperation, n_64, k_64, &complexa, &complexA, lda_64, &complexb, &complexC, ldc_64);
+  blasStatus = cublasCsyrk_v2_64(blasHandle, blasFillMode, blasOperation, n_64, k_64, &complexa, &complexA, lda_64, &complexb, &complexC, ldc_64);
+
+  // CUDA: CUBLASAPI cublasStatus_t CUBLASWINAPI cublasZsyrk_v2_64(cublasHandle_t handle, cublasFillMode_t uplo, cublasOperation_t trans, int64_t n, int64_t k, const cuDoubleComplex* alpha, const cuDoubleComplex* A, int64_t lda, const cuDoubleComplex* beta, cuDoubleComplex* C, int64_t ldc);
+  // ROC: ROCBLAS_EXPORT rocblas_status rocblas_zsyrk_64(rocblas_handle handle, rocblas_fill uplo, rocblas_operation transA, int64_t n, int64_t k, const rocblas_double_complex* alpha, const rocblas_double_complex* A, int64_t lda, const rocblas_double_complex* beta, rocblas_double_complex* C, int64_t ldc);
+  // CHECK: blasStatus = rocblas_zsyrk_64(blasHandle, blasFillMode, blasOperation, n_64, k_64, &dcomplexa, &dcomplexA, lda_64, &dcomplexb, &dcomplexC, ldc_64);
+  // CHECK-NEXT: blasStatus = rocblas_zsyrk_64(blasHandle, blasFillMode, blasOperation, n_64, k_64, &dcomplexa, &dcomplexA, lda_64, &dcomplexb, &dcomplexC, ldc_64);
+  blasStatus = cublasZsyrk_64(blasHandle, blasFillMode, blasOperation, n_64, k_64, &dcomplexa, &dcomplexA, lda_64, &dcomplexb, &dcomplexC, ldc_64);
+  blasStatus = cublasZsyrk_v2_64(blasHandle, blasFillMode, blasOperation, n_64, k_64, &dcomplexa, &dcomplexA, lda_64, &dcomplexb, &dcomplexC, ldc_64);
 #endif
 
   return 0;
