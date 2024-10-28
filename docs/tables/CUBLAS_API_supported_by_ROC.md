@@ -1287,9 +1287,9 @@
 |`cublasCsyr2k_v2`| | | | |`rocblas_csyr2k`|3.5.0| | | | |
 |`cublasCsyr2k_v2_64`|12.0| | | | | | | | | |
 |`cublasCsyrk`| | | | |`rocblas_csyrk`|3.5.0| | | | |
-|`cublasCsyrk_64`|12.0| | | | | | | | | |
+|`cublasCsyrk_64`|12.0| | | |`rocblas_csyrk_64`|6.3.0| | | |6.3.0|
 |`cublasCsyrk_v2`| | | | |`rocblas_csyrk`|3.5.0| | | | |
-|`cublasCsyrk_v2_64`|12.0| | | | | | | | | |
+|`cublasCsyrk_v2_64`|12.0| | | |`rocblas_csyrk_64`|6.3.0| | | |6.3.0|
 |`cublasCsyrkx`| | | | |`rocblas_csyrkx`|3.5.0| | | | |
 |`cublasCsyrkx_64`|12.0| | | | | | | | | |
 |`cublasCtrmm`| | | | |`rocblas_ctrmm`|3.5.0| |6.0.0| | |
@@ -1323,9 +1323,9 @@
 |`cublasDsyr2k_v2`| | | | |`rocblas_dsyr2k`|3.5.0| | | | |
 |`cublasDsyr2k_v2_64`|12.0| | | | | | | | | |
 |`cublasDsyrk`| | | | |`rocblas_dsyrk`|3.5.0| | | | |
-|`cublasDsyrk_64`|12.0| | | | | | | | | |
+|`cublasDsyrk_64`|12.0| | | |`rocblas_dsyrk_64`|6.3.0| | | |6.3.0|
 |`cublasDsyrk_v2`| | | | |`rocblas_dsyrk`|3.5.0| | | | |
-|`cublasDsyrk_v2_64`|12.0| | | | | | | | | |
+|`cublasDsyrk_v2_64`|12.0| | | |`rocblas_dsyrk_64`|6.3.0| | | |6.3.0|
 |`cublasDsyrkx`| | | | |`rocblas_dsyrkx`|3.5.0| | | | |
 |`cublasDsyrkx_64`|12.0| | | | | | | | | |
 |`cublasDtrmm`| | | | |`rocblas_dtrmm`|3.5.0| |6.0.0| | |
@@ -1375,9 +1375,9 @@
 |`cublasSsyr2k_v2`| | | | |`rocblas_ssyr2k`|3.5.0| | | | |
 |`cublasSsyr2k_v2_64`|12.0| | | | | | | | | |
 |`cublasSsyrk`| | | | |`rocblas_ssyrk`|3.5.0| | | | |
-|`cublasSsyrk_64`|12.0| | | | | | | | | |
+|`cublasSsyrk_64`|12.0| | | |`rocblas_ssyrk_64`|6.3.0| | | |6.3.0|
 |`cublasSsyrk_v2`| | | | |`rocblas_ssyrk`|3.5.0| | | | |
-|`cublasSsyrk_v2_64`|12.0| | | | | | | | | |
+|`cublasSsyrk_v2_64`|12.0| | | |`rocblas_ssyrk_64`|6.3.0| | | |6.3.0|
 |`cublasSsyrkx`| | | | |`rocblas_ssyrkx`|3.5.0| | | | |
 |`cublasSsyrkx_64`|12.0| | | | | | | | | |
 |`cublasStrmm`| | | | |`rocblas_strmm`|3.5.0| |6.0.0| | |
@@ -1433,9 +1433,9 @@
 |`cublasZsyr2k_v2`| | | | |`rocblas_zsyr2k`|3.5.0| | | | |
 |`cublasZsyr2k_v2_64`|12.0| | | | | | | | | |
 |`cublasZsyrk`| | | | |`rocblas_zsyrk`|3.5.0| | | | |
-|`cublasZsyrk_64`|12.0| | | | | | | | | |
+|`cublasZsyrk_64`|12.0| | | |`rocblas_zsyrk_64`|6.3.0| | | |6.3.0|
 |`cublasZsyrk_v2`| | | | |`rocblas_zsyrk`|3.5.0| | | | |
-|`cublasZsyrk_v2_64`|12.0| | | | | | | | | |
+|`cublasZsyrk_v2_64`|12.0| | | |`rocblas_zsyrk_64`|6.3.0| | | |6.3.0|
 |`cublasZsyrkx`| | | | |`rocblas_zsyrkx`|3.5.0| | | | |
 |`cublasZsyrkx_64`|12.0| | | | | | | | | |
 |`cublasZtrmm`| | | | |`rocblas_ztrmm`|3.5.0| |6.0.0| | |
