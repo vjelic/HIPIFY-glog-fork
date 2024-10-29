@@ -2055,7 +2055,7 @@ const std::map<llvm::StringRef, hipAPIversions> HIP_BLAS_FUNCTION_VER_MAP {
   {"hipblasSsyr2k_64",                                     {HIP_6030, HIP_0,    HIP_0,  HIP_LATEST}},
   {"hipblasDsyr2k_64",                                     {HIP_6030, HIP_0,    HIP_0,  HIP_LATEST}},
   {"hipblasCsyr2k_v2_64",                                  {HIP_6030, HIP_0,    HIP_0,  HIP_LATEST}},
-  {"hipblasZsyr2k_64_v2",                                  {HIP_6030, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"hipblasZsyr2k_v2_64",                                  {HIP_6030, HIP_0,    HIP_0,  HIP_LATEST}},
 
   {"rocblas_status_to_string",                             {HIP_3050, HIP_0,    HIP_0   }},
   {"rocblas_sscal",                                        {HIP_1050, HIP_0,    HIP_0   }},
