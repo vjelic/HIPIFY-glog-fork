@@ -367,7 +367,7 @@ void Statistics::setActive(const std::string &name) {
 bool Statistics::isToRoc(const hipCounter &counter) {
   return (counter.apiType == API_BLAS || counter.apiType == API_DNN || counter.apiType == API_SPARSE || counter.apiType == API_SOLVER ||
           counter.apiType == API_RUNTIME || counter.apiType == API_COMPLEX || counter.apiType == API_RAND) &&
-          ((TranslateToRoc && !TranslateToMIOpen && !isRocMiopenOnly(counter)) || TranslateToMIOpen);
+          ((TranslateToRoc && !TranslateToMIOpen) || TranslateToMIOpen);
 }
 
 bool Statistics::isHipExperimental(const hipCounter &counter) {
@@ -436,10 +436,6 @@ bool Statistics::isRemoved(const hipCounter &counter) {
 
 bool Statistics::isHipSupportedV2Only(const hipCounter &counter) {
   return HIP_SUPPORTED_V2_ONLY == (counter.supportDegree & HIP_SUPPORTED_V2_ONLY);
-}
-
-bool Statistics::isRocMiopenOnly(const hipCounter &counter) {
-  return ROC_MIOPEN_ONLY == (counter.supportDegree & ROC_MIOPEN_ONLY);
 }
 
 bool Statistics::isCudaOverloaded(const hipCounter &counter) {

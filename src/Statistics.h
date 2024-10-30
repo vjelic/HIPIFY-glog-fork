@@ -197,8 +197,7 @@ enum SupportDegree {
   REMOVED = 0x400,
   HIP_EXPERIMENTAL = 0x800,
   HIP_SUPPORTED_V2_ONLY = 0x1000,
-  ROC_MIOPEN_ONLY = 0x2000,
-  CUDA_OVERLOADED = 0x4000
+  CUDA_OVERLOADED = 0x2000
 };
 
 enum cudaVersions {
@@ -503,8 +502,6 @@ public:
   static bool isRemoved(const hipCounter &counter);
   // Check whether the counter is HIP_SUPPORTED_V2_ONLY or not.
   static bool isHipSupportedV2Only(const hipCounter &counter);
-  // Check whether the counter is ROC_MIOPEN_ONLY or not.
-  static bool isRocMiopenOnly(const hipCounter &counter);
   // Check whether the counter is CUDA_OVERLOADED or not.
   static bool isCudaOverloaded(const hipCounter &counter);
   // Get string CUDA version.
