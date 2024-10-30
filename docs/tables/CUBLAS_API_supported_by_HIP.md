@@ -1383,7 +1383,7 @@
 |`cublasCsyrk_v2`| | | | |`hipblasCsyrk_v2`|6.0.0| | | | |
 |`cublasCsyrk_v2_64`|12.0| | | |`hipblasCsyrk_v2_64`|6.3.0| | | |6.3.0|
 |`cublasCsyrkx`| | | | |`hipblasCsyrkx_v2`|6.0.0| | | | |
-|`cublasCsyrkx_64`|12.0| | | | | | | | | |
+|`cublasCsyrkx_64`|12.0| | | |`hipblasCsyrkx_v2_64`|6.3.0| | | |6.3.0|
 |`cublasCtrmm`| | | | |`hipblasCtrmm_v2`|6.0.0| | | | |
 |`cublasCtrmm_64`|12.0| | | | | | | | | |
 |`cublasCtrmm_v2`| | | | |`hipblasCtrmm_v2`|6.0.0| | | | |
@@ -1419,7 +1419,7 @@
 |`cublasDsyrk_v2`| | | | |`hipblasDsyrk`|3.5.0| | | | |
 |`cublasDsyrk_v2_64`|12.0| | | |`hipblasDsyrk_64`|6.3.0| | | |6.3.0|
 |`cublasDsyrkx`| | | | |`hipblasDsyrkx`|3.5.0| | | | |
-|`cublasDsyrkx_64`|12.0| | | | | | | | | |
+|`cublasDsyrkx_64`|12.0| | | |`hipblasDsyrkx_64`|6.3.0| | | |6.3.0|
 |`cublasDtrmm`| | | | |`hipblasDtrmm`|3.2.0| |6.0.0| | |
 |`cublasDtrmm_64`|12.0| | | | | | | | | |
 |`cublasDtrmm_v2`| | | | |`hipblasDtrmm`|3.2.0| |6.0.0| | |
@@ -1471,7 +1471,7 @@
 |`cublasSsyrk_v2`| | | | |`hipblasSsyrk`|3.5.0| | | | |
 |`cublasSsyrk_v2_64`|12.0| | | |`hipblasSsyrk_64`|6.3.0| | | |6.3.0|
 |`cublasSsyrkx`| | | | |`hipblasSsyrkx`|3.5.0| | | | |
-|`cublasSsyrkx_64`|12.0| | | | | | | | | |
+|`cublasSsyrkx_64`|12.0| | | |`hipblasSsyrkx_64`|6.3.0| | | |6.3.0|
 |`cublasStrmm`| | | | |`hipblasStrmm`|3.2.0| |6.0.0| | |
 |`cublasStrmm_64`|12.0| | | | | | | | | |
 |`cublasStrmm_v2`| | | | |`hipblasStrmm`|3.2.0| |6.0.0| | |
@@ -1529,7 +1529,7 @@
 |`cublasZsyrk_v2`| | | | |`hipblasZsyrk_v2`|6.0.0| | | | |
 |`cublasZsyrk_v2_64`|12.0| | | |`hipblasZsyrk_v2_64`|6.3.0| | | |6.3.0|
 |`cublasZsyrkx`| | | | |`hipblasZsyrkx_v2`|6.0.0| | | | |
-|`cublasZsyrkx_64`|12.0| | | | | | | | | |
+|`cublasZsyrkx_64`|12.0| | | |`hipblasZsyrkx_v2_64`|6.3.0| | | |6.3.0|
 |`cublasZtrmm`| | | | |`hipblasZtrmm_v2`|6.0.0| | | | |
 |`cublasZtrmm_64`|12.0| | | | | | | | | |
 |`cublasZtrmm_v2`| | | | |`hipblasZtrmm_v2`|6.0.0| | | | |
