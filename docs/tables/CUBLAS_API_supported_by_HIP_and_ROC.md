@@ -1598,7 +1598,7 @@
 |`cublasCdgmm`| | | | |`hipblasCdgmm_v2`|6.0.0| | | | |`rocblas_cdgmm`|3.5.0| | | | |
 |`cublasCdgmm_64`|12.0| | | | | | | | | | | | | | | |
 |`cublasCgeam`| | | | |`hipblasCgeam_v2`|6.0.0| | | | |`rocblas_cgeam`|3.5.0| | | | |
-|`cublasCgeam_64`|12.0| | | | | | | | | | | | | | | |
+|`cublasCgeam_64`|12.0| | | |`hipblasCgeam_v2_64`|6.3.0| | | |6.3.0|`rocblas_cgeam_64`|6.3.0| | | |6.3.0|
 |`cublasCgelsBatched`| | | | |`hipblasCgelsBatched_v2`|6.0.0| | | | | | | | | | |
 |`cublasCgemmEx`|8.0| | | | | | | | | | | | | | | |
 |`cublasCgemmEx_64`|12.0| | | | | | | | | | | | | | | |
@@ -1624,7 +1624,7 @@
 |`cublasDdgmm`| | | | |`hipblasDdgmm`|3.6.0| | | | |`rocblas_ddgmm`|3.5.0| | | | |
 |`cublasDdgmm_64`|12.0| | | | | | | | | | | | | | | |
 |`cublasDgeam`| | | | |`hipblasDgeam`|1.8.2| | | | |`rocblas_dgeam`|1.6.4| | | | |
-|`cublasDgeam_64`|12.0| | | | | | | | | | | | | | | |
+|`cublasDgeam_64`|12.0| | | |`hipblasDgeam_64`|6.3.0| | | |6.3.0|`rocblas_dgeam_64`|6.3.0| | | |6.3.0|
 |`cublasDgelsBatched`| | | | |`hipblasDgelsBatched`|5.4.0| | | | | | | | | | |
 |`cublasDgeqrfBatched`| | | | |`hipblasDgeqrfBatched`|3.5.0| | | | | | | | | | |
 |`cublasDgetrfBatched`| | | | |`hipblasDgetrfBatched`|3.5.0| | | | | | | | | | |
@@ -1660,7 +1660,7 @@
 |`cublasSdgmm`| | | | |`hipblasSdgmm`|3.6.0| | | | |`rocblas_sdgmm`|3.5.0| | | | |
 |`cublasSdgmm_64`|12.0| | | | | | | | | | | | | | | |
 |`cublasSgeam`| | | | |`hipblasSgeam`|1.8.2| | | | |`rocblas_sgeam`|1.6.4| | | | |
-|`cublasSgeam_64`|12.0| | | | | | | | | | | | | | | |
+|`cublasSgeam_64`|12.0| | | |`hipblasSgeam_64`|6.3.0| | | |6.3.0|`rocblas_sgeam_64`|6.3.0| | | |6.3.0|
 |`cublasSgelsBatched`| | | | |`hipblasSgelsBatched`|5.4.0| | | | | | | | | | |
 |`cublasSgemmEx`|7.5| | | | | | | | | | | | | | | |
 |`cublasSgemmEx_64`|12.0| | | | | | | | | | | | | | | |
@@ -1679,7 +1679,7 @@
 |`cublasZdgmm`| | | | |`hipblasZdgmm_v2`|6.0.0| | | | |`rocblas_zdgmm`|3.5.0| | | | |
 |`cublasZdgmm_64`|12.0| | | | | | | | | | | | | | | |
 |`cublasZgeam`| | | | |`hipblasZgeam_v2`|6.0.0| | | | |`rocblas_zgeam`|3.5.0| | | | |
-|`cublasZgeam_64`|12.0| | | | | | | | | | | | | | | |
+|`cublasZgeam_64`|12.0| | | |`hipblasZgeam_v2_64`|6.3.0| | | |6.3.0|`rocblas_zgeam_64`|6.3.0| | | |6.3.0|
 |`cublasZgelsBatched`| | | | |`hipblasZgelsBatched_v2`|6.0.0| | | | | | | | | | |
 |`cublasZgeqrfBatched`| | | | |`hipblasZgeqrfBatched_v2`|6.0.0| | | | | | | | | | |
 |`cublasZgetrfBatched`| | | | |`hipblasZgetrfBatched_v2`|6.0.0| | | | | | | | | | |
