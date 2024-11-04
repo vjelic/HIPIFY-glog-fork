@@ -1598,7 +1598,7 @@
 |`cublasCdgmm`| | | | |`rocblas_cdgmm`|3.5.0| | | | |
 |`cublasCdgmm_64`|12.0| | | | | | | | | |
 |`cublasCgeam`| | | | |`rocblas_cgeam`|3.5.0| | | | |
-|`cublasCgeam_64`|12.0| | | | | | | | | |
+|`cublasCgeam_64`|12.0| | | |`rocblas_cgeam_64`|6.3.0| | | |6.3.0|
 |`cublasCgelsBatched`| | | | | | | | | | |
 |`cublasCgemmEx`|8.0| | | | | | | | | |
 |`cublasCgemmEx_64`|12.0| | | | | | | | | |
@@ -1624,7 +1624,7 @@
 |`cublasDdgmm`| | | | |`rocblas_ddgmm`|3.5.0| | | | |
 |`cublasDdgmm_64`|12.0| | | | | | | | | |
 |`cublasDgeam`| | | | |`rocblas_dgeam`|1.6.4| | | | |
-|`cublasDgeam_64`|12.0| | | | | | | | | |
+|`cublasDgeam_64`|12.0| | | |`rocblas_dgeam_64`|6.3.0| | | |6.3.0|
 |`cublasDgelsBatched`| | | | | | | | | | |
 |`cublasDgeqrfBatched`| | | | | | | | | | |
 |`cublasDgetrfBatched`| | | | | | | | | | |
@@ -1660,7 +1660,7 @@
 |`cublasSdgmm`| | | | |`rocblas_sdgmm`|3.5.0| | | | |
 |`cublasSdgmm_64`|12.0| | | | | | | | | |
 |`cublasSgeam`| | | | |`rocblas_sgeam`|1.6.4| | | | |
-|`cublasSgeam_64`|12.0| | | | | | | | | |
+|`cublasSgeam_64`|12.0| | | |`rocblas_sgeam_64`|6.3.0| | | |6.3.0|
 |`cublasSgelsBatched`| | | | | | | | | | |
 |`cublasSgemmEx`|7.5| | | | | | | | | |
 |`cublasSgemmEx_64`|12.0| | | | | | | | | |
@@ -1679,7 +1679,7 @@
 |`cublasZdgmm`| | | | |`rocblas_zdgmm`|3.5.0| | | | |
 |`cublasZdgmm_64`|12.0| | | | | | | | | |
 |`cublasZgeam`| | | | |`rocblas_zgeam`|3.5.0| | | | |
-|`cublasZgeam_64`|12.0| | | | | | | | | |
+|`cublasZgeam_64`|12.0| | | |`rocblas_zgeam_64`|6.3.0| | | |6.3.0|
 |`cublasZgelsBatched`| | | | | | | | | | |
 |`cublasZgeqrfBatched`| | | | | | | | | | |
 |`cublasZgetrfBatched`| | | | | | | | | | |

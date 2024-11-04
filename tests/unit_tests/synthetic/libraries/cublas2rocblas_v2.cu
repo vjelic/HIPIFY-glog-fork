@@ -3255,6 +3255,26 @@ int main() {
   // ROC: ROCBLAS_EXPORT rocblas_status rocblas_zsyrkx_64(rocblas_handle handle, rocblas_fill uplo, rocblas_operation trans, int64_t n, int64_t k, const rocblas_double_complex* alpha, const rocblas_double_complex* A, int64_t lda, const rocblas_double_complex* B, int64_t ldb, const rocblas_double_complex* beta, rocblas_double_complex* C, int64_t ldc);
   // CHECK: blasStatus = rocblas_zsyrkx_64(blasHandle, blasFillMode, blasOperation, n_64, k_64, &dcomplexa, &dcomplexA, lda_64, &dcomplexB, ldb_64, &dcomplexb, &dcomplexC, ldc_64);
   blasStatus = cublasZsyrkx_64(blasHandle, blasFillMode, blasOperation, n_64, k_64, &dcomplexa, &dcomplexA, lda_64, &dcomplexB, ldb_64, &dcomplexb, &dcomplexC, ldc_64);
+
+  // CUDA: CUBLASAPI cublasStatus_t CUBLASWINAPI cublasSgeam_64(cublasHandle_t handle, cublasOperation_t transa, cublasOperation_t transb, int64_t m, int64_t n, const float* alpha, const float* A, int64_t lda, const float* beta, const float* B, int64_t ldb, float* C, int64_t ldc);
+  // ROC: ROCBLAS_EXPORT rocblas_status rocblas_sgeam_64(rocblas_handle handle, rocblas_operation transA, rocblas_operation transB, int64_t m, int64_t n, const float* alpha, const float* A, int64_t lda, const float* beta, const float* B, int64_t ldb, float* C, int64_t ldc);
+  // CHECK: blasStatus = rocblas_sgeam_64(blasHandle, transa, transb, m_64, n_64, &fa, &fA, lda_64, &fb, &fB, ldb_64, &fC, ldc_64);
+  blasStatus = cublasSgeam_64(blasHandle, transa, transb, m_64, n_64, &fa, &fA, lda_64, &fb, &fB, ldb_64, &fC, ldc_64);
+
+  // CUDA: CUBLASAPI cublasStatus_t CUBLASWINAPI cublasDgeam_64(cublasHandle_t handle, cublasOperation_t transa, cublasOperation_t transb, int64_t m, int64_t n, const double* alpha, const double* A, int64_t lda, const double* beta, const double* B, int64_t ldb, double* C, int64_t ldc);
+  // ROC: ROCBLAS_EXPORT rocblas_status rocblas_dgeam_64(rocblas_handle handle, rocblas_operation transA, rocblas_operation transB, int64_t m, int64_t n, const double* alpha, const double* A, int64_t lda, const double* beta, const double* B, int64_t ldb, double* C, int64_t ldc);
+  // CHECK: blasStatus = rocblas_dgeam_64(blasHandle, transa, transb, m_64, n_64, &da, &dA, lda_64, &db, &dB, ldb_64, &dC, ldc_64);
+  blasStatus = cublasDgeam_64(blasHandle, transa, transb, m_64, n_64, &da, &dA, lda_64, &db, &dB, ldb_64, &dC, ldc_64);
+
+  // CUDA: CUBLASAPI cublasStatus_t CUBLASWINAPI cublasCgeam_64(cublasHandle_t handle, cublasOperation_t transa, cublasOperation_t transb, int64_t m, int64_t n, const cuComplex* alpha, const cuComplex* A, int64_t lda, const cuComplex* beta, const cuComplex* B, int64_t ldb, cuComplex* C, int64_t ldc);
+  // ROC: ROCBLAS_EXPORT rocblas_status rocblas_cgeam_64(rocblas_handle handle, rocblas_operation transA, rocblas_operation transB, int64_t m, int64_t n, const rocblas_float_complex* alpha, const rocblas_float_complex* A, int64_t lda, const rocblas_float_complex* beta, const rocblas_float_complex* B, int64_t ldb, rocblas_float_complex* C, int64_t ldc);
+  // CHECK: blasStatus = rocblas_cgeam_64(blasHandle, transa, transb, m_64, n_64, &complexa, &complexA, lda_64, &complexb, &complexB, ldb_64, &complexC, ldc_64);
+  blasStatus = cublasCgeam_64(blasHandle, transa, transb, m_64, n_64, &complexa, &complexA, lda_64, &complexb, &complexB, ldb_64, &complexC, ldc_64);
+
+  // CUDA: CUBLASAPI cublasStatus_t CUBLASWINAPI cublasZgeam_64(cublasHandle_t handle, cublasOperation_t transa, cublasOperation_t transb, int64_t m, int64_t n, const cuDoubleComplex* alpha, const cuDoubleComplex* A, int64_t lda, const cuDoubleComplex* beta, const cuDoubleComplex* B, int64_t ldb, cuDoubleComplex* C, int64_t ldc);
+  // ROC: ROCBLAS_EXPORT rocblas_status rocblas_zgeam_64(rocblas_handle handle, rocblas_operation transA, rocblas_operation transB, int64_t m, int64_t n, const rocblas_double_complex* alpha, const rocblas_double_complex* A, int64_t lda, const rocblas_double_complex* beta, const rocblas_double_complex* B, int64_t ldb, rocblas_double_complex* C, int64_t ldc);
+  // CHECK: blasStatus = rocblas_zgeam_64(blasHandle, transa, transb, m_64, n_64, &dcomplexa, &dcomplexA, lda_64, &dcomplexb, &dcomplexB, ldb_64, &dcomplexC, ldc_64);
+  blasStatus = cublasZgeam_64(blasHandle, transa, transb, m_64, n_64, &dcomplexa, &dcomplexA, lda_64, &dcomplexb, &dcomplexB, ldb_64, &dcomplexC, ldc_64);
 #endif
 
   return 0;
