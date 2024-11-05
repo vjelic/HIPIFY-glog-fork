@@ -1495,9 +1495,9 @@
 |`cublasCgemvStridedBatched`|11.6| | | |`hipblasCgemvStridedBatched_v2`|6.0.0| | | | |`rocblas_cgemv_strided_batched`|3.5.0| | | | |
 |`cublasCgemvStridedBatched_64`|12.0| | | |`hipblasCgemvStridedBatched_v2_64`|6.2.0| | | | |`rocblas_cgemv_strided_batched_64`|6.2.0| | | | |
 |`cublasChemm`| | | | |`hipblasChemm_v2`|6.0.0| | | | |`rocblas_chemm`|3.5.0| | | | |
-|`cublasChemm_64`|12.0| | | | | | | | | | | | | | | |
+|`cublasChemm_64`|12.0| | | |`hipblasChemm_v2_64`|6.3.0| | | |6.3.0|`rocblas_chemm_64`|6.3.0| | | |6.3.0|
 |`cublasChemm_v2`| | | | |`hipblasChemm_v2`|6.0.0| | | | |`rocblas_chemm`|3.5.0| | | | |
-|`cublasChemm_v2_64`|12.0| | | | | | | | | | | | | | | |
+|`cublasChemm_v2_64`|12.0| | | |`hipblasChemm_v2_64`|6.3.0| | | |6.3.0|`rocblas_chemm_64`|6.3.0| | | |6.3.0|
 |`cublasCher2k`| | | | |`hipblasCher2k_v2`|6.0.0| | | | |`rocblas_cher2k`|3.5.0| | | | |
 |`cublasCher2k_64`|12.0| | | |`hipblasCher2k_v2_64`|6.3.0| | | |6.3.0|`rocblas_cher2k_64`|6.3.0| | | |6.3.0|
 |`cublasCher2k_v2`| | | | |`hipblasCher2k_v2`|6.0.0| | | | |`rocblas_cher2k`|3.5.0| | | | |
@@ -1641,9 +1641,9 @@
 |`cublasZgemvStridedBatched`|11.6| | | |`hipblasZgemvStridedBatched_v2`|6.0.0| | | | |`rocblas_zgemv_strided_batched`|3.5.0| | | | |
 |`cublasZgemvStridedBatched_64`|12.0| | | |`hipblasZgemvStridedBatched_v2_64`|6.2.0| | | | |`rocblas_zgemv_strided_batched_64`|6.2.0| | | | |
 |`cublasZhemm`| | | | |`hipblasZhemm_v2`|6.0.0| | | | |`rocblas_zhemm`|3.5.0| | | | |
-|`cublasZhemm_64`|12.0| | | | | | | | | | | | | | | |
+|`cublasZhemm_64`|12.0| | | |`hipblasZhemm_v2_64`|6.3.0| | | |6.3.0|`rocblas_zhemm_64`|6.3.0| | | |6.3.0|
 |`cublasZhemm_v2`| | | | |`hipblasZhemm_v2`|6.0.0| | | | |`rocblas_zhemm`|3.5.0| | | | |
-|`cublasZhemm_v2_64`|12.0| | | | | | | | | | | | | | | |
+|`cublasZhemm_v2_64`|12.0| | | |`hipblasZhemm_v2_64`|6.3.0| | | |6.3.0|`rocblas_zhemm_64`|6.3.0| | | |6.3.0|
 |`cublasZher2k`| | | | |`hipblasZher2k_v2`|6.0.0| | | | |`rocblas_zher2k`|3.5.0| | | | |
 |`cublasZher2k_64`|12.0| | | |`hipblasZher2k_v2_64`|6.3.0| | | |6.3.0|`rocblas_zher2k_64`|6.3.0| | | |6.3.0|
 |`cublasZher2k_v2`| | | | |`hipblasZher2k_v2`|6.0.0| | | | |`rocblas_zher2k`|3.5.0| | | | |
