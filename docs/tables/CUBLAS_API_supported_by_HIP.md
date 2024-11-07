@@ -1569,9 +1569,9 @@
 |`cublasCtrmm_v2`| | | | |`hipblasCtrmm_v2`|6.0.0| | | | |
 |`cublasCtrmm_v2_64`|12.0| | | |`hipblasCtrmm_v2_64`|6.3.0| | | |6.3.0|
 |`cublasCtrsm`| | | | |`hipblasCtrsm_v2`|6.0.0| | | | |
-|`cublasCtrsm_64`|12.0| | | | | | | | | |
+|`cublasCtrsm_64`|12.0| | | |`hipblasCtrsm_v2_64`|6.3.0| | | |6.3.0|
 |`cublasCtrsm_v2`| | | | |`hipblasCtrsm_v2`|6.0.0| | | | |
-|`cublasCtrsm_v2_64`|12.0| | | | | | | | | |
+|`cublasCtrsm_v2_64`|12.0| | | |`hipblasCtrsm_v2_64`|6.3.0| | | |6.3.0|
 |`cublasDgemm`| | | | |`hipblasDgemm`|1.8.2| | | | |
 |`cublasDgemmBatched`| | | | |`hipblasDgemmBatched`|1.8.2| | | | |
 |`cublasDgemmBatched_64`|12.0| | | |`hipblasDgemmBatched_64`|6.3.0| | | |6.3.0|
@@ -1605,9 +1605,9 @@
 |`cublasDtrmm_v2`| | | | |`hipblasDtrmm`|3.2.0| |6.0.0| | |
 |`cublasDtrmm_v2_64`|12.0| | | |`hipblasDtrmm_64`|6.3.0| | | |6.3.0|
 |`cublasDtrsm`| | | | |`hipblasDtrsm`|1.8.2| | | | |
-|`cublasDtrsm_64`|12.0| | | | | | | | | |
+|`cublasDtrsm_64`|12.0| | | |`hipblasDtrsm_64`|6.3.0| | | |6.3.0|
 |`cublasDtrsm_v2`| | | | |`hipblasDtrsm`|1.8.2| | | | |
-|`cublasDtrsm_v2_64`|12.0| | | | | | | | | |
+|`cublasDtrsm_v2_64`|12.0| | | |`hipblasDtrsm_64`|6.3.0| | | |6.3.0|
 |`cublasGemmGroupedBatchedEx`|12.5| | | | | | | | | |
 |`cublasGemmGroupedBatchedEx_64`|12.5| | | | | | | | | |
 |`cublasHSHgemvBatched`|11.6| | | | | | | | | |
@@ -1657,9 +1657,9 @@
 |`cublasStrmm_v2`| | | | |`hipblasStrmm`|3.2.0| |6.0.0| | |
 |`cublasStrmm_v2_64`|12.0| | | |`hipblasStrmm_64`|6.3.0| | | |6.3.0|
 |`cublasStrsm`| | | | |`hipblasStrsm`|1.8.2| | | | |
-|`cublasStrsm_64`|12.0| | | | | | | | | |
+|`cublasStrsm_64`|12.0| | | |`hipblasStrsm_64`|6.3.0| | | |6.3.0|
 |`cublasStrsm_v2`| | | | |`hipblasStrsm`|1.8.2| | | | |
-|`cublasStrsm_v2_64`|12.0| | | | | | | | | |
+|`cublasStrsm_v2_64`|12.0| | | |`hipblasStrsm_64`|6.3.0| | | |6.3.0|
 |`cublasTSSgemvBatched`|11.6| | | | | | | | | |
 |`cublasTSSgemvBatched_64`|12.0| | | | | | | | | |
 |`cublasTSSgemvStridedBatched`|11.6| | | | | | | | | |
@@ -1715,9 +1715,9 @@
 |`cublasZtrmm_v2`| | | | |`hipblasZtrmm_v2`|6.0.0| | | | |
 |`cublasZtrmm_v2_64`|12.0| | | |`hipblasZtrmm_v2_64`|6.3.0| | | |6.3.0|
 |`cublasZtrsm`| | | | |`hipblasZtrsm_v2`|6.0.0| | | | |
-|`cublasZtrsm_64`|12.0| | | | | | | | | |
+|`cublasZtrsm_64`|12.0| | | |`hipblasZtrsm_v2_64`|6.3.0| | | |6.3.0|
 |`cublasZtrsm_v2`| | | | |`hipblasZtrsm_v2`|6.0.0| | | | |
-|`cublasZtrsm_v2_64`|12.0| | | | | | | | | |
+|`cublasZtrsm_v2_64`|12.0| | | |`hipblasZtrsm_v2_64`|6.3.0| | | |6.3.0|
 
 ## **8. BLAS-like Extension**
 
