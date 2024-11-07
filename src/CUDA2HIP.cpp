@@ -67,6 +67,8 @@ const std::map <llvm::StringRef, hipCounter> CUDA_INCLUDE_MAP {
   {"curand_uniform.h",                                      {"hiprand/hiprand_kernel.h",                              "rocrand/rocrand_uniform.h",                                      CONV_INCLUDE,                API_RAND, 0}},
   // cuDNN includes
   {"cudnn.h",                                               {"hipDNN.h",                               "miopen/miopen.h", CONV_INCLUDE_CUDA_MAIN_H,    API_DNN, 0}},
+  // cuTensor includes
+  {"cutensor.h",                                            {"hiptensor.h",                                           "", CONV_INCLUDE_CUDA_MAIN_H,    API_TENSOR, 0}},
   // cuFFT includes
   {"cufft.h",                                               {"hipfft/hipfft.h",                                       "", CONV_INCLUDE_CUDA_MAIN_H,    API_FFT, 0}},
   {"cufftXt.h",                                             {"hipfft/hipfftXt.h",                                     "", CONV_INCLUDE,                API_FFT, 0}},
@@ -127,6 +129,8 @@ const std::map<llvm::StringRef, hipCounter> &CUDA_RENAMES_MAP() {
   ret.insert(CUDA_DEVICE_TYPE_NAME_MAP.begin(), CUDA_DEVICE_TYPE_NAME_MAP.end());
   ret.insert(CUDA_SOLVER_TYPE_NAME_MAP.begin(), CUDA_SOLVER_TYPE_NAME_MAP.end());
   ret.insert(CUDA_SOLVER_FUNCTION_MAP.begin(), CUDA_SOLVER_FUNCTION_MAP.end());
+  ret.insert(CUDA_TENSOR_TYPE_NAME_MAP.begin(), CUDA_TENSOR_TYPE_NAME_MAP.end());
+  ret.insert(CUDA_TENSOR_FUNCTION_MAP.begin(), CUDA_TENSOR_FUNCTION_MAP.end());
   return ret;
 };
 

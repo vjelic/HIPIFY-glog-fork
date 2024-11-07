@@ -145,7 +145,8 @@ const char *apiNames[NUM_API_TYPES] = {
   "cuSOLVER API",
   "CUB API",
   "CAFFE2 API",
-  "RTC API"
+  "RTC API",
+  "TENSOR API"
 };
 
 const char *apiTypes[NUM_API_TYPES] = {
@@ -160,7 +161,8 @@ const char *apiTypes[NUM_API_TYPES] = {
   "API_SPARSE",
   "API_SOLVER",
   "API_CAFFE2",
-  "API_RTC"
+  "API_RTC",
+  "API_TENSOR"
 };
 
 namespace {

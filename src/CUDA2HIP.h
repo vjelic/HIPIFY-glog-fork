@@ -85,6 +85,10 @@ extern const std::map<llvm::StringRef, hipCounter> CUDA_RTC_FUNCTION_MAP;
 extern const std::map<llvm::StringRef, hipCounter> CUDA_SOLVER_TYPE_NAME_MAP;
 // Maps the names of CUDA SOLVER API functions to the corresponding HIP functions
 extern const std::map<llvm::StringRef, hipCounter> CUDA_SOLVER_FUNCTION_MAP;
+// Maps the names of CUDA TENSOR API types to the corresponding HIP types
+extern const std::map<llvm::StringRef, hipCounter> CUDA_TENSOR_TYPE_NAME_MAP;
+// Maps the names of CUDA TENSOR API functions to the corresponding HIP functions
+extern const std::map<llvm::StringRef, hipCounter> CUDA_TENSOR_FUNCTION_MAP;
 
 /**
   * The union of all the above maps, except includes.
