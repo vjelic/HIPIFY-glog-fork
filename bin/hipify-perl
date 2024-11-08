@@ -4543,6 +4543,7 @@ sub simpleSubstitutions {
     subst("cublasCtrmv_v2_64", "hipblasCtrmv_v2_64", "library");
     subst("cublasCtrsm", "hipblasCtrsm_v2", "library");
     subst("cublasCtrsmBatched", "hipblasCtrsmBatched_v2", "library");
+    subst("cublasCtrsmBatched_64", "hipblasCtrsmBatched_v2_64", "library");
     subst("cublasCtrsm_64", "hipblasCtrsm_v2_64", "library");
     subst("cublasCtrsm_v2", "hipblasCtrsm_v2", "library");
     subst("cublasCtrsm_v2_64", "hipblasCtrsm_v2_64", "library");
@@ -4695,6 +4696,7 @@ sub simpleSubstitutions {
     subst("cublasDtrmv_v2_64", "hipblasDtrmv_64", "library");
     subst("cublasDtrsm", "hipblasDtrsm", "library");
     subst("cublasDtrsmBatched", "hipblasDtrsmBatched", "library");
+    subst("cublasDtrsmBatched_64", "hipblasDtrsmBatched_64", "library");
     subst("cublasDtrsm_64", "hipblasDtrsm_64", "library");
     subst("cublasDtrsm_v2", "hipblasDtrsm", "library");
     subst("cublasDtrsm_v2_64", "hipblasDtrsm_64", "library");
@@ -4944,6 +4946,7 @@ sub simpleSubstitutions {
     subst("cublasStrmv_v2_64", "hipblasStrmv_64", "library");
     subst("cublasStrsm", "hipblasStrsm", "library");
     subst("cublasStrsmBatched", "hipblasStrsmBatched", "library");
+    subst("cublasStrsmBatched_64", "hipblasStrsmBatched_64", "library");
     subst("cublasStrsm_64", "hipblasStrsm_64", "library");
     subst("cublasStrsm_v2", "hipblasStrsm", "library");
     subst("cublasStrsm_v2_64", "hipblasStrsm_64", "library");
@@ -5118,6 +5121,7 @@ sub simpleSubstitutions {
     subst("cublasZtrmv_v2_64", "hipblasZtrmv_v2_64", "library");
     subst("cublasZtrsm", "hipblasZtrsm_v2", "library");
     subst("cublasZtrsmBatched", "hipblasZtrsmBatched_v2", "library");
+    subst("cublasZtrsmBatched_64", "hipblasZtrsmBatched_v2_64", "library");
     subst("cublasZtrsm_64", "hipblasZtrsm_v2_64", "library");
     subst("cublasZtrsm_v2", "hipblasZtrsm_v2", "library");
     subst("cublasZtrsm_v2_64", "hipblasZtrsm_v2_64", "library");
@@ -11653,7 +11657,6 @@ sub warnHipOnlyUnsupportedFunctions {
         "cudnnAdvInferVersionCheck",
         "cudnnActivationStruct",
         "cublasZtrttp",
-        "cublasZtrsmBatched_64",
         "cublasZtpttr",
         "cublasZmatinvBatched",
         "cublasZgemm3m_64",
@@ -11672,7 +11675,6 @@ sub warnHipOnlyUnsupportedFunctions {
         "cublasSwapEx_64",
         "cublasSwapEx",
         "cublasStrttp",
-        "cublasStrsmBatched_64",
         "cublasStpttr",
         "cublasSmatinvBatched",
         "cublasShutdown",
@@ -11764,14 +11766,12 @@ sub warnHipOnlyUnsupportedFunctions {
         "cublasGemmBatchedEx_64",
         "cublasFree",
         "cublasDtrttp",
-        "cublasDtrsmBatched_64",
         "cublasDtpttr",
         "cublasDmatinvBatched",
         "cublasDgemmGroupedBatched_64",
         "cublasDgemmGroupedBatched",
         "cublasDdgmm_64",
         "cublasCtrttp",
-        "cublasCtrsmBatched_64",
         "cublasCtpttr",
         "cublasCsyrkEx_64",
         "cublasCsyrkEx",

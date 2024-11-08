@@ -1801,7 +1801,7 @@
 |`cublasCsyrkEx_64`|12.0| | | | | | | | | |
 |`cublasCtpttr`| | | | | | | | | | |
 |`cublasCtrsmBatched`| | | | |`hipblasCtrsmBatched_v2`|6.0.0| | | | |
-|`cublasCtrsmBatched_64`|12.0| | | | | | | | | |
+|`cublasCtrsmBatched_64`|12.0| | | |`hipblasCtrsmBatched_v2_64`|6.3.0| | | |6.3.0|
 |`cublasCtrttp`| | | | | | | | | | |
 |`cublasDdgmm`| | | | |`hipblasDdgmm`|3.6.0| | | | |
 |`cublasDdgmm_64`|12.0| | | | | | | | | |
@@ -1819,7 +1819,7 @@
 |`cublasDotcEx_64`|12.0| | | |`hipblasDotcEx_v2_64`|6.2.0| | | | |
 |`cublasDtpttr`| | | | | | | | | | |
 |`cublasDtrsmBatched`| | | | |`hipblasDtrsmBatched`|3.2.0| | | | |
-|`cublasDtrsmBatched_64`|12.0| | | | | | | | | |
+|`cublasDtrsmBatched_64`|12.0| | | |`hipblasDtrsmBatched_64`|6.3.0| | | |6.3.0|
 |`cublasDtrttp`| | | | | | | | | | |
 |`cublasGemmBatchedEx`|9.1| | | |`hipblasGemmBatchedEx_v2`|6.0.0| | | | |
 |`cublasGemmBatchedEx_64`|12.0| | | | | | | | | |
@@ -1853,7 +1853,7 @@
 |`cublasSmatinvBatched`| | | | | | | | | | |
 |`cublasStpttr`| | | | | | | | | | |
 |`cublasStrsmBatched`| | | | |`hipblasStrsmBatched`|3.2.0| | | | |
-|`cublasStrsmBatched_64`|12.0| | | | | | | | | |
+|`cublasStrsmBatched_64`|12.0| | | |`hipblasStrsmBatched_64`|6.3.0| | | |6.3.0|
 |`cublasStrttp`| | | | | | | | | | |
 |`cublasSwapEx`|10.1| | | | | | | | | |
 |`cublasSwapEx_64`|12.0| | | | | | | | | |
@@ -1870,7 +1870,7 @@
 |`cublasZmatinvBatched`| | | | | | | | | | |
 |`cublasZtpttr`| | | | | | | | | | |
 |`cublasZtrsmBatched`| | | | |`hipblasZtrsmBatched_v2`|6.0.0| | | | |
-|`cublasZtrsmBatched_64`|12.0| | | | | | | | | |
+|`cublasZtrsmBatched_64`|12.0| | | |`hipblasZtrsmBatched_v2_64`|6.3.0| | | |6.3.0|
 |`cublasZtrttp`| | | | | | | | | | |
 
 ## **9. BLASLt Function Reference**
