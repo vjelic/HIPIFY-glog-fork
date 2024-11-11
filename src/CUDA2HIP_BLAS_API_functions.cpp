@@ -618,13 +618,13 @@ const std::map<llvm::StringRef, hipCounter> CUDA_BLAS_FUNCTION_MAP {
 
   // DGMM
   {"cublasSdgmm",                                          {"hipblasSdgmm",                                              "rocblas_sdgmm",                                      CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT}},
-  {"cublasSdgmm_64",                                       {"hipblasSdgmm_64",                                           "",                                                   CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT, UNSUPPORTED}},
+  {"cublasSdgmm_64",                                       {"hipblasSdgmm_64",                                           "rocblas_sdgmm_64",                                   CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT}},
   {"cublasDdgmm",                                          {"hipblasDdgmm",                                              "rocblas_ddgmm",                                      CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT}},
-  {"cublasDdgmm_64",                                       {"hipblasDdgmm_64",                                           "",                                                   CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT, UNSUPPORTED}},
+  {"cublasDdgmm_64",                                       {"hipblasDdgmm_64",                                           "rocblas_ddgmm_64",                                   CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT}},
   {"cublasCdgmm",                                          {"hipblasCdgmm_v2",                                           "rocblas_cdgmm",                                      CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT}},
-  {"cublasCdgmm_64",                                       {"hipblasCdgmm_64",                                           "",                                                   CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT, UNSUPPORTED}},
+  {"cublasCdgmm_64",                                       {"hipblasCdgmm_v2_64",                                        "rocblas_cdgmm_64",                                   CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT}},
   {"cublasZdgmm",                                          {"hipblasZdgmm_v2",                                           "rocblas_zdgmm",                                      CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT}},
-  {"cublasZdgmm_64",                                       {"hipblasZdgmm_64",                                           "",                                                   CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT, UNSUPPORTED}},
+  {"cublasZdgmm_64",                                       {"hipblasZdgmm_v2_64",                                        "rocblas_zdgmm_64",                                   CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT}},
 
   // TPTTR - Triangular Pack format to Triangular format
   {"cublasStpttr",                                         {"hipblasStpttr",                                             "",                                                   CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT, UNSUPPORTED}},
@@ -2078,6 +2078,10 @@ const std::map<llvm::StringRef, hipAPIversions> HIP_BLAS_FUNCTION_VER_MAP {
   {"hipblasDtrsmBatched_64",                               {HIP_6030, HIP_0,    HIP_0,  HIP_LATEST}},
   {"hipblasCtrsmBatched_v2_64",                            {HIP_6030, HIP_0,    HIP_0,  HIP_LATEST}},
   {"hipblasZtrsmBatched_v2_64",                            {HIP_6030, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"hipblasSdgmm_64",                                      {HIP_6030, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"hipblasDdgmm_64",                                      {HIP_6030, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"hipblasCdgmm_v2_64",                                   {HIP_6030, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"hipblasZdgmm_v2_64",                                   {HIP_6030, HIP_0,    HIP_0,  HIP_LATEST}},
 
   {"rocblas_status_to_string",                             {HIP_3050, HIP_0,    HIP_0   }},
   {"rocblas_sscal",                                        {HIP_1050, HIP_0,    HIP_0   }},
@@ -2513,6 +2517,10 @@ const std::map<llvm::StringRef, hipAPIversions> HIP_BLAS_FUNCTION_VER_MAP {
   {"rocblas_dtrmm_64",                                     {HIP_6030, HIP_0,    HIP_0,  HIP_LATEST}},
   {"rocblas_ctrmm_64",                                     {HIP_6030, HIP_0,    HIP_0,  HIP_LATEST}},
   {"rocblas_ztrmm_64",                                     {HIP_6030, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"rocblas_sdgmm_64",                                     {HIP_6030, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"rocblas_ddgmm_64",                                     {HIP_6030, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"rocblas_cdgmm_64",                                     {HIP_6030, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"rocblas_zdgmm_64",                                     {HIP_6030, HIP_0,    HIP_0,  HIP_LATEST}},
 };
 
 const std::map<llvm::StringRef, hipAPIChangedVersions> HIP_BLAS_FUNCTION_CHANGED_VER_MAP {
