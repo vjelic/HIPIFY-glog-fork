@@ -231,6 +231,7 @@ int main() {
   float fy1 = 0.0f;
   float fc = 0.0f;
   float fC = 0.0f;
+  float fCP = 0.0f;
   float fs = 0.0f;
   float fd1 = 0.0f;
   float fd2 = 0.0f;
@@ -251,6 +252,7 @@ int main() {
 
   double da = 0.0f;
   double dA = 0.0f;
+  double dAP = 0.0f;
   double db = 0.0f;
   double dB = 0.0f;
   double dx = 0.0f;
@@ -259,6 +261,7 @@ int main() {
   double dy1 = 0.0f;
   double dc = 0.0f;
   double dC = 0.0f;
+  double dCP = 0.0f;
   double ds = 0.0f;
   double dd1 = 0.0f;
   double dd2 = 0.0f;
@@ -3160,6 +3163,26 @@ int main() {
   // HIP: HIPBLAS_EXPORT hipblasStatus_t hipblasZtrsmBatched_v2_64(hipblasHandle_t handle, hipblasSideMode_t side, hipblasFillMode_t uplo, hipblasOperation_t transA, hipblasDiagType_t diag, int64_t m, int64_t n, const hipDoubleComplex* alpha, const hipDoubleComplex* const AP[], int64_t lda, hipDoubleComplex* const BP[], int64_t ldb, int64_t batchCount);
   // CHECK: blasStatus = hipblasZtrsmBatched_v2_64(blasHandle, blasSideMode, blasFillMode, blasOperation, blasDiagType, m_64, n_64, &dcomplexa, dcomplexAarray_const, lda_64, dcomplexBarray, ldb_64, batchCount_64);
   blasStatus = cublasZtrsmBatched_64(blasHandle, blasSideMode, blasFillMode, blasOperation, blasDiagType, m_64, n_64, &dcomplexa, dcomplexAarray_const, lda_64, dcomplexBarray, ldb_64, batchCount_64);
+
+  // CUDA: CUBLASAPI cublasStatus_t CUBLASWINAPI cublasSdgmm_64(cublasHandle_t handle, cublasSideMode_t mode, int64_t m, int64_t n, const float* A, int64_t lda, const float* x, int64_t incx, float* C, int64_t ldc);
+  // HIP: HIPBLAS_EXPORT hipblasStatus_t hipblasSdgmm_64(hipblasHandle_t handle, hipblasSideMode_t side, int64_t m, int64_t n, const float* AP, int64_t lda, const float* x, int64_t incx, float* CP, int64_t ldc);
+  // CHECK: blasStatus = hipblasSdgmm_64(blasHandle, blasSideMode, m_64, n_64, &fAP, lda_64, &fx, incx_64, &fCP, ldc_64);
+  blasStatus = cublasSdgmm_64(blasHandle, blasSideMode, m_64, n_64, &fAP, lda_64, &fx, incx_64, &fCP, ldc_64);
+
+  // CUDA: CUBLASAPI cublasStatus_t CUBLASWINAPI cublasDdgmm_64(cublasHandle_t handle, cublasSideMode_t mode, int64_t m, int64_t n, const double* A, int64_t lda, const double* x, int64_t incx, double* C, int64_t ldc);
+  // HIP: HIPBLAS_EXPORT hipblasStatus_t hipblasDdgmm_64(hipblasHandle_t handle, hipblasSideMode_t side, int64_t m, int64_t n, const double* AP, int64_t lda, const double* x, int64_t incx, double* CP, int64_t ldc);
+  // CHECK: blasStatus = hipblasDdgmm_64(blasHandle, blasSideMode, m_64, n_64, &dAP, lda_64, &dx, incx_64, &dCP, ldc_64);
+  blasStatus = cublasDdgmm_64(blasHandle, blasSideMode, m_64, n_64, &dAP, lda_64, &dx, incx_64, &dCP, ldc_64);
+
+  // CUDA: CUBLASAPI cublasStatus_t CUBLASWINAPI cublasCdgmm_64(cublasHandle_t handle, cublasSideMode_t mode, int64_t m, int64_t n, const cuComplex* A, int64_t lda, const cuComplex* x, int64_t incx, cuComplex* C, int64_t ldc);
+  // HIP: HIPBLAS_EXPORT hipblasStatus_t hipblasCdgmm_v2_64(hipblasHandle_t handle, hipblasSideMode_t side, int64_t m, int64_t n, const hipComplex* AP, int64_t lda, const hipComplex* x, int64_t incx, hipComplex* CP, int64_t ldc);
+  // CHECK: blasStatus = hipblasCdgmm_v2_64(blasHandle, blasSideMode, m_64, n_64, &complexA, lda_64, &complexx, incx_64, &complexC, ldc_64);
+  blasStatus = cublasCdgmm_64(blasHandle, blasSideMode, m_64, n_64, &complexA, lda_64, &complexx, incx_64, &complexC, ldc_64);
+
+  // CUDA: CUBLASAPI cublasStatus_t CUBLASWINAPI cublasZdgmm_64(cublasHandle_t handle, cublasSideMode_t mode, int64_t m, int64_t n, const cuDoubleComplex* A, int64_t lda, const cuDoubleComplex* x, int64_t incx, cuDoubleComplex* C, int64_t ldc);
+  // HIP: HIPBLAS_EXPORT hipblasStatus_t hipblasZdgmm_v2_64(hipblasHandle_t handle, hipblasSideMode_t side, int64_t m, int64_t n, const hipDoubleComplex* AP, int64_t lda, const hipDoubleComplex* x, int64_t incx, hipDoubleComplex* CP, int64_t ldc);
+  // CHECK: blasStatus = hipblasZdgmm_v2_64(blasHandle, blasSideMode, m_64, n_64, &dcomplexA, lda_64, &dcomplexx, incx_64, &dcomplexC, ldc_64);
+  blasStatus = cublasZdgmm_64(blasHandle, blasSideMode, m_64, n_64, &dcomplexA, lda_64, &dcomplexx, incx_64, &dcomplexC, ldc_64);
 #endif
 
   return 0;
