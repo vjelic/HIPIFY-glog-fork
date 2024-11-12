@@ -835,11 +835,11 @@ const std::map<llvm::StringRef, hipCounter> CUDA_BLAS_FUNCTION_MAP {
   {"cublasSgemmEx",                                        {"hipblasSgemmEx",                                            "",                                                   CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT, UNSUPPORTED}},
   {"cublasSgemmEx_64",                                     {"hipblasSgemmEx_64",                                         "",                                                   CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT, UNSUPPORTED}},
   {"cublasGemmEx",                                         {"hipblasGemmEx_v2",                                          "rocblas_gemm_ex",                                    CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT}},
-  {"cublasGemmEx_64",                                      {"hipblasGemmEx_64",                                          "",                                                   CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT, UNSUPPORTED}},
+  {"cublasGemmEx_64",                                      {"hipblasGemmEx_v2_64",                                       "rocblas_gemm_ex_64",                                 CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT, ROC_UNSUPPORTED}},
   {"cublasGemmBatchedEx",                                  {"hipblasGemmBatchedEx_v2",                                   "rocblas_gemm_batched_ex",                            CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT}},
-  {"cublasGemmBatchedEx_64",                               {"hipblasGemmBatchedEx_64",                                   "",                                                   CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT, UNSUPPORTED}},
+  {"cublasGemmBatchedEx_64",                               {"hipblasGemmBatchedEx_v2_64",                                "rocblas_gemm_batched_ex_64",                         CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT, ROC_UNSUPPORTED}},
   {"cublasGemmStridedBatchedEx",                           {"hipblasGemmStridedBatchedEx_v2",                            "rocblas_gemm_strided_batched_ex",                    CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT}},
-  {"cublasGemmStridedBatchedEx_64",                        {"hipblasGemmStridedBatchedEx_64",                            "",                                                   CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT, UNSUPPORTED}},
+  {"cublasGemmStridedBatchedEx_64",                        {"hipblasGemmStridedBatchedEx_v2_64",                         "rocblas_gemm_strided_batched_ex_64",                 CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT, ROC_UNSUPPORTED}},
   // IO in Int8 complex/cuComplex, computation in cuComplex
   {"cublasCgemmEx",                                        {"hipblasCgemmEx",                                            "",                                                   CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT, UNSUPPORTED}},
   {"cublasCgemmEx_64",                                     {"hipblasCgemmEx_64",                                         "",                                                   CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT, UNSUPPORTED}},
@@ -2082,6 +2082,9 @@ const std::map<llvm::StringRef, hipAPIversions> HIP_BLAS_FUNCTION_VER_MAP {
   {"hipblasDdgmm_64",                                      {HIP_6030, HIP_0,    HIP_0,  HIP_LATEST}},
   {"hipblasCdgmm_v2_64",                                   {HIP_6030, HIP_0,    HIP_0,  HIP_LATEST}},
   {"hipblasZdgmm_v2_64",                                   {HIP_6030, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"hipblasGemmEx_v2_64",                                  {HIP_6030, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"hipblasGemmBatchedEx_v2_64",                           {HIP_6030, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"hipblasGemmStridedBatchedEx_v2_64",                    {HIP_6030, HIP_0,    HIP_0,  HIP_LATEST}},
 
   {"rocblas_status_to_string",                             {HIP_3050, HIP_0,    HIP_0   }},
   {"rocblas_sscal",                                        {HIP_1050, HIP_0,    HIP_0   }},
@@ -2521,6 +2524,9 @@ const std::map<llvm::StringRef, hipAPIversions> HIP_BLAS_FUNCTION_VER_MAP {
   {"rocblas_ddgmm_64",                                     {HIP_6030, HIP_0,    HIP_0,  HIP_LATEST}},
   {"rocblas_cdgmm_64",                                     {HIP_6030, HIP_0,    HIP_0,  HIP_LATEST}},
   {"rocblas_zdgmm_64",                                     {HIP_6030, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"rocblas_gemm_ex_64",                                   {HIP_6030, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"rocblas_gemm_batched_ex_64",                           {HIP_6030, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"rocblas_gemm_strided_batched_ex_64",                   {HIP_6030, HIP_0,    HIP_0,  HIP_LATEST}},
 };
 
 const std::map<llvm::StringRef, hipAPIChangedVersions> HIP_BLAS_FUNCTION_CHANGED_VER_MAP {
@@ -2534,6 +2540,9 @@ const std::map<llvm::StringRef, hipAPIChangedVersions> HIP_BLAS_FUNCTION_CHANGED
 
 const std::map<llvm::StringRef, cudaAPIChangedVersions> CUDA_BLAS_FUNCTION_CHANGED_VER_MAP {
   {"cublasLtMatmulDescCreate",                             {CUDA_110}},
+  {"cublasGemmEx",                                         {CUDA_110}},
+  {"cublasGemmBatchedEx",                                  {CUDA_110}},
+  {"cublasGemmStridedBatchedEx",                           {CUDA_110}},
 };
 
 const std::map<unsigned int, llvm::StringRef> CUDA_BLAS_API_SECTION_MAP {
