@@ -241,6 +241,7 @@ int main() {
   void** voidBarray = nullptr;
   const void** const voidBarray_const = const_cast<const void**>(voidBarray);
   void** voidCarray = nullptr;
+  const void** const voidCarray_const = const_cast<const void**>(voidCarray);
 
   // NOTE: float CUBLASWINAPI cublasSnrm2(int n, const float* x, int incx) is not supported by HIP
   // CUDA: CUBLASAPI cublasStatus_t CUBLASWINAPI cublasSnrm2_v2(cublasHandle_t handle, int n, const float* x, int incx, float* result);
@@ -1517,6 +1518,9 @@ int main() {
   // CHECK: hipDataType DataType_2, DataType_3;
   cudaDataType DataType_2, DataType_3;
 
+  // CHECK: hipDataType computeType;
+  cudaDataType computeType;
+
   // CHECK: hipblasGemmAlgo_t blasGemmAlgo;
   // CHECK-NEXT: hipblasGemmAlgo_t BLAS_GEMM_DFALT = HIPBLAS_GEMM_DEFAULT;
   cublasGemmAlgo_t blasGemmAlgo;
@@ -1599,9 +1603,7 @@ int main() {
 #endif
 
 #if CUDA_VERSION >= 8000 && CUDA_VERSION < 11000
-  // CHECK: hipDataType computeType;
-  cudaDataType computeType;
-
+  // TODO: [HIPIFY] CUDA VERSION detection by HIPIFY itself
   // CUDA: CUBLASAPI cublasStatus_t CUBLASWINAPI cublasGemmEx(cublasHandle_t handle, cublasOperation_t transa, cublasOperation_t transb, int m, int n, int k, const void* alpha, const void* A, cudaDataType Atype, int lda, const void* B, cudaDataType Btype, int ldb, const void* beta, void* C, cudaDataType Ctype, int ldc, cudaDataType computeType, cublasGemmAlgo_t algo);
   // HIP: HIPBLAS_EXPORT hipblasStatus_t hipblasGemmEx_v2(hipblasHandle_t handle, hipblasOperation_t transA, hipblasOperation_t transB, int m, int n, int k, const void* alpha, const void* A, hipDataType aType, int lda, const void* B, hipDataType bType, int ldb, const void* beta, void* C, hipDataType cType, int ldc, hipblasComputeType_t computeType, hipblasGemmAlgo_t algo);
   // CHECK: blasStatus = hipblasGemmEx_v2(blasHandle, transa, transb, m, n, k, aptr, Aptr, Atype, lda, Bptr, Btype, ldb, bptr, Cptr, Ctype, ldc, computeType, blasGemmAlgo);
@@ -1636,12 +1638,16 @@ int main() {
 #endif
 
 #if CUDA_VERSION >= 9010 && CUDA_VERSION < 11000
-  // CUDA: CUBLASAPI cublasStatus_t CUBLASWINAPI cublasGemmBatchedEx(cublasHandle_t handle, cublasOperation_t transa, cublasOperation_t transb, int m, int n, int k, const void* alpha, const void* const Aarray[], cudaDataType Atype, int lda, const void* const Barray[], cudaDataType Btype, int ldb, const void* beta, void* const Carray[], cudaDataType Ctype, int ldc, int batchCount, cublasComputeType_t computeType, cublasGemmAlgo_t algo);
+  // TODO: [HIPIFY] CUDA VERSION detection by HIPIFY itself
+  // CUDA: CUBLASAPI cublasStatus_t CUBLASWINAPI cublasGemmBatchedEx(cublasHandle_t handle, cublasOperation_t transa, cublasOperation_t transb,  int m, int n, int k, const void *alpha, const void *const Aarray[], cudaDataType Atype, int lda, const void *const Barray[], cudaDataType Btype, int ldb, const void *beta, void *const Carray[], cudaDataType Ctype, int ldc, int batchCount, cudaDataType computeType, cublasGemmAlgo_t algo);
+  // HIP [Actual] HIPBLAS_EXPORT hipblasStatus_t hipblasGemmBatchedEx(hipblasHandle_t handle, hipblasOperation_t transA, hipblasOperation_t transB, int m, int n, int k, const void* alpha, const void* A[], hipblasDatatype_t aType, int lda, const void* B[], hipblasDatatype_t bType, int ldb, const void* beta, void* C[], hipblasDatatype_t cType, int ldc, int batchCount, hipblasDatatype_t computeType, hipblasGemmAlgo_t algo);
   // HIP: HIPBLAS_EXPORT hipblasStatus_t hipblasGemmBatchedEx_v2(hipblasHandle_t handle, hipblasOperation_t transA, hipblasOperation_t transB, int m, int n, int k, const void* alpha, const void* A[], hipDataType aType, int lda, const void* B[], hipDataType bType, int ldb, const void* beta, void* C[], hipDataType cType, int ldc, int batchCount, hipblasComputeType_t computeType, hipblasGemmAlgo_t algo);
   // CHECK: blasStatus = hipblasGemmBatchedEx_v2(blasHandle, transa, transb, m, n, k, aptr, voidAarray_const, Atype, lda, voidBarray_const, Btype, ldb, bptr, voidCarray, Ctype, ldc, batchCount, computeType, blasGemmAlgo);
   blasStatus = cublasGemmBatchedEx(blasHandle, transa, transb, m, n, k, aptr, voidAarray_const, Atype, lda, voidBarray_const, Btype, ldb, bptr, voidCarray, Ctype, ldc, batchCount, computeType, blasGemmAlgo);
 
-  // CUDA: CUBLASAPI cublasStatus_t CUBLASWINAPI cublasGemmStridedBatchedEx(cublasHandle_t handle, cublasOperation_t transa, cublasOperation_t transb, int m, int n, int k, const void* alpha, const void* A, cudaDataType Atype, int lda, long long int strideA, const void* B, cudaDataType Btype, int ldb, long long int strideB, const void* beta, void* C, cudaDataType Ctype, int ldc, long long int strideC, int batchCount, cublasComputeType_t computeType, cublasGemmAlgo_t algo);
+  // TODO: [HIPIFY] CUDA VERSION detection by HIPIFY itself
+  // CUDA: CUBLASAPI cublasStatus_t CUBLASWINAPI cublasGemmStridedBatchedEx(cublasHandle_t handle, cublasOperation_t transa, cublasOperation_t transb, int m, int n, int k, const void *alpha, const void *A, cudaDataType Atype, int lda, long long int strideA, const void *B, cudaDataType Btype, int ldb, long long int strideB, const void *beta, void *C, cudaDataType Ctype, int ldc, long long int strideC, int batchCount, cudaDataType computeType, cublasGemmAlgo_t algo);
+  // HIP [Actual] HIPBLAS_EXPORT hipblasStatus_t hipblasGemmStridedBatchedEx(hipblasHandle_t handle, hipblasOperation_t transA, hipblasOperation_t transB, int m, int n, int k, const void* alpha, const void* A, hipblasDatatype_t aType, int lda, hipblasStride strideA, const void* B, hipblasDatatype_t bType, int ldb, hipblasStride strideB, const void* beta, void* C, hipblasDatatype_t cType, int ldc, hipblasStride strideC, int batchCount, hipblasDatatype_t computeType, hipblasGemmAlgo_t algo);
   // HIP: HIPBLAS_EXPORT hipblasStatus_t hipblasGemmStridedBatchedEx_v2(hipblasHandle_t handle, hipblasOperation_t transA, hipblasOperation_t transB, int m, int n, int k, const void* alpha, const void* A, hipDataType aType, int lda, hipblasStride strideA, const void* B, hipDataType bType, int ldb, hipblasStride strideB, const void* beta, void* C, hipDataType cType, int ldc, hipblasStride strideC, int batchCount, hipblasComputeType_t computeType, hipblasGemmAlgo_t algo);
   // CHECK: blasStatus = hipblasGemmStridedBatchedEx_v2(blasHandle, transa, transb, m, n, k, aptr, Aptr, Atype, lda, strideA, Bptr, Btype, ldb, strideB, bptr, Cptr, Ctype, ldc, strideC, batchCount, computeType, blasGemmAlgo);
   blasStatus = cublasGemmStridedBatchedEx(blasHandle, transa, transb, m, n, k, aptr, Aptr, Atype, lda, strideA, Bptr, Btype, ldb, strideB, bptr, Cptr, Ctype, ldc, strideC, batchCount, computeType, blasGemmAlgo);
@@ -1687,16 +1693,19 @@ int main() {
   // CHECK: hipblasComputeType_t blasComputeType;
   cublasComputeType_t blasComputeType;
 
+  // TODO: [HIPIFY] CUDA VERSION detection by HIPIFY itself
   // CUDA: CUBLASAPI cublasStatus_t CUBLASWINAPI cublasGemmEx(cublasHandle_t handle, cublasOperation_t transa, cublasOperation_t transb, int m, int n, int k, const void* alpha, const void* A, cudaDataType Atype, int lda, const void* B, cudaDataType Btype, int ldb, const void* beta, void* C, cudaDataType Ctype, int ldc, cublasComputeType_t computeType, cublasGemmAlgo_t algo);
   // HIP: HIPBLAS_EXPORT hipblasStatus_t hipblasGemmEx_v2(hipblasHandle_t handle, hipblasOperation_t transA, hipblasOperation_t transB, int m, int n, int k, const void* alpha, const void* A, hipDataType aType, int lda, const void* B, hipDataType bType, int ldb, const void* beta, void* C, hipDataType cType, int ldc, hipblasComputeType_t computeType, hipblasGemmAlgo_t algo);
   // CHECK: blasStatus = hipblasGemmEx_v2(blasHandle, transa, transb, m, n, k, aptr, Aptr, Atype, lda, Bptr, Btype, ldb, bptr, Cptr, Ctype, ldc, blasComputeType, blasGemmAlgo);
   blasStatus = cublasGemmEx(blasHandle, transa, transb, m, n, k, aptr, Aptr, Atype, lda, Bptr, Btype, ldb, bptr, Cptr, Ctype, ldc, blasComputeType, blasGemmAlgo);
 
+  // TODO: [HIPIFY] CUDA VERSION detection by HIPIFY itself
   // CUDA: CUBLASAPI cublasStatus_t CUBLASWINAPI cublasGemmBatchedEx(cublasHandle_t handle, cublasOperation_t transa, cublasOperation_t transb, int m, int n, int k, const void* alpha, const void* const Aarray[], cudaDataType Atype, int lda, const void* const Barray[], cudaDataType Btype, int ldb, const void* beta, void* const Carray[], cudaDataType Ctype, int ldc, int batchCount, cublasComputeType_t computeType, cublasGemmAlgo_t algo);
   // HIP: HIPBLAS_EXPORT hipblasStatus_t hipblasGemmBatchedEx_v2(hipblasHandle_t handle, hipblasOperation_t transA, hipblasOperation_t transB, int m, int n, int k, const void* alpha, const void* A[], hipDataType aType, int lda, const void* B[], hipDataType bType, int ldb, const void* beta, void* C[], hipDataType cType, int ldc, int batchCount, hipblasComputeType_t computeType, hipblasGemmAlgo_t algo);
   // CHECK: blasStatus = hipblasGemmBatchedEx_v2(blasHandle, transa, transb, m, n, k, aptr, voidAarray, Atype, lda, voidBarray, Btype, ldb, bptr, voidCarray, Ctype, ldc, batchCount, blasComputeType, blasGemmAlgo);
   blasStatus = cublasGemmBatchedEx(blasHandle, transa, transb, m, n, k, aptr, voidAarray, Atype, lda, voidBarray, Btype, ldb, bptr, voidCarray, Ctype, ldc, batchCount, blasComputeType, blasGemmAlgo);
 
+  // TODO: [HIPIFY] CUDA VERSION detection by HIPIFY itself
   // CUDA: CUBLASAPI cublasStatus_t CUBLASWINAPI cublasGemmStridedBatchedEx(cublasHandle_t handle, cublasOperation_t transa, cublasOperation_t transb, int m, int n, int k, const void* alpha, const void* A, cudaDataType Atype, int lda, long long int strideA, const void* B, cudaDataType Btype, int ldb, long long int strideB, const void* beta, void* C, cudaDataType Ctype, int ldc, long long int strideC, int batchCount, cublasComputeType_t computeType, cublasGemmAlgo_t algo);
   // HIP: HIPBLAS_EXPORT hipblasStatus_t hipblasGemmStridedBatchedEx_v2(hipblasHandle_t handle, hipblasOperation_t transA, hipblasOperation_t transB, int m, int n, int k, const void* alpha, const void* A, hipDataType aType, int lda, hipblasStride strideA, const void* B, hipDataType bType, int ldb, hipblasStride strideB, const void* beta, void* C, hipDataType cType, int ldc, hipblasStride strideC, int batchCount, hipblasComputeType_t computeType, hipblasGemmAlgo_t algo);
   // CHECK: blasStatus = hipblasGemmStridedBatchedEx_v2(blasHandle, transa, transb, m, n, k, aptr, Aptr, Atype, lda, strideA, Bptr, Btype, ldb, strideB, bptr, Cptr, Ctype, ldc, strideC, batchCount, blasComputeType, blasGemmAlgo);

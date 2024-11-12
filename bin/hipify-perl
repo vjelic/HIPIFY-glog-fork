@@ -4719,8 +4719,11 @@ sub simpleSubstitutions {
     subst("cublasDznrm2_v2", "hipblasDznrm2_v2", "library");
     subst("cublasDznrm2_v2_64", "hipblasDznrm2_v2_64", "library");
     subst("cublasGemmBatchedEx", "hipblasGemmBatchedEx_v2", "library");
+    subst("cublasGemmBatchedEx_64", "hipblasGemmBatchedEx_v2_64", "library");
     subst("cublasGemmEx", "hipblasGemmEx_v2", "library");
+    subst("cublasGemmEx_64", "hipblasGemmEx_v2_64", "library");
     subst("cublasGemmStridedBatchedEx", "hipblasGemmStridedBatchedEx_v2", "library");
+    subst("cublasGemmStridedBatchedEx_64", "hipblasGemmStridedBatchedEx_v2_64", "library");
     subst("cublasGetAtomicsMode", "hipblasGetAtomicsMode", "library");
     subst("cublasGetMathMode", "hipblasGetMathMode", "library");
     subst("cublasGetMatrix", "hipblasGetMatrix", "library");
@@ -11771,11 +11774,8 @@ sub warnHipOnlyUnsupportedFunctions {
         "cublasGetLoggerCallback",
         "cublasGetError",
         "cublasGetCudartVersion",
-        "cublasGemmStridedBatchedEx_64",
         "cublasGemmGroupedBatchedEx_64",
         "cublasGemmGroupedBatchedEx",
-        "cublasGemmEx_64",
-        "cublasGemmBatchedEx_64",
         "cublasFree",
         "cublasDtrttp",
         "cublasDtpttr",
