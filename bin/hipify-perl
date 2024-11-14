@@ -6159,6 +6159,7 @@ sub simpleSubstitutions {
     subst("cuda.h", "hip\/hip_runtime.h", "include_cuda_main_header");
     subst("cuda_runtime.h", "hip\/hip_runtime.h", "include_cuda_main_header");
     subst("cudnn.h", "hipDNN.h", "include_cuda_main_header");
+    subst("cutensor.h", "hiptensor.h", "include");
     subst("cufft.h", "hipfft\/hipfft.h", "include_cuda_main_header");
     subst("curand.h", "hiprand\/hiprand.h", "include_cuda_main_header");
     subst("cusolverDn.h", "hipsolver.h", "include_cuda_main_header");
@@ -6655,6 +6656,7 @@ sub simpleSubstitutions {
     subst("cudnnStatus_t", "hipdnnStatus_t", "type");
     subst("cudnnTensorDescriptor_t", "hipdnnTensorDescriptor_t", "type");
     subst("cudnnTensorFormat_t", "hipdnnTensorFormat_t", "type");
+    subst("cutensorStatus_t", "hiptensorStatus_t", "type");
     subst("cufftComplex", "hipfftComplex", "type");
     subst("cufftDoubleComplex", "hipfftDoubleComplex", "type");
     subst("cufftDoubleReal", "hipfftDoubleReal", "type");
