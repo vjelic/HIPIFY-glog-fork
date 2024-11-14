@@ -56,7 +56,7 @@ int main() {
   // CHECK: const_ch = miopenGetErrorString(status);
   const_ch = cudnnGetErrorString(status);
 
-  // CHECK: miopenAcceleratorQueue_t streamId;
+  // CHECK: hipStream_t streamId;
   cudaStream_t streamId;
 
   // CUDA: cudnnStatus_t CUDNNWINAPI cudnnSetStream(cudnnHandle_t handle, cudaStream_t streamId);
