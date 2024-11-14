@@ -649,7 +649,7 @@ Minimum build system requirements for the above configurations:
 
 Recommended build system requirements:
 
-* CMake 3.30.4, GNU C/C++ 13.2, Python 3.13.0.
+* CMake 3.31.0, GNU C/C++ 13.2, Python 3.13.0.
 
 Here's how to build ``hipify-clang`` with testing support on ``Ubuntu 23.10.01``:
 
@@ -822,14 +822,14 @@ Tested configurations:
   * - ``17.0.1`` :sup:`6` - ``18.1.8`` :sup:`7`
     - ``7.0 - 12.3.2``
     - ``8.0.5  - 9.5.1``
-    - ``2019.16.11.40, 2022.17.11.4``
-    - ``3.30.4``
+    - ``2019.16.11.42, 2022.17.11.6``
+    - ``3.31.0``
     - ``3.13.0``
   * - ``19.1.0 - 19.1.3``
     - ``7.0 - 12.6.2``
     - ``8.0.5  - 9.5.1``
-    - ``2019.16.11.40, 2022.17.11.4``
-    - ``3.30.4``
+    - ``2019.16.11.42, 2022.17.11.6``
+    - ``3.31.0``
     - ``3.13.0``
 
 :sup:`5` LLVM 14.x.x is the latest major release supporting Visual Studio 2017.
