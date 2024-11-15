@@ -5,11 +5,15 @@
 |**CUDA**|**A**|**D**|**C**|**R**|**HIP**|**A**|**D**|**C**|**R**|**E**|
 |:--|:-:|:-:|:-:|:-:|:--|:-:|:-:|:-:|:-:|:-:|
 |`_Pow_int`| | | | | | | | | | |
+|`__activemask`|9.0| | | |`__activemask`|6.2.0| | | | |
 |`__all`| | | | |`__all`|1.6.0| | | | |
+|`__all_sync`|9.0| | | |`__all_sync`|6.2.0| | | | |
 |`__any`| | | | |`__any`|1.6.0| | | | |
+|`__any_sync`|9.0| | | |`__any_sync`|6.2.0| | | | |
 |`__assert_fail`| | | | |`__assert_fail`|1.9.0| | | | |
 |`__assertfail`| | | | |`__assertfail`|1.9.0| | | | |
 |`__ballot`| | | | |`__ballot`|1.6.0| | | | |
+|`__ballot_sync`|9.0| | | |`__ballot_sync`|6.2.0| | | | |
 |`__bfloat1622float2`|11.0| | | | | | | | | |
 |`__bfloat162bfloat162`|11.0| | | | | | | | | |
 |`__bfloat162char_rz`|12.2| | | | | | | | | |
@@ -361,6 +365,8 @@
 |`__lowhigh2highlow`| | | | |`__lowhigh2highlow`|1.6.0| | | | |
 |`__lows2bfloat162`|11.0| | | | | | | | | |
 |`__lows2half2`| | | | |`__lows2half2`|1.6.0| | | | |
+|`__match_all_sync`|9.0| | | |`__match_all_sync`|6.2.0| | | | |
+|`__match_any_sync`|9.0| | | |`__match_any_sync`|6.2.0| | | | |
 |`__mul24`| | | | |`__mul24`|1.6.0| | | | |
 |`__mul64hi`| | | | |`__mul64hi`|1.6.0| | | | |
 |`__mulhi`| | | | |`__mulhi`|1.6.0| | | | |
@@ -387,12 +393,12 @@
 |`__saturatef`| | | | |`__saturatef`|1.6.0| | | | |
 |`__shfl`|7.5|9.0| | |`__shfl`|1.6.0| | | | |
 |`__shfl_down`|7.5|9.0| | |`__shfl_down`|1.6.0| | | | |
-|`__shfl_down_sync`| | | | | | | | | | |
-|`__shfl_sync`| | | | | | | | | | |
+|`__shfl_down_sync`|9.0| | | |`__shfl_down_sync`|6.2.0| | | | |
+|`__shfl_sync`|9.0| | | |`__shfl_sync`|6.2.0| | | | |
 |`__shfl_up`|7.5|9.0| | |`__shfl_up`|1.6.0| | | | |
-|`__shfl_up_sync`| | | | | | | | | | |
+|`__shfl_up_sync`|9.0| | | |`__shfl_up_sync`|6.2.0| | | | |
 |`__shfl_xor`|7.5|9.0| | |`__shfl_xor`|1.6.0| | | | |
-|`__shfl_xor_sync`| | | | | | | | | | |
+|`__shfl_xor_sync`|9.0| | | |`__shfl_xor_sync`|6.2.0| | | | |
 |`__short2bfloat16_rd`|11.0| | | | | | | | | |
 |`__short2bfloat16_rn`|11.0| | | | | | | | | |
 |`__short2bfloat16_ru`|11.0| | | | | | | | | |

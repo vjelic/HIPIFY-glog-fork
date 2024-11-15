@@ -672,13 +672,13 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DEVICE_FUNCTION_MAP {
   {"h2exp10",                           {"h2exp10",                            "", CONV_DEVICE_FUNC, API_RUNTIME, 1}},
   {"h2cos",                             {"h2cos",                              "", CONV_DEVICE_FUNC, API_RUNTIME, 1}},
   {"h2sin",                             {"h2sin",                              "", CONV_DEVICE_FUNC, API_RUNTIME, 1}},
-  {"__shfl_sync",                       {"",                                   "", CONV_DEVICE_FUNC, API_RUNTIME, 1, UNSUPPORTED}},
+  {"__shfl_sync",                       {"__shfl_sync",                        "", CONV_DEVICE_FUNC, API_RUNTIME, 1}},
   {"__shfl",                            {"__shfl",                             "", CONV_DEVICE_FUNC, API_RUNTIME, 1, CUDA_DEPRECATED}},
-  {"__shfl_up_sync",                    {"",                                   "", CONV_DEVICE_FUNC, API_RUNTIME, 1, UNSUPPORTED}},
+  {"__shfl_up_sync",                    {"__shfl_up_sync",                     "", CONV_DEVICE_FUNC, API_RUNTIME, 1}},
   {"__shfl_up",                         {"__shfl_up",                          "", CONV_DEVICE_FUNC, API_RUNTIME, 1, CUDA_DEPRECATED}},
-  {"__shfl_down_sync",                  {"",                                   "", CONV_DEVICE_FUNC, API_RUNTIME, 1, UNSUPPORTED}},
+  {"__shfl_down_sync",                  {"__shfl_down_sync",                   "", CONV_DEVICE_FUNC, API_RUNTIME, 1}},
   {"__shfl_down",                       {"__shfl_down",                        "", CONV_DEVICE_FUNC, API_RUNTIME, 1, CUDA_DEPRECATED}},
-  {"__shfl_xor_sync",                   {"",                                   "", CONV_DEVICE_FUNC, API_RUNTIME, 1, UNSUPPORTED}},
+  {"__shfl_xor_sync",                   {"__shfl_xor_sync",                    "", CONV_DEVICE_FUNC, API_RUNTIME, 1}},
   {"__shfl_xor",                        {"__shfl_xor",                         "", CONV_DEVICE_FUNC, API_RUNTIME, 1, CUDA_DEPRECATED}},
   {"__funnelshift_l",                   {"__funnelshift_l",                    "", CONV_DEVICE_FUNC, API_RUNTIME, 1}},
   {"__funnelshift_lc",                  {"__funnelshift_lc",                   "", CONV_DEVICE_FUNC, API_RUNTIME, 1}},
@@ -829,6 +829,14 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DEVICE_FUNCTION_MAP {
   {"__nv_cvt_bfloat16raw2_to_fp8x2",    {"__hip_cvt_bfloat16raw2_to_fp8x2",    "", CONV_DEVICE_FUNC, API_RUNTIME, 1, UNSUPPORTED}},
   {"__nv_cvt_fp8_to_halfraw",           {"__hip_cvt_fp8_to_halfraw",           "", CONV_DEVICE_FUNC, API_RUNTIME, 1, UNSUPPORTED}},
   {"__nv_cvt_fp8x2_to_halfraw2",        {"__hip_cvt_fp8x2_to_halfraw2",        "", CONV_DEVICE_FUNC, API_RUNTIME, 1, UNSUPPORTED}},
+  // intrinsics
+  {"__all_sync",                        {"__all_sync",                         "", CONV_DEVICE_FUNC, API_RUNTIME, 1}},
+  {"__any_sync",                        {"__any_sync",                         "", CONV_DEVICE_FUNC, API_RUNTIME, 1}},
+  {"__ballot_sync",                     {"__ballot_sync",                      "", CONV_DEVICE_FUNC, API_RUNTIME, 1}},
+  {"__activemask",                      {"__activemask",                       "", CONV_DEVICE_FUNC, API_RUNTIME, 1}},
+  // built-ins
+  {"__match_any_sync",                  {"__match_any_sync",                   "", CONV_DEVICE_FUNC, API_RUNTIME, 1}},
+  {"__match_all_sync",                  {"__match_all_sync",                   "", CONV_DEVICE_FUNC, API_RUNTIME, 1}},
 };
 
 const std::map<llvm::StringRef, cudaAPIversions> CUDA_DEVICE_FUNCTION_VER_MAP {
@@ -959,6 +967,16 @@ const std::map<llvm::StringRef, cudaAPIversions> CUDA_DEVICE_FUNCTION_VER_MAP {
   {"make_half2",                        {CUDA_122, CUDA_0,   CUDA_0  }},
   {"__half2char_rz",                    {CUDA_122, CUDA_0,   CUDA_0  }},
   {"__half2uchar_rz",                   {CUDA_122, CUDA_0,   CUDA_0  }},
+  {"__all_sync",                        {CUDA_90,  CUDA_0,   CUDA_0  }},
+  {"__any_sync",                        {CUDA_90,  CUDA_0,   CUDA_0  }},
+  {"__ballot_sync",                     {CUDA_90,  CUDA_0,   CUDA_0  }},
+  {"__activemask",                      {CUDA_90,  CUDA_0,   CUDA_0  }},
+  {"__match_any_sync",                  {CUDA_90,  CUDA_0,   CUDA_0  }},
+  {"__match_all_sync",                  {CUDA_90,  CUDA_0,   CUDA_0  }},
+  {"__shfl_sync",                       {CUDA_90,  CUDA_0,   CUDA_0  }},
+  {"__shfl_up_sync",                    {CUDA_90,  CUDA_0,   CUDA_0  }},
+  {"__shfl_down_sync",                  {CUDA_90,  CUDA_0,   CUDA_0  }},
+  {"__shfl_xor_sync",                   {CUDA_90,  CUDA_0,   CUDA_0  }},
 };
 
 const std::map<llvm::StringRef, hipAPIversions> HIP_DEVICE_FUNCTION_VER_MAP {
@@ -1470,6 +1488,16 @@ const std::map<llvm::StringRef, hipAPIversions> HIP_DEVICE_FUNCTION_VER_MAP {
   {"__hmax_nan",                        {HIP_5050, HIP_0,    HIP_0   }},
   {"__hmin",                            {HIP_5050, HIP_0,    HIP_0   }},
   {"__hmin_nan",                        {HIP_5050, HIP_0,    HIP_0   }},
+  {"__all_sync",                        {HIP_6020, HIP_0,    HIP_0   }},
+  {"__any_sync",                        {HIP_6020, HIP_0,    HIP_0   }},
+  {"__ballot_sync",                     {HIP_6020, HIP_0,    HIP_0   }},
+  {"__activemask",                      {HIP_6020, HIP_0,    HIP_0   }},
+  {"__match_any_sync",                  {HIP_6020, HIP_0,    HIP_0   }},
+  {"__match_all_sync",                  {HIP_6020, HIP_0,    HIP_0   }},
+  {"__shfl_sync",                       {HIP_6020, HIP_0,    HIP_0   }},
+  {"__shfl_up_sync",                    {HIP_6020, HIP_0,    HIP_0   }},
+  {"__shfl_down_sync",                  {HIP_6020, HIP_0,    HIP_0   }},
+  {"__shfl_xor_sync",                   {HIP_6020, HIP_0,    HIP_0   }},
 };
 
 const std::map<unsigned int, llvm::StringRef> CUDA_DEVICE_FUNCTION_API_SECTION_MAP {

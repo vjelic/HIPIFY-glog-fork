@@ -322,40 +322,634 @@
 |`CUBLASLT_MATMUL_STAGES_8xAUTO`|11.8| | | | | | | | | |
 |`CUBLASLT_MATMUL_STAGES_END`|11.0| | | | | | | | | |
 |`CUBLASLT_MATMUL_STAGES_UNDEFINED`|11.0| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_104x128`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_104x192`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_104x256`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_104x320`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_104x384`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_104x448`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_104x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_112x128`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_112x192`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_112x256`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_112x320`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_112x384`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_112x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_120x128`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_120x192`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_120x256`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_120x320`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_120x384`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_120x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x104`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x112`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x120`|12.6| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_128x128`|10.1| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x136`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x144`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x152`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x16`|12.6| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_128x160`|11.3| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x168`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x176`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x184`|12.6| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_128x192`|11.8| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x200`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x208`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x216`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x224`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x232`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x24`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x240`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x248`|12.6| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_128x256`|10.1| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x264`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x272`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x280`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x288`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x296`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x304`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x312`|12.6| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_128x32`|10.1| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x320`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x328`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x336`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x344`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x352`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x360`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x368`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x376`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x384`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x392`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x40`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x400`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x408`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x416`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x424`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x432`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x440`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x448`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x456`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x464`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x472`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x48`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x480`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x488`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x496`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x504`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x512`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x56`|12.6| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_128x64`|10.1| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x72`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x8`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x80`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_128x88`|12.6| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_128x96`|11.8| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_136x128`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_136x192`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_136x256`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_136x320`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_136x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_144x128`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_144x192`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_144x256`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_144x320`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_144x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_152x128`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_152x192`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_152x256`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_152x320`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_152x64`|12.6| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_160x128`|11.3| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_160x192`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_160x256`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_160x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_168x128`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_168x192`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_168x256`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_168x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_16x128`|12.6| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_16x16`|10.1| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_16x192`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_16x256`|12.6| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_16x32`|10.1| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_16x320`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_16x384`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_16x448`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_16x512`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_16x576`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_16x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_16x640`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_16x704`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_16x768`|12.6| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_16x8`|10.1| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_176x128`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_176x192`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_176x256`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_176x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_184x128`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_184x192`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_184x256`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_184x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_192x104`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_192x112`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_192x120`|12.6| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_192x128`|11.3| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_192x136`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_192x144`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_192x152`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_192x16`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_192x160`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_192x168`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_192x176`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_192x184`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_192x192`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_192x200`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_192x208`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_192x216`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_192x224`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_192x232`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_192x24`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_192x240`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_192x248`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_192x256`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_192x264`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_192x272`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_192x280`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_192x288`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_192x296`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_192x304`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_192x312`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_192x32`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_192x320`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_192x328`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_192x336`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_192x40`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_192x48`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_192x56`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_192x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_192x72`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_192x8`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_192x80`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_192x88`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_192x96`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_200x128`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_200x192`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_200x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_208x128`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_208x192`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_208x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_216x128`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_216x192`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_216x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_224x128`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_224x192`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_224x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_232x128`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_232x192`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_232x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_240x128`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_240x192`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_240x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_248x128`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_248x192`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_248x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_24x128`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_24x192`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_24x256`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_24x320`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_24x384`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_24x448`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_24x512`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_24x576`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_24x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_24x640`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_24x704`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_24x768`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_256x104`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_256x112`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_256x120`|12.6| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_256x128`|10.1| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_256x136`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_256x144`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_256x152`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_256x16`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_256x160`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_256x168`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_256x176`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_256x184`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_256x192`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_256x200`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_256x208`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_256x216`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_256x224`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_256x232`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_256x24`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_256x240`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_256x248`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_256x256`|12.6| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_256x32`|12.1| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_256x40`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_256x48`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_256x56`|12.6| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_256x64`|10.1| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_256x72`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_256x8`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_256x80`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_256x88`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_256x96`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_264x128`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_264x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_272x128`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_272x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_280x128`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_280x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_288x128`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_288x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_296x128`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_296x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_304x128`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_304x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_312x128`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_312x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_320x104`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_320x112`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_320x120`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_320x128`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_320x136`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_320x144`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_320x152`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_320x16`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_320x160`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_320x168`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_320x176`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_320x184`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_320x192`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_320x200`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_320x24`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_320x32`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_320x40`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_320x48`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_320x56`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_320x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_320x72`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_320x8`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_320x80`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_320x88`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_320x96`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_328x128`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_328x64`|12.6| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_32x128`|10.1| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_32x16`|10.1| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_32x192`|12.6| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_32x256`|12.1| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_32x32`|10.1| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_32x320`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_32x384`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_32x448`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_32x512`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_32x576`|12.6| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_32x64`|10.1| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_32x640`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_32x704`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_32x768`|12.6| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_32x8`|10.1| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_336x128`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_336x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_344x128`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_344x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_352x128`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_352x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_360x128`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_360x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_368x128`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_368x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_376x128`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_376x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_384x104`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_384x112`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_384x120`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_384x128`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_384x136`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_384x144`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_384x152`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_384x16`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_384x160`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_384x168`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_384x24`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_384x32`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_384x40`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_384x48`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_384x56`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_384x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_384x72`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_384x8`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_384x80`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_384x88`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_384x96`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_392x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_400x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_408x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_40x128`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_40x192`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_40x256`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_40x320`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_40x384`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_40x448`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_40x512`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_40x576`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_40x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_40x640`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_40x704`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_40x768`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_416x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_424x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_432x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_440x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_448x104`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_448x112`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_448x120`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_448x128`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_448x136`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_448x144`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_448x16`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_448x24`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_448x32`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_448x40`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_448x48`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_448x56`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_448x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_448x72`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_448x8`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_448x80`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_448x88`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_448x96`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_456x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_464x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_472x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_480x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_488x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_48x128`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_48x192`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_48x256`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_48x320`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_48x384`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_48x448`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_48x512`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_48x576`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_48x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_48x640`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_48x704`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_48x768`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_496x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_504x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_512x104`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_512x112`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_512x120`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_512x128`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_512x16`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_512x24`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_512x32`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_512x40`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_512x48`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_512x56`|12.6| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_512x64`|10.1| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_512x72`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_512x8`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_512x80`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_512x88`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_512x96`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_520x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_528x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_536x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_544x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_552x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_560x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_568x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_56x128`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_56x192`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_56x256`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_56x320`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_56x384`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_56x448`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_56x512`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_56x576`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_56x640`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_56x704`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_56x768`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_576x104`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_576x112`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_576x16`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_576x24`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_576x32`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_576x40`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_576x48`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_576x56`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_576x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_576x72`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_576x8`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_576x80`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_576x88`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_576x96`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_584x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_592x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_600x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_608x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_616x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_624x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_632x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_640x16`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_640x24`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_640x32`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_640x40`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_640x48`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_640x56`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_640x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_640x72`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_640x8`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_640x80`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_640x88`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_640x96`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_648x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x104`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x112`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x120`|12.6| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_64x128`|10.1| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x136`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x144`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x152`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x16`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x160`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x168`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x176`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x184`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x192`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x200`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x208`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x216`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x224`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x232`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x24`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x240`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x248`|12.6| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_64x256`|10.1| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x264`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x272`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x280`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x288`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x296`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x304`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x312`|12.6| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_64x32`|10.1| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x320`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x328`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x336`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x344`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x352`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x360`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x368`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x376`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x384`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x392`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x40`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x400`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x408`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x416`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x424`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x432`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x440`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x448`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x456`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x464`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x472`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x48`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x480`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x488`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x496`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x504`|12.6| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_64x512`|10.1| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x520`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x528`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x536`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x544`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x552`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x56`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x560`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x568`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x576`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x584`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x592`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x600`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x608`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x616`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x624`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x632`|12.6| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_64x64`|10.1| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x640`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x648`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x656`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x664`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x672`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x680`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x688`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x696`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x704`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x712`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x72`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x720`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x728`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x736`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x744`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x752`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x760`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x768`|12.6| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_64x8`|10.1| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x80`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_64x88`|12.6| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_64x96`|11.3| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_656x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_664x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_672x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_680x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_688x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_696x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_704x16`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_704x24`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_704x32`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_704x40`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_704x48`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_704x56`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_704x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_704x72`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_704x8`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_704x80`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_704x88`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_712x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_720x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_728x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_72x128`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_72x192`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_72x256`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_72x320`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_72x384`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_72x448`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_72x512`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_72x576`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_72x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_72x640`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_736x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_744x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_752x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_760x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_768x16`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_768x24`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_768x32`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_768x40`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_768x48`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_768x56`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_768x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_768x72`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_768x8`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_768x80`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_80x128`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_80x192`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_80x256`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_80x320`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_80x384`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_80x448`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_80x512`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_80x576`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_80x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_88x128`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_88x192`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_88x256`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_88x320`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_88x384`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_88x448`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_88x512`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_88x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_8x128`|12.6| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_8x16`|10.1| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_8x192`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_8x256`|12.6| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_8x32`|10.1| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_8x320`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_8x384`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_8x448`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_8x512`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_8x576`|12.6| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_8x64`|10.1| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_8x640`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_8x704`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_8x768`|12.6| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_8x8`|10.1| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_96x128`|11.3| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_96x192`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_96x256`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_96x320`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_96x384`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_96x448`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_96x512`|12.6| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_96x64`|11.3| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_END`|10.1| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_UNDEFINED`|10.1| | | | | | | | | |
@@ -418,6 +1012,10 @@
 |`CUBLASLT_SEARCH_RESERVED_03`|11.0| | | | | | | | | |
 |`CUBLASLT_SEARCH_RESERVED_04`|11.0| | | | | | | | | |
 |`CUBLASLT_SEARCH_RESERVED_05`|11.0| | | | | | | | | |
+|`CUBLASLT_SEARCH_RESERVED_06`|12.6| | | | | | | | | |
+|`CUBLASLT_SEARCH_RESERVED_07`|12.6| | | | | | | | | |
+|`CUBLASLT_SEARCH_RESERVED_08`|12.6| | | | | | | | | |
+|`CUBLASLT_SEARCH_RESERVED_09`|12.6| | | | | | | | | |
 |`cublasLtClusterShape_t`|11.8| | | | | | | | | |
 |`cublasLtContext`|10.1| | | | | | | | | |
 |`cublasLtEpilogue_t`|10.1| | | | | | | | | |
@@ -731,13 +1329,13 @@
 |`cublasCgemv_v2`| | | | |`rocblas_cgemv`|1.5.0| | | | |
 |`cublasCgemv_v2_64`|12.0| | | |`rocblas_cgemv_64`|6.2.0| | | | |
 |`cublasCgerc`| | | | |`rocblas_cgerc`|3.5.0| | | | |
-|`cublasCgerc_64`|12.0| | | | | | | | | |
+|`cublasCgerc_64`|12.0| | | |`rocblas_cgerc_64`|6.2.0| | | | |
 |`cublasCgerc_v2`| | | | |`rocblas_cgerc`|3.5.0| | | | |
-|`cublasCgerc_v2_64`|12.0| | | | | | | | | |
+|`cublasCgerc_v2_64`|12.0| | | |`rocblas_cgerc_64`|6.2.0| | | | |
 |`cublasCgeru`| | | | |`rocblas_cgeru`|3.5.0| | | | |
-|`cublasCgeru_64`|12.0| | | | | | | | | |
+|`cublasCgeru_64`|12.0| | | |`rocblas_cgeru_64`|6.2.0| | | | |
 |`cublasCgeru_v2`| | | | |`rocblas_cgeru`|3.5.0| | | | |
-|`cublasCgeru_v2_64`|12.0| | | | | | | | | |
+|`cublasCgeru_v2_64`|12.0| | | |`rocblas_cgeru_64`|6.2.0| | | | |
 |`cublasChbmv`| | | | |`rocblas_chbmv`|3.5.0| | | | |
 |`cublasChbmv_64`|12.0| | | |`rocblas_chbmv_64`|6.2.0| | | | |
 |`cublasChbmv_v2`| | | | |`rocblas_chbmv`|3.5.0| | | | |
@@ -791,9 +1389,9 @@
 |`cublasCtpmv_v2`| | | | |`rocblas_ctpmv`|3.5.0| | | | |
 |`cublasCtpmv_v2_64`|12.0| | | |`rocblas_ctpmv_64`|6.2.0| | | | |
 |`cublasCtpsv`| | | | |`rocblas_ctpsv`|3.5.0| | | | |
-|`cublasCtpsv_64`|12.0| | | | | | | | | |
+|`cublasCtpsv_64`|12.0| | | |`rocblas_ctpsv_64`|6.2.0| | | | |
 |`cublasCtpsv_v2`| | | | |`rocblas_ctpsv`|3.5.0| | | | |
-|`cublasCtpsv_v2_64`|12.0| | | | | | | | | |
+|`cublasCtpsv_v2_64`|12.0| | | |`rocblas_ctpsv_64`|6.2.0| | | | |
 |`cublasCtrmv`| | | | |`rocblas_ctrmv`|3.5.0| | | | |
 |`cublasCtrmv_64`|12.0| | | |`rocblas_ctrmv_64`|6.2.0| | | | |
 |`cublasCtrmv_v2`| | | | |`rocblas_ctrmv`|3.5.0| | | | |
@@ -811,9 +1409,9 @@
 |`cublasDgemv_v2`| | | | |`rocblas_dgemv`|1.5.0| | | | |
 |`cublasDgemv_v2_64`|12.0| | | |`rocblas_dgemv_64`|6.2.0| | | | |
 |`cublasDger`| | | | |`rocblas_dger`|1.5.0| | | | |
-|`cublasDger_64`|12.0| | | | | | | | | |
+|`cublasDger_64`|12.0| | | |`rocblas_dger_64`|6.2.0| | | | |
 |`cublasDger_v2`| | | | |`rocblas_dger`|1.5.0| | | | |
-|`cublasDger_v2_64`|12.0| | | | | | | | | |
+|`cublasDger_v2_64`|12.0| | | |`rocblas_dger_64`|6.2.0| | | | |
 |`cublasDsbmv`| | | | |`rocblas_dsbmv`|3.5.0| | | | |
 |`cublasDsbmv_64`|12.0| | | |`rocblas_dsbmv_64`|6.2.0| | | | |
 |`cublasDsbmv_v2`| | | | |`rocblas_dsbmv`|3.5.0| | | | |
@@ -855,9 +1453,9 @@
 |`cublasDtpmv_v2`| | | | |`rocblas_dtpmv`|3.5.0| | | | |
 |`cublasDtpmv_v2_64`|12.0| | | |`rocblas_dtpmv_64`|6.2.0| | | | |
 |`cublasDtpsv`| | | | |`rocblas_dtpsv`|3.5.0| | | | |
-|`cublasDtpsv_64`|12.0| | | | | | | | | |
+|`cublasDtpsv_64`|12.0| | | |`rocblas_dtpsv_64`|6.2.0| | | | |
 |`cublasDtpsv_v2`| | | | |`rocblas_dtpsv`|3.5.0| | | | |
-|`cublasDtpsv_v2_64`|12.0| | | | | | | | | |
+|`cublasDtpsv_v2_64`|12.0| | | |`rocblas_dtpsv_64`|6.2.0| | | | |
 |`cublasDtrmv`| | | | |`rocblas_dtrmv`|3.5.0| | | | |
 |`cublasDtrmv_64`|12.0| | | |`rocblas_dtrmv_64`|6.2.0| | | | |
 |`cublasDtrmv_v2`| | | | |`rocblas_dtrmv`|3.5.0| | | | |
@@ -875,9 +1473,9 @@
 |`cublasSgemv_v2`| | | | |`rocblas_sgemv`|1.5.0| | | | |
 |`cublasSgemv_v2_64`|12.0| | | |`rocblas_sgemv_64`|6.2.0| | | | |
 |`cublasSger`| | | | |`rocblas_sger`|1.5.0| | | | |
-|`cublasSger_64`|12.0| | | | | | | | | |
+|`cublasSger_64`|12.0| | | |`rocblas_sger_64`|6.2.0| | | | |
 |`cublasSger_v2`| | | | |`rocblas_sger`|1.5.0| | | | |
-|`cublasSger_v2_64`|12.0| | | | | | | | | |
+|`cublasSger_v2_64`|12.0| | | |`rocblas_sger_64`|6.2.0| | | | |
 |`cublasSsbmv`| | | | |`rocblas_ssbmv`|3.5.0| | | | |
 |`cublasSsbmv_64`|12.0| | | |`rocblas_ssbmv_64`|6.2.0| | | | |
 |`cublasSsbmv_v2`| | | | |`rocblas_ssbmv`|3.5.0| | | | |
@@ -919,9 +1517,9 @@
 |`cublasStpmv_v2`| | | | |`rocblas_stpmv`|3.5.0| | | | |
 |`cublasStpmv_v2_64`|12.0| | | |`rocblas_stpmv_64`|6.2.0| | | | |
 |`cublasStpsv`| | | | |`rocblas_stpsv`|3.5.0| | | | |
-|`cublasStpsv_64`|12.0| | | | | | | | | |
+|`cublasStpsv_64`|12.0| | | |`rocblas_stpsv_64`|6.2.0| | | | |
 |`cublasStpsv_v2`| | | | |`rocblas_stpsv`|3.5.0| | | | |
-|`cublasStpsv_v2_64`|12.0| | | | | | | | | |
+|`cublasStpsv_v2_64`|12.0| | | |`rocblas_stpsv_64`|6.2.0| | | | |
 |`cublasStrmv`| | | | |`rocblas_strmv`|3.5.0| | | | |
 |`cublasStrmv_64`|12.0| | | |`rocblas_strmv_64`|6.2.0| | | | |
 |`cublasStrmv_v2`| | | | |`rocblas_strmv`|3.5.0| | | | |
@@ -939,13 +1537,13 @@
 |`cublasZgemv_v2`| | | | |`rocblas_zgemv`|1.5.0| | | | |
 |`cublasZgemv_v2_64`|12.0| | | |`rocblas_zgemv_64`|6.2.0| | | | |
 |`cublasZgerc`| | | | |`rocblas_zgerc`|3.5.0| | | | |
-|`cublasZgerc_64`|12.0| | | | | | | | | |
+|`cublasZgerc_64`|12.0| | | |`rocblas_zgerc_64`|6.2.0| | | | |
 |`cublasZgerc_v2`| | | | |`rocblas_zgerc`|3.5.0| | | | |
-|`cublasZgerc_v2_64`|12.0| | | | | | | | | |
+|`cublasZgerc_v2_64`|12.0| | | |`rocblas_zgerc_64`|6.2.0| | | | |
 |`cublasZgeru`| | | | |`rocblas_zgeru`|3.5.0| | | | |
-|`cublasZgeru_64`|12.0| | | | | | | | | |
+|`cublasZgeru_64`|12.0| | | |`rocblas_zgeru_64`|6.2.0| | | | |
 |`cublasZgeru_v2`| | | | |`rocblas_zgeru`|3.5.0| | | | |
-|`cublasZgeru_v2_64`|12.0| | | | | | | | | |
+|`cublasZgeru_v2_64`|12.0| | | |`rocblas_zgeru_64`|6.2.0| | | | |
 |`cublasZhbmv`| | | | |`rocblas_zhbmv`|3.5.0| | | | |
 |`cublasZhbmv_64`|12.0| | | |`rocblas_zhbmv_64`|6.2.0| | | | |
 |`cublasZhbmv_v2`| | | | |`rocblas_zhbmv`|3.5.0| | | | |
@@ -999,9 +1597,9 @@
 |`cublasZtpmv_v2`| | | | |`rocblas_ztpmv`|3.5.0| | | | |
 |`cublasZtpmv_v2_64`|12.0| | | |`rocblas_ztpmv_64`|6.2.0| | | | |
 |`cublasZtpsv`| | | | |`rocblas_ztpsv`|3.5.0| | | | |
-|`cublasZtpsv_64`|12.0| | | | | | | | | |
+|`cublasZtpsv_64`|12.0| | | |`rocblas_ztpsv_64`|6.2.0| | | | |
 |`cublasZtpsv_v2`| | | | |`rocblas_ztpsv`|3.5.0| | | | |
-|`cublasZtpsv_v2_64`|12.0| | | | | | | | | |
+|`cublasZtpsv_v2_64`|12.0| | | |`rocblas_ztpsv_64`|6.2.0| | | | |
 |`cublasZtrmv`| | | | |`rocblas_ztrmv`|3.5.0| | | | |
 |`cublasZtrmv_64`|12.0| | | |`rocblas_ztrmv_64`|6.2.0| | | | |
 |`cublasZtrmv_v2`| | | | |`rocblas_ztrmv`|3.5.0| | | | |
@@ -1025,88 +1623,88 @@
 |`cublasCgemm3mStridedBatched_64`|12.0| | | | | | | | | |
 |`cublasCgemm3m_64`|12.0| | | | | | | | | |
 |`cublasCgemmBatched`| | | | |`rocblas_cgemm_batched`|3.5.0| | | | |
-|`cublasCgemmBatched_64`|12.0| | | | | | | | | |
+|`cublasCgemmBatched_64`|12.0| | | |`rocblas_cgemm_batched_64`|6.3.0| | | |6.3.0|
 |`cublasCgemmStridedBatched`|8.0| | | |`rocblas_cgemm_strided_batched`|1.5.0| | | | |
-|`cublasCgemmStridedBatched_64`|12.0| | | | | | | | | |
-|`cublasCgemm_64`|12.0| | | | | | | | | |
+|`cublasCgemmStridedBatched_64`|12.0| | | |`rocblas_cgemm_strided_batched_64`|6.3.0| | | |6.3.0|
+|`cublasCgemm_64`|12.0| | | |`rocblas_cgemm_64`|6.3.0| | | |6.3.0|
 |`cublasCgemm_v2`| | | | |`rocblas_cgemm`|1.5.0| | | | |
-|`cublasCgemm_v2_64`|12.0| | | | | | | | | |
+|`cublasCgemm_v2_64`|12.0| | | |`rocblas_cgemm_64`|6.3.0| | | |6.3.0|
 |`cublasCgemvBatched`|11.6| | | |`rocblas_cgemv_batched`|3.5.0| | | | |
 |`cublasCgemvBatched_64`|12.0| | | |`rocblas_cgemv_batched_64`|6.2.0| | | | |
 |`cublasCgemvStridedBatched`|11.6| | | |`rocblas_cgemv_strided_batched`|3.5.0| | | | |
 |`cublasCgemvStridedBatched_64`|12.0| | | |`rocblas_cgemv_strided_batched_64`|6.2.0| | | | |
 |`cublasChemm`| | | | |`rocblas_chemm`|3.5.0| | | | |
-|`cublasChemm_64`|12.0| | | | | | | | | |
+|`cublasChemm_64`|12.0| | | |`rocblas_chemm_64`|6.3.0| | | |6.3.0|
 |`cublasChemm_v2`| | | | |`rocblas_chemm`|3.5.0| | | | |
-|`cublasChemm_v2_64`|12.0| | | | | | | | | |
+|`cublasChemm_v2_64`|12.0| | | |`rocblas_chemm_64`|6.3.0| | | |6.3.0|
 |`cublasCher2k`| | | | |`rocblas_cher2k`|3.5.0| | | | |
-|`cublasCher2k_64`|12.0| | | | | | | | | |
+|`cublasCher2k_64`|12.0| | | |`rocblas_cher2k_64`|6.3.0| | | |6.3.0|
 |`cublasCher2k_v2`| | | | |`rocblas_cher2k`|3.5.0| | | | |
-|`cublasCher2k_v2_64`|12.0| | | | | | | | | |
+|`cublasCher2k_v2_64`|12.0| | | |`rocblas_cher2k_64`|6.3.0| | | |6.3.0|
 |`cublasCherk`| | | | |`rocblas_cherk`|3.5.0| | | | |
-|`cublasCherk_64`|12.0| | | | | | | | | |
+|`cublasCherk_64`|12.0| | | |`rocblas_cherk_64`|6.3.0| | | |6.3.0|
 |`cublasCherk_v2`| | | | |`rocblas_cherk`|3.5.0| | | | |
-|`cublasCherk_v2_64`|12.0| | | | | | | | | |
+|`cublasCherk_v2_64`|12.0| | | |`rocblas_cherk_64`|6.3.0| | | |6.3.0|
 |`cublasCherkx`| | | | |`rocblas_cherkx`|3.5.0| | | | |
-|`cublasCherkx_64`|12.0| | | | | | | | | |
+|`cublasCherkx_64`|12.0| | | |`rocblas_cherkx_64`|6.3.0| | | |6.3.0|
 |`cublasCsymm`| | | | |`rocblas_csymm`|3.5.0| | | | |
-|`cublasCsymm_64`|12.0| | | | | | | | | |
+|`cublasCsymm_64`|12.0| | | |`rocblas_csymm_64`|6.3.0| | | |6.3.0|
 |`cublasCsymm_v2`| | | | |`rocblas_csymm`|3.5.0| | | | |
-|`cublasCsymm_v2_64`|12.0| | | | | | | | | |
+|`cublasCsymm_v2_64`|12.0| | | |`rocblas_csymm_64`|6.3.0| | | |6.3.0|
 |`cublasCsyr2k`| | | | |`rocblas_csyr2k`|3.5.0| | | | |
-|`cublasCsyr2k_64`|12.0| | | | | | | | | |
+|`cublasCsyr2k_64`|12.0| | | |`rocblas_csyr2k_64`|6.3.0| | | |6.3.0|
 |`cublasCsyr2k_v2`| | | | |`rocblas_csyr2k`|3.5.0| | | | |
-|`cublasCsyr2k_v2_64`|12.0| | | | | | | | | |
+|`cublasCsyr2k_v2_64`|12.0| | | |`rocblas_csyr2k_64`|6.3.0| | | |6.3.0|
 |`cublasCsyrk`| | | | |`rocblas_csyrk`|3.5.0| | | | |
-|`cublasCsyrk_64`|12.0| | | | | | | | | |
+|`cublasCsyrk_64`|12.0| | | |`rocblas_csyrk_64`|6.3.0| | | |6.3.0|
 |`cublasCsyrk_v2`| | | | |`rocblas_csyrk`|3.5.0| | | | |
-|`cublasCsyrk_v2_64`|12.0| | | | | | | | | |
+|`cublasCsyrk_v2_64`|12.0| | | |`rocblas_csyrk_64`|6.3.0| | | |6.3.0|
 |`cublasCsyrkx`| | | | |`rocblas_csyrkx`|3.5.0| | | | |
-|`cublasCsyrkx_64`|12.0| | | | | | | | | |
+|`cublasCsyrkx_64`|12.0| | | |`rocblas_csyrkx_64`|6.3.0| | | |6.3.0|
 |`cublasCtrmm`| | | | |`rocblas_ctrmm`|3.5.0| |6.0.0| | |
-|`cublasCtrmm_64`|12.0| | | | | | | | | |
+|`cublasCtrmm_64`|12.0| | | |`rocblas_ctrmm_64`|6.3.0| | | |6.3.0|
 |`cublasCtrmm_v2`| | | | |`rocblas_ctrmm`|3.5.0| |6.0.0| | |
-|`cublasCtrmm_v2_64`|12.0| | | | | | | | | |
+|`cublasCtrmm_v2_64`|12.0| | | |`rocblas_ctrmm_64`|6.3.0| | | |6.3.0|
 |`cublasCtrsm`| | | | |`rocblas_ctrsm`|3.5.0| | | | |
-|`cublasCtrsm_64`|12.0| | | | | | | | | |
+|`cublasCtrsm_64`|12.0| | | |`rocblas_ctrsm_64`|6.2.0| | | | |
 |`cublasCtrsm_v2`| | | | |`rocblas_ctrsm`|3.5.0| | | | |
-|`cublasCtrsm_v2_64`|12.0| | | | | | | | | |
+|`cublasCtrsm_v2_64`|12.0| | | |`rocblas_ctrsm_64`|6.2.0| | | | |
 |`cublasDgemm`| | | | |`rocblas_dgemm`|1.5.0| | | | |
 |`cublasDgemmBatched`| | | | |`rocblas_dgemm_batched`|3.5.0| | | | |
-|`cublasDgemmBatched_64`|12.0| | | | | | | | | |
+|`cublasDgemmBatched_64`|12.0| | | |`rocblas_dgemm_batched_64`|6.3.0| | | |6.3.0|
 |`cublasDgemmGroupedBatched`|12.4| | | | | | | | | |
 |`cublasDgemmGroupedBatched_64`|12.4| | | | | | | | | |
 |`cublasDgemmStridedBatched`|8.0| | | |`rocblas_dgemm_strided_batched`|1.5.0| | | | |
-|`cublasDgemmStridedBatched_64`|12.0| | | | | | | | | |
-|`cublasDgemm_64`|12.0| | | | | | | | | |
+|`cublasDgemmStridedBatched_64`|12.0| | | |`rocblas_dgemm_strided_batched_64`|6.3.0| | | |6.3.0|
+|`cublasDgemm_64`|12.0| | | |`rocblas_dgemm_64`|6.3.0| | | |6.3.0|
 |`cublasDgemm_v2`| | | | |`rocblas_dgemm`|1.5.0| | | | |
-|`cublasDgemm_v2_64`|12.0| | | | | | | | | |
+|`cublasDgemm_v2_64`|12.0| | | |`rocblas_dgemm_64`|6.3.0| | | |6.3.0|
 |`cublasDgemvBatched`|11.6| | | |`rocblas_dgemv_batched`|3.5.0| | | | |
 |`cublasDgemvBatched_64`|12.0| | | |`rocblas_dgemv_batched_64`|6.2.0| | | | |
 |`cublasDgemvStridedBatched`|11.6| | | |`rocblas_dgemv_strided_batched`|3.5.0| | | | |
 |`cublasDgemvStridedBatched_64`|12.0| | | |`rocblas_dgemv_strided_batched_64`|6.2.0| | | | |
 |`cublasDsymm`| | | | |`rocblas_dsymm`|3.5.0| | | | |
-|`cublasDsymm_64`|12.0| | | | | | | | | |
+|`cublasDsymm_64`|12.0| | | |`rocblas_dsymm_64`|6.3.0| | | |6.3.0|
 |`cublasDsymm_v2`| | | | |`rocblas_dsymm`|3.5.0| | | | |
-|`cublasDsymm_v2_64`|12.0| | | | | | | | | |
+|`cublasDsymm_v2_64`|12.0| | | |`rocblas_dsymm_64`|6.3.0| | | |6.3.0|
 |`cublasDsyr2k`| | | | |`rocblas_dsyr2k`|3.5.0| | | | |
-|`cublasDsyr2k_64`|12.0| | | | | | | | | |
+|`cublasDsyr2k_64`|12.0| | | |`rocblas_dsyr2k_64`|6.3.0| | | |6.3.0|
 |`cublasDsyr2k_v2`| | | | |`rocblas_dsyr2k`|3.5.0| | | | |
-|`cublasDsyr2k_v2_64`|12.0| | | | | | | | | |
+|`cublasDsyr2k_v2_64`|12.0| | | |`rocblas_dsyr2k_64`|6.3.0| | | |6.3.0|
 |`cublasDsyrk`| | | | |`rocblas_dsyrk`|3.5.0| | | | |
-|`cublasDsyrk_64`|12.0| | | | | | | | | |
+|`cublasDsyrk_64`|12.0| | | |`rocblas_dsyrk_64`|6.3.0| | | |6.3.0|
 |`cublasDsyrk_v2`| | | | |`rocblas_dsyrk`|3.5.0| | | | |
-|`cublasDsyrk_v2_64`|12.0| | | | | | | | | |
+|`cublasDsyrk_v2_64`|12.0| | | |`rocblas_dsyrk_64`|6.3.0| | | |6.3.0|
 |`cublasDsyrkx`| | | | |`rocblas_dsyrkx`|3.5.0| | | | |
-|`cublasDsyrkx_64`|12.0| | | | | | | | | |
+|`cublasDsyrkx_64`|12.0| | | |`rocblas_dsyrkx_64`|6.3.0| | | |6.3.0|
 |`cublasDtrmm`| | | | |`rocblas_dtrmm`|3.5.0| |6.0.0| | |
-|`cublasDtrmm_64`|12.0| | | | | | | | | |
+|`cublasDtrmm_64`|12.0| | | |`rocblas_dtrmm_64`|6.3.0| | | |6.3.0|
 |`cublasDtrmm_v2`| | | | |`rocblas_dtrmm`|3.5.0| |6.0.0| | |
-|`cublasDtrmm_v2_64`|12.0| | | | | | | | | |
+|`cublasDtrmm_v2_64`|12.0| | | |`rocblas_dtrmm_64`|6.3.0| | | |6.3.0|
 |`cublasDtrsm`| | | | |`rocblas_dtrsm`|1.5.0| | | | |
-|`cublasDtrsm_64`|12.0| | | | | | | | | |
+|`cublasDtrsm_64`|12.0| | | |`rocblas_dtrsm_64`|6.2.0| | | | |
 |`cublasDtrsm_v2`| | | | |`rocblas_dtrsm`|1.5.0| | | | |
-|`cublasDtrsm_v2_64`|12.0| | | | | | | | | |
+|`cublasDtrsm_v2_64`|12.0| | | |`rocblas_dtrsm_64`|6.2.0| | | | |
 |`cublasGemmGroupedBatchedEx`|12.5| | | | | | | | | |
 |`cublasGemmGroupedBatchedEx_64`|12.5| | | | | | | | | |
 |`cublasHSHgemvBatched`|11.6| | | |`rocblas_hshgemv_batched`|6.0.0| | | | |
@@ -1119,46 +1717,46 @@
 |`cublasHSSgemvStridedBatched_64`|12.0| | | |`rocblas_hssgemv_strided_batched_64`|6.2.0| | | | |
 |`cublasHgemm`|7.5| | | |`rocblas_hgemm`|1.5.0| | | | |
 |`cublasHgemmBatched`|9.0| | | |`rocblas_hgemm_batched`|3.5.0| | | | |
-|`cublasHgemmBatched_64`|12.0| | | | | | | | | |
+|`cublasHgemmBatched_64`|12.0| | | |`rocblas_hgemm_batched_64`|6.3.0| | | |6.3.0|
 |`cublasHgemmStridedBatched`|8.0| | | |`rocblas_hgemm_strided_batched`|1.5.0| | | | |
-|`cublasHgemmStridedBatched_64`|12.0| | | | | | | | | |
-|`cublasHgemm_64`|12.0| | | | | | | | | |
+|`cublasHgemmStridedBatched_64`|12.0| | | |`rocblas_hgemm_strided_batched_64`|6.3.0| | | |6.3.0|
+|`cublasHgemm_64`|12.0| | | |`rocblas_hgemm_64`|6.3.0| | | |6.3.0|
 |`cublasSgemm`| | | | |`rocblas_sgemm`|1.5.0| | | | |
 |`cublasSgemmBatched`| | | | |`rocblas_sgemm_batched`|3.5.0| | | | |
-|`cublasSgemmBatched_64`|12.0| | | | | | | | | |
+|`cublasSgemmBatched_64`|12.0| | | |`rocblas_sgemm_batched_64`|6.3.0| | | |6.3.0|
 |`cublasSgemmGroupedBatched`|12.4| | | | | | | | | |
 |`cublasSgemmGroupedBatched_64`|12.4| | | | | | | | | |
 |`cublasSgemmStridedBatched`|8.0| | | |`rocblas_sgemm_strided_batched`|1.5.0| | | | |
-|`cublasSgemmStridedBatched_64`|12.0| | | | | | | | | |
-|`cublasSgemm_64`|12.0| | | | | | | | | |
+|`cublasSgemmStridedBatched_64`|12.0| | | |`rocblas_sgemm_strided_batched_64`|6.3.0| | | |6.3.0|
+|`cublasSgemm_64`|12.0| | | |`rocblas_sgemm_64`|6.3.0| | | |6.3.0|
 |`cublasSgemm_v2`| | | | |`rocblas_sgemm`|1.5.0| | | | |
-|`cublasSgemm_v2_64`|12.0| | | | | | | | | |
+|`cublasSgemm_v2_64`|12.0| | | |`rocblas_sgemm_64`|6.3.0| | | |6.3.0|
 |`cublasSgemvBatched`|11.6| | | |`rocblas_sgemv_batched`|3.5.0| | | | |
 |`cublasSgemvBatched_64`|12.0| | | |`rocblas_sgemv_batched_64`|6.2.0| | | | |
 |`cublasSgemvStridedBatched`|11.6| | | |`rocblas_sgemv_strided_batched`|3.5.0| | | | |
 |`cublasSgemvStridedBatched_64`|12.0| | | |`rocblas_sgemv_strided_batched_64`|6.2.0| | | | |
 |`cublasSsymm`| | | | |`rocblas_ssymm`|3.5.0| | | | |
-|`cublasSsymm_64`|12.0| | | | | | | | | |
+|`cublasSsymm_64`|12.0| | | |`rocblas_ssymm_64`|6.3.0| | | |6.3.0|
 |`cublasSsymm_v2`| | | | |`rocblas_ssymm`|3.5.0| | | | |
-|`cublasSsymm_v2_64`|12.0| | | | | | | | | |
+|`cublasSsymm_v2_64`|12.0| | | |`rocblas_ssymm_64`|6.3.0| | | |6.3.0|
 |`cublasSsyr2k`| | | | |`rocblas_ssyr2k`|3.5.0| | | | |
-|`cublasSsyr2k_64`|12.0| | | | | | | | | |
+|`cublasSsyr2k_64`|12.0| | | |`rocblas_ssyr2k_64`|6.3.0| | | |6.3.0|
 |`cublasSsyr2k_v2`| | | | |`rocblas_ssyr2k`|3.5.0| | | | |
-|`cublasSsyr2k_v2_64`|12.0| | | | | | | | | |
+|`cublasSsyr2k_v2_64`|12.0| | | |`rocblas_ssyr2k_64`|6.3.0| | | |6.3.0|
 |`cublasSsyrk`| | | | |`rocblas_ssyrk`|3.5.0| | | | |
-|`cublasSsyrk_64`|12.0| | | | | | | | | |
+|`cublasSsyrk_64`|12.0| | | |`rocblas_ssyrk_64`|6.3.0| | | |6.3.0|
 |`cublasSsyrk_v2`| | | | |`rocblas_ssyrk`|3.5.0| | | | |
-|`cublasSsyrk_v2_64`|12.0| | | | | | | | | |
+|`cublasSsyrk_v2_64`|12.0| | | |`rocblas_ssyrk_64`|6.3.0| | | |6.3.0|
 |`cublasSsyrkx`| | | | |`rocblas_ssyrkx`|3.5.0| | | | |
-|`cublasSsyrkx_64`|12.0| | | | | | | | | |
+|`cublasSsyrkx_64`|12.0| | | |`rocblas_ssyrkx_64`|6.3.0| | | |6.3.0|
 |`cublasStrmm`| | | | |`rocblas_strmm`|3.5.0| |6.0.0| | |
-|`cublasStrmm_64`|12.0| | | | | | | | | |
+|`cublasStrmm_64`|12.0| | | |`rocblas_strmm_64`|6.3.0| | | |6.3.0|
 |`cublasStrmm_v2`| | | | |`rocblas_strmm`|3.5.0| |6.0.0| | |
-|`cublasStrmm_v2_64`|12.0| | | | | | | | | |
+|`cublasStrmm_v2_64`|12.0| | | |`rocblas_strmm_64`|6.3.0| | | |6.3.0|
 |`cublasStrsm`| | | | |`rocblas_strsm`|1.5.0| | | | |
-|`cublasStrsm_64`|12.0| | | | | | | | | |
+|`cublasStrsm_64`|12.0| | | |`rocblas_strsm_64`|6.2.0| | | | |
 |`cublasStrsm_v2`| | | | |`rocblas_strsm`|1.5.0| | | | |
-|`cublasStrsm_v2_64`|12.0| | | | | | | | | |
+|`cublasStrsm_v2_64`|12.0| | | |`rocblas_strsm_64`|6.2.0| | | | |
 |`cublasTSSgemvBatched`|11.6| | | |`rocblas_tssgemv_batched`|6.0.0| | | | |
 |`cublasTSSgemvBatched_64`|12.0| | | |`rocblas_tssgemv_batched_64`|6.2.0| | | | |
 |`cublasTSSgemvStridedBatched`|11.6| | | |`rocblas_tssgemv_strided_batched`|6.0.0| | | | |
@@ -1171,52 +1769,52 @@
 |`cublasZgemm3m`|8.0| | | | | | | | | |
 |`cublasZgemm3m_64`|12.0| | | | | | | | | |
 |`cublasZgemmBatched`| | | | |`rocblas_zgemm_batched`|3.5.0| | | | |
-|`cublasZgemmBatched_64`|12.0| | | | | | | | | |
+|`cublasZgemmBatched_64`|12.0| | | |`rocblas_zgemm_batched_64`|6.3.0| | | |6.3.0|
 |`cublasZgemmStridedBatched`|8.0| | | |`rocblas_zgemm_strided_batched`|1.5.0| | | | |
-|`cublasZgemmStridedBatched_64`|12.0| | | | | | | | | |
-|`cublasZgemm_64`|12.0| | | | | | | | | |
+|`cublasZgemmStridedBatched_64`|12.0| | | |`rocblas_zgemm_strided_batched_64`|6.3.0| | | |6.3.0|
+|`cublasZgemm_64`|12.0| | | |`rocblas_zgemm_64`|6.3.0| | | |6.3.0|
 |`cublasZgemm_v2`| | | | |`rocblas_zgemm`|1.5.0| | | | |
-|`cublasZgemm_v2_64`|12.0| | | | | | | | | |
+|`cublasZgemm_v2_64`|12.0| | | |`rocblas_zgemm_64`|6.3.0| | | |6.3.0|
 |`cublasZgemvBatched`|11.6| | | |`rocblas_zgemv_batched`|3.5.0| | | | |
 |`cublasZgemvBatched_64`|12.0| | | |`rocblas_zgemv_batched_64`|6.2.0| | | | |
 |`cublasZgemvStridedBatched`|11.6| | | |`rocblas_zgemv_strided_batched`|3.5.0| | | | |
 |`cublasZgemvStridedBatched_64`|12.0| | | |`rocblas_zgemv_strided_batched_64`|6.2.0| | | | |
 |`cublasZhemm`| | | | |`rocblas_zhemm`|3.5.0| | | | |
-|`cublasZhemm_64`|12.0| | | | | | | | | |
+|`cublasZhemm_64`|12.0| | | |`rocblas_zhemm_64`|6.3.0| | | |6.3.0|
 |`cublasZhemm_v2`| | | | |`rocblas_zhemm`|3.5.0| | | | |
-|`cublasZhemm_v2_64`|12.0| | | | | | | | | |
+|`cublasZhemm_v2_64`|12.0| | | |`rocblas_zhemm_64`|6.3.0| | | |6.3.0|
 |`cublasZher2k`| | | | |`rocblas_zher2k`|3.5.0| | | | |
-|`cublasZher2k_64`|12.0| | | | | | | | | |
+|`cublasZher2k_64`|12.0| | | |`rocblas_zher2k_64`|6.3.0| | | |6.3.0|
 |`cublasZher2k_v2`| | | | |`rocblas_zher2k`|3.5.0| | | | |
-|`cublasZher2k_v2_64`|12.0| | | | | | | | | |
+|`cublasZher2k_v2_64`|12.0| | | |`rocblas_zher2k_64`|6.3.0| | | |6.3.0|
 |`cublasZherk`| | | | |`rocblas_zherk`|3.5.0| | | | |
-|`cublasZherk_64`|12.0| | | | | | | | | |
+|`cublasZherk_64`|12.0| | | |`rocblas_zherk_64`|6.3.0| | | |6.3.0|
 |`cublasZherk_v2`| | | | |`rocblas_zherk`|3.5.0| | | | |
-|`cublasZherk_v2_64`|12.0| | | | | | | | | |
+|`cublasZherk_v2_64`|12.0| | | |`rocblas_zherk_64`|6.3.0| | | |6.3.0|
 |`cublasZherkx`| | | | |`rocblas_zherkx`|3.5.0| | | | |
-|`cublasZherkx_64`|12.0| | | | | | | | | |
+|`cublasZherkx_64`|12.0| | | |`rocblas_zherkx_64`|6.3.0| | | |6.3.0|
 |`cublasZsymm`| | | | |`rocblas_zsymm`|3.5.0| | | | |
-|`cublasZsymm_64`|12.0| | | | | | | | | |
+|`cublasZsymm_64`|12.0| | | |`rocblas_zsymm_64`|6.3.0| | | |6.3.0|
 |`cublasZsymm_v2`| | | | |`rocblas_zsymm`|3.5.0| | | | |
-|`cublasZsymm_v2_64`|12.0| | | | | | | | | |
+|`cublasZsymm_v2_64`|12.0| | | |`rocblas_zsymm_64`|6.3.0| | | |6.3.0|
 |`cublasZsyr2k`| | | | |`rocblas_zsyr2k`|3.5.0| | | | |
-|`cublasZsyr2k_64`|12.0| | | | | | | | | |
+|`cublasZsyr2k_64`|12.0| | | |`rocblas_zsyr2k_64`|6.3.0| | | |6.3.0|
 |`cublasZsyr2k_v2`| | | | |`rocblas_zsyr2k`|3.5.0| | | | |
-|`cublasZsyr2k_v2_64`|12.0| | | | | | | | | |
+|`cublasZsyr2k_v2_64`|12.0| | | |`rocblas_zsyr2k_64`|6.3.0| | | |6.3.0|
 |`cublasZsyrk`| | | | |`rocblas_zsyrk`|3.5.0| | | | |
-|`cublasZsyrk_64`|12.0| | | | | | | | | |
+|`cublasZsyrk_64`|12.0| | | |`rocblas_zsyrk_64`|6.3.0| | | |6.3.0|
 |`cublasZsyrk_v2`| | | | |`rocblas_zsyrk`|3.5.0| | | | |
-|`cublasZsyrk_v2_64`|12.0| | | | | | | | | |
+|`cublasZsyrk_v2_64`|12.0| | | |`rocblas_zsyrk_64`|6.3.0| | | |6.3.0|
 |`cublasZsyrkx`| | | | |`rocblas_zsyrkx`|3.5.0| | | | |
-|`cublasZsyrkx_64`|12.0| | | | | | | | | |
+|`cublasZsyrkx_64`|12.0| | | |`rocblas_zsyrkx_64`|6.3.0| | | |6.3.0|
 |`cublasZtrmm`| | | | |`rocblas_ztrmm`|3.5.0| |6.0.0| | |
-|`cublasZtrmm_64`|12.0| | | | | | | | | |
+|`cublasZtrmm_64`|12.0| | | |`rocblas_ztrmm_64`|6.3.0| | | |6.3.0|
 |`cublasZtrmm_v2`| | | | |`rocblas_ztrmm`|3.5.0| |6.0.0| | |
-|`cublasZtrmm_v2_64`|12.0| | | | | | | | | |
+|`cublasZtrmm_v2_64`|12.0| | | |`rocblas_ztrmm_64`|6.3.0| | | |6.3.0|
 |`cublasZtrsm`| | | | |`rocblas_ztrsm`|3.5.0| | | | |
-|`cublasZtrsm_64`|12.0| | | | | | | | | |
+|`cublasZtrsm_64`|12.0| | | |`rocblas_ztrsm_64`|6.2.0| | | | |
 |`cublasZtrsm_v2`| | | | |`rocblas_ztrsm`|3.5.0| | | | |
-|`cublasZtrsm_v2_64`|12.0| | | | | | | | | |
+|`cublasZtrsm_v2_64`|12.0| | | |`rocblas_ztrsm_64`|6.2.0| | | | |
 
 ## **8. BLAS-like Extension**
 
@@ -1227,9 +1825,9 @@
 |`cublasAxpyEx`|8.0| | | |`rocblas_axpy_ex`|3.9.0| | | | |
 |`cublasAxpyEx_64`|12.0| | | |`rocblas_axpy_ex_64`|6.1.0| | | | |
 |`cublasCdgmm`| | | | |`rocblas_cdgmm`|3.5.0| | | | |
-|`cublasCdgmm_64`|12.0| | | | | | | | | |
+|`cublasCdgmm_64`|12.0| | | |`rocblas_cdgmm_64`|6.3.0| | | |6.3.0|
 |`cublasCgeam`| | | | |`rocblas_cgeam`|3.5.0| | | | |
-|`cublasCgeam_64`|12.0| | | | | | | | | |
+|`cublasCgeam_64`|12.0| | | |`rocblas_cgeam_64`|6.3.0| | | |6.3.0|
 |`cublasCgelsBatched`| | | | | | | | | | |
 |`cublasCgemmEx`|8.0| | | | | | | | | |
 |`cublasCgemmEx_64`|12.0| | | | | | | | | |
@@ -1250,12 +1848,12 @@
 |`cublasCsyrkEx_64`|12.0| | | | | | | | | |
 |`cublasCtpttr`| | | | | | | | | | |
 |`cublasCtrsmBatched`| | | | |`rocblas_ctrsm_batched`|3.5.0| | | | |
-|`cublasCtrsmBatched_64`|12.0| | | | | | | | | |
+|`cublasCtrsmBatched_64`|12.0| | | |`rocblas_ctrsm_batched_64`|6.2.0| | | | |
 |`cublasCtrttp`| | | | | | | | | | |
 |`cublasDdgmm`| | | | |`rocblas_ddgmm`|3.5.0| | | | |
-|`cublasDdgmm_64`|12.0| | | | | | | | | |
+|`cublasDdgmm_64`|12.0| | | |`rocblas_ddgmm_64`|6.3.0| | | |6.3.0|
 |`cublasDgeam`| | | | |`rocblas_dgeam`|1.6.4| | | | |
-|`cublasDgeam_64`|12.0| | | | | | | | | |
+|`cublasDgeam_64`|12.0| | | |`rocblas_dgeam_64`|6.3.0| | | |6.3.0|
 |`cublasDgelsBatched`| | | | | | | | | | |
 |`cublasDgeqrfBatched`| | | | | | | | | | |
 |`cublasDgetrfBatched`| | | | | | | | | | |
@@ -1268,13 +1866,13 @@
 |`cublasDotcEx_64`|12.0| | | |`rocblas_dotc_ex_64`|6.1.0| | | | |
 |`cublasDtpttr`| | | | | | | | | | |
 |`cublasDtrsmBatched`| | | | |`rocblas_dtrsm_batched`|3.5.0| | | | |
-|`cublasDtrsmBatched_64`|12.0| | | | | | | | | |
+|`cublasDtrsmBatched_64`|12.0| | | |`rocblas_dtrsm_batched_64`|6.2.0| | | | |
 |`cublasDtrttp`| | | | | | | | | | |
-|`cublasGemmBatchedEx`|9.1| | | |`rocblas_gemm_batched_ex`|3.5.0| | | | |
+|`cublasGemmBatchedEx`|9.1| |11.0| |`rocblas_gemm_batched_ex`|3.5.0| | | | |
 |`cublasGemmBatchedEx_64`|12.0| | | | | | | | | |
-|`cublasGemmEx`|8.0| | | |`rocblas_gemm_ex`|1.8.2| | | | |
+|`cublasGemmEx`|8.0| |11.0| |`rocblas_gemm_ex`|1.8.2| | | | |
 |`cublasGemmEx_64`|12.0| | | | | | | | | |
-|`cublasGemmStridedBatchedEx`|9.1| | | |`rocblas_gemm_strided_batched_ex`|1.9.0| | | | |
+|`cublasGemmStridedBatchedEx`|9.1| |11.0| |`rocblas_gemm_strided_batched_ex`|1.9.0| | | | |
 |`cublasGemmStridedBatchedEx_64`|12.0| | | | | | | | | |
 |`cublasIamaxEx`|10.1| | | | | | | | | |
 |`cublasIamaxEx_64`|12.0| | | | | | | | | |
@@ -1289,9 +1887,9 @@
 |`cublasScalEx`|8.0| | | |`rocblas_scal_ex`|4.0.0| | | | |
 |`cublasScalEx_64`|12.0| | | |`rocblas_scal_ex_64`|6.1.0| | | | |
 |`cublasSdgmm`| | | | |`rocblas_sdgmm`|3.5.0| | | | |
-|`cublasSdgmm_64`|12.0| | | | | | | | | |
+|`cublasSdgmm_64`|12.0| | | |`rocblas_sdgmm_64`|6.3.0| | | |6.3.0|
 |`cublasSgeam`| | | | |`rocblas_sgeam`|1.6.4| | | | |
-|`cublasSgeam_64`|12.0| | | | | | | | | |
+|`cublasSgeam_64`|12.0| | | |`rocblas_sgeam_64`|6.3.0| | | |6.3.0|
 |`cublasSgelsBatched`| | | | | | | | | | |
 |`cublasSgemmEx`|7.5| | | | | | | | | |
 |`cublasSgemmEx_64`|12.0| | | | | | | | | |
@@ -1302,15 +1900,15 @@
 |`cublasSmatinvBatched`| | | | | | | | | | |
 |`cublasStpttr`| | | | | | | | | | |
 |`cublasStrsmBatched`| | | | |`rocblas_strsm_batched`|3.5.0| | | | |
-|`cublasStrsmBatched_64`|12.0| | | | | | | | | |
+|`cublasStrsmBatched_64`|12.0| | | |`rocblas_strsm_batched_64`|6.2.0| | | | |
 |`cublasStrttp`| | | | | | | | | | |
 |`cublasSwapEx`|10.1| | | | | | | | | |
 |`cublasSwapEx_64`|12.0| | | | | | | | | |
 |`cublasUint8gemmBias`|8.0| | | | | | | | | |
 |`cublasZdgmm`| | | | |`rocblas_zdgmm`|3.5.0| | | | |
-|`cublasZdgmm_64`|12.0| | | | | | | | | |
+|`cublasZdgmm_64`|12.0| | | |`rocblas_zdgmm_64`|6.3.0| | | |6.3.0|
 |`cublasZgeam`| | | | |`rocblas_zgeam`|3.5.0| | | | |
-|`cublasZgeam_64`|12.0| | | | | | | | | |
+|`cublasZgeam_64`|12.0| | | |`rocblas_zgeam_64`|6.3.0| | | |6.3.0|
 |`cublasZgelsBatched`| | | | | | | | | | |
 |`cublasZgeqrfBatched`| | | | | | | | | | |
 |`cublasZgetrfBatched`| | | | | | | | | | |
@@ -1319,7 +1917,7 @@
 |`cublasZmatinvBatched`| | | | | | | | | | |
 |`cublasZtpttr`| | | | | | | | | | |
 |`cublasZtrsmBatched`| | | | |`rocblas_ztrsm_batched`|3.5.0| | | | |
-|`cublasZtrsmBatched_64`|12.0| | | | | | | | | |
+|`cublasZtrsmBatched_64`|12.0| | | |`rocblas_ztrsm_batched_64`|6.2.0| | | | |
 |`cublasZtrttp`| | | | | | | | | | |
 
 ## **9. BLASLt Function Reference**
