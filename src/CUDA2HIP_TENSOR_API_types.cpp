@@ -28,8 +28,8 @@ const std::map<llvm::StringRef, hipCounter> CUDA_TENSOR_TYPE_NAME_MAP {
 
 
   // cuTENSOR enums
-    {"cutensorDataType_t",                               {"",                                                         "",           CONV_TYPE, API_TENSOR, 1, HIP_UNSUPPORTED}},
-    {"cutensorOperator_t",                               {"",                                                         "",           CONV_TYPE, API_TENSOR, 1, HIP_UNSUPPORTED}},
+    {"cutensorDataType_t",                               {"",                                                         "",           CONV_TYPE, API_TENSOR, 1, UNSUPPORTED}},
+    {"cutensorOperator_t",                               {"",                                                         "",           CONV_TYPE, API_TENSOR, 1, UNSUPPORTED}},
 
     {"cutensorStatus_t",                                 {"hiptensorStatus_t",                                        "",           CONV_TYPE, API_TENSOR, 1}},
     {"CUTENSOR_STATUS_SUCCESS",                          {"HIPTENSOR_STATUS_SUCCESS",                                 "",           CONV_NUMERIC_LITERAL, API_TENSOR, 1}},

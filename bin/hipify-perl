@@ -6193,6 +6193,7 @@ sub simpleSubstitutions {
     subst("cusolverSp_LOWLEVEL_PREVIEW.h", "hipsolver.h", "include_cuda_main_header");
     subst("cusolver_common.h", "hipsolver.h", "include_cuda_main_header");
     subst("cusparse.h", "hipsparse.h", "include_cuda_main_header");
+    subst("cutensor.h", "hiptensor.h", "include_cuda_main_header");
     subst("nvrtc.h", "hiprtc.h", "include_cuda_main_header");
     subst("cublas_v2.h", "hipblas.h", "include_cuda_main_header_v2");
     subst("cusparse_v2.h", "hipsparse.h", "include_cuda_main_header_v2");
@@ -6782,6 +6783,7 @@ sub simpleSubstitutions {
     subst("cusparseSpVecDescr_t", "hipsparseSpVecDescr_t", "type");
     subst("cusparseSparseToDenseAlg_t", "hipsparseSparseToDenseAlg_t", "type");
     subst("cusparseStatus_t", "hipsparseStatus_t", "type");
+    subst("cutensorStatus_t", "hiptensorStatus_t", "type");
     subst("gesvdjInfo_t", "hipsolverGesvdjInfo_t", "type");
     subst("nvrtcProgram", "hiprtcProgram", "type");
     subst("nvrtcResult", "hiprtcResult", "type");
@@ -7279,6 +7281,21 @@ sub simpleSubstitutions {
     subst("CUSPARSE_STATUS_NOT_SUPPORTED", "HIPSPARSE_STATUS_NOT_SUPPORTED", "numeric_literal");
     subst("CUSPARSE_STATUS_SUCCESS", "HIPSPARSE_STATUS_SUCCESS", "numeric_literal");
     subst("CUSPARSE_STATUS_ZERO_PIVOT", "HIPSPARSE_STATUS_ZERO_PIVOT", "numeric_literal");
+    subst("CUTENSOR_STATUS_ALLOC_FAILED", "HIPTENSOR_STATUS_ALLOC_FAILED", "numeric_literal");
+    subst("CUTENSOR_STATUS_ARCH_MISMATCH", "HIPTENSOR_STATUS_ARCH_MISMATCH", "numeric_literal");
+    subst("CUTENSOR_STATUS_CUBLAS_ERROR", "", "numeric_literal");
+    subst("CUTENSOR_STATUS_CUDA_ERROR", "", "numeric_literal");
+    subst("CUTENSOR_STATUS_EXECUTION_FAILED", "HIPTENSOR_STATUS_EXECUTION_FAILED", "numeric_literal");
+    subst("CUTENSOR_STATUS_INSUFFICIENT_DRIVER", "HIPTENSOR_STATUS_INSUFFICIENT_DRIVER", "numeric_literal");
+    subst("CUTENSOR_STATUS_INSUFFICIENT_WORKSPACE", "HIPTENSOR_STATUS_INSUFFICIENT_WORKSPACE", "numeric_literal");
+    subst("CUTENSOR_STATUS_INTERNAL_ERROR", "HIPTENSOR_STATUS_INTERNAL_ERROR", "numeric_literal");
+    subst("CUTENSOR_STATUS_INVALID_VALUE", "HIPTENSOR_STATUS_INVALID_VALUE", "numeric_literal");
+    subst("CUTENSOR_STATUS_IO_ERROR", "HIPTENSOR_STATUS_IO_ERROR", "numeric_literal");
+    subst("CUTENSOR_STATUS_LICENSE_ERROR", "", "numeric_literal");
+    subst("CUTENSOR_STATUS_MAPPING_ERROR", "", "numeric_literal");
+    subst("CUTENSOR_STATUS_NOT_INITIALIZED", "HIPTENSOR_STATUS_NOT_INITIALIZED", "numeric_literal");
+    subst("CUTENSOR_STATUS_NOT_SUPPORTED", "HIPTENSOR_STATUS_NOT_SUPPORTED", "numeric_literal");
+    subst("CUTENSOR_STATUS_SUCCESS", "HIPTENSOR_STATUS_SUCCESS", "numeric_literal");
     subst("CU_ACCESS_PROPERTY_NORMAL", "hipAccessPropertyNormal", "numeric_literal");
     subst("CU_ACCESS_PROPERTY_PERSISTING", "hipAccessPropertyPersisting", "numeric_literal");
     subst("CU_ACCESS_PROPERTY_STREAMING", "hipAccessPropertyStreaming", "numeric_literal");
@@ -11219,6 +11236,8 @@ sub warnHipOnlyUnsupportedFunctions {
     my $line_num = shift;
     my $k = 0;
     foreach $func (
+        "cutensorOperator_t",
+        "cutensorDataType_t",
         "cusparseZhybsv_solve",
         "cusparseZhybsv_analysis",
         "cusparseZhyb2dense",
@@ -13354,6 +13373,8 @@ sub warnRocOnlyUnsupportedFunctions {
     my $line_num = shift;
     my $k = 0;
     foreach $func (
+        "cutensorOperator_t",
+        "cutensorDataType_t",
         "cusparseZhybsv_solve",
         "cusparseZhybsv_analysis",
         "cusparseZhyb2dense",
