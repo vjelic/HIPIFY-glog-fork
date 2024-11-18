@@ -24,3 +24,15 @@ THE SOFTWARE.
 
 const std::map<llvm::StringRef, hipCounter> CUDA_TENSOR_FUNCTION_MAP {
 };
+
+
+const std::map<llvm::StringRef, cudaAPIversions> CUDA_TENSOR_FUNCTION_VER_MAP {
+};
+
+const std::map<llvm::StringRef, hipAPIversions> HIP_TENSOR_FUNCTION_VER_MAP {
+};
+
+const std::map<unsigned int, llvm::StringRef> CUDA_TENSOR_API_SECTION_MAP {
+  {1, "CUTENSOR Data types"},
+  {2, "CUTENSOR Function Reference"},
+};
