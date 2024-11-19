@@ -543,6 +543,25 @@ std::string Statistics::getCudaVersion(const cudaVersions &ver) {
     case CUDNN_930: return "9.3.0";
     case CUDNN_940: return "9.4.0";
     case CUDNN_950: return "9.5.0";
+    case CUTENSOR_1010: return "1.0.1.0";
+    case CUTENSOR_1100: return "1.1.0.0";
+    case CUTENSOR_1200: return "1.2.0.0";
+    case CUTENSOR_1210: return "1.2.1.0";
+    case CUTENSOR_1220: return "1.2.2.0";
+    case CUTENSOR_1300: return "1.3.0.0";
+    case CUTENSOR_1310: return "1.3.1.0";
+    case CUTENSOR_1320: return "1.3.2.0";
+    case CUTENSOR_1330: return "1.3.3.0";
+    case CUTENSOR_1400: return "1.4.0.0";
+    case CUTENSOR_1500: return "1.5.0.0";
+    case CUTENSOR_1600: return "1.6.0.0";
+    case CUTENSOR_1610: return "1.6.1.0";
+    case CUTENSOR_1620: return "1.6.2.0";
+    case CUTENSOR_1700: return "1.7.0.0";
+    case CUTENSOR_2000: return "2.0.0.0";
+    case CUTENSOR_2010: return "2.0.1.0";
+    case CUTENSOR_2020: return "2.0.2.0";
+    case CUTENSOR_2021: return "2.0.2.1";
   }
   return "";
 }

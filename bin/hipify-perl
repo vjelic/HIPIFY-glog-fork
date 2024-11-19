@@ -6783,6 +6783,7 @@ sub simpleSubstitutions {
     subst("cusparseSpVecDescr_t", "hipsparseSpVecDescr_t", "type");
     subst("cusparseSparseToDenseAlg_t", "hipsparseSparseToDenseAlg_t", "type");
     subst("cusparseStatus_t", "hipsparseStatus_t", "type");
+    subst("cutensorDataType_t", "hiptensorComputeType_t", "type");
     subst("cutensorStatus_t", "hiptensorStatus_t", "type");
     subst("gesvdjInfo_t", "hipsolverGesvdjInfo_t", "type");
     subst("nvrtcProgram", "hiprtcProgram", "type");
@@ -7281,18 +7282,24 @@ sub simpleSubstitutions {
     subst("CUSPARSE_STATUS_NOT_SUPPORTED", "HIPSPARSE_STATUS_NOT_SUPPORTED", "numeric_literal");
     subst("CUSPARSE_STATUS_SUCCESS", "HIPSPARSE_STATUS_SUCCESS", "numeric_literal");
     subst("CUSPARSE_STATUS_ZERO_PIVOT", "HIPSPARSE_STATUS_ZERO_PIVOT", "numeric_literal");
+    subst("CUTENSOR_C_32F", "HIPTENSOR_COMPUTE_C32F", "numeric_literal");
+    subst("CUTENSOR_C_64F", "HIPTENSOR_COMPUTE_C64F", "numeric_literal");
+    subst("CUTENSOR_R_16BF", "HIPTENSOR_COMPUTE_16BF", "numeric_literal");
+    subst("CUTENSOR_R_16F", "HIPTENSOR_COMPUTE_16F", "numeric_literal");
+    subst("CUTENSOR_R_32F", "HIPTENSOR_COMPUTE_32F", "numeric_literal");
+    subst("CUTENSOR_R_32I", "HIPTENSOR_COMPUTE_32I", "numeric_literal");
+    subst("CUTENSOR_R_32U", "HIPTENSOR_COMPUTE_32U", "numeric_literal");
+    subst("CUTENSOR_R_64F", "HIPTENSOR_COMPUTE_64F", "numeric_literal");
+    subst("CUTENSOR_R_8I", "HIPTENSOR_COMPUTE_8I", "numeric_literal");
+    subst("CUTENSOR_R_8U", "HIPTENSOR_COMPUTE_8U", "numeric_literal");
     subst("CUTENSOR_STATUS_ALLOC_FAILED", "HIPTENSOR_STATUS_ALLOC_FAILED", "numeric_literal");
     subst("CUTENSOR_STATUS_ARCH_MISMATCH", "HIPTENSOR_STATUS_ARCH_MISMATCH", "numeric_literal");
-    subst("CUTENSOR_STATUS_CUBLAS_ERROR", "", "numeric_literal");
-    subst("CUTENSOR_STATUS_CUDA_ERROR", "", "numeric_literal");
     subst("CUTENSOR_STATUS_EXECUTION_FAILED", "HIPTENSOR_STATUS_EXECUTION_FAILED", "numeric_literal");
     subst("CUTENSOR_STATUS_INSUFFICIENT_DRIVER", "HIPTENSOR_STATUS_INSUFFICIENT_DRIVER", "numeric_literal");
     subst("CUTENSOR_STATUS_INSUFFICIENT_WORKSPACE", "HIPTENSOR_STATUS_INSUFFICIENT_WORKSPACE", "numeric_literal");
     subst("CUTENSOR_STATUS_INTERNAL_ERROR", "HIPTENSOR_STATUS_INTERNAL_ERROR", "numeric_literal");
     subst("CUTENSOR_STATUS_INVALID_VALUE", "HIPTENSOR_STATUS_INVALID_VALUE", "numeric_literal");
     subst("CUTENSOR_STATUS_IO_ERROR", "HIPTENSOR_STATUS_IO_ERROR", "numeric_literal");
-    subst("CUTENSOR_STATUS_LICENSE_ERROR", "", "numeric_literal");
-    subst("CUTENSOR_STATUS_MAPPING_ERROR", "", "numeric_literal");
     subst("CUTENSOR_STATUS_NOT_INITIALIZED", "HIPTENSOR_STATUS_NOT_INITIALIZED", "numeric_literal");
     subst("CUTENSOR_STATUS_NOT_SUPPORTED", "HIPTENSOR_STATUS_NOT_SUPPORTED", "numeric_literal");
     subst("CUTENSOR_STATUS_SUCCESS", "HIPTENSOR_STATUS_SUCCESS", "numeric_literal");
@@ -11237,7 +11244,6 @@ sub warnHipOnlyUnsupportedFunctions {
     my $k = 0;
     foreach $func (
         "cutensorOperator_t",
-        "cutensorDataType_t",
         "cusparseZhybsv_solve",
         "cusparseZhybsv_analysis",
         "cusparseZhyb2dense",
@@ -11809,6 +11815,28 @@ sub warnHipOnlyUnsupportedFunctions {
         "csrsv2Info",
         "csrsm2Info",
         "__curand_umul",
+        "CUTENSOR_STATUS_MAPPING_ERROR",
+        "CUTENSOR_STATUS_LICENSE_ERROR",
+        "CUTENSOR_STATUS_CUDA_ERROR",
+        "CUTENSOR_STATUS_CUBLAS_ERROR",
+        "CUTENSOR_R_64U",
+        "CUTENSOR_R_64I",
+        "CUTENSOR_R_4U",
+        "CUTENSOR_R_4I",
+        "CUTENSOR_R_16U",
+        "CUTENSOR_R_16I",
+        "CUTENSOR_C_8U",
+        "CUTENSOR_C_8I",
+        "CUTENSOR_C_64U",
+        "CUTENSOR_C_64I",
+        "CUTENSOR_C_4U",
+        "CUTENSOR_C_4I",
+        "CUTENSOR_C_32U",
+        "CUTENSOR_C_32I",
+        "CUTENSOR_C_16U",
+        "CUTENSOR_C_16I",
+        "CUTENSOR_C_16F",
+        "CUTENSOR_C_16BF",
         "CUSPARSE_SPSV_UPDATE_GENERAL",
         "CUSPARSE_SPSV_UPDATE_DIAGONAL",
         "CUSPARSE_SPSM_UPDATE_GENERAL",
@@ -13374,7 +13402,6 @@ sub warnRocOnlyUnsupportedFunctions {
     my $k = 0;
     foreach $func (
         "cutensorOperator_t",
-        "cutensorDataType_t",
         "cusparseZhybsv_solve",
         "cusparseZhybsv_analysis",
         "cusparseZhyb2dense",
@@ -14052,6 +14079,28 @@ sub warnRocOnlyUnsupportedFunctions {
         "csru2csrInfo_t",
         "csru2csrInfo",
         "__curand_umul",
+        "CUTENSOR_STATUS_MAPPING_ERROR",
+        "CUTENSOR_STATUS_LICENSE_ERROR",
+        "CUTENSOR_STATUS_CUDA_ERROR",
+        "CUTENSOR_STATUS_CUBLAS_ERROR",
+        "CUTENSOR_R_64U",
+        "CUTENSOR_R_64I",
+        "CUTENSOR_R_4U",
+        "CUTENSOR_R_4I",
+        "CUTENSOR_R_16U",
+        "CUTENSOR_R_16I",
+        "CUTENSOR_C_8U",
+        "CUTENSOR_C_8I",
+        "CUTENSOR_C_64U",
+        "CUTENSOR_C_64I",
+        "CUTENSOR_C_4U",
+        "CUTENSOR_C_4I",
+        "CUTENSOR_C_32U",
+        "CUTENSOR_C_32I",
+        "CUTENSOR_C_16U",
+        "CUTENSOR_C_16I",
+        "CUTENSOR_C_16F",
+        "CUTENSOR_C_16BF",
         "CUSPARSE_STATUS_MATRIX_TYPE_NOT_SUPPORTED",
         "CUSPARSE_STATUS_MAPPING_ERROR",
         "CUSPARSE_STATUS_INSUFFICIENT_RESOURCES",
