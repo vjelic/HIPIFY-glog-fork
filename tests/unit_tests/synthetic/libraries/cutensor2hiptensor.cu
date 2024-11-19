@@ -43,7 +43,6 @@ int main() {
   cutensorOperator_t TENSOR_OP_IDENTITY = CUTENSOR_OP_IDENTITY;
   cutensorOperator_t TENSOR_OP_SQRT = CUTENSOR_OP_SQRT;
   cutensorOperator_t TENSOR_OP_UNKNOWN = CUTENSOR_OP_UNKNOWN;
-#endif
 
   // CHECK: hiptensorStatus_t tensorStatus_t;
   // CHECK-NEXT hiptensorStatus_t TENSOR_STATUS_SUCCESS = HIPTENSOR_STATUS_SUCCESS;
@@ -69,4 +68,10 @@ int main() {
   cutensorStatus_t TENSOR_STATUS_INSUFFICIENT_WORKSPACE = CUTENSOR_STATUS_INSUFFICIENT_WORKSPACE;
   cutensorStatus_t TENSOR_STATUS_INSUFFICIENT_DRIVER = CUTENSOR_STATUS_INSUFFICIENT_DRIVER;
   cutensorStatus_t TENSOR_STATUS_IO_ERROR = CUTENSOR_STATUS_IO_ERROR;
+
+  // CHECK: hiptensorAlgo_t tensorAlgo_t;
+  // CHECK-NEXT hiptensorAlgo_t TENSOR_ALGO_DEFAULT = HIPTENSOR_ALGO_DEFAULT;
+  cutensorAlgo_t tensorAlgo_t;
+  cutensorAlgo_t TENSOR_ALGO_DEFAULT = CUTENSOR_ALGO_DEFAULT;
+#endif
 }

@@ -106,6 +106,13 @@ const std::map<llvm::StringRef, hipCounter> CUDA_TENSOR_TYPE_NAME_MAP {
   {"CUTENSOR_STATUS_INSUFFICIENT_WORKSPACE",           {"HIPTENSOR_STATUS_INSUFFICIENT_WORKSPACE",                  "",           CONV_NUMERIC_LITERAL, API_TENSOR, 1}},
   {"CUTENSOR_STATUS_INSUFFICIENT_DRIVER",              {"HIPTENSOR_STATUS_INSUFFICIENT_DRIVER",                     "",           CONV_NUMERIC_LITERAL, API_TENSOR, 1}},
   {"CUTENSOR_STATUS_IO_ERROR",                         {"HIPTENSOR_STATUS_IO_ERROR",                                "",           CONV_NUMERIC_LITERAL, API_TENSOR, 1}},
+
+ {"cutensorAlgo_t",                                    {"hiptensorAlgo_t",                                          "",           CONV_NUMERIC_LITERAL, API_TENSOR, 1}};
+ {"CUTENSOR_ALGO_DEFAULT_PATIENT",                     {"HIPTENSOR_ALGO_DEFAULT_PATIENT",                           "",           CONV_NUMERIC_LITERAL, API_TENSOR, 1}};
+ {"CUTENSOR_ALGO_GETT",                                {"",                                                         "",           CONV_NUMERIC_LITERAL, API_TENSOR, 1, UNSUPPORTED}};
+ {"CUTENSOR_ALGO_TGETT",                               {"",                                                         "",           CONV_NUMERIC_LITERAL, API_TENSOR, 1, UNSUPPORTED}};
+ {"CUTENSOR_ALGO_TTGT",                                {"",                                                         "",           CONV_NUMERIC_LITERAL, API_TENSOR, 1, UNSUPPORTED}};
+ {"CUTENSOR_ALGO_DEFAULT",                             {"HIPTENSOR_ALGO_DEFAULT",                                   "",           CONV_NUMERIC_LITERAL, API_TENSOR, 1}};
 };
 
 const std::map<llvm::StringRef, cudaAPIversions> CUDA_TENSOR_TYPE_NAME_VER_MAP {
@@ -172,6 +179,12 @@ const std::map<llvm::StringRef, cudaAPIversions> CUDA_TENSOR_TYPE_NAME_VER_MAP {
   {"CUTENSOR_OP_MAX",                                  {CUTENSOR_1010,  CUDA_0,        CUDA_0,      }},
   {"CUTENSOR_OP_MIN",                                  {CUTENSOR_1010,  CUDA_0,        CUDA_0,      }},
   {"CUTENSOR_OP_UNKNOWN",                              {CUTENSOR_1010,  CUDA_0,        CUDA_0,      }},
+  {"cutensorAlgo_t",                                   {CUTENSOR_1010,  CUDA_0,        CUDA_0,      }},
+  {"CUTENSOR_ALGO_DEFAULT_PATIENT",                    {CUTENSOR_1400,  CUDA_0,        CUDA_0,      }},
+  {"CUTENSOR_ALGO_GETT",                               {CUTENSOR_1010,  CUDA_0,        CUDA_0,      }};
+  {"CUTENSOR_ALGO_TGETT",                              {CUTENSOR_1010,  CUDA_0,        CUDA_0,      }};
+  {"CUTENSOR_ALGO_TTGT",                               {CUTENSOR_1010,  CUDA_0,        CUDA_0,      }};
+  {"CUTENSOR_ALGO_DEFAULT",                            {CUTENSOR_1010,  CUDA_0,        CUDA_0,      }};
 };
 
 const std::map<llvm::StringRef, hipAPIversions> HIP_TENSOR_TYPE_NAME_VER_MAP {
@@ -190,4 +203,8 @@ const std::map<llvm::StringRef, hipAPIversions> HIP_TENSOR_TYPE_NAME_VER_MAP {
   {"HIPTENSOR_OP_IDENTITY",                            {HIP_5070,       HIP_0,         HIP_0,       }},
   {"HIPTENSOR_OP_SQRT",                                {HIP_6020,       HIP_0,         HIP_0,       }},
   {"HIPTENSOR_OP_UNKNOWN",                             {HIP_5070,       HIP_0,         HIP_0,       }},
+  {"hiptensorAlgo_t",                                  {HIP_5070,       HIP_0,         HIP_0,       }},
+  {"HIPTENSOR_ALGO_ACTOR_CRITIC",                      {HIP_5070,       HIP_0,         HIP_0,       }},
+  {"HIPTENSOR_ALGO_DEFAULT",                           {HIP_5070,       HIP_0,         HIP_0,       }},
+  {"HIPTENSOR_ALGO_DEFAULT_PATIENT",                   {HIP_5070,       HIP_0,         HIP_0,       }},
 };
