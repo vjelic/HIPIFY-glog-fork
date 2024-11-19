@@ -107,12 +107,12 @@ const std::map<llvm::StringRef, hipCounter> CUDA_TENSOR_TYPE_NAME_MAP {
   {"CUTENSOR_STATUS_INSUFFICIENT_DRIVER",              {"HIPTENSOR_STATUS_INSUFFICIENT_DRIVER",                     "",           CONV_NUMERIC_LITERAL, API_TENSOR, 1}},
   {"CUTENSOR_STATUS_IO_ERROR",                         {"HIPTENSOR_STATUS_IO_ERROR",                                "",           CONV_NUMERIC_LITERAL, API_TENSOR, 1}},
 
- {"cutensorAlgo_t",                                    {"hiptensorAlgo_t",                                          "",           CONV_NUMERIC_LITERAL, API_TENSOR, 1}};
- {"CUTENSOR_ALGO_DEFAULT_PATIENT",                     {"HIPTENSOR_ALGO_DEFAULT_PATIENT",                           "",           CONV_NUMERIC_LITERAL, API_TENSOR, 1}};
- {"CUTENSOR_ALGO_GETT",                                {"",                                                         "",           CONV_NUMERIC_LITERAL, API_TENSOR, 1, UNSUPPORTED}};
- {"CUTENSOR_ALGO_TGETT",                               {"",                                                         "",           CONV_NUMERIC_LITERAL, API_TENSOR, 1, UNSUPPORTED}};
- {"CUTENSOR_ALGO_TTGT",                                {"",                                                         "",           CONV_NUMERIC_LITERAL, API_TENSOR, 1, UNSUPPORTED}};
- {"CUTENSOR_ALGO_DEFAULT",                             {"HIPTENSOR_ALGO_DEFAULT",                                   "",           CONV_NUMERIC_LITERAL, API_TENSOR, 1}};
+  {"cutensorAlgo_t",                                   {"hiptensorAlgo_t",                                          "",           CONV_NUMERIC_LITERAL, API_TENSOR, 1}};
+  {"CUTENSOR_ALGO_DEFAULT_PATIENT",                    {"HIPTENSOR_ALGO_DEFAULT_PATIENT",                           "",           CONV_NUMERIC_LITERAL, API_TENSOR, 1}};
+  {"CUTENSOR_ALGO_GETT",                               {"",                                                         "",           CONV_NUMERIC_LITERAL, API_TENSOR, 1, UNSUPPORTED}};
+  {"CUTENSOR_ALGO_TGETT",                              {"",                                                         "",           CONV_NUMERIC_LITERAL, API_TENSOR, 1, UNSUPPORTED}};
+  {"CUTENSOR_ALGO_TTGT",                               {"",                                                         "",           CONV_NUMERIC_LITERAL, API_TENSOR, 1, UNSUPPORTED}};
+  {"CUTENSOR_ALGO_DEFAULT",                            {"HIPTENSOR_ALGO_DEFAULT",                                   "",           CONV_NUMERIC_LITERAL, API_TENSOR, 1}};
 };
 
 const std::map<llvm::StringRef, cudaAPIversions> CUDA_TENSOR_TYPE_NAME_VER_MAP {
