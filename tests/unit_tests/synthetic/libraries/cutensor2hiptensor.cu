@@ -34,6 +34,17 @@ int main() {
   cutensorDataType_t TENSOR_R_32U = CUTENSOR_R_32U;
 #endif
 
+#if CUTENSOR_MAJOR >= 1
+  // CHECK: hiptensorOperator_t tensorOperator_t;
+  // CHECK-NEXT hiptensorOperator_t TENSOR_OP_IDENTITY = HIPTENSOR_OP_IDENTITY;
+  // CHECK-NEXT hiptensorOperator_t TENSOR_OP_SQRT = HIPTENSOR_OP_SQRT;
+  // CHECK-NEXT hiptensorOperator_t TENSOR_OP_UNKNOWN = HIPTENSOR_OP_UNKNOWN;
+  cutensorOperator_t tensorOperator_t;
+  cutensorOperator_t TENSOR_OP_IDENTITY = CUTENSOR_OP_IDENTITY;
+  cutensorOperator_t TENSOR_OP_SQRT = CUTENSOR_OP_SQRT;
+  cutensorOperator_t TENSOR_OP_UNKNOWN = CUTENSOR_OP_UNKNOWN;
+#endif
+
   // CHECK: hiptensorStatus_t tensorStatus_t;
   // CHECK-NEXT hiptensorStatus_t TENSOR_STATUS_SUCCESS = HIPTENSOR_STATUS_SUCCESS;
   // CHECK-NEXT hiptensorStatus_t TENSOR_STATUS_NOT_INITIALIZED = HIPTENSOR_STATUS_NOT_INITIALIZED;
