@@ -6784,6 +6784,7 @@ sub simpleSubstitutions {
     subst("cusparseSparseToDenseAlg_t", "hipsparseSparseToDenseAlg_t", "type");
     subst("cusparseStatus_t", "hipsparseStatus_t", "type");
     subst("cutensorDataType_t", "hiptensorComputeType_t", "type");
+    subst("cutensorOperator_t", "hiptensorOperator_t", "type");
     subst("cutensorStatus_t", "hiptensorStatus_t", "type");
     subst("gesvdjInfo_t", "hipsolverGesvdjInfo_t", "type");
     subst("nvrtcProgram", "hiprtcProgram", "type");
@@ -7284,6 +7285,9 @@ sub simpleSubstitutions {
     subst("CUSPARSE_STATUS_ZERO_PIVOT", "HIPSPARSE_STATUS_ZERO_PIVOT", "numeric_literal");
     subst("CUTENSOR_C_32F", "HIPTENSOR_COMPUTE_C32F", "numeric_literal");
     subst("CUTENSOR_C_64F", "HIPTENSOR_COMPUTE_C64F", "numeric_literal");
+    subst("CUTENSOR_OP_IDENTITY", "HIPTENSOR_OP_IDENTITY", "numeric_literal");
+    subst("CUTENSOR_OP_SQRT", "HIPTENSOR_OP_SQRT", "numeric_literal");
+    subst("CUTENSOR_OP_UNKNOWN", "HIPTENSOR_OP_UNKNOWN", "numeric_literal");
     subst("CUTENSOR_R_16BF", "HIPTENSOR_COMPUTE_16BF", "numeric_literal");
     subst("CUTENSOR_R_16F", "HIPTENSOR_COMPUTE_16F", "numeric_literal");
     subst("CUTENSOR_R_32F", "HIPTENSOR_COMPUTE_32F", "numeric_literal");
@@ -11243,7 +11247,6 @@ sub warnHipOnlyUnsupportedFunctions {
     my $line_num = shift;
     my $k = 0;
     foreach $func (
-        "cutensorOperator_t",
         "cusparseZhybsv_solve",
         "cusparseZhybsv_analysis",
         "cusparseZhyb2dense",
@@ -11825,6 +11828,36 @@ sub warnHipOnlyUnsupportedFunctions {
         "CUTENSOR_R_4I",
         "CUTENSOR_R_16U",
         "CUTENSOR_R_16I",
+        "CUTENSOR_OP_TANH",
+        "CUTENSOR_OP_TAN",
+        "CUTENSOR_OP_SWISH",
+        "CUTENSOR_OP_SOFT_SIGN",
+        "CUTENSOR_OP_SOFT_PLUS",
+        "CUTENSOR_OP_SINH",
+        "CUTENSOR_OP_SIN",
+        "CUTENSOR_OP_SIGMOID",
+        "CUTENSOR_OP_RELU",
+        "CUTENSOR_OP_RCP",
+        "CUTENSOR_OP_NEG",
+        "CUTENSOR_OP_MUL",
+        "CUTENSOR_OP_MISH",
+        "CUTENSOR_OP_MIN",
+        "CUTENSOR_OP_MAX",
+        "CUTENSOR_OP_LOG",
+        "CUTENSOR_OP_FLOOR",
+        "CUTENSOR_OP_EXP",
+        "CUTENSOR_OP_COSH",
+        "CUTENSOR_OP_COS",
+        "CUTENSOR_OP_CONJ",
+        "CUTENSOR_OP_CEIL",
+        "CUTENSOR_OP_ATANH",
+        "CUTENSOR_OP_ATAN",
+        "CUTENSOR_OP_ASINH",
+        "CUTENSOR_OP_ASIN",
+        "CUTENSOR_OP_ADD",
+        "CUTENSOR_OP_ACOSH",
+        "CUTENSOR_OP_ACOS",
+        "CUTENSOR_OP_ABS",
         "CUTENSOR_C_8U",
         "CUTENSOR_C_8I",
         "CUTENSOR_C_64U",
@@ -13401,7 +13434,6 @@ sub warnRocOnlyUnsupportedFunctions {
     my $line_num = shift;
     my $k = 0;
     foreach $func (
-        "cutensorOperator_t",
         "cusparseZhybsv_solve",
         "cusparseZhybsv_analysis",
         "cusparseZhyb2dense",
@@ -14089,6 +14121,36 @@ sub warnRocOnlyUnsupportedFunctions {
         "CUTENSOR_R_4I",
         "CUTENSOR_R_16U",
         "CUTENSOR_R_16I",
+        "CUTENSOR_OP_TANH",
+        "CUTENSOR_OP_TAN",
+        "CUTENSOR_OP_SWISH",
+        "CUTENSOR_OP_SOFT_SIGN",
+        "CUTENSOR_OP_SOFT_PLUS",
+        "CUTENSOR_OP_SINH",
+        "CUTENSOR_OP_SIN",
+        "CUTENSOR_OP_SIGMOID",
+        "CUTENSOR_OP_RELU",
+        "CUTENSOR_OP_RCP",
+        "CUTENSOR_OP_NEG",
+        "CUTENSOR_OP_MUL",
+        "CUTENSOR_OP_MISH",
+        "CUTENSOR_OP_MIN",
+        "CUTENSOR_OP_MAX",
+        "CUTENSOR_OP_LOG",
+        "CUTENSOR_OP_FLOOR",
+        "CUTENSOR_OP_EXP",
+        "CUTENSOR_OP_COSH",
+        "CUTENSOR_OP_COS",
+        "CUTENSOR_OP_CONJ",
+        "CUTENSOR_OP_CEIL",
+        "CUTENSOR_OP_ATANH",
+        "CUTENSOR_OP_ATAN",
+        "CUTENSOR_OP_ASINH",
+        "CUTENSOR_OP_ASIN",
+        "CUTENSOR_OP_ADD",
+        "CUTENSOR_OP_ACOSH",
+        "CUTENSOR_OP_ACOS",
+        "CUTENSOR_OP_ABS",
         "CUTENSOR_C_8U",
         "CUTENSOR_C_8I",
         "CUTENSOR_C_64U",

@@ -18,6 +18,39 @@
 |`CUTENSOR_C_64U`|2.0.0.0| | | | | | | | | |
 |`CUTENSOR_C_8I`|2.0.0.0| | | | | | | | | |
 |`CUTENSOR_C_8U`|2.0.0.0| | | | | | | | | |
+|`CUTENSOR_OP_ABS`|1.0.1.0| | | | | | | | | |
+|`CUTENSOR_OP_ACOS`|1.0.1.0| | | | | | | | | |
+|`CUTENSOR_OP_ACOSH`|1.0.1.0| | | | | | | | | |
+|`CUTENSOR_OP_ADD`|1.0.1.0| | | | | | | | | |
+|`CUTENSOR_OP_ASIN`|1.0.1.0| | | | | | | | | |
+|`CUTENSOR_OP_ASINH`|1.0.1.0| | | | | | | | | |
+|`CUTENSOR_OP_ATAN`|1.0.1.0| | | | | | | | | |
+|`CUTENSOR_OP_ATANH`|1.0.1.0| | | | | | | | | |
+|`CUTENSOR_OP_CEIL`|1.0.1.0| | | | | | | | | |
+|`CUTENSOR_OP_CONJ`|1.0.1.0| | | | | | | | | |
+|`CUTENSOR_OP_COS`|1.0.1.0| | | | | | | | | |
+|`CUTENSOR_OP_COSH`|1.0.1.0| | | | | | | | | |
+|`CUTENSOR_OP_EXP`|1.0.1.0| | | | | | | | | |
+|`CUTENSOR_OP_FLOOR`|1.0.1.0| | | | | | | | | |
+|`CUTENSOR_OP_IDENTITY`|1.0.1.0| | | |`HIPTENSOR_OP_IDENTITY`|5.7.0| | | | |
+|`CUTENSOR_OP_LOG`|1.0.1.0| | | | | | | | | |
+|`CUTENSOR_OP_MAX`|1.0.1.0| | | | | | | | | |
+|`CUTENSOR_OP_MIN`|1.0.1.0| | | | | | | | | |
+|`CUTENSOR_OP_MISH`|2.0.0.0| | | | | | | | | |
+|`CUTENSOR_OP_MUL`|1.0.1.0| | | | | | | | | |
+|`CUTENSOR_OP_NEG`|1.0.1.0| | | | | | | | | |
+|`CUTENSOR_OP_RCP`|1.0.1.0| | | | | | | | | |
+|`CUTENSOR_OP_RELU`|1.0.1.0| | | | | | | | | |
+|`CUTENSOR_OP_SIGMOID`|1.0.1.0| | | | | | | | | |
+|`CUTENSOR_OP_SIN`|1.0.1.0| | | | | | | | | |
+|`CUTENSOR_OP_SINH`|1.0.1.0| | | | | | | | | |
+|`CUTENSOR_OP_SOFT_PLUS`|2.0.0.0| | | | | | | | | |
+|`CUTENSOR_OP_SOFT_SIGN`|2.0.0.0| | | | | | | | | |
+|`CUTENSOR_OP_SQRT`|1.0.1.0| | | |`HIPTENSOR_OP_SQRT`|6.2.0| | | | |
+|`CUTENSOR_OP_SWISH`|2.0.0.0| | | | | | | | | |
+|`CUTENSOR_OP_TAN`|1.0.1.0| | | | | | | | | |
+|`CUTENSOR_OP_TANH`|1.0.1.0| | | | | | | | | |
+|`CUTENSOR_OP_UNKNOWN`|1.0.1.0| | | |`HIPTENSOR_OP_UNKNOWN`|5.7.0| | | | |
 |`CUTENSOR_R_16BF`|2.0.0.0| | | |`HIPTENSOR_COMPUTE_16BF`|5.7.0| | | | |
 |`CUTENSOR_R_16F`|2.0.0.0| | | |`HIPTENSOR_COMPUTE_16F`|5.7.0| | | | |
 |`CUTENSOR_R_16I`|2.0.0.0| | | | | | | | | |
@@ -48,7 +81,7 @@
 |`CUTENSOR_STATUS_NOT_SUPPORTED`| | | | |`HIPTENSOR_STATUS_NOT_SUPPORTED`| | | | | |
 |`CUTENSOR_STATUS_SUCCESS`| | | | |`HIPTENSOR_STATUS_SUCCESS`| | | | | |
 |`cutensorDataType_t`|2.0.0.0| | | |`hiptensorComputeType_t`|5.7.0| | | | |
-|`cutensorOperator_t`| | | | | | | | | | |
+|`cutensorOperator_t`|1.0.1.0| | | |`hiptensorOperator_t`|5.7.0| | | | |
 |`cutensorStatus_t`| | | | |`hiptensorStatus_t`| | | | | |
 
 ## **2. CUTENSOR Function Reference**
