@@ -204,7 +204,6 @@ const std::map<llvm::StringRef, hipAPIversions> HIP_TENSOR_TYPE_NAME_VER_MAP {
   {"HIPTENSOR_OP_SQRT",                                {HIP_6020,       HIP_0,         HIP_0,       }},
   {"HIPTENSOR_OP_UNKNOWN",                             {HIP_5070,       HIP_0,         HIP_0,       }},
   {"hiptensorAlgo_t",                                  {HIP_5070,       HIP_0,         HIP_0,       }},
-  {"HIPTENSOR_ALGO_ACTOR_CRITIC",                      {HIP_5070,       HIP_0,         HIP_0,       }},
   {"HIPTENSOR_ALGO_DEFAULT",                           {HIP_5070,       HIP_0,         HIP_0,       }},
   {"HIPTENSOR_ALGO_DEFAULT_PATIENT",                   {HIP_5070,       HIP_0,         HIP_0,       }},
 };

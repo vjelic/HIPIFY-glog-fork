@@ -4,6 +4,11 @@
 
 |**CUDA**|**A**|**D**|**C**|**R**|**HIP**|**A**|**D**|**C**|**R**|**E**|
 |:--|:-:|:-:|:-:|:-:|:--|:-:|:-:|:-:|:-:|:-:|
+|`CUTENSOR_ALGO_DEFAULT`|1.0.1.0| | | |`HIPTENSOR_ALGO_DEFAULT`|5.7.0| | | | |
+|`CUTENSOR_ALGO_DEFAULT_PATIENT`|1.4.0.0| | | |`HIPTENSOR_ALGO_DEFAULT_PATIENT`|5.7.0| | | | |
+|`CUTENSOR_ALGO_GETT`|1.0.1.0| | | | | | | | | |
+|`CUTENSOR_ALGO_TGETT`|1.0.1.0| | | | | | | | | |
+|`CUTENSOR_ALGO_TTGT`|1.0.1.0| | | | | | | | | |
 |`CUTENSOR_C_16BF`|2.0.0.0| | | | | | | | | |
 |`CUTENSOR_C_16F`|2.0.0.0| | | | | | | | | |
 |`CUTENSOR_C_16I`|2.0.0.0| | | | | | | | | |
@@ -80,6 +85,7 @@
 |`CUTENSOR_STATUS_NOT_INITIALIZED`| | | | |`HIPTENSOR_STATUS_NOT_INITIALIZED`| | | | | |
 |`CUTENSOR_STATUS_NOT_SUPPORTED`| | | | |`HIPTENSOR_STATUS_NOT_SUPPORTED`| | | | | |
 |`CUTENSOR_STATUS_SUCCESS`| | | | |`HIPTENSOR_STATUS_SUCCESS`| | | | | |
+|`cutensorAlgo_t`|1.0.1.0| | | |`hiptensorAlgo_t`|5.7.0| | | | |
 |`cutensorDataType_t`|2.0.0.0| | | |`hiptensorComputeType_t`|5.7.0| | | | |
 |`cutensorOperator_t`|1.0.1.0| | | |`hiptensorOperator_t`|5.7.0| | | | |
 |`cutensorStatus_t`| | | | |`hiptensorStatus_t`| | | | | |
