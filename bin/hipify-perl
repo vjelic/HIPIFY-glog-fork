@@ -6144,6 +6144,16 @@ sub simpleSubstitutions {
     subst("__half2_raw", "__half2_raw", "device_type");
     subst("__half_raw", "__half_raw", "device_type");
     subst("__nv_bfloat16", "hip_bfloat16", "device_type");
+    subst("__nv_fp8_e4m3", "__hip_fp8_e4m3_fnuz", "device_type");
+    subst("__nv_fp8_e5m2", "__hip_fp8_e5m2_fnuz", "device_type");
+    subst("__nv_fp8_interpretation_t", "__hip_fp8_interpretation_t", "device_type");
+    subst("__nv_fp8_storage_t", "__hip_fp8_storage_t", "device_type");
+    subst("__nv_fp8x2_e4m3", "__hip_fp8x2_e4m3_fnuz", "device_type");
+    subst("__nv_fp8x2_e5m2", "__hip_fp8x2_e5m2_fnuz", "device_type");
+    subst("__nv_fp8x2_storage_t", "__hip_fp8x2_storage_t", "device_type");
+    subst("__nv_fp8x4_e4m3", "__hip_fp8x4_e4m3_fnuz", "device_type");
+    subst("__nv_fp8x4_storage_t", "__hip_fp8x4_storage_t", "device_type");
+    subst("__nv_saturation_t", "__hip_saturation_t", "device_type");
     subst("caffe2\/core\/common_cudnn.h", "caffe2\/core\/hip\/common_miopen.h", "include");
     subst("caffe2\/operators\/spatial_batch_norm_op.h", "caffe2\/operators\/hip\/spatial_batch_norm_op_miopen.hip", "include");
     subst("channel_descriptor.h", "hip\/channel_descriptor.h", "include");
@@ -7693,6 +7703,11 @@ sub simpleSubstitutions {
     subst("NVRTC_ERROR_OUT_OF_MEMORY", "HIPRTC_ERROR_OUT_OF_MEMORY", "numeric_literal");
     subst("NVRTC_ERROR_PROGRAM_CREATION_FAILURE", "HIPRTC_ERROR_PROGRAM_CREATION_FAILURE", "numeric_literal");
     subst("NVRTC_SUCCESS", "HIPRTC_SUCCESS", "numeric_literal");
+    subst("__NV_E4M3", "__HIP_E4M3_FNUZ", "numeric_literal");
+    subst("__NV_E5M2", "__HIP_E5M2_FNUZ", "numeric_literal");
+    subst("__NV_NOSAT", "__HIP_NOSAT", "numeric_literal");
+    subst("__NV_SATFINITE", "__HIP_SATFINITE", "numeric_literal");
+    subst("__nv_fp8x4_e5m2", "__hip_fp8x4_e5m2_fnuz", "numeric_literal");
     subst("cublasLtOrder_t", "hipblasLtOrder_t", "numeric_literal");
     subst("cudaAccessPropertyNormal", "hipAccessPropertyNormal", "numeric_literal");
     subst("cudaAccessPropertyPersisting", "hipAccessPropertyPersisting", "numeric_literal");
@@ -10384,24 +10399,9 @@ sub warnUnsupportedFunctions {
         "cl_event_flags",
         "cl_context_flags_enum",
         "cl_context_flags",
-        "__nv_saturation_t",
-        "__nv_fp8x4_storage_t",
-        "__nv_fp8x4_e5m2",
-        "__nv_fp8x4_e4m3",
-        "__nv_fp8x2_storage_t",
-        "__nv_fp8x2_e5m2",
-        "__nv_fp8x2_e4m3",
-        "__nv_fp8_storage_t",
-        "__nv_fp8_interpretation_t",
-        "__nv_fp8_e5m2",
-        "__nv_fp8_e4m3",
         "__nv_bfloat16_raw",
         "__nv_bfloat162_raw",
         "__nv_bfloat162",
-        "__NV_SATFINITE",
-        "__NV_NOSAT",
-        "__NV_E5M2",
-        "__NV_E4M3",
         "__CUB_LP64__",
         "_CUB_ASM_PTR_SIZE_",
         "_CUB_ASM_PTR_",
