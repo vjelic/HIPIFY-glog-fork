@@ -6793,6 +6793,7 @@ sub simpleSubstitutions {
     subst("cusparseSpVecDescr_t", "hipsparseSpVecDescr_t", "type");
     subst("cusparseSparseToDenseAlg_t", "hipsparseSparseToDenseAlg_t", "type");
     subst("cusparseStatus_t", "hipsparseStatus_t", "type");
+    subst("cutensorAlgo_t", "hiptensorAlgo_t", "type");
     subst("cutensorDataType_t", "hiptensorComputeType_t", "type");
     subst("cutensorOperator_t", "hiptensorOperator_t", "type");
     subst("cutensorStatus_t", "hiptensorStatus_t", "type");
@@ -7293,6 +7294,8 @@ sub simpleSubstitutions {
     subst("CUSPARSE_STATUS_NOT_SUPPORTED", "HIPSPARSE_STATUS_NOT_SUPPORTED", "numeric_literal");
     subst("CUSPARSE_STATUS_SUCCESS", "HIPSPARSE_STATUS_SUCCESS", "numeric_literal");
     subst("CUSPARSE_STATUS_ZERO_PIVOT", "HIPSPARSE_STATUS_ZERO_PIVOT", "numeric_literal");
+    subst("CUTENSOR_ALGO_DEFAULT", "HIPTENSOR_ALGO_DEFAULT", "numeric_literal");
+    subst("CUTENSOR_ALGO_DEFAULT_PATIENT", "HIPTENSOR_ALGO_DEFAULT_PATIENT", "numeric_literal");
     subst("CUTENSOR_C_32F", "HIPTENSOR_COMPUTE_C32F", "numeric_literal");
     subst("CUTENSOR_C_64F", "HIPTENSOR_COMPUTE_C64F", "numeric_literal");
     subst("CUTENSOR_OP_IDENTITY", "HIPTENSOR_OP_IDENTITY", "numeric_literal");
@@ -11870,6 +11873,9 @@ sub warnHipOnlyUnsupportedFunctions {
         "CUTENSOR_C_16I",
         "CUTENSOR_C_16F",
         "CUTENSOR_C_16BF",
+        "CUTENSOR_ALGO_TTGT",
+        "CUTENSOR_ALGO_TGETT",
+        "CUTENSOR_ALGO_GETT",
         "CUSPARSE_SPSV_UPDATE_GENERAL",
         "CUSPARSE_SPSV_UPDATE_DIAGONAL",
         "CUSPARSE_SPSM_UPDATE_GENERAL",
@@ -14163,6 +14169,9 @@ sub warnRocOnlyUnsupportedFunctions {
         "CUTENSOR_C_16I",
         "CUTENSOR_C_16F",
         "CUTENSOR_C_16BF",
+        "CUTENSOR_ALGO_TTGT",
+        "CUTENSOR_ALGO_TGETT",
+        "CUTENSOR_ALGO_GETT",
         "CUSPARSE_STATUS_MATRIX_TYPE_NOT_SUPPORTED",
         "CUSPARSE_STATUS_MAPPING_ERROR",
         "CUSPARSE_STATUS_INSUFFICIENT_RESOURCES",
