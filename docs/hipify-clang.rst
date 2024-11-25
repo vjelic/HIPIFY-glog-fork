@@ -41,7 +41,7 @@ Dependencies
 
 * `CUDA <https://developer.nvidia.com/cuda-downloads>`_ of at least version
   `7.0 <https://developer.nvidia.com/cuda-toolkit-70>`_, the latest supported version is
-  `12.6.2 <https://developer.nvidia.com/cuda-downloads>`_.
+  `12.6.3 <https://developer.nvidia.com/cuda-downloads>`_.
 
 .. list-table::
 
@@ -189,7 +189,7 @@ Dependencies
       `19.1.2 <https://github.com/llvm/llvm-project/releases/tag/llvmorg-19.1.2>`_,
       `19.1.3 <https://github.com/llvm/llvm-project/releases/tag/llvmorg-19.1.3>`_,
       `19.1.4 <https://github.com/llvm/llvm-project/releases/tag/llvmorg-19.1.4>`_:sup:`4`
-    - `12.6.2 <https://developer.nvidia.com/cuda-downloads>`_:sup:`4`
+    - `12.6.3 <https://developer.nvidia.com/cuda-downloads>`_:sup:`4`
     - **Latest stable config**
     - **Latest stable config**
 
@@ -641,8 +641,8 @@ On Linux, the following configurations are tested:
 
 * Ubuntu 14: LLVM 4.0.0 - 7.1.0, CUDA 7.0 - 9.0, cuDNN 5.0.5 - 7.6.5
 * Ubuntu 16-19: LLVM 8.0.0 - 14.0.6, CUDA 7.0 - 10.2, cuDNN 5.1.10 - 8.0.5
-* Ubuntu 20-21: LLVM 9.0.0 - 19.1.4, CUDA 7.0 - 12.6.2, cuDNN 5.1.10 - 9.5.1
-* Ubuntu 22-23: LLVM 13.0.0 - 19.1.4, CUDA 7.0 - 12.6.2, cuDNN 8.0.5 - 9.5.1
+* Ubuntu 20-21: LLVM 9.0.0 - 19.1.4, CUDA 7.0 - 12.6.3, cuDNN 5.1.10 - 9.5.1
+* Ubuntu 22-23: LLVM 13.0.0 - 19.1.4, CUDA 7.0 - 12.6.3, cuDNN 8.0.5 - 9.5.1
 
 Minimum build system requirements for the above configurations:
 
@@ -661,7 +661,7 @@ Here's how to build ``hipify-clang`` with testing support on ``Ubuntu 23.10.01``
   -DCMAKE_BUILD_TYPE=Release \
   -DCMAKE_INSTALL_PREFIX=../dist \
   -DCMAKE_PREFIX_PATH=/usr/llvm/19.1.4/dist \
-  -DCUDA_TOOLKIT_ROOT_DIR=/usr/local/cuda-12.6.2 \
+  -DCUDA_TOOLKIT_ROOT_DIR=/usr/local/cuda-12.6.3 \
   -DCUDA_DNN_ROOT_DIR=/usr/local/cudnn-9.5.1 \
   -DLLVM_EXTERNAL_LIT=/usr/llvm/19.1.4/build/bin/llvm-lit \
   ../hipify
@@ -698,19 +698,19 @@ The corresponding successful output is:
   -- Found lit: /usr/local/bin/lit
   -- Found FileCheck: /GIT/LLVM/trunk/dist/FileCheck
   -- Initial CUDA to configure:
-  --    - CUDA Toolkit path  : /usr/local/cuda-12.6.2
+  --    - CUDA Toolkit path  : /usr/local/cuda-12.6.3
   --    - CUDA Samples path  :
   --    - cuDNN path         : /usr/local/cudnn-9.5.1
   --    - CUB path           :
-  -- Found CUDAToolkit: /usr/local/cuda-12.6.2/targets/x86_64-linux/include (found version "12.6.68")
+  -- Found CUDAToolkit: /usr/local/cuda-12.6.3/targets/x86_64-linux/include (found version "12.6.85")
   -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
   -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
   -- Found Threads: TRUE
   -- Found CUDA config:
-  --    - CUDA Toolkit path  : /usr/local/cuda-12.6.2
+  --    - CUDA Toolkit path  : /usr/local/cuda-12.6.3
   --    - CUDA Samples path  : OFF
   --    - cuDNN path         : /usr/local/cudnn-9.5.1
-  --    - CUB path           : /usr/local/cuda-12.6.2/include/cub
+  --    - CUB path           : /usr/local/cuda-12.6.3/include/cub
   -- Configuring done (0.5s)
   -- Generating done (0.0s)
   -- Build files have been written to: /usr/hipify/build
@@ -725,7 +725,7 @@ The corresponding successful output is:
 
   Running HIPify regression tests
   ===============================================================
-  CUDA 12.6.68 - will be used for testing
+  CUDA 12.6.85 - will be used for testing
   LLVM 19.1.4 - will be used for testing
   x86_64 - Platform architecture
   Linux 6.5.0-15-generic - Platform OS
@@ -827,7 +827,7 @@ Tested configurations:
     - ``3.31.0``
     - ``3.13.0``
   * - ``19.1.0 - 19.1.4``
-    - ``7.0 - 12.6.2``
+    - ``7.0 - 12.6.3``
     - ``8.0.5  - 9.5.1``
     - ``2019.16.11.42, 2022.17.11.6``
     - ``3.31.0``
@@ -898,7 +898,7 @@ The corresponding successful output is:
   --    - CUDA Samples path  : C:/ProgramData/NVIDIA Corporation/CUDA Samples/v12.5
   --    - cuDNN path         : D:/CUDA/cuDNN/9.5.1
   --    - CUB path           :
-  -- Found CUDAToolkit: C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.6/include (found version "12.6.68")
+  -- Found CUDAToolkit: C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.6/include (found version "12.6.85")
   -- Found CUDA config:
   --    - CUDA Toolkit path  : C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.6
   --    - CUDA Samples path  : C:/ProgramData/NVIDIA Corporation/CUDA Samples/v12.5
