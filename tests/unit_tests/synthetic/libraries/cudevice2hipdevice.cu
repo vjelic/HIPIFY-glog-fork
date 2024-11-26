@@ -11,6 +11,21 @@
 int main() {
   printf("24. CUDA Device API to HIP Device API synthetic test\n");
 
+  double dx = 0.0f;
+  float fx = 0.0f;
+  double2 d2 = { 0.0f, 0.0f };
+  float2 f2 = { 0.0f, 0.0f };
+  __half_raw hrx = { 0 };
+  __half2_raw h2rx = { 0, 0 };
+
+#if CUDA_VERSION >= 11080
+  // CHECK: __hip_bfloat16_raw bf16r = { 0 };
+  __nv_bfloat16_raw bf16r = { 0 };
+
+  // CHECK: __hip_bfloat162_raw bf162r = { 0, 0 };
+  __nv_bfloat162_raw bf162r = { 0, 0 };
+#endif
+
 #if CUDA_VERSION >= 11080
   // CHECK: __hip_fp8_storage_t fp8_storage_t;
   __nv_fp8_storage_t fp8_storage_t;
@@ -52,6 +67,56 @@ int main() {
 
   // CHECK: __hip_fp8x4_e5m2_fnuz fp8x4_e5m2;
   __nv_fp8x4_e5m2 fp8x4_e5m2;
+
+  // CUDA: __CUDA_HOSTDEVICE_FP8_DECL__ __nv_fp8_storage_t __nv_cvt_double_to_fp8(const double x, const __nv_saturation_t saturate, const __nv_fp8_interpretation_t fp8_interpretation);
+  // HIP: __FP8_HOST_DEVICE_STATIC__ __hip_fp8_storage_t __hip_cvt_double_to_fp8(const double d, const __hip_saturation_t sat, const __hip_fp8_interpretation_t type);
+  // CHECK: fp8_storage_t = __hip_cvt_double_to_fp8(dx, saturation_t, fp8_interpretation_t);
+  fp8_storage_t = __nv_cvt_double_to_fp8(dx, saturation_t, fp8_interpretation_t);
+
+  // CUDA: __CUDA_HOSTDEVICE_FP8_DECL__ __nv_fp8x2_storage_t __nv_cvt_double2_to_fp8x2(const double2 x, const __nv_saturation_t saturate, const __nv_fp8_interpretation_t fp8_interpretation);
+  // HIP: __FP8_HOST_DEVICE_STATIC__ __hip_fp8x2_storage_t __hip_cvt_double2_to_fp8x2(const double2 d2, const __hip_saturation_t sat, const __hip_fp8_interpretation_t type);
+  // CHECK: fp8x2_storage_t = __hip_cvt_double2_to_fp8x2(d2, saturation_t, fp8_interpretation_t);
+  fp8x2_storage_t = __nv_cvt_double2_to_fp8x2(d2, saturation_t, fp8_interpretation_t);
+
+  // CUDA: __CUDA_HOSTDEVICE_FP8_DECL__ __nv_fp8_storage_t __nv_cvt_float_to_fp8(const float x, const __nv_saturation_t saturate, const __nv_fp8_interpretation_t fp8_interpretation);
+  // HIP: __FP8_HOST_DEVICE_STATIC__ __hip_fp8_storage_t __hip_cvt_float_to_fp8(const float f, const __hip_saturation_t sat, const __hip_fp8_interpretation_t type);
+  // CHECK: fp8_storage_t = __hip_cvt_float_to_fp8(fx, saturation_t, fp8_interpretation_t);
+  fp8_storage_t = __nv_cvt_float_to_fp8(fx, saturation_t, fp8_interpretation_t);
+
+  // CUDA: __CUDA_HOSTDEVICE_FP8_DECL__ __nv_fp8x2_storage_t __nv_cvt_float2_to_fp8x2(const float2 x, const __nv_saturation_t saturate, const __nv_fp8_interpretation_t fp8_interpretation);
+  // HIP: __FP8_HOST_DEVICE_STATIC__ __hip_fp8x2_storage_t __hip_cvt_float2_to_fp8x2(const float2 f2, const __hip_saturation_t sat, const __hip_fp8_interpretation_t type);
+  // CHECK: fp8x2_storage_t = __hip_cvt_float2_to_fp8x2(f2, saturation_t, fp8_interpretation_t);
+  fp8x2_storage_t = __nv_cvt_float2_to_fp8x2(f2, saturation_t, fp8_interpretation_t);
+
+  // CUDA: __CUDA_HOSTDEVICE_FP8_DECL__ __nv_fp8_storage_t __nv_cvt_halfraw_to_fp8(const __half_raw x, const __nv_saturation_t saturate, const __nv_fp8_interpretation_t fp8_interpretation);
+  // HIP: __FP8_HOST_DEVICE_STATIC__ __hip_fp8_storage_t __hip_cvt_halfraw_to_fp8(const __half_raw x, const __hip_saturation_t sat, const __hip_fp8_interpretation_t type);
+  // CHECK: fp8_storage_t = __hip_cvt_halfraw_to_fp8(hrx, saturation_t, fp8_interpretation_t);
+  fp8_storage_t = __nv_cvt_halfraw_to_fp8(hrx, saturation_t, fp8_interpretation_t);
+
+  // CUDA: __CUDA_HOSTDEVICE_FP8_DECL__ __nv_fp8x2_storage_t __nv_cvt_halfraw2_to_fp8x2(const __half2_raw x, const __nv_saturation_t saturate, const __nv_fp8_interpretation_t fp8_interpretation);
+  // HIP: __FP8_HOST_DEVICE_STATIC__ __hip_fp8x2_storage_t __hip_cvt_halfraw2_to_fp8x2(const __half2_raw x, const __hip_saturation_t sat, const __hip_fp8_interpretation_t type);
+  // CHECK: fp8x2_storage_t = __hip_cvt_halfraw2_to_fp8x2(h2rx, saturation_t, fp8_interpretation_t);
+  fp8x2_storage_t = __nv_cvt_halfraw2_to_fp8x2(h2rx, saturation_t, fp8_interpretation_t);
+
+  // CUDA: __CUDA_HOSTDEVICE_FP8_DECL__ __nv_fp8_storage_t __nv_cvt_bfloat16raw_to_fp8(const __nv_bfloat16_raw x, const __nv_saturation_t saturate, const __nv_fp8_interpretation_t fp8_interpretation);
+  // HIP: __FP8_HOST_DEVICE_STATIC__ __hip_fp8_storage_t __hip_cvt_bfloat16raw_to_fp8(const __hip_bfloat16_raw hr, const __hip_saturation_t sat, const __hip_fp8_interpretation_t type);
+  // CHECK: fp8_storage_t = __hip_cvt_bfloat16raw_to_fp8(bf16r, saturation_t, fp8_interpretation_t);
+  fp8_storage_t = __nv_cvt_bfloat16raw_to_fp8(bf16r, saturation_t, fp8_interpretation_t);
+
+  // CUDA: __CUDA_HOSTDEVICE_FP8_DECL__ __nv_fp8x2_storage_t __nv_cvt_bfloat16raw2_to_fp8x2(const __nv_bfloat162_raw x, const __nv_saturation_t saturate, const __nv_fp8_interpretation_t fp8_interpretation);
+  // HIP: __FP8_HOST_DEVICE_STATIC__ __hip_fp8x2_storage_t __hip_cvt_bfloat16raw2_to_fp8x2(const __hip_bfloat162_raw hr, const __hip_saturation_t sat, const __hip_fp8_interpretation_t type);
+  // CHECK: fp8x2_storage_t = __hip_cvt_bfloat16raw2_to_fp8x2(bf162r, saturation_t, fp8_interpretation_t);
+  fp8x2_storage_t = __nv_cvt_bfloat16raw2_to_fp8x2(bf162r, saturation_t, fp8_interpretation_t);
+
+  // CUDA: __CUDA_HOSTDEVICE_FP8_DECL__ __half_raw __nv_cvt_fp8_to_halfraw(const __nv_fp8_storage_t x, const __nv_fp8_interpretation_t fp8_interpretation);
+  // HIP: __FP8_HOST_DEVICE_STATIC__ __half_raw __hip_cvt_fp8_to_halfraw(const __hip_fp8_storage_t x, const __hip_fp8_interpretation_t type);
+  // CHECK: hrx = __hip_cvt_fp8_to_halfraw(fp8_storage_t, fp8_interpretation_t);
+  hrx = __nv_cvt_fp8_to_halfraw(fp8_storage_t, fp8_interpretation_t);
+
+  // CUDA: __CUDA_HOSTDEVICE_FP8_DECL__ __half2_raw __nv_cvt_fp8x2_to_halfraw2(const __nv_fp8x2_storage_t x, const __nv_fp8_interpretation_t fp8_interpretation);
+  // HIP: __FP8_HOST_DEVICE_STATIC__ __half2_raw  __hip_cvt_fp8x2_to_halfraw2(const __hip_fp8x2_storage_t x, const __hip_fp8_interpretation_t type);
+  // CHECK: h2rx = __hip_cvt_fp8x2_to_halfraw2(fp8x2_storage_t, fp8_interpretation_t);
+  h2rx = __nv_cvt_fp8x2_to_halfraw2(fp8x2_storage_t, fp8_interpretation_t);
 #endif
 
   return 0;

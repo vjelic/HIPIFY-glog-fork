@@ -900,6 +900,10 @@ my %deprecated_funcs = (
     "bsrsm2Info" => "12.2",
     "bsrilu02Info_t" => "12.2",
     "bsrilu02Info" => "12.2",
+    "__shfl_xor" => "9.0",
+    "__shfl_up" => "9.0",
+    "__shfl_down" => "9.0",
+    "__shfl" => "9.0",
     "CU_JIT_REFERENCED_VARIABLE_NAMES" => "12.0",
     "CU_JIT_REFERENCED_VARIABLE_COUNT" => "12.0",
     "CU_JIT_REFERENCED_KERNEL_NAMES" => "12.0",
@@ -6139,11 +6143,541 @@ sub simpleSubstitutions {
     subst("curand_uniform4", "hiprand_uniform4", "device_library");
     subst("curand_uniform4_double", "hiprand_uniform4_double", "device_library");
     subst("curand_uniform_double", "hiprand_uniform_double", "device_library");
+    subst("__activemask", "__activemask", "device_function");
+    subst("__all", "__all", "device_function");
+    subst("__all_sync", "__all_sync", "device_function");
+    subst("__any", "__any", "device_function");
+    subst("__any_sync", "__any_sync", "device_function");
+    subst("__assert_fail", "__assert_fail", "device_function");
+    subst("__assertfail", "__assertfail", "device_function");
+    subst("__ballot", "__ballot", "device_function");
+    subst("__ballot_sync", "__ballot_sync", "device_function");
+    subst("__brev", "__brev", "device_function");
+    subst("__brevll", "__brevll", "device_function");
+    subst("__byte_perm", "__byte_perm", "device_function");
+    subst("__clz", "__clz", "device_function");
+    subst("__clzll", "__clzll", "device_function");
+    subst("__cosf", "__cosf", "device_function");
+    subst("__dadd_rn", "__dadd_rn", "device_function");
+    subst("__ddiv_rn", "__ddiv_rn", "device_function");
+    subst("__dmul_rn", "__dmul_rn", "device_function");
+    subst("__double2float_rd", "__double2float_rd", "device_function");
+    subst("__double2float_rn", "__double2float_rn", "device_function");
+    subst("__double2float_ru", "__double2float_ru", "device_function");
+    subst("__double2float_rz", "__double2float_rz", "device_function");
+    subst("__double2hiint", "__double2hiint", "device_function");
+    subst("__double2int_rd", "__double2int_rd", "device_function");
+    subst("__double2int_rn", "__double2int_rn", "device_function");
+    subst("__double2int_ru", "__double2int_ru", "device_function");
+    subst("__double2int_rz", "__double2int_rz", "device_function");
+    subst("__double2ll_rd", "__double2ll_rd", "device_function");
+    subst("__double2ll_rn", "__double2ll_rn", "device_function");
+    subst("__double2ll_ru", "__double2ll_ru", "device_function");
+    subst("__double2ll_rz", "__double2ll_rz", "device_function");
+    subst("__double2loint", "__double2loint", "device_function");
+    subst("__double2uint_rd", "__double2uint_rd", "device_function");
+    subst("__double2uint_rn", "__double2uint_rn", "device_function");
+    subst("__double2uint_ru", "__double2uint_ru", "device_function");
+    subst("__double2uint_rz", "__double2uint_rz", "device_function");
+    subst("__double2ull_rd", "__double2ull_rd", "device_function");
+    subst("__double2ull_rn", "__double2ull_rn", "device_function");
+    subst("__double2ull_ru", "__double2ull_ru", "device_function");
+    subst("__double2ull_rz", "__double2ull_rz", "device_function");
+    subst("__double_as_longlong", "__double_as_longlong", "device_function");
+    subst("__drcp_rn", "__drcp_rn", "device_function");
+    subst("__dsqrt_rn", "__dsqrt_rn", "device_function");
+    subst("__dsub_rn", "__dsub_rn", "device_function");
+    subst("__exp10f", "__exp10f", "device_function");
+    subst("__expf", "__expf", "device_function");
+    subst("__fadd_rn", "__fadd_rn", "device_function");
+    subst("__fdiv_rn", "__fdiv_rn", "device_function");
+    subst("__fdividef", "__fdividef", "device_function");
+    subst("__ffs", "__ffs", "device_function");
+    subst("__ffsll", "__ffsll", "device_function");
+    subst("__float22half2_rn", "__float22half2_rn", "device_function");
+    subst("__float2half", "__float2half", "device_function");
+    subst("__float2half2_rn", "__float2half2_rn", "device_function");
+    subst("__float2half_rd", "__float2half_rd", "device_function");
+    subst("__float2half_rn", "__float2half_rn", "device_function");
+    subst("__float2half_ru", "__float2half_ru", "device_function");
+    subst("__float2half_rz", "__float2half_rz", "device_function");
+    subst("__float2int_rd", "__float2int_rd", "device_function");
+    subst("__float2int_rn", "__float2int_rn", "device_function");
+    subst("__float2int_ru", "__float2int_ru", "device_function");
+    subst("__float2int_rz", "__float2int_rz", "device_function");
+    subst("__float2ll_rd", "__float2ll_rd", "device_function");
+    subst("__float2ll_rn", "__float2ll_rn", "device_function");
+    subst("__float2ll_ru", "__float2ll_ru", "device_function");
+    subst("__float2ll_rz", "__float2ll_rz", "device_function");
+    subst("__float2uint_rd", "__float2uint_rd", "device_function");
+    subst("__float2uint_rn", "__float2uint_rn", "device_function");
+    subst("__float2uint_ru", "__float2uint_ru", "device_function");
+    subst("__float2uint_rz", "__float2uint_rz", "device_function");
+    subst("__float2ull_rd", "__float2ull_rd", "device_function");
+    subst("__float2ull_rn", "__float2ull_rn", "device_function");
+    subst("__float2ull_ru", "__float2ull_ru", "device_function");
+    subst("__float2ull_rz", "__float2ull_rz", "device_function");
+    subst("__float_as_int", "__float_as_int", "device_function");
+    subst("__float_as_uint", "__float_as_uint", "device_function");
+    subst("__floats2half2_rn", "__floats2half2_rn", "device_function");
+    subst("__fma_rn", "__fma_rn", "device_function");
+    subst("__fmaf_rn", "__fmaf_rn", "device_function");
+    subst("__fmul_rn", "__fmul_rn", "device_function");
+    subst("__frcp_rn", "__frcp_rn", "device_function");
+    subst("__frsqrt_rn", "__frsqrt_rn", "device_function");
+    subst("__fsqrt_rn", "__fsqrt_rn", "device_function");
+    subst("__fsub_rn", "__fsub_rn", "device_function");
+    subst("__funnelshift_l", "__funnelshift_l", "device_function");
+    subst("__funnelshift_lc", "__funnelshift_lc", "device_function");
+    subst("__funnelshift_r", "__funnelshift_r", "device_function");
+    subst("__funnelshift_rc", "__funnelshift_rc", "device_function");
+    subst("__h2div", "__h2div", "device_function");
+    subst("__habs", "__habs", "device_function");
+    subst("__habs2", "__habs2", "device_function");
+    subst("__hadd", "__hadd", "device_function");
+    subst("__hadd2", "__hadd2", "device_function");
+    subst("__hadd2_sat", "__hadd2_sat", "device_function");
+    subst("__hadd_sat", "__hadd_sat", "device_function");
+    subst("__half22float2", "__half22float2", "device_function");
+    subst("__half2float", "__half2float", "device_function");
+    subst("__half2half2", "__half2half2", "device_function");
+    subst("__half2int_rd", "__half2int_rd", "device_function");
+    subst("__half2int_rn", "__half2int_rn", "device_function");
+    subst("__half2int_ru", "__half2int_ru", "device_function");
+    subst("__half2int_rz", "__half2int_rz", "device_function");
+    subst("__half2ll_rd", "__half2ll_rd", "device_function");
+    subst("__half2ll_rn", "__half2ll_rn", "device_function");
+    subst("__half2ll_ru", "__half2ll_ru", "device_function");
+    subst("__half2ll_rz", "__half2ll_rz", "device_function");
+    subst("__half2short_rd", "__half2short_rd", "device_function");
+    subst("__half2short_rn", "__half2short_rn", "device_function");
+    subst("__half2short_ru", "__half2short_ru", "device_function");
+    subst("__half2short_rz", "__half2short_rz", "device_function");
+    subst("__half2uint_rd", "__half2uint_rd", "device_function");
+    subst("__half2uint_rn", "__half2uint_rn", "device_function");
+    subst("__half2uint_ru", "__half2uint_ru", "device_function");
+    subst("__half2uint_rz", "__half2uint_rz", "device_function");
+    subst("__half2ull_rd", "__half2ull_rd", "device_function");
+    subst("__half2ull_rn", "__half2ull_rn", "device_function");
+    subst("__half2ull_ru", "__half2ull_ru", "device_function");
+    subst("__half2ull_rz", "__half2ull_rz", "device_function");
+    subst("__half2ushort_rd", "__half2ushort_rd", "device_function");
+    subst("__half2ushort_rn", "__half2ushort_rn", "device_function");
+    subst("__half2ushort_ru", "__half2ushort_ru", "device_function");
+    subst("__half2ushort_rz", "__half2ushort_rz", "device_function");
+    subst("__half_as_short", "__half_as_short", "device_function");
+    subst("__half_as_ushort", "__half_as_ushort", "device_function");
+    subst("__halves2half2", "__halves2half2", "device_function");
+    subst("__hbeq2", "__hbeq2", "device_function");
+    subst("__hbequ2", "__hbequ2", "device_function");
+    subst("__hbge2", "__hbge2", "device_function");
+    subst("__hbgeu2", "__hbgeu2", "device_function");
+    subst("__hbgt2", "__hbgt2", "device_function");
+    subst("__hbgtu2", "__hbgtu2", "device_function");
+    subst("__hble2", "__hble2", "device_function");
+    subst("__hbleu2", "__hbleu2", "device_function");
+    subst("__hblt2", "__hblt2", "device_function");
+    subst("__hbltu2", "__hbltu2", "device_function");
+    subst("__hbne2", "__hbne2", "device_function");
+    subst("__hbneu2", "__hbneu2", "device_function");
+    subst("__hdiv", "__hdiv", "device_function");
+    subst("__heq", "__heq", "device_function");
+    subst("__heq2", "__heq2", "device_function");
+    subst("__hequ", "__hequ", "device_function");
+    subst("__hequ2", "__hequ2", "device_function");
+    subst("__hfma", "__hfma", "device_function");
+    subst("__hfma2", "__hfma2", "device_function");
+    subst("__hfma2_sat", "__hfma2_sat", "device_function");
+    subst("__hfma_sat", "__hfma_sat", "device_function");
+    subst("__hge", "__hge", "device_function");
+    subst("__hge2", "__hge2", "device_function");
+    subst("__hgeu", "__hgeu", "device_function");
+    subst("__hgeu2", "__hgeu2", "device_function");
+    subst("__hgt", "__hgt", "device_function");
+    subst("__hgt2", "__hgt2", "device_function");
+    subst("__hgtu", "__hgtu", "device_function");
+    subst("__hgtu2", "__hgtu2", "device_function");
+    subst("__high2float", "__high2float", "device_function");
+    subst("__high2half", "__high2half", "device_function");
+    subst("__high2half2", "__high2half2", "device_function");
+    subst("__highs2half2", "__highs2half2", "device_function");
+    subst("__hiloint2double", "__hiloint2double", "device_function");
+    subst("__hisinf", "__hisinf", "device_function");
+    subst("__hisnan", "__hisnan", "device_function");
+    subst("__hisnan2", "__hisnan2", "device_function");
+    subst("__hle", "__hle", "device_function");
+    subst("__hle2", "__hle2", "device_function");
+    subst("__hleu", "__hleu", "device_function");
+    subst("__hleu2", "__hleu2", "device_function");
+    subst("__hlt", "__hlt", "device_function");
+    subst("__hlt2", "__hlt2", "device_function");
+    subst("__hltu", "__hltu", "device_function");
+    subst("__hltu2", "__hltu2", "device_function");
+    subst("__hmax", "__hmax", "device_function");
+    subst("__hmax_nan", "__hmax_nan", "device_function");
+    subst("__hmin", "__hmin", "device_function");
+    subst("__hmin_nan", "__hmin_nan", "device_function");
+    subst("__hmul", "__hmul", "device_function");
+    subst("__hmul2", "__hmul2", "device_function");
+    subst("__hmul2_sat", "__hmul2_sat", "device_function");
+    subst("__hmul_sat", "__hmul_sat", "device_function");
+    subst("__hne", "__hne", "device_function");
+    subst("__hne2", "__hne2", "device_function");
+    subst("__hneg", "__hneg", "device_function");
+    subst("__hneg2", "__hneg2", "device_function");
+    subst("__hneu", "__hneu", "device_function");
+    subst("__hneu2", "__hneu2", "device_function");
+    subst("__hsub", "__hsub", "device_function");
+    subst("__hsub2", "__hsub2", "device_function");
+    subst("__hsub2_sat", "__hsub2_sat", "device_function");
+    subst("__hsub_sat", "__hsub_sat", "device_function");
+    subst("__int2double_rn", "__int2double_rn", "device_function");
+    subst("__int2float_rd", "__int2float_rd", "device_function");
+    subst("__int2float_rn", "__int2float_rn", "device_function");
+    subst("__int2float_ru", "__int2float_ru", "device_function");
+    subst("__int2float_rz", "__int2float_rz", "device_function");
+    subst("__int2half_rd", "__int2half_rd", "device_function");
+    subst("__int2half_rn", "__int2half_rn", "device_function");
+    subst("__int2half_ru", "__int2half_ru", "device_function");
+    subst("__int2half_rz", "__int2half_rz", "device_function");
+    subst("__int_as_float", "__int_as_float", "device_function");
+    subst("__ldca", "__ldca", "device_function");
+    subst("__ldcg", "__ldcg", "device_function");
+    subst("__ldcs", "__ldcs", "device_function");
+    subst("__ldg", "__ldg", "device_function");
+    subst("__ll2double_rd", "__ll2double_rd", "device_function");
+    subst("__ll2double_rn", "__ll2double_rn", "device_function");
+    subst("__ll2double_ru", "__ll2double_ru", "device_function");
+    subst("__ll2double_rz", "__ll2double_rz", "device_function");
+    subst("__ll2float_rd", "__ll2float_rd", "device_function");
+    subst("__ll2float_rn", "__ll2float_rn", "device_function");
+    subst("__ll2float_ru", "__ll2float_ru", "device_function");
+    subst("__ll2float_rz", "__ll2float_rz", "device_function");
+    subst("__ll2half_rd", "__ll2half_rd", "device_function");
+    subst("__ll2half_rn", "__ll2half_rn", "device_function");
+    subst("__ll2half_ru", "__ll2half_ru", "device_function");
+    subst("__ll2half_rz", "__ll2half_rz", "device_function");
+    subst("__log10f", "__log10f", "device_function");
+    subst("__log2f", "__log2f", "device_function");
+    subst("__logf", "__logf", "device_function");
+    subst("__longlong_as_double", "__longlong_as_double", "device_function");
+    subst("__low2float", "__low2float", "device_function");
+    subst("__low2half", "__low2half", "device_function");
+    subst("__low2half2", "__low2half2", "device_function");
+    subst("__lowhigh2highlow", "__lowhigh2highlow", "device_function");
+    subst("__lows2half2", "__lows2half2", "device_function");
+    subst("__match_all_sync", "__match_all_sync", "device_function");
+    subst("__match_any_sync", "__match_any_sync", "device_function");
+    subst("__mul24", "__mul24", "device_function");
+    subst("__mul64hi", "__mul64hi", "device_function");
+    subst("__mulhi", "__mulhi", "device_function");
+    subst("__nv_cvt_bfloat16raw2_to_fp8x2", "__hip_cvt_bfloat16raw2_to_fp8x2", "device_function");
+    subst("__nv_cvt_bfloat16raw_to_fp8", "__hip_cvt_bfloat16raw_to_fp8", "device_function");
+    subst("__nv_cvt_double2_to_fp8x2", "__hip_cvt_double2_to_fp8x2", "device_function");
+    subst("__nv_cvt_double_to_fp8", "__hip_cvt_double_to_fp8", "device_function");
+    subst("__nv_cvt_float2_to_fp8x2", "__hip_cvt_float2_to_fp8x2", "device_function");
+    subst("__nv_cvt_float_to_fp8", "__hip_cvt_float_to_fp8", "device_function");
+    subst("__nv_cvt_fp8_to_halfraw", "__hip_cvt_fp8_to_halfraw", "device_function");
+    subst("__nv_cvt_fp8x2_to_halfraw2", "__hip_cvt_fp8x2_to_halfraw2", "device_function");
+    subst("__nv_cvt_halfraw2_to_fp8x2", "__hip_cvt_halfraw2_to_fp8x2", "device_function");
+    subst("__nv_cvt_halfraw_to_fp8", "__hip_cvt_halfraw_to_fp8", "device_function");
+    subst("__popc", "__popc", "device_function");
+    subst("__popcll", "__popcll", "device_function");
+    subst("__powf", "__powf", "device_function");
+    subst("__rhadd", "__rhadd", "device_function");
+    subst("__sad", "__sad", "device_function");
+    subst("__saturatef", "__saturatef", "device_function");
+    subst("__shfl", "__shfl", "device_function");
+    subst("__shfl_down", "__shfl_down", "device_function");
+    subst("__shfl_down_sync", "__shfl_down_sync", "device_function");
+    subst("__shfl_sync", "__shfl_sync", "device_function");
+    subst("__shfl_up", "__shfl_up", "device_function");
+    subst("__shfl_up_sync", "__shfl_up_sync", "device_function");
+    subst("__shfl_xor", "__shfl_xor", "device_function");
+    subst("__shfl_xor_sync", "__shfl_xor_sync", "device_function");
+    subst("__short2half_rd", "__short2half_rd", "device_function");
+    subst("__short2half_rn", "__short2half_rn", "device_function");
+    subst("__short2half_ru", "__short2half_ru", "device_function");
+    subst("__short2half_rz", "__short2half_rz", "device_function");
+    subst("__short_as_half", "__short_as_half", "device_function");
+    subst("__sincosf", "__sincosf", "device_function");
+    subst("__sinf", "__sinf", "device_function");
+    subst("__syncthreads", "__syncthreads", "device_function");
+    subst("__syncthreads_and", "__syncthreads_and", "device_function");
+    subst("__syncthreads_count", "__syncthreads_count", "device_function");
+    subst("__syncthreads_or", "__syncthreads_or", "device_function");
+    subst("__tanf", "__tanf", "device_function");
+    subst("__threadfence", "__threadfence", "device_function");
+    subst("__threadfence_block", "__threadfence_block", "device_function");
+    subst("__threadfence_system", "__threadfence_system", "device_function");
+    subst("__uhadd", "__uhadd", "device_function");
+    subst("__uint2double_rn", "__uint2double_rn", "device_function");
+    subst("__uint2float_rd", "__uint2float_rd", "device_function");
+    subst("__uint2float_rn", "__uint2float_rn", "device_function");
+    subst("__uint2float_ru", "__uint2float_ru", "device_function");
+    subst("__uint2float_rz", "__uint2float_rz", "device_function");
+    subst("__uint2half_rd", "__uint2half_rd", "device_function");
+    subst("__uint2half_rn", "__uint2half_rn", "device_function");
+    subst("__uint2half_ru", "__uint2half_ru", "device_function");
+    subst("__uint2half_rz", "__uint2half_rz", "device_function");
+    subst("__uint_as_float", "__uint_as_float", "device_function");
+    subst("__ull2double_rd", "__ull2double_rd", "device_function");
+    subst("__ull2double_rn", "__ull2double_rn", "device_function");
+    subst("__ull2double_ru", "__ull2double_ru", "device_function");
+    subst("__ull2double_rz", "__ull2double_rz", "device_function");
+    subst("__ull2float_rd", "__ull2float_rd", "device_function");
+    subst("__ull2float_rn", "__ull2float_rn", "device_function");
+    subst("__ull2float_ru", "__ull2float_ru", "device_function");
+    subst("__ull2float_rz", "__ull2float_rz", "device_function");
+    subst("__ull2half_rd", "__ull2half_rd", "device_function");
+    subst("__ull2half_rn", "__ull2half_rn", "device_function");
+    subst("__ull2half_ru", "__ull2half_ru", "device_function");
+    subst("__ull2half_rz", "__ull2half_rz", "device_function");
+    subst("__umul24", "__umul24", "device_function");
+    subst("__umul64hi", "__umul64hi", "device_function");
+    subst("__umulhi", "__umulhi", "device_function");
+    subst("__urhadd", "__urhadd", "device_function");
+    subst("__usad", "__usad", "device_function");
+    subst("__ushort2half_rd", "__ushort2half_rd", "device_function");
+    subst("__ushort2half_rn", "__ushort2half_rn", "device_function");
+    subst("__ushort2half_ru", "__ushort2half_ru", "device_function");
+    subst("__ushort2half_rz", "__ushort2half_rz", "device_function");
+    subst("__ushort_as_half", "__ushort_as_half", "device_function");
+    subst("abs", "abs", "device_function");
+    subst("acos", "acos", "device_function");
+    subst("acosf", "acosf", "device_function");
+    subst("acosh", "acosh", "device_function");
+    subst("acoshf", "acoshf", "device_function");
+    subst("asin", "asin", "device_function");
+    subst("asinf", "asinf", "device_function");
+    subst("asinh", "asinh", "device_function");
+    subst("asinhf", "asinhf", "device_function");
+    subst("atan", "atan", "device_function");
+    subst("atan2", "atan2", "device_function");
+    subst("atan2f", "atan2f", "device_function");
+    subst("atanf", "atanf", "device_function");
+    subst("atanh", "atanh", "device_function");
+    subst("atanhf", "atanhf", "device_function");
+    subst("atomicAdd", "atomicAdd", "device_function");
+    subst("atomicAdd_system", "atomicAdd_system", "device_function");
+    subst("atomicAnd", "atomicAnd", "device_function");
+    subst("atomicAnd_system", "atomicAnd_system", "device_function");
+    subst("atomicCAS", "atomicCAS", "device_function");
+    subst("atomicCAS_system", "atomicCAS_system", "device_function");
+    subst("atomicDec", "atomicDec", "device_function");
+    subst("atomicExch", "atomicExch", "device_function");
+    subst("atomicExch_system", "atomicExch_system", "device_function");
+    subst("atomicInc", "atomicInc", "device_function");
+    subst("atomicMax", "atomicMax", "device_function");
+    subst("atomicMax_system", "atomicMax_system", "device_function");
+    subst("atomicMin", "atomicMin", "device_function");
+    subst("atomicMin_system", "atomicMin_system", "device_function");
+    subst("atomicOr", "atomicOr", "device_function");
+    subst("atomicOr_system", "atomicOr_system", "device_function");
+    subst("atomicSub", "atomicSub", "device_function");
+    subst("atomicSub_system", "atomicSub_system", "device_function");
+    subst("atomicXor", "atomicXor", "device_function");
+    subst("atomicXor_system", "atomicXor_system", "device_function");
+    subst("cbrt", "cbrt", "device_function");
+    subst("cbrtf", "cbrtf", "device_function");
+    subst("ceil", "ceil", "device_function");
+    subst("ceilf", "ceilf", "device_function");
+    subst("clock", "clock", "device_function");
+    subst("clock64", "clock64", "device_function");
+    subst("copysign", "copysign", "device_function");
+    subst("copysignf", "copysignf", "device_function");
+    subst("cos", "cos", "device_function");
+    subst("cosf", "cosf", "device_function");
+    subst("cosh", "cosh", "device_function");
+    subst("coshf", "coshf", "device_function");
+    subst("cospi", "cospi", "device_function");
+    subst("cospif", "cospif", "device_function");
+    subst("cyl_bessel_i0", "cyl_bessel_i0", "device_function");
+    subst("cyl_bessel_i0f", "cyl_bessel_i0f", "device_function");
+    subst("cyl_bessel_i1", "cyl_bessel_i1", "device_function");
+    subst("cyl_bessel_i1f", "cyl_bessel_i1f", "device_function");
+    subst("erf", "erf", "device_function");
+    subst("erfc", "erfc", "device_function");
+    subst("erfcf", "erfcf", "device_function");
+    subst("erfcinv", "erfcinv", "device_function");
+    subst("erfcinvf", "erfcinvf", "device_function");
+    subst("erfcx", "erfcx", "device_function");
+    subst("erfcxf", "erfcxf", "device_function");
+    subst("erff", "erff", "device_function");
+    subst("erfinv", "erfinv", "device_function");
+    subst("erfinvf", "erfinvf", "device_function");
+    subst("exp", "exp", "device_function");
+    subst("exp10", "exp10", "device_function");
+    subst("exp10f", "exp10f", "device_function");
+    subst("exp2", "exp2", "device_function");
+    subst("exp2f", "exp2f", "device_function");
+    subst("expf", "expf", "device_function");
+    subst("expm1", "expm1", "device_function");
+    subst("expm1f", "expm1f", "device_function");
+    subst("fabs", "fabs", "device_function");
+    subst("fabsf", "fabsf", "device_function");
+    subst("fdim", "fdim", "device_function");
+    subst("fdimf", "fdimf", "device_function");
+    subst("fdividef", "fdividef", "device_function");
+    subst("floor", "floor", "device_function");
+    subst("floorf", "floorf", "device_function");
+    subst("fma", "fma", "device_function");
+    subst("fmaf", "fmaf", "device_function");
+    subst("fmax", "fmax", "device_function");
+    subst("fmaxf", "fmaxf", "device_function");
+    subst("fmin", "fmin", "device_function");
+    subst("fminf", "fminf", "device_function");
+    subst("fmod", "fmod", "device_function");
+    subst("fmodf", "fmodf", "device_function");
+    subst("frexp", "frexp", "device_function");
+    subst("frexpf", "frexpf", "device_function");
+    subst("h2ceil", "h2ceil", "device_function");
+    subst("h2cos", "h2cos", "device_function");
+    subst("h2exp", "h2exp", "device_function");
+    subst("h2exp10", "h2exp10", "device_function");
+    subst("h2exp2", "h2exp2", "device_function");
+    subst("h2floor", "h2floor", "device_function");
+    subst("h2log", "h2log", "device_function");
+    subst("h2log10", "h2log10", "device_function");
+    subst("h2log2", "h2log2", "device_function");
+    subst("h2rcp", "h2rcp", "device_function");
+    subst("h2rint", "h2rint", "device_function");
+    subst("h2rsqrt", "h2rsqrt", "device_function");
+    subst("h2sin", "h2sin", "device_function");
+    subst("h2sqrt", "h2sqrt", "device_function");
+    subst("h2trunc", "h2trunc", "device_function");
+    subst("hceil", "hceil", "device_function");
+    subst("hcos", "hcos", "device_function");
+    subst("hexp", "hexp", "device_function");
+    subst("hexp10", "hexp10", "device_function");
+    subst("hexp2", "hexp2", "device_function");
+    subst("hfloor", "hfloor", "device_function");
+    subst("hlog", "hlog", "device_function");
+    subst("hlog10", "hlog10", "device_function");
+    subst("hlog2", "hlog2", "device_function");
+    subst("hrcp", "hrcp", "device_function");
+    subst("hrint", "hrint", "device_function");
+    subst("hrsqrt", "hrsqrt", "device_function");
+    subst("hsin", "hsin", "device_function");
+    subst("hsqrt", "hsqrt", "device_function");
+    subst("htrunc", "htrunc", "device_function");
+    subst("hypot", "hypot", "device_function");
+    subst("hypotf", "hypotf", "device_function");
+    subst("ilogb", "ilogb", "device_function");
+    subst("ilogbf", "ilogbf", "device_function");
+    subst("isfinite", "isfinite", "device_function");
+    subst("isinf", "isinf", "device_function");
+    subst("isnan", "isnan", "device_function");
+    subst("j0", "j0", "device_function");
+    subst("j0f", "j0f", "device_function");
+    subst("j1", "j1", "device_function");
+    subst("j1f", "j1f", "device_function");
+    subst("jn", "jn", "device_function");
+    subst("jnf", "jnf", "device_function");
+    subst("labs", "labs", "device_function");
+    subst("ldexp", "ldexp", "device_function");
+    subst("ldexpf", "ldexpf", "device_function");
+    subst("lgamma", "lgamma", "device_function");
+    subst("lgammaf", "lgammaf", "device_function");
+    subst("llabs", "llabs", "device_function");
+    subst("llrint", "llrint", "device_function");
+    subst("llrintf", "llrintf", "device_function");
+    subst("llround", "llround", "device_function");
+    subst("llroundf", "llroundf", "device_function");
+    subst("log", "log", "device_function");
+    subst("log10", "log10", "device_function");
+    subst("log10f", "log10f", "device_function");
+    subst("log1p", "log1p", "device_function");
+    subst("log1pf", "log1pf", "device_function");
+    subst("log2", "log2", "device_function");
+    subst("log2f", "log2f", "device_function");
+    subst("logb", "logb", "device_function");
+    subst("logbf", "logbf", "device_function");
+    subst("logf", "logf", "device_function");
+    subst("lrint", "lrint", "device_function");
+    subst("lrintf", "lrintf", "device_function");
+    subst("lround", "lround", "device_function");
+    subst("lroundf", "lroundf", "device_function");
+    subst("max", "max", "device_function");
+    subst("min", "min", "device_function");
+    subst("modf", "modf", "device_function");
+    subst("modff", "modff", "device_function");
+    subst("nan", "nan", "device_function");
+    subst("nanf", "nanf", "device_function");
+    subst("nearbyint", "nearbyint", "device_function");
+    subst("nearbyintf", "nearbyintf", "device_function");
+    subst("nextafter", "nextafter", "device_function");
+    subst("nextafterf", "nextafterf", "device_function");
+    subst("norm", "norm", "device_function");
+    subst("norm3d", "norm3d", "device_function");
+    subst("norm3df", "norm3df", "device_function");
+    subst("norm4d", "norm4d", "device_function");
+    subst("norm4df", "norm4df", "device_function");
+    subst("normcdf", "normcdf", "device_function");
+    subst("normcdff", "normcdff", "device_function");
+    subst("normcdfinv", "normcdfinv", "device_function");
+    subst("normcdfinvf", "normcdfinvf", "device_function");
+    subst("normf", "normf", "device_function");
+    subst("pow", "pow", "device_function");
+    subst("powf", "powf", "device_function");
+    subst("rcbrt", "rcbrt", "device_function");
+    subst("rcbrtf", "rcbrtf", "device_function");
+    subst("remainder", "remainder", "device_function");
+    subst("remainderf", "remainderf", "device_function");
+    subst("remquo", "remquo", "device_function");
+    subst("remquof", "remquof", "device_function");
+    subst("rhypot", "rhypot", "device_function");
+    subst("rhypotf", "rhypotf", "device_function");
+    subst("rint", "rint", "device_function");
+    subst("rintf", "rintf", "device_function");
+    subst("rnorm", "rnorm", "device_function");
+    subst("rnorm3d", "rnorm3d", "device_function");
+    subst("rnorm3df", "rnorm3df", "device_function");
+    subst("rnorm4d", "rnorm4d", "device_function");
+    subst("rnorm4df", "rnorm4df", "device_function");
+    subst("rnormf", "rnormf", "device_function");
+    subst("round", "round", "device_function");
+    subst("roundf", "roundf", "device_function");
+    subst("rsqrt", "rsqrt", "device_function");
+    subst("rsqrtf", "rsqrtf", "device_function");
+    subst("scalbln", "scalbln", "device_function");
+    subst("scalblnf", "scalblnf", "device_function");
+    subst("scalbn", "scalbn", "device_function");
+    subst("scalbnf", "scalbnf", "device_function");
+    subst("signbit", "signbit", "device_function");
+    subst("sin", "sin", "device_function");
+    subst("sincos", "sincos", "device_function");
+    subst("sincosf", "sincosf", "device_function");
+    subst("sincospi", "sincospi", "device_function");
+    subst("sincospif", "sincospif", "device_function");
+    subst("sinf", "sinf", "device_function");
+    subst("sinh", "sinh", "device_function");
+    subst("sinhf", "sinhf", "device_function");
+    subst("sinpi", "sinpi", "device_function");
+    subst("sinpif", "sinpif", "device_function");
+    subst("sqrt", "sqrt", "device_function");
+    subst("sqrtf", "sqrtf", "device_function");
+    subst("tan", "tan", "device_function");
+    subst("tanf", "tanf", "device_function");
+    subst("tanh", "tanh", "device_function");
+    subst("tanhf", "tanhf", "device_function");
+    subst("tgamma", "tgamma", "device_function");
+    subst("tgammaf", "tgammaf", "device_function");
+    subst("trunc", "trunc", "device_function");
+    subst("truncf", "truncf", "device_function");
+    subst("y0", "y0", "device_function");
+    subst("y0f", "y0f", "device_function");
+    subst("y1", "y1", "device_function");
+    subst("y1f", "y1f", "device_function");
+    subst("yn", "yn", "device_function");
+    subst("ynf", "ynf", "device_function");
     subst("__half", "__half", "device_type");
     subst("__half2", "__half2", "device_type");
     subst("__half2_raw", "__half2_raw", "device_type");
     subst("__half_raw", "__half_raw", "device_type");
     subst("__nv_bfloat16", "hip_bfloat16", "device_type");
+    subst("__nv_bfloat162_raw", "__hip_bfloat162_raw", "device_type");
+    subst("__nv_bfloat16_raw", "__hip_bfloat16_raw", "device_type");
     subst("__nv_fp8_e4m3", "__hip_fp8_e4m3_fnuz", "device_type");
     subst("__nv_fp8_e5m2", "__hip_fp8_e5m2_fnuz", "device_type");
     subst("__nv_fp8_interpretation_t", "__hip_fp8_interpretation_t", "device_type");
@@ -9283,7 +9817,15 @@ sub warnUnsupportedFunctions {
     my $line_num = shift;
     my $k = 0;
     foreach $func (
+        "umul24",
+        "umin",
+        "umax",
+        "ullmin",
+        "ullmax",
+        "uint_as_float",
+        "uint2float",
         "syevjInfo",
+        "saturate",
         "nvrtcGetSupportedArchs",
         "nvrtcGetOptiXIRSize",
         "nvrtcGetOptiXIR",
@@ -9293,10 +9835,23 @@ sub warnUnsupportedFunctions {
         "nvrtcGetLTOIRSize",
         "nvrtcGetLTOIR",
         "nv_bfloat162",
+        "mulhi",
+        "mul64hi",
+        "mul24",
         "memoryBarrier",
+        "make_half2",
+        "make_bfloat162",
+        "llmin",
+        "llmax",
         "libraryPropertyType_t",
         "libraryPropertyType",
+        "int_as_float",
+        "int2float",
         "gesvdjInfo",
+        "float_as_uint",
+        "float_as_int",
+        "float2int",
+        "fdivide",
         "cusolverStorevMode_t",
         "cusolverSpZcsrzfdHost",
         "cusolverSpZcsrqrsvBatched",
@@ -10403,10 +10958,259 @@ sub warnUnsupportedFunctions {
         "cl_event_flags",
         "cl_context_flags_enum",
         "cl_context_flags",
-        "__nv_bfloat16_raw",
-        "__nv_bfloat162_raw",
+        "_ldsign",
+        "_fdsign",
+        "__vsubus4",
+        "__vsubus2",
+        "__vsubss4",
+        "__vsubss2",
+        "__vsub4",
+        "__vsub2",
+        "__vsetne4",
+        "__vsetne2",
+        "__vsetltu4",
+        "__vsetltu2",
+        "__vsetlts4",
+        "__vsetlts2",
+        "__vsetleu4",
+        "__vsetleu2",
+        "__vsetles4",
+        "__vsetles2",
+        "__vsetgtu4",
+        "__vsetgts4",
+        "__vsetgts2",
+        "__vsetgeu4",
+        "__vsetgeu2",
+        "__vsetges4",
+        "__vsetges2",
+        "__vseteq4",
+        "__vseteq2",
+        "__vsadu4",
+        "__vsadu2",
+        "__vsads4",
+        "__vsads2",
+        "__vnegss4",
+        "__vnegss2",
+        "__vneg4",
+        "__vneg2",
+        "__vminu4",
+        "__vminu2",
+        "__vmins4",
+        "__vmins2",
+        "__vmaxu4",
+        "__vmaxu2",
+        "__vmaxs4",
+        "__vmaxs2",
+        "__vhaddu4",
+        "__vhaddu2",
+        "__vcmpne4",
+        "__vcmpne2",
+        "__vcmpltu4",
+        "__vcmpltu2",
+        "__vcmplts4",
+        "__vcmplts2",
+        "__vcmpleu4",
+        "__vcmples4",
+        "__vcmples2",
+        "__vcmpgtu4",
+        "__vcmpgtu2",
+        "__vcmpgts4",
+        "__vcmpgts2",
+        "__vcmpgeu4",
+        "__vcmpgeu2",
+        "__vcmpges4",
+        "__vcmpges2",
+        "__vcmpeq4",
+        "__vcmpeq2",
+        "__vavgu4",
+        "__vavgu2",
+        "__vavgs4",
+        "__vavgs2",
+        "__vaddus4",
+        "__vaddus2",
+        "__vaddss4",
+        "__vaddss2",
+        "__vadd4",
+        "__vadd2",
+        "__vabsss4",
+        "__vabsss2",
+        "__vabsdiffu4",
+        "__vabsdiffu2",
+        "__vabsdiffs4",
+        "__vabsdiffs2",
+        "__vabs4",
+        "__vabs2",
+        "__ushort_as_bfloat16",
+        "__ushort2bfloat16_rz",
+        "__ushort2bfloat16_ru",
+        "__ushort2bfloat16_rn",
+        "__ushort2bfloat16_rd",
+        "__ull2bfloat16_rz",
+        "__ull2bfloat16_ru",
+        "__ull2bfloat16_rn",
+        "__ull2bfloat16_rd",
+        "__uint2bfloat16_rz",
+        "__uint2bfloat16_ru",
+        "__uint2bfloat16_rn",
+        "__uint2bfloat16_rd",
+        "__trap",
+        "__stwt",
+        "__stwb",
+        "__stcs",
+        "__stcg",
+        "__signbitl",
+        "__signbitf",
+        "__signbit",
+        "__short_as_bfloat16",
+        "__short2bfloat16_rz",
+        "__short2bfloat16_ru",
+        "__short2bfloat16_rn",
+        "__short2bfloat16_rd",
+        "__prof_trigger",
+        "__pm3",
+        "__pm2",
+        "__pm1",
+        "__pm0",
         "__nv_bfloat162",
+        "__lows2bfloat162",
+        "__low2bfloat162",
+        "__low2bfloat16",
+        "__ll2bfloat16_rz",
+        "__ll2bfloat16_ru",
+        "__ll2bfloat16_rn",
+        "__ll2bfloat16_rd",
+        "__ldlu",
+        "__ldcv",
+        "__isnanl",
+        "__isnanf",
+        "__isnan",
+        "__isinfl",
+        "__isinff",
+        "__isinf",
+        "__int2bfloat16_rz",
+        "__int2bfloat16_ru",
+        "__int2bfloat16_rn",
+        "__int2bfloat16_rd",
+        "__hsub_rn",
+        "__hsub2_rn",
+        "__hneu2_mask",
+        "__hne2_mask",
+        "__hmul_rn",
+        "__hmul2_rn",
+        "__hmin2_nan",
+        "__hmin2",
+        "__hmax2_nan",
+        "__hmax2",
+        "__hltu2_mask",
+        "__hlt2_mask",
+        "__hleu2_mask",
+        "__hle2_mask",
+        "__highs2bfloat162",
+        "__high2bfloat162",
+        "__high2bfloat16",
+        "__hgtu2_mask",
+        "__hgt2_mask",
+        "__hgeu2_mask",
+        "__hge2_mask",
+        "__hfma_relu",
+        "__hfma2_relu",
+        "__hequ2_mask",
+        "__heq2_mask",
+        "__hcmadd",
+        "__halves2bfloat162",
+        "__half2uchar_rz",
+        "__half2char_rz",
+        "__hadd_rn",
+        "__hadd2_rn",
+        "__fsub_rz",
+        "__fsub_ru",
+        "__fsub_rd",
+        "__fsqrt_rz",
+        "__fsqrt_ru",
+        "__fsqrt_rd",
+        "__frcp_rz",
+        "__frcp_ru",
+        "__frcp_rd",
+        "__fmul_rz",
+        "__fmul_ru",
+        "__fmul_rd",
+        "__fmaf_rz",
+        "__fmaf_ru",
+        "__fmaf_rd",
+        "__fma_rz",
+        "__fma_ru",
+        "__fma_rd",
+        "__floats2bfloat162_rn",
+        "__float2bfloat16_rz",
+        "__float2bfloat16_ru",
+        "__float2bfloat16_rn",
+        "__float2bfloat16_rd",
+        "__float2bfloat162_rn",
+        "__float2bfloat16",
+        "__float22bfloat162_rn",
+        "__finitel",
+        "__finitef",
+        "__finite",
+        "__fdiv_rz",
+        "__fdiv_ru",
+        "__fdiv_rd",
+        "__fadd_rz",
+        "__fadd_ru",
+        "__fadd_rd",
+        "__dsub_rz",
+        "__dsub_ru",
+        "__dsub_rd",
+        "__dsqrt_rz",
+        "__dsqrt_ru",
+        "__dsqrt_rd",
+        "__drcp_rz",
+        "__drcp_ru",
+        "__drcp_rd",
+        "__double2half",
+        "__double2bfloat16",
+        "__dmul_rz",
+        "__dmul_ru",
+        "__dmul_rd",
+        "__ddiv_rz",
+        "__ddiv_ru",
+        "__ddiv_rd",
+        "__dadd_rz",
+        "__dadd_ru",
+        "__dadd_rd",
+        "__brkpt",
+        "__bfloat16_as_ushort",
+        "__bfloat16_as_short",
+        "__bfloat162ushort_rz",
+        "__bfloat162ushort_ru",
+        "__bfloat162ushort_rn",
+        "__bfloat162ushort_rd",
+        "__bfloat162ull_rz",
+        "__bfloat162ull_ru",
+        "__bfloat162ull_rn",
+        "__bfloat162ull_rd",
+        "__bfloat162uint_rz",
+        "__bfloat162uint_ru",
+        "__bfloat162uint_rn",
+        "__bfloat162uint_rd",
+        "__bfloat162uchar_rz",
+        "__bfloat162short_rz",
+        "__bfloat162short_ru",
+        "__bfloat162short_rn",
+        "__bfloat162short_rd",
+        "__bfloat162ll_rz",
+        "__bfloat162ll_ru",
+        "__bfloat162ll_rn",
+        "__bfloat162ll_rd",
+        "__bfloat162int_rz",
+        "__bfloat162int_ru",
+        "__bfloat162int_rn",
+        "__bfloat162int_rd",
+        "__bfloat162float",
+        "__bfloat162char_rz",
+        "__bfloat162bfloat162",
+        "__bfloat1622float2",
         "__CUB_LP64__",
+        "_Pow_int",
         "_CUB_ASM_PTR_SIZE_",
         "_CUB_ASM_PTR_",
         "NVRTC_ERROR_TIME_FILE_WRITE_FAILED",
