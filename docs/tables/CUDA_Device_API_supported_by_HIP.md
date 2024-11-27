@@ -817,8 +817,8 @@
 |`__half2`| | | | |`__half2`|1.6.0| | | | |
 |`__half2_raw`| | | | |`__half2_raw`|1.9.0| | | | |
 |`__half_raw`| | | | |`__half_raw`|1.9.0| | | | |
-|`__nv_bfloat16`|11.0| | | |`hip_bfloat16`|3.5.0| | | | |
-|`__nv_bfloat162`|11.0| | | | | | | | | |
+|`__nv_bfloat16`|11.0| | | |`__hip_bfloat16`|5.7.0| | | | |
+|`__nv_bfloat162`|11.0| | | |`__hip_bfloat162`|5.7.0| | | | |
 |`__nv_bfloat162_raw`|11.0| | | |`__hip_bfloat162_raw`|6.2.0| | | | |
 |`__nv_bfloat16_raw`|11.0| | | |`__hip_bfloat16_raw`|6.2.0| | | | |
 |`__nv_fp8_e4m3`|11.8| | | |`__hip_fp8_e4m3_fnuz`|6.2.0| | | | |
@@ -832,6 +832,7 @@
 |`__nv_fp8x4_e5m2`|11.8| | | |`__hip_fp8x4_e5m2_fnuz`|6.2.0| | | | |
 |`__nv_fp8x4_storage_t`|11.8| | | |`__hip_fp8x4_storage_t`|6.2.0| | | | |
 |`__nv_saturation_t`|11.8| | | |`__hip_saturation_t`|6.2.0| | | | |
+|`nv_bfloat16`|11.0| | | | | | | | | |
 |`nv_bfloat162`|11.0| | | | | | | | | |
 
 

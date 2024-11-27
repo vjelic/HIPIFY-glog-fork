@@ -30,11 +30,12 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DEVICE_TYPE_NAME_MAP {
   {"__half2",                              {"__half2",                               "",                                        CONV_DEVICE_TYPE, API_RUNTIME, 2}},
   {"__half2_raw",                          {"__half2_raw",                           "",                                        CONV_DEVICE_TYPE, API_RUNTIME, 2}},
   // Bfloat16 Precision Device types
-  {"__nv_bfloat16",                        {"hip_bfloat16",                          "rocblas_bfloat16",                        CONV_DEVICE_TYPE, API_RUNTIME, 2}},
-  {"__nv_bfloat16_raw",                    {"__hip_bfloat16_raw",                    "",                                        CONV_DEVICE_TYPE, API_RUNTIME, 2, ROC_UNSUPPORTED}},
-  {"__nv_bfloat162",                       {"__hip_bfloat162",                       "",                                        CONV_DEVICE_TYPE, API_RUNTIME, 2, UNSUPPORTED}},
+  {"__nv_bfloat16",                        {"__hip_bfloat16",                        "rocblas_bfloat16",                        CONV_DEVICE_TYPE, API_RUNTIME, 2}},
+  {"nv_bfloat16",                          {"hip_bfloat16",                          "",                                        CONV_DEVICE_TYPE, API_RUNTIME, 2, UNSUPPORTED}},
+  {"__nv_bfloat16_raw",                    {"__hip_bfloat16_raw",                    "",                                        CONV_DEVICE_TYPE, API_RUNTIME, 2}},
+  {"__nv_bfloat162",                       {"__hip_bfloat162",                       "",                                        CONV_DEVICE_TYPE, API_RUNTIME, 2}},
   {"nv_bfloat162",                         {"hip_bfloat162",                         "",                                        CONV_DEVICE_TYPE, API_RUNTIME, 2, UNSUPPORTED}},
-  {"__nv_bfloat162_raw",                   {"__hip_bfloat162_raw",                   "",                                        CONV_DEVICE_TYPE, API_RUNTIME, 2, ROC_UNSUPPORTED}},
+  {"__nv_bfloat162_raw",                   {"__hip_bfloat162_raw",                   "",                                        CONV_DEVICE_TYPE, API_RUNTIME, 2}},
   // float8 Precision Device types
   {"__nv_fp8_storage_t",                   {"__hip_fp8_storage_t",                   "",                                        CONV_DEVICE_TYPE, API_RUNTIME, 2}},
   {"__nv_fp8x2_storage_t",                 {"__hip_fp8x2_storage_t",                 "",                                        CONV_DEVICE_TYPE, API_RUNTIME, 2}},
@@ -82,7 +83,7 @@ const std::map<llvm::StringRef, hipAPIversions> HIP_DEVICE_TYPE_NAME_VER_MAP {
   {"__half2",                              {HIP_1060, HIP_0,    HIP_0   }},
   {"__half_raw",                           {HIP_1090, HIP_0,    HIP_0   }},
   {"__half2_raw",                          {HIP_1090, HIP_0,    HIP_0   }},
-  {"hip_bfloat16",                         {HIP_3050, HIP_0,    HIP_0   }},
+  {"__hip_bfloat16",                       {HIP_5070, HIP_0,    HIP_0   }},
   {"__hip_fp8_e4m3_fnuz",                  {HIP_6020, HIP_0,    HIP_0   }},
   {"__hip_fp8_storage_t",                  {HIP_6020, HIP_0,    HIP_0   }},
   {"__hip_fp8x2_storage_t",                {HIP_6020, HIP_0,    HIP_0   }},
@@ -100,6 +101,7 @@ const std::map<llvm::StringRef, hipAPIversions> HIP_DEVICE_TYPE_NAME_VER_MAP {
   {"__hip_fp8x4_e5m2_fnuz",                {HIP_6020, HIP_0,    HIP_0   }},
   {"__hip_bfloat16_raw",                   {HIP_6020, HIP_0,    HIP_0   }},
   {"__hip_bfloat162_raw",                  {HIP_6020, HIP_0,    HIP_0   }},
+  {"__hip_bfloat162",                      {HIP_5070, HIP_0,    HIP_0   }},
 
   {"rocblas_half",                         {HIP_1050, HIP_0,    HIP_0   }},
   {"rocblas_bfloat16",                     {HIP_3050, HIP_0,    HIP_0   }},
