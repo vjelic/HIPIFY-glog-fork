@@ -18,9 +18,15 @@ int main() {
   __half_raw hrx = { 0 };
   __half2_raw h2rx = { 0, 0 };
 
-#if CUDA_VERSION >= 11080
+#if CUDA_VERSION >= 11000
+  // CHECK: __hip_bfloat16 bf16 = { 0 };
+  __nv_bfloat16 bf16 = { 0 };
+
   // CHECK: __hip_bfloat16_raw bf16r = { 0 };
   __nv_bfloat16_raw bf16r = { 0 };
+
+  // CHECK: __hip_bfloat162 bf162 = { 0, 0 };
+  __nv_bfloat162 bf162 = { 0, 0 };
 
   // CHECK: __hip_bfloat162_raw bf162r = { 0, 0 };
   __nv_bfloat162_raw bf162r = { 0, 0 };

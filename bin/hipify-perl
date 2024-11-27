@@ -6675,7 +6675,8 @@ sub simpleSubstitutions {
     subst("__half2", "__half2", "device_type");
     subst("__half2_raw", "__half2_raw", "device_type");
     subst("__half_raw", "__half_raw", "device_type");
-    subst("__nv_bfloat16", "hip_bfloat16", "device_type");
+    subst("__nv_bfloat16", "__hip_bfloat16", "device_type");
+    subst("__nv_bfloat162", "__hip_bfloat162", "device_type");
     subst("__nv_bfloat162_raw", "__hip_bfloat162_raw", "device_type");
     subst("__nv_bfloat16_raw", "__hip_bfloat16_raw", "device_type");
     subst("__nv_fp8_e4m3", "__hip_fp8_e4m3_fnuz", "device_type");
@@ -9835,6 +9836,7 @@ sub warnUnsupportedFunctions {
         "nvrtcGetLTOIRSize",
         "nvrtcGetLTOIR",
         "nv_bfloat162",
+        "nv_bfloat16",
         "mulhi",
         "mul64hi",
         "mul24",
@@ -11071,7 +11073,6 @@ sub warnUnsupportedFunctions {
         "__pm2",
         "__pm1",
         "__pm0",
-        "__nv_bfloat162",
         "__lows2bfloat162",
         "__low2bfloat162",
         "__low2bfloat16",
