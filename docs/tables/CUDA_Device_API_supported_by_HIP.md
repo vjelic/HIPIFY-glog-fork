@@ -14,10 +14,10 @@
 |`__assertfail`| | | | |`__assertfail`|1.9.0| | | | |
 |`__ballot`| | | | |`__ballot`|1.6.0| | | | |
 |`__ballot_sync`|9.0| | | |`__ballot_sync`|6.2.0| | | | |
-|`__bfloat1622float2`|11.0| | | | | | | | | |
-|`__bfloat162bfloat162`|11.0| | | | | | | | | |
+|`__bfloat1622float2`|11.0| | | |`__bfloat1622float2`|5.7.0| | | | |
+|`__bfloat162bfloat162`|11.0| | | |`__bfloat162bfloat162`|5.7.0| | | | |
 |`__bfloat162char_rz`|12.2| | | | | | | | | |
-|`__bfloat162float`|11.0| | | | | | | | | |
+|`__bfloat162float`|11.0| | | |`__bfloat162float`|5.7.0| | | | |
 |`__bfloat162int_rd`|11.0| | | | | | | | | |
 |`__bfloat162int_rn`|11.0| | | | | | | | | |
 |`__bfloat162int_ru`|11.0| | | | | | | | | |
@@ -64,7 +64,7 @@
 |`__dmul_rn`| | | | |`__dmul_rn`|1.6.0| | | | |
 |`__dmul_ru`| | | | | | | | | | |
 |`__dmul_rz`| | | | | | | | | | |
-|`__double2bfloat16`|11.0| | | | | | | | | |
+|`__double2bfloat16`|11.0| | | |`__double2bfloat16`|5.7.0| | | | |
 |`__double2float_rd`| | | | |`__double2float_rd`|1.6.0| | | | |
 |`__double2float_rn`| | | | |`__double2float_rn`|1.6.0| | | | |
 |`__double2float_ru`| | | | |`__double2float_ru`|1.6.0| | | | |
@@ -119,7 +119,7 @@
 |`__finitel`| | | | | | | | | | |
 |`__float22bfloat162_rn`|11.0| | | | | | | | | |
 |`__float22half2_rn`| | | | |`__float22half2_rn`|1.6.0| | | | |
-|`__float2bfloat16`|11.0| | | | | | | | | |
+|`__float2bfloat16`|11.0| | | |`__float2bfloat16`|5.7.0| | | | |
 |`__float2bfloat162_rn`|11.0| | | | | | | | | |
 |`__float2bfloat16_rd`|11.0| | | | | | | | | |
 |`__float2bfloat16_rn`|11.0| | | | | | | | | |
@@ -260,12 +260,12 @@
 |`__hgtu`| | | | |`__hgtu`|1.9.0| | | | |
 |`__hgtu2`| | | | |`__hgtu2`|1.9.0| | | | |
 |`__hgtu2_mask`|12.0| | | | | | | | | |
-|`__high2bfloat16`|11.0| | | | | | | | | |
+|`__high2bfloat16`|11.0| | | |`__high2bfloat16`|5.7.0| | | | |
 |`__high2bfloat162`|11.0| | | | | | | | | |
 |`__high2float`| | | | |`__high2float`|1.6.0| | | | |
 |`__high2half`| | | | |`__high2half`|1.6.0| | | | |
 |`__high2half2`| | | | |`__high2half2`|1.6.0| | | | |
-|`__highs2bfloat162`|11.0| | | | | | | | | |
+|`__highs2bfloat162`|11.0| | | |`__highs2bfloat162`|5.7.0| | | | |
 |`__highs2half2`| | | | |`__highs2half2`|1.6.0| | | | |
 |`__hiloint2double`| | | | |`__hiloint2double`|1.6.0| | | | |
 |`__hisinf`| | | | |`__hisinf`|1.6.0| | | | |
@@ -363,7 +363,7 @@
 |`__low2half`| | | | |`__low2half`|1.6.0| | | | |
 |`__low2half2`| | | | |`__low2half2`|1.6.0| | | | |
 |`__lowhigh2highlow`| | | | |`__lowhigh2highlow`|1.6.0| | | | |
-|`__lows2bfloat162`|11.0| | | | | | | | | |
+|`__lows2bfloat162`|11.0| | | |`__lows2bfloat162`|5.7.0| | | | |
 |`__lows2half2`| | | | |`__lows2half2`|1.6.0| | | | |
 |`__match_all_sync`|9.0| | | |`__match_all_sync`|6.2.0| | | | |
 |`__match_any_sync`|9.0| | | |`__match_any_sync`|6.2.0| | | | |

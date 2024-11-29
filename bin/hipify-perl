@@ -6152,6 +6152,9 @@ sub simpleSubstitutions {
     subst("__assertfail", "__assertfail", "device_function");
     subst("__ballot", "__ballot", "device_function");
     subst("__ballot_sync", "__ballot_sync", "device_function");
+    subst("__bfloat1622float2", "__bfloat1622float2", "device_function");
+    subst("__bfloat162bfloat162", "__bfloat162bfloat162", "device_function");
+    subst("__bfloat162float", "__bfloat162float", "device_function");
     subst("__brev", "__brev", "device_function");
     subst("__brevll", "__brevll", "device_function");
     subst("__byte_perm", "__byte_perm", "device_function");
@@ -6161,6 +6164,7 @@ sub simpleSubstitutions {
     subst("__dadd_rn", "__dadd_rn", "device_function");
     subst("__ddiv_rn", "__ddiv_rn", "device_function");
     subst("__dmul_rn", "__dmul_rn", "device_function");
+    subst("__double2bfloat16", "__double2bfloat16", "device_function");
     subst("__double2float_rd", "__double2float_rd", "device_function");
     subst("__double2float_rn", "__double2float_rn", "device_function");
     subst("__double2float_ru", "__double2float_ru", "device_function");
@@ -6195,6 +6199,7 @@ sub simpleSubstitutions {
     subst("__ffs", "__ffs", "device_function");
     subst("__ffsll", "__ffsll", "device_function");
     subst("__float22half2_rn", "__float22half2_rn", "device_function");
+    subst("__float2bfloat16", "__float2bfloat16", "device_function");
     subst("__float2half", "__float2half", "device_function");
     subst("__float2half2_rn", "__float2half2_rn", "device_function");
     subst("__float2half_rd", "__float2half_rd", "device_function");
@@ -6297,9 +6302,11 @@ sub simpleSubstitutions {
     subst("__hgt2", "__hgt2", "device_function");
     subst("__hgtu", "__hgtu", "device_function");
     subst("__hgtu2", "__hgtu2", "device_function");
+    subst("__high2bfloat16", "__high2bfloat16", "device_function");
     subst("__high2float", "__high2float", "device_function");
     subst("__high2half", "__high2half", "device_function");
     subst("__high2half2", "__high2half2", "device_function");
+    subst("__highs2bfloat162", "__highs2bfloat162", "device_function");
     subst("__highs2half2", "__highs2half2", "device_function");
     subst("__hiloint2double", "__hiloint2double", "device_function");
     subst("__hisinf", "__hisinf", "device_function");
@@ -6365,6 +6372,7 @@ sub simpleSubstitutions {
     subst("__low2half", "__low2half", "device_function");
     subst("__low2half2", "__low2half2", "device_function");
     subst("__lowhigh2highlow", "__lowhigh2highlow", "device_function");
+    subst("__lows2bfloat162", "__lows2bfloat162", "device_function");
     subst("__lows2half2", "__lows2half2", "device_function");
     subst("__match_all_sync", "__match_all_sync", "device_function");
     subst("__match_any_sync", "__match_any_sync", "device_function");
@@ -9237,6 +9245,7 @@ sub countSupportedDeviceFunctions {
         "__match_any_sync",
         "__match_all_sync",
         "__lows2half2",
+        "__lows2bfloat162",
         "__lowhigh2highlow",
         "__low2half2",
         "__low2half",
@@ -9302,9 +9311,11 @@ sub countSupportedDeviceFunctions {
         "__hisinf",
         "__hiloint2double",
         "__highs2half2",
+        "__highs2bfloat162",
         "__high2half2",
         "__high2half",
         "__high2float",
+        "__high2bfloat16",
         "__hgtu2",
         "__hgtu",
         "__hgt2",
@@ -9407,6 +9418,7 @@ sub countSupportedDeviceFunctions {
         "__float2half_rd",
         "__float2half2_rn",
         "__float2half",
+        "__float2bfloat16",
         "__float22half2_rn",
         "__ffsll",
         "__ffs",
@@ -9441,6 +9453,7 @@ sub countSupportedDeviceFunctions {
         "__double2float_ru",
         "__double2float_rn",
         "__double2float_rd",
+        "__double2bfloat16",
         "__dmul_rn",
         "__ddiv_rn",
         "__dadd_rn",
@@ -9450,6 +9463,9 @@ sub countSupportedDeviceFunctions {
         "__byte_perm",
         "__brevll",
         "__brev",
+        "__bfloat162float",
+        "__bfloat162bfloat162",
+        "__bfloat1622float2",
         "__ballot_sync",
         "__ballot",
         "__assertfail",
@@ -9610,7 +9626,6 @@ sub warnUnsupportedDeviceFunctions {
         "__pm2",
         "__pm1",
         "__pm0",
-        "__lows2bfloat162",
         "__low2bfloat162",
         "__low2bfloat16",
         "__ll2bfloat16_rz",
@@ -9643,9 +9658,7 @@ sub warnUnsupportedDeviceFunctions {
         "__hlt2_mask",
         "__hleu2_mask",
         "__hle2_mask",
-        "__highs2bfloat162",
         "__high2bfloat162",
-        "__high2bfloat16",
         "__hgtu2_mask",
         "__hgt2_mask",
         "__hgeu2_mask",
@@ -9684,7 +9697,6 @@ sub warnUnsupportedDeviceFunctions {
         "__float2bfloat16_rn",
         "__float2bfloat16_rd",
         "__float2bfloat162_rn",
-        "__float2bfloat16",
         "__float22bfloat162_rn",
         "__finitel",
         "__finitef",
@@ -9705,7 +9717,6 @@ sub warnUnsupportedDeviceFunctions {
         "__drcp_ru",
         "__drcp_rd",
         "__double2half",
-        "__double2bfloat16",
         "__dmul_rz",
         "__dmul_ru",
         "__dmul_rd",
@@ -9743,10 +9754,7 @@ sub warnUnsupportedDeviceFunctions {
         "__bfloat162int_ru",
         "__bfloat162int_rn",
         "__bfloat162int_rd",
-        "__bfloat162float",
         "__bfloat162char_rz",
-        "__bfloat162bfloat162",
-        "__bfloat1622float2",
         "_Pow_int"
     )
     {
@@ -11073,7 +11081,6 @@ sub warnUnsupportedFunctions {
         "__pm2",
         "__pm1",
         "__pm0",
-        "__lows2bfloat162",
         "__low2bfloat162",
         "__low2bfloat16",
         "__ll2bfloat16_rz",
@@ -11106,9 +11113,7 @@ sub warnUnsupportedFunctions {
         "__hlt2_mask",
         "__hleu2_mask",
         "__hle2_mask",
-        "__highs2bfloat162",
         "__high2bfloat162",
-        "__high2bfloat16",
         "__hgtu2_mask",
         "__hgt2_mask",
         "__hgeu2_mask",
@@ -11147,7 +11152,6 @@ sub warnUnsupportedFunctions {
         "__float2bfloat16_rn",
         "__float2bfloat16_rd",
         "__float2bfloat162_rn",
-        "__float2bfloat16",
         "__float22bfloat162_rn",
         "__finitel",
         "__finitef",
@@ -11168,7 +11172,6 @@ sub warnUnsupportedFunctions {
         "__drcp_ru",
         "__drcp_rd",
         "__double2half",
-        "__double2bfloat16",
         "__dmul_rz",
         "__dmul_ru",
         "__dmul_rd",
@@ -11206,10 +11209,7 @@ sub warnUnsupportedFunctions {
         "__bfloat162int_ru",
         "__bfloat162int_rn",
         "__bfloat162int_rd",
-        "__bfloat162float",
         "__bfloat162char_rz",
-        "__bfloat162bfloat162",
-        "__bfloat1622float2",
         "__CUB_LP64__",
         "_Pow_int",
         "_CUB_ASM_PTR_SIZE_",
