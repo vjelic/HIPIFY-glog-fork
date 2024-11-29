@@ -11,7 +11,9 @@
 int main() {
   printf("24. CUDA Device API to HIP Device API synthetic test\n");
 
+  double da = 0.0f;
   double dx = 0.0f;
+  float fa = 0.0f;
   float fx = 0.0f;
   double2 d2 = { 0.0f, 0.0f };
   float2 f2 = { 0.0f, 0.0f };
@@ -27,9 +29,51 @@ int main() {
 
   // CHECK: __hip_bfloat162 bf162 = { 0, 0 };
   __nv_bfloat162 bf162 = { 0, 0 };
+  __nv_bfloat162 bf162a = { 0, 0 };
+  __nv_bfloat162 bf162b = { 0, 0 };
 
   // CHECK: __hip_bfloat162_raw bf162r = { 0, 0 };
   __nv_bfloat162_raw bf162r = { 0, 0 };
+
+  // CUDA: __CUDA_HOSTDEVICE_BF16_DECL__ __nv_bfloat16 __double2bfloat16(const double a);
+  // HIP: __BF16_HOST_DEVICE_STATIC__ __hip_bfloat16 __double2bfloat16(const double a)
+  // CHECK: bf16 = __double2bfloat16(da);
+  bf16 = __double2bfloat16(da);
+
+  // CUDA: __CUDA_HOSTDEVICE_BF16_DECL__ __nv_bfloat16 __float2bfloat16(const float a);
+  // HIP: __BF16_HOST_DEVICE_STATIC__ __hip_bfloat16 __float2bfloat16(float f);
+  // CHECK: bf16 = __float2bfloat16(fa);
+  bf16 = __float2bfloat16(fa);
+
+  // CUDA: __CUDA_HOSTDEVICE_BF16_DECL__ float __bfloat162float(const __nv_bfloat16 a);
+  // HIP: __BF16_HOST_DEVICE_STATIC__ float __bfloat162float(__hip_bfloat16 a);
+  // CHECK: bf16 = __bfloat162float(fa);
+  bf16 = __bfloat162float(fa);
+
+  // CUDA: __CUDA_HOSTDEVICE_BF16_DECL__ float2 __bfloat1622float2(const __nv_bfloat162 a);
+  // HIP: __BF16_HOST_DEVICE_STATIC__ float2 __bfloat1622float2(const __hip_bfloat162 a);
+  // CHECK: f2 = __bfloat1622float2(bf162);
+  f2 = __bfloat1622float2(bf162);
+
+  // CUDA: __CUDA_HOSTDEVICE_BF16_DECL__ __nv_bfloat162 __bfloat162bfloat162(const __nv_bfloat16 a);
+  // HIP: __BF16_HOST_DEVICE_STATIC__ __hip_bfloat162 __bfloat162bfloat162(const __hip_bfloat16 a);
+  // CHECK: bf162 = __bfloat162bfloat162(bf16);
+  bf162 = __bfloat162bfloat162(bf16);
+
+  // CUDA: __CUDA_HOSTDEVICE_BF16_DECL__ __nv_bfloat162 __lows2bfloat162(const __nv_bfloat162 a, const __nv_bfloat162 b);
+  // HIP: __BF16_HOST_DEVICE_STATIC__ __hip_bfloat162 __lows2bfloat162(const __hip_bfloat162 a, const __hip_bfloat162 b);
+  // CHECK: bf162 = __lows2bfloat162(bf162a, bf162b);
+  bf162 = __lows2bfloat162(bf162a, bf162b);
+
+  // CUDA: __CUDA_HOSTDEVICE_BF16_DECL__ __nv_bfloat162 __highs2bfloat162(const __nv_bfloat162 a, const __nv_bfloat162 b);
+  // HIP: __BF16_HOST_DEVICE_STATIC__ __hip_bfloat162 __highs2bfloat162(const __hip_bfloat162 a, const __hip_bfloat162 b);
+  // CHECK: bf162 = __highs2bfloat162(bf162a, bf162b);
+  bf162 = __highs2bfloat162(bf162a, bf162b);
+
+  // CUDA: __CUDA_HOSTDEVICE_BF16_DECL__ __nv_bfloat16 __high2bfloat16(const __nv_bfloat162 a);
+  // HIP: __BF16_HOST_DEVICE_STATIC__ __hip_bfloat16 __high2bfloat16(const __hip_bfloat162 a);
+  // CHECK: bf16 = __high2bfloat16(bf162a);
+  bf16 = __high2bfloat16(bf162a);
 #endif
 
 #if CUDA_VERSION >= 11080
