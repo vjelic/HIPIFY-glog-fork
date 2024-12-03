@@ -70,6 +70,7 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DNN_TYPE_NAME_MAP {
   {"CUDNN_STATUS_BAD_PARAM_DUPLICATED_ENTRIES",                        {"HIPDNN_STATUS_BAD_PARAM_DUPLICATED_ENTRIES",                      "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},
   {"CUDNN_STATUS_BAD_PARAM_ATTRIBUTE_TYPE",                            {"HIPDNN_STATUS_BAD_PARAM_ATTRIBUTE_TYPE",                          "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},
   {"CUDNN_STATUS_BAD_PARAM_CUDA_GRAPH_MISMATCH",                       {"HIPDNN_STATUS_BAD_PARAM_CUDA_GRAPH_MISMATCH",                     "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},
+  {"CUDNN_STATUS_BAD_PARAM_DESCRIPTOR_TYPE",                           {"HIPDNN_STATUS_BAD_PARAM_DESCRIPTOR_TYPE",                         "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},
   {"CUDNN_STATUS_NOT_SUPPORTED_GRAPH_PATTERN",                         {"HIPDNN_STATUS_NOT_SUPPORTED_GRAPH_PATTERN",                       "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},
   {"CUDNN_STATUS_NOT_SUPPORTED_SHAPE",                                 {"HIPDNN_STATUS_NOT_SUPPORTED_SHAPE",                               "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},
   {"CUDNN_STATUS_NOT_SUPPORTED_DATA_TYPE",                             {"HIPDNN_STATUS_NOT_SUPPORTED_DATA_TYPE",                           "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},
@@ -534,6 +535,7 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DNN_TYPE_NAME_MAP {
   {"CUDNN_ATTR_OPERATIONGRAPH_OPS",                                    {"HIPDNN_ATTR_OPERATIONGRAPH_OPS",                                  "MIOPEN_ATTR_OPERATIONGRAPH_OPS",                                  CONV_NUMERIC_LITERAL, API_DNN, 1, HIP_UNSUPPORTED}},    // 801
   {"CUDNN_ATTR_OPERATIONGRAPH_ENGINE_GLOBAL_COUNT",                    {"HIPDNN_ATTR_OPERATIONGRAPH_ENGINE_GLOBAL_COUNT",                  "MIOPEN_ATTR_OPERATIONGRAPH_ENGINE_GLOBAL_COUNT",                  CONV_NUMERIC_LITERAL, API_DNN, 1, HIP_UNSUPPORTED}},    // 802
   {"CUDNN_ATTR_OPERATIONGRAPH_IS_DYNAMIC_SHAPE_ENABLED",               {"HIPDNN_ATTR_OPERATIONGRAPH_IS_DYNAMIC_SHAPE_ENABLED",             "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},    // 803
+  {"CUDNN_ATTR_OPERATIONGRAPH_IS_SAME_TOPOLOGY",                       {"HIPDNN_ATTR_OPERATIONGRAPH_IS_SAME_TOPOLOGY",                     "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},    // 804
   {"CUDNN_ATTR_TENSOR_BYTE_ALIGNMENT",                                 {"HIPDNN_ATTR_TENSOR_BYTE_ALIGNMENT",                               "MIOPEN_ATTR_TENSOR_BYTE_ALIGNMENT",                               CONV_NUMERIC_LITERAL, API_DNN, 1, HIP_UNSUPPORTED}},    // 900
   {"CUDNN_ATTR_TENSOR_DATA_TYPE",                                      {"HIPDNN_ATTR_TENSOR_DATA_TYPE",                                    "MIOPEN_ATTR_TENSOR_DATA_TYPE",                                    CONV_NUMERIC_LITERAL, API_DNN, 1, HIP_UNSUPPORTED}},    // 901
   {"CUDNN_ATTR_TENSOR_DIMENSIONS",                                     {"HIPDNN_ATTR_TENSOR_DIMENSIONS",                                   "MIOPEN_ATTR_TENSOR_DIMENSIONS",                                   CONV_NUMERIC_LITERAL, API_DNN, 1, HIP_UNSUPPORTED}},    // 902
@@ -1799,6 +1801,8 @@ const std::map<llvm::StringRef, cudaAPIversions> CUDA_DNN_TYPE_NAME_VER_MAP {
   {"CUDNN_ATTR_KERNEL_CACHE_OPERATION_GRAPH",                          {CUDNN_950, CUDA_0,    CUDA_0   }},
   {"CUDNN_BEHAVIOR_NOTE_SUPPORTS_CUDA_GRAPH_NATIVE_API",               {CUDNN_950, CUDA_0,    CUDA_0   }},
   {"CUDNN_ATTR_KERNEL_CACHE_OPERATION_GRAPH",                          {CUDNN_950, CUDA_0,    CUDA_0   }},
+  {"CUDNN_STATUS_BAD_PARAM_DESCRIPTOR_TYPE",                           {CUDNN_960, CUDA_0,    CUDA_0   }},
+  {"CUDNN_ATTR_OPERATIONGRAPH_IS_SAME_TOPOLOGY",                       {CUDNN_960, CUDA_0,    CUDA_0   }},
 };
 
 const std::map<llvm::StringRef, hipAPIversions> HIP_DNN_TYPE_NAME_VER_MAP {
