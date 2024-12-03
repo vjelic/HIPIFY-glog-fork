@@ -32,6 +32,9 @@ int main() {
   cutensorDataType_t TENSOR_R_8U = CUTENSOR_R_8U;
   cutensorDataType_t TENSOR_R_32I = CUTENSOR_R_32I;
   cutensorDataType_t TENSOR_R_32U = CUTENSOR_R_32U;
+
+  //CHECK: hiptensorWorksizePreference_t TENSOR_WORKSPACE_DEFAULT = HIPTENSOR_WORKSPACE_DEFAULT;
+  cutensorWorksizePreference_t TENSOR_WORKSPACE_DEFAULT = CUTENSOR_ALGO_DEFAULT_PATIENT;
 #endif
 
 #if CUTENSOR_MAJOR >= 1
@@ -73,11 +76,23 @@ int main() {
   // CHECK-NEXT hiptensorAlgo_t TENSOR_ALGO_DEFAULT = HIPTENSOR_ALGO_DEFAULT;
   cutensorAlgo_t tensorAlgo_t;
   cutensorAlgo_t TENSOR_ALGO_DEFAULT = CUTENSOR_ALGO_DEFAULT;
+
+  // CHECK: hiptensorWorksizePreference_t tensorWorksizePreference_t;
+  // Check-NEXT TENSOR_WORKSPACE_MIN = HIPTENSOR_WORKSPACE_MIN;
+  // CHECK-NEXT TENSOR_WORKSPACE_MAX = HIPTENSOR_WORKSPACE_MAX;
+  cutensorWorksizePreference_t tensorWorksizePreference_t;
+  cutensorWorksizePreference_t TENSOR_WORKSPACE_MIN = CUTENSOR_WORKSPACE_MIN;
+  cutensorWorksizePreference_t TENSOR_WORKSPACE_MAX = CUTENSOR_WORKSPACE_MAX;
 #endif
 
 #if (CUTENSOR_MAJOR == 1 && CUTENSOR_MINOR >= 4) || CUTENSOR_MAJOR >= 2
   // CHECK: hiptensorAlgo_t TENSOR_ALGO_DEFAULT_PATIENT = HIPTENSOR_ALGO_DEFAULT_PATIENT;
   cutensorAlgo_t TENSOR_ALGO_DEFAULT_PATIENT = CUTENSOR_ALGO_DEFAULT_PATIENT;
+#endif
+
+#if (CUTENSOR_MAJOR >= 1 && CUTENSOR_MAJOR < 2)
+  // CHECK: hiptensorWorksizePreference_t TENSOR_WORKSPACE_RECOMMENDED = HIPTENSOR_WORKSPACE_RECOMMENDED;
+  cutensorWorksizePreference_t TENSOR_WORKSPACE_RECOMMENDED = CUTENSOR_WORKSPACE_RECOMMENDED;
 #endif
 
   return 0;
