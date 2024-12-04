@@ -7843,7 +7843,11 @@ sub simpleSubstitutions {
     subst("CUTENSOR_ALGO_DEFAULT_PATIENT", "HIPTENSOR_ALGO_DEFAULT_PATIENT", "numeric_literal");
     subst("CUTENSOR_C_32F", "HIPTENSOR_COMPUTE_C32F", "numeric_literal");
     subst("CUTENSOR_C_64F", "HIPTENSOR_COMPUTE_C64F", "numeric_literal");
+    subst("CUTENSOR_OP_ADD", "HIPTENSOR_OP_ADD", "numeric_literal");
     subst("CUTENSOR_OP_IDENTITY", "HIPTENSOR_OP_IDENTITY", "numeric_literal");
+    subst("CUTENSOR_OP_MAX", "HIPTENSOR_OP_MAX", "numeric_literal");
+    subst("CUTENSOR_OP_MIN", "HIPTENSOR_OP_MIN", "numeric_literal");
+    subst("CUTENSOR_OP_MUL", "HIPTENSOR_OP_MUL", "numeric_literal");
     subst("CUTENSOR_OP_SQRT", "HIPTENSOR_OP_SQRT", "numeric_literal");
     subst("CUTENSOR_OP_UNKNOWN", "HIPTENSOR_OP_UNKNOWN", "numeric_literal");
     subst("CUTENSOR_R_16BF", "HIPTENSOR_COMPUTE_16BF", "numeric_literal");
@@ -12666,10 +12670,7 @@ sub warnHipOnlyUnsupportedFunctions {
         "CUTENSOR_OP_RELU",
         "CUTENSOR_OP_RCP",
         "CUTENSOR_OP_NEG",
-        "CUTENSOR_OP_MUL",
         "CUTENSOR_OP_MISH",
-        "CUTENSOR_OP_MIN",
-        "CUTENSOR_OP_MAX",
         "CUTENSOR_OP_LOG",
         "CUTENSOR_OP_FLOOR",
         "CUTENSOR_OP_EXP",
@@ -12681,7 +12682,6 @@ sub warnHipOnlyUnsupportedFunctions {
         "CUTENSOR_OP_ATAN",
         "CUTENSOR_OP_ASINH",
         "CUTENSOR_OP_ASIN",
-        "CUTENSOR_OP_ADD",
         "CUTENSOR_OP_ACOSH",
         "CUTENSOR_OP_ACOS",
         "CUTENSOR_OP_ABS",
@@ -14991,10 +14991,7 @@ sub warnRocOnlyUnsupportedFunctions {
         "CUTENSOR_OP_RELU",
         "CUTENSOR_OP_RCP",
         "CUTENSOR_OP_NEG",
-        "CUTENSOR_OP_MUL",
         "CUTENSOR_OP_MISH",
-        "CUTENSOR_OP_MIN",
-        "CUTENSOR_OP_MAX",
         "CUTENSOR_OP_LOG",
         "CUTENSOR_OP_FLOOR",
         "CUTENSOR_OP_EXP",
@@ -15006,7 +15003,6 @@ sub warnRocOnlyUnsupportedFunctions {
         "CUTENSOR_OP_ATAN",
         "CUTENSOR_OP_ASINH",
         "CUTENSOR_OP_ASIN",
-        "CUTENSOR_OP_ADD",
         "CUTENSOR_OP_ACOSH",
         "CUTENSOR_OP_ACOS",
         "CUTENSOR_OP_ABS",
