@@ -119,7 +119,7 @@
 |`cutensorPlanAttribute_t`|2.0.0.0| | | | | | | | | |
 |`cutensorPlanPreferenceAttribute_t`|2.0.0.0| | | | | | | | | |
 |`cutensorStatus_t`| | | | |`hiptensorStatus_t`| | | | | |
-|`cutensorWorksizePreference_t`|1.0.1.0| | | |`hiptensorWorksizePreference_t`| | | | | |
+|`cutensorWorksizePreference_t`|1.0.1.0| | | |`hiptensorWorksizePreference_t`|5.7.0| | | | |
 
 ## **2. CUTENSOR Function Reference**
 

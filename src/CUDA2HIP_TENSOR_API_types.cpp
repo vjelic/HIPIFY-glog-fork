@@ -278,7 +278,8 @@ const std::map<llvm::StringRef, hipAPIversions> HIP_TENSOR_TYPE_NAME_VER_MAP {
   {"hiptensorAlgo_t",                                  {HIP_5070,       HIP_0,         HIP_0,       }},
   {"HIPTENSOR_ALGO_DEFAULT",                           {HIP_5070,       HIP_0,         HIP_0,       }},
   {"HIPTENSOR_ALGO_DEFAULT_PATIENT",                   {HIP_5070,       HIP_0,         HIP_0,       }},
-  {"HIPTENSOR_WORKSPACE_MIN",                          {HIP_5700,       HIP_0,         HIP_0,       }},
-  {"HIPTENSOR_WORKSPACE_RECOMMENDED",                  {HIP_5700,       HIP_0,         HIP_0,       }},
-  {"HIPTENSOR_WORKSPACE_MAX",                          {HIP_5700,       HIP_0,         HIP_0,       }},
+  {"hiptensorWorksizePreference_t",                    {HIP_5070,       HIP_0,         HIP_0,       }},
+  {"HIPTENSOR_WORKSPACE_MIN",                          {HIP_5070,       HIP_0,         HIP_0,       }},
+  {"HIPTENSOR_WORKSPACE_RECOMMENDED",                  {HIP_5070,       HIP_0,         HIP_0,       }},
+  {"HIPTENSOR_WORKSPACE_MAX",                          {HIP_5070,       HIP_0,         HIP_0,       }},
 };
