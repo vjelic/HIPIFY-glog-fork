@@ -47,12 +47,15 @@
 |`CUDNN_ATTR_EXECUTION_PLAN_ENGINE_CONFIG`|8.0.1| | | | | | | | | |
 |`CUDNN_ATTR_EXECUTION_PLAN_HANDLE`|8.0.1| | | | | | | | | |
 |`CUDNN_ATTR_EXECUTION_PLAN_JSON_REPRESENTATION`|8.4.0| | | | | | | | | |
+|`CUDNN_ATTR_EXECUTION_PLAN_KERNEL_CACHE`|9.4.0| | | | | | | | | |
 |`CUDNN_ATTR_EXECUTION_PLAN_RUN_ONLY_INTERMEDIATE_UIDS`|8.0.2| | | | | | | | | |
 |`CUDNN_ATTR_EXECUTION_PLAN_WORKSPACE_SIZE`|8.0.1| | | | | | | | | |
 |`CUDNN_ATTR_INTERMEDIATE_INFO_DEPENDENT_ATTRIBUTES`|8.0.2| | | | | | | | | |
 |`CUDNN_ATTR_INTERMEDIATE_INFO_DEPENDENT_DATA_UIDS`|8.0.2| | | | | | | | | |
 |`CUDNN_ATTR_INTERMEDIATE_INFO_SIZE`|8.0.1| | | | | | | | | |
 |`CUDNN_ATTR_INTERMEDIATE_INFO_UNIQUE_ID`|8.0.2| | | | | | | | | |
+|`CUDNN_ATTR_KERNEL_CACHE_IS_ENGINECFG_KERNEL_CACHED`|9.4.0| | | | | | | | | |
+|`CUDNN_ATTR_KERNEL_CACHE_OPERATION_GRAPH`|9.5.0| | | | | | | | | |
 |`CUDNN_ATTR_KNOB_CHOICE_KNOB_TYPE`|8.0.1| | | | | | | | | |
 |`CUDNN_ATTR_KNOB_CHOICE_KNOB_VALUE`|8.0.1| | | | | | | | | |
 |`CUDNN_ATTR_KNOB_INFO_MAXIMUM_VALUE`|8.0.1| | | | | | | | | |
@@ -65,6 +68,7 @@
 |`CUDNN_ATTR_MATMUL_PADDING_VALUE`|8.9.0| | | | | | | | | |
 |`CUDNN_ATTR_OPERATIONGRAPH_ENGINE_GLOBAL_COUNT`|8.0.1| | | | | | | | | |
 |`CUDNN_ATTR_OPERATIONGRAPH_HANDLE`|8.0.1| | | | | | | | | |
+|`CUDNN_ATTR_OPERATIONGRAPH_IS_DYNAMIC_SHAPE_ENABLED`|9.4.0| | | | | | | | | |
 |`CUDNN_ATTR_OPERATIONGRAPH_OPS`|8.0.1| | | | | | | | | |
 |`CUDNN_ATTR_OPERATION_BN_BWD_WEIGHTS_BN_SCALE_DESC`|8.2.0| | | | | | | | | |
 |`CUDNN_ATTR_OPERATION_BN_BWD_WEIGHTS_DBN_BIAS_DESC`|8.2.0| | | | | | | | | |
@@ -155,6 +159,10 @@
 |`CUDNN_ATTR_OPERATION_NORM_FWD_SCALE_DESC`|8.5.0| | | | | | | | | |
 |`CUDNN_ATTR_OPERATION_NORM_FWD_XDESC`|8.5.0| | | | | | | | | |
 |`CUDNN_ATTR_OPERATION_NORM_FWD_YDESC`|8.5.0| | | | | | | | | |
+|`CUDNN_ATTR_OPERATION_PAGED_CACHE_LOAD_CONTAINER_DESC`|9.4.0| | | | | | | | | |
+|`CUDNN_ATTR_OPERATION_PAGED_CACHE_LOAD_PAGE_TABLE_DESC`|9.4.0| | | | | | | | | |
+|`CUDNN_ATTR_OPERATION_PAGED_CACHE_LOAD_SEQUENCE_DESC`|9.4.0| | | | | | | | | |
+|`CUDNN_ATTR_OPERATION_PAGED_CACHE_LOAD_YDESC`|9.4.0| | | | | | | | | |
 |`CUDNN_ATTR_OPERATION_POINTWISE_ALPHA1`|8.0.1| | | | | | | | | |
 |`CUDNN_ATTR_OPERATION_POINTWISE_ALPHA2`|8.0.1| | | | | | | | | |
 |`CUDNN_ATTR_OPERATION_POINTWISE_BDESC`|8.0.1| | | | | | | | | |
@@ -240,6 +248,7 @@
 |`CUDNN_BACKEND_ENGINE_DESCRIPTOR`|8.0.1| | | | | | | | | |
 |`CUDNN_BACKEND_EXECUTION_PLAN_DESCRIPTOR`|8.0.1| | | | | | | | | |
 |`CUDNN_BACKEND_INTERMEDIATE_INFO_DESCRIPTOR`|8.0.1| | | | | | | | | |
+|`CUDNN_BACKEND_KERNEL_CACHE_DESCRIPTOR`|9.4.0| | | | | | | | | |
 |`CUDNN_BACKEND_KNOB_CHOICE_DESCRIPTOR`|8.0.1| | | | | | | | | |
 |`CUDNN_BACKEND_KNOB_INFO_DESCRIPTOR`|8.0.1| | | | | | | | | |
 |`CUDNN_BACKEND_LAYOUT_INFO_DESCRIPTOR`|8.0.1| | | | | | | | | |
@@ -255,6 +264,7 @@
 |`CUDNN_BACKEND_OPERATION_MATMUL_DESCRIPTOR`|8.1.0| | | | | | | | | |
 |`CUDNN_BACKEND_OPERATION_NORM_BACKWARD_DESCRIPTOR`|8.5.0| | | | | | | | | |
 |`CUDNN_BACKEND_OPERATION_NORM_FORWARD_DESCRIPTOR`|8.5.0| | | | | | | | | |
+|`CUDNN_BACKEND_OPERATION_PAGED_CACHE_LOAD_DESCRIPTOR`|9.4.0| | | | | | | | | |
 |`CUDNN_BACKEND_OPERATION_POINTWISE_DESCRIPTOR`|8.0.1| | | | | | | | | |
 |`CUDNN_BACKEND_OPERATION_REDUCTION_DESCRIPTOR`|8.1.0| | | | | | | | | |
 |`CUDNN_BACKEND_OPERATION_RESAMPLE_BWD_DESCRIPTOR`|8.3.0| | | | | | | | | |
@@ -278,6 +288,7 @@
 |`CUDNN_BEHAVIOR_NOTE_REQUIRES_BIAS_INT8x32_REORDER`|8.3.0| | | | | | | | | |
 |`CUDNN_BEHAVIOR_NOTE_REQUIRES_FILTER_INT8x32_REORDER`|8.3.0| | | | | | | | | |
 |`CUDNN_BEHAVIOR_NOTE_RUNTIME_COMPILATION`|8.2.0| | | | | | | | | |
+|`CUDNN_BEHAVIOR_NOTE_SUPPORTS_CUDA_GRAPH_NATIVE_API`|9.5.0| | | | | | | | | |
 |`CUDNN_BEHAVIOR_NOTE_TYPE_COUNT`|8.2.0| | | | | | | | | |
 |`CUDNN_BIDIRECTIONAL`|5.0.0| | | |`HIPDNN_BIDIRECTIONAL`| | | | | |
 |`CUDNN_BN_FINALIZE_STATISTICS_INFERENCE`|8.1.0| | | | | | | | | |
@@ -320,6 +331,8 @@
 |`CUDNN_CROSS_CORRELATION`|1.0.0|9.0.0| | |`HIPDNN_CROSS_CORRELATION`| | | | | |
 |`CUDNN_CTC_LOSS_ALGO_DETERMINISTIC`|7.0.5| | | | | | | | | |
 |`CUDNN_CTC_LOSS_ALGO_NON_DETERMINISTIC`|7.0.5| | | | | | | | | |
+|`CUDNN_CTC_SKIP_OOB_GRADIENTS`|9.0.0| | | | | | | | | |
+|`CUDNN_CTC_ZERO_OOB_GRADIENTS`|9.0.0| | | | | | | | | |
 |`CUDNN_DATA_BFLOAT16`|8.1.0| | | | | | | | | |
 |`CUDNN_DATA_BOOLEAN`|8.3.0| | | | | | | | | |
 |`CUDNN_DATA_DOUBLE`|1.0.0| | | |`HIPDNN_DATA_DOUBLE`| | | | | |
@@ -576,16 +589,16 @@
 |`CUDNN_PTR_YSQSUM`|7.6.0| | | | | | | | | |
 |`CUDNN_PTR_YSUM`|7.6.0| | | | | | | | | |
 |`CUDNN_PTR_ZDATA`|7.6.0| | | | | | | | | |
-|`CUDNN_REDUCE_TENSOR_ADD`|6.0.0|9.0.0| | |`HIPDNN_REDUCE_TENSOR_ADD`| | | | | |
-|`CUDNN_REDUCE_TENSOR_AMAX`|6.0.0|9.0.0| | |`HIPDNN_REDUCE_TENSOR_AMAX`| | | | | |
-|`CUDNN_REDUCE_TENSOR_AVG`|6.0.0|9.0.0| | |`HIPDNN_REDUCE_TENSOR_AVG`| | | | | |
+|`CUDNN_REDUCE_TENSOR_ADD`|6.0.0| | | |`HIPDNN_REDUCE_TENSOR_ADD`| | | | | |
+|`CUDNN_REDUCE_TENSOR_AMAX`|6.0.0| | | |`HIPDNN_REDUCE_TENSOR_AMAX`| | | | | |
+|`CUDNN_REDUCE_TENSOR_AVG`|6.0.0| | | |`HIPDNN_REDUCE_TENSOR_AVG`| | | | | |
 |`CUDNN_REDUCE_TENSOR_FLATTENED_INDICES`|6.0.0|9.0.0| | |`HIPDNN_REDUCE_TENSOR_FLATTENED_INDICES`| | | | | |
-|`CUDNN_REDUCE_TENSOR_MAX`|6.0.0|9.0.0| | |`HIPDNN_REDUCE_TENSOR_MAX`| | | | | |
-|`CUDNN_REDUCE_TENSOR_MIN`|6.0.0|9.0.0| | |`HIPDNN_REDUCE_TENSOR_MIN`| | | | | |
-|`CUDNN_REDUCE_TENSOR_MUL`|6.0.0|9.0.0| | |`HIPDNN_REDUCE_TENSOR_MUL`| | | | | |
-|`CUDNN_REDUCE_TENSOR_MUL_NO_ZEROS`|7.0.5|9.0.0| | |`HIPDNN_REDUCE_TENSOR_MUL_NO_ZEROS`| | | | | |
-|`CUDNN_REDUCE_TENSOR_NORM1`|6.0.0|9.0.0| | |`HIPDNN_REDUCE_TENSOR_NORM1`| | | | | |
-|`CUDNN_REDUCE_TENSOR_NORM2`|6.0.0|9.0.0| | |`HIPDNN_REDUCE_TENSOR_NORM2`| | | | | |
+|`CUDNN_REDUCE_TENSOR_MAX`|6.0.0| | | |`HIPDNN_REDUCE_TENSOR_MAX`| | | | | |
+|`CUDNN_REDUCE_TENSOR_MIN`|6.0.0| | | |`HIPDNN_REDUCE_TENSOR_MIN`| | | | | |
+|`CUDNN_REDUCE_TENSOR_MUL`|6.0.0| | | |`HIPDNN_REDUCE_TENSOR_MUL`| | | | | |
+|`CUDNN_REDUCE_TENSOR_MUL_NO_ZEROS`|7.0.5| | | |`HIPDNN_REDUCE_TENSOR_MUL_NO_ZEROS`| | | | | |
+|`CUDNN_REDUCE_TENSOR_NORM1`|6.0.0| | | |`HIPDNN_REDUCE_TENSOR_NORM1`| | | | | |
+|`CUDNN_REDUCE_TENSOR_NORM2`|6.0.0| | | |`HIPDNN_REDUCE_TENSOR_NORM2`| | | | | |
 |`CUDNN_REDUCE_TENSOR_NO_INDICES`|6.0.0|9.0.0| | |`HIPDNN_REDUCE_TENSOR_NO_INDICES`| | | | | |
 |`CUDNN_RESAMPLE_AVGPOOL`|8.3.0| | | | | | | | | |
 |`CUDNN_RESAMPLE_AVGPOOL_EXCLUDE_PADDING`|8.6.0| | | | | | | | | |
@@ -609,8 +622,8 @@
 |`CUDNN_RNN_DATA_LAYOUT_SEQ_MAJOR_UNPACKED`|7.2.1| | | | | | | | | |
 |`CUDNN_RNN_DOUBLE_BIAS`|7.5.0| | | |`HIPDNN_RNN_WITH_BIAS`| | | | | |
 |`CUDNN_RNN_NO_BIAS`|7.5.0| | | |`HIPDNN_RNN_NO_BIAS`| | | | | |
-|`CUDNN_RNN_PADDED_IO_DISABLED`|7.2.1| | | | | | | | | |
-|`CUDNN_RNN_PADDED_IO_ENABLED`|7.2.1| | | | | | | | | |
+|`CUDNN_RNN_PADDED_IO_DISABLED`|7.2.1|8.0.1| |9.0.0| | | | | | |
+|`CUDNN_RNN_PADDED_IO_ENABLED`|7.2.1|8.0.1| |9.0.0| | | | | | |
 |`CUDNN_RNN_RELU`|5.0.0| | | |`HIPDNN_RNN_RELU`| | | | | |
 |`CUDNN_RNN_SINGLE_INP_BIAS`|7.5.0| | | |`HIPDNN_RNN_WITH_BIAS`| | | | | |
 |`CUDNN_RNN_SINGLE_REC_BIAS`|7.5.0| | | |`HIPDNN_RNN_WITH_BIAS`| | | | | |
@@ -644,6 +657,7 @@
 |`CUDNN_STATUS_ARCH_MISMATCH`|1.0.0|9.0.0| | |`HIPDNN_STATUS_ARCH_MISMATCH`| | | | | |
 |`CUDNN_STATUS_BAD_PARAM`|1.0.0| | | |`HIPDNN_STATUS_BAD_PARAM`| | | | | |
 |`CUDNN_STATUS_BAD_PARAM_ATTRIBUTE_TYPE`|9.0.0| | | | | | | | | |
+|`CUDNN_STATUS_BAD_PARAM_CUDA_GRAPH_MISMATCH`|9.5.0| | | | | | | | | |
 |`CUDNN_STATUS_BAD_PARAM_DUPLICATED_ENTRIES`|9.0.0| | | | | | | | | |
 |`CUDNN_STATUS_BAD_PARAM_MISALIGNED_POINTER`|9.0.0| | | | | | | | | |
 |`CUDNN_STATUS_BAD_PARAM_NOT_FINALIZED`|9.0.0| | | | | | | | | |
@@ -674,6 +688,7 @@
 |`CUDNN_STATUS_NOT_SUPPORTED`|1.0.0| | | |`HIPDNN_STATUS_NOT_SUPPORTED`| | | | | |
 |`CUDNN_STATUS_NOT_SUPPORTED_ARCH_MISMATCH`|9.0.0| | | | | | | | | |
 |`CUDNN_STATUS_NOT_SUPPORTED_BAD_LAUNCH_PARAM`|9.0.0| | | | | | | | | |
+|`CUDNN_STATUS_NOT_SUPPORTED_CUDA_GRAPH_NATIVE_API`|9.5.0| | | | | | | | | |
 |`CUDNN_STATUS_NOT_SUPPORTED_DATA_TYPE`|9.0.0| | | | | | | | | |
 |`CUDNN_STATUS_NOT_SUPPORTED_GRAPH_PATTERN`|9.0.0| | | | | | | | | |
 |`CUDNN_STATUS_NOT_SUPPORTED_INCOMPATIBLE_CUDART`|9.0.0| | | | | | | | | |
@@ -764,6 +779,7 @@
 |`cudnnBatchNormMode_t`|4.0.0|9.0.0| | |`hipdnnBatchNormMode_t`| | | | | |
 |`cudnnBatchNormOps_t`|7.4.1|9.0.0| | | | | | | | |
 |`cudnnBnFinalizeStatsMode_t`|8.1.0| | | | | | | | | |
+|`cudnnCTCGradMode_t`|9.0.0| | | | | | | | | |
 |`cudnnCTCLossAlgo_t`|7.0.5| | | | | | | | | |
 |`cudnnCTCLossDescriptor_t`|7.0.5| | | | | | | | | |
 |`cudnnCTCLossStruct`|7.0.5| | | | | | | | | |
@@ -841,7 +857,7 @@
 |`cudnnRNNDescriptor_t`|5.0.0| | | |`hipdnnRNNDescriptor_t`| | | | | |
 |`cudnnRNNInputMode_t`|5.0.0| | | |`hipdnnRNNInputMode_t`| | | | | |
 |`cudnnRNNMode_t`|5.0.0| | | |`hipdnnRNNMode_t`| | | | | |
-|`cudnnRNNPaddingMode_t`|7.2.1| | | | | | | | | |
+|`cudnnRNNPaddingMode_t`|7.2.1|8.0.1| |9.0.0| | | | | | |
 |`cudnnRNNStruct`|5.0.0| | | | | | | | | |
 |`cudnnReduceTensorDescriptor_t`|6.0.0|9.0.0| | |`hipdnnReduceTensorDescriptor_t`| | | | | |
 |`cudnnReduceTensorIndices_t`|6.0.0|9.0.0| | |`hipdnnReduceTensorIndices_t`| | | | | |
@@ -887,7 +903,9 @@
 |`cudnnBackendFinalize`|8.0.1| | | | | | | | | |
 |`cudnnBackendGetAttribute`|8.0.1| | | | | | | | | |
 |`cudnnBackendInitialize`|8.0.1|9.3.0| | | | | | | | |
+|`cudnnBackendPopulateCudaGraph`|9.5.0| | | | | | | | | |
 |`cudnnBackendSetAttribute`|8.0.1| | | | | | | | | |
+|`cudnnBackendUpdateCudaGraph`|9.5.0| | | | | | | | | |
 |`cudnnBatchNormalizationBackward`|4.0.0|9.0.0| | |`hipdnnBatchNormalizationBackward`| | | | | |
 |`cudnnBatchNormalizationBackwardEx`|7.4.1|9.0.0| | | | | | | | |
 |`cudnnBatchNormalizationForwardInference`|4.0.0|9.0.0| | |`hipdnnBatchNormalizationForwardInference`| | | | | |
