@@ -7341,6 +7341,7 @@ sub simpleSubstitutions {
     subst("cutensorDataType_t", "hiptensorComputeType_t", "type");
     subst("cutensorOperator_t", "hiptensorOperator_t", "type");
     subst("cutensorStatus_t", "hiptensorStatus_t", "type");
+    subst("cutensorWorksizePreference_t", "hiptensorWorksizePreference_t", "type");
     subst("gesvdjInfo_t", "hipsolverGesvdjInfo_t", "type");
     subst("nvrtcProgram", "hiprtcProgram", "type");
     subst("nvrtcResult", "hiprtcResult", "type");
@@ -7864,6 +7865,9 @@ sub simpleSubstitutions {
     subst("CUTENSOR_STATUS_NOT_INITIALIZED", "HIPTENSOR_STATUS_NOT_INITIALIZED", "numeric_literal");
     subst("CUTENSOR_STATUS_NOT_SUPPORTED", "HIPTENSOR_STATUS_NOT_SUPPORTED", "numeric_literal");
     subst("CUTENSOR_STATUS_SUCCESS", "HIPTENSOR_STATUS_SUCCESS", "numeric_literal");
+    subst("CUTENSOR_WORKSPACE_MAX", "HIPTENSOR_WORKSPACE_MAX", "numeric_literal");
+    subst("CUTENSOR_WORKSPACE_MIN", "HIPTENSOR_WORKSPACE_MIN", "numeric_literal");
+    subst("CUTENSOR_WORKSPACE_RECOMMENDED", "HIPTENSOR_WORKSPACE_RECOMMENDED", "numeric_literal");
     subst("CU_ACCESS_PROPERTY_NORMAL", "hipAccessPropertyNormal", "numeric_literal");
     subst("CU_ACCESS_PROPERTY_PERSISTING", "hipAccessPropertyPersisting", "numeric_literal");
     subst("CU_ACCESS_PROPERTY_STREAMING", "hipAccessPropertyStreaming", "numeric_literal");
@@ -12056,6 +12060,12 @@ sub warnHipOnlyUnsupportedFunctions {
     my $line_num = shift;
     my $k = 0;
     foreach $func (
+        "cutensorPlanPreferenceAttribute_t",
+        "cutensorPlanAttribute_t",
+        "cutensorOperationDescriptorAttribute_t",
+        "cutensorJitMode_t",
+        "cutensorCacheMode_t",
+        "cutensorAutotuneMode_t",
         "cusparseZhybsv_solve",
         "cusparseZhybsv_analysis",
         "cusparseZhyb2dense",
@@ -12627,6 +12637,7 @@ sub warnHipOnlyUnsupportedFunctions {
         "csrsv2Info",
         "csrsm2Info",
         "__curand_umul",
+        "CUTENSOR_WORKSPACE_DEFAULT",
         "CUTENSOR_STATUS_MAPPING_ERROR",
         "CUTENSOR_STATUS_LICENSE_ERROR",
         "CUTENSOR_STATUS_CUDA_ERROR",
@@ -12637,6 +12648,13 @@ sub warnHipOnlyUnsupportedFunctions {
         "CUTENSOR_R_4I",
         "CUTENSOR_R_16U",
         "CUTENSOR_R_16I",
+        "CUTENSOR_PLAN_REQUIRED_WORKSPACE",
+        "CUTENSOR_PLAN_PREFERENCE_KERNEL_RANK",
+        "CUTENSOR_PLAN_PREFERENCE_JIT",
+        "CUTENSOR_PLAN_PREFERENCE_INCREMENTAL_COUNT",
+        "CUTENSOR_PLAN_PREFERENCE_CACHE_MODE",
+        "CUTENSOR_PLAN_PREFERENCE_AUTOTUNE_MODE",
+        "CUTENSOR_PLAN_PREFERENCE_ALGO",
         "CUTENSOR_OP_TANH",
         "CUTENSOR_OP_TAN",
         "CUTENSOR_OP_SWISH",
@@ -12667,6 +12685,15 @@ sub warnHipOnlyUnsupportedFunctions {
         "CUTENSOR_OP_ACOSH",
         "CUTENSOR_OP_ACOS",
         "CUTENSOR_OP_ABS",
+        "CUTENSOR_OPERATION_DESCRIPTOR_TAG",
+        "CUTENSOR_OPERATION_DESCRIPTOR_SCALAR_TYPE",
+        "CUTENSOR_OPERATION_DESCRIPTOR_PADDING_VALUE",
+        "CUTENSOR_OPERATION_DESCRIPTOR_PADDING_RIGHT",
+        "CUTENSOR_OPERATION_DESCRIPTOR_PADDING_LEFT",
+        "CUTENSOR_OPERATION_DESCRIPTOR_MOVED_BYTES",
+        "CUTENSOR_OPERATION_DESCRIPTOR_FLOPS",
+        "CUTENSOR_JIT_MODE_NONE",
+        "CUTENSOR_JIT_MODE_DEFAULT",
         "CUTENSOR_C_8U",
         "CUTENSOR_C_8I",
         "CUTENSOR_C_64U",
@@ -12679,6 +12706,10 @@ sub warnHipOnlyUnsupportedFunctions {
         "CUTENSOR_C_16I",
         "CUTENSOR_C_16F",
         "CUTENSOR_C_16BF",
+        "CUTENSOR_CACHE_MODE_PEDANTIC",
+        "CUTENSOR_CACHE_MODE_NONE",
+        "CUTENSOR_AUTOTUNE_MODE_NONE",
+        "CUTENSOR_AUTOTUNE_MODE_INCREMENTAL",
         "CUTENSOR_ALGO_TTGT",
         "CUTENSOR_ALGO_TGETT",
         "CUTENSOR_ALGO_GETT",
@@ -14248,6 +14279,12 @@ sub warnRocOnlyUnsupportedFunctions {
     my $line_num = shift;
     my $k = 0;
     foreach $func (
+        "cutensorPlanPreferenceAttribute_t",
+        "cutensorPlanAttribute_t",
+        "cutensorOperationDescriptorAttribute_t",
+        "cutensorJitMode_t",
+        "cutensorCacheMode_t",
+        "cutensorAutotuneMode_t",
         "cusparseZhybsv_solve",
         "cusparseZhybsv_analysis",
         "cusparseZhyb2dense",
@@ -14925,6 +14962,7 @@ sub warnRocOnlyUnsupportedFunctions {
         "csru2csrInfo_t",
         "csru2csrInfo",
         "__curand_umul",
+        "CUTENSOR_WORKSPACE_DEFAULT",
         "CUTENSOR_STATUS_MAPPING_ERROR",
         "CUTENSOR_STATUS_LICENSE_ERROR",
         "CUTENSOR_STATUS_CUDA_ERROR",
@@ -14935,6 +14973,13 @@ sub warnRocOnlyUnsupportedFunctions {
         "CUTENSOR_R_4I",
         "CUTENSOR_R_16U",
         "CUTENSOR_R_16I",
+        "CUTENSOR_PLAN_REQUIRED_WORKSPACE",
+        "CUTENSOR_PLAN_PREFERENCE_KERNEL_RANK",
+        "CUTENSOR_PLAN_PREFERENCE_JIT",
+        "CUTENSOR_PLAN_PREFERENCE_INCREMENTAL_COUNT",
+        "CUTENSOR_PLAN_PREFERENCE_CACHE_MODE",
+        "CUTENSOR_PLAN_PREFERENCE_AUTOTUNE_MODE",
+        "CUTENSOR_PLAN_PREFERENCE_ALGO",
         "CUTENSOR_OP_TANH",
         "CUTENSOR_OP_TAN",
         "CUTENSOR_OP_SWISH",
@@ -14965,6 +15010,15 @@ sub warnRocOnlyUnsupportedFunctions {
         "CUTENSOR_OP_ACOSH",
         "CUTENSOR_OP_ACOS",
         "CUTENSOR_OP_ABS",
+        "CUTENSOR_OPERATION_DESCRIPTOR_TAG",
+        "CUTENSOR_OPERATION_DESCRIPTOR_SCALAR_TYPE",
+        "CUTENSOR_OPERATION_DESCRIPTOR_PADDING_VALUE",
+        "CUTENSOR_OPERATION_DESCRIPTOR_PADDING_RIGHT",
+        "CUTENSOR_OPERATION_DESCRIPTOR_PADDING_LEFT",
+        "CUTENSOR_OPERATION_DESCRIPTOR_MOVED_BYTES",
+        "CUTENSOR_OPERATION_DESCRIPTOR_FLOPS",
+        "CUTENSOR_JIT_MODE_NONE",
+        "CUTENSOR_JIT_MODE_DEFAULT",
         "CUTENSOR_C_8U",
         "CUTENSOR_C_8I",
         "CUTENSOR_C_64U",
@@ -14977,6 +15031,10 @@ sub warnRocOnlyUnsupportedFunctions {
         "CUTENSOR_C_16I",
         "CUTENSOR_C_16F",
         "CUTENSOR_C_16BF",
+        "CUTENSOR_CACHE_MODE_PEDANTIC",
+        "CUTENSOR_CACHE_MODE_NONE",
+        "CUTENSOR_AUTOTUNE_MODE_NONE",
+        "CUTENSOR_AUTOTUNE_MODE_INCREMENTAL",
         "CUTENSOR_ALGO_TTGT",
         "CUTENSOR_ALGO_TGETT",
         "CUTENSOR_ALGO_GETT",
