@@ -39,6 +39,7 @@ using namespace hipify;
 
 const std::string sHIP = "HIP";
 const std::string sROC = "ROC";
+const std::string sMIOPEN = "MIOPEN";
 const std::string sCub = "cub";
 const std::string sHipcub = "hipcub";
 const std::string sHIP_KERNEL_NAME = "HIP_KERNEL_NAME";
@@ -2297,7 +2298,8 @@ void HipifyAction::FindAndReplace(StringRef name,
   if (Statistics::isHipExperimental(found->second) && !Experimental) {
     std::string sWarn;
     Statistics::isToRoc(found->second) ? sWarn = sROC : sWarn = sHIP;
-    sWarn = "" + sWarn;
+    if (Statistics::isToMIOpen(found->second))
+      sWarn = sMIOPEN;
     const auto ID = DE.getCustomDiagID(clang::DiagnosticsEngine::Warning, "'%0' is experimental in '%1'; to hipify it, use the '--experimental' option.");
     DE.Report(sl, ID) << found->first << sWarn;
     return;
@@ -2308,7 +2310,6 @@ void HipifyAction::FindAndReplace(StringRef name,
   if (Statistics::isHipSupportedV2Only(found->second) && found->second.apiType == API_BLAS && !insertedBLASHeader_V2) {
     std::string sWarn;
     Statistics::isToRoc(found->second) ? sWarn = sROC : sWarn = sHIP;
-    sWarn = "" + sWarn;
     const auto ID = DE.getCustomDiagID(clang::DiagnosticsEngine::Warning, "Only '%0_v2' version of '%0' is supported in '%1'; to hipify it, include 'cublas_v2.h' in the source.");
     DE.Report(sl, ID) << found->first << sWarn;
     return;
@@ -2317,7 +2318,8 @@ void HipifyAction::FindAndReplace(StringRef name,
   if (Statistics::isUnsupported(found->second)) {
     std::string sWarn;
     Statistics::isToRoc(found->second) ? sWarn = sROC : sWarn = sHIP;
-    sWarn = "" + sWarn;
+    if (Statistics::isToMIOpen(found->second))
+      sWarn = sMIOPEN;
     const auto ID = DE.getCustomDiagID(clang::DiagnosticsEngine::Warning, "'%0' is unsupported in '%1'.");
     DE.Report(sl, ID) << found->first << sWarn;
     return;
@@ -2492,6 +2494,8 @@ void HipifyAction::InclusionDirective(clang::SourceLocation hash_loc,
     clang::DiagnosticsEngine &DE = getCompilerInstance().getDiagnostics();
     std::string sWarn;
     Statistics::isToRoc(found->second) ? sWarn = sROC : sWarn = sHIP;
+    if (Statistics::isToMIOpen(found->second))
+      sWarn = sMIOPEN;
     const auto ID = DE.getCustomDiagID(clang::DiagnosticsEngine::Warning, "'%0' is unsupported header in '%1'.");
     DE.Report(sl, ID) << found->first << sWarn;
     return;
@@ -2682,7 +2686,10 @@ bool HipifyAction::cudaHostFuncCall(const mat::MatchFinder::MatchResult &Result)
     auto castStructs = it->second;
     auto &SM = *Result.SourceManager;
     for (auto cc : castStructs) {
-      if (cc.isToMIOpen != TranslateToMIOpen || cc.isToRoc != TranslateToRoc) continue;
+      if (TranslateToMIOpen == true && (cc.isToMIOpen == false && cc.isToRoc == false)) continue;
+      if (TranslateToMIOpen == false && cc.isToMIOpen == true) continue;
+      if (TranslateToRoc == true && cc.isToRoc == false) continue;
+      if (TranslateToRoc == false && cc.isToRoc == true && TranslateToMIOpen == false) continue;
       clang::LangOptions DefaultLangOptions;
       for (auto c : cc.castMap) {
         size_t length = 0;
@@ -2825,7 +2832,6 @@ bool HipifyAction::cudaOverloadedHostFuncCall(const mat::MatchFinder::MatchResul
     auto it = FuncOverloads.find(name);
     if (it == FuncOverloads.end()) return false;
     auto FuncOverloadsStruct = it->second;
-    if (FuncOverloadsStruct.isToMIOpen != TranslateToMIOpen || FuncOverloadsStruct.isToRoc != TranslateToRoc) return false;
     unsigned numArgs = call->getNumArgs();
     auto itNumArgs = FuncOverloadsStruct.overloadMap.find(numArgs);
     if (itNumArgs == FuncOverloadsStruct.overloadMap.end()) return false;

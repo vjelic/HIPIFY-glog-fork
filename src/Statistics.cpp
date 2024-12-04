@@ -367,9 +367,13 @@ void Statistics::setActive(const std::string &name) {
 }
 
 bool Statistics::isToRoc(const hipCounter &counter) {
-  return (counter.apiType == API_BLAS || counter.apiType == API_DNN || counter.apiType == API_SPARSE || counter.apiType == API_SOLVER ||
-          counter.apiType == API_RUNTIME || counter.apiType == API_COMPLEX || counter.apiType == API_RAND) &&
-          ((TranslateToRoc && !TranslateToMIOpen) || TranslateToMIOpen);
+  return ((counter.apiType == API_BLAS || counter.apiType == API_DNN || counter.apiType == API_SPARSE || counter.apiType == API_SOLVER ||
+           counter.apiType == API_RUNTIME || counter.apiType == API_COMPLEX || counter.apiType == API_RAND) && TranslateToRoc) || 
+           isToMIOpen(counter);
+}
+
+bool Statistics::isToMIOpen(const hipCounter &counter) {
+  return counter.apiType == API_DNN && TranslateToMIOpen;
 }
 
 bool Statistics::isHipExperimental(const hipCounter &counter) {
