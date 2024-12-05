@@ -32,9 +32,6 @@ int main() {
   cutensorDataType_t TENSOR_R_8U = CUTENSOR_R_8U;
   cutensorDataType_t TENSOR_R_32I = CUTENSOR_R_32I;
   cutensorDataType_t TENSOR_R_32U = CUTENSOR_R_32U;
-
-  //CHECK: hiptensorWorksizePreference_t TENSOR_WORKSPACE_DEFAULT = HIPTENSOR_WORKSPACE_DEFAULT;
-  cutensorWorksizePreference_t TENSOR_WORKSPACE_DEFAULT = CUTENSOR_ALGO_DEFAULT_PATIENT;
 #endif
 
 #if CUTENSOR_MAJOR >= 1
