@@ -41,10 +41,18 @@ int main() {
   // CHECK: hiptensorOperator_t tensorOperator_t;
   // CHECK-NEXT hiptensorOperator_t TENSOR_OP_IDENTITY = HIPTENSOR_OP_IDENTITY;
   // CHECK-NEXT hiptensorOperator_t TENSOR_OP_SQRT = HIPTENSOR_OP_SQRT;
+  // CHECK-NEXT hiptensorOperator_t TENSOR_OP_ADD = HIPTENSOR_OP_ADD;
+  // CHECK-NEXT hiptensorOperator_t TENSOR_OP_MUL = HIPTENSOR_OP_MUL;
+  // CHECK-NEXT hiptensorOperator_t TENSOR_OP_MAX = HIPTENSOR_OP_MAX;
+  // CHECK-NEXT hiptensorOperator_t TENSOR_OP_MIN = HIPTENSOR_OP_MIN;
   // CHECK-NEXT hiptensorOperator_t TENSOR_OP_UNKNOWN = HIPTENSOR_OP_UNKNOWN;
   cutensorOperator_t tensorOperator_t;
   cutensorOperator_t TENSOR_OP_IDENTITY = CUTENSOR_OP_IDENTITY;
   cutensorOperator_t TENSOR_OP_SQRT = CUTENSOR_OP_SQRT;
+  cutensorOperator_t TENSOR_OP_ADD = CUTENSOR_OP_ADD;
+  cutensorOperator_t TENSOR_OP_MUL = CUTENSOR_OP_MUL;
+  cutensorOperator_t TENSOR_OP_MAX = CUTENSOR_OP_MAX;
+  cutensorOperator_t TENSOR_OP_MIN = CUTENSOR_OP_MIN;
   cutensorOperator_t TENSOR_OP_UNKNOWN = CUTENSOR_OP_UNKNOWN;
 
   // CHECK: hiptensorStatus_t tensorStatus_t;

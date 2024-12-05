@@ -39,7 +39,7 @@
 |`CUTENSOR_OP_ABS`|1.0.1.0| | | | | | | | | |
 |`CUTENSOR_OP_ACOS`|1.0.1.0| | | | | | | | | |
 |`CUTENSOR_OP_ACOSH`|1.0.1.0| | | | | | | | | |
-|`CUTENSOR_OP_ADD`|1.0.1.0| | | | | | | | | |
+|`CUTENSOR_OP_ADD`|1.0.1.0| | | |`HIPTENSOR_OP_ADD`|6.3.0| | | | |
 |`CUTENSOR_OP_ASIN`|1.0.1.0| | | | | | | | | |
 |`CUTENSOR_OP_ASINH`|1.0.1.0| | | | | | | | | |
 |`CUTENSOR_OP_ATAN`|1.0.1.0| | | | | | | | | |
@@ -52,10 +52,10 @@
 |`CUTENSOR_OP_FLOOR`|1.0.1.0| | | | | | | | | |
 |`CUTENSOR_OP_IDENTITY`|1.0.1.0| | | |`HIPTENSOR_OP_IDENTITY`|5.7.0| | | | |
 |`CUTENSOR_OP_LOG`|1.0.1.0| | | | | | | | | |
-|`CUTENSOR_OP_MAX`|1.0.1.0| | | | | | | | | |
-|`CUTENSOR_OP_MIN`|1.0.1.0| | | | | | | | | |
+|`CUTENSOR_OP_MAX`|1.0.1.0| | | |`HIPTENSOR_OP_MAX`|6.3.0| | | | |
+|`CUTENSOR_OP_MIN`|1.0.1.0| | | |`HIPTENSOR_OP_MIN`|6.3.0| | | | |
 |`CUTENSOR_OP_MISH`|2.0.0.0| | | | | | | | | |
-|`CUTENSOR_OP_MUL`|1.0.1.0| | | | | | | | | |
+|`CUTENSOR_OP_MUL`|1.0.1.0| | | |`HIPTENSOR_OP_MUL`|6.3.0| | | | |
 |`CUTENSOR_OP_NEG`|1.0.1.0| | | | | | | | | |
 |`CUTENSOR_OP_RCP`|1.0.1.0| | | | | | | | | |
 |`CUTENSOR_OP_RELU`|1.0.1.0| | | | | | | | | |
