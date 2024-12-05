@@ -498,6 +498,8 @@ public:
   static void setActive(const std::string &name);
   // Check the counter and option TranslateToRoc whether it should be translated to Roc or not.
   static bool isToRoc(const hipCounter &counter);
+  // Check the counter and option TranslateToMIOpen whether it should be translated to MIOpen or not.
+  static bool isToMIOpen(const hipCounter& counter);
   // Check whether the counter is HIP_EXPERIMENTAL or not.
   static bool isHipExperimental(const hipCounter &counter);
   // Check whether the counter is HIP_UNSUPPORTED or not.
