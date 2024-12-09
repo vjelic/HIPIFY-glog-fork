@@ -651,7 +651,7 @@ Minimum build system requirements for the above configurations:
 
 Recommended build system requirements:
 
-* CMake 3.31.0, GNU C/C++ 13.2, Python 3.13.0.
+* CMake 3.31.2, GNU C/C++ 13.2, Python 3.13.1.
 
 Here's how to build ``hipify-clang`` with testing support on ``Ubuntu 23.10.01``:
 
@@ -695,7 +695,7 @@ The corresponding successful output is:
   --    - Binary path        : /usr/llvm/19.1.5/dist/bin
   -- Linker detection: GNU ld
   -- ---- The below configuring for hipify-clang testing only ----
-  -- Found Python: /usr/bin/python3.13 (found version "3.13.0") found components: Interpreter 
+  -- Found Python: /usr/bin/python3.13 (found suitable version "3.13.1", required range is "3.0...3.14") found components: Interpreter
   -- Found lit: /usr/local/bin/lit
   -- Found FileCheck: /GIT/LLVM/trunk/dist/FileCheck
   -- Initial CUDA to configure:
@@ -731,7 +731,7 @@ The corresponding successful output is:
   x86_64 - Platform architecture
   Linux 6.5.0-15-generic - Platform OS
   64 - hipify-clang binary bitness
-  64 - python 3.13.0 binary bitness
+  64 - python 3.13.1 binary bitness
   ===============================================================
   -- Testing: 106 tests, 12 threads --
   Testing Time: 6.91s
@@ -824,15 +824,15 @@ Tested configurations:
   * - ``17.0.1`` :sup:`6` - ``18.1.8`` :sup:`7`
     - ``7.0 - 12.3.2``
     - ``8.0.5  - 9.6.0``
-    - ``2019.16.11.42, 2022.17.11.6``
-    - ``3.31.0``
-    - ``3.13.0``
+    - ``2019.16.11.42, 2022.17.12.3``
+    - ``3.31.2``
+    - ``3.13.1``
   * - ``19.1.0 - 19.1.5``
     - ``7.0 - 12.6.3``
     - ``8.0.5  - 9.6.0``
-    - ``2019.16.11.42, 2022.17.11.6``
-    - ``3.31.0``
-    - ``3.13.0``
+    - ``2019.16.11.42, 2022.17.12.3``
+    - ``3.31.2``
+    - ``3.13.1``
 
 :sup:`5` LLVM 14.x.x is the latest major release supporting Visual Studio 2017.
 
@@ -891,7 +891,7 @@ The corresponding successful output is:
   --    - LLVM Include path  : D:/LLVM/19.1.5/dist/include
   --    - Binary path        : D:/LLVM/19.1.5/dist/bin
   -- ---- The below configuring for hipify-clang testing only ----
-  -- Found Python: C:/Users/TT/AppData/Local/Programs/Python/Python313/python.exe (found version "3.13.0") found components: Interpreter
+  -- Found Python: C:/Users/evgen/AppData/Local/Programs/Python/Python313/python.exe (found suitable version "3.13.1", required range is "3.0...3.14") found components: Interpreter
   -- Found lit: C:/Users/TT/AppData/Local/Programs/Python/Python313/Scripts/lit.exe
   -- Found FileCheck: D:/LLVM/19.1.5/dist/bin/FileCheck.exe
   -- Initial CUDA to configure:
