@@ -1375,9 +1375,9 @@
 |`CUstreamAttrValue`|11.0| | | | | | | | | |
 |`CUstreamAttrValue_union`|11.0| | | | | | | | | |
 |`CUstreamAttrValue_v1`|11.3| | | | | | | | | |
-|`CUstreamBatchMemOpParams`|8.0| | | | | | | | | |
-|`CUstreamBatchMemOpParams_union`|8.0| | | | | | | | | |
-|`CUstreamBatchMemOpParams_v1`|11.3| | | | | | | | | |
+|`CUstreamBatchMemOpParams`|8.0| | | |`hipStreamBatchMemOpParams`|6.4.0| | | |6.4.0|
+|`CUstreamBatchMemOpParams_union`|8.0| | | |`hipStreamBatchMemOpParams_union`|6.4.0| | | |6.4.0|
+|`CUstreamBatchMemOpParams_v1`|11.3| | | |`hipStreamBatchMemOpParams`|6.4.0| | | |6.4.0|
 |`CUstreamBatchMemOpType`|8.0| | | | | | | | | |
 |`CUstreamBatchMemOpType_enum`|8.0| | | | | | | | | |
 |`CUstreamCallback`| | | | |`hipStreamCallback_t`|1.6.0| | | | |
@@ -1837,8 +1837,8 @@
 
 |**CUDA**|**A**|**D**|**C**|**R**|**HIP**|**A**|**D**|**C**|**R**|**E**|
 |:--|:-:|:-:|:-:|:-:|:--|:-:|:-:|:-:|:-:|:-:|
-|`cuStreamBatchMemOp`|8.0| | | | | | | | | |
-|`cuStreamBatchMemOp_v2`|11.7| | | | | | | | | |
+|`cuStreamBatchMemOp`|8.0| | | |`hipStreamBatchMemOp`|6.4.0| | | |6.4.0|
+|`cuStreamBatchMemOp_v2`|11.7| | | |`hipStreamBatchMemOp`|6.4.0| | | |6.4.0|
 |`cuStreamWaitValue32`|8.0| | | |`hipStreamWaitValue32`|4.2.0| | | | |
 |`cuStreamWaitValue32_v2`|11.7| | | |`hipStreamWaitValue32`|4.2.0| | | | |
 |`cuStreamWaitValue64`|9.0| | | |`hipStreamWaitValue64`|4.2.0| | | | |
