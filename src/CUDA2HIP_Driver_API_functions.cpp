@@ -556,8 +556,8 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_FUNCTION_MAP {
 
   // 21. Stream Memory Operations
   // no analogues
-  {"cuStreamBatchMemOp",                                          {"hipStreamBatchMemOp",                                         "", CONV_STREAM_MEMORY, API_DRIVER, SEC::STREAM_MEMORY, HIP_UNSUPPORTED}},
-  {"cuStreamBatchMemOp_v2",                                       {"hipStreamBatchMemOp",                                         "", CONV_STREAM_MEMORY, API_DRIVER, SEC::STREAM_MEMORY, HIP_UNSUPPORTED}},
+  {"cuStreamBatchMemOp",                                          {"hipStreamBatchMemOp",                                         "", CONV_STREAM_MEMORY, API_DRIVER, SEC::STREAM_MEMORY, HIP_EXPERIMENTAL}},
+  {"cuStreamBatchMemOp_v2",                                       {"hipStreamBatchMemOp",                                         "", CONV_STREAM_MEMORY, API_DRIVER, SEC::STREAM_MEMORY, HIP_EXPERIMENTAL}},
   // CUresult CUDAAPI cuStreamWriteValue32(CUstream stream, CUdeviceptr addr, cuuint32_t value, unsigned int flags);
   // hipError_t hipStreamWaitValue32(hipStream_t stream, void* ptr, int32_t value, unsigned int flags, uint32_t mask __dparm(0xFFFFFFFF));
   {"cuStreamWaitValue32",                                         {"hipStreamWaitValue32",                                        "", CONV_STREAM_MEMORY, API_DRIVER, SEC::STREAM_MEMORY}},
@@ -1665,6 +1665,7 @@ const std::map<llvm::StringRef, hipAPIversions> HIP_DRIVER_FUNCTION_VER_MAP {
   {"hipDrvGraphMemcpyNodeSetParams",                              {HIP_6030, HIP_0,    HIP_0,  }},
   {"hipDrvGraphExecMemcpyNodeSetParams",                          {HIP_6030, HIP_0,    HIP_0,  }},
   {"hipDrvGraphExecMemsetNodeSetParams",                          {HIP_6030, HIP_0,    HIP_0,  }},
+  {"hipStreamBatchMemOp",                                         {HIP_6040, HIP_0,    HIP_0,  HIP_LATEST}},
 };
 
 const std::map<llvm::StringRef, cudaAPIChangedVersions> CUDA_DRIVER_FUNCTION_CHANGED_VER_MAP {

@@ -23,6 +23,7 @@ int main() {
 
   unsigned int flags = 0;
   unsigned int flags_2 = 0;
+  unsigned int icount = 0;
   uint64_t flags_64 = 0;
   int dim = 0;
   int count = 0;
@@ -1081,6 +1082,14 @@ int main() {
   // HIP: hipError_t hipDeviceGetP2PAttribute(int* value, hipDeviceP2PAttr attr, int srcDevice, int dstDevice);
   // CHECK: result = hipDeviceGetP2PAttribute(value, deviceP2PAttribute, iBlockSize, iBlockSize_2);
   result = cuDeviceGetP2PAttribute(value, deviceP2PAttribute, iBlockSize, iBlockSize_2);
+
+  // CHECK: hipStreamBatchMemOpParams streamBatchMemOpParams;
+  CUstreamBatchMemOpParams streamBatchMemOpParams;
+
+  // CUDA: CUresult CUDAAPI cuStreamBatchMemOp(CUstream stream, unsigned int count, CUstreamBatchMemOpParams *paramArray, unsigned int flags);
+  // HIP: hipError_t hipStreamBatchMemOp(hipStream_t stream, unsigned int count, hipStreamBatchMemOpParams* paramArray, unsigned int flags);
+  // CHECK: result = hipStreamBatchMemOp(stream, icount, &streamBatchMemOpParams, flags);
+  result = cuStreamBatchMemOp(stream, icount, &streamBatchMemOpParams, flags);
 #endif
 
 #if CUDA_VERSION >= 9000
@@ -1863,6 +1872,11 @@ int main() {
   // HIP: hipError_t hipStreamWriteValue64(hipStream_t stream, void* ptr, uint64_t value, unsigned int flags, uint64_t mask __dparm(0xFFFFFFFFFFFFFFFF));
   // CHECK: result = hipStreamWriteValue64(stream, deviceptr, u_value, flags);
   result = cuStreamWriteValue64_v2(stream, deviceptr, u_value, flags);
+
+  // CUDA: CUresult CUDAAPI cuStreamBatchMemOp_v2(CUstream stream, unsigned int count, CUstreamBatchMemOpParams *paramArray, unsigned int flags);
+  // HIP: hipError_t hipStreamBatchMemOp(hipStream_t stream, unsigned int count, hipStreamBatchMemOpParams* paramArray, unsigned int flags);
+  // CHECK: result = hipStreamBatchMemOp(stream, icount, &streamBatchMemOpParams, flags);
+  result = cuStreamBatchMemOp_v2(stream, icount, &streamBatchMemOpParams, flags);
 #endif
 
 #if CUDA_VERSION >= 12000

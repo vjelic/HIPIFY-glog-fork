@@ -1398,7 +1398,11 @@ my %removed_funcs = (
 );
 
 my %experimental_funcs = (
-
+    "cuStreamBatchMemOp_v2" => "6.4.0",
+    "cuStreamBatchMemOp" => "6.4.0",
+    "CUstreamBatchMemOpParams_v1" => "6.4.0",
+    "CUstreamBatchMemOpParams_union" => "6.4.0",
+    "CUstreamBatchMemOpParams" => "6.4.0"
 );
 
 $print_stats = 1 if $examine;
@@ -1536,6 +1540,11 @@ sub subst {
 }
 
 sub experimentalSubstitutions {
+    subst("cuStreamBatchMemOp", "hipStreamBatchMemOp", "stream_memory");
+    subst("cuStreamBatchMemOp_v2", "hipStreamBatchMemOp", "stream_memory");
+    subst("CUstreamBatchMemOpParams", "hipStreamBatchMemOpParams", "type");
+    subst("CUstreamBatchMemOpParams_union", "hipStreamBatchMemOpParams_union", "type");
+    subst("CUstreamBatchMemOpParams_v1", "hipStreamBatchMemOpParams", "type");
 }
 
 sub rocSubstitutions {
@@ -14190,7 +14199,7 @@ if ($help) {
     print STDERR "$USAGE\n";
 }
 if ($version) {
-    print STDERR "HIP version 6.3.0\n";
+    print STDERR "HIP version 6.4.0\n";
 }
 while (@ARGV) {
     $fileName=shift (@ARGV);
