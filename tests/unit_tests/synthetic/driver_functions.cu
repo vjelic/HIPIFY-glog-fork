@@ -1877,6 +1877,14 @@ int main() {
   // HIP: hipError_t hipStreamBatchMemOp(hipStream_t stream, unsigned int count, hipStreamBatchMemOpParams* paramArray, unsigned int flags);
   // CHECK: result = hipStreamBatchMemOp(stream, icount, &streamBatchMemOpParams, flags);
   result = cuStreamBatchMemOp_v2(stream, icount, &streamBatchMemOpParams, flags);
+
+  // CHECK: hipBatchMemOpNodeParams BATCH_MEM_OP_NODE_PARAMS;
+  CUDA_BATCH_MEM_OP_NODE_PARAMS BATCH_MEM_OP_NODE_PARAMS;
+
+  // CUDA: CUresult CUDAAPI cuGraphAddBatchMemOpNode(CUgraphNode *phGraphNode, CUgraph hGraph, const CUgraphNode *dependencies, size_t numDependencies, const CUDA_BATCH_MEM_OP_NODE_PARAMS *nodeParams);
+  // HIP: hipError_t hipGraphAddBatchMemOpNode(hipGraphNode_t *phGraphNode, hipGraph_t hGraph, const hipGraphNode_t* dependencies, size_t numDependencies, const hipBatchMemOpNodeParams* nodeParams);
+  // CHECK: result = hipGraphAddBatchMemOpNode(&graphNode, graph, &graphNode2, bytes, &BATCH_MEM_OP_NODE_PARAMS);
+  result = cuGraphAddBatchMemOpNode(&graphNode, graph, &graphNode2, bytes, &BATCH_MEM_OP_NODE_PARAMS);
 #endif
 
 #if CUDA_VERSION >= 12000
