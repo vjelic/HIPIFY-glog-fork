@@ -30,12 +30,12 @@
 |`CUDA_ARRAY_SPARSE_PROPERTIES`|11.1| | | | | | | | | |
 |`CUDA_ARRAY_SPARSE_PROPERTIES_st`|11.1| | | | | | | | | |
 |`CUDA_ARRAY_SPARSE_PROPERTIES_v1`|11.3| | | | | | | | | |
-|`CUDA_BATCH_MEM_OP_NODE_PARAMS`|11.7| | | | | | | | | |
-|`CUDA_BATCH_MEM_OP_NODE_PARAMS_st`|11.7| | |12.2| | | | | | |
-|`CUDA_BATCH_MEM_OP_NODE_PARAMS_v1`|12.2| | | | | | | | | |
-|`CUDA_BATCH_MEM_OP_NODE_PARAMS_v1_st`|12.2| | | | | | | | | |
-|`CUDA_BATCH_MEM_OP_NODE_PARAMS_v2`|12.2| | | | | | | | | |
-|`CUDA_BATCH_MEM_OP_NODE_PARAMS_v2_st`|12.2| | | | | | | | | |
+|`CUDA_BATCH_MEM_OP_NODE_PARAMS`|11.7| | | |`hipBatchMemOpNodeParams`|6.4.0| | | |6.4.0|
+|`CUDA_BATCH_MEM_OP_NODE_PARAMS_st`|11.7| | |12.2|`hipBatchMemOpNodeParams`|6.4.0| | | |6.4.0|
+|`CUDA_BATCH_MEM_OP_NODE_PARAMS_v1`|12.2| | | |`hipBatchMemOpNodeParams`|6.4.0| | | |6.4.0|
+|`CUDA_BATCH_MEM_OP_NODE_PARAMS_v1_st`|12.2| | | |`hipBatchMemOpNodeParams`|6.4.0| | | |6.4.0|
+|`CUDA_BATCH_MEM_OP_NODE_PARAMS_v2`|12.2| | | |`hipBatchMemOpNodeParams`|6.4.0| | | |6.4.0|
+|`CUDA_BATCH_MEM_OP_NODE_PARAMS_v2_st`|12.2| | | |`hipBatchMemOpNodeParams`|6.4.0| | | |6.4.0|
 |`CUDA_CB`| | | | | | | | | | |
 |`CUDA_CHILD_GRAPH_NODE_PARAMS`|12.2| | | |`hipChildGraphNodeParams`|6.1.0| | | | |
 |`CUDA_CHILD_GRAPH_NODE_PARAMS_st`|12.2| | | |`hipChildGraphNodeParams`|6.1.0| | | | |
@@ -1889,7 +1889,7 @@
 |`cuDeviceGetGraphMemAttribute`|11.4| | | |`hipDeviceGetGraphMemAttribute`|5.3.0| | | | |
 |`cuDeviceGraphMemTrim`|11.4| | | |`hipDeviceGraphMemTrim`|5.3.0| | | | |
 |`cuDeviceSetGraphMemAttribute`|11.4| | | |`hipDeviceSetGraphMemAttribute`|5.3.0| | | | |
-|`cuGraphAddBatchMemOpNode`|11.7| | | |`hipGraphAddBatchMemOpNode`| | | | | |
+|`cuGraphAddBatchMemOpNode`|11.7| | | |`hipGraphAddBatchMemOpNode`|6.4.0| | | |6.4.0|
 |`cuGraphAddChildGraphNode`|10.0| | | |`hipGraphAddChildGraphNode`|5.0.0| | | | |
 |`cuGraphAddDependencies`|10.0| | | |`hipGraphAddDependencies`|4.5.0| | | | |
 |`cuGraphAddDependencies_v2`|12.3| | | | | | | | | |

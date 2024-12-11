@@ -1400,9 +1400,16 @@ my %removed_funcs = (
 my %experimental_funcs = (
     "cuStreamBatchMemOp_v2" => "6.4.0",
     "cuStreamBatchMemOp" => "6.4.0",
+    "cuGraphAddBatchMemOpNode" => "6.4.0",
     "CUstreamBatchMemOpParams_v1" => "6.4.0",
     "CUstreamBatchMemOpParams_union" => "6.4.0",
-    "CUstreamBatchMemOpParams" => "6.4.0"
+    "CUstreamBatchMemOpParams" => "6.4.0",
+    "CUDA_BATCH_MEM_OP_NODE_PARAMS_v2_st" => "6.4.0",
+    "CUDA_BATCH_MEM_OP_NODE_PARAMS_v2" => "6.4.0",
+    "CUDA_BATCH_MEM_OP_NODE_PARAMS_v1_st" => "6.4.0",
+    "CUDA_BATCH_MEM_OP_NODE_PARAMS_v1" => "6.4.0",
+    "CUDA_BATCH_MEM_OP_NODE_PARAMS_st" => "6.4.0",
+    "CUDA_BATCH_MEM_OP_NODE_PARAMS" => "6.4.0"
 );
 
 $print_stats = 1 if $examine;
@@ -1542,6 +1549,13 @@ sub subst {
 sub experimentalSubstitutions {
     subst("cuStreamBatchMemOp", "hipStreamBatchMemOp", "stream_memory");
     subst("cuStreamBatchMemOp_v2", "hipStreamBatchMemOp", "stream_memory");
+    subst("cuGraphAddBatchMemOpNode", "hipGraphAddBatchMemOpNode", "graph");
+    subst("CUDA_BATCH_MEM_OP_NODE_PARAMS", "hipBatchMemOpNodeParams", "type");
+    subst("CUDA_BATCH_MEM_OP_NODE_PARAMS_st", "hipBatchMemOpNodeParams", "type");
+    subst("CUDA_BATCH_MEM_OP_NODE_PARAMS_v1", "hipBatchMemOpNodeParams", "type");
+    subst("CUDA_BATCH_MEM_OP_NODE_PARAMS_v1_st", "hipBatchMemOpNodeParams", "type");
+    subst("CUDA_BATCH_MEM_OP_NODE_PARAMS_v2", "hipBatchMemOpNodeParams", "type");
+    subst("CUDA_BATCH_MEM_OP_NODE_PARAMS_v2_st", "hipBatchMemOpNodeParams", "type");
     subst("CUstreamBatchMemOpParams", "hipStreamBatchMemOpParams", "type");
     subst("CUstreamBatchMemOpParams_union", "hipStreamBatchMemOpParams_union", "type");
     subst("CUstreamBatchMemOpParams_v1", "hipStreamBatchMemOpParams", "type");
@@ -4076,7 +4090,6 @@ sub simpleSubstitutions {
     subst("cuDeviceGetGraphMemAttribute", "hipDeviceGetGraphMemAttribute", "graph");
     subst("cuDeviceGraphMemTrim", "hipDeviceGraphMemTrim", "graph");
     subst("cuDeviceSetGraphMemAttribute", "hipDeviceSetGraphMemAttribute", "graph");
-    subst("cuGraphAddBatchMemOpNode", "hipGraphAddBatchMemOpNode", "graph");
     subst("cuGraphAddChildGraphNode", "hipGraphAddChildGraphNode", "graph");
     subst("cuGraphAddDependencies", "hipGraphAddDependencies", "graph");
     subst("cuGraphAddEmptyNode", "hipGraphAddEmptyNode", "graph");

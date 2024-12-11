@@ -808,8 +808,8 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_FUNCTION_MAP {
   {"cuDeviceSetGraphMemAttribute",                                {"hipDeviceSetGraphMemAttribute",                               "", CONV_GRAPH, API_DRIVER, SEC::GRAPH}},
   // cudaGraphInstantiateWithFlags
   {"cuGraphInstantiateWithFlags",                                 {"hipGraphInstantiateWithFlags",                                "", CONV_GRAPH, API_DRIVER, SEC::GRAPH}},
-  //
-  {"cuGraphAddBatchMemOpNode",                                    {"hipGraphAddBatchMemOpNode",                                   "", CONV_GRAPH, API_DRIVER, SEC::GRAPH}},
+  // no analogue yet
+  {"cuGraphAddBatchMemOpNode",                                    {"hipGraphAddBatchMemOpNode",                                   "", CONV_GRAPH, API_DRIVER, SEC::GRAPH, HIP_EXPERIMENTAL}},
   //
   {"cuGraphBatchMemOpNodeGetParams",                              {"hipGraphBatchMemOpNodeGetParams",                             "", CONV_GRAPH, API_DRIVER, SEC::GRAPH}},
   //
@@ -1666,6 +1666,7 @@ const std::map<llvm::StringRef, hipAPIversions> HIP_DRIVER_FUNCTION_VER_MAP {
   {"hipDrvGraphExecMemcpyNodeSetParams",                          {HIP_6030, HIP_0,    HIP_0,  }},
   {"hipDrvGraphExecMemsetNodeSetParams",                          {HIP_6030, HIP_0,    HIP_0,  }},
   {"hipStreamBatchMemOp",                                         {HIP_6040, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"hipGraphAddBatchMemOpNode",                                   {HIP_6040, HIP_0,    HIP_0,  HIP_LATEST}},
 };
 
 const std::map<llvm::StringRef, cudaAPIChangedVersions> CUDA_DRIVER_FUNCTION_CHANGED_VER_MAP {
