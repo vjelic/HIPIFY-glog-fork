@@ -90,21 +90,21 @@
 |`CUTENSOR_R_64U`|2.0.0.0| | | | | | | | | |
 |`CUTENSOR_R_8I`|2.0.0.0| | | |`HIPTENSOR_COMPUTE_8I`|5.7.0| | | | |
 |`CUTENSOR_R_8U`|2.0.0.0| | | |`HIPTENSOR_COMPUTE_8U`|5.7.0| | | | |
-|`CUTENSOR_STATUS_ALLOC_FAILED`| | | | |`HIPTENSOR_STATUS_ALLOC_FAILED`| | | | | |
-|`CUTENSOR_STATUS_ARCH_MISMATCH`| | | | |`HIPTENSOR_STATUS_ARCH_MISMATCH`| | | | | |
-|`CUTENSOR_STATUS_CUBLAS_ERROR`| | | | | | | | | | |
-|`CUTENSOR_STATUS_CUDA_ERROR`| | | | | | | | | | |
-|`CUTENSOR_STATUS_EXECUTION_FAILED`| | | | |`HIPTENSOR_STATUS_EXECUTION_FAILED`| | | | | |
-|`CUTENSOR_STATUS_INSUFFICIENT_DRIVER`| | | | |`HIPTENSOR_STATUS_INSUFFICIENT_DRIVER`| | | | | |
-|`CUTENSOR_STATUS_INSUFFICIENT_WORKSPACE`| | | | |`HIPTENSOR_STATUS_INSUFFICIENT_WORKSPACE`| | | | | |
-|`CUTENSOR_STATUS_INTERNAL_ERROR`| | | | |`HIPTENSOR_STATUS_INTERNAL_ERROR`| | | | | |
-|`CUTENSOR_STATUS_INVALID_VALUE`| | | | |`HIPTENSOR_STATUS_INVALID_VALUE`| | | | | |
-|`CUTENSOR_STATUS_IO_ERROR`| | | | |`HIPTENSOR_STATUS_IO_ERROR`| | | | | |
-|`CUTENSOR_STATUS_LICENSE_ERROR`| | | | | | | | | | |
-|`CUTENSOR_STATUS_MAPPING_ERROR`| | | | | | | | | | |
-|`CUTENSOR_STATUS_NOT_INITIALIZED`| | | | |`HIPTENSOR_STATUS_NOT_INITIALIZED`| | | | | |
-|`CUTENSOR_STATUS_NOT_SUPPORTED`| | | | |`HIPTENSOR_STATUS_NOT_SUPPORTED`| | | | | |
-|`CUTENSOR_STATUS_SUCCESS`| | | | |`HIPTENSOR_STATUS_SUCCESS`| | | | | |
+|`CUTENSOR_STATUS_ALLOC_FAILED`|1.0.1.0| | | |`HIPTENSOR_STATUS_ALLOC_FAILED`|5.7.0| | | | |
+|`CUTENSOR_STATUS_ARCH_MISMATCH`|1.0.1.0| | | |`HIPTENSOR_STATUS_ARCH_MISMATCH`|5.7.0| | | | |
+|`CUTENSOR_STATUS_CUBLAS_ERROR`|1.0.1.0| | | | | | | | | |
+|`CUTENSOR_STATUS_CUDA_ERROR`|1.0.1.0| | | | | | | | | |
+|`CUTENSOR_STATUS_EXECUTION_FAILED`|1.0.1.0| | | |`HIPTENSOR_STATUS_EXECUTION_FAILED`|5.7.0| | | | |
+|`CUTENSOR_STATUS_INSUFFICIENT_DRIVER`|1.0.1.0| | | |`HIPTENSOR_STATUS_INSUFFICIENT_DRIVER`|5.7.0| | | | |
+|`CUTENSOR_STATUS_INSUFFICIENT_WORKSPACE`|1.0.1.0| | | |`HIPTENSOR_STATUS_INSUFFICIENT_WORKSPACE`|5.7.0| | | | |
+|`CUTENSOR_STATUS_INTERNAL_ERROR`|1.0.1.0| | | |`HIPTENSOR_STATUS_INTERNAL_ERROR`|5.7.0| | | | |
+|`CUTENSOR_STATUS_INVALID_VALUE`|1.0.1.0| | | |`HIPTENSOR_STATUS_INVALID_VALUE`|5.7.0| | | | |
+|`CUTENSOR_STATUS_IO_ERROR`|1.2.0.0| | | |`HIPTENSOR_STATUS_IO_ERROR`|5.7.0| | | | |
+|`CUTENSOR_STATUS_LICENSE_ERROR`|1.0.1.0| | | | | | | | | |
+|`CUTENSOR_STATUS_MAPPING_ERROR`|1.0.1.0| | | | | | | | | |
+|`CUTENSOR_STATUS_NOT_INITIALIZED`|1.0.1.0| | | |`HIPTENSOR_STATUS_NOT_INITIALIZED`|5.7.0| | | | |
+|`CUTENSOR_STATUS_NOT_SUPPORTED`|1.0.1.0| | | |`HIPTENSOR_STATUS_NOT_SUPPORTED`|5.7.0| | | | |
+|`CUTENSOR_STATUS_SUCCESS`|1.0.1.0| | | |`HIPTENSOR_STATUS_SUCCESS`|5.7.0| | | | |
 |`CUTENSOR_WORKSPACE_DEFAULT`|2.0.0.0| | | | | | | | | |
 |`CUTENSOR_WORKSPACE_MAX`|1.0.1.0| | | |`HIPTENSOR_WORKSPACE_MAX`|5.7.0| | | | |
 |`CUTENSOR_WORKSPACE_MIN`|1.0.1.0| | | |`HIPTENSOR_WORKSPACE_MIN`|5.7.0| | | | |
@@ -113,17 +113,24 @@
 |`cutensorAutotuneMode_t`|1.2.0.0| | | | | | | | | |
 |`cutensorCacheMode_t`|1.2.0.0| | | | | | | | | |
 |`cutensorDataType_t`|2.0.0.0| | | |`hiptensorComputeType_t`|5.7.0| | | | |
+|`cutensorHandle_t`| | | | |`hiptensorHandle_t`| | | | | |
 |`cutensorJitMode_t`|2.0.0.0| | | | | | | | | |
 |`cutensorOperationDescriptorAttribute_t`|2.0.0.0| | | | | | | | | |
 |`cutensorOperator_t`|1.0.1.0| | | |`hiptensorOperator_t`|5.7.0| | | | |
 |`cutensorPlanAttribute_t`|2.0.0.0| | | | | | | | | |
 |`cutensorPlanPreferenceAttribute_t`|2.0.0.0| | | | | | | | | |
-|`cutensorStatus_t`| | | | |`hiptensorStatus_t`| | | | | |
+|`cutensorStatus_t`|1.0.1.0| | | |`hiptensorStatus_t`|5.7.0| | | | |
 |`cutensorWorksizePreference_t`|1.0.1.0| | | |`hiptensorWorksizePreference_t`|5.7.0| | | | |
 
 ## **2. CUTENSOR Function Reference**
 
-Unsupported
+|**CUDA**|**A**|**D**|**C**|**R**|**HIP**|**A**|**D**|**C**|**R**|**E**|
+|:--|:-:|:-:|:-:|:-:|:--|:-:|:-:|:-:|:-:|:-:|
+|`cutensorCreate`|1.7.0.0| | | |`hiptensorCreate`|5.7.0| | | | |
+|`cutensorDestroy`|1.7.0.0| | | |`hiptensorDestroy`|5.7.0| | | | |
+|`cutensorHandleReadPlanCacheFromFile`|2.0.0.0| | | | | | | | | |
+|`cutensorHandleResizePlanCache`|2.0.0.0| | | | | | | | | |
+|`cutensorHandleWritePlanCacheToFile`|2.0.0.0| | | | | | | | | |
 
 
 \*A - Added; D - Deprecated; C - Changed; R - Removed; E - Experimental

@@ -100,5 +100,23 @@ int main() {
   cutensorWorksizePreference_t TENSOR_WORKSPACE_RECOMMENDED = CUTENSOR_WORKSPACE_RECOMMENDED;
 #endif
 
+  // CHECK: hiptensorHandle_t handle;
+  cutensorHandle_t handle;
+
+  //CHECK: hiptensorStatus_t status;
+  cutensorStatus_t status;
+
+#if (CUTENSOR_MAJOR == 1 && CUTENSOR_MINOR >= 7) || CUTENSOR_MAJOR >= 2
+  // CUDA: cutensorStatus_t cutensorCreate(cutensorHandle_t* handle);
+  // HIP: hiptensorStatus_t hiptensorCreate(hiptensorHandle_t** handle);
+  // CHECK: status = hiptensorCreate(&handle);
+  status = cutensorCreate(&handle);
+
+  // CUDA: cutensorStatus_t cutensorDestroy(cutensorHandle_t handle);
+  // HIP: hiptensorStatus_t hiptensorDestroy(hiptensorHandle_t* handle);
+  // CHECK: status = hiptensorDestroy(handle);
+  status = cutensorDestroy(handle);
+#endif
+
   return 0;
 }
