@@ -5,8 +5,7 @@ HIPIFY is a set of tools that you can use to automatically translate CUDA source
 
 ## Documentation
 
-Documentation for HIPIFY is available at
-[https://rocmdocs.amd.com/projects/HIPIFY/en/latest/](https://rocmdocs.amd.com/projects/HIPIFY/en/latest/).
+The published documentation is available at [HIPIFY](https://rocm.docs.amd.com/projects/HIPIFY/en/latest/index.html) in an organized, easy-to-read format, with search and a table of contents. The documentation source files reside in the `HIPIFY/docs` folder of this GitHub repository. As with all ROCm projects, the documentation is open source. For more information on contributing to the documentation, see [Contribute to ROCm documentation](https://rocm.docs.amd.com/en/latest/contribute/contributing.html).
 
 To build our documentation locally, run the following code.
 
