@@ -6135,6 +6135,8 @@ sub simpleSubstitutions {
     subst("cusparseZnnz", "hipsparseZnnz", "library");
     subst("cusparseZnnz_compress", "hipsparseZnnz_compress", "library");
     subst("cusparseZsctr", "hipsparseZsctr", "library");
+    subst("cutensorCreate", "hiptensorCreate", "library");
+    subst("cutensorDestroy", "hiptensorDestroy", "library");
     subst("nvrtcAddNameExpression", "hiprtcAddNameExpression", "library");
     subst("nvrtcCompileProgram", "hiprtcCompileProgram", "library");
     subst("nvrtcCreateProgram", "hiprtcCreateProgram", "library");
@@ -7367,6 +7369,7 @@ sub simpleSubstitutions {
     subst("cusparseStatus_t", "hipsparseStatus_t", "type");
     subst("cutensorAlgo_t", "hiptensorAlgo_t", "type");
     subst("cutensorDataType_t", "hiptensorComputeType_t", "type");
+    subst("cutensorHandle_t", "hiptensorHandle_t", "type");
     subst("cutensorOperator_t", "hiptensorOperator_t", "type");
     subst("cutensorStatus_t", "hiptensorStatus_t", "type");
     subst("cutensorWorksizePreference_t", "hiptensorWorksizePreference_t", "type");
@@ -9866,6 +9869,9 @@ sub warnHipOnlyUnsupportedFunctions {
         "cutensorPlanAttribute_t",
         "cutensorOperationDescriptorAttribute_t",
         "cutensorJitMode_t",
+        "cutensorHandleWritePlanCacheToFile",
+        "cutensorHandleResizePlanCache",
+        "cutensorHandleReadPlanCacheFromFile",
         "cutensorCacheMode_t",
         "cutensorAutotuneMode_t",
         "cusparseZhybsv_solve",
@@ -11186,6 +11192,9 @@ sub warnRocOnlyUnsupportedFunctions {
         "cutensorPlanAttribute_t",
         "cutensorOperationDescriptorAttribute_t",
         "cutensorJitMode_t",
+        "cutensorHandleWritePlanCacheToFile",
+        "cutensorHandleResizePlanCache",
+        "cutensorHandleReadPlanCacheFromFile",
         "cutensorCacheMode_t",
         "cutensorAutotuneMode_t",
         "cusparseZhybsv_solve",

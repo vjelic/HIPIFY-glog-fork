@@ -23,13 +23,25 @@ THE SOFTWARE.
 #include "CUDA2HIP.h"
 
 const std::map<llvm::StringRef, hipCounter> CUDA_TENSOR_FUNCTION_MAP {
+  {"cutensorCreate",                                              {"hiptensorCreate",                                     "",                                     CONV_LIB_FUNC, API_TENSOR, 2}},
+  {"cutensorDestroy",                                             {"hiptensorDestroy",                                    "",                                     CONV_LIB_FUNC, API_TENSOR, 2}},
+  {"cutensorHandleResizePlanCache",                               {"",                                                    "",                                     CONV_LIB_FUNC, API_TENSOR, 2, UNSUPPORTED}},
+  {"cutensorHandleWritePlanCacheToFile",                          {"",                                                    "",                                     CONV_LIB_FUNC, API_TENSOR, 2, UNSUPPORTED}},
+  {"cutensorHandleReadPlanCacheFromFile",                         {"",                                                    "",                                     CONV_LIB_FUNC, API_TENSOR, 2, UNSUPPORTED}},
 };
 
 
 const std::map<llvm::StringRef, cudaAPIversions> CUDA_TENSOR_FUNCTION_VER_MAP {
+  {"cutensorCreate",                                 {CUTENSOR_1700,  CUDA_0,    CUDA_0   }},
+  {"cutensorDestroy",                                {CUTENSOR_1700,  CUDA_0,    CUDA_0   }},
+  {"cutensorHandleResizePlanCache",                  {CUTENSOR_2000,  CUDA_0,    CUDA_0   }},
+  {"cutensorHandleWritePlanCacheToFile",             {CUTENSOR_2000,  CUDA_0,    CUDA_0   }},
+  {"cutensorHandleReadPlanCacheFromFile",            {CUTENSOR_2000,  CUDA_0,    CUDA_0   }},
 };
 
 const std::map<llvm::StringRef, hipAPIversions> HIP_TENSOR_FUNCTION_VER_MAP {
+  {"hiptensorCreate",                                {HIP_5070,       HIP_0,         HIP_0,       }},
+  {"hiptensorDestroy",                               {HIP_5070,       HIP_0,         HIP_0,       }},
 };
 
 const std::map<unsigned int, llvm::StringRef> CUDA_TENSOR_API_SECTION_MAP {
