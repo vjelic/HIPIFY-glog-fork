@@ -1885,6 +1885,16 @@ int main() {
   // HIP: hipError_t hipGraphAddBatchMemOpNode(hipGraphNode_t *phGraphNode, hipGraph_t hGraph, const hipGraphNode_t* dependencies, size_t numDependencies, const hipBatchMemOpNodeParams* nodeParams);
   // CHECK: result = hipGraphAddBatchMemOpNode(&graphNode, graph, &graphNode2, bytes, &BATCH_MEM_OP_NODE_PARAMS);
   result = cuGraphAddBatchMemOpNode(&graphNode, graph, &graphNode2, bytes, &BATCH_MEM_OP_NODE_PARAMS);
+
+  // CUDA: CUresult CUDAAPI cuGraphBatchMemOpNodeGetParams(CUgraphNode hNode, CUDA_BATCH_MEM_OP_NODE_PARAMS *nodeParams_out);
+  // HIP: hipError_t hipGraphBatchMemOpNodeGetParams(hipGraphNode_t hNode, hipBatchMemOpNodeParams* nodeParams_out);
+  // CHECK: result = hipGraphBatchMemOpNodeGetParams(graphNode, &BATCH_MEM_OP_NODE_PARAMS);
+  result = cuGraphBatchMemOpNodeGetParams(graphNode, &BATCH_MEM_OP_NODE_PARAMS);
+
+  // CUDA: CUresult CUDAAPI cuGraphBatchMemOpNodeSetParams(CUgraphNode hNode, const CUDA_BATCH_MEM_OP_NODE_PARAMS *nodeParams);
+  // HIP: hipError_t hipGraphBatchMemOpNodeSetParams(hipGraphNode_t hNode, hipBatchMemOpNodeParams* nodeParams);
+  // CHECK: result = hipGraphBatchMemOpNodeSetParams(graphNode, &BATCH_MEM_OP_NODE_PARAMS);
+  result = cuGraphBatchMemOpNodeSetParams(graphNode, &BATCH_MEM_OP_NODE_PARAMS);
 #endif
 
 #if CUDA_VERSION >= 12000
