@@ -1906,8 +1906,8 @@
 |`cuGraphAddMemsetNode`|10.0| | | |`hipDrvGraphAddMemsetNode`|6.1.0| | | | |
 |`cuGraphAddNode`|12.2| | | |`hipGraphAddNode`|6.2.0| | | | |
 |`cuGraphAddNode_v2`|12.3| | | | | | | | | |
-|`cuGraphBatchMemOpNodeGetParams`|11.7| | | |`hipGraphBatchMemOpNodeGetParams`| | | | | |
-|`cuGraphBatchMemOpNodeSetParams`|11.7| | | |`hipGraphBatchMemOpNodeSetParams`| | | | | |
+|`cuGraphBatchMemOpNodeGetParams`|11.7| | | |`hipGraphBatchMemOpNodeGetParams`|6.4.0| | | |6.4.0|
+|`cuGraphBatchMemOpNodeSetParams`|11.7| | | |`hipGraphBatchMemOpNodeSetParams`|6.4.0| | | |6.4.0|
 |`cuGraphChildGraphNodeGetGraph`|10.0| | | |`hipGraphChildGraphNodeGetGraph`|5.0.0| | | | |
 |`cuGraphClone`|10.0| | | |`hipGraphClone`|5.0.0| | | | |
 |`cuGraphConditionalHandleCreate`|12.3| | | | | | | | | |

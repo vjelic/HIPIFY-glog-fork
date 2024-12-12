@@ -1400,6 +1400,8 @@ my %removed_funcs = (
 my %experimental_funcs = (
     "cuStreamBatchMemOp_v2" => "6.4.0",
     "cuStreamBatchMemOp" => "6.4.0",
+    "cuGraphBatchMemOpNodeSetParams" => "6.4.0",
+    "cuGraphBatchMemOpNodeGetParams" => "6.4.0",
     "cuGraphAddBatchMemOpNode" => "6.4.0",
     "CUstreamBatchMemOpParams_v1" => "6.4.0",
     "CUstreamBatchMemOpParams_union" => "6.4.0",
@@ -1550,6 +1552,8 @@ sub experimentalSubstitutions {
     subst("cuStreamBatchMemOp", "hipStreamBatchMemOp", "stream_memory");
     subst("cuStreamBatchMemOp_v2", "hipStreamBatchMemOp", "stream_memory");
     subst("cuGraphAddBatchMemOpNode", "hipGraphAddBatchMemOpNode", "graph");
+    subst("cuGraphBatchMemOpNodeGetParams", "hipGraphBatchMemOpNodeGetParams", "graph");
+    subst("cuGraphBatchMemOpNodeSetParams", "hipGraphBatchMemOpNodeSetParams", "graph");
     subst("CUDA_BATCH_MEM_OP_NODE_PARAMS", "hipBatchMemOpNodeParams", "type");
     subst("CUDA_BATCH_MEM_OP_NODE_PARAMS_st", "hipBatchMemOpNodeParams", "type");
     subst("CUDA_BATCH_MEM_OP_NODE_PARAMS_v1", "hipBatchMemOpNodeParams", "type");
@@ -4104,8 +4108,6 @@ sub simpleSubstitutions {
     subst("cuGraphAddMemcpyNode", "hipDrvGraphAddMemcpyNode", "graph");
     subst("cuGraphAddMemsetNode", "hipDrvGraphAddMemsetNode", "graph");
     subst("cuGraphAddNode", "hipGraphAddNode", "graph");
-    subst("cuGraphBatchMemOpNodeGetParams", "hipGraphBatchMemOpNodeGetParams", "graph");
-    subst("cuGraphBatchMemOpNodeSetParams", "hipGraphBatchMemOpNodeSetParams", "graph");
     subst("cuGraphChildGraphNodeGetGraph", "hipGraphChildGraphNodeGetGraph", "graph");
     subst("cuGraphClone", "hipGraphClone", "graph");
     subst("cuGraphCreate", "hipGraphCreate", "graph");
