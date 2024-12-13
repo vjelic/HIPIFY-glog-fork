@@ -1919,7 +1919,7 @@
 |`cuGraphEventRecordNodeSetEvent`|11.1| | | |`hipGraphEventRecordNodeSetEvent`|5.0.0| | | | |
 |`cuGraphEventWaitNodeGetEvent`|11.1| | | |`hipGraphEventWaitNodeGetEvent`|5.0.0| | | | |
 |`cuGraphEventWaitNodeSetEvent`|11.1| | | |`hipGraphEventWaitNodeSetEvent`|5.0.0| | | | |
-|`cuGraphExecBatchMemOpNodeSetParams`|11.7| | | |`hipGraphExecBatchMemOpNodeSetParams`| | | | | |
+|`cuGraphExecBatchMemOpNodeSetParams`|11.7| | | |`hipGraphExecBatchMemOpNodeSetParams`|6.4.0| | | |6.4.0|
 |`cuGraphExecChildGraphNodeSetParams`|11.1| | | |`hipGraphExecChildGraphNodeSetParams`|5.0.0| | | | |
 |`cuGraphExecDestroy`|10.0| | | |`hipGraphExecDestroy`|4.3.0| | | | |
 |`cuGraphExecEventRecordNodeSetEvent`|11.1| | | |`hipGraphExecEventRecordNodeSetEvent`|5.0.0| | | | |
