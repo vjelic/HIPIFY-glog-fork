@@ -13,6 +13,15 @@
 |`CUTENSOR_AUTOTUNE_MODE_NONE`|2.0.0.0| | | | | | | | | |
 |`CUTENSOR_CACHE_MODE_NONE`|1.2.0.0| | | | | | | | | |
 |`CUTENSOR_CACHE_MODE_PEDANTIC`|1.2.0.0| | | | | | | | | |
+|`CUTENSOR_COMPUTE_16BF`|1.0.1.0| | |2.0.0.0|`HIPTENSOR_COMPUTE_16BF`|5.7.0| | | | |
+|`CUTENSOR_COMPUTE_16F`|1.0.1.0| | |2.0.0.0|`HIPTENSOR_COMPUTE_16F`|5.7.0| | | | |
+|`CUTENSOR_COMPUTE_32F`|1.0.1.0| | |2.0.0.0|`HIPTENSOR_COMPUTE_32F`|5.7.0| | | | |
+|`CUTENSOR_COMPUTE_32I`|1.0.1.0| | |2.0.0.0|`HIPTENSOR_COMPUTE_32I`|5.7.0| | | | |
+|`CUTENSOR_COMPUTE_32U`|1.0.1.0| | |2.0.0.0|`HIPTENSOR_COMPUTE_32U`|5.7.0| | | | |
+|`CUTENSOR_COMPUTE_64F`|1.0.1.0| | |2.0.0.0|`HIPTENSOR_COMPUTE_64F`|5.7.0| | | | |
+|`CUTENSOR_COMPUTE_8I`|1.0.1.0| | |2.0.0.0|`HIPTENSOR_COMPUTE_8I`|5.7.0| | | | |
+|`CUTENSOR_COMPUTE_8U`|1.0.1.0| | |2.0.0.0|`HIPTENSOR_COMPUTE_8U`|5.7.0| | | | |
+|`CUTENSOR_COMPUTE_TF32`|1.0.1.0| | |2.0.0.0| | | | | | |
 |`CUTENSOR_C_16BF`|2.0.0.0| | | | | | | | | |
 |`CUTENSOR_C_16F`|2.0.0.0| | | | | | | | | |
 |`CUTENSOR_C_16I`|2.0.0.0| | | | | | | | | |
@@ -27,6 +36,10 @@
 |`CUTENSOR_C_64U`|2.0.0.0| | | | | | | | | |
 |`CUTENSOR_C_8I`|2.0.0.0| | | | | | | | | |
 |`CUTENSOR_C_8U`|2.0.0.0| | | | | | | | | |
+|`CUTENSOR_C_MIN_16F`|1.0.1.0|1.2.0.0| |2.0.0.0| | | | | | |
+|`CUTENSOR_C_MIN_32F`|1.0.1.0|1.2.0.0| |2.0.0.0| | | | | | |
+|`CUTENSOR_C_MIN_64F`|1.0.1.0|1.2.0.0| |2.0.0.0| | | | | | |
+|`CUTENSOR_C_MIN_TF32`|1.0.1.0|1.2.0.0| |2.0.0.0| | | | | | |
 |`CUTENSOR_JIT_MODE_DEFAULT`|2.0.0.0| | | | | | | | | |
 |`CUTENSOR_JIT_MODE_NONE`|2.0.0.0| | | | | | | | | |
 |`CUTENSOR_OPERATION_DESCRIPTOR_FLOPS`|2.0.0.0| | | | | | | | | |
@@ -90,6 +103,13 @@
 |`CUTENSOR_R_64U`|2.0.0.0| | | | | | | | | |
 |`CUTENSOR_R_8I`|2.0.0.0| | | |`HIPTENSOR_COMPUTE_8I`|5.7.0| | | | |
 |`CUTENSOR_R_8U`|2.0.0.0| | | |`HIPTENSOR_COMPUTE_8U`|5.7.0| | | | |
+|`CUTENSOR_R_MIN_16BF`|1.0.1.0|1.2.0.0| |2.0.0.0| | | | | | |
+|`CUTENSOR_R_MIN_16F`|1.0.1.0|1.2.0.0| |2.0.0.0| | | | | | |
+|`CUTENSOR_R_MIN_32F`|1.0.1.0|1.2.0.0| |2.0.0.0| | | | | | |
+|`CUTENSOR_R_MIN_32U`|1.0.1.0|1.2.0.0| |2.0.0.0| | | | | | |
+|`CUTENSOR_R_MIN_64F`|1.0.1.0|1.2.0.0| |2.0.0.0| | | | | | |
+|`CUTENSOR_R_MIN_8U`|1.0.1.0|1.2.0.0| |2.0.0.0| | | | | | |
+|`CUTENSOR_R_MIN_TF32`|1.0.1.0|1.2.0.0| |2.0.0.0| | | | | | |
 |`CUTENSOR_STATUS_ALLOC_FAILED`|1.0.1.0| | | |`HIPTENSOR_STATUS_ALLOC_FAILED`|5.7.0| | | | |
 |`CUTENSOR_STATUS_ARCH_MISMATCH`|1.0.1.0| | | |`HIPTENSOR_STATUS_ARCH_MISMATCH`|5.7.0| | | | |
 |`CUTENSOR_STATUS_CUBLAS_ERROR`|1.0.1.0| | | | | | | | | |
@@ -112,14 +132,16 @@
 |`cutensorAlgo_t`|1.0.1.0| | | |`hiptensorAlgo_t`|5.7.0| | | | |
 |`cutensorAutotuneMode_t`|1.2.0.0| | | | | | | | | |
 |`cutensorCacheMode_t`|1.2.0.0| | | | | | | | | |
+|`cutensorComputeType_t`| | | | |`hiptensorComputeType_t`|5.7.0| | | | |
 |`cutensorDataType_t`|2.0.0.0| | | |`hiptensorComputeType_t`|5.7.0| | | | |
-|`cutensorHandle_t`| | | | |`hiptensorHandle_t`| | | | | |
+|`cutensorHandle_t`|1.0.1.0| | | |`hiptensorHandle_t`|5.7.0| | | | |
 |`cutensorJitMode_t`|2.0.0.0| | | | | | | | | |
 |`cutensorOperationDescriptorAttribute_t`|2.0.0.0| | | | | | | | | |
 |`cutensorOperator_t`|1.0.1.0| | | |`hiptensorOperator_t`|5.7.0| | | | |
 |`cutensorPlanAttribute_t`|2.0.0.0| | | | | | | | | |
 |`cutensorPlanPreferenceAttribute_t`|2.0.0.0| | | | | | | | | |
 |`cutensorStatus_t`|1.0.1.0| | | |`hiptensorStatus_t`|5.7.0| | | | |
+|`cutensorTensorDescriptor`| | | | |`hiptensorTensorDescriptor_t`|5.7.0| | | | |
 |`cutensorWorksizePreference_t`|1.0.1.0| | | |`hiptensorWorksizePreference_t`|5.7.0| | | | |
 
 ## **2. CUTENSOR Function Reference**
@@ -127,10 +149,15 @@
 |**CUDA**|**A**|**D**|**C**|**R**|**HIP**|**A**|**D**|**C**|**R**|**E**|
 |:--|:-:|:-:|:-:|:-:|:--|:-:|:-:|:-:|:-:|:-:|
 |`cutensorCreate`|1.7.0.0| | | |`hiptensorCreate`|5.7.0| | | | |
+|`cutensorCreateTensorDescriptor`|2.0.0.0| | | | | | | | | |
 |`cutensorDestroy`|1.7.0.0| | | |`hiptensorDestroy`|5.7.0| | | | |
+|`cutensorDestroyTensorDescriptor`|2.0.0.0| | | | | | | | | |
 |`cutensorHandleReadPlanCacheFromFile`|2.0.0.0| | | | | | | | | |
 |`cutensorHandleResizePlanCache`|2.0.0.0| | | | | | | | | |
 |`cutensorHandleWritePlanCacheToFile`|2.0.0.0| | | | | | | | | |
+|`cutensorInitTensorDescriptor`|1.0.1.0| | |2.0.0.0|`hiptensorInitTensorDescriptor`|5.7.0| | | | |
+|`cutensorReadKernelCacheFromFile`|2.0.0.0| | | | | | | | | |
+|`cutensorWriteKernelCacheToFile`|2.0.0.0| | | | | | | | | |
 
 
 \*A - Added; D - Deprecated; C - Changed; R - Removed; E - Experimental
