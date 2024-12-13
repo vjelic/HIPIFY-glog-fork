@@ -133,6 +133,7 @@
 |`cutensorAutotuneMode_t`|1.2.0.0| | | | | | | | | |
 |`cutensorCacheMode_t`|1.2.0.0| | | | | | | | | |
 |`cutensorComputeType_t`| | | | |`hiptensorComputeType_t`|5.7.0| | | | |
+|`cutensorContractionPlan_t`|1.0.1.0| | |2.0.0.0|`hiptensorContractionPlan_t`|5.7.0| | | | |
 |`cutensorDataType_t`|2.0.0.0| | | |`hiptensorComputeType_t`|5.7.0| | | | |
 |`cutensorHandle_t`|1.0.1.0| | | |`hiptensorHandle_t`|5.7.0| | | | |
 |`cutensorJitMode_t`|2.0.0.0| | | | | | | | | |
@@ -141,21 +142,30 @@
 |`cutensorPlanAttribute_t`|2.0.0.0| | | | | | | | | |
 |`cutensorPlanPreferenceAttribute_t`|2.0.0.0| | | | | | | | | |
 |`cutensorStatus_t`|1.0.1.0| | | |`hiptensorStatus_t`|5.7.0| | | | |
-|`cutensorTensorDescriptor`| | | | |`hiptensorTensorDescriptor_t`|5.7.0| | | | |
+|`cutensorTensorDescriptor_t`|1.0.1.0| | | |`hiptensorTensorDescriptor_t`|5.7.0| | | | |
 |`cutensorWorksizePreference_t`|1.0.1.0| | | |`hiptensorWorksizePreference_t`|5.7.0| | | | |
 
 ## **2. CUTENSOR Function Reference**
 
 |**CUDA**|**A**|**D**|**C**|**R**|**HIP**|**A**|**D**|**C**|**R**|**E**|
 |:--|:-:|:-:|:-:|:-:|:--|:-:|:-:|:-:|:-:|:-:|
+|`cutensorContraction`|1.0.1.0| | |2.0.0.0|`hiptensorContraction`|6.1.0| | | | |
 |`cutensorCreate`|1.7.0.0| | | |`hiptensorCreate`|5.7.0| | | | |
+|`cutensorCreateContraction`|2.0.0.0| | | | | | | | | |
+|`cutensorCreateElementwiseBinary`|2.0.0.0| | | | | | | | | |
+|`cutensorCreateElementwiseTrinary`|2.0.0.0| | | | | | | | | |
+|`cutensorCreatePermutation`|2.0.0.0| | | | | | | | | |
 |`cutensorCreateTensorDescriptor`|2.0.0.0| | | | | | | | | |
 |`cutensorDestroy`|1.7.0.0| | | |`hiptensorDestroy`|5.7.0| | | | |
 |`cutensorDestroyTensorDescriptor`|2.0.0.0| | | | | | | | | |
+|`cutensorElementwiseBinaryExecute`|2.0.0.0| | | | | | | | | |
+|`cutensorElementwiseTrinaryExecute`|2.0.0.0| | | | | | | | | |
 |`cutensorHandleReadPlanCacheFromFile`|2.0.0.0| | | | | | | | | |
 |`cutensorHandleResizePlanCache`|2.0.0.0| | | | | | | | | |
 |`cutensorHandleWritePlanCacheToFile`|2.0.0.0| | | | | | | | | |
 |`cutensorInitTensorDescriptor`|1.0.1.0| | |2.0.0.0|`hiptensorInitTensorDescriptor`|5.7.0| | | | |
+|`cutensorPermutation`|1.0.1.0| | |2.0.0.0|`hiptensorPermutation`|6.1.0| | | | |
+|`cutensorPermute`|2.0.0.0| | | | | | | | | |
 |`cutensorReadKernelCacheFromFile`|2.0.0.0| | | | | | | | | |
 |`cutensorWriteKernelCacheToFile`|2.0.0.0| | | | | | | | | |
 

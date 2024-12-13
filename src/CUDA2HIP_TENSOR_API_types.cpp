@@ -175,7 +175,8 @@ const std::map<llvm::StringRef, hipCounter> CUDA_TENSOR_TYPE_NAME_MAP {
   {"CUTENSOR_PLAN_REQUIRED_WORKSPACE",                 {"",                                                         "",           CONV_NUMERIC_LITERAL, API_TENSOR, 1, UNSUPPORTED}},
 
   {"cutensorHandle_t",                                 {"hiptensorHandle_t",                                        "",           CONV_TYPE, API_TENSOR, 1}},
-  {"cutensorTensorDescriptor",                         {"hiptensorTensorDescriptor_t",                              "",           CONV_TYPE, API_TENSOR, 1}},
+  {"cutensorTensorDescriptor_t",                       {"hiptensorTensorDescriptor_t",                              "",           CONV_TYPE, API_TENSOR, 1}},
+  {"cutensorContractionPlan_t",                        {"hiptensorContractionPlan_t",                               "",           CONV_TYPE, API_TENSOR, 1}},
 
 };
 
@@ -320,6 +321,7 @@ const std::map<llvm::StringRef, cudaAPIversions> CUDA_TENSOR_TYPE_NAME_VER_MAP {
   {"CUTENSOR_PLAN_REQUIRED_WORKSPACE",                 {CUTENSOR_2000,  CUDA_0,        CUDA_0,      }},
   {"cutensorHandle_t",                                 {CUTENSOR_1010,  CUDA_0,        CUDA_0,      }},
   {"cutensorTensorDescriptor_t",                       {CUTENSOR_1010,  CUDA_0,        CUDA_0,      }},
+  {"cutensorContractionPlan_t",                        {CUTENSOR_1010,  CUDA_0,        CUTENSOR_2000, }},
 };
 
 const std::map<llvm::StringRef, hipAPIversions> HIP_TENSOR_TYPE_NAME_VER_MAP {
@@ -363,4 +365,5 @@ const std::map<llvm::StringRef, hipAPIversions> HIP_TENSOR_TYPE_NAME_VER_MAP {
   {"HIPTENSOR_WORKSPACE_MAX",                          {HIP_5070,       HIP_0,         HIP_0,       }},
   {"hiptensorHandle_t",                                {HIP_5070,       HIP_0,         HIP_0,       }},
   {"hiptensorTensorDescriptor_t",                      {HIP_5070,       HIP_0,         HIP_0,       }},
+  {"hiptensorContractionPlan_t",                       {HIP_5070,       HIP_0,         HIP_0,       }},
 };
