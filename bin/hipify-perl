@@ -6139,6 +6139,7 @@ sub simpleSubstitutions {
     subst("cusparseZsctr", "hipsparseZsctr", "library");
     subst("cutensorCreate", "hiptensorCreate", "library");
     subst("cutensorDestroy", "hiptensorDestroy", "library");
+    subst("cutensorInitTensorDescriptor", "hiptensorInitTensorDescriptor", "library");
     subst("nvrtcAddNameExpression", "hiprtcAddNameExpression", "library");
     subst("nvrtcCompileProgram", "hiprtcCompileProgram", "library");
     subst("nvrtcCreateProgram", "hiprtcCreateProgram", "library");
@@ -7374,6 +7375,7 @@ sub simpleSubstitutions {
     subst("cutensorHandle_t", "hiptensorHandle_t", "type");
     subst("cutensorOperator_t", "hiptensorOperator_t", "type");
     subst("cutensorStatus_t", "hiptensorStatus_t", "type");
+    subst("cutensorTensorDescriptor", "hiptensorTensorDescriptor_t", "type");
     subst("cutensorWorksizePreference_t", "hiptensorWorksizePreference_t", "type");
     subst("gesvdjInfo_t", "hipsolverGesvdjInfo_t", "type");
     subst("nvrtcProgram", "hiprtcProgram", "type");
@@ -7874,6 +7876,14 @@ sub simpleSubstitutions {
     subst("CUSPARSE_STATUS_ZERO_PIVOT", "HIPSPARSE_STATUS_ZERO_PIVOT", "numeric_literal");
     subst("CUTENSOR_ALGO_DEFAULT", "HIPTENSOR_ALGO_DEFAULT", "numeric_literal");
     subst("CUTENSOR_ALGO_DEFAULT_PATIENT", "HIPTENSOR_ALGO_DEFAULT_PATIENT", "numeric_literal");
+    subst("CUTENSOR_COMPUTE_16BF", "HIPTENSOR_COMPUTE_16BF", "numeric_literal");
+    subst("CUTENSOR_COMPUTE_16F", "HIPTENSOR_COMPUTE_16F", "numeric_literal");
+    subst("CUTENSOR_COMPUTE_32F", "HIPTENSOR_COMPUTE_32F", "numeric_literal");
+    subst("CUTENSOR_COMPUTE_32I", "HIPTENSOR_COMPUTE_32I", "numeric_literal");
+    subst("CUTENSOR_COMPUTE_32U", "HIPTENSOR_COMPUTE_32U", "numeric_literal");
+    subst("CUTENSOR_COMPUTE_64F", "HIPTENSOR_COMPUTE_64F", "numeric_literal");
+    subst("CUTENSOR_COMPUTE_8I", "HIPTENSOR_COMPUTE_8I", "numeric_literal");
+    subst("CUTENSOR_COMPUTE_8U", "HIPTENSOR_COMPUTE_8U", "numeric_literal");
     subst("CUTENSOR_C_32F", "HIPTENSOR_COMPUTE_C32F", "numeric_literal");
     subst("CUTENSOR_C_64F", "HIPTENSOR_COMPUTE_C64F", "numeric_literal");
     subst("CUTENSOR_OP_ADD", "HIPTENSOR_OP_ADD", "numeric_literal");
@@ -8668,6 +8678,7 @@ sub simpleSubstitutions {
     subst("cudaSuccess", "hipSuccess", "numeric_literal");
     subst("cudaUserObjectNoDestructorSync", "hipUserObjectNoDestructorSync", "numeric_literal");
     subst("cusolver_int_t", "int", "numeric_literal");
+    subst("cutensorComputeType_t", "hiptensorComputeType_t", "numeric_literal");
     subst("CUB_MAX", "CUB_MAX", "define");
     subst("CUB_MIN", "CUB_MIN", "define");
     subst("CUB_NAMESPACE_BEGIN", "BEGIN_HIPCUB_NAMESPACE", "define");
@@ -9867,6 +9878,8 @@ sub warnHipOnlyUnsupportedFunctions {
     my $line_num = shift;
     my $k = 0;
     foreach $func (
+        "cutensorWriteKernelCacheToFile",
+        "cutensorReadKernelCacheFromFile",
         "cutensorPlanPreferenceAttribute_t",
         "cutensorPlanAttribute_t",
         "cutensorOperationDescriptorAttribute_t",
@@ -9874,6 +9887,8 @@ sub warnHipOnlyUnsupportedFunctions {
         "cutensorHandleWritePlanCacheToFile",
         "cutensorHandleResizePlanCache",
         "cutensorHandleReadPlanCacheFromFile",
+        "cutensorDestroyTensorDescriptor",
+        "cutensorCreateTensorDescriptor",
         "cutensorCacheMode_t",
         "cutensorAutotuneMode_t",
         "cusparseZhybsv_solve",
@@ -10190,6 +10205,13 @@ sub warnHipOnlyUnsupportedFunctions {
         "CUTENSOR_STATUS_LICENSE_ERROR",
         "CUTENSOR_STATUS_CUDA_ERROR",
         "CUTENSOR_STATUS_CUBLAS_ERROR",
+        "CUTENSOR_R_MIN_TF32",
+        "CUTENSOR_R_MIN_8U",
+        "CUTENSOR_R_MIN_64F",
+        "CUTENSOR_R_MIN_32U",
+        "CUTENSOR_R_MIN_32F",
+        "CUTENSOR_R_MIN_16F",
+        "CUTENSOR_R_MIN_16BF",
         "CUTENSOR_R_64U",
         "CUTENSOR_R_64I",
         "CUTENSOR_R_4U",
@@ -10238,6 +10260,10 @@ sub warnHipOnlyUnsupportedFunctions {
         "CUTENSOR_OPERATION_DESCRIPTOR_FLOPS",
         "CUTENSOR_JIT_MODE_NONE",
         "CUTENSOR_JIT_MODE_DEFAULT",
+        "CUTENSOR_C_MIN_TF32",
+        "CUTENSOR_C_MIN_64F",
+        "CUTENSOR_C_MIN_32F",
+        "CUTENSOR_C_MIN_16F",
         "CUTENSOR_C_8U",
         "CUTENSOR_C_8I",
         "CUTENSOR_C_64U",
@@ -10250,6 +10276,7 @@ sub warnHipOnlyUnsupportedFunctions {
         "CUTENSOR_C_16I",
         "CUTENSOR_C_16F",
         "CUTENSOR_C_16BF",
+        "CUTENSOR_COMPUTE_TF32",
         "CUTENSOR_CACHE_MODE_PEDANTIC",
         "CUTENSOR_CACHE_MODE_NONE",
         "CUTENSOR_AUTOTUNE_MODE_NONE",
@@ -11190,6 +11217,8 @@ sub warnRocOnlyUnsupportedFunctions {
     my $line_num = shift;
     my $k = 0;
     foreach $func (
+        "cutensorWriteKernelCacheToFile",
+        "cutensorReadKernelCacheFromFile",
         "cutensorPlanPreferenceAttribute_t",
         "cutensorPlanAttribute_t",
         "cutensorOperationDescriptorAttribute_t",
@@ -11197,6 +11226,8 @@ sub warnRocOnlyUnsupportedFunctions {
         "cutensorHandleWritePlanCacheToFile",
         "cutensorHandleResizePlanCache",
         "cutensorHandleReadPlanCacheFromFile",
+        "cutensorDestroyTensorDescriptor",
+        "cutensorCreateTensorDescriptor",
         "cutensorCacheMode_t",
         "cutensorAutotuneMode_t",
         "cusparseZhybsv_solve",
@@ -11603,6 +11634,13 @@ sub warnRocOnlyUnsupportedFunctions {
         "CUTENSOR_STATUS_LICENSE_ERROR",
         "CUTENSOR_STATUS_CUDA_ERROR",
         "CUTENSOR_STATUS_CUBLAS_ERROR",
+        "CUTENSOR_R_MIN_TF32",
+        "CUTENSOR_R_MIN_8U",
+        "CUTENSOR_R_MIN_64F",
+        "CUTENSOR_R_MIN_32U",
+        "CUTENSOR_R_MIN_32F",
+        "CUTENSOR_R_MIN_16F",
+        "CUTENSOR_R_MIN_16BF",
         "CUTENSOR_R_64U",
         "CUTENSOR_R_64I",
         "CUTENSOR_R_4U",
@@ -11651,6 +11689,10 @@ sub warnRocOnlyUnsupportedFunctions {
         "CUTENSOR_OPERATION_DESCRIPTOR_FLOPS",
         "CUTENSOR_JIT_MODE_NONE",
         "CUTENSOR_JIT_MODE_DEFAULT",
+        "CUTENSOR_C_MIN_TF32",
+        "CUTENSOR_C_MIN_64F",
+        "CUTENSOR_C_MIN_32F",
+        "CUTENSOR_C_MIN_16F",
         "CUTENSOR_C_8U",
         "CUTENSOR_C_8I",
         "CUTENSOR_C_64U",
@@ -11663,6 +11705,7 @@ sub warnRocOnlyUnsupportedFunctions {
         "CUTENSOR_C_16I",
         "CUTENSOR_C_16F",
         "CUTENSOR_C_16BF",
+        "CUTENSOR_COMPUTE_TF32",
         "CUTENSOR_CACHE_MODE_PEDANTIC",
         "CUTENSOR_CACHE_MODE_NONE",
         "CUTENSOR_AUTOTUNE_MODE_NONE",

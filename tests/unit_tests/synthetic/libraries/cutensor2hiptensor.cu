@@ -9,6 +9,24 @@
 
 int main() {
 
+  // CHECK: hiptensorHandle_t handle;
+  cutensorHandle_t handle;
+
+  //CHECK: hiptensorStatus_t status;
+  cutensorStatus_t status;
+
+  //CHECK: hiptensorTensorDescriptor_t *tensorDescriptor;
+  cutensorTensorDescriptor *tensorDescriptor;
+
+  // CHECK: hipDataType dataType_t;
+  // CHECK-NEXT: hipDataType dataType;
+  cudaDataType_t dataType_t;
+  cudaDataType dataType;
+
+  const uint32_t numModes = 0;
+  const int64_t* extent = nullptr;
+  const int64_t* stride = nullptr;
+
 #if CUTENSOR_MAJOR >= 2
   // CHECK: hiptensorComputeType_t tensorDataType_t;
   // CHECK-NEXT hiptensorComputeType_t TENSOR_R_16F = HIPTENSOR_COMPUTE_16F;
@@ -32,9 +50,11 @@ int main() {
   cutensorDataType_t TENSOR_R_8U = CUTENSOR_R_8U;
   cutensorDataType_t TENSOR_R_32I = CUTENSOR_R_32I;
   cutensorDataType_t TENSOR_R_32U = CUTENSOR_R_32U;
+
 #endif
 
 #if CUTENSOR_MAJOR >= 1
+
   // CHECK: hiptensorOperator_t tensorOperator_t;
   // CHECK-NEXT hiptensorOperator_t TENSOR_OP_IDENTITY = HIPTENSOR_OP_IDENTITY;
   // CHECK-NEXT hiptensorOperator_t TENSOR_OP_SQRT = HIPTENSOR_OP_SQRT;
@@ -98,13 +118,35 @@ int main() {
 #if (CUTENSOR_MAJOR >= 1 && CUTENSOR_MAJOR < 2)
   // CHECK: hiptensorWorksizePreference_t TENSOR_WORKSPACE_RECOMMENDED = HIPTENSOR_WORKSPACE_RECOMMENDED;
   cutensorWorksizePreference_t TENSOR_WORKSPACE_RECOMMENDED = CUTENSOR_WORKSPACE_RECOMMENDED;
+
+  // CHECK: hiptensorComputeType_t tensorComputeType_t;
+  // CHECK-NEXT hiptensorComputeType_t TENSOR_R_16F = HIPTENSOR_COMPUTE_16F;
+  // CHECK-NEXT hiptensorComputeType_t TENSOR_R_16BF = HIPTENSOR_COMPUTE_16BF;
+  // CHECK-NEXT hiptensorComputeType_t TENSOR_R_32F = HIPTENSOR_COMPUTE_32F;
+  // CHECK-NEXT hiptensorComputeType_t TENSOR_C_32F = HIPTENSOR_COMPUTE_C32F;
+  // CHECK-NEXT hiptensorComputeType_t TENSOR_R_64F = HIPTENSOR_COMPUTE_64F;
+  // CHECK-NEXT hiptensorComputeType_t TENSOR_C_64F = HIPTENSOR_COMPUTE_C64F;
+  // CHECK-NEXT hiptensorComputeType_t TENSOR_R_8I = HIPTENSOR_COMPUTE_8I;
+  // CHECK-NEXT hiptensorComputeType_t TENSOR_R_8U = HIPTENSOR_COMPUTE_8U;
+  // CHECK-NEXT hiptensorComputeType_t TENSOR_R_32I = HIPTENSOR_COMPUTE_32I;
+  // CHECK-NEXT hiptensorComputeType_t TENSOR_R_32U = HIPTENSOR_COMPUTE_32U;
+  cutensorComputeType_t tensorComputeType_t;
+  cutensorComputeType_t TENSOR_R_16F = CUTENSOR_R_16F;
+  cutensorComputeType_t TENSOR_R_16BF = CUTENSOR_R_16BF;
+  cutensorComputeType_t TENSOR_R_32F = CUTENSOR_R_32F;
+  cutensorComputeType_t TENSOR_C_32F = CUTENSOR_C_32F;
+  cutensorComputeType_t TENSOR_R_64F = CUTENSOR_R_64F;
+  cutensorComputeType_t TENSOR_C_64F = CUTENSOR_C_64F;
+  cutensorComputeType_t TENSOR_R_8I = CUTENSOR_R_8I;
+  cutensorComputeType_t TENSOR_R_8U = CUTENSOR_R_8U;
+  cutensorComputeType_t TENSOR_R_32I = CUTENSOR_R_32I;
+  cutensorComputeType_t TENSOR_R_32U = CUTENSOR_R_32U;
+
+  // CUDA: cutensorStatus_t cutensorInitTensorDescriptor(const cutensorHandle_t* handle, cutensorTensorDescriptor_t* desc, const uint32_t numModes, const int64_t extent[], const int64_t stride[], cudaDataType_t dataType, cutensorOperator_t unaryOp);
+  // HIP: hiptensorStatus_t hiptensorInitTensorDescriptor(const hiptensorHandle_t* handle, hiptensorTensorDescriptor_t* desc, const uint32_t numModes, const int64_t lens[], const int64_t strides[], hipDataType dataType, hiptensorOperator_t unaryOp);
+  // CHECK: status = hiptensorInitTensorDescriptor (handle, &tensorDescriptor, numModes, extent, stride, dataType, tensorOperator_t);
+  status = cutensorInitTensorDescriptor (handle, &tensorDescriptor, numModes, extent, stride, dataType, tensorOperator_t);
 #endif
-
-  // CHECK: hiptensorHandle_t handle;
-  cutensorHandle_t handle;
-
-  //CHECK: hiptensorStatus_t status;
-  cutensorStatus_t status;
 
 #if (CUTENSOR_MAJOR == 1 && CUTENSOR_MINOR >= 7) || CUTENSOR_MAJOR >= 2
   // CUDA: cutensorStatus_t cutensorCreate(cutensorHandle_t* handle);
@@ -116,6 +158,7 @@ int main() {
   // HIP: hiptensorStatus_t hiptensorDestroy(hiptensorHandle_t* handle);
   // CHECK: status = hiptensorDestroy(handle);
   status = cutensorDestroy(handle);
+
 #endif
 
   return 0;
