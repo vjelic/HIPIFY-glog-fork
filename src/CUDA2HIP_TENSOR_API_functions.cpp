@@ -28,6 +28,11 @@ const std::map<llvm::StringRef, hipCounter> CUDA_TENSOR_FUNCTION_MAP {
   {"cutensorHandleResizePlanCache",                               {"",                                                    "",                                     CONV_LIB_FUNC, API_TENSOR, 2, UNSUPPORTED}},
   {"cutensorHandleWritePlanCacheToFile",                          {"",                                                    "",                                     CONV_LIB_FUNC, API_TENSOR, 2, UNSUPPORTED}},
   {"cutensorHandleReadPlanCacheFromFile",                         {"",                                                    "",                                     CONV_LIB_FUNC, API_TENSOR, 2, UNSUPPORTED}},
+  {"cutensorWriteKernelCacheToFile",                              {"",                                                    "",                                     CONV_LIB_FUNC, API_TENSOR, 2, UNSUPPORTED}},
+  {"cutensorReadKernelCacheFromFile",                             {"",                                                    "",                                     CONV_LIB_FUNC, API_TENSOR, 2, UNSUPPORTED}},
+  {"cutensorCreateTensorDescriptor",                              {"",                                                    "",                                     CONV_LIB_FUNC, API_TENSOR, 2, UNSUPPORTED}},
+  {"cutensorInitTensorDescriptor",                                {"hiptensorInitTensorDescriptor",                       "",                                     CONV_LIB_FUNC, API_TENSOR, 2}},
+  {"cutensorDestroyTensorDescriptor",                             {"",                                                    "",                                     CONV_LIB_FUNC, API_TENSOR, 2, UNSUPPORTED}},
 };
 
 
@@ -37,11 +42,17 @@ const std::map<llvm::StringRef, cudaAPIversions> CUDA_TENSOR_FUNCTION_VER_MAP {
   {"cutensorHandleResizePlanCache",                  {CUTENSOR_2000,  CUDA_0,    CUDA_0   }},
   {"cutensorHandleWritePlanCacheToFile",             {CUTENSOR_2000,  CUDA_0,    CUDA_0   }},
   {"cutensorHandleReadPlanCacheFromFile",            {CUTENSOR_2000,  CUDA_0,    CUDA_0   }},
+  {"cutensorWriteKernelCacheToFile",                 {CUTENSOR_2000,  CUDA_0,    CUDA_0   }},
+  {"cutensorReadKernelCacheFromFile",                {CUTENSOR_2000,  CUDA_0,    CUDA_0   }},
+  {"cutensorCreateTensorDescriptor",                 {CUTENSOR_2000,  CUDA_0,    CUDA_0   }},
+  {"cutensorInitTensorDescriptor",                   {CUTENSOR_1010,  CUDA_0,    CUTENSOR_2000}},
+  {"cutensorDestroyTensorDescriptor",                {CUTENSOR_2000,  CUDA_0,    CUDA_0   }},
 };
 
 const std::map<llvm::StringRef, hipAPIversions> HIP_TENSOR_FUNCTION_VER_MAP {
   {"hiptensorCreate",                                {HIP_5070,       HIP_0,         HIP_0,       }},
   {"hiptensorDestroy",                               {HIP_5070,       HIP_0,         HIP_0,       }},
+  {"hiptensorInitTensorDescriptor",                  {HIP_5070,       HIP_0,         HIP_0,       }},
 };
 
 const std::map<unsigned int, llvm::StringRef> CUDA_TENSOR_API_SECTION_MAP {
