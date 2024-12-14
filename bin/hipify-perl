@@ -1400,6 +1400,7 @@ my %removed_funcs = (
 my %experimental_funcs = (
     "cuStreamBatchMemOp_v2" => "6.4.0",
     "cuStreamBatchMemOp" => "6.4.0",
+    "cuGraphExecBatchMemOpNodeSetParams" => "6.4.0",
     "cuGraphBatchMemOpNodeSetParams" => "6.4.0",
     "cuGraphBatchMemOpNodeGetParams" => "6.4.0",
     "cuGraphAddBatchMemOpNode" => "6.4.0",
@@ -1554,6 +1555,7 @@ sub experimentalSubstitutions {
     subst("cuGraphAddBatchMemOpNode", "hipGraphAddBatchMemOpNode", "graph");
     subst("cuGraphBatchMemOpNodeGetParams", "hipGraphBatchMemOpNodeGetParams", "graph");
     subst("cuGraphBatchMemOpNodeSetParams", "hipGraphBatchMemOpNodeSetParams", "graph");
+    subst("cuGraphExecBatchMemOpNodeSetParams", "hipGraphExecBatchMemOpNodeSetParams", "graph");
     subst("CUDA_BATCH_MEM_OP_NODE_PARAMS", "hipBatchMemOpNodeParams", "type");
     subst("CUDA_BATCH_MEM_OP_NODE_PARAMS_st", "hipBatchMemOpNodeParams", "type");
     subst("CUDA_BATCH_MEM_OP_NODE_PARAMS_v1", "hipBatchMemOpNodeParams", "type");
@@ -4118,7 +4120,6 @@ sub simpleSubstitutions {
     subst("cuGraphEventRecordNodeSetEvent", "hipGraphEventRecordNodeSetEvent", "graph");
     subst("cuGraphEventWaitNodeGetEvent", "hipGraphEventWaitNodeGetEvent", "graph");
     subst("cuGraphEventWaitNodeSetEvent", "hipGraphEventWaitNodeSetEvent", "graph");
-    subst("cuGraphExecBatchMemOpNodeSetParams", "hipGraphExecBatchMemOpNodeSetParams", "graph");
     subst("cuGraphExecChildGraphNodeSetParams", "hipGraphExecChildGraphNodeSetParams", "graph");
     subst("cuGraphExecDestroy", "hipGraphExecDestroy", "graph");
     subst("cuGraphExecEventRecordNodeSetEvent", "hipGraphExecEventRecordNodeSetEvent", "graph");
