@@ -179,6 +179,7 @@ const std::map<llvm::StringRef, hipCounter> CUDA_TENSOR_TYPE_NAME_MAP {
   {"cutensorTensorDescriptor_t",                       {"hiptensorTensorDescriptor_t",                              "",           CONV_TYPE, API_TENSOR, 1}},
   {"cutensorTensorDescriptor",                         {"",                                                         "",           CONV_TYPE, API_TENSOR, 1, UNSUPPORTED}},
   {"cutensorContractionPlan_t",                        {"hiptensorContractionPlan_t",                               "",           CONV_TYPE, API_TENSOR, 1}},
+  {"cutensorPlan_t",                                   {"hiptensorContractionPlan_t",                               "",           CONV_TYPE, API_TENSOR, 1}},
 
 };
 
@@ -326,6 +327,7 @@ const std::map<llvm::StringRef, cudaAPIversions> CUDA_TENSOR_TYPE_NAME_VER_MAP {
   {"cutensorTensorDescriptor_t",                       {CUTENSOR_1010,  CUDA_0,        CUDA_0,      }},
   {"cutensorTensorDescriptor",                         {CUTENSOR_2000,  CUDA_0,        CUDA_0,      }},
   {"cutensorContractionPlan_t",                        {CUTENSOR_1010,  CUDA_0,        CUTENSOR_2000, }},
+  {"cutensorPlan_t",                                   {CUTENSOR_2000,  CUDA_0,        CUDA_0,      }},
 };
 
 const std::map<llvm::StringRef, hipAPIversions> HIP_TENSOR_TYPE_NAME_VER_MAP {

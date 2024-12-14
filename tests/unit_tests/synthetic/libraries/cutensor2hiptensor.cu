@@ -15,12 +15,16 @@ int main() {
   //CHECK: hiptensorStatus_t status;
   cutensorStatus_t status;
 
-  //CHECK: hiptensorTensorDescriptor_t *tensorDescriptor = 0;
-  //CHECK-NEXT: hiptensorTensorDescriptor_t *descA = 0;
-  //CHECK-NEXT: hiptensorTensorDescriptor_t *descB = 0;
-  cutensorTensorDescriptor_t *tensorDescriptor = 0;
-  cutensorTensorDescriptor_t *descA = 0;
-  cutensorTensorDescriptor_t *descB = 0;
+  //CHECK: hiptensorTensorDescriptor_t *tensorDescriptor = nullptr;
+  //CHECK-NEXT: hiptensorTensorDescriptor_t *descA = nullptr;
+  //CHECK-NEXT: hiptensorTensorDescriptor_t *descB = nullptr;
+  //CHECK-NEXT: hiptensorTensorDescriptor_t *descC = nullptr;
+  //CHECK-NEXT: hiptensorTensorDescriptor_t *descD = nullptr;
+  cutensorTensorDescriptor_t *tensorDescriptor = nullptr;
+  cutensorTensorDescriptor_t *descA = nullptr;
+  cutensorTensorDescriptor_t *descB = nullptr;
+  cutensorTensorDescriptor_t *descC = nullptr;
+  cutensorTensorDescriptor_t *descD = nullptr;
 
   // CHECK: hipDataType dataType;
   cudaDataType dataType;
@@ -32,6 +36,7 @@ int main() {
   const int64_t* extent = nullptr;
   const int64_t* stride = nullptr;
   const uint64_t workspaceSize = 0;
+  uint64_t workspaceSize2 = 0;
   const void* alpha = nullptr;
   const void* A = nullptr;
   const int32_t* modeA = nullptr;
@@ -40,9 +45,13 @@ int main() {
   const void* beta = nullptr;
   const int32_t* modeB = nullptr;
   const void* C = nullptr;
+  const int32_t* modeC = nullptr;
   void* D = nullptr;
+  const int32_t* modeD = nullptr;
+  void* workspace = nullptr;
 
 #if CUTENSOR_MAJOR >= 2
+
   // CHECK: hiptensorComputeType_t tensorDataType_t;
   // CHECK-NEXT hiptensorComputeType_t TENSOR_R_16F = HIPTENSOR_COMPUTE_16F;
   // CHECK-NEXT hiptensorComputeType_t TENSOR_R_16BF = HIPTENSOR_COMPUTE_16BF;
@@ -66,6 +75,13 @@ int main() {
   cutensorDataType_t TENSOR_R_32I = CUTENSOR_R_32I;
   cutensorDataType_t TENSOR_R_32U = CUTENSOR_R_32U;
 
+  // CHECK: hiptensorContractionPlan_t tensorPlan2_t;
+  cutensorPlan_t tensorPlan2_t;
+
+  // CUDA: cutensorStatus_t cutensorContract(const cutensorHandle_t handle, const cutensorPlan_t plan, const void* alpha, const void *A, const void *B, const void* beta, const void *C, void *D, void* workspace, uint64_t workspaceSize, cudaStream_t stream);
+  // HIP: hiptensorStatus_t hiptensorContraction(const hiptensorHandle_t* handle, const hiptensorContractionPlan_t* plan, const void* alpha, const void* A, const void* B, const void* beta, const void* C, void* D, void* workspace, uint64_t workspaceSize, hipStream_t stream);
+  // CHECK: status = hiptensorContraction(handle, tensorPlan2_t, alpha, A, B_1, beta, C, D, workspace,  workspaceSize2, stream_t);
+  status = cutensorContract(handle, tensorPlan2_t, alpha, A, B_1, beta, C, D, workspace, workspaceSize2, stream_t);
 #endif
 
 #if CUTENSOR_MAJOR >= 1
@@ -171,6 +187,11 @@ int main() {
   // HIP: hiptensorStatus_t hiptensorContraction(const hiptensorHandle_t* handle, const hiptensorContractionPlan_t* plan, const void* alpha, const void* A, const void* B, const void* beta, const void* C, void* D, void* workspace, uint64_t workspaceSize, hipStream_t stream);
   // CHECK: status = hiptensorContraction(handle, plan, alpha, A, B_1, beta, C, D, workspaceSize, stream_t);
   status = cutensorContraction(handle, plan, alpha, A, B_1, beta, C, D, workspaceSize, stream_t);
+
+  // CUDA: cutensorStatus_t cutensorReduction(const cutensorHandle_t* handle, const void* alpha, const void* A, const cutensorTensorDescriptor_t* descA, const int32_t modeA[], const void* beta, const void* C, const cutensorTensorDescriptor_t* descC, const int32_t modeC[], void* D, const cutensorTensorDescriptor_t* descD, const int32_t modeD[], cutensorOperator_t opReduce, cutensorComputeType_t typeCompute, void *workspace, uint64_t workspaceSize, cudaStream_t stream);
+  // HIP: hiptensorStatus_t hiptensorReduction(const hiptensorHandle_t* handle, const void* alpha, const void* A, const hiptensorTensorDescriptor_t* descA, const int32_t modeA[], const void* beta, const void* C, const hiptensorTensorDescriptor_t* descC, const int32_t modeC[], void* D, const hiptensorTensorDescriptor_t* descD,  const int32_t modeD[], hiptensorOperator_t opReduce, hiptensorComputeType_t typeCompute, void* workspace, uint64_t workspaceSize, hipStream_t stream);
+  // CHECK: status = hiptensorReduction(handle, alpha, A, descA, modeA, beta, C, descC, modeC, D, descD, modeD, tensorOperator_t, workspace, workspaceSize2, stream);
+  status = cutensorReduction(handle, alpha, A, descA, modeA, beta, C, descC, modeC, D, descD, modeD, tensorOperator_t, workspace, workspaceSize2, stream);
 #endif
 
 #if (CUTENSOR_MAJOR == 1 && CUTENSOR_MINOR >= 7) || CUTENSOR_MAJOR >= 2

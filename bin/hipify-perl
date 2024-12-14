@@ -6138,11 +6138,13 @@ sub simpleSubstitutions {
     subst("cusparseZnnz", "hipsparseZnnz", "library");
     subst("cusparseZnnz_compress", "hipsparseZnnz_compress", "library");
     subst("cusparseZsctr", "hipsparseZsctr", "library");
+    subst("cutensorContract", "hiptensorContraction", "library");
     subst("cutensorContraction", "hiptensorContraction", "library");
     subst("cutensorCreate", "hiptensorCreate", "library");
     subst("cutensorDestroy", "hiptensorDestroy", "library");
     subst("cutensorInitTensorDescriptor", "hiptensorInitTensorDescriptor", "library");
     subst("cutensorPermutation", "hiptensorPermutation", "library");
+    subst("cutensorReduction", "hiptensorReduction", "library");
     subst("nvrtcAddNameExpression", "hiprtcAddNameExpression", "library");
     subst("nvrtcCompileProgram", "hiprtcCompileProgram", "library");
     subst("nvrtcCreateProgram", "hiprtcCreateProgram", "library");
@@ -7378,6 +7380,7 @@ sub simpleSubstitutions {
     subst("cutensorDataType_t", "hiptensorComputeType_t", "type");
     subst("cutensorHandle_t", "hiptensorHandle_t", "type");
     subst("cutensorOperator_t", "hiptensorOperator_t", "type");
+    subst("cutensorPlan_t", "hiptensorContractionPlan_t", "type");
     subst("cutensorStatus_t", "hiptensorStatus_t", "type");
     subst("cutensorTensorDescriptor_t", "hiptensorTensorDescriptor_t", "type");
     subst("cutensorWorksizePreference_t", "hiptensorWorksizePreference_t", "type");
@@ -9884,20 +9887,32 @@ sub warnHipOnlyUnsupportedFunctions {
     foreach $func (
         "cutensorWriteKernelCacheToFile",
         "cutensorTensorDescriptor",
+        "cutensorReduce",
         "cutensorReadKernelCacheFromFile",
+        "cutensorPlanPreferenceSetAttribute",
         "cutensorPlanPreferenceAttribute_t",
+        "cutensorPlanGetAttribute",
         "cutensorPlanAttribute_t",
         "cutensorPermute",
+        "cutensorOperationDescriptorSetAttribute",
+        "cutensorOperationDescriptorGetAttribute",
         "cutensorOperationDescriptorAttribute_t",
         "cutensorJitMode_t",
         "cutensorHandleWritePlanCacheToFile",
         "cutensorHandleResizePlanCache",
         "cutensorHandleReadPlanCacheFromFile",
         "cutensorHandle",
+        "cutensorEstimateWorkspaceSize",
         "cutensorElementwiseTrinaryExecute",
         "cutensorElementwiseBinaryExecute",
         "cutensorDestroyTensorDescriptor",
+        "cutensorDestroyPlanPreference",
+        "cutensorDestroyPlan",
+        "cutensorDestroyOperationDescriptor",
         "cutensorCreateTensorDescriptor",
+        "cutensorCreateReduction",
+        "cutensorCreatePlanPreference",
+        "cutensorCreatePlan",
         "cutensorCreatePermutation",
         "cutensorCreateElementwiseTrinary",
         "cutensorCreateElementwiseBinary",
@@ -11232,20 +11247,32 @@ sub warnRocOnlyUnsupportedFunctions {
     foreach $func (
         "cutensorWriteKernelCacheToFile",
         "cutensorTensorDescriptor",
+        "cutensorReduce",
         "cutensorReadKernelCacheFromFile",
+        "cutensorPlanPreferenceSetAttribute",
         "cutensorPlanPreferenceAttribute_t",
+        "cutensorPlanGetAttribute",
         "cutensorPlanAttribute_t",
         "cutensorPermute",
+        "cutensorOperationDescriptorSetAttribute",
+        "cutensorOperationDescriptorGetAttribute",
         "cutensorOperationDescriptorAttribute_t",
         "cutensorJitMode_t",
         "cutensorHandleWritePlanCacheToFile",
         "cutensorHandleResizePlanCache",
         "cutensorHandleReadPlanCacheFromFile",
         "cutensorHandle",
+        "cutensorEstimateWorkspaceSize",
         "cutensorElementwiseTrinaryExecute",
         "cutensorElementwiseBinaryExecute",
         "cutensorDestroyTensorDescriptor",
+        "cutensorDestroyPlanPreference",
+        "cutensorDestroyPlan",
+        "cutensorDestroyOperationDescriptor",
         "cutensorCreateTensorDescriptor",
+        "cutensorCreateReduction",
+        "cutensorCreatePlanPreference",
+        "cutensorCreatePlan",
         "cutensorCreatePermutation",
         "cutensorCreateElementwiseTrinary",
         "cutensorCreateElementwiseBinary",
