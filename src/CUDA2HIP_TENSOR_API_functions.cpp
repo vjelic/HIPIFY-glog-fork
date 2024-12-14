@@ -54,8 +54,11 @@ const std::map<llvm::StringRef, hipCounter> CUDA_TENSOR_FUNCTION_MAP {
   {"cutensorDestroyPlan",                                         {"",                                                    "",                                     CONV_LIB_FUNC, API_TENSOR, 2, UNSUPPORTED}},
   {"cutensorContract",                                            {"hiptensorContraction",                                "",                                     CONV_LIB_FUNC, API_TENSOR, 2}},
   {"cutensorReduction",                                           {"hiptensorReduction",                                  "",                                     CONV_LIB_FUNC, API_TENSOR, 2}},
-  {"cutensorCreateReduction",                                     {"hiptensorReduction",                                  "",                                     CONV_LIB_FUNC, API_TENSOR, 2, HIP_UNSUPPORTED}},
+  {"cutensorCreateReduction",                                     {"hiptensorReduction",                                  "",                                     CONV_LIB_FUNC, API_TENSOR, 2, UNSUPPORTED}},
   {"cutensorReduce",                                              {"",                                                    "",                                     CONV_LIB_FUNC, API_TENSOR, 2, UNSUPPORTED}},
+  {"cutensorGetErrorString",                                      {"hiptensorGetErrorString",                             "",                                     CONV_LIB_FUNC, API_TENSOR, 2}},
+  {"cutensorGetVersion",                                          {"",                                                    "",                                     CONV_LIB_FUNC, API_TENSOR, 2, UNSUPPORTED}},
+  {"cutensorGetCudartVersion",                                    {"hiptensorGetHiprtVersion",                            "",                                     CONV_LIB_FUNC, API_TENSOR, 2}},
 };
 
 
@@ -93,6 +96,9 @@ const std::map<llvm::StringRef, cudaAPIversions> CUDA_TENSOR_FUNCTION_VER_MAP {
   {"cutensorCreateReduction",                        {CUTENSOR_2000,  CUDA_0,    CUDA_0   }},
   {"cutensorReduction",                              {CUTENSOR_1010,  CUDA_0,    CUTENSOR_2000}},
   {"cutensorReduce",                                 {CUTENSOR_2000,  CUDA_0,    CUDA_0   }},
+  {"cutensorGetErrorString",                         {CUTENSOR_1010,  CUDA_0,    CUDA_0   }},
+  {"cutensorGetVersion",                             {CUTENSOR_1010,  CUDA_0,    CUDA_0   }},
+  {"cutensorGetCudartVersion",                       {CUTENSOR_1010,  CUDA_0,    CUDA_0   }},
 };
 
 const std::map<llvm::StringRef, hipAPIversions> HIP_TENSOR_FUNCTION_VER_MAP {
@@ -102,6 +108,8 @@ const std::map<llvm::StringRef, hipAPIversions> HIP_TENSOR_FUNCTION_VER_MAP {
   {"hiptensorPermutation",                           {HIP_6010,       HIP_0,         HIP_0,       }},
   {"hiptensorContraction",                           {HIP_6010,       HIP_0,         HIP_0,       }},
   {"hiptensorReduction",                             {HIP_6030,       HIP_0,         HIP_0,       }},
+  {"hiptensorGetErrorString",                        {HIP_5070,       HIP_0,         HIP_0,       }},
+  {"hiptensorGetHiprtVersion",                       {HIP_5070,       HIP_0,         HIP_0,       }},
 };
 
 const std::map<unsigned int, llvm::StringRef> CUDA_TENSOR_API_SECTION_MAP {

@@ -140,6 +140,7 @@
 |`cutensorJitMode_t`|2.0.0.0| | | | | | | | | |
 |`cutensorOperationDescriptorAttribute_t`|2.0.0.0| | | | | | | | | |
 |`cutensorOperator_t`|1.0.1.0| | | |`hiptensorOperator_t`|5.7.0| | | | |
+|`cutensorPlan`|2.0.0.0| | | | | | | | | |
 |`cutensorPlanAttribute_t`|2.0.0.0| | | | | | | | | |
 |`cutensorPlanPreferenceAttribute_t`|2.0.0.0| | | | | | | | | |
 |`cutensorPlan_t`|2.0.0.0| | | |`hiptensorContractionPlan_t`|5.7.0| | | | |
@@ -171,6 +172,9 @@
 |`cutensorElementwiseBinaryExecute`|2.0.0.0| | | | | | | | | |
 |`cutensorElementwiseTrinaryExecute`|2.0.0.0| | | | | | | | | |
 |`cutensorEstimateWorkspaceSize`|2.0.0.0| | | | | | | | | |
+|`cutensorGetCudartVersion`|1.0.1.0| | | |`hiptensorGetHiprtVersion`|5.7.0| | | | |
+|`cutensorGetErrorString`|1.0.1.0| | | |`hiptensorGetErrorString`|5.7.0| | | | |
+|`cutensorGetVersion`|1.0.1.0| | | | | | | | | |
 |`cutensorHandleReadPlanCacheFromFile`|2.0.0.0| | | | | | | | | |
 |`cutensorHandleResizePlanCache`|2.0.0.0| | | | | | | | | |
 |`cutensorHandleWritePlanCacheToFile`|2.0.0.0| | | | | | | | | |
