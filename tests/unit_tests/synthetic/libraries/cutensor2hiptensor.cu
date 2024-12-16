@@ -15,12 +15,12 @@ int main() {
   //CHECK: hiptensorStatus_t status;
   cutensorStatus_t status;
 
-  //CHECK: hiptensorTensorDescriptor_t *tensorDescriptor;
-  //CHECK: hiptensorTensorDescriptor_t *descA;
-  //CHECK: hiptensorTensorDescriptor_t *descB;
-  cutensorTensorDescriptor_t *tensorDescriptor;
-  cutensorTensorDescriptor_t *descA;
-  cutensorTensorDescriptor_t *descB;
+  //CHECK: hiptensorTensorDescriptor_t *tensorDescriptor = 0;
+  //CHECK-NEXT: hiptensorTensorDescriptor_t *descA = 0;
+  //CHECK-NEXT: hiptensorTensorDescriptor_t *descB = 0;
+  cutensorTensorDescriptor_t *tensorDescriptor = 0;
+  cutensorTensorDescriptor_t *descA = 0;
+  cutensorTensorDescriptor_t *descB = 0;
 
   // CHECK: hipDataType dataType;
   cudaDataType dataType;
