@@ -135,6 +135,7 @@
 |`cutensorComputeType_t`| | | | |`hiptensorComputeType_t`|5.7.0| | | | |
 |`cutensorContractionPlan_t`|1.0.1.0| | |2.0.0.0|`hiptensorContractionPlan_t`|5.7.0| | | | |
 |`cutensorDataType_t`|2.0.0.0| | | |`hiptensorComputeType_t`|5.7.0| | | | |
+|`cutensorHandle`|2.0.0.0| | | | | | | | | |
 |`cutensorHandle_t`|1.0.1.0| | | |`hiptensorHandle_t`|5.7.0| | | | |
 |`cutensorJitMode_t`|2.0.0.0| | | | | | | | | |
 |`cutensorOperationDescriptorAttribute_t`|2.0.0.0| | | | | | | | | |
@@ -142,6 +143,7 @@
 |`cutensorPlanAttribute_t`|2.0.0.0| | | | | | | | | |
 |`cutensorPlanPreferenceAttribute_t`|2.0.0.0| | | | | | | | | |
 |`cutensorStatus_t`|1.0.1.0| | | |`hiptensorStatus_t`|5.7.0| | | | |
+|`cutensorTensorDescriptor`|2.0.0.0| | | | | | | | | |
 |`cutensorTensorDescriptor_t`|1.0.1.0| | | |`hiptensorTensorDescriptor_t`|5.7.0| | | | |
 |`cutensorWorksizePreference_t`|1.0.1.0| | | |`hiptensorWorksizePreference_t`|5.7.0| | | | |
 

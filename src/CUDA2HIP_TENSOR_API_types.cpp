@@ -175,7 +175,9 @@ const std::map<llvm::StringRef, hipCounter> CUDA_TENSOR_TYPE_NAME_MAP {
   {"CUTENSOR_PLAN_REQUIRED_WORKSPACE",                 {"",                                                         "",           CONV_NUMERIC_LITERAL, API_TENSOR, 1, UNSUPPORTED}},
 
   {"cutensorHandle_t",                                 {"hiptensorHandle_t",                                        "",           CONV_TYPE, API_TENSOR, 1}},
+  {"cutensorHandle",                                   {"",                                                         "",           CONV_TYPE, API_TENSOR, 1, UNSUPPORTED}},
   {"cutensorTensorDescriptor_t",                       {"hiptensorTensorDescriptor_t",                              "",           CONV_TYPE, API_TENSOR, 1}},
+  {"cutensorTensorDescriptor",                         {"",                                                         "",           CONV_TYPE, API_TENSOR, 1, UNSUPPORTED}},
   {"cutensorContractionPlan_t",                        {"hiptensorContractionPlan_t",                               "",           CONV_TYPE, API_TENSOR, 1}},
 
 };
@@ -320,7 +322,9 @@ const std::map<llvm::StringRef, cudaAPIversions> CUDA_TENSOR_TYPE_NAME_VER_MAP {
   {"cutensorPlanAttribute_t",                          {CUTENSOR_2000,  CUDA_0,        CUDA_0,      }},
   {"CUTENSOR_PLAN_REQUIRED_WORKSPACE",                 {CUTENSOR_2000,  CUDA_0,        CUDA_0,      }},
   {"cutensorHandle_t",                                 {CUTENSOR_1010,  CUDA_0,        CUDA_0,      }},
+  {"cutensorHandle",                                   {CUTENSOR_2000,  CUDA_0,        CUDA_0,      }},
   {"cutensorTensorDescriptor_t",                       {CUTENSOR_1010,  CUDA_0,        CUDA_0,      }},
+  {"cutensorTensorDescriptor",                         {CUTENSOR_2000,  CUDA_0,        CUDA_0,      }},
   {"cutensorContractionPlan_t",                        {CUTENSOR_1010,  CUDA_0,        CUTENSOR_2000, }},
 };
 

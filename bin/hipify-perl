@@ -9883,6 +9883,7 @@ sub warnHipOnlyUnsupportedFunctions {
     my $k = 0;
     foreach $func (
         "cutensorWriteKernelCacheToFile",
+        "cutensorTensorDescriptor",
         "cutensorReadKernelCacheFromFile",
         "cutensorPlanPreferenceAttribute_t",
         "cutensorPlanAttribute_t",
@@ -9892,6 +9893,7 @@ sub warnHipOnlyUnsupportedFunctions {
         "cutensorHandleWritePlanCacheToFile",
         "cutensorHandleResizePlanCache",
         "cutensorHandleReadPlanCacheFromFile",
+        "cutensorHandle",
         "cutensorElementwiseTrinaryExecute",
         "cutensorElementwiseBinaryExecute",
         "cutensorDestroyTensorDescriptor",
@@ -11229,6 +11231,7 @@ sub warnRocOnlyUnsupportedFunctions {
     my $k = 0;
     foreach $func (
         "cutensorWriteKernelCacheToFile",
+        "cutensorTensorDescriptor",
         "cutensorReadKernelCacheFromFile",
         "cutensorPlanPreferenceAttribute_t",
         "cutensorPlanAttribute_t",
@@ -11238,6 +11241,7 @@ sub warnRocOnlyUnsupportedFunctions {
         "cutensorHandleWritePlanCacheToFile",
         "cutensorHandleResizePlanCache",
         "cutensorHandleReadPlanCacheFromFile",
+        "cutensorHandle",
         "cutensorElementwiseTrinaryExecute",
         "cutensorElementwiseBinaryExecute",
         "cutensorDestroyTensorDescriptor",

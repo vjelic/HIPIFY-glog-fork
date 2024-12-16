@@ -30,7 +30,7 @@ const std::map<llvm::StringRef, hipCounter> CUDA_TENSOR_FUNCTION_MAP {
   {"cutensorHandleReadPlanCacheFromFile",                         {"",                                                    "",                                     CONV_LIB_FUNC, API_TENSOR, 2, UNSUPPORTED}},
   {"cutensorWriteKernelCacheToFile",                              {"",                                                    "",                                     CONV_LIB_FUNC, API_TENSOR, 2, UNSUPPORTED}},
   {"cutensorReadKernelCacheFromFile",                             {"",                                                    "",                                     CONV_LIB_FUNC, API_TENSOR, 2, UNSUPPORTED}},
-  {"cutensorCreateTensorDescriptor",                              {"hiptensorInitTensorDescriptor",                       "",                                     CONV_LIB_FUNC, API_TENSOR, 2, HIP_UNSUPPORTED}},
+  {"cutensorCreateTensorDescriptor",                              {"hiptensorInitTensorDescriptor",                       "",                                     CONV_LIB_FUNC, API_TENSOR, 2, UNSUPPORTED}},
   {"cutensorInitTensorDescriptor",                                {"hiptensorInitTensorDescriptor",                       "",                                     CONV_LIB_FUNC, API_TENSOR, 2}},
   {"cutensorDestroyTensorDescriptor",                             {"",                                                    "",                                     CONV_LIB_FUNC, API_TENSOR, 2, UNSUPPORTED}},
   {"cutensorCreateElementwiseTrinary",                            {"",                                                    "",                                     CONV_LIB_FUNC, API_TENSOR, 2, UNSUPPORTED}},
