@@ -15,17 +15,32 @@ int main() {
   //CHECK: hiptensorStatus_t status;
   cutensorStatus_t status;
 
-  //CHECK: hiptensorTensorDescriptor_t *tensorDescriptor;
-  cutensorTensorDescriptor *tensorDescriptor;
+  //CHECK: hiptensorTensorDescriptor_t *tensorDescriptor = 0;
+  //CHECK-NEXT: hiptensorTensorDescriptor_t *descA = 0;
+  //CHECK-NEXT: hiptensorTensorDescriptor_t *descB = 0;
+  cutensorTensorDescriptor_t *tensorDescriptor = 0;
+  cutensorTensorDescriptor_t *descA = 0;
+  cutensorTensorDescriptor_t *descB = 0;
 
-  // CHECK: hipDataType dataType_t;
-  // CHECK-NEXT: hipDataType dataType;
-  cudaDataType_t dataType_t;
+  // CHECK: hipDataType dataType;
   cudaDataType dataType;
+
+  // CHECK: hipStream_t stream_t;
+  cudaStream_t stream_t;
 
   const uint32_t numModes = 0;
   const int64_t* extent = nullptr;
   const int64_t* stride = nullptr;
+  const uint64_t workspaceSize = 0;
+  const void* alpha = nullptr;
+  const void* A = nullptr;
+  const int32_t* modeA = nullptr;
+  void* B = nullptr;
+  const void* B_1 = nullptr;
+  const void* beta = nullptr;
+  const int32_t* modeB = nullptr;
+  const void* C = nullptr;
+  void* D = nullptr;
 
 #if CUTENSOR_MAJOR >= 2
   // CHECK: hiptensorComputeType_t tensorDataType_t;
@@ -144,8 +159,18 @@ int main() {
 
   // CUDA: cutensorStatus_t cutensorInitTensorDescriptor(const cutensorHandle_t* handle, cutensorTensorDescriptor_t* desc, const uint32_t numModes, const int64_t extent[], const int64_t stride[], cudaDataType_t dataType, cutensorOperator_t unaryOp);
   // HIP: hiptensorStatus_t hiptensorInitTensorDescriptor(const hiptensorHandle_t* handle, hiptensorTensorDescriptor_t* desc, const uint32_t numModes, const int64_t lens[], const int64_t strides[], hipDataType dataType, hiptensorOperator_t unaryOp);
-  // CHECK: status = hiptensorInitTensorDescriptor (handle, &tensorDescriptor, numModes, extent, stride, dataType, tensorOperator_t);
-  status = cutensorInitTensorDescriptor (handle, &tensorDescriptor, numModes, extent, stride, dataType, tensorOperator_t);
+  // CHECK: status = hiptensorInitTensorDescriptor(handle, tensorDescriptor, numModes, extent, stride, dataType, tensorOperator_t);
+  status = cutensorInitTensorDescriptor(handle, tensorDescriptor, numModes, extent, stride, dataType, tensorOperator_t);
+
+  // CUDA: cutensorStatus_t cutensorPermutation(const cutensorHandle_t* handle, const void* alpha, const void* A, const cutensorTensorDescriptor_t* descA, const int32_t modeA[], void* B, const cutensorTensorDescriptor_t* descB, const int32_t modeB[], const cudaDataType_t typeScalar, const cudaStream_t stream);
+  // HIP: hiptensorStatus_t hiptensorPermutation(const hiptensorHandle_t* handle, const void* alpha, const void* A, const hiptensorTensorDescriptor_t* descA, const int32_t modeA[], void* B, const hiptensorTensorDescriptor_t* descB, const int32_t modeB[], const hipDataType typeScalar, const hipStream_t stream);
+  // CHECK: status = hiptensorPermutation(handle, alpha, A, descA, modeA, B, descB, modeB, dataType, stream_t;
+  status = hiptensorPermutation(handle, alpha, A, descA, modeA, B, descB, modeB, dataType, stream_t;
+
+  // CUDA: cutensorStatus_t cutensorContraction(const cutensorHandle_t* handle, const cutensorContractionPlan_t* plan, const void* alpha, const void* A, const void* B, const void* beta, const void* C, void* D, void *workspace, uint64_t workspaceSize, cudaStream_t stream);
+  // HIP: hiptensorStatus_t hiptensorContraction(const hiptensorHandle_t* handle, const hiptensorContractionPlan_t* plan, const void* alpha, const void* A, const void* B, const void* beta, const void* C, void* D, void* workspace, uint64_t workspaceSize, hipStream_t stream);
+  // CHECK: status = hiptensorContraction(handle, plan, alpha, A, B_1, beta, C, D, workspaceSize, stream_t);
+  status = cutensorContraction(handle, plan, alpha, A, B_1, beta, C, D, workspaceSize, stream_t);
 #endif
 
 #if (CUTENSOR_MAJOR == 1 && CUTENSOR_MINOR >= 7) || CUTENSOR_MAJOR >= 2
