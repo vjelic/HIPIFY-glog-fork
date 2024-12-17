@@ -23,6 +23,7 @@ int main() {
 
   unsigned int flags = 0;
   unsigned int flags_2 = 0;
+  unsigned int icount = 0;
   uint64_t flags_64 = 0;
   int dim = 0;
   int count = 0;
@@ -1081,6 +1082,14 @@ int main() {
   // HIP: hipError_t hipDeviceGetP2PAttribute(int* value, hipDeviceP2PAttr attr, int srcDevice, int dstDevice);
   // CHECK: result = hipDeviceGetP2PAttribute(value, deviceP2PAttribute, iBlockSize, iBlockSize_2);
   result = cuDeviceGetP2PAttribute(value, deviceP2PAttribute, iBlockSize, iBlockSize_2);
+
+  // CHECK: hipStreamBatchMemOpParams streamBatchMemOpParams;
+  CUstreamBatchMemOpParams streamBatchMemOpParams;
+
+  // CUDA: CUresult CUDAAPI cuStreamBatchMemOp(CUstream stream, unsigned int count, CUstreamBatchMemOpParams *paramArray, unsigned int flags);
+  // HIP: hipError_t hipStreamBatchMemOp(hipStream_t stream, unsigned int count, hipStreamBatchMemOpParams* paramArray, unsigned int flags);
+  // CHECK: result = hipStreamBatchMemOp(stream, icount, &streamBatchMemOpParams, flags);
+  result = cuStreamBatchMemOp(stream, icount, &streamBatchMemOpParams, flags);
 #endif
 
 #if CUDA_VERSION >= 9000
@@ -1863,6 +1872,34 @@ int main() {
   // HIP: hipError_t hipStreamWriteValue64(hipStream_t stream, void* ptr, uint64_t value, unsigned int flags, uint64_t mask __dparm(0xFFFFFFFFFFFFFFFF));
   // CHECK: result = hipStreamWriteValue64(stream, deviceptr, u_value, flags);
   result = cuStreamWriteValue64_v2(stream, deviceptr, u_value, flags);
+
+  // CUDA: CUresult CUDAAPI cuStreamBatchMemOp_v2(CUstream stream, unsigned int count, CUstreamBatchMemOpParams *paramArray, unsigned int flags);
+  // HIP: hipError_t hipStreamBatchMemOp(hipStream_t stream, unsigned int count, hipStreamBatchMemOpParams* paramArray, unsigned int flags);
+  // CHECK: result = hipStreamBatchMemOp(stream, icount, &streamBatchMemOpParams, flags);
+  result = cuStreamBatchMemOp_v2(stream, icount, &streamBatchMemOpParams, flags);
+
+  // CHECK: hipBatchMemOpNodeParams BATCH_MEM_OP_NODE_PARAMS;
+  CUDA_BATCH_MEM_OP_NODE_PARAMS BATCH_MEM_OP_NODE_PARAMS;
+
+  // CUDA: CUresult CUDAAPI cuGraphAddBatchMemOpNode(CUgraphNode *phGraphNode, CUgraph hGraph, const CUgraphNode *dependencies, size_t numDependencies, const CUDA_BATCH_MEM_OP_NODE_PARAMS *nodeParams);
+  // HIP: hipError_t hipGraphAddBatchMemOpNode(hipGraphNode_t *phGraphNode, hipGraph_t hGraph, const hipGraphNode_t* dependencies, size_t numDependencies, const hipBatchMemOpNodeParams* nodeParams);
+  // CHECK: result = hipGraphAddBatchMemOpNode(&graphNode, graph, &graphNode2, bytes, &BATCH_MEM_OP_NODE_PARAMS);
+  result = cuGraphAddBatchMemOpNode(&graphNode, graph, &graphNode2, bytes, &BATCH_MEM_OP_NODE_PARAMS);
+
+  // CUDA: CUresult CUDAAPI cuGraphBatchMemOpNodeGetParams(CUgraphNode hNode, CUDA_BATCH_MEM_OP_NODE_PARAMS *nodeParams_out);
+  // HIP: hipError_t hipGraphBatchMemOpNodeGetParams(hipGraphNode_t hNode, hipBatchMemOpNodeParams* nodeParams_out);
+  // CHECK: result = hipGraphBatchMemOpNodeGetParams(graphNode, &BATCH_MEM_OP_NODE_PARAMS);
+  result = cuGraphBatchMemOpNodeGetParams(graphNode, &BATCH_MEM_OP_NODE_PARAMS);
+
+  // CUDA: CUresult CUDAAPI cuGraphBatchMemOpNodeSetParams(CUgraphNode hNode, const CUDA_BATCH_MEM_OP_NODE_PARAMS *nodeParams);
+  // HIP: hipError_t hipGraphBatchMemOpNodeSetParams(hipGraphNode_t hNode, hipBatchMemOpNodeParams* nodeParams);
+  // CHECK: result = hipGraphBatchMemOpNodeSetParams(graphNode, &BATCH_MEM_OP_NODE_PARAMS);
+  result = cuGraphBatchMemOpNodeSetParams(graphNode, &BATCH_MEM_OP_NODE_PARAMS);
+
+  // CUDA: CUresult CUDAAPI cuGraphExecBatchMemOpNodeSetParams(CUgraphExec hGraphExec, CUgraphNode hNode, const CUDA_BATCH_MEM_OP_NODE_PARAMS *nodeParams);
+  // HIP: hipError_t hipGraphExecBatchMemOpNodeSetParams(hipGraphExec_t hGraphExec, hipGraphNode_t hNode, const hipBatchMemOpNodeParams* nodeParams);
+  // CHECK: result = hipGraphExecBatchMemOpNodeSetParams(graphExec, graphNode, &BATCH_MEM_OP_NODE_PARAMS);
+  result = cuGraphExecBatchMemOpNodeSetParams(graphExec, graphNode, &BATCH_MEM_OP_NODE_PARAMS);
 #endif
 
 #if CUDA_VERSION >= 12000
@@ -1874,7 +1911,7 @@ int main() {
   CUDA_GRAPH_INSTANTIATE_PARAMS_st GRAPH_INSTANTIATE_PARAMS_st;
   CUDA_GRAPH_INSTANTIATE_PARAMS GRAPH_INSTANTIATE_PARAMS;
 
-  // TODO: https://github.com/ROCm-Developer-Tools/HIPIFY/issues/782 - Introduce 1-to-N conditional matcher
+  // TODO: https://github.com/ROCm/HIPIFY/issues/782 - Introduce 1-to-N conditional matcher
   //       Implement "conditional" matching in hipify-clang, based on CUDA_VERSION first;
   //       below the transformation cuStreamGetCaptureInfo -> hipStreamGetCaptureInfo_v2 should be applied for CUDA_VERSION >= 12000,
   //       otherwise, cuStreamGetCaptureInfo -> hipStreamGetCaptureInfo should be applied

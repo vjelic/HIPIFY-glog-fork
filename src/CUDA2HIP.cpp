@@ -33,6 +33,7 @@ const std::map <llvm::StringRef, hipCounter> CUDA_INCLUDE_MAP {
   {"device_functions.h",                                    {"hip/device_functions.h",                                "", CONV_INCLUDE,                API_RUNTIME, 0}},
   {"driver_types.h",                                        {"hip/driver_types.h",                                    "", CONV_INCLUDE,                API_RUNTIME, 0}},
   {"cuda_fp16.h",                                           {"hip/hip_fp16.h",                                        "", CONV_INCLUDE,                API_RUNTIME, 0}},
+  {"cuda_fp8.h",                                            {"hip/hip_fp8.h",                                         "", CONV_INCLUDE,                API_RUNTIME, 0}},
   {"cuda_texture_types.h",                                  {"hip/hip_texture_types.h",                               "", CONV_INCLUDE,                API_RUNTIME, 0}},
   {"texture_fetch_functions.h",                             {"",                                                      "", CONV_INCLUDE,                API_RUNTIME, 0}},
   {"vector_types.h",                                        {"hip/hip_vector_types.h",                                "", CONV_INCLUDE,                API_RUNTIME, 0}},
@@ -67,6 +68,8 @@ const std::map <llvm::StringRef, hipCounter> CUDA_INCLUDE_MAP {
   {"curand_uniform.h",                                      {"hiprand/hiprand_kernel.h",                              "rocrand/rocrand_uniform.h",                                      CONV_INCLUDE,                API_RAND, 0}},
   // cuDNN includes
   {"cudnn.h",                                               {"hipDNN.h",                               "miopen/miopen.h", CONV_INCLUDE_CUDA_MAIN_H,    API_DNN, 0}},
+  // cuTensor includes
+  {"cutensor.h",                                            {"hiptensor.h",                                           "", CONV_INCLUDE_CUDA_MAIN_H,    API_TENSOR, 0}},
   // cuFFT includes
   {"cufft.h",                                               {"hipfft/hipfft.h",                                       "", CONV_INCLUDE_CUDA_MAIN_H,    API_FFT, 0}},
   {"cufftXt.h",                                             {"hipfft/hipfftXt.h",                                     "", CONV_INCLUDE,                API_FFT, 0}},
@@ -125,8 +128,11 @@ const std::map<llvm::StringRef, hipCounter> &CUDA_RENAMES_MAP() {
   ret.insert(CUDA_RTC_TYPE_NAME_MAP.begin(), CUDA_RTC_TYPE_NAME_MAP.end());
   ret.insert(CUDA_RTC_FUNCTION_MAP.begin(), CUDA_RTC_FUNCTION_MAP.end());
   ret.insert(CUDA_DEVICE_TYPE_NAME_MAP.begin(), CUDA_DEVICE_TYPE_NAME_MAP.end());
+  ret.insert(CUDA_DEVICE_FUNCTION_MAP.begin(), CUDA_DEVICE_FUNCTION_MAP.end());
   ret.insert(CUDA_SOLVER_TYPE_NAME_MAP.begin(), CUDA_SOLVER_TYPE_NAME_MAP.end());
   ret.insert(CUDA_SOLVER_FUNCTION_MAP.begin(), CUDA_SOLVER_FUNCTION_MAP.end());
+  ret.insert(CUDA_TENSOR_TYPE_NAME_MAP.begin(), CUDA_TENSOR_TYPE_NAME_MAP.end());
+  ret.insert(CUDA_TENSOR_FUNCTION_MAP.begin(), CUDA_TENSOR_FUNCTION_MAP.end());
   return ret;
 };
 
@@ -161,6 +167,8 @@ const std::map<llvm::StringRef, cudaAPIversions> &CUDA_VERSIONS_MAP() {
   ret.insert(CUDA_RTC_FUNCTION_VER_MAP.begin(), CUDA_RTC_FUNCTION_VER_MAP.end());
   ret.insert(CUDA_SOLVER_TYPE_NAME_VER_MAP.begin(), CUDA_SOLVER_TYPE_NAME_VER_MAP.end());
   ret.insert(CUDA_SOLVER_FUNCTION_VER_MAP.begin(), CUDA_SOLVER_FUNCTION_VER_MAP.end());
+  ret.insert(CUDA_TENSOR_TYPE_NAME_VER_MAP.begin(), CUDA_TENSOR_TYPE_NAME_VER_MAP.end());
+  ret.insert(CUDA_TENSOR_FUNCTION_VER_MAP.begin(), CUDA_TENSOR_FUNCTION_VER_MAP.end());
   return ret;
 }
 
@@ -195,5 +203,7 @@ const std::map<llvm::StringRef, hipAPIversions> &HIP_VERSIONS_MAP() {
   ret.insert(HIP_RTC_FUNCTION_VER_MAP.begin(), HIP_RTC_FUNCTION_VER_MAP.end());
   ret.insert(HIP_SOLVER_TYPE_NAME_VER_MAP.begin(), HIP_SOLVER_TYPE_NAME_VER_MAP.end());
   ret.insert(HIP_SOLVER_FUNCTION_VER_MAP.begin(), HIP_SOLVER_FUNCTION_VER_MAP.end());
+  ret.insert(HIP_TENSOR_TYPE_NAME_VER_MAP.begin(), HIP_TENSOR_TYPE_NAME_VER_MAP.end());
+  ret.insert(HIP_TENSOR_FUNCTION_VER_MAP.begin(), HIP_TENSOR_FUNCTION_VER_MAP.end());
   return ret;
 }

@@ -12,7 +12,7 @@ HIPIFY documentation
 
 .. note::
     
-    `hipify_torch <https://github.com/ROCmSoftwarePlatform/hipify_torch>`_ is a related tool that also translates CUDA source code into portable HIP C++. It was initially developed as part of the PyTorch project to cater to the project's unique requirements but was found to be useful for PyTorch-related projects and thus was released as an independent utility.
+    `hipify_torch <https://github.com/ROCm/hipify_torch>`_ is a related tool that also translates CUDA source code into portable HIP C++. It was initially developed as part of the PyTorch project to cater to the project's unique requirements but was found to be useful for PyTorch-related projects and thus was released as an independent utility.
 
 You can access HIPIFY code on our `GitHub repository <https://github.com/ROCm/HIPIFY>`_.
 
