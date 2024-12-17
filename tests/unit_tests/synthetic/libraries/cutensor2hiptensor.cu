@@ -8,6 +8,7 @@
 // CHECK-NOT: #include "hiptensor.h"
 
 int main() {
+  printf("25. cuTensor API to hipTensor API synthetic test\n");
 
   // CHECK: hiptensorHandle_t handle;
   // CHECK-NEXT: const hiptensorHandle_t *handle_c = nullptr;
@@ -37,26 +38,26 @@ int main() {
   cudaStream_t stream_t;
 
   const uint32_t numModes = 0;
-  const int64_t* extent = nullptr;
-  const int64_t* stride = nullptr;
+  const int64_t *extent = nullptr;
+  const int64_t *stride = nullptr;
   const uint64_t workspaceSize = 0;
   uint64_t workspaceSize2 = 0;
-  const void* alpha = nullptr;
-  const void* A = nullptr;
-  const int32_t* modeA = nullptr;
-  void* B = nullptr;
-  const void* B_1 = nullptr;
-  const void* beta = nullptr;
-  const int32_t* modeB = nullptr;
-  const void* C = nullptr;
-  const int32_t* modeC = nullptr;
-  void* D = nullptr;
-  const int32_t* modeD = nullptr;
-  void* workspace = nullptr;
-  const char* err = nullptr;
-  const char* log = nullptr;
+  const void *alpha = nullptr;
+  const void *A = nullptr;
+  const int32_t *modeA = nullptr;
+  void *B = nullptr;
+  const void *B_1 = nullptr;
+  const void *beta = nullptr;
+  const int32_t *modeB = nullptr;
+  const void *C = nullptr;
+  const int32_t *modeC = nullptr;
+  void *D = nullptr;
+  const int32_t *modeD = nullptr;
+  void *workspace = nullptr;
+  const char *err = nullptr;
+  const char *log = nullptr;
   size_t ver = 0;
-  FILE* file;
+  FILE *file = nullptr;
   int32_t level = 0;
   int32_t mask = 0;
 
@@ -143,10 +144,6 @@ int main() {
   cutensorStatus_t TENSOR_STATUS_NOT_SUPPORTED = CUTENSOR_STATUS_NOT_SUPPORTED;
   cutensorStatus_t TENSOR_STATUS_INSUFFICIENT_WORKSPACE = CUTENSOR_STATUS_INSUFFICIENT_WORKSPACE;
   cutensorStatus_t TENSOR_STATUS_INSUFFICIENT_DRIVER = CUTENSOR_STATUS_INSUFFICIENT_DRIVER;
-#if CUTENSOR_MINOR >= 2
-  // CHECK: hiptensorStatus_t TENSOR_STATUS_IO_ERROR = HIPTENSOR_STATUS_IO_ERROR;
-  cutensorStatus_t TENSOR_STATUS_IO_ERROR = CUTENSOR_STATUS_IO_ERROR;
-#endif
 
   // CHECK: hiptensorAlgo_t tensorAlgo_t;
   // CHECK-NEXT hiptensorAlgo_t TENSOR_ALGO_DEFAULT = HIPTENSOR_ALGO_DEFAULT;
@@ -181,6 +178,9 @@ int main() {
   cutensorComputeType_t tensorComputeType_t;
 
 #if CUTENSOR_MINOR >= 2
+  // CHECK: hiptensorStatus_t TENSOR_STATUS_IO_ERROR = HIPTENSOR_STATUS_IO_ERROR;
+  cutensorStatus_t TENSOR_STATUS_IO_ERROR = CUTENSOR_STATUS_IO_ERROR;
+
   // CHECK hiptensorComputeType_t TENSOR_COMPUTE_16F = HIPTENSOR_COMPUTE_16F;
   // CHECK-NEXT hiptensorComputeType_t TENSOR_COMPUTE_16BF = HIPTENSOR_COMPUTE_16BF;
   // CHECK-NEXT hiptensorComputeType_t TENSOR_COMPUTE_32F = HIPTENSOR_COMPUTE_32F;
@@ -237,7 +237,6 @@ int main() {
   // CHECK: status = hiptensorDestroy(handle2);
   status = cutensorDestroy(handle2);
  #endif
-
 
 #if (CUTENSOR_MAJOR == 1 && CUTENSOR_MINOR >= 3 && CUTENSOR_PATCH >= 2) || CUTENSOR_MAJOR >= 2
   // CHECK: hiptensorLoggerCallback_t callback;
