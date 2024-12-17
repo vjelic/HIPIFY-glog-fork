@@ -6145,6 +6145,12 @@ sub simpleSubstitutions {
     subst("cutensorGetCudartVersion", "hiptensorGetHiprtVersion", "library");
     subst("cutensorGetErrorString", "hiptensorGetErrorString", "library");
     subst("cutensorInitTensorDescriptor", "hiptensorInitTensorDescriptor", "library");
+    subst("cutensorLoggerForceDisable", "hiptensorLoggerForceDisable", "library");
+    subst("cutensorLoggerOpenFile", "hiptensorLoggerOpenFile", "library");
+    subst("cutensorLoggerSetCallback", "hiptensorLoggerSetCallback", "library");
+    subst("cutensorLoggerSetFile", "hiptensorLoggerSetFile", "library");
+    subst("cutensorLoggerSetLevel", "hiptensorLoggerSetLevel", "library");
+    subst("cutensorLoggerSetMask", "hiptensorLoggerSetMask", "library");
     subst("cutensorPermutation", "hiptensorPermutation", "library");
     subst("cutensorReduction", "hiptensorReduction", "library");
     subst("nvrtcAddNameExpression", "hiprtcAddNameExpression", "library");
@@ -7381,6 +7387,7 @@ sub simpleSubstitutions {
     subst("cutensorContractionPlan_t", "hiptensorContractionPlan_t", "type");
     subst("cutensorDataType_t", "hiptensorComputeType_t", "type");
     subst("cutensorHandle_t", "hiptensorHandle_t", "type");
+    subst("cutensorLoggerCallback_t", "hiptensorLoggerCallback_t", "type");
     subst("cutensorOperator_t", "hiptensorOperator_t", "type");
     subst("cutensorPlan_t", "hiptensorContractionPlan_t", "type");
     subst("cutensorStatus_t", "hiptensorStatus_t", "type");

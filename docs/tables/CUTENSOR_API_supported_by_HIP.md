@@ -138,6 +138,7 @@
 |`cutensorHandle`|2.0.0.0| | | | | | | | | |
 |`cutensorHandle_t`|1.0.1.0| | | |`hiptensorHandle_t`|5.7.0| | | | |
 |`cutensorJitMode_t`|2.0.0.0| | | | | | | | | |
+|`cutensorLoggerCallback_t`|1.3.2.0| | | |`hiptensorLoggerCallback_t`|5.7.0| | | | |
 |`cutensorOperationDescriptorAttribute_t`|2.0.0.0| | | | | | | | | |
 |`cutensorOperator_t`|1.0.1.0| | | |`hiptensorOperator_t`|5.7.0| | | | |
 |`cutensorPlan`|2.0.0.0| | | | | | | | | |
@@ -179,6 +180,12 @@
 |`cutensorHandleResizePlanCache`|2.0.0.0| | | | | | | | | |
 |`cutensorHandleWritePlanCacheToFile`|2.0.0.0| | | | | | | | | |
 |`cutensorInitTensorDescriptor`|1.0.1.0| | |2.0.0.0|`hiptensorInitTensorDescriptor`|5.7.0| | | | |
+|`cutensorLoggerForceDisable`|1.3.2.0| | | |`hiptensorLoggerForceDisable`|5.7.0| | | | |
+|`cutensorLoggerOpenFile`|1.3.2.0| | | |`hiptensorLoggerOpenFile`|5.7.0| | | | |
+|`cutensorLoggerSetCallback`|1.3.2.0| | | |`hiptensorLoggerSetCallback`|5.7.0| | | | |
+|`cutensorLoggerSetFile`|1.3.2.0| | | |`hiptensorLoggerSetFile`|5.7.0| | | | |
+|`cutensorLoggerSetLevel`|1.3.2.0| | | |`hiptensorLoggerSetLevel`|5.7.0| | | | |
+|`cutensorLoggerSetMask`|1.3.2.0| | | |`hiptensorLoggerSetMask`|5.7.0| | | | |
 |`cutensorOperationDescriptorGetAttribute`|2.0.0.0| | | | | | | | | |
 |`cutensorOperationDescriptorSetAttribute`|2.0.0.0| | | | | | | | | |
 |`cutensorPermutation`|1.0.1.0| | |2.0.0.0|`hiptensorPermutation`|6.1.0| | | | |

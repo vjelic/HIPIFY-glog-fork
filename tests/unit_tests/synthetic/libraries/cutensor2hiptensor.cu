@@ -32,6 +32,9 @@ int main() {
   // CHECK: hipStream_t stream_t;
   cudaStream_t stream_t;
 
+  // CHECK: hiptensorLoggerCallback_t callback;
+  cutensorLoggerCallback_t callback;
+
   const uint32_t numModes = 0;
   const int64_t* extent = nullptr;
   const int64_t* stride = nullptr;
@@ -50,7 +53,11 @@ int main() {
   const int32_t* modeD = nullptr;
   void* workspace = nullptr;
   const char* err = nullptr;
+  const char* log = nullptr;
   size_t ver = 0;
+  FILE* file;
+  int32_t level = 0;
+  int32_t mask = 0;
 
 #if CUTENSOR_MAJOR >= 2
 
@@ -216,6 +223,38 @@ int main() {
   // HIP: hiptensorStatus_t hiptensorDestroy(hiptensorHandle_t* handle);
   // CHECK: status = hiptensorDestroy(handle);
   status = cutensorDestroy(handle);
+#endif
+
+#if (CUTENSOR_MAJOR == 1 && CUTENSOR_MINOR >= 3) || CUTENSOR_MAJOR >= 2
+  // CUDA: cutensorStatus_t cutensorLoggerSetCallback(cutensorLoggerCallback_t callback);
+  // HIP: hiptensorStatus_t hiptensorLoggerSetCallback(hiptensorLoggerCallback_t callback);
+  // CHECK: status = hiptensorLoggerSetCallback(callback);
+  status = cutensorLoggerSetCallback(callback);
+
+  // CUDA: cutensorStatus_t cutensorLoggerSetFile(FILE* file);
+  // HIP: hiptensorStatus_t hiptensorLoggerSetFile(FILE* file);
+  // CHECK: status = hiptensorLoggerSetFile(file);
+  status = cutensorLoggerSetFile(file);
+
+  // CUDA: cutensorStatus_t cutensorLoggerOpenFile(const char* logFile);
+  // HIP: hiptensorStatus_t hiptensorLoggerOpenFile(const char* logFile);
+  // CHECK: status = hiptensorLoggerOpenFile(log);
+  status = cutensorLoggerOpenFile(log);
+
+  // CUDA: cutensorStatus_t cutensorLoggerSetLevel(int32_t level);
+  // HIP: hiptensorStatus_t hiptensorLoggerSetLevel(hiptensorLogLevel_t level);
+  // CHECK: status = hiptensorLoggerSetLevel(level);
+  status = cutensorLoggerSetLevel(level);
+
+  // CUDA: cutensorStatus_t cutensorLoggerSetMask(int32_t mask);
+  // HIP: hiptensorStatus_t hiptensorLoggerSetMask(int32_t mask);
+  // CHECK: status = hiptensorLoggerSetMask(mask);
+  status = cutensorLoggerSetMask(mask);
+
+  // CUDA: cutensorStatus_t cutensorLoggerForceDisable();
+  // HIP: hiptensorStatus_t hiptensorLoggerForceDisable();
+  // CHECK: status = hiptensorLoggerForceDisable();
+  status = cutensorLoggerForceDisable();
 
 #endif
 

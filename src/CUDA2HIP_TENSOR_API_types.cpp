@@ -181,6 +181,7 @@ const std::map<llvm::StringRef, hipCounter> CUDA_TENSOR_TYPE_NAME_MAP {
   {"cutensorContractionPlan_t",                        {"hiptensorContractionPlan_t",                               "",           CONV_TYPE, API_TENSOR, 1}},
   {"cutensorPlan_t",                                   {"hiptensorContractionPlan_t",                               "",           CONV_TYPE, API_TENSOR, 1}},
   {"cutensorPlan",                                     {"",                                                         "",           CONV_TYPE, API_TENSOR, 1, UNSUPPORTED}},
+  {"cutensorLoggerCallback_t",                         {"hiptensorLoggerCallback_t",                                "",           CONV_TYPE, API_TENSOR, 1}},
 
 };
 
@@ -330,6 +331,7 @@ const std::map<llvm::StringRef, cudaAPIversions> CUDA_TENSOR_TYPE_NAME_VER_MAP {
   {"cutensorContractionPlan_t",                        {CUTENSOR_1010,  CUDA_0,        CUTENSOR_2000, }},
   {"cutensorPlan_t",                                   {CUTENSOR_2000,  CUDA_0,        CUDA_0,      }},
   {"cutensorPlan",                                     {CUTENSOR_2000,  CUDA_0,        CUDA_0,      }},
+  {"cutensorLoggerCallback_t",                         {CUTENSOR_1320,  CUDA_0,        CUDA_0,      }},
 };
 
 const std::map<llvm::StringRef, hipAPIversions> HIP_TENSOR_TYPE_NAME_VER_MAP {
@@ -374,4 +376,5 @@ const std::map<llvm::StringRef, hipAPIversions> HIP_TENSOR_TYPE_NAME_VER_MAP {
   {"hiptensorHandle_t",                                {HIP_5070,       HIP_0,         HIP_0,       }},
   {"hiptensorTensorDescriptor_t",                      {HIP_5070,       HIP_0,         HIP_0,       }},
   {"hiptensorContractionPlan_t",                       {HIP_5070,       HIP_0,         HIP_0,       }},
+  {"hiptensorLoggerCallback_t",                        {HIP_5070,       HIP_0,         HIP_0,       }},
 };
