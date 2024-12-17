@@ -6142,6 +6142,8 @@ sub simpleSubstitutions {
     subst("cutensorContraction", "hiptensorContraction", "library");
     subst("cutensorCreate", "hiptensorCreate", "library");
     subst("cutensorDestroy", "hiptensorDestroy", "library");
+    subst("cutensorGetCudartVersion", "hiptensorGetHiprtVersion", "library");
+    subst("cutensorGetErrorString", "hiptensorGetErrorString", "library");
     subst("cutensorInitTensorDescriptor", "hiptensorInitTensorDescriptor", "library");
     subst("cutensorPermutation", "hiptensorPermutation", "library");
     subst("cutensorReduction", "hiptensorReduction", "library");
@@ -9893,6 +9895,7 @@ sub warnHipOnlyUnsupportedFunctions {
         "cutensorPlanPreferenceAttribute_t",
         "cutensorPlanGetAttribute",
         "cutensorPlanAttribute_t",
+        "cutensorPlan",
         "cutensorPermute",
         "cutensorOperationDescriptorSetAttribute",
         "cutensorOperationDescriptorGetAttribute",
@@ -9902,6 +9905,7 @@ sub warnHipOnlyUnsupportedFunctions {
         "cutensorHandleResizePlanCache",
         "cutensorHandleReadPlanCacheFromFile",
         "cutensorHandle",
+        "cutensorGetVersion",
         "cutensorEstimateWorkspaceSize",
         "cutensorElementwiseTrinaryExecute",
         "cutensorElementwiseBinaryExecute",
@@ -11253,6 +11257,7 @@ sub warnRocOnlyUnsupportedFunctions {
         "cutensorPlanPreferenceAttribute_t",
         "cutensorPlanGetAttribute",
         "cutensorPlanAttribute_t",
+        "cutensorPlan",
         "cutensorPermute",
         "cutensorOperationDescriptorSetAttribute",
         "cutensorOperationDescriptorGetAttribute",
@@ -11262,6 +11267,7 @@ sub warnRocOnlyUnsupportedFunctions {
         "cutensorHandleResizePlanCache",
         "cutensorHandleReadPlanCacheFromFile",
         "cutensorHandle",
+        "cutensorGetVersion",
         "cutensorEstimateWorkspaceSize",
         "cutensorElementwiseTrinaryExecute",
         "cutensorElementwiseBinaryExecute",

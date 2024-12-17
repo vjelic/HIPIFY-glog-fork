@@ -49,6 +49,8 @@ int main() {
   void* D = nullptr;
   const int32_t* modeD = nullptr;
   void* workspace = nullptr;
+  const char* err = nullptr;
+  size_t ver = 0;
 
 #if CUTENSOR_MAJOR >= 2
 
@@ -139,6 +141,16 @@ int main() {
   cutensorWorksizePreference_t tensorWorksizePreference_t;
   cutensorWorksizePreference_t TENSOR_WORKSPACE_MIN = CUTENSOR_WORKSPACE_MIN;
   cutensorWorksizePreference_t TENSOR_WORKSPACE_MAX = CUTENSOR_WORKSPACE_MAX;
+
+  // CUDA: const char* cutensorGetErrorString(const cutensorStatus_t error);
+  // HIP: const char* hiptensorGetErrorString(const hiptensorStatus_t error);
+  // CHECK: err = hiptensorGetErrorString(status);
+  err = cutensorGetErrorString(status);
+
+  // CUDA: size_t cutensorGetCudartVersion();
+  // HIP: int hiptensorGetHiprtVersion();
+  // CHECK: ver = hiptensorGetHiprtVersion();
+  ver = cutensorGetCudartVersion();
 #endif
 
 #if (CUTENSOR_MAJOR == 1 && CUTENSOR_MINOR >= 4) || CUTENSOR_MAJOR >= 2
