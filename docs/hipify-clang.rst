@@ -450,7 +450,7 @@ LLVM <= 9.0.1
     cmake \
       -DCMAKE_INSTALL_PREFIX=../dist \
       -DLLVM_SOURCE_DIR=../llvm \
-      -DLLVM_TARGETS_TO_BUILD="X86;NVPTX" \
+      -DLLVM_TARGETS_TO_BUILD="X86" \
       -DLLVM_INCLUDE_TESTS=OFF \
       -DCMAKE_BUILD_TYPE=Release \
       ../llvm
@@ -466,7 +466,7 @@ LLVM <= 9.0.1
       -Thost=x64 \
       -DCMAKE_INSTALL_PREFIX=../dist \
       -DLLVM_SOURCE_DIR=../llvm \
-      -DLLVM_TARGETS_TO_BUILD="NVPTX" \
+      -DLLVM_TARGETS_TO_BUILD="" \
       -DLLVM_INCLUDE_TESTS=OFF \
       -DCMAKE_BUILD_TYPE=Release \
       ../llvm
@@ -492,7 +492,7 @@ LLVM >= 10.0.0
 
     cmake \
       -DCMAKE_INSTALL_PREFIX=../dist \
-      -DLLVM_TARGETS_TO_BUILD="" \
+      -DLLVM_TARGETS_TO_BUILD="X86" \
       -DLLVM_ENABLE_PROJECTS="clang" \
       -DLLVM_INCLUDE_TESTS=OFF \
       -DCMAKE_BUILD_TYPE=Release \
