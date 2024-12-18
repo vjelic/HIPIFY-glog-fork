@@ -7384,6 +7384,7 @@ sub simpleSubstitutions {
     subst("cusparseSparseToDenseAlg_t", "hipsparseSparseToDenseAlg_t", "type");
     subst("cusparseStatus_t", "hipsparseStatus_t", "type");
     subst("cutensorAlgo_t", "hiptensorAlgo_t", "type");
+    subst("cutensorComputeType_t", "hiptensorComputeType_t", "type");
     subst("cutensorContractionPlan_t", "hiptensorContractionPlan_t", "type");
     subst("cutensorDataType_t", "hiptensorComputeType_t", "type");
     subst("cutensorHandle_t", "hiptensorHandle_t", "type");
@@ -8694,7 +8695,6 @@ sub simpleSubstitutions {
     subst("cudaSuccess", "hipSuccess", "numeric_literal");
     subst("cudaUserObjectNoDestructorSync", "hipUserObjectNoDestructorSync", "numeric_literal");
     subst("cusolver_int_t", "int", "numeric_literal");
-    subst("cutensorComputeType_t", "hiptensorComputeType_t", "numeric_literal");
     subst("CUB_MAX", "CUB_MAX", "define");
     subst("CUB_MIN", "CUB_MIN", "define");
     subst("CUB_NAMESPACE_BEGIN", "BEGIN_HIPCUB_NAMESPACE", "define");
