@@ -1595,6 +1595,11 @@ int main() {
   // HIP: hipError_t hipGraphUpload(hipGraphExec_t graphExec, hipStream_t stream);
   // CHECK: result = hipGraphUpload(graphExec, stream);
   result = cuGraphUpload(graphExec, stream);
+
+  // CUDA:CUresult CUDAAPI cuEventRecordWithFlags(CUevent hEvent, CUstream hStream, unsigned int flags);
+  // HIP: hipError_t hipEventRecordWithFlags(hipEvent_t event, hipStream_t stream __dparm(0), unsigned int flags __dparm(0));
+  // CHECK: result = hipEventRecordWithFlags(event_, stream, flags);
+  result = cuEventRecordWithFlags(event_, stream, flags);
 #endif
 
 #if CUDA_VERSION >= 11020
@@ -1880,6 +1885,9 @@ int main() {
 
   // CHECK: hipBatchMemOpNodeParams BATCH_MEM_OP_NODE_PARAMS;
   CUDA_BATCH_MEM_OP_NODE_PARAMS BATCH_MEM_OP_NODE_PARAMS;
+
+  // CHECK: hipGraphNodeType GRAPH_NODE_TYPE_BATCH_MEM_OP = hipGraphNodeTypeBatchMemOp;
+  CUgraphNodeType GRAPH_NODE_TYPE_BATCH_MEM_OP = CU_GRAPH_NODE_TYPE_BATCH_MEM_OP;
 
   // CUDA: CUresult CUDAAPI cuGraphAddBatchMemOpNode(CUgraphNode *phGraphNode, CUgraph hGraph, const CUgraphNode *dependencies, size_t numDependencies, const CUDA_BATCH_MEM_OP_NODE_PARAMS *nodeParams);
   // HIP: hipError_t hipGraphAddBatchMemOpNode(hipGraphNode_t *phGraphNode, hipGraph_t hGraph, const hipGraphNode_t* dependencies, size_t numDependencies, const hipBatchMemOpNodeParams* nodeParams);

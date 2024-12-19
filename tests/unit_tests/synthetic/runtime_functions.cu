@@ -1316,6 +1316,11 @@ int main() {
   // HIP: hipError_t hipGraphUpload(hipGraphExec_t graphExec, hipStream_t stream);
   // CHECK: result = hipGraphUpload(GraphExec_t, stream);
   result = cudaGraphUpload(GraphExec_t, stream);
+
+  // CUDA:extern __host__ __cudart_builtin__ cudaError_t CUDARTAPI cudaEventRecordWithFlags(cudaEvent_t event, cudaStream_t stream __dv(0), unsigned int flags __dv(0));
+  // HIP: hipError_t hipEventRecordWithFlags(hipEvent_t event, hipStream_t stream __dparm(0), unsigned int flags __dparm(0));
+  // CHECK: result = hipEventRecordWithFlags(Event_t, stream, flags);
+  result = cudaEventRecordWithFlags(Event_t, stream, flags);
 #endif
 
 #if CUDA_VERSION >= 11020

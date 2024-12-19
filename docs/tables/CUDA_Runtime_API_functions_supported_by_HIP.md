@@ -103,7 +103,7 @@
 |`cudaEventElapsedTime`| | | | |`hipEventElapsedTime`|1.6.0| | | | |
 |`cudaEventQuery`| | | | |`hipEventQuery`|1.6.0| | | | |
 |`cudaEventRecord`| | | | |`hipEventRecord`|1.6.0| | | | |
-|`cudaEventRecordWithFlags`|11.1| | | | | | | | | |
+|`cudaEventRecordWithFlags`|11.1| | | |`hipEventRecordWithFlags`|6.4.0| | | |6.4.0|
 |`cudaEventSynchronize`| | | | |`hipEventSynchronize`|1.6.0| | | | |
 
 ## **7. External Resource Interoperability**
@@ -1045,7 +1045,7 @@
 |`cudaErrorInitializationError`| | | | |`hipErrorNotInitialized`|1.6.0| | | | |
 |`cudaErrorInsufficientDriver`| | | | |`hipErrorInsufficientDriver`|1.7.0| | | | |
 |`cudaErrorInvalidAddressSpace`| | | | | | | | | | |
-|`cudaErrorInvalidChannelDescriptor`| | | | | | | | | | |
+|`cudaErrorInvalidChannelDescriptor`| | | | |`hipErrorInvalidChannelDescriptor`|6.4.0| | | |6.4.0|
 |`cudaErrorInvalidClusterSize`|11.8| | | | | | | | | |
 |`cudaErrorInvalidConfiguration`| | | | |`hipErrorInvalidConfiguration`|1.6.0| | | | |
 |`cudaErrorInvalidDevice`| | | | |`hipErrorInvalidDevice`|1.6.0| | | | |
@@ -1066,7 +1066,7 @@
 |`cudaErrorInvalidSource`|10.1| | | |`hipErrorInvalidSource`|1.6.0| | | | |
 |`cudaErrorInvalidSurface`| | | | | | | | | | |
 |`cudaErrorInvalidSymbol`| | | | |`hipErrorInvalidSymbol`|1.6.0| | | | |
-|`cudaErrorInvalidTexture`| | | | | | | | | | |
+|`cudaErrorInvalidTexture`| | | | |`hipErrorInvalidTexture`|6.4.0| | | |6.4.0|
 |`cudaErrorInvalidTextureBinding`| | | | | | | | | | |
 |`cudaErrorInvalidValue`| | | | |`hipErrorInvalidValue`|1.6.0| | | | |
 |`cudaErrorJitCompilationDisabled`|11.2| | | | | | | | | |

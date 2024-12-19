@@ -534,7 +534,7 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_FUNCTION_MAP {
   // cudaEventSynchronize
   {"cuEventSynchronize",                                          {"hipEventSynchronize",                                         "", CONV_EVENT, API_DRIVER, SEC::EVENT}},
   // cudaEventRecordWithFlags
-  {"cuEventRecordWithFlags",                                      {"hipEventRecordWithFlags",                                     "", CONV_EVENT, API_DRIVER, SEC::EVENT, HIP_UNSUPPORTED}},
+  {"cuEventRecordWithFlags",                                      {"hipEventRecordWithFlags",                                     "", CONV_EVENT, API_DRIVER, SEC::EVENT, HIP_EXPERIMENTAL}},
 
   // 20. External Resource Interoperability
   // cudaDestroyExternalMemory
@@ -1670,6 +1670,7 @@ const std::map<llvm::StringRef, hipAPIversions> HIP_DRIVER_FUNCTION_VER_MAP {
   {"hipGraphBatchMemOpNodeGetParams",                             {HIP_6040, HIP_0,    HIP_0,  HIP_LATEST}},
   {"hipGraphBatchMemOpNodeSetParams",                             {HIP_6040, HIP_0,    HIP_0,  HIP_LATEST}},
   {"hipGraphExecBatchMemOpNodeSetParams",                         {HIP_6040, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"hipEventRecordWithFlags",                                     {HIP_6040, HIP_0,    HIP_0,  HIP_LATEST}},
 };
 
 const std::map<llvm::StringRef, cudaAPIChangedVersions> CUDA_DRIVER_FUNCTION_CHANGED_VER_MAP {

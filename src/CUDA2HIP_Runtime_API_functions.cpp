@@ -194,7 +194,7 @@ const std::map<llvm::StringRef, hipCounter> CUDA_RUNTIME_FUNCTION_MAP {
   // cuEventSynchronize
   {"cudaEventSynchronize",                                    {"hipEventSynchronize",                                    "", CONV_EVENT, API_RUNTIME, SEC::EVENT}},
   // cuEventRecordWithFlags
-  {"cudaEventRecordWithFlags",                                {"hipEventRecordWithFlags",                                "", CONV_EVENT, API_RUNTIME, SEC::EVENT, HIP_UNSUPPORTED}},
+  {"cudaEventRecordWithFlags",                                {"hipEventRecordWithFlags",                                "", CONV_EVENT, API_RUNTIME, SEC::EVENT, HIP_EXPERIMENTAL}},
 
   // 7. External Resource Interoperability
   // cuDestroyExternalMemory

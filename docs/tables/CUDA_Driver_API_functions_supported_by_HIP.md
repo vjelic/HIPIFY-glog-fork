@@ -725,7 +725,7 @@
 |`CU_GRAPH_MEM_ATTR_RESERVED_MEM_HIGH`|11.4| | | |`hipGraphMemAttrReservedMemHigh`|5.3.0| | | | |
 |`CU_GRAPH_MEM_ATTR_USED_MEM_CURRENT`|11.4| | | |`hipGraphMemAttrUsedMemCurrent`|5.3.0| | | | |
 |`CU_GRAPH_MEM_ATTR_USED_MEM_HIGH`|11.4| | | |`hipGraphMemAttrUsedMemHigh`|5.3.0| | | | |
-|`CU_GRAPH_NODE_TYPE_BATCH_MEM_OP`|11.7| | | | | | | | | |
+|`CU_GRAPH_NODE_TYPE_BATCH_MEM_OP`|11.7| | | |`hipGraphNodeTypeBatchMemOp`|6.4.0| | | |6.4.0|
 |`CU_GRAPH_NODE_TYPE_CONDITIONAL`|12.3| | | | | | | | | |
 |`CU_GRAPH_NODE_TYPE_COUNT`|10.0| | |11.0|`hipGraphNodeTypeCount`|4.3.0| | | | |
 |`CU_GRAPH_NODE_TYPE_EMPTY`|10.0| | | |`hipGraphNodeTypeEmpty`|4.3.0| | | | |
@@ -991,12 +991,12 @@
 |`CU_STREAM_LEGACY`| | | | |`hipStreamLegacy`|6.2.0| | | | |
 |`CU_STREAM_MEMORY_BARRIER_TYPE_GPU`|11.7| | | | | | | | | |
 |`CU_STREAM_MEMORY_BARRIER_TYPE_SYS`|11.7| | | | | | | | | |
-|`CU_STREAM_MEM_OP_BARRIER`|11.7| | | | | | | | | |
-|`CU_STREAM_MEM_OP_FLUSH_REMOTE_WRITES`|8.0| | | | | | | | | |
-|`CU_STREAM_MEM_OP_WAIT_VALUE_32`|8.0| | | | | | | | | |
-|`CU_STREAM_MEM_OP_WAIT_VALUE_64`|9.0| | | | | | | | | |
-|`CU_STREAM_MEM_OP_WRITE_VALUE_32`|8.0| | | | | | | | | |
-|`CU_STREAM_MEM_OP_WRITE_VALUE_64`|9.0| | | | | | | | | |
+|`CU_STREAM_MEM_OP_BARRIER`|11.7| | | |`hipStreamMemOpBarrier`|6.4.0| | | |6.4.0|
+|`CU_STREAM_MEM_OP_FLUSH_REMOTE_WRITES`|8.0| | | |`hipStreamMemOpFlushRemoteWrites`|6.4.0| | | |6.4.0|
+|`CU_STREAM_MEM_OP_WAIT_VALUE_32`|8.0| | | |`hipStreamMemOpWaitValue32`|6.4.0| | | |6.4.0|
+|`CU_STREAM_MEM_OP_WAIT_VALUE_64`|9.0| | | |`hipStreamMemOpWaitValue64`|6.4.0| | | |6.4.0|
+|`CU_STREAM_MEM_OP_WRITE_VALUE_32`|8.0| | | |`hipStreamMemOpWriteValue32`|6.4.0| | | |6.4.0|
+|`CU_STREAM_MEM_OP_WRITE_VALUE_64`|9.0| | | |`hipStreamMemOpWriteValue64`|6.4.0| | | |6.4.0|
 |`CU_STREAM_NON_BLOCKING`| | | | |`hipStreamNonBlocking`|1.6.0| | | | |
 |`CU_STREAM_PER_THREAD`| | | | |`hipStreamPerThread`|4.5.0| | | | |
 |`CU_STREAM_SET_CAPTURE_DEPENDENCIES`|11.3| | | |`hipStreamSetCaptureDependencies`|5.0.0| | | | |
@@ -1378,8 +1378,8 @@
 |`CUstreamBatchMemOpParams`|8.0| | | |`hipStreamBatchMemOpParams`|6.4.0| | | |6.4.0|
 |`CUstreamBatchMemOpParams_union`|8.0| | | |`hipStreamBatchMemOpParams_union`|6.4.0| | | |6.4.0|
 |`CUstreamBatchMemOpParams_v1`|11.3| | | |`hipStreamBatchMemOpParams`|6.4.0| | | |6.4.0|
-|`CUstreamBatchMemOpType`|8.0| | | | | | | | | |
-|`CUstreamBatchMemOpType_enum`|8.0| | | | | | | | | |
+|`CUstreamBatchMemOpType`|8.0| | | |`hipStreamBatchMemOpType`|6.4.0| | | |6.4.0|
+|`CUstreamBatchMemOpType_enum`|8.0| | | |`hipStreamBatchMemOpType`|6.4.0| | | |6.4.0|
 |`CUstreamCallback`| | | | |`hipStreamCallback_t`|1.6.0| | | | |
 |`CUstreamCaptureMode`|10.1| | | |`hipStreamCaptureMode`|4.3.0| | | | |
 |`CUstreamCaptureMode_enum`|10.1| | | |`hipStreamCaptureMode`|4.3.0| | | | |
@@ -1817,7 +1817,7 @@
 |`cuEventElapsedTime`| | | | |`hipEventElapsedTime`|1.6.0| | | | |
 |`cuEventQuery`| | | | |`hipEventQuery`|1.6.0| | | | |
 |`cuEventRecord`| | | | |`hipEventRecord`|1.6.0| | | | |
-|`cuEventRecordWithFlags`|11.1| | | | | | | | | |
+|`cuEventRecordWithFlags`|11.1| | | |`hipEventRecordWithFlags`|6.4.0| | | |6.4.0|
 |`cuEventSynchronize`| | | | |`hipEventSynchronize`|1.6.0| | | | |
 
 ## **20. External Resource Interoperability**
