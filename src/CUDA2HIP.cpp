@@ -70,6 +70,7 @@ const std::map <llvm::StringRef, hipCounter> CUDA_INCLUDE_MAP {
   {"cudnn.h",                                               {"hipDNN.h",                               "miopen/miopen.h", CONV_INCLUDE_CUDA_MAIN_H,    API_DNN, 0}},
   // cuTensor includes
   {"cutensor.h",                                            {"hiptensor.h",                                           "", CONV_INCLUDE_CUDA_MAIN_H,    API_TENSOR, 0}},
+  {"cutensorMg.h",                                          {"hiptensor.h",                                           "", CONV_INCLUDE,                API_TENSOR, 0}},
   // cuFFT includes
   {"cufft.h",                                               {"hipfft/hipfft.h",                                       "", CONV_INCLUDE_CUDA_MAIN_H,    API_FFT, 0}},
   {"cufftXt.h",                                             {"hipfft/hipfftXt.h",                                     "", CONV_INCLUDE,                API_FFT, 0}},
