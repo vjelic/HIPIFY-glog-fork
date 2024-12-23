@@ -6797,6 +6797,7 @@ sub simpleSubstitutions {
     subst("curand_poisson.h", "hiprand\/hiprand_kernel.h", "include");
     subst("curand_precalc.h", "hiprand\/hiprand_kernel.h", "include");
     subst("curand_uniform.h", "hiprand\/hiprand_kernel.h", "include");
+    subst("cutensorMg.h", "hiptensor.h", "include");
     subst("device_functions.h", "hip\/device_functions.h", "include");
     subst("device_launch_parameters.h", "", "include");
     subst("driver_types.h", "hip\/driver_types.h", "include");
@@ -10272,8 +10273,10 @@ sub warnHipOnlyUnsupportedFunctions {
         "CUTENSOR_STATUS_CUBLAS_ERROR",
         "CUTENSOR_R_MIN_TF32",
         "CUTENSOR_R_MIN_8U",
+        "CUTENSOR_R_MIN_8I",
         "CUTENSOR_R_MIN_64F",
         "CUTENSOR_R_MIN_32U",
+        "CUTENSOR_R_MIN_32I",
         "CUTENSOR_R_MIN_32F",
         "CUTENSOR_R_MIN_16F",
         "CUTENSOR_R_MIN_16BF",
@@ -10342,6 +10345,7 @@ sub warnHipOnlyUnsupportedFunctions {
         "CUTENSOR_C_16F",
         "CUTENSOR_C_16BF",
         "CUTENSOR_COMPUTE_TF32",
+        "CUTENSOR_COMPUTE_3XTF32",
         "CUTENSOR_CACHE_MODE_PEDANTIC",
         "CUTENSOR_CACHE_MODE_NONE",
         "CUTENSOR_AUTOTUNE_MODE_NONE",
@@ -11724,8 +11728,10 @@ sub warnRocOnlyUnsupportedFunctions {
         "CUTENSOR_STATUS_CUBLAS_ERROR",
         "CUTENSOR_R_MIN_TF32",
         "CUTENSOR_R_MIN_8U",
+        "CUTENSOR_R_MIN_8I",
         "CUTENSOR_R_MIN_64F",
         "CUTENSOR_R_MIN_32U",
+        "CUTENSOR_R_MIN_32I",
         "CUTENSOR_R_MIN_32F",
         "CUTENSOR_R_MIN_16F",
         "CUTENSOR_R_MIN_16BF",
@@ -11794,6 +11800,7 @@ sub warnRocOnlyUnsupportedFunctions {
         "CUTENSOR_C_16F",
         "CUTENSOR_C_16BF",
         "CUTENSOR_COMPUTE_TF32",
+        "CUTENSOR_COMPUTE_3XTF32",
         "CUTENSOR_CACHE_MODE_PEDANTIC",
         "CUTENSOR_CACHE_MODE_NONE",
         "CUTENSOR_AUTOTUNE_MODE_NONE",
