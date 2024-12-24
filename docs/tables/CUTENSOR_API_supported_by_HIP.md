@@ -43,6 +43,8 @@
 |`CUTENSOR_C_MIN_TF32`|1.0.1.0|1.2.0.0| |2.0.0.0| | | | | | |
 |`CUTENSOR_JIT_MODE_DEFAULT`|2.0.0.0| | | | | | | | | |
 |`CUTENSOR_JIT_MODE_NONE`|2.0.0.0| | | | | | | | | |
+|`CUTENSOR_MG_DEVICE_HOST`|1.4.0.0| | | | | | | | | |
+|`CUTENSOR_MG_DEVICE_HOST_PINNED`|1.4.0.0| | | | | | | | | |
 |`CUTENSOR_OPERATION_DESCRIPTOR_FLOPS`|2.0.0.0| | | | | | | | | |
 |`CUTENSOR_OPERATION_DESCRIPTOR_MOVED_BYTES`|2.0.0.0| | | | | | | | | |
 |`CUTENSOR_OPERATION_DESCRIPTOR_PADDING_LEFT`|2.0.0.0| | | | | | | | | |
@@ -142,6 +144,17 @@
 |`cutensorHandle_t`|1.0.1.0| | | |`hiptensorHandle_t`|5.7.0| | | | |
 |`cutensorJitMode_t`|2.0.0.0| | | | | | | | | |
 |`cutensorLoggerCallback_t`|1.3.2.0| | | |`hiptensorLoggerCallback_t`|5.7.0| | | | |
+|`cutensorMgContractionDescriptor_s`|1.4.0.0| | | | | | | | | |
+|`cutensorMgContractionDescriptor_t`|1.4.0.0| | | | | | | | | |
+|`cutensorMgCopyDescriptor_s`|1.4.0.0| | | | | | | | | |
+|`cutensorMgCopyDescriptor_t`|1.4.0.0| | | | | | | | | |
+|`cutensorMgCopyPlan_s`|1.4.0.0| | | | | | | | | |
+|`cutensorMgCopyPlan_t`|1.4.0.0| | | | | | | | | |
+|`cutensorMgHandle_s`|1.4.0.0| | | | | | | | | |
+|`cutensorMgHandle_t`|1.4.0.0| | | | | | | | | |
+|`cutensorMgHostDevice_t`|1.4.0.0| | | | | | | | | |
+|`cutensorMgTensorDescriptor_s`|1.4.0.0| | | | | | | | | |
+|`cutensorMgTensorDescriptor_t`|1.4.0.0| | | | | | | | | |
 |`cutensorOperationDescriptorAttribute_t`|2.0.0.0| | | | | | | | | |
 |`cutensorOperator_t`|1.0.1.0| | | |`hiptensorOperator_t`|5.7.0| | | | |
 |`cutensorPlan`|2.0.0.0| | | | | | | | | |
