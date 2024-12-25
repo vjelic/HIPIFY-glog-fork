@@ -65,6 +65,8 @@ const std::map<llvm::StringRef, hipCounter> CUDA_TENSOR_FUNCTION_MAP {
   {"cutensorLoggerSetLevel",                         {"hiptensorLoggerSetLevel",                             "", CONV_LIB_FUNC, API_TENSOR, 2}},
   {"cutensorLoggerSetMask",                          {"hiptensorLoggerSetMask",                              "", CONV_LIB_FUNC, API_TENSOR, 2}},
   {"cutensorLoggerForceDisable",                     {"hiptensorLoggerForceDisable",                         "", CONV_LIB_FUNC, API_TENSOR, 2}},
+  {"cutensorMgCreate",                               {"",                                                    "", CONV_LIB_FUNC, API_TENSOR, 2, UNSUPPORTED}},
+  {"cutensorMgDestroy",                              {"",                                                    "", CONV_LIB_FUNC, API_TENSOR, 2, UNSUPPORTED}},
 };
 
 const std::map<llvm::StringRef, cudaAPIversions> CUDA_TENSOR_FUNCTION_VER_MAP {
@@ -110,6 +112,8 @@ const std::map<llvm::StringRef, cudaAPIversions> CUDA_TENSOR_FUNCTION_VER_MAP {
   {"cutensorLoggerSetLevel",                         {CUTENSOR_1320, CUDA_0,        CUDA_0        }},
   {"cutensorLoggerSetMask",                          {CUTENSOR_1320, CUDA_0,        CUDA_0        }},
   {"cutensorLoggerForceDisable",                     {CUTENSOR_1320, CUDA_0,        CUDA_0        }},
+  {"cutensorMgCreate",                               {CUTENSOR_1400, CUDA_0,        CUDA_0        }},
+  {"cutensorMgDestroy",                              {CUTENSOR_1400, CUDA_0,        CUDA_0        }},
 };
 
 const std::map<llvm::StringRef, hipAPIversions> HIP_TENSOR_FUNCTION_VER_MAP {
