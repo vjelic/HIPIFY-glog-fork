@@ -4,6 +4,8 @@
 
 |**CUDA**|**A**|**D**|**C**|**R**|**HIP**|**A**|**D**|**C**|**R**|**E**|
 |:--|:-:|:-:|:-:|:-:|:--|:-:|:-:|:-:|:-:|:-:|
+|`CUTENSORMG_ALGO_DEFAULT`|1.4.0.0| | | | | | | | | |
+|`CUTENSORMG_CONTRACTION_FIND_ATTRIBUTE_MAX`|1.5.0.0| | | | | | | | | |
 |`CUTENSOR_ALGO_DEFAULT`|1.0.1.0| | | |`HIPTENSOR_ALGO_DEFAULT`|5.7.0| | | | |
 |`CUTENSOR_ALGO_DEFAULT_PATIENT`|1.4.0.0| | | |`HIPTENSOR_ALGO_DEFAULT_PATIENT`|5.7.0| | | | |
 |`CUTENSOR_ALGO_GETT`|1.0.1.0| | | | | | | | | |
@@ -144,8 +146,14 @@
 |`cutensorHandle_t`|1.0.1.0| | | |`hiptensorHandle_t`|5.7.0| | | | |
 |`cutensorJitMode_t`|2.0.0.0| | | | | | | | | |
 |`cutensorLoggerCallback_t`|1.3.2.0| | | |`hiptensorLoggerCallback_t`|5.7.0| | | | |
+|`cutensorMgAlgo_t`|1.4.0.0| | | | | | | | | |
 |`cutensorMgContractionDescriptor_s`|1.4.0.0| | | | | | | | | |
 |`cutensorMgContractionDescriptor_t`|1.4.0.0| | | | | | | | | |
+|`cutensorMgContractionFindAttribute_t`|1.5.0.0| | | | | | | | | |
+|`cutensorMgContractionFind_s`|1.4.0.0| | | | | | | | | |
+|`cutensorMgContractionFind_t`|1.4.0.0| | | | | | | | | |
+|`cutensorMgContractionPlan_s`|1.4.0.0| | | | | | | | | |
+|`cutensorMgContractionPlan_t`|1.4.0.0| | | | | | | | | |
 |`cutensorMgCopyDescriptor_s`|1.4.0.0| | | | | | | | | |
 |`cutensorMgCopyDescriptor_t`|1.4.0.0| | | | | | | | | |
 |`cutensorMgCopyPlan_s`|1.4.0.0| | | | | | | | | |
@@ -202,6 +210,8 @@
 |`cutensorLoggerSetFile`|1.3.2.0| | | |`hiptensorLoggerSetFile`|5.7.0| | | | |
 |`cutensorLoggerSetLevel`|1.3.2.0| | | |`hiptensorLoggerSetLevel`|5.7.0| | | | |
 |`cutensorLoggerSetMask`|1.3.2.0| | | |`hiptensorLoggerSetMask`|5.7.0| | | | |
+|`cutensorMgCreate`|1.4.0.0| | | | | | | | | |
+|`cutensorMgDestroy`|1.4.0.0| | | | | | | | | |
 |`cutensorOperationDescriptorGetAttribute`|2.0.0.0| | | | | | | | | |
 |`cutensorOperationDescriptorSetAttribute`|2.0.0.0| | | | | | | | | |
 |`cutensorPermutation`|1.0.1.0| | |2.0.0.0|`hiptensorPermutation`|6.1.0| | | | |

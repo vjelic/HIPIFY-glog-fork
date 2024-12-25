@@ -181,6 +181,12 @@ const std::map<llvm::StringRef, hipCounter> CUDA_TENSOR_TYPE_NAME_MAP {
   {"CUTENSOR_MG_DEVICE_HOST",                          {"",                                                         "", CONV_NUMERIC_LITERAL, API_TENSOR, 1, UNSUPPORTED}},
   {"CUTENSOR_MG_DEVICE_HOST_PINNED",                   {"",                                                         "", CONV_NUMERIC_LITERAL, API_TENSOR, 1, UNSUPPORTED}},
 
+  {"cutensorMgAlgo_t",                                 {"",                                                         "", CONV_TYPE, API_TENSOR, 1, UNSUPPORTED}},
+  {"CUTENSORMG_ALGO_DEFAULT",                          {"",                                                         "", CONV_NUMERIC_LITERAL, API_TENSOR, 1, UNSUPPORTED}},
+
+  {"cutensorMgContractionFindAttribute_t",             {"",                                                         "", CONV_TYPE, API_TENSOR, 1, UNSUPPORTED}},
+  {"CUTENSORMG_CONTRACTION_FIND_ATTRIBUTE_MAX",        {"",                                                         "", CONV_NUMERIC_LITERAL, API_TENSOR, 1, UNSUPPORTED}},
+
   {"cutensorHandle_t",                                 {"hiptensorHandle_t",                                        "", CONV_TYPE, API_TENSOR, 1}},
   {"cutensorHandle",                                   {"",                                                         "", CONV_TYPE, API_TENSOR, 1, UNSUPPORTED}},
   {"cutensorTensorDescriptor_t",                       {"hiptensorTensorDescriptor_t",                              "", CONV_TYPE, API_TENSOR, 1}},
@@ -199,6 +205,10 @@ const std::map<llvm::StringRef, hipCounter> CUDA_TENSOR_TYPE_NAME_MAP {
   {"cutensorMgCopyPlan_s",                             {"",                                                         "", CONV_TYPE, API_TENSOR, 1, UNSUPPORTED}},
   {"cutensorMgContractionDescriptor_t",                {"",                                                         "", CONV_TYPE, API_TENSOR, 1, UNSUPPORTED}},
   {"cutensorMgContractionDescriptor_s",                {"",                                                         "", CONV_TYPE, API_TENSOR, 1, UNSUPPORTED}},
+  {"cutensorMgContractionFind_t",                      {"",                                                         "", CONV_TYPE, API_TENSOR, 1, UNSUPPORTED}},
+  {"cutensorMgContractionFind_s",                      {"",                                                         "", CONV_TYPE, API_TENSOR, 1, UNSUPPORTED}},
+  {"cutensorMgContractionPlan_t",                      {"",                                                         "", CONV_TYPE, API_TENSOR, 1, UNSUPPORTED}},
+  {"cutensorMgContractionPlan_s",                      {"",                                                         "", CONV_TYPE, API_TENSOR, 1, UNSUPPORTED}},
 };
 
 const std::map<llvm::StringRef, cudaAPIversions> CUDA_TENSOR_TYPE_NAME_VER_MAP {
@@ -364,6 +374,14 @@ const std::map<llvm::StringRef, cudaAPIversions> CUDA_TENSOR_TYPE_NAME_VER_MAP {
   {"cutensorMgCopyPlan_t",                             {CUTENSOR_1400, CUDA_0,        CUDA_0        }},
   {"cutensorMgContractionDescriptor_s",                {CUTENSOR_1400, CUDA_0,        CUDA_0        }},
   {"cutensorMgContractionDescriptor_t",                {CUTENSOR_1400, CUDA_0,        CUDA_0        }},
+  {"cutensorMgContractionFind_s",                      {CUTENSOR_1400, CUDA_0,        CUDA_0        }},
+  {"cutensorMgContractionFind_t",                      {CUTENSOR_1400, CUDA_0,        CUDA_0        }},
+  {"cutensorMgContractionPlan_s",                      {CUTENSOR_1400, CUDA_0,        CUDA_0        }},
+  {"cutensorMgContractionPlan_t",                      {CUTENSOR_1400, CUDA_0,        CUDA_0        }},
+  {"cutensorMgAlgo_t",                                 {CUTENSOR_1400, CUDA_0,        CUDA_0        }},
+  {"CUTENSORMG_ALGO_DEFAULT",                          {CUTENSOR_1400, CUDA_0,        CUDA_0        }},
+  {"cutensorMgContractionFindAttribute_t",             {CUTENSOR_1500, CUDA_0,        CUDA_0        }},
+  {"CUTENSORMG_CONTRACTION_FIND_ATTRIBUTE_MAX",        {CUTENSOR_1500, CUDA_0,        CUDA_0        }},
 };
 
 const std::map<llvm::StringRef, hipAPIversions> HIP_TENSOR_TYPE_NAME_VER_MAP {
