@@ -210,8 +210,25 @@
 |`cutensorLoggerSetFile`|1.3.2.0| | | |`hiptensorLoggerSetFile`|5.7.0| | | | |
 |`cutensorLoggerSetLevel`|1.3.2.0| | | |`hiptensorLoggerSetLevel`|5.7.0| | | | |
 |`cutensorLoggerSetMask`|1.3.2.0| | | |`hiptensorLoggerSetMask`|5.7.0| | | | |
+|`cutensorMgContraction`|1.4.0.0| | | | | | | | | |
+|`cutensorMgContractionFindSetAttribute`|1.5.0.0| | | | | | | | | |
+|`cutensorMgContractionGetWorkspace`|1.4.0.0| | | | | | | | | |
+|`cutensorMgCopy`|1.4.0.0| | | | | | | | | |
+|`cutensorMgCopyGetWorkspace`|1.4.0.0| | | | | | | | | |
 |`cutensorMgCreate`|1.4.0.0| | | | | | | | | |
+|`cutensorMgCreateContractionDescriptor`|1.4.0.0| | | | | | | | | |
+|`cutensorMgCreateContractionFind`|1.4.0.0| | | | | | | | | |
+|`cutensorMgCreateContractionPlan`|1.4.0.0| | | | | | | | | |
+|`cutensorMgCreateCopyDescriptor`|1.4.0.0| | | | | | | | | |
+|`cutensorMgCreateCopyPlan`|1.4.0.0| | | | | | | | | |
+|`cutensorMgCreateTensorDescriptor`|1.4.0.0| | | | | | | | | |
 |`cutensorMgDestroy`|1.4.0.0| | | | | | | | | |
+|`cutensorMgDestroyContractionDescriptor`|1.4.0.0| | | | | | | | | |
+|`cutensorMgDestroyContractionFind`|1.4.0.0| | | | | | | | | |
+|`cutensorMgDestroyContractionPlan`|1.4.0.0| | | | | | | | | |
+|`cutensorMgDestroyCopyDescriptor`|1.4.0.0| | | | | | | | | |
+|`cutensorMgDestroyCopyPlan`|1.4.0.0| | | | | | | | | |
+|`cutensorMgDestroyTensorDescriptor`|1.4.0.0| | | | | | | | | |
 |`cutensorOperationDescriptorGetAttribute`|2.0.0.0| | | | | | | | | |
 |`cutensorOperationDescriptorSetAttribute`|2.0.0.0| | | | | | | | | |
 |`cutensorPermutation`|1.0.1.0| | |2.0.0.0|`hiptensorPermutation`|6.1.0| | | | |
