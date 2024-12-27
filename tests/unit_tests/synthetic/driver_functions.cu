@@ -523,7 +523,7 @@ int main() {
   result = cuMemGetInfo_v2(&bytes, &bytes_2);
 
   // CUDA: CUresult CUDAAPI cuMemHostAlloc(void **pp, size_t bytesize, unsigned int Flags);
-  // HIP: DEPRECATED("use hipHostMalloc instead") hipError_t hipHostAlloc(void** ptr, size_t size, unsigned int flags);
+  // HIP: hipError_t hipHostAlloc(void** ptr, size_t size, unsigned int flags);
   // CHECK: result = hipHostAlloc(&image, bytes, flags);
   result = cuMemHostAlloc(&image, bytes, flags);
 
@@ -1487,6 +1487,11 @@ int main() {
   // HIP: hipError_t hipDrvGraphExecMemcpyNodeSetParams(hipGraphExec_t hGraphExec, hipGraphNode_t hNode, const HIP_MEMCPY3D* copyParams, hipCtx_t ctx);
   // CHECK: result = hipDrvGraphExecMemcpyNodeSetParams(graphExec, graphNode, &MEMCPY3D, context);
   result = cuGraphExecMemcpyNodeSetParams(graphExec, graphNode, &MEMCPY3D, context);
+
+  // CUDA: CUresult CUDAAPI cuGraphExecMemsetNodeSetParams(CUgraphExec hGraphExec, CUgraphNode hNode, const CUDA_MEMSET_NODE_PARAMS *memsetParams, CUcontext ctx);
+  // HIP: hipError_t hipDrvGraphExecMemsetNodeSetParams(hipGraphExec_t hGraphExec, hipGraphNode_t hNode, const HIP_MEMSET_NODE_PARAMS* memsetParams, hipCtx_t ctx);
+  // CHECK: result = hipDrvGraphExecMemsetNodeSetParams(graphExec, graphNode, &MEMSET_NODE_PARAMS, context);
+  result = cuGraphExecMemsetNodeSetParams(graphExec, graphNode, &MEMSET_NODE_PARAMS, context);
 #endif
 
 #if CUDA_VERSION >= 10020 && CUDA_VERSION < 12000
