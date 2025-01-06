@@ -3,6 +3,27 @@
 Documentation for HIPIFY is available at
 [https://rocmdocs.amd.com/projects/HIPIFY/en/latest/](https://rocmdocs.amd.com/projects/HIPIFY/en/latest/).
 
+## HIPIFY for ROCm 6.4.0
+
+### Added
+
+* CUDA 12.6.3 support
+* cuDNN 9.6.0 support
+* cuTENSOR 2.0.2.1 support
+* LLVM 19.1.6 support
+* Full support for direct hipification of `cuRAND` into `rocRAND` under the `--roc` option
+* [#1617] Support for `fp8` math device/host API
+
+### Resolved issues
+
+* `MIOpen` support in hipify-perl under the `-miopen` option
+* [#1769] Support for `fp16` device/host API
+* [#1800] Fix instructions on building LLVM for HIPIFY on Linux
+
+### Known issues
+
+* [#833] `hipify-clang` build failure against LLVM 15-18 on `Ubuntu`, `CentOS`, and `Fedora`
+
 ## HIPIFY for ROCm 6.3.1
 
 ### Added
