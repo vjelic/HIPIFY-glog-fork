@@ -37,7 +37,7 @@ Dependencies
 
 * `LLVM+Clang <http://releases.llvm.org>`_ of at least version
   `4.0.0 <http://releases.llvm.org/download.html#4.0.0>`_; the latest stable and recommended release:
-  `19.1.5 <https://github.com/llvm/llvm-project/releases/tag/llvmorg-19.1.5>`_.
+  `19.1.6 <https://github.com/llvm/llvm-project/releases/tag/llvmorg-19.1.6>`_.
 
 * `CUDA <https://developer.nvidia.com/cuda-downloads>`_ of at least version
   `7.0 <https://developer.nvidia.com/cuda-toolkit-70>`_, the latest supported version is
@@ -189,7 +189,8 @@ Dependencies
       `19.1.2 <https://github.com/llvm/llvm-project/releases/tag/llvmorg-19.1.2>`_,
       `19.1.3 <https://github.com/llvm/llvm-project/releases/tag/llvmorg-19.1.3>`_,
       `19.1.4 <https://github.com/llvm/llvm-project/releases/tag/llvmorg-19.1.4>`_,
-      `19.1.5 <https://github.com/llvm/llvm-project/releases/tag/llvmorg-19.1.5>`_:sup:`4`
+      `19.1.5 <https://github.com/llvm/llvm-project/releases/tag/llvmorg-19.1.5>`_,
+      `19.1.6 <https://github.com/llvm/llvm-project/releases/tag/llvmorg-19.1.6>`_:sup:`4`
     - `12.6.3 <https://developer.nvidia.com/cuda-downloads>`_:sup:`4`
     - **Latest stable config**
     - **Latest stable config**
@@ -232,7 +233,7 @@ Dependencies
 In most cases, you can get a suitable version of ``LLVM+Clang`` with your package manager. However, you can also
 `download a release archive <http://releases.llvm.org/>`_ and build or install it. In case of multiple versions of ``LLVM`` installed, set
 `CMAKE_PREFIX_PATH <https://cmake.org/cmake/help/latest/variable/CMAKE_PREFIX_PATH.html>`_ so that
-``CMake`` can find the desired version of ``LLVM``. For example, ``-DCMAKE_PREFIX_PATH=D:\LLVM\19.1.5\dist``.
+``CMake`` can find the desired version of ``LLVM``. For example, ``-DCMAKE_PREFIX_PATH=D:\LLVM\19.1.6\dist``.
 
 Usage
 ============================================================
@@ -265,7 +266,7 @@ header files used during the hipification process:
 
 .. code:: shell
 
-  ./hipify-clang square.cu --cuda-path=/usr/local/cuda-12.6 --clang-resource-directory=/usr/llvm/19.1.5/dist/lib/clang/19
+  ./hipify-clang square.cu --cuda-path=/usr/local/cuda-12.6 --clang-resource-directory=/usr/llvm/19.1.6/dist/lib/clang/19
 
 For more information, refer to the `Clang manual for compiling CUDA <https://llvm.org/docs/CompileCudaWithLLVM.html#compiling-cuda-code>`_.
 
@@ -402,7 +403,7 @@ To ensure LLVM being found or in case of multiple LLVM instances, specify the pa
 
 .. code-block:: bash
 
-  -DCMAKE_PREFIX_PATH=/usr/llvm/19.1.5/dist
+  -DCMAKE_PREFIX_PATH=/usr/llvm/19.1.6/dist
 
 On Windows, specify the following option for CMake in the first place:
 ``-G "Visual Studio 17 2022"``. 
@@ -450,7 +451,7 @@ LLVM <= 9.0.1
     cmake \
       -DCMAKE_INSTALL_PREFIX=../dist \
       -DLLVM_SOURCE_DIR=../llvm \
-      -DLLVM_TARGETS_TO_BUILD="X86;NVPTX" \
+      -DLLVM_TARGETS_TO_BUILD="X86" \
       -DLLVM_INCLUDE_TESTS=OFF \
       -DCMAKE_BUILD_TYPE=Release \
       ../llvm
@@ -466,7 +467,7 @@ LLVM <= 9.0.1
       -Thost=x64 \
       -DCMAKE_INSTALL_PREFIX=../dist \
       -DLLVM_SOURCE_DIR=../llvm \
-      -DLLVM_TARGETS_TO_BUILD="NVPTX" \
+      -DLLVM_TARGETS_TO_BUILD="" \
       -DLLVM_INCLUDE_TESTS=OFF \
       -DCMAKE_BUILD_TYPE=Release \
       ../llvm
@@ -476,7 +477,7 @@ LLVM <= 9.0.1
 LLVM >= 10.0.0
 -----------------
 
-1. Download `LLVM project <https://github.com/llvm/llvm-project/releases/tag/llvmorg-19.1.5>`_ sources.
+1. Download `LLVM project <https://github.com/llvm/llvm-project/releases/tag/llvmorg-19.1.6>`_ sources.
 
 2. Build `LLVM project <http://llvm.org/docs/CMake.html>`_:
 
@@ -492,7 +493,7 @@ LLVM >= 10.0.0
 
     cmake \
       -DCMAKE_INSTALL_PREFIX=../dist \
-      -DLLVM_TARGETS_TO_BUILD="" \
+      -DLLVM_TARGETS_TO_BUILD="X86" \
       -DLLVM_ENABLE_PROJECTS="clang" \
       -DLLVM_INCLUDE_TESTS=OFF \
       -DCMAKE_BUILD_TYPE=Release \
@@ -535,7 +536,23 @@ LLVM >= 10.0.0
 
       -DCUDA_SDK_ROOT_DIR="C:/ProgramData/NVIDIA Corporation/CUDA Samples/v12.6"
 
-4. Install `cuDNN <https://developer.nvidia.com/rdp/cudnn-archive>`_ belonging to the version corresponding
+4. [Optional] Install `cuTensor <https://developer.nvidia.com/cutensor-downloads>`_:
+
+   * To specify the path to `cuTensor <https://developer.nvidia.com/cutensor-downloads>`_, use the ``CUDA_TENSOR_ROOT_DIR`` option:
+
+     **Linux**:
+
+     .. code-block:: bash
+
+      -DCUDA_TENSOR_ROOT_DIR=/usr/include
+
+     **Windows**:
+
+     .. code-block:: shell
+
+      -DCUDA_TENSOR_ROOT_DIR=D:/CUDA/cuTensor/2.0.2.1
+
+5. [Optional] Install `cuDNN <https://developer.nvidia.com/rdp/cudnn-archive>`_ belonging to the version corresponding
    to the CUDA version:
 
    * To specify the path to `cuDNN <https://developer.nvidia.com/cudnn-downloads>`_, use the ``CUDA_DNN_ROOT_DIR`` option:
@@ -549,10 +566,10 @@ LLVM >= 10.0.0
      **Windows**:
 
      .. code-block:: shell
-      
+
       -DCUDA_DNN_ROOT_DIR=D:/CUDA/cuDNN/9.6.0
 
-5. [Optional] Install `CUB 1.9.8 <https://github.com/NVIDIA/cub/releases/tag/1.9.8>`_ for ``CUDA < 11.0`` only;
+6. [Optional] Install `CUB 1.9.8 <https://github.com/NVIDIA/cub/releases/tag/1.9.8>`_ for ``CUDA < 11.0`` only;
    for ``CUDA >= 11.0``, the CUB shipped with CUDA will be used for testing.
 
    * To specify the path to CUB, use the ``CUDA_CUB_ROOT_DIR`` option (only for ``CUDA < 11.0``):
@@ -569,9 +586,9 @@ LLVM >= 10.0.0
 
       -DCUDA_CUB_ROOT_DIR=D:/CUDA/CUB
 
-6. Install `Python <https://www.python.org/downloads>`_ version 3.0 or greater.
+7. Install `Python <https://www.python.org/downloads>`_ version 3.0 or greater.
 
-7. Install ``lit`` and ``FileCheck``; these are distributed with LLVM.
+8. Install ``lit`` and ``FileCheck``; these are distributed with LLVM.
 
    * Install ``lit`` into ``Python``:
 
@@ -579,13 +596,13 @@ LLVM >= 10.0.0
 
      .. code-block:: bash
 
-      python /usr/llvm/19.1.5/llvm-project/llvm/utils/lit/setup.py install
+      python /usr/llvm/19.1.6/llvm-project/llvm/utils/lit/setup.py install
       
      **Windows**:
 
      .. code-block:: shell
 
-      python D:/LLVM/19.1.5/llvm-project/llvm/utils/lit/setup.py install
+      python D:/LLVM/19.1.6/llvm-project/llvm/utils/lit/setup.py install
 
      In case of errors similar to ``ModuleNotFoundError: No module named 'setuptools'``, upgrade the ``setuptools`` package:
 
@@ -599,27 +616,27 @@ LLVM >= 10.0.0
 
      .. code-block:: bash
 
-      -DLLVM_EXTERNAL_LIT=/usr/llvm/19.1.5/build/bin/llvm-lit
+      -DLLVM_EXTERNAL_LIT=/usr/llvm/19.1.6/build/bin/llvm-lit
 
      **Windows**:
 
      .. code-block:: shell
 
-      -DLLVM_EXTERNAL_LIT=D:/LLVM/19.1.5/build/Release/bin/llvm-lit.py
+      -DLLVM_EXTERNAL_LIT=D:/LLVM/19.1.6/build/Release/bin/llvm-lit.py
 
    * ``FileCheck``:
 
      **Linux**:
 
-     Copy from ``/usr/llvm/19.1.5/build/bin/`` to ``CMAKE_INSTALL_PREFIX/dist/bin``.
+     Copy from ``/usr/llvm/19.1.6/build/bin/`` to ``CMAKE_INSTALL_PREFIX/dist/bin``.
 
      **Windows**:
 
-     Copy from ``D:/LLVM/19.1.5/build/Release/bin`` to ``CMAKE_INSTALL_PREFIX/dist/bin``.
+     Copy from ``D:/LLVM/19.1.6/build/Release/bin`` to ``CMAKE_INSTALL_PREFIX/dist/bin``.
 
      Alternatively, specify the path to ``FileCheck`` in the ``CMAKE_INSTALL_PREFIX`` option.
 
-8. To run OpenGL tests successfully on:
+9. To run OpenGL tests successfully on:
 
    **Linux**:
 
@@ -631,9 +648,9 @@ LLVM >= 10.0.0
 
    No installation required. All the required headers are shipped with the Windows SDK.
 
-9. Set the ``HIPIFY_CLANG_TESTS`` option to ``ON``: ``-DHIPIFY_CLANG_TESTS=ON``
+10. Set the ``HIPIFY_CLANG_TESTS`` option to ``ON``: ``-DHIPIFY_CLANG_TESTS=ON``
 
-10. Build and run tests.
+11. Build and run tests.
 
 Linux testing
 ======================================================
@@ -642,8 +659,8 @@ On Linux, the following configurations are tested:
 
 * Ubuntu 14: LLVM 4.0.0 - 7.1.0, CUDA 7.0 - 9.0, cuDNN 5.0.5 - 7.6.5
 * Ubuntu 16-19: LLVM 8.0.0 - 14.0.6, CUDA 7.0 - 10.2, cuDNN 5.1.10 - 8.0.5
-* Ubuntu 20-21: LLVM 9.0.0 - 19.1.5, CUDA 7.0 - 12.6.3, cuDNN 5.1.10 - 9.6.0
-* Ubuntu 22-23: LLVM 13.0.0 - 19.1.5, CUDA 7.0 - 12.6.3, cuDNN 8.0.5 - 9.6.0
+* Ubuntu 20-21: LLVM 9.0.0 - 19.1.6, CUDA 7.0 - 12.6.3, cuDNN 5.1.10 - 9.6.0, cuTensor 1.0.1.0 - 2.0.2.1
+* Ubuntu 22-23: LLVM 13.0.0 - 19.1.6, CUDA 7.0 - 12.6.3, cuDNN 8.0.5 - 9.6.0, cuTensor 1.0.1.0 - 2.0.2.1
 
 Minimum build system requirements for the above configurations:
 
@@ -661,10 +678,11 @@ Here's how to build ``hipify-clang`` with testing support on ``Ubuntu 23.10.01``
   -DHIPIFY_CLANG_TESTS=ON \
   -DCMAKE_BUILD_TYPE=Release \
   -DCMAKE_INSTALL_PREFIX=../dist \
-  -DCMAKE_PREFIX_PATH=/usr/llvm/19.1.5/dist \
+  -DCMAKE_PREFIX_PATH=/usr/llvm/19.1.6/dist \
   -DCUDA_TOOLKIT_ROOT_DIR=/usr/local/cuda-12.6.3 \
   -DCUDA_DNN_ROOT_DIR=/usr/local/cudnn-9.6.0 \
-  -DLLVM_EXTERNAL_LIT=/usr/llvm/19.1.5/build/bin/llvm-lit \
+  -DCUDA_TENSOR_ROOT_DIR=/usr/local/cutensor-2.0.2.1 \
+  -DLLVM_EXTERNAL_LIT=/usr/llvm/19.1.6/build/bin/llvm-lit \
   ../hipify
 
 The corresponding successful output is:
@@ -684,35 +702,38 @@ The corresponding successful output is:
   -- Detecting CXX compile features
   -- Detecting CXX compile features - done
   -- HIPIFY config:
-  --    - Build hipify-clang : ON
-  --    - Test  hipify-clang : ON
-  --    - Is part of HIP SDK : OFF
+  --    - Build hipify-clang    : ON
+  --    - Test hipify-clang     : ON
+  --    - Is part of HIP SDK    : OFF
+  --    - Install clang headers : ON
   -- Found ZLIB: /usr/lib/x86_64-linux-gnu/libz.so (found version "1.2.13")
-  -- Found LLVM 19.1.5:
-  --    - CMake module path  : /usr/llvm/19.1.5/dist/lib/cmake/llvm
-  --    - Clang include path : /usr/llvm/19.1.5/dist/include
-  --    - LLVM Include path  : /usr/llvm/19.1.5/dist/include
-  --    - Binary path        : /usr/llvm/19.1.5/dist/bin
+  -- Found LLVM 19.1.6:
+  --    - CMake module path     : /usr/llvm/19.1.6/dist/lib/cmake/llvm
+  --    - Clang include path    : /usr/llvm/19.1.6/dist/include
+  --    - LLVM Include path     : /usr/llvm/19.1.6/dist/include
+  --    - Binary path           : /usr/llvm/19.1.6/dist/bin
   -- Linker detection: GNU ld
   -- ---- The below configuring for hipify-clang testing only ----
   -- Found Python: /usr/bin/python3.13 (found suitable version "3.13.1", required range is "3.0...3.14") found components: Interpreter
   -- Found lit: /usr/local/bin/lit
   -- Found FileCheck: /GIT/LLVM/trunk/dist/FileCheck
   -- Initial CUDA to configure:
-  --    - CUDA Toolkit path  : /usr/local/cuda-12.6.3
-  --    - CUDA Samples path  :
-  --    - cuDNN path         : /usr/local/cudnn-9.6.0
-  --    - CUB path           :
+  --    - CUDA Toolkit path     : /usr/local/cuda-12.6.3
+  --    - CUDA Samples path     :
+  --    - cuDNN path            : /usr/local/cudnn-9.6.0
+  --    - cuTENSOR path         : /usr/local/cuTensor/2.0.2.1
+  --    - CUB path              :
   -- Found CUDAToolkit: /usr/local/cuda-12.6.3/targets/x86_64-linux/include (found version "12.6.85")
   -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
   -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
   -- Found Threads: TRUE
   -- Found CUDA config:
-  --    - CUDA Toolkit path  : /usr/local/cuda-12.6.3
-  --    - CUDA Samples path  : OFF
-  --    - cuDNN path         : /usr/local/cudnn-9.6.0
-  --    - CUB path           : /usr/local/cuda-12.6.3/include/cub
-  -- Configuring done (0.5s)
+  --    - CUDA Toolkit path     : /usr/local/cuda-12.6.3
+  --    - CUDA Samples path     : OFF
+  --    - cuDNN path            : /usr/local/cudnn-9.6.0
+  --    - CUB path              : /usr/local/cuda-12.6.3/include/cub
+  --    - cuTENSOR path         : /usr/local/cuTensor/2.0.2.1
+  -- Configuring done (0.6s)
   -- Generating done (0.0s)
   -- Build files have been written to: /usr/hipify/build
 
@@ -727,7 +748,7 @@ The corresponding successful output is:
   Running HIPify regression tests
   ===============================================================
   CUDA 12.6.85 - will be used for testing
-  LLVM 19.1.5 - will be used for testing
+  LLVM 19.1.6 - will be used for testing
   x86_64 - Platform architecture
   Linux 6.5.0-15-generic - Platform OS
   64 - hipify-clang binary bitness
@@ -827,7 +848,7 @@ Tested configurations:
     - ``2019.16.11.42, 2022.17.12.3``
     - ``3.31.2``
     - ``3.13.1``
-  * - ``19.1.0 - 19.1.5``
+  * - ``19.1.0 - 19.1.6``
     - ``7.0 - 12.6.3``
     - ``8.0.5  - 9.6.0``
     - ``2019.16.11.42, 2022.17.12.3``
@@ -857,11 +878,12 @@ Building with testing support using ``Visual Studio 17 2022`` on ``Windows 11``:
   -DHIPIFY_CLANG_TESTS=ON \
   -DCMAKE_BUILD_TYPE=Release \
   -DCMAKE_INSTALL_PREFIX=../dist \
-  -DCMAKE_PREFIX_PATH=D:/LLVM/19.1.5/dist \
+  -DCMAKE_PREFIX_PATH=D:/LLVM/19.1.6/dist \
   -DCUDA_TOOLKIT_ROOT_DIR="C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.6" \
   -DCUDA_SDK_ROOT_DIR="C:/ProgramData/NVIDIA Corporation/CUDA Samples/v12.5" \
   -DCUDA_DNN_ROOT_DIR=D:/CUDA/cuDNN/9.6.0 \
-  -DLLVM_EXTERNAL_LIT=D:/LLVM/19.1.5/build/Release/bin/llvm-lit.py \
+  -DCUDA_TENSOR_ROOT_DIR=D:/CUDA/cuTensor/2.0.2.1 \
+  -DLLVM_EXTERNAL_LIT=D:/LLVM/19.1.6/build/Release/bin/llvm-lit.py \
   ../hipify
 
 The corresponding successful output is:
@@ -869,43 +891,46 @@ The corresponding successful output is:
 .. code-block:: shell
 
   -- Selecting Windows SDK version 10.0.22621.0 to target Windows 10.0.22631.
-  -- The C compiler identification is MSVC 19.41.34120.0
-  -- The CXX compiler identification is MSVC 19.41.34120.0
+  -- The C compiler identification is MSVC 19.42.34435.0
+  -- The CXX compiler identification is MSVC 19.42.34435.0
   -- Detecting C compiler ABI info
   -- Detecting C compiler ABI info - done
-  -- Check for working C compiler: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.41.34120/bin/Hostx64/x64/cl.exe - skipped
+  -- Check for working C compiler: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.42.34433/bin/Hostx64/x64/cl.exe - skipped
   -- Detecting C compile features
   -- Detecting C compile features - done
   -- Detecting CXX compiler ABI info
   -- Detecting CXX compiler ABI info - done
-  -- Check for working CXX compiler: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.41.34120/bin/Hostx64/x64/cl.exe - skipped
+  -- Check for working CXX compiler: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.42.34433/bin/Hostx64/x64/cl.exe - skipped
   -- Detecting CXX compile features
   -- Detecting CXX compile features - done
   -- HIPIFY config:
-  --    - Build hipify-clang : ON
-  --    - Test  hipify-clang : ON
-  --    - Is part of HIP SDK : OFF
-  -- Found LLVM 19.1.5:
-  --    - CMake module path  : D:/LLVM/19.1.5/dist/lib/cmake/llvm
-  --    - Clang include path : D:/LLVM/19.1.5/dist/include
-  --    - LLVM Include path  : D:/LLVM/19.1.5/dist/include
-  --    - Binary path        : D:/LLVM/19.1.5/dist/bin
+  --    - Build hipify-clang    : ON
+  --    - Test hipify-clang     : ON
+  --    - Is part of HIP SDK    : OFF
+  --    - Install clang headers : ON
+  -- Found LLVM 19.1.6:
+  --    - CMake module path     : D:/LLVM/19.1.6/dist/lib/cmake/llvm
+  --    - Clang include path    : D:/LLVM/19.1.6/dist/include
+  --    - LLVM Include path     : D:/LLVM/19.1.6/dist/include
+  --    - Binary path           : D:/LLVM/19.1.6/dist/bin
   -- ---- The below configuring for hipify-clang testing only ----
-  -- Found Python: C:/Users/evgen/AppData/Local/Programs/Python/Python313/python.exe (found suitable version "3.13.1", required range is "3.0...3.14") found components: Interpreter
+  -- Found Python: C:/Users/TT/AppData/Local/Programs/Python/Python313/python.exe (found suitable version "3.13.1", required range is "3.0...3.14") found components: Interpreter
   -- Found lit: C:/Users/TT/AppData/Local/Programs/Python/Python313/Scripts/lit.exe
-  -- Found FileCheck: D:/LLVM/19.1.5/dist/bin/FileCheck.exe
+  -- Found FileCheck: D:/LLVM/19.1.6/dist/bin/FileCheck.exe
   -- Initial CUDA to configure:
-  --    - CUDA Toolkit path  : C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.6
-  --    - CUDA Samples path  : C:/ProgramData/NVIDIA Corporation/CUDA Samples/v12.5
-  --    - cuDNN path         : D:/CUDA/cuDNN/9.6.0
-  --    - CUB path           :
+  --    - CUDA Toolkit path     : C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.6
+  --    - CUDA Samples path     : C:/ProgramData/NVIDIA Corporation/CUDA Samples/v12.5
+  --    - cuDNN path            : D:/CUDA/cuDNN/9.6.0
+  --    - cuTENSOR path         : D:/CUDA/cuTensor/2.0.2.1
+  --    - CUB path              :
   -- Found CUDAToolkit: C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.6/include (found version "12.6.85")
   -- Found CUDA config:
-  --    - CUDA Toolkit path  : C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.6
-  --    - CUDA Samples path  : C:/ProgramData/NVIDIA Corporation/CUDA Samples/v12.5
-  --    - cuDNN path         : D:/CUDA/cuDNN/9.6.0
-  --    - CUB path           : C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.6/include/cub
-  -- Configuring done (2.1s)
+  --    - CUDA Toolkit path     : C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.6
+  --    - CUDA Samples path     : C:/ProgramData/NVIDIA Corporation/CUDA Samples/v12.5
+  --    - cuDNN path            : D:/CUDA/cuDNN/9.6.0
+  --    - cuTENSOR path         : D:/CUDA/cuTensor/2.0.2.1
+  --    - CUB path              : C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.6/include/cub
+  -- Configuring done (4.4s)
   -- Generating done (0.1s)
   -- Build files have been written to: D:/HIPIFY/build
 

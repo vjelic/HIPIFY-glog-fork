@@ -534,7 +534,7 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_FUNCTION_MAP {
   // cudaEventSynchronize
   {"cuEventSynchronize",                                          {"hipEventSynchronize",                                         "", CONV_EVENT, API_DRIVER, SEC::EVENT}},
   // cudaEventRecordWithFlags
-  {"cuEventRecordWithFlags",                                      {"hipEventRecordWithFlags",                                     "", CONV_EVENT, API_DRIVER, SEC::EVENT, HIP_UNSUPPORTED}},
+  {"cuEventRecordWithFlags",                                      {"hipEventRecordWithFlags",                                     "", CONV_EVENT, API_DRIVER, SEC::EVENT, HIP_EXPERIMENTAL}},
 
   // 20. External Resource Interoperability
   // cudaDestroyExternalMemory
@@ -1655,21 +1655,22 @@ const std::map<llvm::StringRef, hipAPIversions> HIP_DRIVER_FUNCTION_VER_MAP {
   {"hipDrvGraphAddMemcpyNode",                                    {HIP_6000, HIP_0,    HIP_0   }},
   {"hipDrvGraphAddMemsetNode",                                    {HIP_6010, HIP_0,    HIP_0   }},
   {"hipTexRefGetBorderColor",                                     {HIP_6010, HIP_6010, HIP_0   }},
-  {"hipMemcpyAtoD",                                               {HIP_6020, HIP_0,    HIP_0,  }},
-  {"hipMemcpyDtoA",                                               {HIP_6020, HIP_0,    HIP_0,  }},
-  {"hipMemcpyAtoA",                                               {HIP_6020, HIP_0,    HIP_0,  }},
-  {"hipMemcpyAtoHAsync",                                          {HIP_6020, HIP_0,    HIP_0,  }},
-  {"hipMemcpyHtoAAsync",                                          {HIP_6020, HIP_0,    HIP_0,  }},
-  {"hipDrvGraphAddMemFreeNode",                                   {HIP_6030, HIP_0,    HIP_0,  }},
-  {"hipDrvGraphMemcpyNodeGetParams",                              {HIP_6030, HIP_0,    HIP_0,  }},
-  {"hipDrvGraphMemcpyNodeSetParams",                              {HIP_6030, HIP_0,    HIP_0,  }},
-  {"hipDrvGraphExecMemcpyNodeSetParams",                          {HIP_6030, HIP_0,    HIP_0,  }},
-  {"hipDrvGraphExecMemsetNodeSetParams",                          {HIP_6030, HIP_0,    HIP_0,  }},
+  {"hipMemcpyAtoD",                                               {HIP_6020, HIP_0,    HIP_0   }},
+  {"hipMemcpyDtoA",                                               {HIP_6020, HIP_0,    HIP_0   }},
+  {"hipMemcpyAtoA",                                               {HIP_6020, HIP_0,    HIP_0   }},
+  {"hipMemcpyAtoHAsync",                                          {HIP_6020, HIP_0,    HIP_0   }},
+  {"hipMemcpyHtoAAsync",                                          {HIP_6020, HIP_0,    HIP_0   }},
+  {"hipDrvGraphAddMemFreeNode",                                   {HIP_6030, HIP_0,    HIP_0   }},
+  {"hipDrvGraphMemcpyNodeGetParams",                              {HIP_6030, HIP_0,    HIP_0   }},
+  {"hipDrvGraphMemcpyNodeSetParams",                              {HIP_6030, HIP_0,    HIP_0   }},
+  {"hipDrvGraphExecMemcpyNodeSetParams",                          {HIP_6030, HIP_0,    HIP_0   }},
+  {"hipDrvGraphExecMemsetNodeSetParams",                          {HIP_6030, HIP_0,    HIP_0   }},
   {"hipStreamBatchMemOp",                                         {HIP_6040, HIP_0,    HIP_0,  HIP_LATEST}},
   {"hipGraphAddBatchMemOpNode",                                   {HIP_6040, HIP_0,    HIP_0,  HIP_LATEST}},
   {"hipGraphBatchMemOpNodeGetParams",                             {HIP_6040, HIP_0,    HIP_0,  HIP_LATEST}},
   {"hipGraphBatchMemOpNodeSetParams",                             {HIP_6040, HIP_0,    HIP_0,  HIP_LATEST}},
   {"hipGraphExecBatchMemOpNodeSetParams",                         {HIP_6040, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"hipEventRecordWithFlags",                                     {HIP_6040, HIP_0,    HIP_0,  HIP_LATEST}},
 };
 
 const std::map<llvm::StringRef, cudaAPIChangedVersions> CUDA_DRIVER_FUNCTION_CHANGED_VER_MAP {

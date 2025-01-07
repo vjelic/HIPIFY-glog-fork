@@ -729,7 +729,7 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DNN_TYPE_NAME_MAP {
   {"CUDNN_BACKEND_OPERATION_SIGNAL_DESCRIPTOR",                        {"HIPDNN_BACKEND_OPERATION_SIGNAL_DESCRIPTOR",                      "MIOPEN_BACKEND_OPERATION_SIGNAL_DESCRIPTOR",                      CONV_NUMERIC_LITERAL, API_DNN, 1, HIP_UNSUPPORTED}},
   {"CUDNN_BACKEND_OPERATION_NORM_FORWARD_DESCRIPTOR",                  {"HIPDNN_BACKEND_OPERATION_NORM_FORWARD_DESCRIPTOR",                "MIOPEN_BACKEND_OPERATION_NORM_FORWARD_DESCRIPTOR",                CONV_NUMERIC_LITERAL, API_DNN, 1, HIP_UNSUPPORTED}},
   {"CUDNN_BACKEND_OPERATION_NORM_BACKWARD_DESCRIPTOR",                 {"HIPDNN_BACKEND_OPERATION_NORM_BACKWARD_DESCRIPTOR",               "MIOPEN_BACKEND_OPERATION_NORM_BACKWARD_DESCRIPTOR",               CONV_NUMERIC_LITERAL, API_DNN, 1, HIP_UNSUPPORTED}},
-  {"CUDNN_BACKEND_OPERATION_RESHAPE_DESCRIPTOR",                       {"HIPDNN_BACKEND_OPERATION_RESHAPE_DESCRIPTOR",                     "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},
+  {"CUDNN_BACKEND_OPERATION_RESHAPE_DESCRIPTOR",                       {"HIPDNN_BACKEND_OPERATION_RESHAPE_DESCRIPTOR",                     "MIOPEN_BACKEND_OPERATION_RESHAPE_DESCRIPTOR",                     CONV_NUMERIC_LITERAL, API_DNN, 1, HIP_UNSUPPORTED}},
   {"CUDNN_BACKEND_RNG_DESCRIPTOR",                                     {"HIPDNN_BACKEND_RNG_DESCRIPTOR",                                   "MIOPEN_BACKEND_RNG_DESCRIPTOR",                                   CONV_NUMERIC_LITERAL, API_DNN, 1, HIP_UNSUPPORTED}},
   {"CUDNN_BACKEND_OPERATION_RNG_DESCRIPTOR",                           {"HIPDNN_BACKEND_OPERATION_RNG_DESCRIPTOR",                         "MIOPEN_BACKEND_OPERATION_RNG_DESCRIPTOR",                         CONV_NUMERIC_LITERAL, API_DNN, 1, HIP_UNSUPPORTED}},
   {"CUDNN_BACKEND_KERNEL_CACHE_DESCRIPTOR",                            {"HIPDNN_BACKEND_KERNEL_CACHE_DESCRIPTOR",                          "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},
@@ -2269,4 +2269,5 @@ const std::map<llvm::StringRef, hipAPIversions> HIP_DNN_TYPE_NAME_VER_MAP {
   {"miopenPaddingDefault",                                             {HIP_2010,  HIP_0,     HIP_0    }},
   {"miopenPaddingSame",                                                {HIP_2010,  HIP_0,     HIP_0    }},
   {"miopenPaddingValid",                                               {HIP_2010,  HIP_0,     HIP_0    }},
+  {"MIOPEN_BACKEND_OPERATION_RESHAPE_DESCRIPTOR",                      {HIP_6030,  HIP_0,     HIP_0    }},
 };

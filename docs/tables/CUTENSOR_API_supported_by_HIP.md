@@ -4,6 +4,8 @@
 
 |**CUDA**|**A**|**D**|**C**|**R**|**HIP**|**A**|**D**|**C**|**R**|**E**|
 |:--|:-:|:-:|:-:|:-:|:--|:-:|:-:|:-:|:-:|:-:|
+|`CUTENSORMG_ALGO_DEFAULT`|1.4.0.0| | | | | | | | | |
+|`CUTENSORMG_CONTRACTION_FIND_ATTRIBUTE_MAX`|1.5.0.0| | | | | | | | | |
 |`CUTENSOR_ALGO_DEFAULT`|1.0.1.0| | | |`HIPTENSOR_ALGO_DEFAULT`|5.7.0| | | | |
 |`CUTENSOR_ALGO_DEFAULT_PATIENT`|1.4.0.0| | | |`HIPTENSOR_ALGO_DEFAULT_PATIENT`|5.7.0| | | | |
 |`CUTENSOR_ALGO_GETT`|1.0.1.0| | | | | | | | | |
@@ -18,6 +20,7 @@
 |`CUTENSOR_COMPUTE_32F`|1.0.1.0| | |2.0.0.0|`HIPTENSOR_COMPUTE_32F`|5.7.0| | | | |
 |`CUTENSOR_COMPUTE_32I`|1.0.1.0| | |2.0.0.0|`HIPTENSOR_COMPUTE_32I`|5.7.0| | | | |
 |`CUTENSOR_COMPUTE_32U`|1.0.1.0| | |2.0.0.0|`HIPTENSOR_COMPUTE_32U`|5.7.0| | | | |
+|`CUTENSOR_COMPUTE_3XTF32`|2.0.0.0| | | | | | | | | |
 |`CUTENSOR_COMPUTE_64F`|1.0.1.0| | |2.0.0.0|`HIPTENSOR_COMPUTE_64F`|5.7.0| | | | |
 |`CUTENSOR_COMPUTE_8I`|1.0.1.0| | |2.0.0.0|`HIPTENSOR_COMPUTE_8I`|5.7.0| | | | |
 |`CUTENSOR_COMPUTE_8U`|1.0.1.0| | |2.0.0.0|`HIPTENSOR_COMPUTE_8U`|5.7.0| | | | |
@@ -42,6 +45,8 @@
 |`CUTENSOR_C_MIN_TF32`|1.0.1.0|1.2.0.0| |2.0.0.0| | | | | | |
 |`CUTENSOR_JIT_MODE_DEFAULT`|2.0.0.0| | | | | | | | | |
 |`CUTENSOR_JIT_MODE_NONE`|2.0.0.0| | | | | | | | | |
+|`CUTENSOR_MG_DEVICE_HOST`|1.4.0.0| | | | | | | | | |
+|`CUTENSOR_MG_DEVICE_HOST_PINNED`|1.4.0.0| | | | | | | | | |
 |`CUTENSOR_OPERATION_DESCRIPTOR_FLOPS`|2.0.0.0| | | | | | | | | |
 |`CUTENSOR_OPERATION_DESCRIPTOR_MOVED_BYTES`|2.0.0.0| | | | | | | | | |
 |`CUTENSOR_OPERATION_DESCRIPTOR_PADDING_LEFT`|2.0.0.0| | | | | | | | | |
@@ -106,8 +111,10 @@
 |`CUTENSOR_R_MIN_16BF`|1.0.1.0|1.2.0.0| |2.0.0.0| | | | | | |
 |`CUTENSOR_R_MIN_16F`|1.0.1.0|1.2.0.0| |2.0.0.0| | | | | | |
 |`CUTENSOR_R_MIN_32F`|1.0.1.0|1.2.0.0| |2.0.0.0| | | | | | |
+|`CUTENSOR_R_MIN_32I`|1.0.1.0|1.2.0.0| |2.0.0.0| | | | | | |
 |`CUTENSOR_R_MIN_32U`|1.0.1.0|1.2.0.0| |2.0.0.0| | | | | | |
 |`CUTENSOR_R_MIN_64F`|1.0.1.0|1.2.0.0| |2.0.0.0| | | | | | |
+|`CUTENSOR_R_MIN_8I`|1.0.1.0|1.2.0.0| |2.0.0.0| | | | | | |
 |`CUTENSOR_R_MIN_8U`|1.0.1.0|1.2.0.0| |2.0.0.0| | | | | | |
 |`CUTENSOR_R_MIN_TF32`|1.0.1.0|1.2.0.0| |2.0.0.0| | | | | | |
 |`CUTENSOR_STATUS_ALLOC_FAILED`|1.0.1.0| | | |`HIPTENSOR_STATUS_ALLOC_FAILED`|5.7.0| | | | |
@@ -139,6 +146,23 @@
 |`cutensorHandle_t`|1.0.1.0| | | |`hiptensorHandle_t`|5.7.0| | | | |
 |`cutensorJitMode_t`|2.0.0.0| | | | | | | | | |
 |`cutensorLoggerCallback_t`|1.3.2.0| | | |`hiptensorLoggerCallback_t`|5.7.0| | | | |
+|`cutensorMgAlgo_t`|1.4.0.0| | | | | | | | | |
+|`cutensorMgContractionDescriptor_s`|1.4.0.0| | | | | | | | | |
+|`cutensorMgContractionDescriptor_t`|1.4.0.0| | | | | | | | | |
+|`cutensorMgContractionFindAttribute_t`|1.5.0.0| | | | | | | | | |
+|`cutensorMgContractionFind_s`|1.4.0.0| | | | | | | | | |
+|`cutensorMgContractionFind_t`|1.4.0.0| | | | | | | | | |
+|`cutensorMgContractionPlan_s`|1.4.0.0| | | | | | | | | |
+|`cutensorMgContractionPlan_t`|1.4.0.0| | | | | | | | | |
+|`cutensorMgCopyDescriptor_s`|1.4.0.0| | | | | | | | | |
+|`cutensorMgCopyDescriptor_t`|1.4.0.0| | | | | | | | | |
+|`cutensorMgCopyPlan_s`|1.4.0.0| | | | | | | | | |
+|`cutensorMgCopyPlan_t`|1.4.0.0| | | | | | | | | |
+|`cutensorMgHandle_s`|1.4.0.0| | | | | | | | | |
+|`cutensorMgHandle_t`|1.4.0.0| | | | | | | | | |
+|`cutensorMgHostDevice_t`|1.4.0.0| | | | | | | | | |
+|`cutensorMgTensorDescriptor_s`|1.4.0.0| | | | | | | | | |
+|`cutensorMgTensorDescriptor_t`|1.4.0.0| | | | | | | | | |
 |`cutensorOperationDescriptorAttribute_t`|2.0.0.0| | | | | | | | | |
 |`cutensorOperator_t`|1.0.1.0| | | |`hiptensorOperator_t`|5.7.0| | | | |
 |`cutensorPlan`|2.0.0.0| | | | | | | | | |
@@ -186,6 +210,25 @@
 |`cutensorLoggerSetFile`|1.3.2.0| | | |`hiptensorLoggerSetFile`|5.7.0| | | | |
 |`cutensorLoggerSetLevel`|1.3.2.0| | | |`hiptensorLoggerSetLevel`|5.7.0| | | | |
 |`cutensorLoggerSetMask`|1.3.2.0| | | |`hiptensorLoggerSetMask`|5.7.0| | | | |
+|`cutensorMgContraction`|1.4.0.0| | | | | | | | | |
+|`cutensorMgContractionFindSetAttribute`|1.5.0.0| | | | | | | | | |
+|`cutensorMgContractionGetWorkspace`|1.4.0.0| | | | | | | | | |
+|`cutensorMgCopy`|1.4.0.0| | | | | | | | | |
+|`cutensorMgCopyGetWorkspace`|1.4.0.0| | | | | | | | | |
+|`cutensorMgCreate`|1.4.0.0| | | | | | | | | |
+|`cutensorMgCreateContractionDescriptor`|1.4.0.0| | | | | | | | | |
+|`cutensorMgCreateContractionFind`|1.4.0.0| | | | | | | | | |
+|`cutensorMgCreateContractionPlan`|1.4.0.0| | | | | | | | | |
+|`cutensorMgCreateCopyDescriptor`|1.4.0.0| | | | | | | | | |
+|`cutensorMgCreateCopyPlan`|1.4.0.0| | | | | | | | | |
+|`cutensorMgCreateTensorDescriptor`|1.4.0.0| | | | | | | | | |
+|`cutensorMgDestroy`|1.4.0.0| | | | | | | | | |
+|`cutensorMgDestroyContractionDescriptor`|1.4.0.0| | | | | | | | | |
+|`cutensorMgDestroyContractionFind`|1.4.0.0| | | | | | | | | |
+|`cutensorMgDestroyContractionPlan`|1.4.0.0| | | | | | | | | |
+|`cutensorMgDestroyCopyDescriptor`|1.4.0.0| | | | | | | | | |
+|`cutensorMgDestroyCopyPlan`|1.4.0.0| | | | | | | | | |
+|`cutensorMgDestroyTensorDescriptor`|1.4.0.0| | | | | | | | | |
 |`cutensorOperationDescriptorGetAttribute`|2.0.0.0| | | | | | | | | |
 |`cutensorOperationDescriptorSetAttribute`|2.0.0.0| | | | | | | | | |
 |`cutensorPermutation`|1.0.1.0| | |2.0.0.0|`hiptensorPermutation`|6.1.0| | | | |
