@@ -641,7 +641,7 @@
 |`cusolverSpDcsrlsvchol`| | | | |`hipsolverSpDcsrlsvchol`|6.1.0| | | | | | | | | | |
 |`cusolverSpDcsrlsvcholHost`| | | | |`hipsolverSpDcsrlsvcholHost`|6.1.0| | | | | | | | | | |
 |`cusolverSpDcsrlsvluHost`| | | | | | | | | | | | | | | | |
-|`cusolverSpDcsrlsvqr`| | | | | | | | | | | | | | | | |
+|`cusolverSpDcsrlsvqr`| | | | |`hipsolverSpDcsrlsvqr`|6.4.0| | | |6.4.0| | | | | | |
 |`cusolverSpDcsrlsvqrHost`| | | | | | | | | | | | | | | | |
 |`cusolverSpDcsrluBufferInfoHost`|7.5| | | | | | | | | | | | | | | |
 |`cusolverSpDcsrluExtractHost`|7.5| | | | | | | | | | | | | | | |
@@ -684,7 +684,7 @@
 |`cusolverSpScsrlsvchol`| | | | |`hipsolverSpScsrlsvchol`|6.1.0| | | | | | | | | | |
 |`cusolverSpScsrlsvcholHost`| | | | |`hipsolverSpScsrlsvcholHost`|6.1.0| | | | | | | | | | |
 |`cusolverSpScsrlsvluHost`| | | | | | | | | | | | | | | | |
-|`cusolverSpScsrlsvqr`| | | | | | | | | | | | | | | | |
+|`cusolverSpScsrlsvqr`| | | | |`hipsolverSpScsrlsvqr`|6.4.0| | | |6.4.0| | | | | | |
 |`cusolverSpScsrlsvqrHost`| | | | | | | | | | | | | | | | |
 |`cusolverSpScsrluBufferInfoHost`|7.5| | | | | | | | | | | | | | | |
 |`cusolverSpScsrluExtractHost`|7.5| | | | | | | | | | | | | | | |

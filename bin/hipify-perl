@@ -1398,6 +1398,8 @@ my %removed_funcs = (
 );
 
 my %experimental_funcs = (
+    "cusolverSpScsrlsvqr" => "6.4.0",
+    "cusolverSpDcsrlsvqr" => "6.4.0",
     "cudaEventRecordWithFlags" => "6.4.0",
     "cudaErrorInvalidTexture" => "6.4.0",
     "cudaErrorInvalidChannelDescriptor" => "6.4.0",
@@ -1571,6 +1573,8 @@ sub experimentalSubstitutions {
     subst("cuGraphBatchMemOpNodeGetParams", "hipGraphBatchMemOpNodeGetParams", "graph");
     subst("cuGraphBatchMemOpNodeSetParams", "hipGraphBatchMemOpNodeSetParams", "graph");
     subst("cuGraphExecBatchMemOpNodeSetParams", "hipGraphExecBatchMemOpNodeSetParams", "graph");
+    subst("cusolverSpDcsrlsvqr", "hipsolverSpDcsrlsvqr", "library");
+    subst("cusolverSpScsrlsvqr", "hipsolverSpScsrlsvqr", "library");
     subst("CUDA_BATCH_MEM_OP_NODE_PARAMS", "hipBatchMemOpNodeParams", "type");
     subst("CUDA_BATCH_MEM_OP_NODE_PARAMS_st", "hipBatchMemOpNodeParams", "type");
     subst("CUDA_BATCH_MEM_OP_NODE_PARAMS_v1", "hipBatchMemOpNodeParams", "type");
