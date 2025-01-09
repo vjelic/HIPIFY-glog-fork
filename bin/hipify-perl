@@ -1403,6 +1403,7 @@ my %experimental_funcs = (
     "cudaEventRecordWithFlags" => "6.4.0",
     "cudaErrorInvalidTexture" => "6.4.0",
     "cudaErrorInvalidChannelDescriptor" => "6.4.0",
+    "cudaDeviceGetTexture1DLinearMaxWidth" => "6.4.0",
     "cuStreamBatchMemOp_v2" => "6.4.0",
     "cuStreamBatchMemOp" => "6.4.0",
     "cuGraphExecBatchMemOpNodeSetParams" => "6.4.0",
@@ -1410,6 +1411,7 @@ my %experimental_funcs = (
     "cuGraphBatchMemOpNodeGetParams" => "6.4.0",
     "cuGraphAddBatchMemOpNode" => "6.4.0",
     "cuEventRecordWithFlags" => "6.4.0",
+    "cuDeviceGetTexture1DLinearMaxWidth" => "6.4.0",
     "CUstreamBatchMemOpType_enum" => "6.4.0",
     "CUstreamBatchMemOpType" => "6.4.0",
     "CUstreamBatchMemOpParams_v1" => "6.4.0",
@@ -1565,6 +1567,8 @@ sub subst {
 }
 
 sub experimentalSubstitutions {
+    subst("cuDeviceGetTexture1DLinearMaxWidth", "hipDeviceGetTexture1DLinearMaxWidth", "device");
+    subst("cudaDeviceGetTexture1DLinearMaxWidth", "hipDeviceGetTexture1DLinearMaxWidth", "device");
     subst("cuEventRecordWithFlags", "hipEventRecordWithFlags", "event");
     subst("cudaEventRecordWithFlags", "hipEventRecordWithFlags", "event");
     subst("cuStreamBatchMemOp", "hipStreamBatchMemOp", "stream_memory");
