@@ -1,5 +1,9 @@
 # CURAND API supported by ROC
 
+
+**Note\:** In the tables that follow the columns marked `A`, `D`, `C`, `R`, and `E` mean the following:
+**A** - Added; **D** - Deprecated; **C** - Changed; **R** - Removed; **E** - Experimental
+
 ## **1. CURAND Data types**
 
 |**CUDA**|**A**|**D**|**C**|**R**|**ROC**|**A**|**D**|**C**|**R**|**E**|
@@ -166,5 +170,3 @@
 |`curand_uniform4_double`| | | | |`rocrand_uniform_double4`|1.5.0| | | | |
 |`curand_uniform_double`| | | | |`rocrand_uniform_double`|1.5.0| | | | |
 
-
-\*A - Added; D - Deprecated; C - Changed; R - Removed; E - Experimental

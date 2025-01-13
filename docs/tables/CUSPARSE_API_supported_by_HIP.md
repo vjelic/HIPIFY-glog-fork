@@ -1,5 +1,9 @@
 # CUSPARSE API supported by HIP
 
+
+**Note\:** In the tables that follow the columns marked `A`, `D`, `C`, `R`, and `E` mean the following:
+**A** - Added; **D** - Deprecated; **C** - Changed; **R** - Removed; **E** - Experimental
+
 ## **4. CUSPARSE Types References**
 
 |**CUDA**|**A**|**D**|**C**|**R**|**HIP**|**A**|**D**|**C**|**R**|**E**|
@@ -919,5 +923,3 @@
 |`cusparseSparseToDense`|11.1| |12.0| |`hipsparseSparseToDense`|4.2.0| |6.0.0| | |
 |`cusparseSparseToDense_bufferSize`|11.1| |12.0| |`hipsparseSparseToDense_bufferSize`|4.2.0| |6.0.0| | |
 
-
-\*A - Added; D - Deprecated; C - Changed; R - Removed; E - Experimental

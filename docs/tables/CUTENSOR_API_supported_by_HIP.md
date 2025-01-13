@@ -1,5 +1,9 @@
 # CUTENSOR API supported by HIP
 
+
+**Note\:** In the tables that follow the columns marked `A`, `D`, `C`, `R`, and `E` mean the following:
+**A** - Added; **D** - Deprecated; **C** - Changed; **R** - Removed; **E** - Experimental
+
 ## **1. CUTENSOR Data types**
 
 |**CUDA**|**A**|**D**|**C**|**R**|**HIP**|**A**|**D**|**C**|**R**|**E**|
@@ -240,5 +244,3 @@
 |`cutensorReduction`|1.0.1.0| | |2.0.0.0|`hiptensorReduction`|6.3.0| | | | |
 |`cutensorWriteKernelCacheToFile`|2.0.0.0| | | | | | | | | |
 
-
-\*A - Added; D - Deprecated; C - Changed; R - Removed; E - Experimental
