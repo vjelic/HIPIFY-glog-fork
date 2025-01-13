@@ -1,5 +1,9 @@
 # CUCOMPLEX API supported by HIP
 
+
+**Note\:** In the tables that follow the columns marked `A`, `D`, `C`, `R`, and `E` mean the following:
+**A** - Added; **D** - Deprecated; **C** - Changed; **R** - Removed; **E** - Experimental
+
 ## **1. cuComplex Data types**
 
 |**CUDA**|**A**|**D**|**C**|**R**|**HIP**|**A**|**D**|**C**|**R**|**E**|
@@ -36,5 +40,3 @@
 |`make_cuDoubleComplex`| | | | |`make_hipDoubleComplex`|1.6.0| | | | |
 |`make_cuFloatComplex`| | | | |`make_hipFloatComplex`|1.6.0| | | | |
 
-
-\*A - Added; D - Deprecated; C - Changed; R - Removed; E - Experimental

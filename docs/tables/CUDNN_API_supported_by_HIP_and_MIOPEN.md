@@ -1,5 +1,9 @@
 # CUDNN API supported by HIP and MIOPEN
 
+
+**Note\:** In the tables that follow the columns marked `A`, `D`, `C`, `R`, and `E` mean the following:
+**A** - Added; **D** - Deprecated; **C** - Changed; **R** - Removed; **E** - Experimental
+
 ## **1. CUDNN Data types**
 
 |**CUDA**|**A**|**D**|**C**|**R**|**HIP**|**A**|**D**|**C**|**R**|**E**|**MIOPEN**|**A**|**D**|**C**|**R**|**E**|
@@ -1174,5 +1178,3 @@
 |`cudnnTransformTensor`|2.0.0|9.0.0| | | | | | | | |`miopenTransformTensor`|2.1.0| | | | |
 |`cudnnTransformTensorEx`|7.5.0|9.0.0| | | | | | | | | | | | | | |
 
-
-\*A - Added; D - Deprecated; C - Changed; R - Removed; E - Experimental

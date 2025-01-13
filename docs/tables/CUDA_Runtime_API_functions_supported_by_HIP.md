@@ -1,5 +1,9 @@
 # CUDA Runtime API supported by HIP
 
+
+**Note\:** In the tables that follow the columns marked `A`, `D`, `C`, `R`, and `E` mean the following:
+**A** - Added; **D** - Deprecated; **C** - Changed; **R** - Removed; **E** - Experimental
+
 ## **1. Device Management**
 
 |**CUDA**|**A**|**D**|**C**|**R**|**HIP**|**A**|**D**|**C**|**R**|**E**|
@@ -1631,5 +1635,3 @@
 |:--|:-:|:-:|:-:|:-:|:--|:-:|:-:|:-:|:-:|:-:|
 |`cudaProfilerInitialize`| |11.0| |12.0| | | | | | |
 
-
-\*A - Added; D - Deprecated; C - Changed; R - Removed; E - Experimental

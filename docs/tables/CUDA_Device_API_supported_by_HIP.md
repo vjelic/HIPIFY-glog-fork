@@ -1,5 +1,9 @@
 # CUDA DEVICE API supported by HIP
 
+
+**Note\:** In the tables that follow the columns marked `A`, `D`, `C`, `R`, and `E` mean the following:
+**A** - Added; **D** - Deprecated; **C** - Changed; **R** - Removed; **E** - Experimental
+
 ## **1. Device Functions**
 
 |**CUDA**|**A**|**D**|**C**|**R**|**HIP**|**A**|**D**|**C**|**R**|**E**|
@@ -835,5 +839,3 @@
 |`nv_bfloat16`|11.0| | | | | | | | | |
 |`nv_bfloat162`|11.0| | | | | | | | | |
 
-
-\*A - Added; D - Deprecated; C - Changed; R - Removed; E - Experimental
