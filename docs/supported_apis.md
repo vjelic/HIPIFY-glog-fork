@@ -1,3 +1,9 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="NVIDIA CUDA APIs supported by the HIPIFY tool">
+  <meta name="keywords" content="HIPIFY, ROCm, NVIDIA, CUDA, CUDA2HIP, hipify-clang, hipify-perl">
+</head>
+
 # Supported NVIDIA CUDA APIs
 
 |     **CUDA**     | **HIP**                                                           |                            **ROC**                        |                            **HIP & ROC**                                |
