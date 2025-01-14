@@ -6236,6 +6236,7 @@ sub simpleSubstitutions {
     subst("__bfloat1622float2", "__bfloat1622float2", "device_function");
     subst("__bfloat162bfloat162", "__bfloat162bfloat162", "device_function");
     subst("__bfloat162float", "__bfloat162float", "device_function");
+    subst("__bfloat16_as_short", "__bfloat16_as_short", "device_function");
     subst("__brev", "__brev", "device_function");
     subst("__brevll", "__brevll", "device_function");
     subst("__byte_perm", "__byte_perm", "device_function");
@@ -6353,6 +6354,7 @@ sub simpleSubstitutions {
     subst("__half2ushort_rz", "__half2ushort_rz", "device_function");
     subst("__half_as_short", "__half_as_short", "device_function");
     subst("__half_as_ushort", "__half_as_ushort", "device_function");
+    subst("__halves2bfloat162", "__halves2bfloat162", "device_function");
     subst("__halves2half2", "__halves2half2", "device_function");
     subst("__hbeq2", "__hbeq2", "device_function");
     subst("__hbequ2", "__hbequ2", "device_function");
@@ -6384,6 +6386,7 @@ sub simpleSubstitutions {
     subst("__hgtu", "__hgtu", "device_function");
     subst("__hgtu2", "__hgtu2", "device_function");
     subst("__high2bfloat16", "__high2bfloat16", "device_function");
+    subst("__high2bfloat162", "__high2bfloat162", "device_function");
     subst("__high2float", "__high2float", "device_function");
     subst("__high2half", "__high2half", "device_function");
     subst("__high2half2", "__high2half2", "device_function");
@@ -6402,8 +6405,10 @@ sub simpleSubstitutions {
     subst("__hltu", "__hltu", "device_function");
     subst("__hltu2", "__hltu2", "device_function");
     subst("__hmax", "__hmax", "device_function");
+    subst("__hmax2", "__hmax2", "device_function");
     subst("__hmax_nan", "__hmax_nan", "device_function");
     subst("__hmin", "__hmin", "device_function");
+    subst("__hmin2", "__hmin2", "device_function");
     subst("__hmin_nan", "__hmin_nan", "device_function");
     subst("__hmul", "__hmul", "device_function");
     subst("__hmul2", "__hmul2", "device_function");
@@ -6449,6 +6454,8 @@ sub simpleSubstitutions {
     subst("__log2f", "__log2f", "device_function");
     subst("__logf", "__logf", "device_function");
     subst("__longlong_as_double", "__longlong_as_double", "device_function");
+    subst("__low2bfloat16", "__low2bfloat16", "device_function");
+    subst("__low2bfloat162", "__low2bfloat162", "device_function");
     subst("__low2float", "__low2float", "device_function");
     subst("__low2half", "__low2half", "device_function");
     subst("__low2half2", "__low2half2", "device_function");
@@ -6687,6 +6694,7 @@ sub simpleSubstitutions {
     subst("lrintf", "lrintf", "device_function");
     subst("lround", "lround", "device_function");
     subst("lroundf", "lroundf", "device_function");
+    subst("make_half2", "make_half2", "device_function");
     subst("max", "max", "device_function");
     subst("min", "min", "device_function");
     subst("modf", "modf", "device_function");
@@ -9114,6 +9122,7 @@ sub transformHostFunctions {
     "modf",
     "min",
     "max",
+    "make_half2",
     "lroundf",
     "lround",
     "lrintf",
@@ -9352,6 +9361,8 @@ sub transformHostFunctions {
     "__low2half2",
     "__low2half",
     "__low2float",
+    "__low2bfloat162",
+    "__low2bfloat16",
     "__longlong_as_double",
     "__logf",
     "__log2f",
@@ -9397,8 +9408,10 @@ sub transformHostFunctions {
     "__hmul2",
     "__hmul",
     "__hmin_nan",
+    "__hmin2",
     "__hmin",
     "__hmax_nan",
+    "__hmax2",
     "__hmax",
     "__hltu2",
     "__hltu",
@@ -9417,6 +9430,7 @@ sub transformHostFunctions {
     "__high2half2",
     "__high2half",
     "__high2float",
+    "__high2bfloat162",
     "__high2bfloat16",
     "__hgtu2",
     "__hgtu",
@@ -9448,6 +9462,7 @@ sub transformHostFunctions {
     "__hbequ2",
     "__hbeq2",
     "__halves2half2",
+    "__halves2bfloat162",
     "__half_as_ushort",
     "__half_as_short",
     "__half2ushort_rz",
@@ -9565,6 +9580,7 @@ sub transformHostFunctions {
     "__byte_perm",
     "__brevll",
     "__brev",
+    "__bfloat16_as_short",
     "__bfloat162float",
     "__bfloat162bfloat162",
     "__bfloat1622float2",
@@ -9606,7 +9622,6 @@ sub countSupportedDeviceFunctions {
     "mulhi",
     "mul64hi",
     "mul24",
-    "make_half2",
     "make_bfloat162",
     "llmin",
     "llmax",
@@ -9729,8 +9744,6 @@ sub countSupportedDeviceFunctions {
     "__pm2",
     "__pm1",
     "__pm0",
-    "__low2bfloat162",
-    "__low2bfloat16",
     "__ll2bfloat16_rz",
     "__ll2bfloat16_ru",
     "__ll2bfloat16_rn",
@@ -9754,14 +9767,11 @@ sub countSupportedDeviceFunctions {
     "__hmul_rn",
     "__hmul2_rn",
     "__hmin2_nan",
-    "__hmin2",
     "__hmax2_nan",
-    "__hmax2",
     "__hltu2_mask",
     "__hlt2_mask",
     "__hleu2_mask",
     "__hle2_mask",
-    "__high2bfloat162",
     "__hgtu2_mask",
     "__hgt2_mask",
     "__hgeu2_mask",
@@ -9771,7 +9781,6 @@ sub countSupportedDeviceFunctions {
     "__hequ2_mask",
     "__heq2_mask",
     "__hcmadd",
-    "__halves2bfloat162",
     "__half2uchar_rz",
     "__half2char_rz",
     "__hadd_rn",
@@ -9831,7 +9840,6 @@ sub countSupportedDeviceFunctions {
     "__dadd_rd",
     "__brkpt",
     "__bfloat16_as_ushort",
-    "__bfloat16_as_short",
     "__bfloat162ushort_rz",
     "__bfloat162ushort_ru",
     "__bfloat162ushort_rn",
