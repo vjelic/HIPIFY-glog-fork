@@ -781,10 +781,10 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DEVICE_FUNCTION_MAP {
   {"__low2bfloat162",                   {"__low2bfloat162",                    "", CONV_DEVICE_FUNC, API_RUNTIME, 1}},
   {"__high2bfloat162",                  {"__high2bfloat162",                   "", CONV_DEVICE_FUNC, API_RUNTIME, 1}},
   {"__bfloat16_as_short",               {"__bfloat16_as_short",                "", CONV_DEVICE_FUNC, API_RUNTIME, 1}},
-  {"__bfloat16_as_ushort",              {"__bfloat16_as_ushort",               "", CONV_DEVICE_FUNC, API_RUNTIME, 1, UNSUPPORTED}},
-  {"__short_as_bfloat16",               {"__short_as_bfloat16",                "", CONV_DEVICE_FUNC, API_RUNTIME, 1, UNSUPPORTED}},
-  {"__ushort_as_bfloat16",              {"__ushort_as_bfloat16",               "", CONV_DEVICE_FUNC, API_RUNTIME, 1, UNSUPPORTED}},
-  {"__float22bfloat162_rn",             {"__float22bfloat162_rn",              "", CONV_DEVICE_FUNC, API_RUNTIME, 1, UNSUPPORTED}},
+  {"__bfloat16_as_ushort",              {"__bfloat16_as_ushort",               "", CONV_DEVICE_FUNC, API_RUNTIME, 1}},
+  {"__short_as_bfloat16",               {"__short_as_bfloat16",                "", CONV_DEVICE_FUNC, API_RUNTIME, 1}},
+  {"__ushort_as_bfloat16",              {"__ushort_as_bfloat16",               "", CONV_DEVICE_FUNC, API_RUNTIME, 1}},
+  {"__float22bfloat162_rn",             {"__float22bfloat162_rn",              "", CONV_DEVICE_FUNC, API_RUNTIME, 1}},
   {"__bfloat162char_rz",                {"__bfloat162char_rz",                 "", CONV_DEVICE_FUNC, API_RUNTIME, 1, UNSUPPORTED}},
   {"__bfloat162uchar_rz",               {"__bfloat162uchar_rz",                "", CONV_DEVICE_FUNC, API_RUNTIME, 1, UNSUPPORTED}},
   {"make_bfloat162",                    {"make_bfloat162",                     "", CONV_DEVICE_FUNC, API_RUNTIME, 1, UNSUPPORTED}},
@@ -1524,6 +1524,10 @@ const std::map<llvm::StringRef, hipAPIversions> HIP_DEVICE_FUNCTION_VER_MAP {
   {"__low2bfloat162",                   {HIP_5070, HIP_0,    HIP_0   }},
   {"__high2bfloat162",                  {HIP_5070, HIP_0,    HIP_0   }},
   {"__bfloat16_as_short",               {HIP_5070, HIP_0,    HIP_0   }},
+  {"__bfloat16_as_ushort",              {HIP_5070, HIP_0,    HIP_0   }},
+  {"__short_as_bfloat16",               {HIP_5070, HIP_0,    HIP_0   }},
+  {"__ushort_as_bfloat16",              {HIP_5070, HIP_0,    HIP_0   }},
+  {"__float22bfloat162_rn",             {HIP_5070, HIP_0,    HIP_0   }},
 };
 
 const std::map<unsigned int, llvm::StringRef> CUDA_DEVICE_FUNCTION_API_SECTION_MAP {

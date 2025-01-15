@@ -48,7 +48,7 @@
 |`__bfloat162ushort_ru`|11.0| | | | | | | | | |
 |`__bfloat162ushort_rz`|11.0| | | | | | | | | |
 |`__bfloat16_as_short`|11.0| | | |`__bfloat16_as_short`|5.7.0| | | | |
-|`__bfloat16_as_ushort`|11.0| | | | | | | | | |
+|`__bfloat16_as_ushort`|11.0| | | |`__bfloat16_as_ushort`|5.7.0| | | | |
 |`__brev`| | | | |`__brev`|1.6.0| | | | |
 |`__brevll`| | | | |`__brevll`|1.6.0| | | | |
 |`__brkpt`| | | | | | | | | | |
@@ -121,7 +121,7 @@
 |`__finite`| | | | | | | | | | |
 |`__finitef`| | | | | | | | | | |
 |`__finitel`| | | | | | | | | | |
-|`__float22bfloat162_rn`|11.0| | | | | | | | | |
+|`__float22bfloat162_rn`|11.0| | | |`__float22bfloat162_rn`|5.7.0| | | | |
 |`__float22half2_rn`| | | | |`__float22half2_rn`|1.6.0| | | | |
 |`__float2bfloat16`|11.0| | | |`__float2bfloat16`|5.7.0| | | | |
 |`__float2bfloat162_rn`|11.0| | | | | | | | | |
@@ -411,7 +411,7 @@
 |`__short2half_rn`| | | | |`__short2half_rn`|1.6.0| | | | |
 |`__short2half_ru`| | | | |`__short2half_ru`|1.6.0| | | | |
 |`__short2half_rz`| | | | |`__short2half_rz`|1.6.0| | | | |
-|`__short_as_bfloat16`|11.0| | | | | | | | | |
+|`__short_as_bfloat16`|11.0| | | |`__short_as_bfloat16`|5.7.0| | | | |
 |`__short_as_half`| | | | |`__short_as_half`|1.9.0| | | | |
 |`__signbit`| | | | | | | | | | |
 |`__signbitf`| | | | | | | | | | |
@@ -475,7 +475,7 @@
 |`__ushort2half_rn`| | | | |`__ushort2half_rn`|1.6.0| | | | |
 |`__ushort2half_ru`| | | | |`__ushort2half_ru`|1.6.0| | | | |
 |`__ushort2half_rz`| | | | |`__ushort2half_rz`|1.6.0| | | | |
-|`__ushort_as_bfloat16`|11.0| | | | | | | | | |
+|`__ushort_as_bfloat16`|11.0| | | |`__ushort_as_bfloat16`|5.7.0| | | | |
 |`__ushort_as_half`| | | | |`__ushort_as_half`|1.6.0| | | | |
 |`__vabs2`| | | | | | | | | | |
 |`__vabs4`| | | | | | | | | | |
@@ -836,6 +836,6 @@
 |`__nv_fp8x4_e5m2`|11.8| | | |`__hip_fp8x4_e5m2_fnuz`|6.2.0| | | | |
 |`__nv_fp8x4_storage_t`|11.8| | | |`__hip_fp8x4_storage_t`|6.2.0| | | | |
 |`__nv_saturation_t`|11.8| | | |`__hip_saturation_t`|6.2.0| | | | |
-|`nv_bfloat16`|11.0| | | | | | | | | |
+|`nv_bfloat16`|11.0| | | |`hip_bfloat16`|3.5.0| | | | |
 |`nv_bfloat162`|11.0| | | | | | | | | |
 

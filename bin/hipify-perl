@@ -6237,6 +6237,7 @@ sub simpleSubstitutions {
     subst("__bfloat162bfloat162", "__bfloat162bfloat162", "device_function");
     subst("__bfloat162float", "__bfloat162float", "device_function");
     subst("__bfloat16_as_short", "__bfloat16_as_short", "device_function");
+    subst("__bfloat16_as_ushort", "__bfloat16_as_ushort", "device_function");
     subst("__brev", "__brev", "device_function");
     subst("__brevll", "__brevll", "device_function");
     subst("__byte_perm", "__byte_perm", "device_function");
@@ -6280,6 +6281,7 @@ sub simpleSubstitutions {
     subst("__fdividef", "__fdividef", "device_function");
     subst("__ffs", "__ffs", "device_function");
     subst("__ffsll", "__ffsll", "device_function");
+    subst("__float22bfloat162_rn", "__float22bfloat162_rn", "device_function");
     subst("__float22half2_rn", "__float22half2_rn", "device_function");
     subst("__float2bfloat16", "__float2bfloat16", "device_function");
     subst("__float2half", "__float2half", "device_function");
@@ -6495,6 +6497,7 @@ sub simpleSubstitutions {
     subst("__short2half_rn", "__short2half_rn", "device_function");
     subst("__short2half_ru", "__short2half_ru", "device_function");
     subst("__short2half_rz", "__short2half_rz", "device_function");
+    subst("__short_as_bfloat16", "__short_as_bfloat16", "device_function");
     subst("__short_as_half", "__short_as_half", "device_function");
     subst("__sincosf", "__sincosf", "device_function");
     subst("__sinf", "__sinf", "device_function");
@@ -6538,6 +6541,7 @@ sub simpleSubstitutions {
     subst("__ushort2half_rn", "__ushort2half_rn", "device_function");
     subst("__ushort2half_ru", "__ushort2half_ru", "device_function");
     subst("__ushort2half_rz", "__ushort2half_rz", "device_function");
+    subst("__ushort_as_bfloat16", "__ushort_as_bfloat16", "device_function");
     subst("__ushort_as_half", "__ushort_as_half", "device_function");
     subst("abs", "abs", "device_function");
     subst("acos", "acos", "device_function");
@@ -6786,6 +6790,7 @@ sub simpleSubstitutions {
     subst("__nv_fp8x4_e4m3", "__hip_fp8x4_e4m3_fnuz", "device_type");
     subst("__nv_fp8x4_storage_t", "__hip_fp8x4_storage_t", "device_type");
     subst("__nv_saturation_t", "__hip_saturation_t", "device_type");
+    subst("nv_bfloat16", "hip_bfloat16", "device_type");
     subst("caffe2\/core\/common_cudnn.h", "caffe2\/core\/hip\/common_miopen.h", "include");
     subst("caffe2\/operators\/spatial_batch_norm_op.h", "caffe2\/operators\/hip\/spatial_batch_norm_op_miopen.hip", "include");
     subst("channel_descriptor.h", "hip\/channel_descriptor.h", "include");
@@ -9279,6 +9284,7 @@ sub transformHostFunctions {
     "acos",
     "abs",
     "__ushort_as_half",
+    "__ushort_as_bfloat16",
     "__ushort2half_rz",
     "__ushort2half_ru",
     "__ushort2half_rn",
@@ -9322,6 +9328,7 @@ sub transformHostFunctions {
     "__sinf",
     "__sincosf",
     "__short_as_half",
+    "__short_as_bfloat16",
     "__short2half_rz",
     "__short2half_ru",
     "__short2half_rn",
@@ -9537,6 +9544,7 @@ sub transformHostFunctions {
     "__float2half",
     "__float2bfloat16",
     "__float22half2_rn",
+    "__float22bfloat162_rn",
     "__ffsll",
     "__ffs",
     "__fdividef",
@@ -9580,6 +9588,7 @@ sub transformHostFunctions {
     "__byte_perm",
     "__brevll",
     "__brev",
+    "__bfloat16_as_ushort",
     "__bfloat16_as_short",
     "__bfloat162float",
     "__bfloat162bfloat162",
@@ -9713,7 +9722,6 @@ sub countSupportedDeviceFunctions {
     "__vabsdiffs2",
     "__vabs4",
     "__vabs2",
-    "__ushort_as_bfloat16",
     "__ushort2bfloat16_rz",
     "__ushort2bfloat16_ru",
     "__ushort2bfloat16_rn",
@@ -9734,7 +9742,6 @@ sub countSupportedDeviceFunctions {
     "__signbitl",
     "__signbitf",
     "__signbit",
-    "__short_as_bfloat16",
     "__short2bfloat16_rz",
     "__short2bfloat16_ru",
     "__short2bfloat16_rn",
@@ -9809,7 +9816,6 @@ sub countSupportedDeviceFunctions {
     "__float2bfloat16_rn",
     "__float2bfloat16_rd",
     "__float2bfloat162_rn",
-    "__float22bfloat162_rn",
     "__finitel",
     "__finitef",
     "__finite",
@@ -9839,7 +9845,6 @@ sub countSupportedDeviceFunctions {
     "__dadd_ru",
     "__dadd_rd",
     "__brkpt",
-    "__bfloat16_as_ushort",
     "__bfloat162ushort_rz",
     "__bfloat162ushort_ru",
     "__bfloat162ushort_rn",
