@@ -9891,6 +9891,63 @@ sub warnUnsupportedDeviceFunctions {
     return $k;
 }
 
+@SupportedDeviceDataTypes = (
+    "nv_bfloat16",
+    "__nv_saturation_t",
+    "__nv_fp8x4_storage_t",
+    "__nv_fp8x4_e5m2",
+    "__nv_fp8x4_e4m3",
+    "__nv_fp8x2_storage_t",
+    "__nv_fp8x2_e5m2",
+    "__nv_fp8x2_e4m3",
+    "__nv_fp8_storage_t",
+    "__nv_fp8_interpretation_t",
+    "__nv_fp8_e5m2",
+    "__nv_fp8_e4m3",
+    "__nv_bfloat16_raw",
+    "__nv_bfloat162_raw",
+    "__nv_bfloat162",
+    "__nv_bfloat16",
+    "__half_raw",
+    "__half2_raw",
+    "__half2",
+    "__half",
+    "__NV_SATFINITE",
+    "__NV_NOSAT",
+    "__NV_E5M2",
+    "__NV_E4M3"
+    );
+
+sub countSupportedDeviceDataTypes {
+    my $k = 0;
+    while (my($func) = each %SupportedDeviceDataTypes)
+    {
+        my $mt = m/($func)/g;
+        if ($mt) {
+            $k += $mt;
+        }
+    }
+    return $k;
+}
+
+@UnsupportedDeviceDataTypes = (
+    "nv_bfloat162"
+    );
+
+sub warnUnsupportedDeviceDataTypes {
+    my $line_num = shift;
+    my $k = 0;
+    while (my($func) = each %UnsupportedDeviceDataTypes)
+    {
+        my $mt = m/($func)/g;
+        if ($mt) {
+            $k += $mt;
+            print STDERR "  $fileName:$line_num: warning: unsupported device data type identifier: $func\n";
+        }
+    }
+    return $k;
+}
+
 sub warnExperimentalFunctions {
     my $line_num = shift;
     my $k = 0;
@@ -14561,6 +14618,8 @@ while (@ARGV) {
                     }
                     $s = warnUnsupportedDeviceFunctions($line_num);
                     $warnings += $s;
+                    $s = warnUnsupportedDeviceDataTypes($line_num);
+                    $warnings += $s;
                 }
                 $_ = $tmp;
             }
@@ -14579,7 +14638,7 @@ while (@ARGV) {
                 transformKernelLaunch();
             }
             transformCubNamespace();
-            my $hasDeviceCode = $countKeywords + $ft{'device_function'};
+            my $hasDeviceCode = $countKeywords + $ft{'device_function'} + $ft{'device_type'};
             unless ($quiet_warnings) {
                 # Copy into array of lines, process line-by-line to show warnings
                 if ($hasDeviceCode or (/\bcu|CU/) or (/<<<.*>>>/)) {
@@ -14609,12 +14668,13 @@ while (@ARGV) {
             }
             if ($hasDeviceCode > 0) {
                 $ft{'device_function'} += countSupportedDeviceFunctions();
+                $ft{'device_type'} += countSupportedDeviceDataTypes();
             }
             transformHostFunctions();
             # TODO: would like to move this code outside loop but it uses $_ which contains the whole file
             unless ($no_output) {
                 my $apiCalls   = $ft{'error'} + $ft{'init'} + $ft{'version'} + $ft{'device'} + $ft{'context'} + $ft{'module'} + $ft{'library'} + $ft{'memory'} + $ft{'virtual_memory'} + $ft{'ordered_memory'} + $ft{'multicast'} + $ft{'unified'} + $ft{'stream'} + $ft{'event'} + $ft{'external_resource'} + $ft{'stream_memory'} + $ft{'execution'} + $ft{'graph'} + $ft{'occupancy'} + $ft{'texture'} + $ft{'surface'} + $ft{'tensor'} + $ft{'peer'} + $ft{'graphics'} + $ft{'driver_entry_point'} + $ft{'cpp'} + $ft{'coredump'} + $ft{'driver_interact'} + $ft{'profiler'} + $ft{'openGL'} + $ft{'D3D9'} + $ft{'D3D10'} + $ft{'D3D11'} + $ft{'VDPAU'} + $ft{'EGL'} + $ft{'thread'} + $ft{'complex'} + $ft{'library'} + $ft{'device_library'} + $ft{'device_type'} + $ft{'include'} + $ft{'include_cuda_main_header'} + $ft{'include_cuda_main_header_v2'} + $ft{'type'} + $ft{'literal'} + $ft{'numeric_literal'} + $ft{'define'};
-                my $kernStuff  = $hasDeviceCode + $ft{'kernel_launch'} + $ft{'device_function'};
+                my $kernStuff  = $hasDeviceCode + $ft{'kernel_launch'} + $ft{'device_function'} + $ft{'device_type'};
                 my $totalCalls = $apiCalls + $kernStuff;
                 $is_dos = m/\r\n$/;
                 if ($totalCalls and ($countIncludes == 0) and ($kernStuff != 0)) {

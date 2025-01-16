@@ -107,7 +107,9 @@ namespace perl {
   const string sHipDNNOnlyUnsupportedFunctions = "HipDNNOnlyUnsupportedFunctions";
   const string sWarnHipDNNOnlyUnsupportedFunctions = warn + sHipDNNOnlyUnsupportedFunctions;
   const string sUnsupportedDeviceFunctions = "UnsupportedDeviceFunctions";
+  const string sUnsupportedDeviceDataTypes = "UnsupportedDeviceDataTypes";
   const string sWarnUnsupportedDeviceFunctions = warn + sUnsupportedDeviceFunctions;
+  const string sWarnUnsupportedDeviceDataTypes = warn + sUnsupportedDeviceDataTypes;
   const string sSimpleSubstitutions = "simpleSubstitutions";
   const string sRocSubstitutions = "rocSubstitutions";
   const string sMIOpenSubstitutions = "MIOpenSubstitutions";
@@ -117,7 +119,9 @@ namespace perl {
   const string sTransformCubNamespace = "transformCubNamespace";
   const string count = "count";
   const string sSupportedDeviceFunctions = "SupportedDeviceFunctions";
+  const string sSupportedDeviceDataTypes = "SupportedDeviceDataTypes";
   const string sCountSupportedDeviceFunctions = count + sSupportedDeviceFunctions;
+  const string sCountSupportedDeviceDataTypes = count + sSupportedDeviceDataTypes;
 
   const string sCudaDevice = "cudaDevice";
   const string sCudaDeviceId = "cudaDeviceId";
@@ -696,25 +700,44 @@ namespace perl {
 
   void generateDeviceFunctions(unique_ptr<ostream> &streamPtr) {
     unsigned int countUnsupported = 0;
+    unsigned int countUnsupportedDataTypes = 0;
     unsigned int countSupported = 0;
+    unsigned int countSupportedDataTypes = 0;
     stringstream sSupported;
+    stringstream sSupportedDataTypes;
     stringstream sUnsupported;
+    stringstream sUnsupportedDataTypes;
     for (auto ma = CUDA_DEVICE_FUNCTION_MAP.rbegin(); ma != CUDA_DEVICE_FUNCTION_MAP.rend(); ++ma) {
       bool isUnsupported = Statistics::isUnsupported(ma->second);
       (isUnsupported ? sUnsupported : sSupported) << ((isUnsupported && countUnsupported) || (!isUnsupported && countSupported) ? ",\n" : "") << tab << "\"" << ma->first.str() << "\"";
       if (isUnsupported) countUnsupported++;
       else countSupported++;
     }
+    for (auto ma = CUDA_DEVICE_TYPE_NAME_MAP.rbegin(); ma != CUDA_DEVICE_TYPE_NAME_MAP.rend(); ++ma) {
+      bool isUnsupported = Statistics::isUnsupported(ma->second);
+      (isUnsupported ? sUnsupportedDataTypes : sSupportedDataTypes) << ((isUnsupported && countUnsupportedDataTypes) || (!isUnsupported && countSupportedDataTypes) ? ",\n" : "") << tab << "\"" << ma->first.str() << "\"";
+      if (isUnsupported) countUnsupportedDataTypes++;
+      else countSupportedDataTypes++;
+    }
     stringstream supported;
+    stringstream supportedDataTypes;
     stringstream unsupported;
+    stringstream unsupportedDataTypes;
     stringstream subCountSupported;
+    stringstream subCountSupportedDataTypes;
     stringstream subWarnUnsupported;
+    stringstream subWarnUnsupportedDataTypes;
     stringstream subCommon;
+    stringstream subCommonDataTypes;
     string sCommon = tab + my_k + "\n" + tab + while_func;
     subCountSupported << endl << sub << sCountSupportedDeviceFunctions << " {" << endl << (countSupported ? sCommon + sSupportedDeviceFunctions + ")\n" : tab + return_0);
+    subCountSupportedDataTypes << endl << sub << sCountSupportedDeviceDataTypes << " {" << endl << (countSupportedDataTypes ? sCommon + sSupportedDeviceDataTypes + ")\n" : tab + return_0);
     subWarnUnsupported << endl << sub << sWarnUnsupportedDeviceFunctions << " {" << endl << (countUnsupported ? tab + my + "$line_num = shift;\n" + sCommon + sUnsupportedDeviceFunctions + ")\n" : tab + return_0);
+    subWarnUnsupportedDataTypes << endl << sub << sWarnUnsupportedDeviceDataTypes << " {" << endl << (countUnsupportedDataTypes ? tab + my + "$line_num = shift;\n" + sCommon + sUnsupportedDeviceDataTypes + ")\n" : tab + return_0);
     if (countSupported) supported << sSupported.str() << endl_tab << ");" << endl;
+    if (countSupportedDataTypes) supportedDataTypes << sSupportedDataTypes.str() << endl_tab << ");" << endl;
     if (countUnsupported) unsupported << sUnsupported.str() << endl_tab << ");" << endl;
+    if (countUnsupportedDataTypes) unsupportedDataTypes << sUnsupportedDataTypes.str() << endl_tab << ");" << endl;
     if (countSupported || countUnsupported) {
       subCommon << tab << "{" << endl;
       subCommon << tab_2 << "# match device function from the list, except those, which have a namespace prefix (aka somenamespace::umin(...));" << endl;
@@ -724,20 +747,40 @@ namespace perl {
       subCommon << tab_2 << "if ($mt && !$mt_namespace) {" << endl;
       subCommon << tab_3 << "$k += $mt;" << endl;
     }
+    if (countSupportedDataTypes || countUnsupportedDataTypes) {
+      subCommonDataTypes << tab << "{" << endl;
+      subCommonDataTypes << tab_2 << my << "$mt = m/($func)/g;" << endl;
+      subCommonDataTypes << tab_2 << "if ($mt) {" << endl;
+      subCommonDataTypes << tab_3 << "$k += $mt;" << endl;
+    }
     if (countSupported) subCountSupported << subCommon.str();
+    if (countSupportedDataTypes) subCountSupportedDataTypes << subCommonDataTypes.str();
     if (countUnsupported) {
       subWarnUnsupported << subCommon.str();
       subWarnUnsupported << tab_3 << print << "\"  " << warning << "unsupported device function \\\"$func\\\": $_\\n\";" << endl;
     }
+    if (countUnsupportedDataTypes) {
+      subWarnUnsupportedDataTypes << subCommonDataTypes.str();
+      subWarnUnsupportedDataTypes << tab_3 << print << "\"  " << warning << "unsupported device data type identifier: $func\\n\";" << endl;
+    }
     if (countSupported || countUnsupported) sCommon = tab_2 + "}\n" + tab + "}\n" + tab + return_k;
+    if (countSupportedDataTypes || countUnsupportedDataTypes) sCommon = tab_2 + "}\n" + tab + "}\n" + tab + return_k;
     if (countSupported) subCountSupported << sCommon;
+    if (countSupportedDataTypes) subCountSupportedDataTypes << sCommon;
     if (countUnsupported) subWarnUnsupported << sCommon;
+    if (countUnsupportedDataTypes) subWarnUnsupportedDataTypes << sCommon;
     subCountSupported << "}" << endl;
+    subCountSupportedDataTypes << "}" << endl;
     subWarnUnsupported << "}" << endl;
+    subWarnUnsupportedDataTypes << "}" << endl;
     *streamPtr.get() << "\n@" << sSupportedDeviceFunctions << " = (\n" << supported.str();
     *streamPtr.get() << subCountSupported.str();
     *streamPtr.get() << "\n@" << sUnsupportedDeviceFunctions << " = (\n" << unsupported.str();
     *streamPtr.get() << subWarnUnsupported.str();
+    *streamPtr.get() << "\n@" << sSupportedDeviceDataTypes << " = (\n" << supportedDataTypes.str();
+    *streamPtr.get() << subCountSupportedDataTypes.str();
+    *streamPtr.get() << "\n@" << sUnsupportedDeviceDataTypes << " = (\n" << unsupportedDataTypes.str();
+    *streamPtr.get() << subWarnUnsupportedDataTypes.str();
   }
 
   bool generate(bool Generate) {
@@ -870,6 +913,8 @@ namespace perl {
     *streamPtr.get() << tab_6 << warningsPlus << endl;
     *streamPtr.get() << tab_5 << "}" << endl;
     *streamPtr.get() << tab_5 << "$s = " << sWarnUnsupportedDeviceFunctions << "($line_num);" << endl;
+    *streamPtr.get() << tab_5 << warningsPlus << endl;
+    *streamPtr.get() << tab_5 << "$s = " << sWarnUnsupportedDeviceDataTypes << "($line_num);" << endl;
     *streamPtr.get() << tab_5 << warningsPlus << endl_tab_4 << "}" << endl;
     *streamPtr.get() << tab_4 << "$_ = $tmp;" << endl_tab_3 << "}" << endl;
     *streamPtr.get() << tab_3 << "if ($roc) {" << endl;
@@ -887,7 +932,7 @@ namespace perl {
     *streamPtr.get() << tab_4 << sTransformKernelLaunch << "();" << endl;
     *streamPtr.get() << tab_3 << "}" << endl;
     *streamPtr.get() << tab_3 << sTransformCubNamespace << "();" << endl;
-    *streamPtr.get() << tab_3 << my << "$hasDeviceCode = $countKeywords + $ft{'device_function'};" << endl;
+    *streamPtr.get() << tab_3 << my << "$hasDeviceCode = $countKeywords + $ft{'device_function'} + $ft{'device_type'};" << endl;
     *streamPtr.get() << tab_3 << unless_ << "($quiet_warnings) {" << endl;
     *streamPtr.get() << tab_4 << "# Copy into array of lines, process line-by-line to show warnings" << endl;
     *streamPtr.get() << tab_4 << "if ($hasDeviceCode or (/\\bcu|CU/) or (/<<<.*>>>/)) {" << endl;
@@ -910,12 +955,13 @@ namespace perl {
     *streamPtr.get() << tab_7 << print << "\"  warning: $fileName:#$line_num : $_\\n\";" << endl_tab_6 << "}" << endl_tab_5 << "}" << endl;
     *streamPtr.get() << tab_5 << "$_ = $tmp;" << endl_tab_4 << "}" << endl_tab_3 << "}" << endl;
     *streamPtr.get() << tab_3 << "if ($hasDeviceCode > 0) {" << endl;
-    *streamPtr.get() << tab_4 << "$ft{'device_function'} += " << sCountSupportedDeviceFunctions << "();" << endl_tab_3 << "}" << endl;
+    *streamPtr.get() << tab_4 << "$ft{'device_function'} += " << sCountSupportedDeviceFunctions << "();" << endl;
+    *streamPtr.get() << tab_4 << "$ft{'device_type'} += " << sCountSupportedDeviceDataTypes << "();" << endl_tab_3 << "}" << endl;
     *streamPtr.get() << tab_3 << "transformHostFunctions();" << endl;
     *streamPtr.get() << tab_3 << "# TODO: would like to move this code outside loop but it uses $_ which contains the whole file" << endl;
     *streamPtr.get() << tab_3 << unless_ << "($no_output) {" << endl;
     *streamPtr.get() << tab_4 << sConv << endl;
-    *streamPtr.get() << tab_4 << my << "$kernStuff  = $hasDeviceCode + $ft{'" << counterNames[CONV_KERNEL_LAUNCH] << "'} + $ft{'" << counterNames[CONV_DEVICE_FUNC] << "'};" << endl;
+    *streamPtr.get() << tab_4 << my << "$kernStuff  = $hasDeviceCode + $ft{'" << counterNames[CONV_KERNEL_LAUNCH] << "'} + $ft{'" << counterNames[CONV_DEVICE_FUNC] << "'} + $ft{'" << counterNames[CONV_DEVICE_TYPE] << "'};" << endl;
     *streamPtr.get() << tab_4 << my << "$totalCalls = $apiCalls + $kernStuff;" << endl;
     *streamPtr.get() << tab_4 << "$is_dos = m/\\r\\n$/;" << endl;
     *streamPtr.get() << tab_4 << "if ($totalCalls and ($countIncludes == 0) and ($kernStuff != 0)) {" << endl;
