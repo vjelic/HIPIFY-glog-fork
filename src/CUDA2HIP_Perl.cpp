@@ -485,7 +485,7 @@ namespace perl {
     *streamPtr.get() << tab << s_k << "<<<\\s*([^,\\(\\)]+|[\\w\\s:]*\\([\\w|\\s|,|:|\\+|\\*|\\-|\\/|(?R)]+\\))\\s*,\\s*([^,\\(\\)]+|[\\w\\s:]*\\([\\w|\\s|,|:|\\+|\\*|\\-|\\/|(?R)]+\\))\\s*>>>\\s*\\(/hipLaunchKernelGGL($1, $2, $3, 0, 0, /g;" << endl_2;
 
     *streamPtr.get() << tab << "if ($k) {" << endl;
-    *streamPtr.get() << tab_2 << "$ft{'kernel_launch'} += $k;" << endl;
+    *streamPtr.get() << tab_2 << "$ft{'" << counterNames[CONV_KERNEL_LAUNCH] << "'} += $k;" << endl;
     *streamPtr.get() << tab_2 << "$Tkernels{$1}++;" << endl_tab << "}" << endl << "}" << endl;
   }
 
@@ -734,10 +734,10 @@ namespace perl {
     subCountSupportedDataTypes << endl << sub << sCountSupportedDeviceDataTypes << " {" << endl << (countSupportedDataTypes ? sCommon + sSupportedDeviceDataTypes + ")\n" : tab + return_0);
     subWarnUnsupported << endl << sub << sWarnUnsupportedDeviceFunctions << " {" << endl << (countUnsupported ? tab + my + "$line_num = shift;\n" + sCommon + sUnsupportedDeviceFunctions + ")\n" : tab + return_0);
     subWarnUnsupportedDataTypes << endl << sub << sWarnUnsupportedDeviceDataTypes << " {" << endl << (countUnsupportedDataTypes ? tab + my + "$line_num = shift;\n" + sCommon + sUnsupportedDeviceDataTypes + ")\n" : tab + return_0);
-    if (countSupported) supported << sSupported.str() << endl_tab << ");" << endl;
-    if (countSupportedDataTypes) supportedDataTypes << sSupportedDataTypes.str() << endl_tab << ");" << endl;
-    if (countUnsupported) unsupported << sUnsupported.str() << endl_tab << ");" << endl;
-    if (countUnsupportedDataTypes) unsupportedDataTypes << sUnsupportedDataTypes.str() << endl_tab << ");" << endl;
+    if (countSupported) supported << sSupported.str() << endl << ");" << endl;
+    if (countSupportedDataTypes) supportedDataTypes << sSupportedDataTypes.str() << endl << ");" << endl;
+    if (countUnsupported) unsupported << sUnsupported.str() << endl << ");" << endl;
+    if (countUnsupportedDataTypes) unsupportedDataTypes << sUnsupportedDataTypes.str() << endl << ");" << endl;
     if (countSupported || countUnsupported) {
       subCommon << tab << "{" << endl;
       subCommon << tab_2 << "# match device function from the list, except those, which have a namespace prefix (aka somenamespace::umin(...));" << endl;
@@ -932,7 +932,7 @@ namespace perl {
     *streamPtr.get() << tab_4 << sTransformKernelLaunch << "();" << endl;
     *streamPtr.get() << tab_3 << "}" << endl;
     *streamPtr.get() << tab_3 << sTransformCubNamespace << "();" << endl;
-    *streamPtr.get() << tab_3 << my << "$hasDeviceCode = $countKeywords + $ft{'device_function'} + $ft{'device_type'};" << endl;
+    *streamPtr.get() << tab_3 << my << "$hasDeviceCode = $countKeywords + $ft{'" << counterNames[CONV_DEVICE_FUNC] << "'} + $ft{'" << counterNames[CONV_DEVICE_TYPE] << "'};" << endl;
     *streamPtr.get() << tab_3 << unless_ << "($quiet_warnings) {" << endl;
     *streamPtr.get() << tab_4 << "# Copy into array of lines, process line-by-line to show warnings" << endl;
     *streamPtr.get() << tab_4 << "if ($hasDeviceCode or (/\\bcu|CU/) or (/<<<.*>>>/)) {" << endl;
@@ -955,8 +955,8 @@ namespace perl {
     *streamPtr.get() << tab_7 << print << "\"  warning: $fileName:#$line_num : $_\\n\";" << endl_tab_6 << "}" << endl_tab_5 << "}" << endl;
     *streamPtr.get() << tab_5 << "$_ = $tmp;" << endl_tab_4 << "}" << endl_tab_3 << "}" << endl;
     *streamPtr.get() << tab_3 << "if ($hasDeviceCode > 0) {" << endl;
-    *streamPtr.get() << tab_4 << "$ft{'device_function'} += " << sCountSupportedDeviceFunctions << "();" << endl;
-    *streamPtr.get() << tab_4 << "$ft{'device_type'} += " << sCountSupportedDeviceDataTypes << "();" << endl_tab_3 << "}" << endl;
+    *streamPtr.get() << tab_4 << "$ft{'" << counterNames[CONV_DEVICE_FUNC] << "'} += " << sCountSupportedDeviceFunctions << "();" << endl;
+    *streamPtr.get() << tab_4 << "$ft{'" << counterNames[CONV_DEVICE_TYPE] << "'} += " << sCountSupportedDeviceDataTypes << "();" << endl_tab_3 << "}" << endl;
     *streamPtr.get() << tab_3 << "transformHostFunctions();" << endl;
     *streamPtr.get() << tab_3 << "# TODO: would like to move this code outside loop but it uses $_ which contains the whole file" << endl;
     *streamPtr.get() << tab_3 << unless_ << "($no_output) {" << endl;

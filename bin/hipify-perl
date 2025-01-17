@@ -9602,7 +9602,7 @@ sub transformHostFunctions {
     "__all_sync",
     "__all",
     "__activemask"
-    );
+);
 
 sub countSupportedDeviceFunctions {
     my $k = 0;
@@ -9872,7 +9872,7 @@ sub countSupportedDeviceFunctions {
     "__bfloat162int_rd",
     "__bfloat162char_rz",
     "_Pow_int"
-    );
+);
 
 sub warnUnsupportedDeviceFunctions {
     my $line_num = shift;
@@ -9916,7 +9916,7 @@ sub warnUnsupportedDeviceFunctions {
     "__NV_NOSAT",
     "__NV_E5M2",
     "__NV_E4M3"
-    );
+);
 
 sub countSupportedDeviceDataTypes {
     my $k = 0;
@@ -9932,7 +9932,7 @@ sub countSupportedDeviceDataTypes {
 
 @UnsupportedDeviceDataTypes = (
     "nv_bfloat162"
-    );
+);
 
 sub warnUnsupportedDeviceDataTypes {
     my $line_num = shift;
