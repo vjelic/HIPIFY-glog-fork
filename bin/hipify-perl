@@ -9922,7 +9922,7 @@ sub countSupportedDeviceDataTypes {
     my $k = 0;
     while (my($func) = each %SupportedDeviceDataTypes)
     {
-        my $mt = m/($func)/g;
+        my $mt = m/\b($func)\b/g;
         if ($mt) {
             $k += $mt;
         }
@@ -9939,7 +9939,7 @@ sub warnUnsupportedDeviceDataTypes {
     my $k = 0;
     while (my($func) = each %UnsupportedDeviceDataTypes)
     {
-        my $mt = m/($func)/g;
+        my $mt = m/\b($func)\b/g;
         if ($mt) {
             $k += $mt;
             print STDERR "  $fileName:$line_num: warning: unsupported device data type identifier: $func\n";
@@ -9953,7 +9953,7 @@ sub warnExperimentalFunctions {
     my $k = 0;
     while (my($func, $val) = each %experimental_funcs)
     {
-        my $mt = m/($func)/g;
+        my $mt = m/\b($func)\b/g;
         if ($mt) {
             $k += $mt;
             print STDERR "  $fileName:$line_num: warning: experimental ROCm HIP identifier: $func $val\n";
@@ -9967,7 +9967,7 @@ sub warnDeprecatedFunctions {
     my $k = 0;
     while (my($func, $val) = each %deprecated_funcs)
     {
-        my $mt = m/($func)/g;
+        my $mt = m/\b($func)\b/g;
         if ($mt) {
             $k += $mt;
             my $cudnn = "CUDNN";
@@ -9986,7 +9986,7 @@ sub warnRemovedFunctions {
     my $k = 0;
     while (my($func, $val) = each %removed_funcs)
     {
-        my $mt = m/($func)/g;
+        my $mt = m/\b($func)\b/g;
         if ($mt) {
             $k += $mt;
             my $cudnn = "CUDNN";
@@ -11398,7 +11398,7 @@ sub warnHipOnlyUnsupportedFunctions {
     my $k = 0;
     while (my($func) = each %HipOnlyUnsupportedFunctions)
     {
-        my $mt = m/($func)/g;
+        my $mt = m/\b($func)\b/g;
         if ($mt) {
             $k += $mt;
             print STDERR "  $fileName:$line_num: warning: unsupported HIP identifier: $func\n";
@@ -12976,7 +12976,7 @@ sub warnRocOnlyUnsupportedFunctions {
     my $k = 0;
     while (my($func) = each %RocOnlyUnsupportedFunctions)
     {
-        my $mt = m/($func)/g;
+        my $mt = m/\b($func)\b/g;
         if ($mt) {
             $k += $mt;
             print STDERR "  $fileName:$line_num: warning: unsupported ROC identifier: $func\n";
@@ -13599,7 +13599,7 @@ sub warnMIOpenOnlyUnsupportedFunctions {
     my $k = 0;
     while (my($func) = each %MIOpenOnlyUnsupportedFunctions)
     {
-        my $mt = m/($func)/g;
+        my $mt = m/\b($func)\b/g;
         if ($mt) {
             $k += $mt;
             print STDERR "  $fileName:$line_num: warning: unsupported MIOpen identifier: $func\n";
@@ -14511,7 +14511,7 @@ sub warnHipDNNOnlyUnsupportedFunctions {
     my $k = 0;
     while (my($func) = each %HipDNNOnlyUnsupportedFunctions)
     {
-        my $mt = m/($func)/g;
+        my $mt = m/\b($func)\b/g;
         if ($mt) {
             $k += $mt;
             print STDERR "  $fileName:$line_num: warning: unsupported hipDNN identifier: $func\n";

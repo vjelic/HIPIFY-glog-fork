@@ -661,7 +661,7 @@ namespace perl {
     miopen_unsupported << endl << ");" << endl;
     hipdnn_unsupported << endl << ");" << endl;
     sCommon << tab << "{" << endl;
-    sCommon << tab_2 << my << "$mt = m/($func)/g;" << endl;
+    sCommon << tab_2 << my << "$mt = m/\\b($func)\\b/g;" << endl;
     sCommon << tab_2 << "if ($mt) {" << endl;
     sCommon << tab_3 << "$k += $mt;" << endl;
     sCommon1 << tab_3 << my << "$cudnn = \"CUDNN\";" << endl;
@@ -749,7 +749,7 @@ namespace perl {
     }
     if (countSupportedDataTypes || countUnsupportedDataTypes) {
       subCommonDataTypes << tab << "{" << endl;
-      subCommonDataTypes << tab_2 << my << "$mt = m/($func)/g;" << endl;
+      subCommonDataTypes << tab_2 << my << "$mt = m/\\b($func)\\b/g;" << endl;
       subCommonDataTypes << tab_2 << "if ($mt) {" << endl;
       subCommonDataTypes << tab_3 << "$k += $mt;" << endl;
     }
