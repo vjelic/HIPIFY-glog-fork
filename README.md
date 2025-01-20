@@ -19,7 +19,7 @@ python3 -m sphinx -T -E -b html -d _build/doctrees -D language=en . _build/html
 
 To build `CUDA2HIP` (CUDA APIs supported by HIP) documentation, run the following `hipify-clang`
 command. This builds the same content as
-[Supported CUDA APIs](./docs/supported_apis.md#supported-cuda-apis).
+[Supported CUDA APIs](./docs/reference/supported_apis.md#supported-cuda-apis).
 
 ```bash
 hipify-clang --md --doc-format=full --doc-roc=joint
