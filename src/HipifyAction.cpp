@@ -47,6 +47,7 @@ std::string sHIP_SYMBOL = "HIP_SYMBOL";
 std::string s_reinterpret_cast = "reinterpret_cast<const void*>";
 std::string s_reinterpret_cast_size_t = "reinterpret_cast<size_t*>";
 std::string s_static_cast_uint64_t = "static_cast<uint64_t>";
+std::string s_const_cast_char_pp = "const_cast<const char**>";
 std::string s_int32_t = "int32_t";
 std::string s_int64_t = "int64_t";
 const std::string sHipLaunchKernelGGL = "hipLaunchKernelGGL";
@@ -233,6 +234,8 @@ const std::string sCusparseSpMV_bufferSize = "cusparseSpMV_bufferSize";
 const std::string sCusparseSpMM_preprocess = "cusparseSpMM_preprocess";
 const std::string sCusparseSpSV_bufferSize = "cusparseSpSV_bufferSize";
 const std::string sCudaGetDriverEntryPoint = "cudaGetDriverEntryPoint";
+const std::string sNvrtcCompileProgram = "nvrtcCompileProgram";
+const std::string sNvrtcCreateProgram = "nvrtcCreateProgram";
 
 // CUDA_OVERLOADED
 const std::string sCudaEventCreate = "cudaEventCreate";
@@ -253,6 +256,7 @@ std::string getCastType(hipify::CastTypes c) {
     case e_HIP_SYMBOL: return sHIP_SYMBOL;
     case e_reinterpret_cast: return s_reinterpret_cast;
     case e_reinterpret_cast_size_t: return s_reinterpret_cast_size_t;
+    case e_const_cast_char_pp: return s_const_cast_char_pp;
     case e_static_cast_uint64_t: return s_static_cast_uint64_t;
     case e_int32_t: return s_int32_t;
     case e_int64_t: return s_int64_t;
@@ -291,6 +295,25 @@ std::map<std::string, hipify::FuncOverloadsStruct> FuncOverloads {
 };
 
 std::map<std::string, std::vector<ArgCastStruct>> FuncArgCasts {
+  {sNvrtcCompileProgram,
+    {
+      {
+        {
+          {2, {e_const_cast_char_pp, cw_None}}
+        }
+      }
+    }
+  },
+  {sNvrtcCreateProgram,
+    {
+      {
+        {
+          {4, {e_const_cast_char_pp, cw_None}},
+          {5, {e_const_cast_char_pp, cw_None}}
+        }
+      }
+    }
+  },
   {sCudaGetDriverEntryPoint,
     {
       {
@@ -3112,7 +3135,9 @@ std::unique_ptr<clang::ASTConsumer> HipifyAction::CreateASTConsumer(clang::Compi
             sCusparseSpMV_bufferSize,
             sCusparseSpMM_preprocess,
             sCusparseSpSV_bufferSize,
-            sCudaGetDriverEntryPoint
+            sCudaGetDriverEntryPoint,
+            sNvrtcCompileProgram,
+            sNvrtcCreateProgram
           )
         )
       )

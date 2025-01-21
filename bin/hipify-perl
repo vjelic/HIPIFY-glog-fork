@@ -6843,7 +6843,7 @@ sub simpleSubstitutions {
     subst("cusolver_common.h", "hipsolver.h", "include_cuda_main_header");
     subst("cusparse.h", "hipsparse.h", "include_cuda_main_header");
     subst("cutensor.h", "hiptensor.h", "include_cuda_main_header");
-    subst("nvrtc.h", "hiprtc.h", "include_cuda_main_header");
+    subst("nvrtc.h", "hip\/hiprtc.h", "include_cuda_main_header");
     subst("cublas_v2.h", "hipblas.h", "include_cuda_main_header_v2");
     subst("cusparse_v2.h", "hipsparse.h", "include_cuda_main_header_v2");
     subst("CUDAContext", "HIPContext", "type");
