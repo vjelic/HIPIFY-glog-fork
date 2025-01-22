@@ -21,29 +21,31 @@ subtrees:
   - file: reference/supported_apis
     subtrees:
     - entries:
-      - file: tables/CUDA_Runtime_API_functions_supported_by_HIP     
+      - file: reference/tables/CUDA_Runtime_API_functions_supported_by_HIP     
         title: CUDA Runtime functions
-      - file: tables/CUDA_Driver_API_functions_supported_by_HIP
+      - file: reference/tables/CUDA_Driver_API_functions_supported_by_HIP
         title: CUDA Driver functions
-      - file: tables/cuComplex_API_supported_by_HIP
+      - file: reference/tables/cuComplex_API_supported_by_HIP
         title: cuComplex API
-      - file: tables/CUDA_Device_API_supported_by_HIP
+      - file: reference/tables/CUDA_Device_API_supported_by_HIP
         title: CUDA Device API
-      - file: tables/CUDA_RTC_API_supported_by_HIP
+      - file: reference/tables/CUDA_RTC_API_supported_by_HIP
         title: CUDA RTC API
-      - file: tables/CUBLAS_API_supported_by_HIP
+      - file: reference/tables/CUBLAS_API_supported_by_HIP
         title: cuBLAS API
-      - file: tables/CUSPARSE_API_supported_by_HIP
+      - file: reference/tables/CUSPARSE_API_supported_by_HIP
         title: cuSPARSE
-      - file: tables/CUSOLVER_API_supported_by_HIP
+      - file: reference/tables/CUSOLVER_API_supported_by_HIP
         title: cuSOLVER API
-      - file: tables/CURAND_API_supported_by_HIP      
+      - file: reference/tables/CURAND_API_supported_by_HIP      
         title: cuRAND API
-      - file: tables/CUFFT_API_supported_by_HIP
+      - file: reference/tables/CUFFT_API_supported_by_HIP
         title: cuFFT API
-      - file: tables/CUDNN_API_supported_by_HIP     
+      - file: reference/tables/CUDNN_API_supported_by_HIP     
         title: cuDNN API
-      - file: tables/CUB_API_supported_by_HIP
+      - file: reference/tables/CUTENSOR_API_supported_by_HIP     
+        title: cuTENSOR API
+      - file: reference/tables/CUB_API_supported_by_HIP
         title: CUB API
 - caption: About
   entries:
