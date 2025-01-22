@@ -333,6 +333,11 @@ Print statistics
 .. code:: cpp
 
   [HIPIFY] info: file 'intro.cu' statistics:
+  CONVERTED refs count: 40
+  UNCONVERTED refs count: 0
+  CONVERSION %: 100.0
+  REPLACED bytes: 604
+  [HIPIFY] info: file 'intro.cu' statistics:
     CONVERTED refs count: 40
     UNCONVERTED refs count: 0
     CONVERSION %: 100.0
