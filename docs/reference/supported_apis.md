@@ -16,7 +16,7 @@
 | CUDA RTC API     | [HIP RTC API](tables/CUDA_RTC_API_supported_by_HIP.md)            |    |    |
 | CUBLAS API       | [HIP BLAS API](tables/CUBLAS_API_supported_by_HIP.md)             | [ROC BLAS API](tables/CUBLAS_API_supported_by_ROC.md)     | [HIP + ROC BLAS API](tables/CUBLAS_API_supported_by_HIP_and_ROC.md)     |
 | CUSPARSE API     | [HIP SPARSE API](tables/CUSPARSE_API_supported_by_HIP.md)         | [ROC SPARSE API](tables/CUSPARSE_API_supported_by_ROC.md) | [HIP + ROC SPARSE API](tables/CUSPARSE_API_supported_by_HIP_and_ROC.md) |
-| CUSOLVER API     | [HIP SOLVER API](tables/CUSOLVER_API_supported_by_HIP.md)         | [ROC SOLVER API](tables/CUSOLVER_API_supported_by_ROC.md) | [ROC + ROC SOLVER API](tables/CUSOLVER_API_supported_by_HIP_and_ROC.md) |
+| CUSOLVER API     | [HIP SOLVER API](tables/CUSOLVER_API_supported_by_HIP.md)         | [ROC SOLVER API](tables/CUSOLVER_API_supported_by_ROC.md) | [HIP + ROC SOLVER API](tables/CUSOLVER_API_supported_by_HIP_and_ROC.md) |
 | CURAND API       | [HIP RAND API](tables/CURAND_API_supported_by_HIP.md)             | [ROC RAND API](tables/CURAND_API_supported_by_ROC.md)     | [HIP + ROC RAND API](tables/CURAND_API_supported_by_HIP_and_ROC.md)     |
 | CUFFT API        | [HIP FFT API](tables/CUFFT_API_supported_by_HIP.md)               |    |    |
 | CUDNN API        | [HIP DNN API](tables/CUDNN_API_supported_by_HIP.md)               | [MIOPEN API](tables/CUDNN_API_supported_by_MIOPEN.md)     | [HIP + MIOPEN API](tables/CUDNN_API_supported_by_HIP_and_MIOPEN.md)     |
