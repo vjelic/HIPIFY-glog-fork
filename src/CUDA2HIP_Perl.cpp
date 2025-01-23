@@ -86,7 +86,7 @@ namespace perl {
   const string while_ = "while ";
   const string unless_ = "unless ";
   const string foreach = "foreach ";
-  const string foreach_func = foreach + "$func (\n";
+  const string foreach_func = foreach + "$func (";
   const string while_func = while_ + "(my($func) = each %";
   const string print = "print STDERR ";
   const string printf = "printf STDERR ";
@@ -576,7 +576,7 @@ namespace perl {
         case 8:  funcSet = DeviceSymbolFunctions5; break;
       }
       if (funcSet.empty()) continue;
-      *streamPtr.get() << tab + foreach_func;
+      *streamPtr.get() << tab + foreach_func  << endl;
       unsigned int count = 0;
       string sHIPName;
       for (auto &f : funcSet) {
@@ -615,10 +615,10 @@ namespace perl {
     sExperimental << endl << sub << sWarnExperimentalFunctions << " {" << endl << sCommon.str() << tab << sWhile << "%experimental_funcs)" << endl;
     sDeprecated << endl << sub << sWarnDeprecatedFunctions << " {" << endl << sCommon.str() << tab << sWhile << "%deprecated_funcs)" << endl;
     sRemoved << endl << sub << sWarnRemovedFunctions << " {" << endl << sCommon.str() << tab << sWhile << "%removed_funcs)" << endl;
-    sRocUnsupported << endl << sub << sWarnRocOnlyUnsupportedFunctions << " {" << endl << sCommon.str() << tab << while_func << sRocOnlyUnsupportedFunctions << ")\n";
-    sMIOpenUnsupported << endl << sub << sWarnMIOpenOnlyUnsupportedFunctions << " {" << endl << sCommon.str() << tab << while_func << sMIOpenOnlyUnsupportedFunctions << ")\n";
-    sHipUnsupported << endl << sub << sWarnHipOnlyUnsupportedFunctions << " {" << endl << sCommon.str() << tab << while_func << sHipOnlyUnsupportedFunctions << ")\n";
-    sHipDNNUnsupported << endl << sub << sWarnHipDNNOnlyUnsupportedFunctions << " {" << endl << sCommon.str() << tab << while_func << sHipDNNOnlyUnsupportedFunctions << ")\n";
+    sRocUnsupported << endl << sub << sWarnRocOnlyUnsupportedFunctions << " {" << endl << sCommon.str() << tab << foreach_func << "@" << sRocOnlyUnsupportedFunctions << ")\n";
+    sMIOpenUnsupported << endl << sub << sWarnMIOpenOnlyUnsupportedFunctions << " {" << endl << sCommon.str() << tab << foreach_func << "@" << sMIOpenOnlyUnsupportedFunctions << ")\n";
+    sHipUnsupported << endl << sub << sWarnHipOnlyUnsupportedFunctions << " {" << endl << sCommon.str() << tab << foreach_func << "@" << sHipOnlyUnsupportedFunctions << ")\n";
+    sHipDNNUnsupported << endl << sub << sWarnHipDNNOnlyUnsupportedFunctions << " {" << endl << sCommon.str() << tab << foreach_func << "@" << sHipDNNOnlyUnsupportedFunctions << ")\n";
     unsigned countRocOnlyUnsupported = 0, countHipOnlyUnsupported = 0, countMIOpenOnlyUnsupported = 0, countHipDNNOnlyUnsupported = 0;
     bool bTranslateToRoc = TranslateToRoc;
     bool bTranslateToMIOpen = TranslateToMIOpen;
@@ -729,11 +729,11 @@ namespace perl {
     stringstream subWarnUnsupportedDataTypes;
     stringstream subCommon;
     stringstream subCommonDataTypes;
-    string sCommon = tab + my_k + "\n" + tab + while_func;
-    subCountSupported << endl << sub << sCountSupportedDeviceFunctions << " {" << endl << (countSupported ? sCommon + sSupportedDeviceFunctions + ")\n" : tab + return_0);
-    subCountSupportedDataTypes << endl << sub << sCountSupportedDeviceDataTypes << " {" << endl << (countSupportedDataTypes ? sCommon + sSupportedDeviceDataTypes + ")\n" : tab + return_0);
-    subWarnUnsupported << endl << sub << sWarnUnsupportedDeviceFunctions << " {" << endl << (countUnsupported ? tab + my + "$line_num = shift;\n" + sCommon + sUnsupportedDeviceFunctions + ")\n" : tab + return_0);
-    subWarnUnsupportedDataTypes << endl << sub << sWarnUnsupportedDeviceDataTypes << " {" << endl << (countUnsupportedDataTypes ? tab + my + "$line_num = shift;\n" + sCommon + sUnsupportedDeviceDataTypes + ")\n" : tab + return_0);
+    string sCommon = tab + my_k + "\n" + tab + foreach_func;
+    subCountSupported << endl << sub << sCountSupportedDeviceFunctions << " {" << endl << (countSupported ? sCommon + "@" + sSupportedDeviceFunctions + ")\n" : tab + return_0);
+    subCountSupportedDataTypes << endl << sub << sCountSupportedDeviceDataTypes << " {" << endl << (countSupportedDataTypes ? sCommon + "@" + sSupportedDeviceDataTypes + ")\n" : tab + return_0);
+    subWarnUnsupported << endl << sub << sWarnUnsupportedDeviceFunctions << " {" << endl << (countUnsupported ? tab + my + "$line_num = shift;\n" + sCommon + "@" + sUnsupportedDeviceFunctions + ")\n" : tab + return_0);
+    subWarnUnsupportedDataTypes << endl << sub << sWarnUnsupportedDeviceDataTypes << " {" << endl << (countUnsupportedDataTypes ? tab + my + "$line_num = shift;\n" + sCommon + "@" + sUnsupportedDeviceDataTypes + ")\n" : tab + return_0);
     if (countSupported) supported << sSupported.str() << endl << ");" << endl;
     if (countSupportedDataTypes) supportedDataTypes << sSupportedDataTypes.str() << endl << ");" << endl;
     if (countUnsupported) unsupported << sUnsupported.str() << endl << ");" << endl;
