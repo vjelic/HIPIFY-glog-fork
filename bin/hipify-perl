@@ -9606,7 +9606,7 @@ sub transformHostFunctions {
 
 sub countSupportedDeviceFunctions {
     my $k = 0;
-    while (my($func) = each %SupportedDeviceFunctions)
+    foreach $func (@SupportedDeviceFunctions)
     {
         # match device function from the list, except those, which have a namespace prefix (aka somenamespace::umin(...));
         # function with only global namespace qualifier '::' (aka ::umin(...)) should be treated as a device function (and warned as well as without such qualifier);
@@ -9877,7 +9877,7 @@ sub countSupportedDeviceFunctions {
 sub warnUnsupportedDeviceFunctions {
     my $line_num = shift;
     my $k = 0;
-    while (my($func) = each %UnsupportedDeviceFunctions)
+    foreach $func (@UnsupportedDeviceFunctions)
     {
         # match device function from the list, except those, which have a namespace prefix (aka somenamespace::umin(...));
         # function with only global namespace qualifier '::' (aka ::umin(...)) should be treated as a device function (and warned as well as without such qualifier);
@@ -9920,7 +9920,7 @@ sub warnUnsupportedDeviceFunctions {
 
 sub countSupportedDeviceDataTypes {
     my $k = 0;
-    while (my($func) = each %SupportedDeviceDataTypes)
+    foreach $func (@SupportedDeviceDataTypes)
     {
         my $mt = m/\b($func)\b/g;
         if ($mt) {
@@ -9937,7 +9937,7 @@ sub countSupportedDeviceDataTypes {
 sub warnUnsupportedDeviceDataTypes {
     my $line_num = shift;
     my $k = 0;
-    while (my($func) = each %UnsupportedDeviceDataTypes)
+    foreach $func (@UnsupportedDeviceDataTypes)
     {
         my $mt = m/\b($func)\b/g;
         if ($mt) {
@@ -11396,7 +11396,7 @@ sub warnRemovedFunctions {
 sub warnHipOnlyUnsupportedFunctions {
     my $line_num = shift;
     my $k = 0;
-    while (my($func) = each %HipOnlyUnsupportedFunctions)
+    foreach $func (@HipOnlyUnsupportedFunctions)
     {
         my $mt = m/\b($func)\b/g;
         if ($mt) {
@@ -12974,7 +12974,7 @@ sub warnHipOnlyUnsupportedFunctions {
 sub warnRocOnlyUnsupportedFunctions {
     my $line_num = shift;
     my $k = 0;
-    while (my($func) = each %RocOnlyUnsupportedFunctions)
+    foreach $func (@RocOnlyUnsupportedFunctions)
     {
         my $mt = m/\b($func)\b/g;
         if ($mt) {
@@ -13597,7 +13597,7 @@ sub warnRocOnlyUnsupportedFunctions {
 sub warnMIOpenOnlyUnsupportedFunctions {
     my $line_num = shift;
     my $k = 0;
-    while (my($func) = each %MIOpenOnlyUnsupportedFunctions)
+    foreach $func (@MIOpenOnlyUnsupportedFunctions)
     {
         my $mt = m/\b($func)\b/g;
         if ($mt) {
@@ -14509,7 +14509,7 @@ sub warnMIOpenOnlyUnsupportedFunctions {
 sub warnHipDNNOnlyUnsupportedFunctions {
     my $line_num = shift;
     my $k = 0;
-    while (my($func) = each %HipDNNOnlyUnsupportedFunctions)
+    foreach $func (@HipDNNOnlyUnsupportedFunctions)
     {
         my $mt = m/\b($func)\b/g;
         if ($mt) {
