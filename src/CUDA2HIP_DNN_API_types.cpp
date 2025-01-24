@@ -122,6 +122,8 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DNN_TYPE_NAME_MAP {
   {"CUDNN_DATA_FP8_E4M3",                                              {"HIPDNN_DATA_FP8_E4M3",                                            "miopenFloat8",                                                    CONV_NUMERIC_LITERAL, API_DNN, 1, HIP_UNSUPPORTED}},  // 12
   {"CUDNN_DATA_FP8_E5M2",                                              {"HIPDNN_DATA_FP8_E5M2",                                            "miopenBFloat8",                                                   CONV_NUMERIC_LITERAL, API_DNN, 1, HIP_UNSUPPORTED}},  // 13
   {"CUDNN_DATA_FAST_FLOAT_FOR_FP8",                                    {"HIPDNN_DATA_FAST_FLOAT_FOR_FP8",                                  "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},  // 14
+  {"CUDNN_DATA_FP8_E8M0",                                              {"HIPDNN_DATA_FP8_E8M0",                                            "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},  // 15
+  {"CUDNN_DATA_FP4_E2M1",                                              {"HIPDNN_DATA_FP4_E2M1",                                            "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},  // 16
   {"cudnnErrQueryMode_t",                                              {"hipdnnErrQueryMode_t",                                            "",                                                                CONV_TYPE, API_DNN, 1, UNSUPPORTED}},
   {"CUDNN_ERRQUERY_RAWCODE",                                           {"HIPDNN_ERRQUERY_RAWCODE",                                         "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},    // 0
   {"CUDNN_ERRQUERY_NONBLOCKING",                                       {"HIPDNN_ERRQUERY_NONBLOCKING",                                     "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},    // 1
@@ -666,6 +668,17 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DNN_TYPE_NAME_MAP {
   {"CUDNN_ATTR_OPERATION_RNG_OFFSET_DESC",                             {"HIPDNN_ATTR_OPERATION_RNG_OFFSET_DESC",                           "MIOPEN_ATTR_OPERATION_RNG_OFFSET_DESC",                           CONV_NUMERIC_LITERAL, API_DNN, 1, HIP_UNSUPPORTED}},    // 2313
   {"CUDNN_ATTR_KERNEL_CACHE_OPERATION_GRAPH",                          {"HIPDNN_ATTR_KERNEL_CACHE_OPERATION_GRAPH",                        "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},    // 2400
   {"CUDNN_ATTR_KERNEL_CACHE_IS_ENGINECFG_KERNEL_CACHED",               {"HIPDNN_ATTR_KERNEL_CACHE_IS_ENGINECFG_KERNEL_CACHED",             "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},    // 2401
+  {"CUDNN_ATTR_OPERATION_BLOCK_SCALE_QUANTIZE_XDESC",                  {"HIPDNN_ATTR_OPERATION_BLOCK_SCALE_QUANTIZE_XDESC",                "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},    // 2500
+  {"CUDNN_ATTR_OPERATION_BLOCK_SCALE_QUANTIZE_YDESC",                  {"HIPDNN_ATTR_OPERATION_BLOCK_SCALE_QUANTIZE_YDESC",                "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},    // 2501
+  {"CUDNN_ATTR_OPERATION_BLOCK_SCALE_QUANTIZE_SCALE_DESC",             {"HIPDNN_ATTR_OPERATION_BLOCK_SCALE_QUANTIZE_SCALE_DESC",           "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},    // 2502
+  {"CUDNN_ATTR_OPERATION_BLOCK_SCALE_QUANTIZE_MATH_PREC",              {"HIPDNN_ATTR_OPERATION_BLOCK_SCALE_QUANTIZE_MATH_PREC",            "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},    // 2503
+  {"CUDNN_ATTR_OPERATION_BLOCK_SCALE_QUANTIZE_BLOCK_SIZE",             {"HIPDNN_ATTR_OPERATION_BLOCK_SCALE_QUANTIZE_BLOCK_SIZE",           "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},    // 2504
+  {"CUDNN_ATTR_OPERATION_BLOCK_SCALE_QUANTIZE_DENOM_FACTOR_MODE",      {"HIPDNN_ATTR_OPERATION_BLOCK_SCALE_QUANTIZE_DENOM_FACTOR_MODE",    "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},    // 2505
+  {"CUDNN_ATTR_OPERATION_BLOCK_SCALE_DEQUANTIZE_XDESC",                {"HIPDNN_ATTR_OPERATION_BLOCK_SCALE_DEQUANTIZE_XDESC",              "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},    // 2600
+  {"CUDNN_ATTR_OPERATION_BLOCK_SCALE_DEQUANTIZE_SCALE_DESC",           {"HIPDNN_ATTR_OPERATION_BLOCK_SCALE_DEQUANTIZE_SCALE_DESC",         "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},    // 2601
+  {"CUDNN_ATTR_OPERATION_BLOCK_SCALE_DEQUANTIZE_YDESC",                {"HIPDNN_ATTR_OPERATION_BLOCK_SCALE_DEQUANTIZE_YDESC",              "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},    // 2602
+  {"CUDNN_ATTR_OPERATION_BLOCK_SCALE_DEQUANTIZE_MATH_PREC",            {"HIPDNN_ATTR_OPERATION_BLOCK_SCALE_DEQUANTIZE_MATH_PREC",          "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},    // 2603
+  {"CUDNN_ATTR_OPERATION_BLOCK_SCALE_DEQUANTIZE_BLOCK_SIZE",           {"HIPDNN_ATTR_OPERATION_BLOCK_SCALE_DEQUANTIZE_BLOCK_SIZE",         "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},    // 2604
   {"cudnnBackendAttributeType_t",                                      {"hipdnnBackendAttributeType_t",                                    "miopenBackendAttributeType_t",                                    CONV_TYPE, API_DNN, 1, HIP_UNSUPPORTED}},
   {"CUDNN_TYPE_HANDLE",                                                {"HIPDNN_TYPE_HANDLE",                                              "MIOPEN_TYPE_HANDLE",                                              CONV_NUMERIC_LITERAL, API_DNN, 1, HIP_UNSUPPORTED}},
   {"CUDNN_TYPE_DATA_TYPE",                                             {"HIPDNN_TYPE_DATA_TYPE",                                           "MIOPEN_TYPE_DATA_TYPE",                                           CONV_NUMERIC_LITERAL, API_DNN, 1, HIP_UNSUPPORTED}},
@@ -1803,6 +1816,19 @@ const std::map<llvm::StringRef, cudaAPIversions> CUDA_DNN_TYPE_NAME_VER_MAP {
   {"CUDNN_ATTR_KERNEL_CACHE_OPERATION_GRAPH",                          {CUDNN_950, CUDA_0,    CUDA_0   }},
   {"CUDNN_STATUS_BAD_PARAM_DESCRIPTOR_TYPE",                           {CUDNN_960, CUDA_0,    CUDA_0   }},
   {"CUDNN_ATTR_OPERATIONGRAPH_IS_SAME_TOPOLOGY",                       {CUDNN_960, CUDA_0,    CUDA_0   }},
+  {"CUDNN_DATA_FP8_E8M0",                                              {CUDNN_970, CUDA_0,    CUDA_0   }},
+  {"CUDNN_DATA_FP4_E2M1",                                              {CUDNN_970, CUDA_0,    CUDA_0   }},
+  {"CUDNN_ATTR_OPERATION_BLOCK_SCALE_QUANTIZE_XDESC",                  {CUDNN_970, CUDA_0,    CUDA_0   }},
+  {"CUDNN_ATTR_OPERATION_BLOCK_SCALE_QUANTIZE_YDESC",                  {CUDNN_970, CUDA_0,    CUDA_0   }},
+  {"CUDNN_ATTR_OPERATION_BLOCK_SCALE_QUANTIZE_SCALE_DESC",             {CUDNN_970, CUDA_0,    CUDA_0   }},
+  {"CUDNN_ATTR_OPERATION_BLOCK_SCALE_QUANTIZE_MATH_PREC",              {CUDNN_970, CUDA_0,    CUDA_0   }},
+  {"CUDNN_ATTR_OPERATION_BLOCK_SCALE_QUANTIZE_BLOCK_SIZE",             {CUDNN_970, CUDA_0,    CUDA_0   }},
+  {"CUDNN_ATTR_OPERATION_BLOCK_SCALE_QUANTIZE_DENOM_FACTOR_MODE",      {CUDNN_970, CUDA_0,    CUDA_0   }},
+  {"CUDNN_ATTR_OPERATION_BLOCK_SCALE_DEQUANTIZE_XDESC",                {CUDNN_970, CUDA_0,    CUDA_0   }},
+  {"CUDNN_ATTR_OPERATION_BLOCK_SCALE_DEQUANTIZE_SCALE_DESC",           {CUDNN_970, CUDA_0,    CUDA_0   }},
+  {"CUDNN_ATTR_OPERATION_BLOCK_SCALE_DEQUANTIZE_YDESC",                {CUDNN_970, CUDA_0,    CUDA_0   }},
+  {"CUDNN_ATTR_OPERATION_BLOCK_SCALE_DEQUANTIZE_MATH_PREC",            {CUDNN_970, CUDA_0,    CUDA_0   }},
+  {"CUDNN_ATTR_OPERATION_BLOCK_SCALE_DEQUANTIZE_BLOCK_SIZE",           {CUDNN_970, CUDA_0,    CUDA_0   }},
 };
 
 const std::map<llvm::StringRef, hipAPIversions> HIP_DNN_TYPE_NAME_VER_MAP {
