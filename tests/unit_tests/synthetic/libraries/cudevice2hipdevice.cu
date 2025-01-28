@@ -69,56 +69,6 @@ int main() {
   // CHECK: f2 = __bfloat1622float2(bf162);
   f2 = __bfloat1622float2(bf162);
 
-  // CUDA: __CUDA_HOSTDEVICE_BF16_DECL__ __nv_bfloat162 __hmax2(const __nv_bfloat162 a, const __nv_bfloat162 b);
-  // HIP: __BF16_HOST_DEVICE_STATIC__ __hip_bfloat162 __hmax2(const __hip_bfloat162 a, const __hip_bfloat162 b);
-  // CHECK: bf162 = __hmax2(bf162a, bf162b);
-  bf162 = __hmax2(bf162a, bf162b);
-
-  // CUDA: __CUDA_HOSTDEVICE_BF16_DECL__ __nv_bfloat162 __hmin2(const __nv_bfloat162 a, const __nv_bfloat162 b);
-  // HIP: __BF16_HOST_DEVICE_STATIC__ __hip_bfloat162 __hmin2(const __hip_bfloat162 a, const __hip_bfloat162 b);
-  // CHECK: bf162 = __hmin2(bf162a, bf162b);
-  bf162 = __hmin2(bf162a, bf162b);
-
-  // CUDA: __CUDA_HOSTDEVICE_BF16_DECL__ __nv_bfloat16 __low2bfloat16(const __nv_bfloat162 a);
-  // HIP: __BF16_HOST_DEVICE_STATIC__ __hip_bfloat16 __low2bfloat16(const __hip_bfloat162 a);
-  // CHECK: _bf16 = __low2bfloat16(bf162a);
-  _bf16 = __low2bfloat16(bf162a);
-
-  // CUDA: __CUDA_HOSTDEVICE_BF16_DECL__ __nv_bfloat162 __halves2bfloat162(const __nv_bfloat16 a, const __nv_bfloat16 b);
-  // HIP: __BF16_HOST_DEVICE_STATIC__ __hip_bfloat162 __halves2bfloat162(const __hip_bfloat16 a, const __hip_bfloat16 b);
-  // CHECK: bf162 = __halves2bfloat162(bf16a, bf16b);
-  bf162 = __halves2bfloat162(bf16a, bf16b);
-
-  // CUDA: __CUDA_HOSTDEVICE_BF16_DECL__ __nv_bfloat162 __low2bfloat162(const __nv_bfloat162 a);
-  // HIP: __BF16_HOST_DEVICE_STATIC__ __hip_bfloat162 __low2bfloat162(const __hip_bfloat162 a);
-  // CHECK: bf162 = __low2bfloat162(bf162a);
-  bf162 = __low2bfloat162(bf162a);
-
-  // CUDA: __CUDA_HOSTDEVICE_BF16_DECL__ __nv_bfloat162 __high2bfloat162(const __nv_bfloat162 a);
-  // HIP: __BF16_HOST_DEVICE_STATIC__ __hip_bfloat162 __high2bfloat162(const __hip_bfloat162 a);
-  // CHECK: bf162 = __high2bfloat162(bf162a);
-  bf162 = __high2bfloat162(bf162a);
-
-  // CUDA: __CUDA_HOSTDEVICE_BF16_DECL__ short int __bfloat16_as_short(const __nv_bfloat16 h);
-  // HIP: __BF16_HOST_DEVICE_STATIC__ short int __bfloat16_as_short(const __hip_bfloat16 h);
-  // CHECK: shi = __bfloat16_as_short(_bf16);
-  shi = __bfloat16_as_short(_bf16);
-
-  // CUDA: __CUDA_HOSTDEVICE_BF16_DECL__ unsigned short int __bfloat16_as_ushort(const __nv_bfloat16 h);
-  // HIP: __BF16_HOST_DEVICE_STATIC__ unsigned short int __bfloat16_as_ushort(const __hip_bfloat16 h);
-  // CHECK: ushi = __bfloat16_as_ushort(_bf16);
-  ushi = __bfloat16_as_ushort(_bf16);
-
-  // CUDA: __CUDA_HOSTDEVICE_BF16_DECL__ __nv_bfloat16 __short_as_bfloat16(const short int i);
-  // HIP: __BF16_HOST_DEVICE_STATIC__ __hip_bfloat16 __short_as_bfloat16(const short int a);
-  // CHECK: _bf16 = __short_as_bfloat16(shi);
-  _bf16 = __short_as_bfloat16(shi);
-
-  // CUDA: __CUDA_HOSTDEVICE_BF16_DECL__ __nv_bfloat16 __ushort_as_bfloat16(const unsigned short int i);
-  // HIP: __BF16_HOST_DEVICE_STATIC__ __hip_bfloat16 __ushort_as_bfloat16(const unsigned short int a);
-  // CHECK: _bf16 = __ushort_as_bfloat16(ushi);
-  _bf16 = __ushort_as_bfloat16(ushi);
-
   // CUDA: __CUDA_HOSTDEVICE_BF16_DECL__ __nv_bfloat162 __float22bfloat162_rn(const float2 a);
   // HIP: __BF16_HOST_DEVICE_STATIC__ __hip_bfloat162 __float22bfloat162_rn(const float2 a);
   // CHECK: bf162 = __float22bfloat162_rn(f2);
