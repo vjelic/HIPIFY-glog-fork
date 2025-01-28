@@ -1530,6 +1530,19 @@ const std::map<llvm::StringRef, hipAPIversions> HIP_DEVICE_FUNCTION_VER_MAP {
   {"__float22bfloat162_rn",             {HIP_5070, HIP_0,    HIP_0   }},
 };
 
+const std::map<llvm::StringRef, cudaAPIChangedVersions> CUDA_DEVICE_FUNCTION_CHANGED_VER_MAP {
+  {"__hmax2",                           {CUDA_122}},
+  {"__hmin2",                           {CUDA_122}},
+  {"__low2bfloat16",                    {CUDA_122}},
+  {"__halves2bfloat162",                {CUDA_122}},
+  {"__low2bfloat162",                   {CUDA_122}},
+  {"__high2bfloat162",                  {CUDA_122}},
+  {"__bfloat16_as_short",               {CUDA_122}},
+  {"__bfloat16_as_ushort",              {CUDA_122}},
+  {"__short_as_bfloat16",               {CUDA_122}},
+  {"__ushort_as_bfloat16",              {CUDA_122}},
+};
+
 const std::map<unsigned int, llvm::StringRef> CUDA_DEVICE_FUNCTION_API_SECTION_MAP {
   {1, "Device Functions"},
   {2, "Device Types"},
