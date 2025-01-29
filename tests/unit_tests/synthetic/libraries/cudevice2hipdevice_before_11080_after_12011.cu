@@ -103,12 +103,12 @@ int main() {
   // CUDA: __CUDA_HOSTDEVICE_BF16_DECL__ __nv_bfloat16 __short_as_bfloat16(const short int i);
   // HIP: __BF16_HOST_DEVICE_STATIC__ __hip_bfloat16 __short_as_bfloat16(const short int a);
   // CHECK: _bf16 = __short_as_bfloat16(shi);
-  _bf16 = __short_as_bfloat16(shi); 
+  _bf16 = __short_as_bfloat16(shi);
 
   // CUDA: __CUDA_HOSTDEVICE_BF16_DECL__ __nv_bfloat16 __ushort_as_bfloat16(const unsigned short int i);
   // HIP: __BF16_HOST_DEVICE_STATIC__ __hip_bfloat16 __ushort_as_bfloat16(const unsigned short int a);
   // CHECK: _bf16 = __ushort_as_bfloat16(ushi);
-  _bf16 = __ushort_as_bfloat16(ushi); 
+  _bf16 = __ushort_as_bfloat16(ushi);
 #endif
 
 #endif

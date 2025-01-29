@@ -1541,6 +1541,10 @@ const std::map<llvm::StringRef, cudaAPIChangedVersions> CUDA_DEVICE_FUNCTION_CHA
   {"__bfloat16_as_ushort",              {CUDA_122}},
   {"__short_as_bfloat16",               {CUDA_122}},
   {"__ushort_as_bfloat16",              {CUDA_122}},
+  {"__bfloat162bfloat162",              {CUDA_122}},
+  {"__lows2bfloat162",                  {CUDA_122}},
+  {"__highs2bfloat162",                 {CUDA_122}},
+  {"__high2bfloat16",                   {CUDA_122}},
 };
 
 const std::map<unsigned int, llvm::StringRef> CUDA_DEVICE_FUNCTION_API_SECTION_MAP {
