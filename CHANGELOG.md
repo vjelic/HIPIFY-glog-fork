@@ -8,15 +8,16 @@ Documentation for HIPIFY is available at
 ### Added
 
 * CUDA 12.6.3 support
-* cuDNN 9.6.0 support
+* cuDNN 9.7.0 support
 * cuTENSOR 2.0.2.1 support
-* LLVM 19.1.6 support
+* LLVM 19.1.7 support
 * Full support for direct hipification of `cuRAND` into `rocRAND` under the `--roc` option
 * [#1617](https://github.com/ROCm/HIPIFY/issues/1617) Support for `fp8` math device/host API
 
 ### Resolved issues
 
 * `MIOpen` support in hipify-perl under the `-miopen` option
+* Use `const_cast<const char**>` for the last arguments in the `hiprtcCreateProgram` and `hiprtcCompileProgram` function calls, as in CUDA, they are of the `const char* const*` type
 * [#1769](https://github.com/ROCm/HIPIFY/issues/1769) Support for `fp16` device/host API
 * [#1800](https://github.com/ROCm/HIPIFY/issues/1800) Fix instructions on building LLVM for HIPIFY on Linux
 
