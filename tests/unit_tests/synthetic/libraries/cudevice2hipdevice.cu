@@ -15,14 +15,26 @@ int main() {
   double dx = 0.0f;
   float fa = 0.0f;
   float fx = 0.0f;
+  short int shi = 0;
+  unsigned short int ushi = 0;
   double2 d2 = { 0.0f, 0.0f };
   float2 f2 = { 0.0f, 0.0f };
+  __half hx = { 0.0f };
+  __half hy = { 0.0f };
+  __half2 h2 = { 0.0f, 0.0f };
   __half_raw hrx = { 0 };
   __half2_raw h2rx = { 0, 0 };
 
 #if CUDA_VERSION >= 11000
-  // CHECK: __hip_bfloat16 bf16 = { 0 };
-  __nv_bfloat16 bf16 = { 0 };
+  // CHECK: __hip_bfloat16 _bf16 = { 0.0f };
+  // CHECK-NEXT: __hip_bfloat16 bf16a = { 0.0f };
+  // CHECK-NEXT: __hip_bfloat16 bf16b = { 0.0f };
+  __nv_bfloat16 _bf16 = { 0.0f };
+  __nv_bfloat16 bf16a = { 0.0f };
+  __nv_bfloat16 bf16b = { 0.0f };
+
+  // CHECK: hip_bfloat16 bf16 = { 0 };
+  nv_bfloat16 bf16 = { 0 };
 
   // CHECK: __hip_bfloat16_raw bf16r = { 0 };
   __nv_bfloat16_raw bf16r = { 0 };
@@ -39,23 +51,28 @@ int main() {
 
   // CUDA: __CUDA_HOSTDEVICE_BF16_DECL__ __nv_bfloat16 __double2bfloat16(const double a);
   // HIP: __BF16_HOST_DEVICE_STATIC__ __hip_bfloat16 __double2bfloat16(const double a)
-  // CHECK: bf16 = __double2bfloat16(da);
-  bf16 = __double2bfloat16(da);
+  // CHECK: _bf16 = __double2bfloat16(da);
+  _bf16 = __double2bfloat16(da);
 
   // CUDA: __CUDA_HOSTDEVICE_BF16_DECL__ __nv_bfloat16 __float2bfloat16(const float a);
   // HIP: __BF16_HOST_DEVICE_STATIC__ __hip_bfloat16 __float2bfloat16(float f);
-  // CHECK: bf16 = __float2bfloat16(fa);
-  bf16 = __float2bfloat16(fa);
+  // CHECK: _bf16 = __float2bfloat16(fa);
+  _bf16 = __float2bfloat16(fa);
 
   // CUDA: __CUDA_HOSTDEVICE_BF16_DECL__ float __bfloat162float(const __nv_bfloat16 a);
   // HIP: __BF16_HOST_DEVICE_STATIC__ float __bfloat162float(__hip_bfloat16 a);
-  // CHECK: bf16 = __bfloat162float(fa);
-  bf16 = __bfloat162float(fa);
+  // CHECK: _bf16 = __bfloat162float(fa);
+  _bf16 = __bfloat162float(fa);
 
   // CUDA: __CUDA_HOSTDEVICE_BF16_DECL__ float2 __bfloat1622float2(const __nv_bfloat162 a);
   // HIP: __BF16_HOST_DEVICE_STATIC__ float2 __bfloat1622float2(const __hip_bfloat162 a);
   // CHECK: f2 = __bfloat1622float2(bf162);
   f2 = __bfloat1622float2(bf162);
+
+  // CUDA: __CUDA_HOSTDEVICE_BF16_DECL__ __nv_bfloat162 __float22bfloat162_rn(const float2 a);
+  // HIP: __BF16_HOST_DEVICE_STATIC__ __hip_bfloat162 __float22bfloat162_rn(const float2 a);
+  // CHECK: bf162 = __float22bfloat162_rn(f2);
+  bf162 = __float22bfloat162_rn(f2);
 #endif
 
 #if CUDA_VERSION >= 11080
@@ -146,9 +163,16 @@ int main() {
   hrx = __nv_cvt_fp8_to_halfraw(fp8_storage_t, fp8_interpretation_t);
 
   // CUDA: __CUDA_HOSTDEVICE_FP8_DECL__ __half2_raw __nv_cvt_fp8x2_to_halfraw2(const __nv_fp8x2_storage_t x, const __nv_fp8_interpretation_t fp8_interpretation);
-  // HIP: __FP8_HOST_DEVICE_STATIC__ __half2_raw  __hip_cvt_fp8x2_to_halfraw2(const __hip_fp8x2_storage_t x, const __hip_fp8_interpretation_t type);
+  // HIP: __FP8_HOST_DEVICE_STATIC__ __half2_raw __hip_cvt_fp8x2_to_halfraw2(const __hip_fp8x2_storage_t x, const __hip_fp8_interpretation_t type);
   // CHECK: h2rx = __hip_cvt_fp8x2_to_halfraw2(fp8x2_storage_t, fp8_interpretation_t);
   h2rx = __nv_cvt_fp8x2_to_halfraw2(fp8x2_storage_t, fp8_interpretation_t);
+#endif
+
+#if CUDA_VERSION >= 12020
+  // CUDA: __CUDA_HOSTDEVICE_FP16_DECL__ __half2 make_half2(const __half x, const __half y);
+  // HIP: __HOST_DEVICE__ __half2 make_half2(__half x, __half y);
+  // CHECK: h2 = make_half2(hx, hy);
+  h2 = make_half2(hx, hy);
 #endif
 
   return 0;

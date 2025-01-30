@@ -1,5 +1,9 @@
 # CUDNN API supported by MIOPEN
 
+
+**Note\:** In the tables that follow the columns marked `A`, `D`, `C`, `R`, and `E` mean the following:
+**A** - Added; **D** - Deprecated; **C** - Changed; **R** - Removed; **E** - Experimental
+
 ## **1. CUDNN Data types**
 
 |**CUDA**|**A**|**D**|**C**|**R**|**MIOPEN**|**A**|**D**|**C**|**R**|**E**|
@@ -15,6 +19,7 @@
 |`CUDNN_ACTIVATION_SIGMOID`|1.0.0|9.0.0| | |`miopenActivationLOGISTIC`|2.1.0| | | | |
 |`CUDNN_ACTIVATION_SWISH`|8.2.0|9.0.0| | | | | | | | |
 |`CUDNN_ACTIVATION_TANH`|1.0.0|9.0.0| | |`miopenActivationTANH`|2.1.0| | | | |
+|`CUDNN_ADA_LAYER_NORM`|9.7.0| | | | | | | | | |
 |`CUDNN_ATTN_DISABLE_PROJ_BIASES`|7.6.3| | | | | | | | | |
 |`CUDNN_ATTN_ENABLE_PROJ_BIASES`|7.6.3| | | | | | | | | |
 |`CUDNN_ATTN_QUERYMAP_ALL_TO_ONE`|7.5.0| | | | | | | | | |
@@ -71,6 +76,17 @@
 |`CUDNN_ATTR_OPERATIONGRAPH_IS_DYNAMIC_SHAPE_ENABLED`|9.4.0| | | | | | | | | |
 |`CUDNN_ATTR_OPERATIONGRAPH_IS_SAME_TOPOLOGY`|9.6.0| | | | | | | | | |
 |`CUDNN_ATTR_OPERATIONGRAPH_OPS`|8.0.1| | | |`MIOPEN_ATTR_OPERATIONGRAPH_OPS`|6.2.0| | | | |
+|`CUDNN_ATTR_OPERATION_BLOCK_SCALE_DEQUANTIZE_BLOCK_SIZE`|9.7.0| | | | | | | | | |
+|`CUDNN_ATTR_OPERATION_BLOCK_SCALE_DEQUANTIZE_MATH_PREC`|9.7.0| | | | | | | | | |
+|`CUDNN_ATTR_OPERATION_BLOCK_SCALE_DEQUANTIZE_SCALE_DESC`|9.7.0| | | | | | | | | |
+|`CUDNN_ATTR_OPERATION_BLOCK_SCALE_DEQUANTIZE_XDESC`|9.7.0| | | | | | | | | |
+|`CUDNN_ATTR_OPERATION_BLOCK_SCALE_DEQUANTIZE_YDESC`|9.7.0| | | | | | | | | |
+|`CUDNN_ATTR_OPERATION_BLOCK_SCALE_QUANTIZE_BLOCK_SIZE`|9.7.0| | | | | | | | | |
+|`CUDNN_ATTR_OPERATION_BLOCK_SCALE_QUANTIZE_DENOM_FACTOR_MODE`|9.7.0| | | | | | | | | |
+|`CUDNN_ATTR_OPERATION_BLOCK_SCALE_QUANTIZE_MATH_PREC`|9.7.0| | | | | | | | | |
+|`CUDNN_ATTR_OPERATION_BLOCK_SCALE_QUANTIZE_SCALE_DESC`|9.7.0| | | | | | | | | |
+|`CUDNN_ATTR_OPERATION_BLOCK_SCALE_QUANTIZE_XDESC`|9.7.0| | | | | | | | | |
+|`CUDNN_ATTR_OPERATION_BLOCK_SCALE_QUANTIZE_YDESC`|9.7.0| | | | | | | | | |
 |`CUDNN_ATTR_OPERATION_BN_BWD_WEIGHTS_BN_SCALE_DESC`|8.2.0| | | |`MIOPEN_ATTR_OPERATION_BN_BWD_WEIGHTS_BN_SCALE_DESC`|6.2.0| | | | |
 |`CUDNN_ATTR_OPERATION_BN_BWD_WEIGHTS_DBN_BIAS_DESC`|8.2.0| | | |`MIOPEN_ATTR_OPERATION_BN_BWD_WEIGHTS_DBN_BIAS_DESC`|6.2.0| | | | |
 |`CUDNN_ATTR_OPERATION_BN_BWD_WEIGHTS_DBN_SCALE_DESC`|8.2.0| | | |`MIOPEN_ATTR_OPERATION_BN_BWD_WEIGHTS_DBN_SCALE_DESC`|6.2.0| | | | |
@@ -255,6 +271,8 @@
 |`CUDNN_BACKEND_LAYOUT_INFO_DESCRIPTOR`|8.0.1| | | |`MIOPEN_BACKEND_LAYOUT_INFO_DESCRIPTOR`|6.2.0| | | | |
 |`CUDNN_BACKEND_MATMUL_DESCRIPTOR`|8.1.0| | | |`MIOPEN_BACKEND_MATMUL_DESCRIPTOR`|6.2.0| | | | |
 |`CUDNN_BACKEND_OPERATIONGRAPH_DESCRIPTOR`|8.0.1| | | |`MIOPEN_BACKEND_OPERATIONGRAPH_DESCRIPTOR`|6.2.0| | | | |
+|`CUDNN_BACKEND_OPERATION_BLOCK_SCALE_DEQUANTIZE_DESCRIPTOR`|9.7.0| | | | | | | | | |
+|`CUDNN_BACKEND_OPERATION_BLOCK_SCALE_QUANTIZE_DESCRIPTOR`|9.7.0| | | | | | | | | |
 |`CUDNN_BACKEND_OPERATION_BN_BWD_WEIGHTS_DESCRIPTOR`|8.2.0| | | | | | | | | |
 |`CUDNN_BACKEND_OPERATION_BN_FINALIZE_STATISTICS_DESCRIPTOR`|8.1.0| | | | | | | | | |
 |`CUDNN_BACKEND_OPERATION_CONCAT_DESCRIPTOR`|8.5.0| | | |`MIOPEN_BACKEND_OPERATION_CONCAT_DESCRIPTOR`|6.2.0| | | | |
@@ -339,8 +357,10 @@
 |`CUDNN_DATA_DOUBLE`|1.0.0| | | |`miopenDouble`|4.5.0| | | | |
 |`CUDNN_DATA_FAST_FLOAT_FOR_FP8`|8.7.0| | | | | | | | | |
 |`CUDNN_DATA_FLOAT`|1.0.0| | | |`miopenFloat`|2.1.0| | | | |
+|`CUDNN_DATA_FP4_E2M1`|9.7.0| | | | | | | | | |
 |`CUDNN_DATA_FP8_E4M3`|8.6.0| | | |`miopenFloat8`|6.0.0| | | | |
 |`CUDNN_DATA_FP8_E5M2`|8.6.0| | | |`miopenBFloat8`|6.0.0| | | | |
+|`CUDNN_DATA_FP8_E8M0`|9.7.0| | | | | | | | | |
 |`CUDNN_DATA_HALF`|3.0.0| | | |`miopenHalf`|2.1.0| | | | |
 |`CUDNN_DATA_INT32`|6.0.0| | | |`miopenInt32`|2.1.0| | | | |
 |`CUDNN_DATA_INT64`|8.1.0| | | |`miopenInt64`|6.2.0| | | | |
@@ -381,6 +401,7 @@
 |`CUDNN_KNOB_TYPE_BLOCK_SIZE`|8.8.0| | | | | | | | | |
 |`CUDNN_KNOB_TYPE_CHUNK_K`|8.0.1|9.0.0| | | | | | | | |
 |`CUDNN_KNOB_TYPE_COUNTS`|8.0.1| | | | | | | | | |
+|`CUDNN_KNOB_TYPE_CTA_COUNT`|9.7.0| | | | | | | | | |
 |`CUDNN_KNOB_TYPE_CTA_SPLIT_K_MODE`|8.0.1|9.0.0| | | | | | | | |
 |`CUDNN_KNOB_TYPE_EDGE`|8.0.1| | | | | | | | | |
 |`CUDNN_KNOB_TYPE_IDX_MODE`|8.0.1|9.0.0| | | | | | | | |
@@ -402,17 +423,22 @@
 |`CUDNN_KNOB_TYPE_SPLIT_K`|8.0.1|9.0.0| | | | | | | | |
 |`CUDNN_KNOB_TYPE_SPLIT_K_BUF`|8.0.1| | | | | | | | | |
 |`CUDNN_KNOB_TYPE_SPLIT_K_SLC`|8.0.1| | | | | | | | | |
+|`CUDNN_KNOB_TYPE_SPLIT_P_SLC`|9.7.0| | | | | | | | | |
 |`CUDNN_KNOB_TYPE_SPLIT_RS`|8.0.1|9.0.0| | | | | | | | |
 |`CUDNN_KNOB_TYPE_STAGES`|8.0.1| | | | | | | | | |
+|`CUDNN_KNOB_TYPE_STREAM_K`|9.7.0| | | | | | | | | |
 |`CUDNN_KNOB_TYPE_SWIZZLE`|8.0.1| | | | | | | | | |
 |`CUDNN_KNOB_TYPE_TILEK`|8.0.1| | | | | | | | | |
 |`CUDNN_KNOB_TYPE_TILE_CGA`|8.6.0|9.0.0| | | | | | | | |
 |`CUDNN_KNOB_TYPE_TILE_CGA_M`|8.6.0| | | | | | | | | |
 |`CUDNN_KNOB_TYPE_TILE_CGA_N`|8.6.0| | | | | | | | | |
 |`CUDNN_KNOB_TYPE_TILE_COLS`|8.9.5| | | | | | | | | |
+|`CUDNN_KNOB_TYPE_TILE_M`|9.7.0| | | | | | | | | |
+|`CUDNN_KNOB_TYPE_TILE_N`|9.7.0| | | | | | | | | |
 |`CUDNN_KNOB_TYPE_TILE_ROWS`|8.9.5| | | | | | | | | |
 |`CUDNN_KNOB_TYPE_TILE_SIZE`|8.0.1| | | | | | | | | |
 |`CUDNN_KNOB_TYPE_USE_TEX`|8.0.1|9.0.0| | | | | | | | |
+|`CUDNN_KNOB_TYPE_WARP_SPEC_CFG`|9.7.0| | | | | | | | | |
 |`CUDNN_KNOB_TYPE_WINO_TILE`|8.0.1|9.0.0| | | | | | | | |
 |`CUDNN_KNOB_TYPE_WORKSPACE`|8.4.0| | | | | | | | | |
 |`CUDNN_LAYER_NORM`|8.5.0| | | | | | | | | |
@@ -716,6 +742,7 @@
 |`CUDNN_TENSOR_OP_MATH`|7.0.5| | | | | | | | | |
 |`CUDNN_TENSOR_OP_MATH_ALLOW_CONVERSION`|7.2.1| | | | | | | | | |
 |`CUDNN_TENSOR_REORDERING_F16x16`|8.8.0| | | | | | | | | |
+|`CUDNN_TENSOR_REORDERING_F8_128x4`|9.7.0| | | | | | | | | |
 |`CUDNN_TENSOR_REORDERING_INT8x32`|8.3.0| | | | | | | | | |
 |`CUDNN_TENSOR_REORDERING_NONE`|8.3.0| | | | | | | | | |
 |`CUDNN_TRANSFORM_FOLD`|7.5.0| | | | | | | | | |
@@ -1174,5 +1201,3 @@
 |`cudnnTransformTensor`|2.0.0|9.0.0| | |`miopenTransformTensor`|2.1.0| | | | |
 |`cudnnTransformTensorEx`|7.5.0|9.0.0| | | | | | | | |
 
-
-\*A - Added; D - Deprecated; C - Changed; R - Removed; E - Experimental

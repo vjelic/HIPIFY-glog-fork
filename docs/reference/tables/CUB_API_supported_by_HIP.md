@@ -1,5 +1,9 @@
 # CUB API supported by HIP
 
+
+**Note\:** In the tables that follow the columns marked `A`, `D`, `C`, `R`, and `E` mean the following:
+**A** - Added; **D** - Deprecated; **C** - Changed; **R** - Removed; **E** - Experimental
+
 ## **1. CUB Data types**
 
 |**CUDA**|**A**|**D**|**C**|**R**|**HIP**|**A**|**D**|**C**|**R**|**E**|
@@ -75,5 +79,3 @@
 |`__CUB_ALIGN_BYTES`| | | | |`__HIPCUB_ALIGN_BYTES`|4.5.0| | | | |
 |`__CUB_LP64__`| | | | | | | | | | |
 
-
-\*A - Added; D - Deprecated; C - Changed; R - Removed; E - Experimental

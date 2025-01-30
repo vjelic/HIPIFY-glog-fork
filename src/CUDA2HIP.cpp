@@ -98,7 +98,7 @@ const std::map <llvm::StringRef, hipCounter> CUDA_INCLUDE_MAP {
   {"caffe2/operators/gather_op.cuh",                        {"caffe2/operators/math/gather_op.cuh",                   "",                                                               CONV_INCLUDE,                API_CAFFE2, 0, UNSUPPORTED}},
   {"caffe2/core/common_cudnn.h",                            {"caffe2/core/hip/common_miopen.h",                       "",                                                               CONV_INCLUDE,                API_CAFFE2, 0}},
   // RTC includes
-  {"nvrtc.h",                                               {"hiprtc.h",                                              "", CONV_INCLUDE_CUDA_MAIN_H, API_RTC, 0}},
+  {"nvrtc.h",                                               {"hip/hiprtc.h",                                          "",                                                               CONV_INCLUDE_CUDA_MAIN_H, API_RTC, 0}},
 };
 
 const std::map<llvm::StringRef, hipCounter> &CUDA_RENAMES_MAP() {
