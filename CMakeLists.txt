@@ -176,19 +176,9 @@ if (NOT HIPIFY_CLANG_TESTS_ONLY)
 
   set(HIPIFY_BIN_INSTALL_PATH "${CMAKE_INSTALL_PREFIX}/bin")
 
-  install(TARGETS hipify-clang DESTINATION bin)
-  # Install bin directory in CMAKE_INSTALL_PREFIX path.
-  install(
-    DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/bin
-    DESTINATION .
-    PATTERN "*.sh"
-    PATTERN "findcode.sh" EXCLUDE
-    PATTERN "findcode_headers.sh" EXCLUDE
-    PATTERN "findcode_sources.sh" EXCLUDE
-    PATTERN "findcode_custom.sh" EXCLUDE
-    PATTERN "finduncodep.sh" EXCLUDE)
-
   set(HIPIFY_LIBEXEC_INSTALL_PATH "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBEXECDIR}/hipify")
+
+  install(TARGETS hipify-clang DESTINATION bin)
 
   install(
     PROGRAMS ${CMAKE_CURRENT_SOURCE_DIR}/bin/hipify-perl
@@ -197,6 +187,10 @@ if (NOT HIPIFY_CLANG_TESTS_ONLY)
     PROGRAMS ${CMAKE_CURRENT_SOURCE_DIR}/bin/findcode_sources.sh
     PROGRAMS ${CMAKE_CURRENT_SOURCE_DIR}/bin/findcode_custom.sh
     PROGRAMS ${CMAKE_CURRENT_SOURCE_DIR}/bin/finduncodep.sh
+    PROGRAMS ${CMAKE_CURRENT_SOURCE_DIR}/bin/hipconvertinplace.sh
+    PROGRAMS ${CMAKE_CURRENT_SOURCE_DIR}/bin/hipconvertinplace-perl.sh
+    PROGRAMS ${CMAKE_CURRENT_SOURCE_DIR}/bin/hipexamine.sh
+    PROGRAMS ${CMAKE_CURRENT_SOURCE_DIR}/bin/hipexamine-perl.sh
     DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}/hipify)
 
   # Headers are already included in HIP SDK, so skip those if including HIPIFY in HIP SDK.
