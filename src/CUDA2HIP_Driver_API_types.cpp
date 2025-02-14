@@ -581,6 +581,9 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_TYPE_NAME_MAP {
   {"CU_AD_FORMAT_Y416",                                                {"HIP_AD_FORMAT_Y416",                                       "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 0xb1
   {"CU_AD_FORMAT_Y444_PLANAR8",                                        {"HIP_AD_FORMAT_Y444_PLANAR8",                               "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 0xb2
   {"CU_AD_FORMAT_Y444_PLANAR10",                                       {"HIP_AD_FORMAT_Y444_PLANAR10",                              "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 0xb3
+  {"CU_AD_FORMAT_YUV444_8bit_SemiPlanar",                              {"HIP_AD_FORMAT_YUV444_8bit_SemiPlanar",                     "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 0xb4
+  {"CU_AD_FORMAT_YUV444_16bit_SemiPlanar",                             {"HIP_AD_FORMAT_YUV444_16bit_SemiPlanar",                    "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 0xb5
+  {"CU_AD_FORMAT_UNORM_INT_101010_2",                                  {"HIP_AD_FORMAT_UNORM_INT_101010_2",                         "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 0x50
   {"CU_AD_FORMAT_MAX",                                                 {"HIP_AD_FORMAT_MAX",                                        "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 0x7FFFFFFF
 
   // cudaComputeMode
@@ -959,6 +962,16 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_TYPE_NAME_MAP {
   {"CU_DEVICE_ATTRIBUTE_HOST_NUMA_ID",                                 {"hipDeviceAttributeHostNumaId",                             "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 134
   // cudaDevAttrD3D12CigSupported
   {"CU_DEVICE_ATTRIBUTE_D3D12_CIG_SUPPORTED",                          {"hipDeviceAttributeD3D12CigSupported",                      "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 135
+  //
+  {"CU_DEVICE_ATTRIBUTE_MEM_DECOMPRESS_ALGORITHM_MASK",                {"hipDeviceAttributeMemDecompressAlgorithmMask",             "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 136
+  //
+  {"CU_DEVICE_ATTRIBUTE_MEM_DECOMPRESS_MAXIMUM_LENGTH",                {"hipDeviceAttributeMemDecompressMaximumLength",             "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 137
+  //
+  {"CU_DEVICE_ATTRIBUTE_GPU_PCI_DEVICE_ID",                            {"hipDeviceAttributePciDeviceId",                            "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 139
+  //
+  {"CU_DEVICE_ATTRIBUTE_GPU_PCI_SUBSYSTEM_ID",                         {"hipDeviceAttributeGpuPciSubsystemId",                      "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 140
+  //
+  {"CU_DEVICE_ATTRIBUTE_HOST_NUMA_MULTINODE_IPC_SUPPORTED",            {"hipDeviceAttributeHostNumaMultinodeIpcSupported",          "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 143
   // cudaDevAttrMax
   {"CU_DEVICE_ATTRIBUTE_MAX",                                          {"hipDeviceAttributeMax",                                    "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
 
@@ -1588,6 +1601,7 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_TYPE_NAME_MAP {
   {"CU_POINTER_ATTRIBUTE_MAPPING_SIZE",                                {"HIP_POINTER_ATTRIBUTE_MAPPING_SIZE",                       "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 18
   {"CU_POINTER_ATTRIBUTE_MAPPING_BASE_ADDR",                           {"HIP_POINTER_ATTRIBUTE_MAPPING_BASE_ADDR",                  "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 19
   {"CU_POINTER_ATTRIBUTE_MEMORY_BLOCK_ID",                             {"HIP_POINTER_ATTRIBUTE_MEMORY_BLOCK_ID",                    "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 20
+  {"CU_POINTER_ATTRIBUTE_IS_HW_DECOMPRESS_CAPABLE",                    {"HIP_POINTER_ATTRIBUTE_IS_HW_DECOMPRESS_CAPABLE",           "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 21
 
   // TODO [HIP]: HIPresourcetype_enum and all its values should be hipResourceType as long as they are equal
   // cudaResourceType
@@ -3854,6 +3868,15 @@ const std::map<llvm::StringRef, cudaAPIversions> CUDA_DRIVER_TYPE_NAME_VER_MAP {
   {"CU_DEV_SM_RESOURCE_SPLIT_IGNORE_SM_COSCHEDULING",                  {CUDA_125, CUDA_0,   CUDA_0  }},
   {"CU_DEV_SM_RESOURCE_SPLIT_MAX_POTENTIAL_CLUSTER_SIZE",              {CUDA_125, CUDA_0,   CUDA_0  }},
   {"CU_COREDUMP_SKIP_CONSTBANK_MEMORY",                                {CUDA_126, CUDA_0,   CUDA_0  }},
+  {"CU_AD_FORMAT_YUV444_8bit_SemiPlanar",                              {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"CU_AD_FORMAT_YUV444_16bit_SemiPlanar",                             {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"CU_AD_FORMAT_UNORM_INT_101010_2",                                  {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"CU_DEVICE_ATTRIBUTE_MEM_DECOMPRESS_ALGORITHM_MASK",                {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"CU_DEVICE_ATTRIBUTE_MEM_DECOMPRESS_MAXIMUM_LENGTH",                {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"CU_DEVICE_ATTRIBUTE_GPU_PCI_DEVICE_ID",                            {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"CU_DEVICE_ATTRIBUTE_GPU_PCI_SUBSYSTEM_ID",                         {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"CU_DEVICE_ATTRIBUTE_HOST_NUMA_MULTINODE_IPC_SUPPORTED",            {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"CU_POINTER_ATTRIBUTE_IS_HW_DECOMPRESS_CAPABLE",                    {CUDA_128, CUDA_0,   CUDA_0  }},
 };
 
 const std::map<llvm::StringRef, hipAPIversions> HIP_DRIVER_TYPE_NAME_VER_MAP {
