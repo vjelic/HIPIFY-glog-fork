@@ -177,6 +177,7 @@
 |`CUDA_EXT_SEM_WAIT_NODE_PARAMS_v1`|11.3| | | |`hipExternalSemaphoreWaitNodeParams`|6.0.0| | | | |
 |`CUDA_EXT_SEM_WAIT_NODE_PARAMS_v2`|12.2| | | |`hipExternalSemaphoreWaitNodeParams`|6.0.0| | | | |
 |`CUDA_EXT_SEM_WAIT_NODE_PARAMS_v2_st`|12.2| | | |`hipExternalSemaphoreWaitNodeParams`|6.0.0| | | | |
+|`CUDA_GRAPH_INSTANTIATE_CONDITIONAL_HANDLE_UNUSED`|12.8| | | | | | | | | |
 |`CUDA_GRAPH_INSTANTIATE_ERROR`|12.0| | | |`hipGraphInstantiateError`|6.2.0| | | | |
 |`CUDA_GRAPH_INSTANTIATE_FLAG_AUTO_FREE_ON_LAUNCH`|11.4| | | |`hipGraphInstantiateFlagAutoFreeOnLaunch`|5.2.0| | | | |
 |`CUDA_GRAPH_INSTANTIATE_FLAG_DEVICE_LAUNCH`|12.0| | | |`hipGraphInstantiateFlagDeviceLaunch`|5.6.0| | | | |
@@ -702,6 +703,7 @@
 |`CU_GRAPHICS_REGISTER_FLAGS_WRITE_DISCARD`| | | | |`hipGraphicsRegisterFlagsWriteDiscard`|4.4.0| | | | |
 |`CU_GRAPH_COND_ASSIGN_DEFAULT`|12.3| | | | | | | | | |
 |`CU_GRAPH_COND_TYPE_IF`|12.3| | | | | | | | | |
+|`CU_GRAPH_COND_TYPE_SWITCH`|12.8| | | | | | | | | |
 |`CU_GRAPH_COND_TYPE_WHILE`|12.3| | | | | | | | | |
 |`CU_GRAPH_DEBUG_DOT_FLAGS_BATCH_MEM_OP_NODE_PARAMS`|11.7| | | | | | | | | |
 |`CU_GRAPH_DEBUG_DOT_FLAGS_CONDITIONAL_NODE_PARAMS`|12.3| | | | | | | | | |
@@ -820,6 +822,7 @@
 |`CU_LAUNCH_ATTRIBUTE_MAX`|12.1| | | | | | | | | |
 |`CU_LAUNCH_ATTRIBUTE_MEM_SYNC_DOMAIN`|12.0| | | | | | | | | |
 |`CU_LAUNCH_ATTRIBUTE_MEM_SYNC_DOMAIN_MAP`|12.0| | | | | | | | | |
+|`CU_LAUNCH_ATTRIBUTE_PREFERRED_CLUSTER_DIMENSION`|12.8| | | | | | | | | |
 |`CU_LAUNCH_ATTRIBUTE_PREFERRED_SHARED_MEMORY_CARVEOUT`|12.5| | | | | | | | | |
 |`CU_LAUNCH_ATTRIBUTE_PRIORITY`|11.8| | | |`hipLaunchAttributePriority`|6.2.0| | | | |
 |`CU_LAUNCH_ATTRIBUTE_PROGRAMMATIC_EVENT`|11.8| | | | | | | | | |
@@ -1025,8 +1028,14 @@
 |`CU_SYNC_POLICY_SPIN`|11.0| | | | | | | | | |
 |`CU_SYNC_POLICY_YIELD`|11.0| | | | | | | | | |
 |`CU_TARGET_COMPUTE_10`| | | |9.0| | | | | | |
+|`CU_TARGET_COMPUTE_100`|12.8| | | | | | | | | |
+|`CU_TARGET_COMPUTE_100A`|12.8| | | | | | | | | |
+|`CU_TARGET_COMPUTE_101`|12.8| | | | | | | | | |
+|`CU_TARGET_COMPUTE_101A`|12.8| | | | | | | | | |
 |`CU_TARGET_COMPUTE_11`| | | |9.0| | | | | | |
 |`CU_TARGET_COMPUTE_12`| | | |9.0| | | | | | |
+|`CU_TARGET_COMPUTE_120`|12.8| | | | | | | | | |
+|`CU_TARGET_COMPUTE_120A`|12.8| | | | | | | | | |
 |`CU_TARGET_COMPUTE_13`| | | |9.0| | | | | | |
 |`CU_TARGET_COMPUTE_20`| | | |12.0| | | | | | |
 |`CU_TARGET_COMPUTE_21`| | | |12.0| | | | | | |
