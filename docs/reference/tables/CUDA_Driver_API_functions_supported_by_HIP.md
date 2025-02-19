@@ -54,6 +54,7 @@
 |`CUDA_ERROR_CDP_NOT_SUPPORTED`|12.0| | | | | | | | | |
 |`CUDA_ERROR_CDP_VERSION_MISMATCH`|12.0| | | | | | | | | |
 |`CUDA_ERROR_COMPAT_NOT_SUPPORTED_ON_DEVICE`|10.1| | | | | | | | | |
+|`CUDA_ERROR_CONTAINED`|12.8| | | | | | | | | |
 |`CUDA_ERROR_CONTEXT_ALREADY_CURRENT`| |3.2| | |`hipErrorContextAlreadyCurrent`|1.6.0| | | | |
 |`CUDA_ERROR_CONTEXT_ALREADY_IN_USE`| | | | |`hipErrorContextAlreadyInUse`|1.6.0| | | | |
 |`CUDA_ERROR_CONTEXT_IS_DESTROYED`| | | | |`hipErrorContextIsDestroyed`|4.3.0| | | | |
@@ -87,6 +88,7 @@
 |`CUDA_ERROR_INVALID_VALUE`| | | | |`hipErrorInvalidValue`|1.6.0| | | | |
 |`CUDA_ERROR_JIT_COMPILATION_DISABLED`|11.2| | | | | | | | | |
 |`CUDA_ERROR_JIT_COMPILER_NOT_FOUND`|9.0| | | | | | | | | |
+|`CUDA_ERROR_KEY_ROTATION`|12.8| | | | | | | | | |
 |`CUDA_ERROR_LAUNCH_FAILED`| | | | |`hipErrorLaunchFailure`|1.6.0| | | | |
 |`CUDA_ERROR_LAUNCH_INCOMPATIBLE_TEXTURING`| | | | | | | | | | |
 |`CUDA_ERROR_LAUNCH_OUT_OF_RESOURCES`| | | | |`hipErrorLaunchOutOfResources`|1.6.0| | | | |
@@ -134,6 +136,7 @@
 |`CUDA_ERROR_STUB_LIBRARY`|11.1| | | | | | | | | |
 |`CUDA_ERROR_SYSTEM_DRIVER_MISMATCH`|10.1| | | | | | | | | |
 |`CUDA_ERROR_SYSTEM_NOT_READY`|10.0| | | | | | | | | |
+|`CUDA_ERROR_TENSOR_MEMORY_LEAK`|12.8| | | | | | | | | |
 |`CUDA_ERROR_TIMEOUT`|10.2| | | | | | | | | |
 |`CUDA_ERROR_TOO_MANY_PEERS`| | | | | | | | | | |
 |`CUDA_ERROR_UNKNOWN`| | | | |`hipErrorUnknown`|1.6.0| | | | |
@@ -810,6 +813,7 @@
 |`CU_KERNEL_NODE_ATTRIBUTE_DEVICE_UPDATABLE_KERNEL_NODE`|12.4| | | | | | | | | |
 |`CU_KERNEL_NODE_ATTRIBUTE_MEM_SYNC_DOMAIN`|12.0| | | | | | | | | |
 |`CU_KERNEL_NODE_ATTRIBUTE_MEM_SYNC_DOMAIN_MAP`|12.0| | | | | | | | | |
+|`CU_KERNEL_NODE_ATTRIBUTE_PREFERRED_CLUSTER_DIMENSION`|12.8| | | | | | | | | |
 |`CU_KERNEL_NODE_ATTRIBUTE_PREFERRED_SHARED_MEMORY_CARVEOUT`|12.5| | | | | | | | | |
 |`CU_KERNEL_NODE_ATTRIBUTE_PRIORITY`|11.7| | | |`hipKernelNodeAttributePriority`|6.2.0| | | | |
 |`CU_LAUNCH_ATTRIBUTE_ACCESS_POLICY_WINDOW`|11.8| | | |`hipLaunchAttributeAccessPolicyWindow`|6.2.0| | | | |
@@ -1059,6 +1063,9 @@
 |`CU_TARGET_COMPUTE_89`|11.8| | | | | | | | | |
 |`CU_TARGET_COMPUTE_90`|11.8| | | | | | | | | |
 |`CU_TARGET_COMPUTE_90A`|12.0| | | | | | | | | |
+|`CU_TENSOR_MAP_DATA_TYPE_16U4_ALIGN16B`|12.8| | | | | | | | | |
+|`CU_TENSOR_MAP_DATA_TYPE_16U4_ALIGN8B`|12.8| | | | | | | | | |
+|`CU_TENSOR_MAP_DATA_TYPE_16U6_ALIGN16B`|12.8| | | | | | | | | |
 |`CU_TENSOR_MAP_DATA_TYPE_BFLOAT16`|12.0| | | | | | | | | |
 |`CU_TENSOR_MAP_DATA_TYPE_FLOAT16`|12.0| | | | | | | | | |
 |`CU_TENSOR_MAP_DATA_TYPE_FLOAT32`|12.0| | | | | | | | | |
@@ -1083,6 +1090,9 @@
 |`CU_TENSOR_MAP_L2_PROMOTION_NONE`|12.0| | | | | | | | | |
 |`CU_TENSOR_MAP_NUM_QWORDS`|12.0| | | | | | | | | |
 |`CU_TENSOR_MAP_SWIZZLE_128B`|12.0| | | | | | | | | |
+|`CU_TENSOR_MAP_SWIZZLE_128B_ATOM_32B`|12.8| | | | | | | | | |
+|`CU_TENSOR_MAP_SWIZZLE_128B_ATOM_32B_FLIP_8B`|12.8| | | | | | | | | |
+|`CU_TENSOR_MAP_SWIZZLE_128B_ATOM_64B`|12.8| | | | | | | | | |
 |`CU_TENSOR_MAP_SWIZZLE_32B`|12.0| | | | | | | | | |
 |`CU_TENSOR_MAP_SWIZZLE_64B`|12.0| | | | | | | | | |
 |`CU_TENSOR_MAP_SWIZZLE_NONE`|12.0| | | | | | | | | |
