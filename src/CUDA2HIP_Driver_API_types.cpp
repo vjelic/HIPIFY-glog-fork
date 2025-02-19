@@ -1783,6 +1783,8 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_TYPE_NAME_MAP {
   {"CUDA_ERROR_UNSUPPORTED_EXEC_AFFINITY",                             {"hipErrorUnsupportedExecAffinity",                          "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 224
   // cudaErrorUnsupportedDevSideSync
   {"CUDA_ERROR_UNSUPPORTED_DEVSIDE_SYNC",                              {"hipErrorUnsupportedDevSideSync",                           "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 225
+  //
+  {"CUDA_ERROR_CONTAINED",                                             {"hipErrorContained",                                        "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 226
   // cudaErrorInvalidSource
   {"CUDA_ERROR_INVALID_SOURCE",                                        {"hipErrorInvalidSource",                                    "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}}, // 300
   // cudaErrorFileNotFound
@@ -1841,6 +1843,8 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_TYPE_NAME_MAP {
   {"CUDA_ERROR_LAUNCH_FAILED",                                         {"hipErrorLaunchFailure",                                    "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}}, // 719
   // cudaErrorCooperativeLaunchTooLarge
   {"CUDA_ERROR_COOPERATIVE_LAUNCH_TOO_LARGE",                          {"hipErrorCooperativeLaunchTooLarge",                        "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}}, // 720
+  //
+  {"CUDA_ERROR_TENSOR_MEMORY_LEAK",                                    {"hipErrorTensorMemoryLeak",                                 "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 721
   // cudaErrorNotPermitted
   {"CUDA_ERROR_NOT_PERMITTED",                                         {"hipErrorNotPermitted",                                     "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 800
   // cudaErrorNotSupported
@@ -1899,6 +1903,8 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_TYPE_NAME_MAP {
   {"CUDA_ERROR_INVALID_RESOURCE_TYPE",                                 {"hipErrorInvalidResourceType",                              "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 914
   // cudaErrorInvalidResourceConfiguration
   {"CUDA_ERROR_INVALID_RESOURCE_CONFIGURATION",                        {"hipErrorInvalidResourceConfiguration",                     "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 915
+  //
+  {"CUDA_ERROR_KEY_ROTATION",                                          {"hipErrorKeyRotation",                                      "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 916
   // cudaErrorUnknown
   {"CUDA_ERROR_UNKNOWN",                                               {"hipErrorUnknown",                                          "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}}, // 999
 
@@ -2182,6 +2188,8 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_TYPE_NAME_MAP {
   {"CU_KERNEL_NODE_ATTRIBUTE_MEM_SYNC_DOMAIN_MAP",                     {"hipKernelNodeAttributeMemSyncDomainMap",                   "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
   // cudaKernelNodeAttributeMemSyncDomain
   {"CU_KERNEL_NODE_ATTRIBUTE_MEM_SYNC_DOMAIN",                         {"hipKernelNodeAttributeMemSyncDomain",                      "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  //
+  {"CU_KERNEL_NODE_ATTRIBUTE_PREFERRED_CLUSTER_DIMENSION",             {"hipKernelNodeAttributePrefferedClusterDimension",          "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
   // cudaKernelNodeAttributeDeviceUpdatableKernelNode
   {"CU_KERNEL_NODE_ATTRIBUTE_DEVICE_UPDATABLE_KERNEL_NODE",            {"hipKernelNodeAttributeDeviceUpdatableKernelMode",          "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
   // cudaKernelNodeAttributePreferredSharedMemoryCarveout
@@ -2595,6 +2603,12 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_TYPE_NAME_MAP {
   {"CU_TENSOR_MAP_DATA_TYPE_TFLOAT32",                                 {"HIP_TENSOR_MAP_DATA_TYPE_TFLOAT32",                        "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
   //
   {"CU_TENSOR_MAP_DATA_TYPE_TFLOAT32_FTZ",                             {"HIP_TENSOR_MAP_DATA_TYPE_TFLOAT32_FTZ",                    "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  //
+  {"CU_TENSOR_MAP_DATA_TYPE_16U4_ALIGN8B",                             {"HIP_TENSOR_MAP_DATA_TYPE_16U4_ALIGN8B",                    "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  //
+  {"CU_TENSOR_MAP_DATA_TYPE_16U4_ALIGN16B",                            {"HIP_TENSOR_MAP_DATA_TYPE_16U4_ALIGN16B",                   "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  //
+  {"CU_TENSOR_MAP_DATA_TYPE_16U6_ALIGN16B",                            {"HIP_TENSOR_MAP_DATA_TYPE_16U6_ALIGN16B",                   "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
 
   //
   {"CUtensorMapInterleave",                                            {"hipTensorMapInterleave",                                   "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
@@ -2619,6 +2633,12 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_TYPE_NAME_MAP {
   {"CU_TENSOR_MAP_SWIZZLE_64B",                                        {"HIP_TENSOR_MAP_SWIZZLE_64B",                               "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
   //
   {"CU_TENSOR_MAP_SWIZZLE_128B",                                       {"HIP_TENSOR_MAP_SWIZZLE_128B",                              "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  //
+  {"CU_TENSOR_MAP_SWIZZLE_128B_ATOM_32B",                              {"HIP_TENSOR_MAP_SWIZZLE_128B_ATOM_32B",                     "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  //
+  {"CU_TENSOR_MAP_SWIZZLE_128B_ATOM_32B_FLIP_8B",                      {"HIP_TENSOR_MAP_SWIZZLE_128B_ATOM_32B_FLIP_8B",             "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  //
+  {"CU_TENSOR_MAP_SWIZZLE_128B_ATOM_64B",                              {"HIP_TENSOR_MAP_SWIZZLE_128B_ATOM_64B",                     "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
 
   //
   {"CUtensorMapL2promotion",                                           {"hipTensorMapL2promotion",                                  "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
@@ -3898,6 +3918,16 @@ const std::map<llvm::StringRef, cudaAPIversions> CUDA_DRIVER_TYPE_NAME_VER_MAP {
   {"CU_GRAPH_COND_TYPE_SWITCH",                                        {CUDA_128, CUDA_0,   CUDA_0  }},
   {"CUDA_GRAPH_INSTANTIATE_CONDITIONAL_HANDLE_UNUSED",                 {CUDA_128, CUDA_0,   CUDA_0  }},
   {"CU_LAUNCH_ATTRIBUTE_PREFERRED_CLUSTER_DIMENSION",                  {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"CU_KERNEL_NODE_ATTRIBUTE_PREFERRED_CLUSTER_DIMENSION",             {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"CUDA_ERROR_CONTAINED",                                             {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"CUDA_ERROR_TENSOR_MEMORY_LEAK",                                    {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"CUDA_ERROR_KEY_ROTATION",                                          {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"CU_TENSOR_MAP_DATA_TYPE_16U4_ALIGN8B",                             {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"CU_TENSOR_MAP_DATA_TYPE_16U4_ALIGN16B",                            {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"CU_TENSOR_MAP_DATA_TYPE_16U6_ALIGN16B",                            {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"CU_TENSOR_MAP_SWIZZLE_128B_ATOM_32B",                              {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"CU_TENSOR_MAP_SWIZZLE_128B_ATOM_32B_FLIP_8B",                      {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"CU_TENSOR_MAP_SWIZZLE_128B_ATOM_64B",                              {CUDA_128, CUDA_0,   CUDA_0  }},
 };
 
 const std::map<llvm::StringRef, hipAPIversions> HIP_DRIVER_TYPE_NAME_VER_MAP {
