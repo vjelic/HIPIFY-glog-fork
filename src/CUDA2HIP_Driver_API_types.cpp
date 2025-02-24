@@ -2795,6 +2795,38 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_TYPE_NAME_MAP {
   //
   {"CIG_DATA_TYPE_D3D12_COMMAND_QUEUE",                               {"HIP_CIG_DATA_TYPE_D3D12_COMMAND_QUEUE",                     "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
 
+  //
+  {"CUtensorMapIm2ColWideMode",                                        {"hipTensorMapIm2ColWideMode",                               "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  //
+  {"CUtensorMapIm2ColWideMode_enum",                                   {"hipTensorMapIm2ColWideMode",                               "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  // CUtensorMapIm2ColWideMode enum values
+  //
+  {"CU_TENSOR_MAP_IM2COL_WIDE_MODE_W",                                 {"HIP_TENSOR_MAP_IM2COL_WIDE_MODE_W",                        "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  //
+  {"CU_TENSOR_MAP_IM2COL_WIDE_MODE_W128",                              {"HIP_TENSOR_MAP_IM2COL_WIDE_MODE_W128",                     "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+
+  //
+  {"CUmemRangeFlags",                                                  {"hipMemRangeFlags",                                         "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  //
+  {"CUmemRangeFlags_enum",                                             {"hipMemRangeFlags",                                         "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  // CUmemRangeFlags enum values
+  //
+  {"CU_MEM_RANGE_FLAG_DMA_BUF_MAPPING_TYPE_PCIE",                      {"HIP_MEM_RANGE_FLAG_DMA_BUF_MAPPING_TYPE_PCIE",             "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+
+  //
+  {"CUprocessState",                                                   {"hipProcessState",                                          "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  //
+  {"CUprocessState_enum",                                              {"hipProcessState",                                          "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  // CUprocessState enum values
+  //
+  {"CU_PROCESS_STATE_RUNNING",                                         {"HIP_PROCESS_STATE_RUNNING",                                "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  //
+  {"CU_PROCESS_STATE_LOCKED",                                          {"HIP_PROCESS_STATE_LOCKED",                                 "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  //
+  {"CU_PROCESS_STATE_CHECKPOINTED",                                    {"HIP_PROCESS_STATE_CHECKPOINTED",                           "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  //
+  {"CU_PROCESS_STATE_FAILED",                                          {"HIP_PROCESS_STATE_FAILED",                                 "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+
   // 4. Typedefs
 
   // no analogue
@@ -2941,6 +2973,10 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_TYPE_NAME_MAP {
   {"CU_GRAPH_KERNEL_NODE_PORT_LAUNCH_ORDER",                           {"hipGraphKernelNodePortLaunchCompletion",                   "", CONV_DEFINE, API_DRIVER, SEC::DATA_TYPES}}, // 2
   //
   {"CUDA_ARRAY3D_VIDEO_ENCODE_DECODE",                                 {"HIP_ARRAY3D_VIDEO_ENCODE_DECODE",                          "", CONV_DEFINE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 2
+  //
+  {"CU_MEM_CREATE_USAGE_HW_DECOMPRESS",                                {"HIP_MEM_CREATE_USAGE_HW_DECOMPRESS",                       "", CONV_DEFINE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 0x2
+  //
+  {"CU_MEM_POOL_CREATE_USAGE_HW_DECOMPRESS",                           {"HIP_MEM_POOL_CREATE_USAGE_HW_DECOMPRESS",                  "", CONV_DEFINE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 0x2
 };
 
 const std::map<llvm::StringRef, cudaAPIversions> CUDA_DRIVER_TYPE_NAME_VER_MAP {
@@ -3928,6 +3964,21 @@ const std::map<llvm::StringRef, cudaAPIversions> CUDA_DRIVER_TYPE_NAME_VER_MAP {
   {"CU_TENSOR_MAP_SWIZZLE_128B_ATOM_32B",                              {CUDA_128, CUDA_0,   CUDA_0  }},
   {"CU_TENSOR_MAP_SWIZZLE_128B_ATOM_32B_FLIP_8B",                      {CUDA_128, CUDA_0,   CUDA_0  }},
   {"CU_TENSOR_MAP_SWIZZLE_128B_ATOM_64B",                              {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"CUtensorMapIm2ColWideMode",                                        {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"CUtensorMapIm2ColWideMode_enum",                                   {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"CU_TENSOR_MAP_IM2COL_WIDE_MODE_W",                                 {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"CU_TENSOR_MAP_IM2COL_WIDE_MODE_W128",                              {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"CUmemRangeFlags",                                                  {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"CUmemRangeFlags_enum",                                             {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"CU_MEM_RANGE_FLAG_DMA_BUF_MAPPING_TYPE_PCIE",                      {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"CU_MEM_CREATE_USAGE_HW_DECOMPRESS",                                {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"CU_MEM_POOL_CREATE_USAGE_HW_DECOMPRESS",                           {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"CUprocessState",                                                   {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"CUprocessState_enum",                                              {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"CU_PROCESS_STATE_RUNNING",                                         {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"CU_PROCESS_STATE_LOCKED",                                          {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"CU_PROCESS_STATE_CHECKPOINTED",                                    {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"CU_PROCESS_STATE_FAILED",                                          {CUDA_128, CUDA_0,   CUDA_0  }},
 };
 
 const std::map<llvm::StringRef, hipAPIversions> HIP_DRIVER_TYPE_NAME_VER_MAP {

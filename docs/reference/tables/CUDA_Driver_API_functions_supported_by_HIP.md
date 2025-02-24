@@ -891,6 +891,7 @@
 |`CU_MEM_ATTACH_GLOBAL`| | | | |`hipMemAttachGlobal`|2.5.0| | | | |
 |`CU_MEM_ATTACH_HOST`| | | | |`hipMemAttachHost`|2.5.0| | | | |
 |`CU_MEM_ATTACH_SINGLE`| | | | |`hipMemAttachSingle`|3.7.0| | | | |
+|`CU_MEM_CREATE_USAGE_HW_DECOMPRESS`|12.8| | | | | | | | | |
 |`CU_MEM_CREATE_USAGE_TILE_POOL`|11.1| | | | | | | | | |
 |`CU_MEM_HANDLE_TYPE_FABRIC`|12.3| | | | | | | | | |
 |`CU_MEM_HANDLE_TYPE_GENERIC`|11.1| | | |`hipMemHandleTypeGeneric`|5.2.0| | | | |
@@ -907,6 +908,7 @@
 |`CU_MEM_LOCATION_TYPE_MAX`|10.2| | | | | | | | | |
 |`CU_MEM_OPERATION_TYPE_MAP`|11.1| | | |`hipMemOperationTypeMap`|5.2.0| | | | |
 |`CU_MEM_OPERATION_TYPE_UNMAP`|11.1| | | |`hipMemOperationTypeUnmap`|5.2.0| | | | |
+|`CU_MEM_POOL_CREATE_USAGE_HW_DECOMPRESS`|12.8| | | | | | | | | |
 |`CU_MEM_RANGE_ATTRIBUTE_ACCESSED_BY`|8.0| | | |`hipMemRangeAttributeAccessedBy`|3.7.0| | | | |
 |`CU_MEM_RANGE_ATTRIBUTE_LAST_PREFETCH_LOCATION`|8.0| | | |`hipMemRangeAttributeLastPrefetchLocation`|3.7.0| | | | |
 |`CU_MEM_RANGE_ATTRIBUTE_LAST_PREFETCH_LOCATION_ID`|12.2| | | | | | | | | |
@@ -915,6 +917,7 @@
 |`CU_MEM_RANGE_ATTRIBUTE_PREFERRED_LOCATION_ID`|12.2| | | | | | | | | |
 |`CU_MEM_RANGE_ATTRIBUTE_PREFERRED_LOCATION_TYPE`|12.2| | | | | | | | | |
 |`CU_MEM_RANGE_ATTRIBUTE_READ_MOSTLY`|8.0| | | |`hipMemRangeAttributeReadMostly`|3.7.0| | | | |
+|`CU_MEM_RANGE_FLAG_DMA_BUF_MAPPING_TYPE_PCIE`|12.8| | | | | | | | | |
 |`CU_MEM_RANGE_HANDLE_TYPE_DMA_BUF_FD`|11.7| | | | | | | | | |
 |`CU_MEM_RANGE_HANDLE_TYPE_MAX`|11.7| | | | | | | | | |
 |`CU_MODULE_EAGER_LOADING`|11.7| | | | | | | | | |
@@ -950,6 +953,10 @@
 |`CU_POINTER_ATTRIBUTE_SYNC_MEMOPS`| | | | |`HIP_POINTER_ATTRIBUTE_SYNC_MEMOPS`|5.0.0| | | | |
 |`CU_PREFER_BINARY`| | | | | | | | | | |
 |`CU_PREFER_PTX`| | | | | | | | | | |
+|`CU_PROCESS_STATE_CHECKPOINTED`|12.8| | | | | | | | | |
+|`CU_PROCESS_STATE_FAILED`|12.8| | | | | | | | | |
+|`CU_PROCESS_STATE_LOCKED`|12.8| | | | | | | | | |
+|`CU_PROCESS_STATE_RUNNING`|12.8| | | | | | | | | |
 |`CU_RESOURCE_TYPE_ARRAY`| | | | |`HIP_RESOURCE_TYPE_ARRAY`|3.5.0| | | | |
 |`CU_RESOURCE_TYPE_LINEAR`| | | | |`HIP_RESOURCE_TYPE_LINEAR`|3.5.0| | | | |
 |`CU_RESOURCE_TYPE_MIPMAPPED_ARRAY`| | | | |`HIP_RESOURCE_TYPE_MIPMAPPED_ARRAY`|3.5.0| | | | |
@@ -1081,6 +1088,8 @@
 |`CU_TENSOR_MAP_DATA_TYPE_UINT8`|12.0| | | | | | | | | |
 |`CU_TENSOR_MAP_FLOAT_OOB_FILL_NAN_REQUEST_ZERO_FMA`|12.0| | | | | | | | | |
 |`CU_TENSOR_MAP_FLOAT_OOB_FILL_NONE`|12.0| | | | | | | | | |
+|`CU_TENSOR_MAP_IM2COL_WIDE_MODE_W`|12.8| | | | | | | | | |
+|`CU_TENSOR_MAP_IM2COL_WIDE_MODE_W128`|12.8| | | | | | | | | |
 |`CU_TENSOR_MAP_INTERLEAVE_16B`|12.0| | | | | | | | | |
 |`CU_TENSOR_MAP_INTERLEAVE_32B`|12.0| | | | | | | | | |
 |`CU_TENSOR_MAP_INTERLEAVE_NONE`|12.0| | | | | | | | | |
@@ -1367,6 +1376,8 @@
 |`CUmemPoolPtrExportData_v1`|11.3| | | |`hipMemPoolPtrExportData`|5.2.0| | | | |
 |`CUmemPool_attribute`|11.2| | | |`hipMemPoolAttr`|5.2.0| | | | |
 |`CUmemPool_attribute_enum`|11.2| | | |`hipMemPoolAttr`|5.2.0| | | | |
+|`CUmemRangeFlags`|12.8| | | | | | | | | |
+|`CUmemRangeFlags_enum`|12.8| | | | | | | | | |
 |`CUmemRangeHandleType`|11.7| | | | | | | | | |
 |`CUmemRangeHandleType_enum`|11.7| | | | | | | | | |
 |`CUmem_advise`|8.0| | | |`hipMemoryAdvise`|3.7.0| | | | |
@@ -1392,6 +1403,8 @@
 |`CUoccupancy_flags_enum`| | | | | | | | | | |
 |`CUpointer_attribute`| | | | |`hipPointer_attribute`|5.0.0| | | | |
 |`CUpointer_attribute_enum`| | | | |`hipPointer_attribute`|5.0.0| | | | |
+|`CUprocessState`|12.8| | | | | | | | | |
+|`CUprocessState_enum`|12.8| | | | | | | | | |
 |`CUresourceViewFormat`| | | | |`HIPresourceViewFormat`|3.5.0| | | | |
 |`CUresourceViewFormat_enum`| | | | |`HIPresourceViewFormat_enum`|3.5.0| | | | |
 |`CUresourcetype`| | | | |`HIPresourcetype`|3.5.0| | | | |
@@ -1440,6 +1453,8 @@
 |`CUtensorMapDataType_enum`|12.0| | | | | | | | | |
 |`CUtensorMapFloatOOBfill`|12.0| | | | | | | | | |
 |`CUtensorMapFloatOOBfill_enum`|12.0| | | | | | | | | |
+|`CUtensorMapIm2ColWideMode`|12.8| | | | | | | | | |
+|`CUtensorMapIm2ColWideMode_enum`|12.8| | | | | | | | | |
 |`CUtensorMapInterleave`|12.0| | | | | | | | | |
 |`CUtensorMapInterleave_enum`|12.0| | | | | | | | | |
 |`CUtensorMapL2promotion`|12.0| | | | | | | | | |
