@@ -13,7 +13,7 @@
 
 SCRIPT_DIR="$(dirname "$(realpath "$0")")"
 SCRIPT_NAME=findcode.sh
-PRIV_SCRIPT_DIR="$SCRIPT_DIR/../libexec/hipify"
+BIN_DIR="$SCRIPT_DIR/../../bin"
 SEARCH_DIR=$1
 if [ "$2" = "-filter=all" ]
 then
@@ -33,4 +33,4 @@ shift
 fi
 shift
 
-$SCRIPT_DIR/hipify-perl -inplace -print-stats "$@" `$PRIV_SCRIPT_DIR/$SCRIPT_NAME $SEARCH_DIR`
+$BIN_DIR/hipify-perl -inplace -print-stats "$@" `$SCRIPT_DIR/$SCRIPT_NAME $SEARCH_DIR`
