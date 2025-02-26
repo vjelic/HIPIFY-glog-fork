@@ -7,7 +7,6 @@
 
 
 SCRIPT_DIR="$(dirname "$(realpath "$0")")"
-BIN_DIR="$SCRIPT_DIR/../../bin"
 SEARCH_DIR=$1
 shift
-$BIN_DIR/hipify-perl -no-output -print-stats "$@" `$SCRIPT_DIR/findcode.sh $SEARCH_DIR`
+$SCRIPT_DIR/hipify-perl -no-output -print-stats "$@" `$SCRIPT_DIR/findcode.sh $SEARCH_DIR`
