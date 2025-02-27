@@ -854,6 +854,13 @@
 |`CU_LIMIT_PRINTF_FIFO_SIZE`| | | | |`hipLimitPrintfFifoSize`|4.5.0| | | | |
 |`CU_LIMIT_SHMEM_SIZE`|12.5| | | | | | | | | |
 |`CU_LIMIT_STACK_SIZE`| | | | |`hipLimitStackSize`|5.3.0| | | | |
+|`CU_MEMCPY_FLAG_DEFAULT`|12.8| | | | | | | | | |
+|`CU_MEMCPY_FLAG_PREFER_OVERLAP_WITH_COMPUTE`|12.8| | | | | | | | | |
+|`CU_MEMCPY_SRC_ACCESS_ORDER_ANY`|12.8| | | | | | | | | |
+|`CU_MEMCPY_SRC_ACCESS_ORDER_DURING_API_CALL`|12.8| | | | | | | | | |
+|`CU_MEMCPY_SRC_ACCESS_ORDER_INVALID`|12.8| | | | | | | | | |
+|`CU_MEMCPY_SRC_ACCESS_ORDER_MAX`|12.8| | | | | | | | | |
+|`CU_MEMCPY_SRC_ACCESS_ORDER_STREAM`|12.8| | | | | | | | | |
 |`CU_MEMHOSTALLOC_DEVICEMAP`| | | | |`hipHostMallocMapped`|1.6.0| | | | |
 |`CU_MEMHOSTALLOC_PORTABLE`| | | | |`hipHostMallocPortable`|1.6.0| | | | |
 |`CU_MEMHOSTALLOC_WRITECOMBINED`| | | | |`hipHostMallocWriteCombined`|1.6.0| | | | |
@@ -1142,6 +1149,14 @@
 |`CUasyncNotificationInfo_st`|12.4| | | | | | | | | |
 |`CUasyncNotificationType`|12.4| | | | | | | | | |
 |`CUasyncNotificationType_enum`|12.4| | | | | | | | | |
+|`CUcheckpointCheckpointArgs`|12.8| | | | | | | | | |
+|`CUcheckpointCheckpointArgs_st`|12.8| | | | | | | | | |
+|`CUcheckpointLockArgs`|12.8| | | | | | | | | |
+|`CUcheckpointLockArgs_st`|12.8| | | | | | | | | |
+|`CUcheckpointRestoreArgs`|12.8| | | | | | | | | |
+|`CUcheckpointRestoreArgs_st`|12.8| | | | | | | | | |
+|`CUcheckpointUnlockArgs`|12.8| | | | | | | | | |
+|`CUcheckpointUnlockArgs_st`|12.8| | | | | | | | | |
 |`CUcigDataType`|12.5| | | | | | | | | |
 |`CUcigDataType_enum`|12.5| | | | | | | | | |
 |`CUclusterSchedulingPolicy`|11.8| | | | | | | | | |
@@ -1384,6 +1399,10 @@
 |`CUmem_advise_enum`|8.0| | | |`hipMemoryAdvise`|3.7.0| | | | |
 |`CUmem_range_attribute`|8.0| | | |`hipMemRangeAttribute`|3.7.0| | | | |
 |`CUmem_range_attribute_enum`|8.0| | | |`hipMemRangeAttribute`|3.7.0| | | | |
+|`CUmemcpyFlags`|12.8| | | | | | | | | |
+|`CUmemcpyFlags_enum`|12.8| | | | | | | | | |
+|`CUmemcpySrcAccessOrder`|12.8| | | | | | | | | |
+|`CUmemcpySrcAccessOrder_enum`|12.8| | | | | | | | | |
 |`CUmemoryPool`|11.2| | | |`hipMemPool_t`|5.2.0| | | | |
 |`CUmemorytype`| | | | |`hipMemoryType`|1.6.0| | | | |
 |`CUmemorytype_enum`| | | | |`hipMemoryType`|1.6.0| | | | |
