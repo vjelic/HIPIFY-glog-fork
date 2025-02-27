@@ -193,6 +193,18 @@ if (NOT HIPIFY_CLANG_TESTS_ONLY)
     PROGRAMS ${CMAKE_CURRENT_SOURCE_DIR}/bin/hipexamine-perl.sh
     DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}/hipify)
 
+  # Adding symlink for hipify-perl for backward compatibility
+  # Note: To be removed once hipify-perl install location usages
+  # are fully updated across modules Or hipify-perl is deprecated.
+  install(
+    CODE "execute_process(
+        COMMAND bash -c \"set -e
+        cd \$ENV{DESTDIR}\${CMAKE_INSTALL_PREFIX}
+        ln -sf ../${CMAKE_INSTALL_LIBEXECDIR}/hipify/hipify-perl ${CMAKE_INSTALL_BINDIR}/hipify-perl
+        \")")
+
+
+
   # Headers are already included in HIP SDK, so skip those if including HIPIFY in HIP SDK.
   if( HIPIFY_INSTALL_CLANG_HEADERS)
     if(NOT HIPIFY_INCLUDE_IN_HIP_SDK)
