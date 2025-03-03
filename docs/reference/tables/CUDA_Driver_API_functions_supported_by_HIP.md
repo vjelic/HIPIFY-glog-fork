@@ -213,6 +213,9 @@
 |`CUDA_MEMCPY2D_v1_st`| | | | |`hip_Memcpy2D`|1.7.0| | | | |
 |`CUDA_MEMCPY2D_v2`|11.3| | | |`hip_Memcpy2D`|1.7.0| | | | |
 |`CUDA_MEMCPY3D`| | | | |`HIP_MEMCPY3D`|3.2.0| | | | |
+|`CUDA_MEMCPY3D_BATCH_OP`|12.8| | | | | | | | | |
+|`CUDA_MEMCPY3D_BATCH_OP_st`|12.8| | | | | | | | | |
+|`CUDA_MEMCPY3D_BATCH_OP_v1`|12.8| | | | | | | | | |
 |`CUDA_MEMCPY3D_PEER`| | | | | | | | | | |
 |`CUDA_MEMCPY3D_PEER_st`| | | | | | | | | | |
 |`CUDA_MEMCPY3D_PEER_v1`|11.3| | | | | | | | | |
@@ -856,6 +859,9 @@
 |`CU_LIMIT_STACK_SIZE`| | | | |`hipLimitStackSize`|5.3.0| | | | |
 |`CU_MEMCPY_FLAG_DEFAULT`|12.8| | | | | | | | | |
 |`CU_MEMCPY_FLAG_PREFER_OVERLAP_WITH_COMPUTE`|12.8| | | | | | | | | |
+|`CU_MEMCPY_OPERAND_TYPE_ARRAY`|12.8| | | | | | | | | |
+|`CU_MEMCPY_OPERAND_TYPE_MAX`|12.8| | | | | | | | | |
+|`CU_MEMCPY_OPERAND_TYPE_POINTER`|12.8| | | | | | | | | |
 |`CU_MEMCPY_SRC_ACCESS_ORDER_ANY`|12.8| | | | | | | | | |
 |`CU_MEMCPY_SRC_ACCESS_ORDER_DURING_API_CALL`|12.8| | | | | | | | | |
 |`CU_MEMCPY_SRC_ACCESS_ORDER_INVALID`|12.8| | | | | | | | | |
@@ -1241,6 +1247,9 @@
 |`CUexecAffinityType_enum`|11.4| | | | | | | | | |
 |`CUextMemory_st`|10.0| | | | | | | | | |
 |`CUextSemaphore_st`|10.0| | | | | | | | | |
+|`CUextent3D`|12.8| | | | | | | | | |
+|`CUextent3D_st`|12.8| | | | | | | | | |
+|`CUextent3D_v1`|12.8| | | | | | | | | |
 |`CUexternalMemory`|10.0| | | |`hipExternalMemory_t`|4.3.0| | | | |
 |`CUexternalMemoryHandleType`|10.0| | | |`hipExternalMemoryHandleType`|4.3.0| | | | |
 |`CUexternalMemoryHandleType_enum`|10.0| | | |`hipExternalMemoryHandleType_enum`|4.3.0| | | | |
@@ -1399,6 +1408,14 @@
 |`CUmem_advise_enum`|8.0| | | |`hipMemoryAdvise`|3.7.0| | | | |
 |`CUmem_range_attribute`|8.0| | | |`hipMemRangeAttribute`|3.7.0| | | | |
 |`CUmem_range_attribute_enum`|8.0| | | |`hipMemRangeAttribute`|3.7.0| | | | |
+|`CUmemcpy3DOperand`|12.8| | | | | | | | | |
+|`CUmemcpy3DOperandType`|12.8| | | | | | | | | |
+|`CUmemcpy3DOperandType_enum`|12.8| | | | | | | | | |
+|`CUmemcpy3DOperand_st`|12.8| | | | | | | | | |
+|`CUmemcpy3DOperand_v1`|12.8| | | | | | | | | |
+|`CUmemcpyAttributes`|12.8| | | | | | | | | |
+|`CUmemcpyAttributes_st`|12.8| | | | | | | | | |
+|`CUmemcpyAttributes_v1`|12.8| | | | | | | | | |
 |`CUmemcpyFlags`|12.8| | | | | | | | | |
 |`CUmemcpyFlags_enum`|12.8| | | | | | | | | |
 |`CUmemcpySrcAccessOrder`|12.8| | | | | | | | | |
@@ -1420,6 +1437,9 @@
 |`CUoccupancyB2DSize`| | | | |`void*`| | | | | |
 |`CUoccupancy_flags`| | | | | | | | | | |
 |`CUoccupancy_flags_enum`| | | | | | | | | | |
+|`CUoffset3D`|12.8| | | | | | | | | |
+|`CUoffset3D_st`|12.8| | | | | | | | | |
+|`CUoffset3D_v1`|12.8| | | | | | | | | |
 |`CUpointer_attribute`| | | | |`hipPointer_attribute`|5.0.0| | | | |
 |`CUpointer_attribute_enum`| | | | |`hipPointer_attribute`|5.0.0| | | | |
 |`CUprocessState`|12.8| | | | | | | | | |
