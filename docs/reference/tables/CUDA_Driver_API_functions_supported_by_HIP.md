@@ -906,6 +906,9 @@
 |`CU_MEM_ATTACH_SINGLE`| | | | |`hipMemAttachSingle`|3.7.0| | | | |
 |`CU_MEM_CREATE_USAGE_HW_DECOMPRESS`|12.8| | | | | | | | | |
 |`CU_MEM_CREATE_USAGE_TILE_POOL`|11.1| | | | | | | | | |
+|`CU_MEM_DECOMPRESS_ALGORITHM_DEFLATE`|12.8| | | | | | | | | |
+|`CU_MEM_DECOMPRESS_ALGORITHM_SNAPPY`|12.8| | | | | | | | | |
+|`CU_MEM_DECOMPRESS_UNSUPPORTED`|12.8| | | | | | | | | |
 |`CU_MEM_HANDLE_TYPE_FABRIC`|12.3| | | | | | | | | |
 |`CU_MEM_HANDLE_TYPE_GENERIC`|11.1| | | |`hipMemHandleTypeGeneric`|5.2.0| | | | |
 |`CU_MEM_HANDLE_TYPE_MAX`|10.2| | | | | | | | | |
@@ -1377,6 +1380,10 @@
 |`CUmemAllocationType_enum`|10.2| | | |`hipMemAllocationType`|5.2.0| | | | |
 |`CUmemAttach_flags`| | | | | | | | | | |
 |`CUmemAttach_flags_enum`| | | | | | | | | | |
+|`CUmemDecompressAlgorithm`|12.8| | | | | | | | | |
+|`CUmemDecompressAlgorithm_enum`|12.8| | | | | | | | | |
+|`CUmemDecompressParams`|12.8| | | | | | | | | |
+|`CUmemDecompressParams_st`|12.8| | | | | | | | | |
 |`CUmemFabricHandle`|12.3| | | | | | | | | |
 |`CUmemFabricHandle_st`|12.3| | | | | | | | | |
 |`CUmemFabricHandle_v1`|12.3| | | | | | | | | |
