@@ -115,6 +115,10 @@ if (NOT HIPIFY_CLANG_TESTS_ONLY)
           ${LLVM_BINARY_DIR}/tools/lld/include
           ${LLVM_EXTERNAL_LLD_SOURCE_DIR}/include)
     endif()
+  elseif(MSVC)
+    # Keep the existing compiler since MSVC-specific flags will be set later.
+    # Overriding CMAKE_CXX_COMPILER/CMAKE_C_COMPILER below is sketchy - could
+    # that be removed or reworked instead?
   else()
     set(CMAKE_CXX_COMPILER ${LLVM_TOOLS_BINARY_DIR}/clang++)
     set(CMAKE_C_COMPILER ${LLVM_TOOLS_BINARY_DIR}/clang)
