@@ -518,6 +518,11 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_TYPE_NAME_MAP {
   //
   {"CUDA_MEMCPY3D_BATCH_OP",                                           {"HIP_MEMCPY3D_BATCH_OP",                                    "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
 
+  //
+  {"CUmemDecompressParams_st",                                         {"hipMemDecompressParams",                                   "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  //
+  {"CUmemDecompressParams",                                            {"hipMemDecompressParams",                                   "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+
   // 2. Unions
 
   {"CUstreamBatchMemOpParams",                                         {"hipStreamBatchMemOpParams",                                "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_EXPERIMENTAL}},
@@ -2910,6 +2915,18 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_TYPE_NAME_MAP {
   //
   {"CU_MEMCPY_OPERAND_TYPE_MAX",                                       {"HIP_MEMCPY_OPERAND_TYPE_MAX",                              "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
 
+  //
+  {"CUmemDecompressAlgorithm",                                         {"hipMemDecompressAlgorithm",                                "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  //
+  {"CUmemDecompressAlgorithm_enum",                                    {"hipMemDecompressAlgorithm",                                "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  // CUmemDecompressAlgorithm enum values
+  //
+  {"CU_MEM_DECOMPRESS_UNSUPPORTED",                                    {"HIP_MEM_DECOMPRESS_UNSUPPORTED",                           "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  //
+  {"CU_MEM_DECOMPRESS_ALGORITHM_DEFLATE",                              {"HIP_MEM_DECOMPRESS_ALGORITHM_DEFLATE",                     "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  //
+  {"CU_MEM_DECOMPRESS_ALGORITHM_SNAPPY",                               {"HIP_MEM_DECOMPRESS_ALGORITHM_SNAPPY",                      "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+
   // 4. Typedefs
 
   // no analogue
@@ -4116,6 +4133,13 @@ const std::map<llvm::StringRef, cudaAPIversions> CUDA_DRIVER_TYPE_NAME_VER_MAP {
   {"CUDA_MEMCPY3D_BATCH_OP_st",                                        {CUDA_128, CUDA_0,   CUDA_0  }},
   {"CUDA_MEMCPY3D_BATCH_OP",                                           {CUDA_128, CUDA_0,   CUDA_0  }},
   {"CUDA_MEMCPY3D_BATCH_OP_v1",                                        {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"CUmemDecompressAlgorithm",                                         {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"CUmemDecompressAlgorithm_enum",                                    {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"CU_MEM_DECOMPRESS_UNSUPPORTED",                                    {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"CU_MEM_DECOMPRESS_ALGORITHM_DEFLATE",                              {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"CU_MEM_DECOMPRESS_ALGORITHM_SNAPPY",                               {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"CUmemDecompressParams_st",                                         {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"CUmemDecompressParams",                                            {CUDA_128, CUDA_0,   CUDA_0  }},
 };
 
 const std::map<llvm::StringRef, hipAPIversions> HIP_DRIVER_TYPE_NAME_VER_MAP {
