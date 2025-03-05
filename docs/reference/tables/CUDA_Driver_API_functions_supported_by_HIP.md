@@ -1723,6 +1723,7 @@
 |`cuMemAllocPitch`| | | | |`hipMemAllocPitch`|3.0.0| | | | |
 |`cuMemAllocPitch_v2`| | | | |`hipMemAllocPitch`|3.0.0| | | | |
 |`cuMemAlloc_v2`| | | | |`hipMalloc`|1.5.0| | | | |
+|`cuMemBatchDecompressAsync`|12.8| | | | | | | | | |
 |`cuMemFree`| | | | |`hipFree`|1.5.0| | | | |
 |`cuMemFreeHost`| | | | |`hipHostFree`|1.6.0| | | | |
 |`cuMemFree_v2`| | | | |`hipFree`|1.5.0| | | | |
@@ -1748,6 +1749,7 @@
 |`cuMemcpy3D`| | | | |`hipDrvMemcpy3D`|3.5.0| | | | |
 |`cuMemcpy3DAsync`| | | | |`hipDrvMemcpy3DAsync`|3.5.0| | | | |
 |`cuMemcpy3DAsync_v2`| | | | |`hipDrvMemcpy3DAsync`|3.5.0| | | | |
+|`cuMemcpy3DBatchAsync`|12.8| | | | | | | | | |
 |`cuMemcpy3DPeer`| | | | | | | | | | |
 |`cuMemcpy3DPeerAsync`| | | | | | | | | | |
 |`cuMemcpy3D_v2`| | | | |`hipDrvMemcpy3D`|3.5.0| | | | |
@@ -1760,6 +1762,7 @@
 |`cuMemcpyAtoHAsync`| | | | |`hipMemcpyAtoHAsync`|6.2.0| | | | |
 |`cuMemcpyAtoHAsync_v2`| | | | |`hipMemcpyAtoHAsync`|6.2.0| | | | |
 |`cuMemcpyAtoH_v2`| | | | |`hipMemcpyAtoH`|1.9.0| | | | |
+|`cuMemcpyBatchAsync`|12.8| | | | | | | | | |
 |`cuMemcpyDtoA`| | | | |`hipMemcpyDtoA`|6.2.0| | | | |
 |`cuMemcpyDtoA_v2`| | | | |`hipMemcpyDtoA`|6.2.0| | | | |
 |`cuMemcpyDtoD`| | | | |`hipMemcpyDtoD`|1.6.0| | | | |
@@ -1888,6 +1891,7 @@
 |`cuStreamGetCaptureInfo_v3`|12.3| | | | | | | | | |
 |`cuStreamGetCtx`|9.2| | | | | | | | | |
 |`cuStreamGetCtx_v2`|12.5| | | | | | | | | |
+|`cuStreamGetDevice`|12.8| | | | | | | | | |
 |`cuStreamGetFlags`| | | | |`hipStreamGetFlags`|1.6.0| | | | |
 |`cuStreamGetId`|12.0| | | | | | | | | |
 |`cuStreamGetPriority`| | | | |`hipStreamGetPriority`|2.0.0| | | | |
@@ -1908,6 +1912,7 @@
 |`cuEventDestroy`| | | | |`hipEventDestroy`|1.6.0| | | | |
 |`cuEventDestroy_v2`| | | | |`hipEventDestroy`|1.6.0| | | | |
 |`cuEventElapsedTime`| | | | |`hipEventElapsedTime`|1.6.0| | | | |
+|`cuEventElapsedTime_v2`|12.8| | | | | | | | | |
 |`cuEventQuery`| | | | |`hipEventQuery`|1.6.0| | | | |
 |`cuEventRecord`| | | | |`hipEventRecord`|1.6.0| | | | |
 |`cuEventRecordWithFlags`|11.1| | | |`hipEventRecordWithFlags`|6.4.0| | | |6.4.0|
@@ -2143,11 +2148,12 @@
 |`cuSurfObjectDestroy`| | | | | | | | | | |
 |`cuSurfObjectGetResourceDesc`| | | | | | | | | | |
 
-## **30. Tensor Core Management**
+## **30. Tensor Map Object Managment**
 
 |**CUDA**|**A**|**D**|**C**|**R**|**HIP**|**A**|**D**|**C**|**R**|**E**|
 |:--|:-:|:-:|:-:|:-:|:--|:-:|:-:|:-:|:-:|:-:|
 |`cuTensorMapEncodeIm2col`|12.0| | | | | | | | | |
+|`cuTensorMapEncodeIm2colWide`| | | | | | | | | | |
 |`cuTensorMapEncodeTiled`|12.0| | | | | | | | | |
 |`cuTensorMapReplaceAddress`|12.0| | | | | | | | | |
 
