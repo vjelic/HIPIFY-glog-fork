@@ -308,6 +308,12 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_FUNCTION_MAP {
   // no analogue
   // NOTE: Not equal to cudaMemcpyPeerAsync due to different signatures
   {"cuMemcpyPeerAsync",                                           {"hipMemcpyPeerAsync_",                                         "", CONV_MEMORY, API_DRIVER, SEC::MEMORY, HIP_UNSUPPORTED}},
+  //
+  {"cuMemcpyBatchAsync",                                          {"hipMemcpyBatchAsync",                                         "", CONV_MEMORY, API_DRIVER, SEC::MEMORY, HIP_UNSUPPORTED}},
+  //
+  {"cuMemcpy3DBatchAsync",                                        {"hipMemcpy3DBatchAsync",                                       "", CONV_MEMORY, API_DRIVER, SEC::MEMORY, HIP_UNSUPPORTED}},
+  //
+  {"cuMemBatchDecompressAsync",                                   {"hipMemBatchDecompressAsync",                                  "", CONV_MEMORY, API_DRIVER, SEC::MEMORY, HIP_UNSUPPORTED}},
   // cudaFree
   {"cuMemFree",                                                   {"hipFree",                                                     "", CONV_MEMORY, API_DRIVER, SEC::MEMORY}},
   {"cuMemFree_v2",                                                {"hipFree",                                                     "", CONV_MEMORY, API_DRIVER, SEC::MEMORY}},
@@ -518,6 +524,8 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_FUNCTION_MAP {
   {"cuThreadExchangeStreamCaptureMode",                           {"hipThreadExchangeStreamCaptureMode",                          "", CONV_STREAM, API_DRIVER, SEC::STREAM}},
   // cudaStreamGetId
   {"cuStreamGetId",                                               {"hipStreamGetId",                                              "", CONV_STREAM, API_DRIVER, SEC::STREAM, HIP_UNSUPPORTED}},
+  //
+  {"cuStreamGetDevice",                                           {"hipStreamGetDevice",                                          "", CONV_STREAM, API_DRIVER, SEC::STREAM, HIP_UNSUPPORTED}},
 
   // 19. Event Management
   // cudaEventCreateWithFlags
@@ -527,6 +535,8 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_FUNCTION_MAP {
   {"cuEventDestroy_v2",                                           {"hipEventDestroy",                                             "", CONV_EVENT, API_DRIVER, SEC::EVENT}},
   // cudaEventElapsedTime
   {"cuEventElapsedTime",                                          {"hipEventElapsedTime",                                         "", CONV_EVENT, API_DRIVER, SEC::EVENT}},
+  //
+  {"cuEventElapsedTime_v2",                                       {"hipEventElapsedTime_v2",                                      "", CONV_EVENT, API_DRIVER, SEC::EVENT, HIP_UNSUPPORTED}},
   // cudaEventQuery
   {"cuEventQuery",                                                {"hipEventQuery",                                               "", CONV_EVENT, API_DRIVER, SEC::EVENT}},
   // cudaEventRecord
@@ -912,13 +922,15 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_FUNCTION_MAP {
   // NOTE: Not equal to cudaGetSurfaceObjectResourceDesc due to different signatures
   {"cuSurfObjectGetResourceDesc",                                 {"hipSurfObjectGetResourceDesc",                                "", CONV_TEXTURE, API_DRIVER, SEC::SURFACE, HIP_UNSUPPORTED}},
 
-  // 30. Tensor Core Management
+  // 30. Tensor Map Object Managment
   //
   {"cuTensorMapEncodeTiled",                                      {"hipTensorMapEncodeTiled",                                     "", CONV_TENSOR, API_DRIVER, SEC::TENSOR, HIP_UNSUPPORTED}},
   //
   {"cuTensorMapEncodeIm2col",                                     {"hipTensorMapEncodeIm2col",                                    "", CONV_TENSOR, API_DRIVER, SEC::TENSOR, HIP_UNSUPPORTED}},
   //
   {"cuTensorMapReplaceAddress",                                   {"hipTensorMapReplaceAddress",                                  "", CONV_TENSOR, API_DRIVER, SEC::TENSOR, HIP_UNSUPPORTED}},
+  //
+  {"cuTensorMapEncodeIm2colWide",                                 {"hipTensorMapEncodeIm2colWide",                                "", CONV_TENSOR, API_DRIVER, SEC::TENSOR, HIP_UNSUPPORTED}},
 
   // 31. Peer Context Memory Access
   // no analogue
@@ -1504,6 +1516,11 @@ const std::map<llvm::StringRef, cudaAPIversions> CUDA_DRIVER_FUNCTION_VER_MAP {
   {"cuKernelGetLibrary",                                          {CUDA_125, CUDA_0,   CUDA_0  }},
   {"cuStreamGetCtx_v2",                                           {CUDA_125, CUDA_0,   CUDA_0  }},
   {"cuGreenCtxStreamCreate",                                      {CUDA_125, CUDA_0,   CUDA_0  }},
+  {"cuMemcpyBatchAsync",                                          {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cuMemcpy3DBatchAsync",                                        {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cuMemBatchDecompressAsync",                                   {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cuStreamGetDevice",                                           {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cuEventElapsedTime_v2",                                       {CUDA_128, CUDA_0,   CUDA_0  }},
 };
 
 const std::map<llvm::StringRef, hipAPIversions> HIP_DRIVER_FUNCTION_VER_MAP {
@@ -1708,7 +1725,7 @@ const std::map<unsigned int, llvm::StringRef> CUDA_DRIVER_API_SECTION_MAP {
   {SEC::SURFACE_DEPRECATED, "Surface Reference Management [DEPRECATED]"},
   {SEC::TEXTURE, "Texture Object Management"},
   {SEC::SURFACE, "Surface Object Management"},
-  {SEC::TENSOR, "Tensor Core Management"},
+  {SEC::TENSOR, "Tensor Map Object Managment"},
   {SEC::PEER, "Peer Context Memory Access"},
   {SEC::GRAPHICS, "Graphics Interoperability"},
   {SEC::DRIVER_ENTRY_POINT, "Driver Entry Point Access"},
