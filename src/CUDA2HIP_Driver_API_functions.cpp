@@ -1004,17 +1004,31 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_FUNCTION_MAP {
   //
   {"cuGreenCtxStreamCreate",                                      {"hipGreenCtxStreamCreate",                                     "", CONV_COREDUMP, API_DRIVER, SEC::GREEN_CONTEXT, HIP_UNSUPPORTED}},
 
-  // 36. Profiler Control [DEPRECATED]
+  // 36. Checkpointing
+  //
+  {"cuCheckpointProcessGetRestoreThreadId",                       {"hipCheckpointProcessGetRestoreThreadId",                      "", CONV_COREDUMP, API_DRIVER, SEC::CHECKPOINTING, HIP_UNSUPPORTED}},
+  //
+  {"cuCheckpointProcessGetState",                                 {"hipCheckpointProcessGetState",                                "", CONV_COREDUMP, API_DRIVER, SEC::CHECKPOINTING, HIP_UNSUPPORTED}},
+  //
+  {"cuCheckpointProcessLock",                                     {"hipCheckpointProcessLock",                                    "", CONV_COREDUMP, API_DRIVER, SEC::CHECKPOINTING, HIP_UNSUPPORTED}},
+  //
+  {"cuCheckpointProcessCheckpoint",                               {"hipCheckpointProcessCheckpoint",                              "", CONV_COREDUMP, API_DRIVER, SEC::CHECKPOINTING, HIP_UNSUPPORTED}},
+  //
+  {"cuCheckpointProcessRestore",                                  {"hipCheckpointProcessRestore",                                 "", CONV_COREDUMP, API_DRIVER, SEC::CHECKPOINTING, HIP_UNSUPPORTED}},
+  //
+  {"cuCheckpointProcessUnlock",                                   {"hipCheckpointProcessUnlock",                                  "", CONV_COREDUMP, API_DRIVER, SEC::CHECKPOINTING, HIP_UNSUPPORTED}},
+
+  // 37. Profiler Control [DEPRECATED]
   // cudaProfilerInitialize
   {"cuProfilerInitialize",                                        {"hipProfilerInitialize",                                       "", CONV_PROFILER, API_DRIVER, SEC::PROFILER_DEPRECATED, HIP_UNSUPPORTED}},
 
-  // 37. Profiler Control
+  // 38. Profiler Control
   // cudaProfilerStart
   {"cuProfilerStart",                                             {"hipProfilerStart",                                            "", CONV_PROFILER, API_DRIVER, SEC::PROFILER}},
   // cudaProfilerStop
   {"cuProfilerStop",                                              {"hipProfilerStop",                                             "", CONV_PROFILER, API_DRIVER, SEC::PROFILER}},
 
-  // 38. OpenGL Interoperability
+  // 39. OpenGL Interoperability
   // cudaGLGetDevices
   {"cuGLGetDevices",                                              {"hipGLGetDevices",                                             "", CONV_OPENGL, API_DRIVER, SEC::OPENGL}},
   // cudaGraphicsGLRegisterBuffer
@@ -1024,7 +1038,7 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_FUNCTION_MAP {
   // cudaWGLGetDevice
   {"cuWGLGetDevice",                                              {"hipWGLGetDevice",                                             "", CONV_OPENGL, API_DRIVER, SEC::OPENGL, HIP_UNSUPPORTED}},
 
-  // 38. OpenGL Interoperability [DEPRECATED]
+  // 39. OpenGL Interoperability [DEPRECATED]
   // no analogue
   {"cuGLCtxCreate",                                               {"hipGLCtxCreate",                                              "", CONV_OPENGL, API_DRIVER, SEC::OPENGL, HIP_UNSUPPORTED | CUDA_DEPRECATED}},
   // no analogue
@@ -1046,7 +1060,7 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_FUNCTION_MAP {
   // cudaGLUnregisterBufferObject
   {"cuGLUnregisterBufferObject",                                  {"hipGLUnregisterBufferObject",                                 "", CONV_OPENGL, API_DRIVER, SEC::OPENGL, HIP_UNSUPPORTED | CUDA_DEPRECATED}},
 
-  // 39. Direct3D 9 Interoperability
+  // 40. Direct3D 9 Interoperability
   // no analogue
   {"cuD3D9CtxCreate",                                             {"hipD3D9CtxCreate",                                            "", CONV_D3D9, API_DRIVER, SEC::D3D9, HIP_UNSUPPORTED}},
     // no analogue
@@ -1060,7 +1074,7 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_FUNCTION_MAP {
   // cudaGraphicsD3D9RegisterResource
   {"cuGraphicsD3D9RegisterResource",                              {"hipGraphicsD3D9RegisterResource",                             "", CONV_D3D9, API_DRIVER, SEC::D3D9, HIP_UNSUPPORTED}},
 
-  // 39. Direct3D 9 Interoperability [DEPRECATED]
+  // 40. Direct3D 9 Interoperability [DEPRECATED]
   // cudaD3D9MapResources
   {"cuD3D9MapResources",                                          {"hipD3D9MapResources",                                         "", CONV_D3D9, API_DRIVER, SEC::D3D9, HIP_UNSUPPORTED | CUDA_DEPRECATED}},
   // cudaD3D9RegisterResource
@@ -1082,7 +1096,7 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_FUNCTION_MAP {
   // cudaD3D9UnregisterResource
   {"cuD3D9UnregisterResource",                                    {"hipD3D9UnregisterResource",                                   "", CONV_D3D9, API_DRIVER, SEC::D3D9, HIP_UNSUPPORTED | CUDA_DEPRECATED}},
 
-  // 40. Direct3D 10 Interoperability
+  // 41. Direct3D 10 Interoperability
   // cudaD3D10GetDevice
   {"cuD3D10GetDevice",                                            {"hipD3D10GetDevice",                                           "", CONV_D3D10, API_DRIVER, SEC::D3D10, HIP_UNSUPPORTED}},
   // cudaD3D10GetDevices
@@ -1090,7 +1104,7 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_FUNCTION_MAP {
   // cudaGraphicsD3D10RegisterResource
   {"cuGraphicsD3D10RegisterResource",                             {"hipGraphicsD3D10RegisterResource",                            "", CONV_D3D10, API_DRIVER, SEC::D3D10, HIP_UNSUPPORTED}},
 
-  // 40. Direct3D 10 Interoperability [DEPRECATED]
+  // 41. Direct3D 10 Interoperability [DEPRECATED]
   // no analogue
   {"cuD3D10CtxCreate",                                            {"hipD3D10CtxCreate",                                           "", CONV_D3D10, API_DRIVER, SEC::D3D10, HIP_UNSUPPORTED | CUDA_DEPRECATED}},
   // no analogue
@@ -1118,7 +1132,7 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_FUNCTION_MAP {
   // cudaD3D10UnregisterResource
   {"cuD3D10UnregisterResource",                                   {"hipD3D10UnregisterResource",                                  "", CONV_D3D10, API_DRIVER, SEC::D3D10, HIP_UNSUPPORTED | CUDA_DEPRECATED}},
 
-  // 41. Direct3D 11 Interoperability
+  // 42. Direct3D 11 Interoperability
   // cudaD3D11GetDevice
   {"cuD3D11GetDevice",                                            {"hipD3D11GetDevice",                                           "", CONV_D3D11, API_DRIVER, SEC::D3D11, HIP_UNSUPPORTED}},
   // cudaD3D11GetDevices
@@ -1126,7 +1140,7 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_FUNCTION_MAP {
   // cudaGraphicsD3D11RegisterResource
   {"cuGraphicsD3D11RegisterResource",                             {"hipGraphicsD3D11RegisterResource",                            "", CONV_D3D11, API_DRIVER, SEC::D3D11, HIP_UNSUPPORTED}},
 
-  // 41. Direct3D 11 Interoperability [DEPRECATED]
+  // 42. Direct3D 11 Interoperability [DEPRECATED]
   // no analogue
   {"cuD3D11CtxCreate",                                            {"hipD3D11CtxCreate",                                           "", CONV_D3D11, API_DRIVER, SEC::D3D11, HIP_UNSUPPORTED | CUDA_DEPRECATED}},
   // no analogue
@@ -1134,7 +1148,7 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_FUNCTION_MAP {
   // cudaD3D11GetDirect3DDevice
   {"cuD3D11GetDirect3DDevice",                                    {"hipD3D11GetDirect3DDevice",                                   "", CONV_D3D11, API_DRIVER, SEC::D3D11, HIP_UNSUPPORTED | CUDA_DEPRECATED}},
 
-  // 42. VDPAU Interoperability
+  // 43. VDPAU Interoperability
   // cudaGraphicsVDPAURegisterOutputSurface
   {"cuGraphicsVDPAURegisterOutputSurface",                        {"hipGraphicsVDPAURegisterOutputSurface",                       "", CONV_VDPAU, API_DRIVER, SEC::VDPAU, HIP_UNSUPPORTED}},
   // cudaGraphicsVDPAURegisterVideoSurface
@@ -1144,7 +1158,7 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_FUNCTION_MAP {
   // no analogue
   {"cuVDPAUCtxCreate",                                            {"hipVDPAUCtxCreate",                                           "", CONV_VDPAU, API_DRIVER, SEC::VDPAU, HIP_UNSUPPORTED}},
 
-  // 43. EGL Interoperability
+  // 44. EGL Interoperability
   // cudaEGLStreamConsumerAcquireFrame
   {"cuEGLStreamConsumerAcquireFrame",                             {"hipEGLStreamConsumerAcquireFrame",                            "", CONV_EGL, API_DRIVER, SEC::EGL, HIP_UNSUPPORTED}},
   // cudaEGLStreamConsumerConnect
@@ -1521,6 +1535,12 @@ const std::map<llvm::StringRef, cudaAPIversions> CUDA_DRIVER_FUNCTION_VER_MAP {
   {"cuMemBatchDecompressAsync",                                   {CUDA_128, CUDA_0,   CUDA_0  }},
   {"cuStreamGetDevice",                                           {CUDA_128, CUDA_0,   CUDA_0  }},
   {"cuEventElapsedTime_v2",                                       {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cuCheckpointProcessGetRestoreThreadId",                       {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cuCheckpointProcessGetState",                                 {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cuCheckpointProcessLock",                                     {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cuCheckpointProcessCheckpoint",                               {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cuCheckpointProcessRestore",                                  {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cuCheckpointProcessUnlock",                                   {CUDA_128, CUDA_0,   CUDA_0  }},
 };
 
 const std::map<llvm::StringRef, hipAPIversions> HIP_DRIVER_FUNCTION_VER_MAP {
@@ -1731,6 +1751,7 @@ const std::map<unsigned int, llvm::StringRef> CUDA_DRIVER_API_SECTION_MAP {
   {SEC::DRIVER_ENTRY_POINT, "Driver Entry Point Access"},
   {SEC::COREDUMP, "Coredump Attributes Control API"},
   {SEC::GREEN_CONTEXT, "Green Contexts"},
+  {SEC::CHECKPOINTING, "Checkpointing"},
   {SEC::PROFILER_DEPRECATED, "Profiler Control [DEPRECATED]"},
   {SEC::PROFILER, "Profiler Control"},
   {SEC::OPENGL, "OpenGL Interoperability"},
