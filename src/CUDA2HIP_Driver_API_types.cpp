@@ -2810,40 +2810,40 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_TYPE_NAME_MAP {
   {"CU_ASYNC_NOTIFICATION_TYPE_OVER_BUDGET",                           {"HIP_ASYNC_NOTIFICATION_TYPE_OVER_BUDGET",                  "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
 
   //
-  {"CUfunctionLoadingState",                                          {"hipFunctionLoadingState",                                   "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  {"CUfunctionLoadingState",                                           {"hipFunctionLoadingState",                                  "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
   //
-  {"CUfunctionLoadingState_enum",                                     {"hipFunctionLoadingState",                                   "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  {"CUfunctionLoadingState_enum",                                      {"hipFunctionLoadingState",                                  "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
   // CUfunctionLoadingState enum values
   //
-  {"CU_FUNCTION_LOADING_STATE_UNLOADED",                              {"HIP_FUNCTION_LOADING_STATE_UNLOADED",                       "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  {"CU_FUNCTION_LOADING_STATE_UNLOADED",                               {"HIP_FUNCTION_LOADING_STATE_UNLOADED",                      "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
   //
-  {"CU_FUNCTION_LOADING_STATE_LOADED",                                {"HIP_FUNCTION_LOADING_STATE_LOADED",                         "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  {"CU_FUNCTION_LOADING_STATE_LOADED",                                 {"HIP_FUNCTION_LOADING_STATE_LOADED",                        "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
   //
-  {"CU_FUNCTION_LOADING_STATE_MAX",                                   {"HIP_FUNCTION_LOADING_STATE_MAX",                            "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  {"CU_FUNCTION_LOADING_STATE_MAX",                                    {"HIP_FUNCTION_LOADING_STATE_MAX",                           "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
 
   //
-  {"CUgreenCtxCreate_flags",                                          {"hipGreenCtxCreate_flags",                                   "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  {"CUgreenCtxCreate_flags",                                           {"hipGreenCtxCreate_flags",                                  "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
   // CUgreenCtxCreate_flags enum values
   //
-  {"CU_GREEN_CTX_DEFAULT_STREAM",                                     {"HIP_GREEN_CTX_DEFAULT_STREAM",                              "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  {"CU_GREEN_CTX_DEFAULT_STREAM",                                      {"HIP_GREEN_CTX_DEFAULT_STREAM",                             "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
 
   //
-  {"CUdevResourceType",                                               {"hipDevResourceType",                                        "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  {"CUdevResourceType",                                                {"hipDevResourceType",                                       "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
   // CUdevResourceType enum values
   //
-  {"CU_DEV_RESOURCE_TYPE_INVALID",                                    {"HIP_DEV_RESOURCE_TYPE_INVALID",                             "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  {"CU_DEV_RESOURCE_TYPE_INVALID",                                     {"HIP_DEV_RESOURCE_TYPE_INVALID",                            "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
   //
-  {"CU_DEV_RESOURCE_TYPE_SM",                                         {"HIP_DEV_RESOURCE_TYPE_SM",                                  "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  {"CU_DEV_RESOURCE_TYPE_SM",                                          {"HIP_DEV_RESOURCE_TYPE_SM",                                 "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
   //
-  {"CU_DEV_RESOURCE_TYPE_MAX",                                        {"HIP_DEV_RESOURCE_TYPE_MAX",                                 "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  {"CU_DEV_RESOURCE_TYPE_MAX",                                         {"HIP_DEV_RESOURCE_TYPE_MAX",                                "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
 
   //
-  {"CUcigDataType",                                                   {"hipCigDataType",                                            "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  {"CUcigDataType",                                                    {"hipCigDataType",                                           "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
   //
-  {"CUcigDataType_enum",                                              {"hipCigDataType",                                            "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  {"CUcigDataType_enum",                                               {"hipCigDataType",                                           "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
   // CUcigDataType enum values
   //
-  {"CIG_DATA_TYPE_D3D12_COMMAND_QUEUE",                               {"HIP_CIG_DATA_TYPE_D3D12_COMMAND_QUEUE",                     "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  {"CIG_DATA_TYPE_D3D12_COMMAND_QUEUE",                                {"HIP_CIG_DATA_TYPE_D3D12_COMMAND_QUEUE",                    "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
 
   //
   {"CUtensorMapIm2ColWideMode",                                        {"hipTensorMapIm2ColWideMode",                               "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
