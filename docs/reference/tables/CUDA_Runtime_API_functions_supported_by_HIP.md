@@ -724,6 +724,7 @@
 |`cudaChannelFormatKindUnsignedBlockCompressed6H`|11.5| | | | | | | | | |
 |`cudaChannelFormatKindUnsignedBlockCompressed7`|11.5| | | | | | | | | |
 |`cudaChannelFormatKindUnsignedBlockCompressed7SRGB`|11.5| | | | | | | | | |
+|`cudaChannelFormatKindUnsignedNormalized1010102`|12.8| | | | | | | | | |
 |`cudaChannelFormatKindUnsignedNormalized16X1`|11.5| | | | | | | | | |
 |`cudaChannelFormatKindUnsignedNormalized16X2`|11.5| | | | | | | | | |
 |`cudaChannelFormatKindUnsignedNormalized16X4`|11.5| | | | | | | | | |
@@ -794,8 +795,11 @@
 |`cudaDevAttrGlobalL1CacheSupported`| | | | |`hipDeviceAttributeGlobalL1CacheSupported`|4.3.0| | | | |
 |`cudaDevAttrGlobalMemoryBusWidth`| | | | |`hipDeviceAttributeMemoryBusWidth`|1.6.0| | | | |
 |`cudaDevAttrGpuOverlap`| | | | |`hipDeviceAttributeAsyncEngineCount`|4.3.0| | | | |
+|`cudaDevAttrGpuPciDeviceId`|12.8| | | | | | | | | |
+|`cudaDevAttrGpuPciSubsystemId`|12.8| | | | | | | | | |
 |`cudaDevAttrHostNativeAtomicSupported`|8.0| | | |`hipDeviceAttributeHostNativeAtomicSupported`|4.3.0| | | | |
 |`cudaDevAttrHostNumaId`|12.2| | | | | | | | | |
+|`cudaDevAttrHostNumaMultinodeIpcSupported`|12.8| | | | | | | | | |
 |`cudaDevAttrHostRegisterReadOnlySupported`|11.1| | | | | | | | | |
 |`cudaDevAttrHostRegisterSupported`|9.2| | | |`hipDeviceAttributeHostRegisterSupported`|6.0.0| | | | |
 |`cudaDevAttrIntegrated`| | | | |`hipDeviceAttributeIntegrated`|1.9.0| | | | |
@@ -1024,6 +1028,7 @@
 |`cudaErrorCdpNotSupported`|12.0| | | | | | | | | |
 |`cudaErrorCdpVersionMismatch`|12.0| | | | | | | | | |
 |`cudaErrorCompatNotSupportedOnDevice`|10.1| | | | | | | | | |
+|`cudaErrorContained`|12.8| | | | | | | | | |
 |`cudaErrorContextIsDestroyed`|10.1| | | |`hipErrorContextIsDestroyed`|4.3.0| | | | |
 |`cudaErrorCooperativeLaunchTooLarge`|9.0| | | |`hipErrorCooperativeLaunchTooLarge`|3.2.0| | | | |
 |`cudaErrorCudartUnloading`| | | | |`hipErrorDeinitialized`|1.6.0| | | | |
@@ -1134,6 +1139,7 @@
 |`cudaErrorSynchronizationError`| |3.1| | | | | | | | |
 |`cudaErrorSystemDriverMismatch`|10.1| | | | | | | | | |
 |`cudaErrorSystemNotReady`|10.0| | | | | | | | | |
+|`cudaErrorTensorMemoryLeak`|12.8| | | | | | | | | |
 |`cudaErrorTextureFetchFailed`| |3.1| | | | | | | | |
 |`cudaErrorTextureNotBound`| |3.1| | | | | | | | |
 |`cudaErrorTimeout`|10.2| | | | | | | | | |
@@ -1449,6 +1455,7 @@
 |`cudaMemPoolAttrReservedMemHigh`|11.3| | | |`hipMemPoolAttrReservedMemHigh`|5.2.0| | | | |
 |`cudaMemPoolAttrUsedMemCurrent`|11.3| | | |`hipMemPoolAttrUsedMemCurrent`|5.2.0| | | | |
 |`cudaMemPoolAttrUsedMemHigh`|11.3| | | |`hipMemPoolAttrUsedMemHigh`|5.2.0| | | | |
+|`cudaMemPoolCreateUsageHwDecompress`|12.8| | | | | | | | | |
 |`cudaMemPoolProps`|11.2| | | |`hipMemPoolProps`|5.2.0| | | | |
 |`cudaMemPoolPtrExportData`|11.2| | | |`hipMemPoolPtrExportData`|5.2.0| | | | |
 |`cudaMemPoolReuseAllowInternalDependencies`|11.2| | | |`hipMemPoolReuseAllowInternalDependencies`|5.2.0| | | | |
@@ -1469,6 +1476,9 @@
 |`cudaMemcpyDefault`| | | | |`hipMemcpyDefault`|1.5.0| | | | |
 |`cudaMemcpyDeviceToDevice`| | | | |`hipMemcpyDeviceToDevice`|1.5.0| | | | |
 |`cudaMemcpyDeviceToHost`| | | | |`hipMemcpyDeviceToHost`|1.5.0| | | | |
+|`cudaMemcpyFlagDefault`|12.8| | | | | | | | | |
+|`cudaMemcpyFlagPreferOverlapWithCompute`|12.8| | | | | | | | | |
+|`cudaMemcpyFlags`|12.8| | | | | | | | | |
 |`cudaMemcpyHostToDevice`| | | | |`hipMemcpyHostToDevice`|1.5.0| | | | |
 |`cudaMemcpyHostToHost`| | | | |`hipMemcpyHostToHost`|1.5.0| | | | |
 |`cudaMemcpyKind`| | | | |`hipMemcpyKind`|1.5.0| | | | |
