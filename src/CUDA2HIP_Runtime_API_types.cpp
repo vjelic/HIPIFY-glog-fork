@@ -357,6 +357,7 @@ const std::map<llvm::StringRef, hipCounter> CUDA_RUNTIME_TYPE_NAME_MAP {
   {"cudaChannelFormatKindSignedBlockCompressed6H",                     {"hipChannelFormatKindSignedBlockCompressed6H",              "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 28
   {"cudaChannelFormatKindUnsignedBlockCompressed7",                    {"hipChannelFormatKindUnsignedBlockCompressed7",             "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 29
   {"cudaChannelFormatKindUnsignedBlockCompressed7SRGB",                {"hipChannelFormatKindUnsignedBlockCompressed7SRGB",         "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 30
+  {"cudaChannelFormatKindUnsignedNormalized1010102",                   {"hipChannelFormatKindUnsignedNormalized1010102",            "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 31
 
   // CUcomputemode
   {"cudaComputeMode",                                                  {"hipComputeMode",                                           "", CONV_TYPE, API_RUNTIME, SEC::DATA_TYPES}},
@@ -667,6 +668,12 @@ const std::map<llvm::StringRef, hipCounter> CUDA_RUNTIME_TYPE_NAME_MAP {
   {"cudaDevAttrHostNumaId",                                            {"hipDeviceAttributeHostNumaId",                             "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 134
   // CU_DEVICE_ATTRIBUTE_D3D12_CIG_SUPPORTED
   {"cudaDevAttrD3D12CigSupported",                                     {"hipDeviceAttributeD3D12CigSupported",                      "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 135
+  // CU_DEVICE_ATTRIBUTE_GPU_PCI_DEVICE_ID
+  {"cudaDevAttrGpuPciDeviceId",                                        {"hipDeviceAttributePciDeviceId",                            "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 139
+  // CU_DEVICE_ATTRIBUTE_GPU_PCI_SUBSYSTEM_ID
+  {"cudaDevAttrGpuPciSubsystemId",                                     {"hipDeviceAttributeGpuPciSubsystemId",                      "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 140
+  // CU_DEVICE_ATTRIBUTE_HOST_NUMA_MULTINODE_IPC_SUPPORTED
+  {"cudaDevAttrHostNumaMultinodeIpcSupported",                         {"hipDeviceAttributeHostNumaMultinodeIpcSupported",          "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 143
   // CU_DEVICE_ATTRIBUTE_MAX
   {"cudaDevAttrMax",                                                   {"hipDeviceAttributeMax",                                    "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
 
@@ -1008,6 +1015,8 @@ const std::map<llvm::StringRef, hipCounter> CUDA_RUNTIME_TYPE_NAME_MAP {
   {"cudaErrorUnsupportedExecAffinity",                                 {"hipErrorUnsupportedExecAffinity",                          "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 224
   // CUDA_ERROR_UNSUPPORTED_DEVSIDE_SYNC
   {"cudaErrorUnsupportedDevSideSync",                                  {"hipErrorUnsupportedDevSideSync",                           "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 225
+  // CUDA_ERROR_CONTAINED
+  {"cudaErrorContained",                                               {"hipErrorContained",                                        "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 226
   // CUDA_ERROR_INVALID_SOURCE
   {"cudaErrorInvalidSource",                                           {"hipErrorInvalidSource",                                    "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 300
   // CUDA_ERROR_FILE_NOT_FOUND
@@ -1066,6 +1075,8 @@ const std::map<llvm::StringRef, hipCounter> CUDA_RUNTIME_TYPE_NAME_MAP {
   {"cudaErrorLaunchFailure",                                           {"hipErrorLaunchFailure",                                    "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 719
   // CUDA_ERROR_COOPERATIVE_LAUNCH_TOO_LARGE
   {"cudaErrorCooperativeLaunchTooLarge",                               {"hipErrorCooperativeLaunchTooLarge",                        "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 720
+  // CUDA_ERROR_TENSOR_MEMORY_LEAK
+  {"cudaErrorTensorMemoryLeak",                                        {"hipErrorTensorMemoryLeak",                                 "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 721
   // CUDA_ERROR_NOT_PERMITTED
   {"cudaErrorNotPermitted",                                            {"hipErrorNotPermitted",                                     "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 800
   // CUDA_ERROR_NOT_SUPPORTED
@@ -1959,6 +1970,14 @@ const std::map<llvm::StringRef, hipCounter> CUDA_RUNTIME_TYPE_NAME_MAP {
   {"cudaGraphKernelNodeFieldParam",                                    {"hipGraphKernelNodeFieldParam",                             "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
   {"cudaGraphKernelNodeFieldEnabled",                                  {"hipGraphKernelNodeFieldEnabled",                           "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
 
+  // CUmemcpyFlags
+  {"cudaMemcpyFlags",                                                  {"hipMemcpyFlags",                                           "", CONV_TYPE, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  // cudaMemcpyFlags enum values
+  // CU_MEMCPY_FLAG_DEFAULT
+  {"cudaMemcpyFlagDefault",                                            {"HIP_MEMCPY_FLAG_DEFAULT",                                  "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  // CU_MEMCPY_FLAG_PREFER_OVERLAP_WITH_COMPUTE
+  {"cudaMemcpyFlagPreferOverlapWithCompute",                           {"HIP_MEMCPY_FLAG_PREFER_OVERLAP_WITH_COMPUTE",              "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+
   // 4. Typedefs
 
   // CUhostFn
@@ -2254,6 +2273,8 @@ const std::map<llvm::StringRef, hipCounter> CUDA_RUNTIME_TYPE_NAME_MAP {
   {"CUDART_TWO_TO_M1022",                                              {"HIP_TWO_TO_M1022",                                         "", CONV_DEFINE, API_RUNTIME, SEC::DATA_TYPES}},
   {"CUDART_TRIG_PLOSS",                                                {"HIP_TRIG_PLOSS",                                           "", CONV_DEFINE, API_RUNTIME, SEC::DATA_TYPES}},
   {"CUDART_DBL2INT_CVT",                                               {"HIP_DBL2INT_CVT",                                          "", CONV_DEFINE, API_RUNTIME, SEC::DATA_TYPES}},
+  // CU_MEM_POOL_CREATE_USAGE_HW_DECOMPRESS
+  {"cudaMemPoolCreateUsageHwDecompress",                               {"HIP_MEM_POOL_CREATE_USAGE_HW_DECOMPRESS",                  "", CONV_DEFINE, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 0x2
 };
 
 const std::map<llvm::StringRef, cudaAPIversions> CUDA_RUNTIME_TYPE_NAME_VER_MAP {
@@ -2835,6 +2856,16 @@ const std::map<llvm::StringRef, cudaAPIversions> CUDA_RUNTIME_TYPE_NAME_VER_MAP 
   {"cudaErrorFunctionNotLoaded",                                       {CUDA_126, CUDA_0,   CUDA_0  }},
   {"cudaErrorInvalidResourceType",                                     {CUDA_126, CUDA_0,   CUDA_0  }},
   {"cudaErrorInvalidResourceConfiguration",                            {CUDA_126, CUDA_0,   CUDA_0  }},
+  {"cudaErrorContained",                                               {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaErrorTensorMemoryLeak",                                        {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaChannelFormatKindUnsignedNormalized1010102",                   {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaDevAttrGpuPciDeviceId",                                        {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaDevAttrGpuPciSubsystemId",                                     {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaDevAttrHostNumaMultinodeIpcSupported",                         {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaMemPoolCreateUsageHwDecompress",                               {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaMemcpyFlags",                                                  {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaMemcpyFlagDefault",                                            {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaMemcpyFlagPreferOverlapWithCompute",                           {CUDA_128, CUDA_0,   CUDA_0  }},
 };
 
 const std::map<llvm::StringRef, hipAPIversions> HIP_RUNTIME_TYPE_NAME_VER_MAP {
