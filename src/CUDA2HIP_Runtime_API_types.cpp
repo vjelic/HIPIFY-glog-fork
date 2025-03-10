@@ -270,6 +270,12 @@ const std::map<llvm::StringRef, hipCounter> CUDA_RUNTIME_TYPE_NAME_MAP {
   // no analogue
   {"cudaGraphKernelNodeUpdate",                                        {"hipGraphKernelNodeUpdate",                                 "", CONV_TYPE, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
 
+  // CUmemcpyAttributes
+  {"cudaMemcpyAttributes",                                             {"hipMemcpyAttributes",                                      "", CONV_TYPE, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+
+  // CUmemcpy3DOperand
+  {"cudaMemcpy3DOperandType",                                          {"hipMemcpy3DOperand",                                       "", CONV_TYPE, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+
   // 2. Unions
 
   // CUstreamAttrValue
@@ -1978,6 +1984,20 @@ const std::map<llvm::StringRef, hipCounter> CUDA_RUNTIME_TYPE_NAME_MAP {
   // CU_MEMCPY_FLAG_PREFER_OVERLAP_WITH_COMPUTE
   {"cudaMemcpyFlagPreferOverlapWithCompute",                           {"HIP_MEMCPY_FLAG_PREFER_OVERLAP_WITH_COMPUTE",              "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
 
+  // CUmemcpySrcAccessOrder
+  {"cudaMemcpySrcAccessOrder",                                         {"hipMemcpySrcAccessOrder",                                  "", CONV_TYPE, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  // cudaMemcpySrcAccessOrder enum values
+  // CU_MEMCPY_SRC_ACCESS_ORDER_INVALID
+  {"cudaMemcpySrcAccessOrderInvalid",                                  {"HIP_MEMCPY_SRC_ACCESS_ORDER_INVALID",                      "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  // CU_MEMCPY_SRC_ACCESS_ORDER_STREAM
+  {"cudaMemcpySrcAccessOrderStream",                                   {"HIP_MEMCPY_SRC_ACCESS_ORDER_STREAM",                       "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  // CU_MEMCPY_SRC_ACCESS_ORDER_DURING_API_CALL
+  {"cudaMemcpySrcAccessOrderDuringApiCall",                            {"HIP_MEMCPY_SRC_ACCESS_ORDER_DURING_API_CALL",              "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  // CU_MEMCPY_SRC_ACCESS_ORDER_ANY
+  {"cudaMemcpySrcAccessOrderAny",                                      {"HIP_MEMCPY_SRC_ACCESS_ORDER_ANY",                          "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  // CU_MEMCPY_SRC_ACCESS_ORDER_MAX
+  {"cudaMemcpySrcAccessOrderMax",                                      {"HIP_MEMCPY_SRC_ACCESS_ORDER_MAX",                          "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+
   // 4. Typedefs
 
   // CUhostFn
@@ -2866,6 +2886,14 @@ const std::map<llvm::StringRef, cudaAPIversions> CUDA_RUNTIME_TYPE_NAME_VER_MAP 
   {"cudaMemcpyFlags",                                                  {CUDA_128, CUDA_0,   CUDA_0  }},
   {"cudaMemcpyFlagDefault",                                            {CUDA_128, CUDA_0,   CUDA_0  }},
   {"cudaMemcpyFlagPreferOverlapWithCompute",                           {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaMemcpySrcAccessOrder",                                         {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaMemcpySrcAccessOrderInvalid",                                  {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaMemcpySrcAccessOrderStream",                                   {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaMemcpySrcAccessOrderDuringApiCall",                            {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaMemcpySrcAccessOrderAny",                                      {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaMemcpySrcAccessOrderMax",                                      {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaMemcpyAttributes",                                             {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaMemcpy3DOperandType",                                          {CUDA_128, CUDA_0,   CUDA_0  }},
 };
 
 const std::map<llvm::StringRef, hipAPIversions> HIP_RUNTIME_TYPE_NAME_VER_MAP {
