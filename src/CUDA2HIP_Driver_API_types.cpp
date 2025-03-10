@@ -488,9 +488,9 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_TYPE_NAME_MAP {
   //
   {"CUcheckpointRestoreArgs",                                          {"hipCheckpointRestoreArgs",                                 "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
 
-  //
+  // cudaMemcpyAttributes
   {"CUmemcpyAttributes_st",                                            {"hipMemcpyAttributes",                                      "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
-  //
+  // cudaMemcpyAttributes
   {"CUmemcpyAttributes",                                               {"hipMemcpyAttributes",                                      "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
 
   //
@@ -508,9 +508,9 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_TYPE_NAME_MAP {
   //
   {"CUextent3D",                                                       {"hipExtent3D",                                              "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
 
-  //
+  // cudaMemcpy3DOperandType
   {"CUmemcpy3DOperand_st",                                             {"hipMemcpy3DOperand",                                       "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
-  //
+  // cudaMemcpy3DOperandType
   {"CUmemcpy3DOperand",                                                {"hipMemcpy3DOperand",                                       "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
 
   //
@@ -2877,20 +2877,20 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_TYPE_NAME_MAP {
   //
   {"CU_PROCESS_STATE_FAILED",                                          {"HIP_PROCESS_STATE_FAILED",                                 "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
 
-  //
+  // cudaMemcpySrcAccessOrder
   {"CUmemcpySrcAccessOrder",                                           {"hipMemcpySrcAccessOrder",                                  "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
   //
   {"CUmemcpySrcAccessOrder_enum",                                      {"hipMemcpySrcAccessOrder",                                  "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
   // CUmemcpySrcAccessOrder enum values
-  //
+  // cudaMemcpySrcAccessOrderInvalid
   {"CU_MEMCPY_SRC_ACCESS_ORDER_INVALID",                               {"HIP_MEMCPY_SRC_ACCESS_ORDER_INVALID",                      "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
-  //
+  // cudaMemcpySrcAccessOrderStream
   {"CU_MEMCPY_SRC_ACCESS_ORDER_STREAM",                                {"HIP_MEMCPY_SRC_ACCESS_ORDER_STREAM",                       "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
-  //
+  // cudaMemcpySrcAccessOrderDuringApiCall
   {"CU_MEMCPY_SRC_ACCESS_ORDER_DURING_API_CALL",                       {"HIP_MEMCPY_SRC_ACCESS_ORDER_DURING_API_CALL",              "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
-  //
+  // cudaMemcpySrcAccessOrderAny
   {"CU_MEMCPY_SRC_ACCESS_ORDER_ANY",                                   {"HIP_MEMCPY_SRC_ACCESS_ORDER_ANY",                          "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
-  //
+  // cudaMemcpySrcAccessOrderMax
   {"CU_MEMCPY_SRC_ACCESS_ORDER_MAX",                                   {"HIP_MEMCPY_SRC_ACCESS_ORDER_MAX",                          "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
 
   // cudaMemcpyFlags
