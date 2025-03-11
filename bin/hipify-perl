@@ -7232,6 +7232,7 @@ sub simpleSubstitutions {
     subst("cudaIpcEventHandle_t", "hipIpcEventHandle_t", "type");
     subst("cudaIpcMemHandle_st", "hipIpcMemHandle_st", "type");
     subst("cudaIpcMemHandle_t", "hipIpcMemHandle_t", "type");
+    subst("cudaJitOption", "hipJitOption", "type");
     subst("cudaKernelNodeAttrID", "hipKernelNodeAttrID", "type");
     subst("cudaKernelNodeAttrValue", "hipKernelNodeAttrValue", "type");
     subst("cudaKernelNodeParams", "hipKernelNodeParams", "type");
@@ -8642,6 +8643,19 @@ sub simpleSubstitutions {
     subst("cudaGraphicsRegisterFlagsSurfaceLoadStore", "hipGraphicsRegisterFlagsSurfaceLoadStore", "numeric_literal");
     subst("cudaGraphicsRegisterFlagsTextureGather", "hipGraphicsRegisterFlagsTextureGather", "numeric_literal");
     subst("cudaGraphicsRegisterFlagsWriteDiscard", "hipGraphicsRegisterFlagsWriteDiscard", "numeric_literal");
+    subst("cudaJitCacheMode", "HIPRTC_JIT_CACHE_MODE", "numeric_literal");
+    subst("cudaJitErrorLogBuffer", "HIPRTC_JIT_ERROR_LOG_BUFFER", "numeric_literal");
+    subst("cudaJitErrorLogBufferSizeBytes", "HIPRTC_JIT_ERROR_LOG_BUFFER_SIZE_BYTES", "numeric_literal");
+    subst("cudaJitFallbackStrategy", "HIPRTC_JIT_FALLBACK_STRATEGY", "numeric_literal");
+    subst("cudaJitGenerateDebugInfo", "HIPRTC_JIT_GENERATE_DEBUG_INFO", "numeric_literal");
+    subst("cudaJitGenerateLineInfo", "HIPRTC_JIT_GENERATE_LINE_INFO", "numeric_literal");
+    subst("cudaJitInfoLogBuffer", "HIPRTC_JIT_INFO_LOG_BUFFER", "numeric_literal");
+    subst("cudaJitInfoLogBufferSizeBytes", "HIPRTC_JIT_INFO_LOG_BUFFER_SIZE_BYTES", "numeric_literal");
+    subst("cudaJitLogVerbose", "HIPRTC_JIT_LOG_VERBOSE", "numeric_literal");
+    subst("cudaJitMaxRegisters", "HIPRTC_JIT_MAX_REGISTERS", "numeric_literal");
+    subst("cudaJitOptimizationLevel", "HIPRTC_JIT_OPTIMIZATION_LEVEL", "numeric_literal");
+    subst("cudaJitThreadsPerBlock", "HIPRTC_JIT_THREADS_PER_BLOCK", "numeric_literal");
+    subst("cudaJitWallTime", "HIPRTC_JIT_WALL_TIME", "numeric_literal");
     subst("cudaKernelNodeAttributeAccessPolicyWindow", "hipKernelNodeAttributeAccessPolicyWindow", "numeric_literal");
     subst("cudaKernelNodeAttributeCooperative", "hipKernelNodeAttributeCooperative", "numeric_literal");
     subst("cudaKernelNodeAttributePriority", "hipKernelNodeAttributePriority", "numeric_literal");
@@ -10357,6 +10371,10 @@ sub warnRemovedFunctions {
     "cudaKernelNodeAttributeDeviceUpdatableKernelNode",
     "cudaKernelNodeAttributeClusterSchedulingPolicyPreference",
     "cudaKernelNodeAttributeClusterDimension",
+    "cudaJitPositionIndependentCode",
+    "cudaJitOverrideDirectiveValues",
+    "cudaJitMinCtaPerSm",
+    "cudaJitMaxThreadsPerBlock",
     "cudaInitDeviceFlagsAreValid",
     "cudaInitDevice",
     "cudaHostNodeParamsV2",

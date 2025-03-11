@@ -2014,6 +2014,46 @@ const std::map<llvm::StringRef, hipCounter> CUDA_RUNTIME_TYPE_NAME_MAP {
   //
   {"cudaMemcpyOperandTypeMax",                                         {"hipMemcpyOperandTypeMax",                                  "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
 
+
+  // NOTE: HIP doesn't have JIT; this dummy enum is used for syntactical compatibility
+  // CUjit_option
+  {"cudaJitOption",                                                    {"hipJitOption",                                             "", CONV_TYPE, API_RUNTIME, SEC::DATA_TYPES}},
+  // cudaJitOption enum values
+  // CU_JIT_MAX_REGISTERS
+  {"cudaJitMaxRegisters",                                              {"HIPRTC_JIT_MAX_REGISTERS",                                 "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 0
+  // CU_JIT_THREADS_PER_BLOCK
+  {"cudaJitThreadsPerBlock",                                           {"HIPRTC_JIT_THREADS_PER_BLOCK",                             "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 1
+  // CU_JIT_WALL_TIME
+  {"cudaJitWallTime",                                                  {"HIPRTC_JIT_WALL_TIME",                                     "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 2
+  // CU_JIT_INFO_LOG_BUFFER
+  {"cudaJitInfoLogBuffer",                                             {"HIPRTC_JIT_INFO_LOG_BUFFER",                               "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 3
+  // CU_JIT_INFO_LOG_BUFFER_SIZE_BYTES
+  {"cudaJitInfoLogBufferSizeBytes",                                    {"HIPRTC_JIT_INFO_LOG_BUFFER_SIZE_BYTES",                    "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 4
+  // CU_JIT_ERROR_LOG_BUFFER
+  {"cudaJitErrorLogBuffer",                                            {"HIPRTC_JIT_ERROR_LOG_BUFFER",                              "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 5
+  // CU_JIT_ERROR_LOG_BUFFER_SIZE_BYTES
+  {"cudaJitErrorLogBufferSizeBytes",                                   {"HIPRTC_JIT_ERROR_LOG_BUFFER_SIZE_BYTES",                   "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 6
+  // CU_JIT_OPTIMIZATION_LEVEL
+  {"cudaJitOptimizationLevel",                                         {"HIPRTC_JIT_OPTIMIZATION_LEVEL",                            "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 7
+  // CU_JIT_FALLBACK_STRATEGY
+  {"cudaJitFallbackStrategy",                                          {"HIPRTC_JIT_FALLBACK_STRATEGY",                             "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 10
+  // CU_JIT_GENERATE_DEBUG_INFO
+  {"cudaJitGenerateDebugInfo",                                         {"HIPRTC_JIT_GENERATE_DEBUG_INFO",                           "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 11
+  // CU_JIT_LOG_VERBOSE
+  {"cudaJitLogVerbose",                                                {"HIPRTC_JIT_LOG_VERBOSE",                                   "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 12
+  // CU_JIT_GENERATE_LINE_INFO
+  {"cudaJitGenerateLineInfo",                                          {"HIPRTC_JIT_GENERATE_LINE_INFO",                            "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 13
+  // CU_JIT_CACHE_MODE
+  {"cudaJitCacheMode",                                                 {"HIPRTC_JIT_CACHE_MODE",                                    "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 14
+  // CU_JIT_POSITION_INDEPENDENT_CODE
+  {"cudaJitPositionIndependentCode",                                   {"hipJitPositionIndependentCode",                            "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 30
+  // CU_JIT_MIN_CTA_PER_SM
+  {"cudaJitMinCtaPerSm",                                               {"hipJitMinCtaPerSm",                                        "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 31
+  // CU_JIT_MAX_THREADS_PER_BLOCK
+  {"cudaJitMaxThreadsPerBlock",                                        {"hipJitMaxThreadsPerBlock",                                 "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 32
+  // CU_JIT_OVERRIDE_DIRECTIVE_VALUES
+  {"cudaJitOverrideDirectiveValues",                                   {"hipJitOverrideDerectiveValues",                            "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 33
+
   // 4. Typedefs
 
   // CUhostFn
@@ -2916,6 +2956,24 @@ const std::map<llvm::StringRef, cudaAPIversions> CUDA_RUNTIME_TYPE_NAME_VER_MAP 
   {"cudaOffset3D",                                                     {CUDA_128, CUDA_0,   CUDA_0  }},
   {"cudaMemcpy3DOperand",                                              {CUDA_128, CUDA_0,   CUDA_0  }},
   {"cudaMemcpy3DBatchOp",                                              {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaJitOption",                                                    {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaJitMaxRegisters",                                              {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaJitThreadsPerBlock",                                           {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaJitWallTime",                                                  {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaJitInfoLogBuffer",                                             {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaJitInfoLogBufferSizeBytes",                                    {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaJitErrorLogBuffer",                                            {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaJitErrorLogBufferSizeBytes",                                   {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaJitOptimizationLevel",                                         {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaJitFallbackStrategy",                                          {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaJitGenerateDebugInfo",                                         {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaJitLogVerbose",                                                {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaJitGenerateLineInfo",                                          {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaJitCacheMode",                                                 {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaJitPositionIndependentCode",                                   {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaJitMinCtaPerSm",                                               {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaJitMaxThreadsPerBlock",                                        {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaJitOverrideDirectiveValues",                                   {CUDA_128, CUDA_0,   CUDA_0  }},
 };
 
 const std::map<llvm::StringRef, hipAPIversions> HIP_RUNTIME_TYPE_NAME_VER_MAP {

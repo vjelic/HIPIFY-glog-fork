@@ -947,5 +947,35 @@ int main() {
   cudaGraphDependencyType GRAPH_DEPENDENCY_TYPE_PROGRAMMATIC = cudaGraphDependencyTypeProgrammatic;
 #endif
 
+#if CUDA_VERSION >= 12080
+  // CHECK: hipJitOption jit_option;
+  // CHECK-NEXT: hipJitOption JIT_MAX_REGISTERS = HIPRTC_JIT_MAX_REGISTERS;
+  // CHECK-NEXT: hipJitOption JIT_THREADS_PER_BLOCK = HIPRTC_JIT_THREADS_PER_BLOCK;
+  // CHECK-NEXT: hipJitOption JIT_WALL_TIME = HIPRTC_JIT_WALL_TIME;
+  // CHECK-NEXT: hipJitOption JIT_INFO_LOG_BUFFER = HIPRTC_JIT_INFO_LOG_BUFFER;
+  // CHECK-NEXT: hipJitOption JIT_INFO_LOG_BUFFER_SIZE_BYTES = HIPRTC_JIT_INFO_LOG_BUFFER_SIZE_BYTES;
+  // CHECK-NEXT: hipJitOption JIT_ERROR_LOG_BUFFER = HIPRTC_JIT_ERROR_LOG_BUFFER;
+  // CHECK-NEXT: hipJitOption JIT_ERROR_LOG_BUFFER_SIZE_BYTES = HIPRTC_JIT_ERROR_LOG_BUFFER_SIZE_BYTES;
+  // CHECK-NEXT: hipJitOption JIT_OPTIMIZATION_LEVEL = HIPRTC_JIT_OPTIMIZATION_LEVEL;
+  // CHECK-NEXT: hipJitOption JIT_FALLBACK_STRATEGY = HIPRTC_JIT_FALLBACK_STRATEGY;
+  // CHECK-NEXT: hipJitOption JIT_GENERATE_DEBUG_INFO = HIPRTC_JIT_GENERATE_DEBUG_INFO;
+  // CHECK-NEXT: hipJitOption JIT_LOG_VERBOSE = HIPRTC_JIT_LOG_VERBOSE;
+  // CHECK-NEXT: hipJitOption JIT_GENERATE_LINE_INFO = HIPRTC_JIT_GENERATE_LINE_INFO;
+  // CHECK-NEXT: hipJitOption JIT_CACHE_MODE = HIPRTC_JIT_CACHE_MODE;
+  cudaJitOption jit_option;
+  cudaJitOption JIT_MAX_REGISTERS = cudaJitMaxRegisters;
+  cudaJitOption JIT_THREADS_PER_BLOCK = cudaJitThreadsPerBlock;
+  cudaJitOption JIT_WALL_TIME = cudaJitWallTime;
+  cudaJitOption JIT_INFO_LOG_BUFFER = cudaJitInfoLogBuffer;
+  cudaJitOption JIT_INFO_LOG_BUFFER_SIZE_BYTES = cudaJitInfoLogBufferSizeBytes;
+  cudaJitOption JIT_ERROR_LOG_BUFFER = cudaJitErrorLogBuffer;
+  cudaJitOption JIT_ERROR_LOG_BUFFER_SIZE_BYTES = cudaJitErrorLogBufferSizeBytes;
+  cudaJitOption JIT_OPTIMIZATION_LEVEL = cudaJitOptimizationLevel;
+  cudaJitOption JIT_FALLBACK_STRATEGY = cudaJitFallbackStrategy;
+  cudaJitOption JIT_GENERATE_DEBUG_INFO = cudaJitGenerateDebugInfo;
+  cudaJitOption JIT_LOG_VERBOSE = cudaJitLogVerbose;
+  cudaJitOption JIT_GENERATE_LINE_INFO = cudaJitGenerateLineInfo;
+  cudaJitOption JIT_CACHE_MODE = cudaJitCacheMode;
+#endif
   return 0;
 }

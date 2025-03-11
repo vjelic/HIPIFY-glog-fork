@@ -1364,6 +1364,24 @@
 |`cudaIpcMemHandle_st`| | | | |`hipIpcMemHandle_st`|1.6.0| | | | |
 |`cudaIpcMemHandle_t`| | | | |`hipIpcMemHandle_t`|1.6.0| | | | |
 |`cudaIpcMemLazyEnablePeerAccess`| | | | |`hipIpcMemLazyEnablePeerAccess`|1.6.0| | | | |
+|`cudaJitCacheMode`|12.8| | | |`HIPRTC_JIT_CACHE_MODE`|1.6.0| | | | |
+|`cudaJitErrorLogBuffer`|12.8| | | |`HIPRTC_JIT_ERROR_LOG_BUFFER`|1.6.0| | | | |
+|`cudaJitErrorLogBufferSizeBytes`|12.8| | | |`HIPRTC_JIT_ERROR_LOG_BUFFER_SIZE_BYTES`|1.6.0| | | | |
+|`cudaJitFallbackStrategy`|12.8| | | |`HIPRTC_JIT_FALLBACK_STRATEGY`|1.6.0| | | | |
+|`cudaJitGenerateDebugInfo`|12.8| | | |`HIPRTC_JIT_GENERATE_DEBUG_INFO`|1.6.0| | | | |
+|`cudaJitGenerateLineInfo`|12.8| | | |`HIPRTC_JIT_GENERATE_LINE_INFO`|1.6.0| | | | |
+|`cudaJitInfoLogBuffer`|12.8| | | |`HIPRTC_JIT_INFO_LOG_BUFFER`|1.6.0| | | | |
+|`cudaJitInfoLogBufferSizeBytes`|12.8| | | |`HIPRTC_JIT_INFO_LOG_BUFFER_SIZE_BYTES`|1.6.0| | | | |
+|`cudaJitLogVerbose`|12.8| | | |`HIPRTC_JIT_LOG_VERBOSE`|1.6.0| | | | |
+|`cudaJitMaxRegisters`|12.8| | | |`HIPRTC_JIT_MAX_REGISTERS`|1.6.0| | | | |
+|`cudaJitMaxThreadsPerBlock`|12.8| | | | | | | | | |
+|`cudaJitMinCtaPerSm`|12.8| | | | | | | | | |
+|`cudaJitOptimizationLevel`|12.8| | | |`HIPRTC_JIT_OPTIMIZATION_LEVEL`|1.6.0| | | | |
+|`cudaJitOption`|12.8| | | |`hipJitOption`|1.6.0| | | | |
+|`cudaJitOverrideDirectiveValues`|12.8| | | | | | | | | |
+|`cudaJitPositionIndependentCode`|12.8| | | | | | | | | |
+|`cudaJitThreadsPerBlock`|12.8| | | |`HIPRTC_JIT_THREADS_PER_BLOCK`|1.6.0| | | | |
+|`cudaJitWallTime`|12.8| | | |`HIPRTC_JIT_WALL_TIME`|1.6.0| | | | |
 |`cudaKernelNodeAttrID`|11.0| | | |`hipKernelNodeAttrID`|5.2.0| | | | |
 |`cudaKernelNodeAttrValue`|11.0| | | |`hipKernelNodeAttrValue`|5.2.0| | | | |
 |`cudaKernelNodeAttributeAccessPolicyWindow`|11.0| | | |`hipKernelNodeAttributeAccessPolicyWindow`|5.2.0| | | | |
