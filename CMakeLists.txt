@@ -64,7 +64,37 @@ if (NOT HIPIFY_CLANG_TESTS_ONLY)
   file(GLOB_RECURSE HIPIFY_SOURCES src/*.cpp)
   file(GLOB_RECURSE HIPIFY_HEADERS src/*.h)
 
-  add_llvm_executable(hipify-clang ${HIPIFY_SOURCES} ${HIPIFY_HEADERS})
+  # In order to be compatible with an LLVM that uses LLVM_LINK_LLVM_DYLIB=ON,
+  # hipify-clang must link core LLVM libraries via LLVM_LINK_COMPONENTS vs directly adding
+  # them.
+  set(HIPIFY_ADDL_LINK_LIBS)
+  set(LLVM_LINK_COMPONENTS
+    ProfileData
+    Support
+    MCParser
+    MC
+    BitReader
+    Option
+    Core
+  )
+  
+  if(LLVM_PACKAGE_VERSION VERSION_GREATER "6.0.1")
+    list(APPEND HIPIFY_ADDL_LINK_LIBS clangToolingInclusions)
+  endif()
+
+  if(LLVM_PACKAGE_VERSION VERSION_GREATER "9.0.1")
+    list(APPEND LLVM_LINK_COMPONENTS FrontendOpenMP)
+  endif()
+
+  if(LLVM_PACKAGE_VERSION VERSION_EQUAL "15.0.0" OR LLVM_PACKAGE_VERSION VERSION_GREATER "15.0.0")
+    list(APPEND LLVM_LINK_COMPONENTS WindowsDriver)
+    list(APPEND HIPIFY_ADDL_LINK_LIBS clangSupport)
+  endif()
+
+
+  add_llvm_executable(hipify-clang
+    ${HIPIFY_SOURCES} ${HIPIFY_HEADERS}
+  )
   target_link_directories(hipify-clang PRIVATE ${LLVM_LIBRARY_DIRS})
 
   if(HIPIFY_INCLUDE_IN_HIP_SDK)
@@ -87,7 +117,12 @@ if (NOT HIPIFY_CLANG_TESTS_ONLY)
           ${LLVM_BINARY_DIR}/tools/lld/include
           ${LLVM_EXTERNAL_LLD_SOURCE_DIR}/include)
     endif()
+
+  # Keep the existing compiler since MSVC-specific flags will be set later.
+  elseif(MSVC)
   else()
+    # Overriding CMAKE_CXX_COMPILER/CMAKE_C_COMPILER below is sketchy - could
+    # that be removed or reworked instead?
     set(CMAKE_CXX_COMPILER ${LLVM_TOOLS_BINARY_DIR}/clang++)
     set(CMAKE_C_COMPILER ${LLVM_TOOLS_BINARY_DIR}/clang)
   endif()
@@ -109,25 +144,8 @@ if (NOT HIPIFY_CLANG_TESTS_ONLY)
     clangToolingCore
     clangRewrite
     clangBasic
-    LLVMProfileData
-    LLVMSupport
-    LLVMMCParser
-    LLVMMC
-    LLVMBitReader
-    LLVMOption
-    LLVMCore)
-
-  if(LLVM_PACKAGE_VERSION VERSION_GREATER "6.0.1")
-    target_link_libraries(hipify-clang PRIVATE clangToolingInclusions)
-  endif()
-
-  if(LLVM_PACKAGE_VERSION VERSION_GREATER "9.0.1")
-    target_link_libraries(hipify-clang PRIVATE LLVMFrontendOpenMP)
-  endif()
-
-  if(LLVM_PACKAGE_VERSION VERSION_EQUAL "15.0.0" OR LLVM_PACKAGE_VERSION VERSION_GREATER "15.0.0")
-    target_link_libraries(hipify-clang PRIVATE LLVMWindowsDriver clangSupport)
-  endif()
+    ${HIPIFY_ADDL_LINK_LIBS}
+  )
 
   if(LLVM_PACKAGE_VERSION VERSION_EQUAL "16.0.0" OR LLVM_PACKAGE_VERSION VERSION_GREATER "16.0.0")
     if(MSVC)
