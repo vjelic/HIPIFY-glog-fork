@@ -65,7 +65,7 @@ if (NOT HIPIFY_CLANG_TESTS_ONLY)
   file(GLOB_RECURSE HIPIFY_HEADERS src/*.h)
 
   # In order to be compatible with an LLVM that uses LLVM_LINK_LLVM_DYLIB=ON,
-  # must link core LLVM libraries via LLVM_LINK_COMPONENTS vs directly adding
+  # hipify-clang must link core LLVM libraries via LLVM_LINK_COMPONENTS vs directly adding
   # them.
   set(HIPIFY_ADDL_LINK_LIBS)
   set(LLVM_LINK_COMPONENTS
@@ -77,6 +77,11 @@ if (NOT HIPIFY_CLANG_TESTS_ONLY)
     Option
     Core
   )
+  
+  if(LLVM_PACKAGE_VERSION VERSION_GREATER "6.0.1")
+    list(APPEND HIPIFY_ADDL_LINK_LIBS clangToolingInclusions)
+  endif()
+
   if(LLVM_PACKAGE_VERSION VERSION_GREATER "9.0.1")
     list(APPEND LLVM_LINK_COMPONENTS FrontendOpenMP)
   endif()
@@ -86,9 +91,6 @@ if (NOT HIPIFY_CLANG_TESTS_ONLY)
     list(APPEND HIPIFY_ADDL_LINK_LIBS clangSupport)
   endif()
 
-  if(LLVM_PACKAGE_VERSION VERSION_GREATER "6.0.1")
-    list(APPEND HIPIFY_ADDL_LINK_LIBS clangToolingInclusions)
-  endif()
 
   add_llvm_executable(hipify-clang
     ${HIPIFY_SOURCES} ${HIPIFY_HEADERS}
@@ -115,11 +117,12 @@ if (NOT HIPIFY_CLANG_TESTS_ONLY)
           ${LLVM_BINARY_DIR}/tools/lld/include
           ${LLVM_EXTERNAL_LLD_SOURCE_DIR}/include)
     endif()
+
+  # Keep the existing compiler since MSVC-specific flags will be set later.
   elseif(MSVC)
-    # Keep the existing compiler since MSVC-specific flags will be set later.
+  else()
     # Overriding CMAKE_CXX_COMPILER/CMAKE_C_COMPILER below is sketchy - could
     # that be removed or reworked instead?
-  else()
     set(CMAKE_CXX_COMPILER ${LLVM_TOOLS_BINARY_DIR}/clang++)
     set(CMAKE_C_COMPILER ${LLVM_TOOLS_BINARY_DIR}/clang)
   endif()
