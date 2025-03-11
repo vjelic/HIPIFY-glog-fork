@@ -1471,6 +1471,8 @@
 |`cudaMemRangeAttributePreferredLocationId`|12.2| | | | | | | | | |
 |`cudaMemRangeAttributePreferredLocationType`|12.2| | | | | | | | | |
 |`cudaMemRangeAttributeReadMostly`|8.0| | | |`hipMemRangeAttributeReadMostly`|3.7.0| | | | |
+|`cudaMemcpy3DBatchOp`|12.8| | | | | | | | | |
+|`cudaMemcpy3DOperand`|12.8| | | | | | | | | |
 |`cudaMemcpy3DOperandType`|12.8| | | | | | | | | |
 |`cudaMemcpy3DParms`| | | | |`hipMemcpy3DParms`|1.7.0| | | | |
 |`cudaMemcpy3DPeerParms`| | | | | | | | | | |
@@ -1485,6 +1487,9 @@
 |`cudaMemcpyHostToHost`| | | | |`hipMemcpyHostToHost`|1.5.0| | | | |
 |`cudaMemcpyKind`| | | | |`hipMemcpyKind`|1.5.0| | | | |
 |`cudaMemcpyNodeParams`|12.2| | | |`hipMemcpyNodeParams`|6.1.0| | | | |
+|`cudaMemcpyOperandTypeArray`|12.8| | | | | | | | | |
+|`cudaMemcpyOperandTypeMax`|12.8| | | | | | | | | |
+|`cudaMemcpyOperandTypePointer`|12.8| | | | | | | | | |
 |`cudaMemcpySrcAccessOrder`|12.8| | | | | | | | | |
 |`cudaMemcpySrcAccessOrderAny`|12.8| | | | | | | | | |
 |`cudaMemcpySrcAccessOrderDuringApiCall`|12.8| | | | | | | | | |
@@ -1506,6 +1511,7 @@
 |`cudaNvSciSyncAttrWait`|10.2| | | | | | | | | |
 |`cudaOccupancyDefault`| | | | |`hipOccupancyDefault`|3.2.0| | | | |
 |`cudaOccupancyDisableCachingOverride`| | | | |`hipOccupancyDisableCachingOverride`|5.5.0| | | | |
+|`cudaOffset3D`|12.8| | | | | | | | | |
 |`cudaOutputMode`| | | |12.0| | | | | | |
 |`cudaOutputMode_t`| | | |12.0| | | | | | |
 |`cudaPitchedPtr`| | | | |`hipPitchedPtr`|1.7.0| | | | |
