@@ -498,9 +498,9 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_TYPE_NAME_MAP {
   //
   {"CUcheckpointUnlockArgs",                                           {"hipCheckpointUnlockArgs",                                  "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
 
-  //
+  // cudaOffset3D
   {"CUoffset3D_st",                                                    {"hipOffset3D",                                              "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
-  //
+  // cudaOffset3D
   {"CUoffset3D",                                                       {"hipOffset3D",                                              "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
 
   //
@@ -508,14 +508,14 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_TYPE_NAME_MAP {
   //
   {"CUextent3D",                                                       {"hipExtent3D",                                              "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
 
-  // cudaMemcpy3DOperandType
+  // cudaMemcpy3DOperand
   {"CUmemcpy3DOperand_st",                                             {"hipMemcpy3DOperand",                                       "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
-  // cudaMemcpy3DOperandType
+  // cudaMemcpy3DOperand
   {"CUmemcpy3DOperand",                                                {"hipMemcpy3DOperand",                                       "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
 
-  //
+  // cudaMemcpy3DBatchOp
   {"CUDA_MEMCPY3D_BATCH_OP_st",                                        {"HIP_MEMCPY3D_BATCH_OP",                                    "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
-  //
+  // cudaMemcpy3DBatchOp
   {"CUDA_MEMCPY3D_BATCH_OP",                                           {"HIP_MEMCPY3D_BATCH_OP",                                    "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
 
   //
