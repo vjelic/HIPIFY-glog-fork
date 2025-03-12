@@ -1244,6 +1244,7 @@
 |`cudaGetDriverEntryPointFlags`|11.3| | | | | | | | | |
 |`cudaGraphCondAssignDefault`|12.3| | | | | | | | | |
 |`cudaGraphCondTypeIf`|12.3| | | | | | | | | |
+|`cudaGraphCondTypeSwitch`|12.8| | | | | | | | | |
 |`cudaGraphCondTypeWhile`|12.3| | | | | | | | | |
 |`cudaGraphConditionalHandle`|12.3| | | | | | | | | |
 |`cudaGraphConditionalHandleFlags`|12.3| | | | | | | | | |
@@ -1280,6 +1281,7 @@
 |`cudaGraphExecUpdateResultInfo_st`|12.0| | | | | | | | | |
 |`cudaGraphExecUpdateSuccess`|10.2| | | |`hipGraphExecUpdateSuccess`|4.3.0| | | | |
 |`cudaGraphExec_t`|10.0| | | |`hipGraphExec_t`|4.3.0| | | | |
+|`cudaGraphInstantiateConditionalHandleUnused`|12.8| | | | | | | | | |
 |`cudaGraphInstantiateError`|12.0| | | |`hipGraphInstantiateError`|6.2.0| | | | |
 |`cudaGraphInstantiateFlagAutoFreeOnLaunch`|11.4| | | |`hipGraphInstantiateFlagAutoFreeOnLaunch`|5.2.0| | | | |
 |`cudaGraphInstantiateFlagDeviceLaunch`|12.0| | | |`hipGraphInstantiateFlagDeviceLaunch`|5.6.0| | | | |
@@ -1365,6 +1367,9 @@
 |`cudaIpcMemHandle_t`| | | | |`hipIpcMemHandle_t`|1.6.0| | | | |
 |`cudaIpcMemLazyEnablePeerAccess`| | | | |`hipIpcMemLazyEnablePeerAccess`|1.6.0| | | | |
 |`cudaJitCacheMode`|12.8| | | |`HIPRTC_JIT_CACHE_MODE`|1.6.0| | | | |
+|`cudaJitCacheOptionCA`|12.8| | | | | | | | | |
+|`cudaJitCacheOptionCG`|12.8| | | | | | | | | |
+|`cudaJitCacheOptionNone`|12.8| | | | | | | | | |
 |`cudaJitErrorLogBuffer`|12.8| | | |`HIPRTC_JIT_ERROR_LOG_BUFFER`|1.6.0| | | | |
 |`cudaJitErrorLogBufferSizeBytes`|12.8| | | |`HIPRTC_JIT_ERROR_LOG_BUFFER_SIZE_BYTES`|1.6.0| | | | |
 |`cudaJitFallbackStrategy`|12.8| | | |`HIPRTC_JIT_FALLBACK_STRATEGY`|1.6.0| | | | |
@@ -1382,6 +1387,8 @@
 |`cudaJitPositionIndependentCode`|12.8| | | | | | | | | |
 |`cudaJitThreadsPerBlock`|12.8| | | |`HIPRTC_JIT_THREADS_PER_BLOCK`|1.6.0| | | | |
 |`cudaJitWallTime`|12.8| | | |`HIPRTC_JIT_WALL_TIME`|1.6.0| | | | |
+|`cudaJit_CacheMode`|12.8| | | | | | | | | |
+|`cudaJit_Fallback`|12.8| | | | | | | | | |
 |`cudaKernelNodeAttrID`|11.0| | | |`hipKernelNodeAttrID`|5.2.0| | | | |
 |`cudaKernelNodeAttrValue`|11.0| | | |`hipKernelNodeAttrValue`|5.2.0| | | | |
 |`cudaKernelNodeAttributeAccessPolicyWindow`|11.0| | | |`hipKernelNodeAttributeAccessPolicyWindow`|5.2.0| | | | |
@@ -1408,6 +1415,7 @@
 |`cudaLaunchAttributeLaunchCompletionEvent`|12.3| | | | | | | | | |
 |`cudaLaunchAttributeMemSyncDomain`|12.0| | | | | | | | | |
 |`cudaLaunchAttributeMemSyncDomainMap`|12.0| | | | | | | | | |
+|`cudaLaunchAttributePreferredClusterDimension`|12.8| | | | | | | | | |
 |`cudaLaunchAttributePreferredSharedMemoryCarveout`|12.5| | | | | | | | | |
 |`cudaLaunchAttributePriority`|11.8| | | |`hipLaunchAttributePriority`|6.2.0| | | | |
 |`cudaLaunchAttributeProgrammaticEvent`|11.8| | | | | | | | | |
@@ -1423,6 +1431,10 @@
 |`cudaLaunchMemSyncDomainMap_st`|12.0| | | | | | | | | |
 |`cudaLaunchMemSyncDomainRemote`|12.0| | | | | | | | | |
 |`cudaLaunchParams`|9.0| | | |`hipLaunchParams`|2.6.0| | | | |
+|`cudaLibraryBinaryIsPreserved`|12.8| | | | | | | | | |
+|`cudaLibraryHostUniversalFunctionAndDataTable`|12.8| | | | | | | | | |
+|`cudaLibraryOption`|12.8| | | | | | | | | |
+|`cudaLibrary_t`|12.8| | | | | | | | | |
 |`cudaLimit`| | | | |`hipLimit_t`|1.6.0| | | | |
 |`cudaLimitDevRuntimePendingLaunchCount`| | | | | | | | | | |
 |`cudaLimitDevRuntimeSyncDepth`| | | | | | | | | | |
@@ -1535,6 +1547,8 @@
 |`cudaPitchedPtr`| | | | |`hipPitchedPtr`|1.7.0| | | | |
 |`cudaPointerAttributes`| | | | |`hipPointerAttribute_t`|1.6.0| | | | |
 |`cudaPos`| | | | |`hipPos`|1.7.0| | | | |
+|`cudaPreferBinary`|12.8| | | | | | | | | |
+|`cudaPreferPtx`|12.8| | | | | | | | | |
 |`cudaReadModeElementType`| | | | |`hipReadModeElementType`|1.6.0| | | | |
 |`cudaReadModeNormalizedFloat`| | | | |`hipReadModeNormalizedFloat`|1.7.0| | | | |
 |`cudaResViewFormatFloat1`| | | | |`hipResViewFormatFloat1`|1.7.0| | | | |
@@ -1638,6 +1652,7 @@
 |`cudaUserObjectNoDestructorSync`|11.3| | | |`hipUserObjectNoDestructorSync`|5.3.0| | | | |
 |`cudaUserObjectRetainFlags`|11.3| | | |`hipUserObjectRetainFlags`|5.3.0| | | | |
 |`cudaUserObject_t`|11.3| | | |`hipUserObject_t`|5.3.0| | | | |
+|`cudalibraryHostUniversalFunctionAndDataTable`|12.8| | | | | | | | | |
 |`libraryPropertyType`|8.0| | | | | | | | | |
 |`libraryPropertyType_t`|8.0| | | | | | | | | |
 |`surfaceReference`| | | |12.0|`surfaceReference`|1.9.0| | | | |
