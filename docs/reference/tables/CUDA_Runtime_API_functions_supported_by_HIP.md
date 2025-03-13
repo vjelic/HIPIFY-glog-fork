@@ -85,6 +85,7 @@
 |`cudaStreamGetAttribute`|11.0| | | | | | | | | |
 |`cudaStreamGetCaptureInfo`|10.1| | | |`hipStreamGetCaptureInfo`|5.0.0| | | | |
 |`cudaStreamGetCaptureInfo_v3`|12.3| | | | | | | | | |
+|`cudaStreamGetDevice`|12.8| | | | | | | | | |
 |`cudaStreamGetFlags`| | | | |`hipStreamGetFlags`|1.6.0| | | | |
 |`cudaStreamGetId`|12.0| | | | | | | | | |
 |`cudaStreamGetPriority`| | | | |`hipStreamGetPriority`|2.0.0| | | | |
@@ -105,6 +106,7 @@
 |`cudaEventCreateWithFlags`| | | | |`hipEventCreateWithFlags`|1.6.0| | | | |
 |`cudaEventDestroy`| | | | |`hipEventDestroy`|1.6.0| | | | |
 |`cudaEventElapsedTime`| | | | |`hipEventElapsedTime`|1.6.0| | | | |
+|`cudaEventElapsedTime_v2`|12.8| | | | | | | | | |
 |`cudaEventQuery`| | | | |`hipEventQuery`|1.6.0| | | | |
 |`cudaEventRecord`| | | | |`hipEventRecord`|1.6.0| | | | |
 |`cudaEventRecordWithFlags`|11.1| | | |`hipEventRecordWithFlags`|6.4.0| | | |6.4.0|
@@ -209,9 +211,11 @@
 |`cudaMemcpy2DToArrayAsync`| | | | |`hipMemcpy2DToArrayAsync`|4.3.0| | | | |
 |`cudaMemcpy3D`| | | | |`hipMemcpy3D`|1.6.0| | | | |
 |`cudaMemcpy3DAsync`| | | | |`hipMemcpy3DAsync`|2.8.0| | | | |
+|`cudaMemcpy3DBatchAsync`|12.8| | | | | | | | | |
 |`cudaMemcpy3DPeer`| | | | | | | | | | |
 |`cudaMemcpy3DPeerAsync`| | | | | | | | | | |
 |`cudaMemcpyAsync`| | | | |`hipMemcpyAsync`|1.6.0| | | | |
+|`cudaMemcpyBatchAsync`|12.8| | | | | | | | | |
 |`cudaMemcpyFromSymbol`| | | | |`hipMemcpyFromSymbol`|1.6.0| | | | |
 |`cudaMemcpyFromSymbolAsync`| | | | |`hipMemcpyFromSymbolAsync`|1.6.0| | | | |
 |`cudaMemcpyPeer`| | | | |`hipMemcpyPeer`|1.6.0| | | | |
@@ -531,26 +535,41 @@
 |`cudaGetDriverEntryPoint`|11.3| |12.0| |`hipGetProcAddress`|6.2.0| | | | |
 |`cudaGetDriverEntryPointByVersion`|12.5| | | | | | | | | |
 
-## **32. C++ API Routines**
+## **32. Library Management**
+
+|**CUDA**|**A**|**D**|**C**|**R**|**HIP**|**A**|**D**|**C**|**R**|**E**|
+|:--|:-:|:-:|:-:|:-:|:--|:-:|:-:|:-:|:-:|:-:|
+|`cudaKernelSetAttributeForDevice`|12.8| | | | | | | | | |
+|`cudaLibraryEnumerateKernels`|12.8| | | | | | | | | |
+|`cudaLibraryGetGlobal`|12.8| | | | | | | | | |
+|`cudaLibraryGetKernel`|12.8| | | | | | | | | |
+|`cudaLibraryGetKernelCount`|12.8| | | | | | | | | |
+|`cudaLibraryGetManaged`|12.8| | | | | | | | | |
+|`cudaLibraryGetUnifiedFunction`|12.8| | | | | | | | | |
+|`cudaLibraryLoadData`|12.8| | | | | | | | | |
+|`cudaLibraryLoadFromFile`|12.8| | | | | | | | | |
+|`cudaLibraryUnload`|12.8| | | | | | | | | |
+
+## **33. C++ API Routines**
 
 |**CUDA**|**A**|**D**|**C**|**R**|**HIP**|**A**|**D**|**C**|**R**|**E**|
 |:--|:-:|:-:|:-:|:-:|:--|:-:|:-:|:-:|:-:|:-:|
 |`cudaGetKernel`|12.1| | | | | | | | | |
 
-## **33. Interactions with the CUDA Driver API**
+## **34. Interactions with the CUDA Driver API**
 
 |**CUDA**|**A**|**D**|**C**|**R**|**HIP**|**A**|**D**|**C**|**R**|**E**|
 |:--|:-:|:-:|:-:|:-:|:--|:-:|:-:|:-:|:-:|:-:|
 |`cudaGetFuncBySymbol`|11.0| | | |`hipGetFuncBySymbol`|6.2.0| | | | |
 
-## **34. Profiler Control**
+## **35. Profiler Control**
 
 |**CUDA**|**A**|**D**|**C**|**R**|**HIP**|**A**|**D**|**C**|**R**|**E**|
 |:--|:-:|:-:|:-:|:-:|:--|:-:|:-:|:-:|:-:|:-:|
 |`cudaProfilerStart`| | | | |`hipProfilerStart`|1.6.0|3.0.0| | | |
 |`cudaProfilerStop`| | | | |`hipProfilerStop`|1.6.0|3.0.0| | | |
 
-## **35. Data types used by CUDA Runtime**
+## **36. Data types used by CUDA Runtime**
 
 |**CUDA**|**A**|**D**|**C**|**R**|**HIP**|**A**|**D**|**C**|**R**|**E**|
 |:--|:-:|:-:|:-:|:-:|:--|:-:|:-:|:-:|:-:|:-:|
@@ -1659,7 +1678,7 @@
 |`texture`| | | |12.0|`texture`| | | | | |
 |`textureReference`| | | | |`textureReference`|1.6.0| | | | |
 
-## **36. Execution Control [REMOVED]**
+## **37. Execution Control [REMOVED]**
 
 |**CUDA**|**A**|**D**|**C**|**R**|**HIP**|**A**|**D**|**C**|**R**|**E**|
 |:--|:-:|:-:|:-:|:-:|:--|:-:|:-:|:-:|:-:|:-:|
@@ -1667,7 +1686,7 @@
 |`cudaLaunch`| | | |10.1|`hipLaunchByPtr`|1.9.0| | | | |
 |`cudaSetupArgument`| | | |10.1|`hipSetupArgument`|1.9.0| | | | |
 
-## **37. Texture Reference Management [REMOVED]**
+## **38. Texture Reference Management [REMOVED]**
 
 |**CUDA**|**A**|**D**|**C**|**R**|**HIP**|**A**|**D**|**C**|**R**|**E**|
 |:--|:-:|:-:|:-:|:-:|:--|:-:|:-:|:-:|:-:|:-:|
@@ -1679,14 +1698,14 @@
 |`cudaGetTextureReference`| |11.0| |12.0|`hipGetTextureReference`|1.7.0|5.3.0| | | |
 |`cudaUnbindTexture`| |11.0| |12.0|`hipUnbindTexture`|1.6.0|3.8.0| | | |
 
-## **38. Surface Reference Management [REMOVED]**
+## **39. Surface Reference Management [REMOVED]**
 
 |**CUDA**|**A**|**D**|**C**|**R**|**HIP**|**A**|**D**|**C**|**R**|**E**|
 |:--|:-:|:-:|:-:|:-:|:--|:-:|:-:|:-:|:-:|:-:|
 |`cudaBindSurfaceToArray`| |11.0| |12.0| | | | | | |
 |`cudaGetSurfaceReference`| |11.0| |12.0| | | | | | |
 
-## **39. Profiler Control [REMOVED]**
+## **40. Profiler Control [REMOVED]**
 
 |**CUDA**|**A**|**D**|**C**|**R**|**HIP**|**A**|**D**|**C**|**R**|**E**|
 |:--|:-:|:-:|:-:|:-:|:--|:-:|:-:|:-:|:-:|:-:|

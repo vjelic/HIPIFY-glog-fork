@@ -172,20 +172,30 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_FUNCTION_MAP {
   {"cuModuleGetTexRef",                                           {"hipModuleGetTexRef",                                          "", CONV_MODULE, API_DRIVER, SEC::MODULE_DEPRECATED, CUDA_DEPRECATED}},
 
   // 12. Library Management
+  // cudaLibraryLoadData
   {"cuLibraryLoadData",                                           {"hipLibraryLoadData",                                          "", CONV_LIBRARY, API_DRIVER, SEC::LIBRARY, HIP_UNSUPPORTED}},
+  // cudaLibraryLoadFromFile
   {"cuLibraryLoadFromFile",                                       {"hipLibraryLoadFromFile",                                      "", CONV_LIBRARY, API_DRIVER, SEC::LIBRARY, HIP_UNSUPPORTED}},
+  // cudaLibraryUnload
   {"cuLibraryUnload",                                             {"hipLibraryUnload",                                            "", CONV_LIBRARY, API_DRIVER, SEC::LIBRARY, HIP_UNSUPPORTED}},
+  // cudaLibraryGetKernel
   {"cuLibraryGetKernel",                                          {"hipLibraryGetKernel",                                         "", CONV_LIBRARY, API_DRIVER, SEC::LIBRARY, HIP_UNSUPPORTED}},
   {"cuLibraryGetModule",                                          {"hipLibraryGetModule",                                         "", CONV_LIBRARY, API_DRIVER, SEC::LIBRARY, HIP_UNSUPPORTED}},
   {"cuKernelGetFunction",                                         {"hipKernelGetFunction",                                        "", CONV_LIBRARY, API_DRIVER, SEC::LIBRARY, HIP_UNSUPPORTED}},
+  // cudaLibraryGetGlobal
   {"cuLibraryGetGlobal",                                          {"hipLibraryGetGlobal",                                         "", CONV_LIBRARY, API_DRIVER, SEC::LIBRARY, HIP_UNSUPPORTED}},
+  // cudaLibraryGetManaged
   {"cuLibraryGetManaged",                                         {"hipLibraryGetManaged",                                        "", CONV_LIBRARY, API_DRIVER, SEC::LIBRARY, HIP_UNSUPPORTED}},
+  // cudaLibraryGetUnifiedFunction
   {"cuLibraryGetUnifiedFunction",                                 {"hipLibraryGetUnifiedFunction",                                "", CONV_LIBRARY, API_DRIVER, SEC::LIBRARY, HIP_UNSUPPORTED}},
   {"cuKernelGetAttribute",                                        {"hipKernelGetAttribute",                                       "", CONV_LIBRARY, API_DRIVER, SEC::LIBRARY, HIP_UNSUPPORTED}},
+  // cudaKernelSetAttributeForDevice
   {"cuKernelSetAttribute",                                        {"hipKernelSetAttribute",                                       "", CONV_LIBRARY, API_DRIVER, SEC::LIBRARY, HIP_UNSUPPORTED}},
   {"cuKernelSetCacheConfig",                                      {"hipKernelSetCacheConfig",                                     "", CONV_LIBRARY, API_DRIVER, SEC::LIBRARY, HIP_UNSUPPORTED}},
   {"cuKernelGetName",                                             {"hipKernelGetName",                                            "", CONV_LIBRARY, API_DRIVER, SEC::LIBRARY, HIP_UNSUPPORTED}},
+  // cudaLibraryGetKernelCount
   {"cuLibraryGetKernelCount",                                     {"hipLibraryGetKernelCount",                                    "", CONV_LIBRARY, API_DRIVER, SEC::LIBRARY, HIP_UNSUPPORTED}},
+  // cudaLibraryEnumerateKernels
   {"cuLibraryEnumerateKernels",                                   {"hipLibraryEnumerateKernels",                                  "", CONV_LIBRARY, API_DRIVER, SEC::LIBRARY, HIP_UNSUPPORTED}},
   {"cuKernelGetParamInfo",                                        {"hipKernelGetParamInfo",                                       "", CONV_LIBRARY, API_DRIVER, SEC::LIBRARY, HIP_UNSUPPORTED}},
   {"cuKernelGetLibrary",                                          {"hipKernelGetLibrary",                                         "", CONV_LIBRARY, API_DRIVER, SEC::LIBRARY, HIP_UNSUPPORTED}},
@@ -308,9 +318,9 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_FUNCTION_MAP {
   // no analogue
   // NOTE: Not equal to cudaMemcpyPeerAsync due to different signatures
   {"cuMemcpyPeerAsync",                                           {"hipMemcpyPeerAsync_",                                         "", CONV_MEMORY, API_DRIVER, SEC::MEMORY, HIP_UNSUPPORTED}},
-  //
+  // cudaMemcpyBatchAsync
   {"cuMemcpyBatchAsync",                                          {"hipMemcpyBatchAsync",                                         "", CONV_MEMORY, API_DRIVER, SEC::MEMORY, HIP_UNSUPPORTED}},
-  //
+  // cudaMemcpy3DBatchAsync
   {"cuMemcpy3DBatchAsync",                                        {"hipMemcpy3DBatchAsync",                                       "", CONV_MEMORY, API_DRIVER, SEC::MEMORY, HIP_UNSUPPORTED}},
   //
   {"cuMemBatchDecompressAsync",                                   {"hipMemBatchDecompressAsync",                                  "", CONV_MEMORY, API_DRIVER, SEC::MEMORY, HIP_UNSUPPORTED}},
@@ -524,7 +534,7 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_FUNCTION_MAP {
   {"cuThreadExchangeStreamCaptureMode",                           {"hipThreadExchangeStreamCaptureMode",                          "", CONV_STREAM, API_DRIVER, SEC::STREAM}},
   // cudaStreamGetId
   {"cuStreamGetId",                                               {"hipStreamGetId",                                              "", CONV_STREAM, API_DRIVER, SEC::STREAM, HIP_UNSUPPORTED}},
-  //
+  // cudaStreamGetDevice
   {"cuStreamGetDevice",                                           {"hipStreamGetDevice",                                          "", CONV_STREAM, API_DRIVER, SEC::STREAM, HIP_UNSUPPORTED}},
 
   // 19. Event Management
