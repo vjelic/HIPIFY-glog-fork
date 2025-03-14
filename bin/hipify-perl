@@ -9945,7 +9945,19 @@ sub countSupportedDeviceDataTypes {
 }
 
 @UnsupportedDeviceDataTypes = (
-    "nv_bfloat162"
+    "nv_bfloat162",
+    "__nv_fp6x4_storage_t",
+    "__nv_fp6x4_e3m2",
+    "__nv_fp6x4_e2m3",
+    "__nv_fp6x2_storage_t",
+    "__nv_fp6x2_e3m2",
+    "__nv_fp6x2_e2m3",
+    "__nv_fp6_storage_t",
+    "__nv_fp6_interpretation_t",
+    "__nv_fp6_e3m2",
+    "__nv_fp6_e2m3",
+    "__NV_E3M2",
+    "__NV_E2M3"
 );
 
 sub warnUnsupportedDeviceDataTypes {
@@ -11176,6 +11188,8 @@ sub warnRemovedFunctions {
     "cl_context_flags_enum",
     "cl_context_flags",
     "__curand_umul",
+    "__NV_E3M2",
+    "__NV_E2M3",
     "NVCL_EVENT_SCHED_YIELD",
     "NVCL_EVENT_SCHED_SPIN",
     "NVCL_EVENT_SCHED_BLOCKING_SYNC",
