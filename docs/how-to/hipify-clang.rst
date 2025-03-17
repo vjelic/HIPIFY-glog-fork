@@ -55,8 +55,7 @@ Release Dependencies
     - `20.1.0 <https://github.com/llvm/llvm-project/releases/tag/llvmorg-20.1.0>`_:sup:`1`
     - ✅
     - ✅
-  * 
-    - `12.6.3 <https://developer.nvidia.com/cuda-12-6-3-download-archive>`_
+  * - `12.6.3 <https://developer.nvidia.com/cuda-12-6-3-download-archive>`_:sup:`1`
     - `19.1.0 <https://github.com/llvm/llvm-project/releases/tag/llvmorg-19.1.0>`_,
       `19.1.1 <https://github.com/llvm/llvm-project/releases/tag/llvmorg-19.1.1>`_,
       `19.1.2 <https://github.com/llvm/llvm-project/releases/tag/llvmorg-19.1.2>`_,
