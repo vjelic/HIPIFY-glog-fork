@@ -829,6 +829,17 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DEVICE_FUNCTION_MAP {
   {"__nv_cvt_bfloat16raw2_to_fp8x2",    {"__hip_cvt_bfloat16raw2_to_fp8x2",    "", CONV_DEVICE_FUNC, API_RUNTIME, 1}},
   {"__nv_cvt_fp8_to_halfraw",           {"__hip_cvt_fp8_to_halfraw",           "", CONV_DEVICE_FUNC, API_RUNTIME, 1}},
   {"__nv_cvt_fp8x2_to_halfraw2",        {"__hip_cvt_fp8x2_to_halfraw2",        "", CONV_DEVICE_FUNC, API_RUNTIME, 1}},
+  // fp6 functions
+  {"__nv_cvt_double_to_fp6",            {"__hip_cvt_double_to_fp6",            "", CONV_DEVICE_FUNC, API_RUNTIME, 1, UNSUPPORTED}},
+  {"__nv_cvt_double2_to_fp6x2",         {"__hip_cvt_double2_to_fp6x2",         "", CONV_DEVICE_FUNC, API_RUNTIME, 1, UNSUPPORTED}},
+  {"__nv_cvt_float_to_fp6",             {"__hip_cvt_float_to_fp6",             "", CONV_DEVICE_FUNC, API_RUNTIME, 1, UNSUPPORTED}},
+  {"__nv_cvt_float2_to_fp6x2",          {"__hip_cvt_float2_to_fp6x2",          "", CONV_DEVICE_FUNC, API_RUNTIME, 1, UNSUPPORTED}},
+  {"__nv_cvt_halfraw_to_fp6",           {"__hip_cvt_halfraw_to_fp6",           "", CONV_DEVICE_FUNC, API_RUNTIME, 1, UNSUPPORTED}},
+  {"__nv_cvt_halfraw2_to_fp6x2",        {"__hip_cvt_halfraw2_to_fp6x2",        "", CONV_DEVICE_FUNC, API_RUNTIME, 1, UNSUPPORTED}},
+  {"__nv_cvt_bfloat16raw_to_fp6",       {"__hip_cvt_bfloat16raw_to_fp6",       "", CONV_DEVICE_FUNC, API_RUNTIME, 1, UNSUPPORTED}},
+  {"__nv_cvt_bfloat16raw2_to_fp6x2",    {"__hip_cvt_bfloat16raw2_to_fp6x2",    "", CONV_DEVICE_FUNC, API_RUNTIME, 1, UNSUPPORTED}},
+  {"__nv_cvt_fp6_to_halfraw",           {"__hip_cvt_fp6_to_halfraw",           "", CONV_DEVICE_FUNC, API_RUNTIME, 1, UNSUPPORTED}},
+  {"__nv_cvt_fp6x2_to_halfraw2",        {"__hip_cvt_fp6x2_to_halfraw2",        "", CONV_DEVICE_FUNC, API_RUNTIME, 1, UNSUPPORTED}},
   // intrinsics
   {"__all_sync",                        {"__all_sync",                         "", CONV_DEVICE_FUNC, API_RUNTIME, 1}},
   {"__any_sync",                        {"__any_sync",                         "", CONV_DEVICE_FUNC, API_RUNTIME, 1}},
@@ -977,6 +988,16 @@ const std::map<llvm::StringRef, cudaAPIversions> CUDA_DEVICE_FUNCTION_VER_MAP {
   {"__shfl_up_sync",                    {CUDA_90,  CUDA_0,   CUDA_0  }},
   {"__shfl_down_sync",                  {CUDA_90,  CUDA_0,   CUDA_0  }},
   {"__shfl_xor_sync",                   {CUDA_90,  CUDA_0,   CUDA_0  }},
+  {"__nv_cvt_double_to_fp6",            {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"__nv_cvt_double2_to_fp6x2",         {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"__nv_cvt_float_to_fp6",             {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"__nv_cvt_float2_to_fp6x2",          {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"__nv_cvt_halfraw_to_fp6",           {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"__nv_cvt_halfraw2_to_fp6x2",        {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"__nv_cvt_bfloat16raw_to_fp6",       {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"__nv_cvt_bfloat16raw2_to_fp6x2",    {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"__nv_cvt_fp6_to_halfraw",           {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"__nv_cvt_fp6x2_to_halfraw2",        {CUDA_128, CUDA_0,   CUDA_0  }},
 };
 
 const std::map<llvm::StringRef, hipAPIversions> HIP_DEVICE_FUNCTION_VER_MAP {
