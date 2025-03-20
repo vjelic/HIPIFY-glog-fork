@@ -66,8 +66,8 @@ const std::map<llvm::StringRef, hipCounter> CUDA_FFT_TYPE_NAME_MAP {
 
   {"cufftProperty_t",                                 {"hipfftProperty",                                   "", CONV_TYPE, API_FFT, 1, HIP_UNSUPPORTED}},
   {"cufftProperty",                                   {"hipfftProperty",                                   "", CONV_TYPE, API_FFT, 1, HIP_UNSUPPORTED}},
-  {"NVFFT_PLAN_PROPERTY_INT64_PATIENT_JIT",           {"HIPFFT_PLAN_PROPERTY_INT64_PATIENT_JIT",           "", CONV_NUMERIC_LITERAL, API_FFT, 1, HIP_UNSUPPORTED}},  //  0x1
-  {"NVFFT_PLAN_PROPERTY_INT64_MAX_NUM_HOST_THREADS",  {"HIPFFT_PLAN_PROPERTY_INT64_MAX_NUM_HOST_THREADS",  "", CONV_NUMERIC_LITERAL, API_FFT, 1, HIP_UNSUPPORTED}},  //  0x2
+  {"NVFFT_PLAN_PROPERTY_INT64_PATIENT_JIT",           {"HIPFFT_PLAN_PROPERTY_INT64_PATIENT_JIT",           "", CONV_NUMERIC_LITERAL, API_FFT, 1, UNSUPPORTED}},  //  0x1
+  {"NVFFT_PLAN_PROPERTY_INT64_MAX_NUM_HOST_THREADS",  {"HIPFFT_PLAN_PROPERTY_INT64_MAX_NUM_HOST_THREADS",  "", CONV_NUMERIC_LITERAL, API_FFT, 1, UNSUPPORTED}},  //  0x2
 
   // cufftXt enums
   {"cufftXtSubFormat_t",                              {"hipfftXtSubFormat_t",                              "", CONV_TYPE, API_FFT, 1}},

@@ -7342,6 +7342,10 @@ sub simpleSubstitutions {
     subst("cufftType_t", "hipfftType_t", "type");
     subst("cufftXtCallbackType", "hipfftXtCallbackType", "type");
     subst("cufftXtCallbackType_t", "hipfftXtCallbackType_t", "type");
+    subst("cufftXtCopyType", "hipfftXtCopyType", "type");
+    subst("cufftXtCopyType_t", "hipfftXtCopyType_t", "type");
+    subst("cufftXtSubFormat", "hipfftXtSubFormat", "type");
+    subst("cufftXtSubFormat_t", "hipfftXtSubFormat_t", "type");
     subst("curandDirectionVectorSet", "hiprandDirectionVectorSet_t", "type");
     subst("curandDirectionVectorSet_t", "hiprandDirectionVectorSet_t", "type");
     subst("curandDirectionVectors32_t", "hiprandDirectionVectors32_t", "type");
@@ -7757,8 +7761,13 @@ sub simpleSubstitutions {
     subst("CUFFT_CB_ST_REAL", "HIPFFT_CB_ST_REAL", "numeric_literal");
     subst("CUFFT_CB_ST_REAL_DOUBLE", "HIPFFT_CB_ST_REAL_DOUBLE", "numeric_literal");
     subst("CUFFT_CB_UNDEFINED", "HIPFFT_CB_UNDEFINED", "numeric_literal");
+    subst("CUFFT_COPY_DEVICE_TO_DEVICE", "HIPFFT_COPY_DEVICE_TO_DEVICE", "numeric_literal");
+    subst("CUFFT_COPY_DEVICE_TO_HOST", "HIPFFT_COPY_DEVICE_TO_HOST", "numeric_literal");
+    subst("CUFFT_COPY_HOST_TO_DEVICE", "HIPFFT_COPY_HOST_TO_DEVICE", "numeric_literal");
+    subst("CUFFT_COPY_UNDEFINED", "HIPFFT_COPY_UNDEFINED", "numeric_literal");
     subst("CUFFT_D2Z", "HIPFFT_D2Z", "numeric_literal");
     subst("CUFFT_EXEC_FAILED", "HIPFFT_EXEC_FAILED", "numeric_literal");
+    subst("CUFFT_FORMAT_UNDEFINED", "HIPFFT_FORMAT_UNDEFINED", "numeric_literal");
     subst("CUFFT_FORWARD", "HIPFFT_FORWARD", "numeric_literal");
     subst("CUFFT_INCOMPLETE_PARAMETER_LIST", "HIPFFT_INCOMPLETE_PARAMETER_LIST", "numeric_literal");
     subst("CUFFT_INTERNAL_ERROR", "HIPFFT_INTERNAL_ERROR", "numeric_literal");
@@ -7776,6 +7785,11 @@ sub simpleSubstitutions {
     subst("CUFFT_SETUP_FAILED", "HIPFFT_SETUP_FAILED", "numeric_literal");
     subst("CUFFT_SUCCESS", "HIPFFT_SUCCESS", "numeric_literal");
     subst("CUFFT_UNALIGNED_DATA", "HIPFFT_UNALIGNED_DATA", "numeric_literal");
+    subst("CUFFT_XT_FORMAT_1D_INPUT_SHUFFLED", "HIPFFT_XT_FORMAT_1D_INPUT_SHUFFLED", "numeric_literal");
+    subst("CUFFT_XT_FORMAT_INPLACE", "HIPFFT_XT_FORMAT_INPLACE", "numeric_literal");
+    subst("CUFFT_XT_FORMAT_INPLACE_SHUFFLED", "HIPFFT_XT_FORMAT_INPLACE_SHUFFLED", "numeric_literal");
+    subst("CUFFT_XT_FORMAT_INPUT", "HIPFFT_XT_FORMAT_INPUT", "numeric_literal");
+    subst("CUFFT_XT_FORMAT_OUTPUT", "HIPFFT_XT_FORMAT_OUTPUT", "numeric_literal");
     subst("CUFFT_Z2D", "HIPFFT_Z2D", "numeric_literal");
     subst("CUFFT_Z2Z", "HIPFFT_Z2Z", "numeric_literal");
     subst("CURAND_DIRECTION_VECTORS_32_JOEKUO6", "HIPRAND_DIRECTION_VECTORS_32_JOEKUO6", "numeric_literal");
