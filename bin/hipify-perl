@@ -5329,8 +5329,18 @@ sub simpleSubstitutions {
     subst("cufftSetStream", "hipfftSetStream", "library");
     subst("cufftSetWorkArea", "hipfftSetWorkArea", "library");
     subst("cufftXtClearCallback", "hipfftXtClearCallback", "library");
+    subst("cufftXtExecDescriptorC2C", "hipfftXtExecDescriptorC2C", "library");
+    subst("cufftXtExecDescriptorC2R", "hipfftXtExecDescriptorC2R", "library");
+    subst("cufftXtExecDescriptorD2Z", "hipfftXtExecDescriptorD2Z", "library");
+    subst("cufftXtExecDescriptorR2C", "hipfftXtExecDescriptorR2C", "library");
+    subst("cufftXtExecDescriptorZ2D", "hipfftXtExecDescriptorZ2D", "library");
+    subst("cufftXtExecDescriptorZ2Z", "hipfftXtExecDescriptorZ2Z", "library");
+    subst("cufftXtFree", "hipfftXtFree", "library");
+    subst("cufftXtMalloc", "hipfftXtMalloc", "library");
+    subst("cufftXtMemcpy", "hipfftXtMemcpy", "library");
     subst("cufftXtSetCallback", "hipfftXtSetCallback", "library");
     subst("cufftXtSetCallbackSharedSize", "hipfftXtSetCallbackSharedSize", "library");
+    subst("cufftXtSetGPUs", "hipfftXtSetGPUs", "library");
     subst("curandCreateGenerator", "hiprandCreateGenerator", "library");
     subst("curandCreateGeneratorHost", "hiprandCreateGeneratorHost", "library");
     subst("curandCreatePoissonDistribution", "hiprandCreatePoissonDistribution", "library");
@@ -7240,6 +7250,8 @@ sub simpleSubstitutions {
     subst("cudaLaunchAttributeID", "hipLaunchAttributeID", "type");
     subst("cudaLaunchAttributeValue", "hipLaunchAttributeValue", "type");
     subst("cudaLaunchParams", "hipLaunchParams", "type");
+    subst("cudaLibXtDesc", "hipLibXtDesc", "type");
+    subst("cudaLibXtDesc_t", "hipLibXtDesc_t", "type");
     subst("cudaLimit", "hipLimit_t", "type");
     subst("cudaMemAccessDesc", "hipMemAccessDesc", "type");
     subst("cudaMemAccessFlags", "hipMemAccessFlags", "type");

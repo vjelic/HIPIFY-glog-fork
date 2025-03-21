@@ -56,5 +56,84 @@ int main() {
   cufftXtCallbackType_t FFT_CB_ST_REAL = CUFFT_CB_ST_REAL;
   cufftXtCallbackType_t FFT_CB_ST_REAL_DOUBLE = CUFFT_CB_ST_REAL_DOUBLE;
   cufftXtCallbackType_t FFT_CB_UNDEFINED = CUFFT_CB_UNDEFINED;
+
+  // CHECK: hipfftResult fftResult;
+  cufftResult fftResult;
+
+  // CHECK: hipfftHandle fftHandle;
+  cufftHandle fftHandle;
+
+  // CHECK: hipfftXtSubFormat fftXtSubFormat;
+  cufftXtSubFormat fftXtSubFormat;
+
+  // CHECK: hipfftXtCopyType fftXtCopyType;
+  cufftXtCopyType fftXtCopyType;
+
+  // CHECK: hipLibXtDesc *descptr;
+  // CHECK-NEXT: hipLibXtDesc *input_desc;
+  // CHECK-NEXT: hipLibXtDesc *output_desc;
+  cudaLibXtDesc *descptr;
+  cudaLibXtDesc *input_desc;
+  cudaLibXtDesc *output_desc;
+
+  // CHECK: hipLibXtDesc **desc;
+  cudaLibXtDesc **desc;
+
+  int *gpu = nullptr;
+  int count = 0;
+  void *dstptr = nullptr;
+  void *srcptr = nullptr;
+  int dir = 0;
+
+  // CUDA: cufftResult CUFFTAPI cufftXtSetGPUs(cufftHandle handle, int nGPUs, int *whichGPUs);
+  // HIP: HIPFFT_EXPORT hipfftResult hipfftXtSetGPUs(hipfftHandle plan, int count, int* gpus);
+  // CHECK: fftResult = hipfftXtSetGPUs(fftHandle, count, gpu);
+  fftResult = cufftXtSetGPUs(fftHandle, count, gpu);
+
+  // CUDA: cufftResult CUFFTAPI cufftXtMalloc(cufftHandle plan, cudaLibXtDesc ** descriptor, cufftXtSubFormat format);
+  // HIP: HIPFFT_EXPORT hipfftResult hipfftXtMalloc(hipfftHandle plan, hipLibXtDesc** desc, hipfftXtSubFormat format);
+  // CHECK: fftResult = hipfftXtMalloc(fftHandle, desc, fftXtSubFormat);
+  fftResult = cufftXtMalloc(fftHandle, desc, fftXtSubFormat);
+
+  // CUDA: cufftResult CUFFTAPI cufftXtMemcpy(cufftHandle plan, void *dstPointer, void *srcPointer, cufftXtCopyType type);
+  // HIP: HIPFFT_EXPORT hipfftResult hipfftXtMemcpy(hipfftHandle plan, void* dest, void* src, hipfftXtCopyType type);
+  // CHECK: fftResult = hipfftXtMemcpy(fftHandle, dstptr, srcptr, fftXtCopyType);
+  fftResult = cufftXtMemcpy(fftHandle, dstptr, srcptr, fftXtCopyType);
+
+  // CUDA: cufftResult CUFFTAPI cufftXtFree(cudaLibXtDesc *descriptor);
+  // HIP: HIPFFT_EXPORT hipfftResult hipfftXtFree(hipLibXtDesc* desc);
+  // CHECK: fftResult = hipfftXtFree(descptr);
+  fftResult = cufftXtFree(descptr);
+
+  // CUDA: cufftResult CUFFTAPI cufftXtExecDescriptorC2C(cufftHandle plan, cudaLibXtDesc *input, cudaLibXtDesc *output, int direction);
+  // HIP: HIPFFT_EXPORT hipfftResult hipfftXtExecDescriptorC2C(hipfftHandle plan, hipLibXtDesc* input, hipLibXtDesc* output, int direction);
+  // CHECK: fftResult = hipfftXtExecDescriptorC2C(fftHandle, input_desc, output_desc, dir);
+  fftResult = cufftXtExecDescriptorC2C(fftHandle, input_desc, output_desc, dir);
+
+  // CUDA: cufftResult CUFFTAPI cufftXtExecDescriptorR2C(cufftHandle plan, cudaLibXtDesc *input, cudaLibXtDesc *output);
+  // HIP: HIPFFT_EXPORT hipfftResult hipfftXtExecDescriptorR2C(hipfftHandle plan, hipLibXtDesc* input, hipLibXtDesc* output);
+  // CHECK: fftResult = hipfftXtExecDescriptorR2C(fftHandle, input_desc, output_desc);
+  fftResult = cufftXtExecDescriptorR2C(fftHandle, input_desc, output_desc);
+
+  // CUDA: cufftResult CUFFTAPI cufftXtExecDescriptorC2R(cufftHandle plan, cudaLibXtDesc *input, cudaLibXtDesc *output);
+  // HIP: HIPFFT_EXPORT hipfftResult hipfftXtExecDescriptorC2R(hipfftHandle plan, hipLibXtDesc* input, hipLibXtDesc* output);
+  // CHECK: fftResult = hipfftXtExecDescriptorC2R(fftHandle, input_desc, output_desc);
+  fftResult = cufftXtExecDescriptorC2R(fftHandle, input_desc, output_desc);
+
+  // CUDA: cufftResult CUFFTAPI cufftXtExecDescriptorZ2Z(cufftHandle plan, cudaLibXtDesc *input, cudaLibXtDesc *output, int direction);
+  // HIP: HIPFFT_EXPORT hipfftResult hipfftXtExecDescriptorZ2Z(hipfftHandle plan, hipLibXtDesc* input, hipLibXtDesc* output, int direction);
+  // CHECK: fftResult = hipfftXtExecDescriptorZ2Z(fftHandle, input_desc, output_desc, dir);
+  fftResult = cufftXtExecDescriptorZ2Z(fftHandle, input_desc, output_desc, dir);
+
+  // CUDA: cufftResult CUFFTAPI cufftXtExecDescriptorD2Z(cufftHandle plan, cudaLibXtDesc *input, cudaLibXtDesc *output);
+  // HIP: HIPFFT_EXPORT hipfftResult hipfftXtExecDescriptorD2Z(hipfftHandle plan, hipLibXtDesc* input, hipLibXtDesc* output);
+  // CHECK: fftResult = hipfftXtExecDescriptorD2Z(fftHandle, input_desc, output_desc);
+  fftResult = cufftXtExecDescriptorD2Z(fftHandle, input_desc, output_desc);
+
+  // CUDA: cufftResult CUFFTAPI cufftXtExecDescriptorZ2D(cufftHandle plan, cudaLibXtDesc *input, cudaLibXtDesc *output);
+  // HIP: HIPFFT_EXPORT hipfftResult hipfftXtExecDescriptorZ2D(hipfftHandle plan, hipLibXtDesc* input, hipLibXtDesc* output);
+  // CHECK: fftResult = hipfftXtExecDescriptorZ2D(fftHandle, input_desc, output_desc);
+  fftResult = cufftXtExecDescriptorZ2D(fftHandle, input_desc, output_desc);
+
   return 0;
 }
