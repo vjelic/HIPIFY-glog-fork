@@ -150,16 +150,16 @@
 |`cufftXtExecDescriptorR2C`| | | | |`hipfftXtExecDescriptorR2C`|6.0.0| | | | |
 |`cufftXtExecDescriptorZ2D`| | | | |`hipfftXtExecDescriptorZ2D`|6.0.0| | | | |
 |`cufftXtExecDescriptorZ2Z`| | | | |`hipfftXtExecDescriptorZ2Z`|6.0.0| | | | |
-|`cufftXtFree`| | | | |`hipfftXtFree`| | | | | |
+|`cufftXtFree`| | | | |`hipfftXtFree`|6.0.0| | | | |
 |`cufftXtGetSizeMany`|8.0| | | | | | | | | |
 |`cufftXtMakePlanMany`|8.0| | | | | | | | | |
-|`cufftXtMalloc`| | | | |`hipfftXtMalloc`| | | | | |
-|`cufftXtMemcpy`| | | | |`hipfftXtMemcpy`| | | | | |
+|`cufftXtMalloc`| | | | |`hipfftXtMalloc`|6.0.0| | | | |
+|`cufftXtMemcpy`| | | | |`hipfftXtMemcpy`|6.0.0| | | | |
 |`cufftXtQueryPlan`| | | | | | | | | | |
 |`cufftXtSetCallback`| | | | |`hipfftXtSetCallback`|4.3.0| | | | |
 |`cufftXtSetCallbackSharedSize`| | | | |`hipfftXtSetCallbackSharedSize`|4.3.0| | | | |
 |`cufftXtSetDistribution`|11.8| | | | | | | | | |
-|`cufftXtSetGPUs`| | | | |`hipfftXtSetGPUs`| | | | | |
+|`cufftXtSetGPUs`| | | | |`hipfftXtSetGPUs`|6.0.0| | | | |
 |`cufftXtSetWorkArea`| | | | | | | | | | |
 |`cufftXtSetWorkAreaPolicy`|9.2| | | | | | | | | |
 

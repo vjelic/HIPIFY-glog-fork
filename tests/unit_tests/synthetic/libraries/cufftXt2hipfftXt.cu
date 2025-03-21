@@ -69,15 +69,15 @@ int main() {
   // CHECK: hipfftXtCopyType fftXtCopyType;
   cufftXtCopyType fftXtCopyType;
 
-  // CHECK: hipLibXtDesc *descptr;
-  // CHECK-NEXT: hipLibXtDesc *input_desc;
-  // CHECK-NEXT: hipLibXtDesc *output_desc;
-  cudaLibXtDesc *descptr;
-  cudaLibXtDesc *input_desc;
-  cudaLibXtDesc *output_desc;
+  // CHECK: hipLibXtDesc *descptr = nullptr;
+  // CHECK-NEXT: hipLibXtDesc *input_desc = nullptr;
+  // CHECK-NEXT: hipLibXtDesc *output_desc = nullptr;
+  cudaLibXtDesc *descptr = nullptr;
+  cudaLibXtDesc *input_desc = nullptr;
+  cudaLibXtDesc *output_desc = nullptr;
 
-  // CHECK: hipLibXtDesc **desc;
-  cudaLibXtDesc **desc;
+  // CHECK: hipLibXtDesc **desc = nullptr;
+  cudaLibXtDesc **desc = nullptr;
 
   int *gpu = nullptr;
   int count = 0;
