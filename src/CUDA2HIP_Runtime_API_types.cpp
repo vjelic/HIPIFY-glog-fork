@@ -270,6 +270,9 @@ const std::map<llvm::StringRef, hipCounter> CUDA_RUNTIME_TYPE_NAME_MAP {
   // no analogue
   {"cudaGraphKernelNodeUpdate",                                        {"hipGraphKernelNodeUpdate",                                 "", CONV_TYPE, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
 
+  // CUmemcpyAttributes
+  {"cudaMemcpyAttributes",                                             {"hipMemcpyAttributes",                                      "", CONV_TYPE, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+
   // 2. Unions
 
   // CUstreamAttrValue
@@ -314,6 +317,21 @@ const std::map<llvm::StringRef, hipCounter> CUDA_RUNTIME_TYPE_NAME_MAP {
   // CUasyncNotificationInfo
   {"cudaAsyncNotificationInfo_t",                                      {"hipAsyncNotificationInfo",                                 "", CONV_TYPE, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
 
+  // CUoffset3D
+  {"cudaOffset3D",                                                     {"hipOffset3D",                                              "", CONV_TYPE, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+
+  // CUmemcpy3DOperand
+  {"cudaMemcpy3DOperand",                                              {"hipMemcpy3DOperand",                                       "", CONV_TYPE, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+
+  // CUDA_MEMCPY3D_BATCH_OP
+  {"cudaMemcpy3DBatchOp",                                              {"HIP_MEMCPY3D_BATCH_OP",                                    "", CONV_TYPE, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+
+  // CUlibraryHostUniversalFunctionAndDataTable
+  {"cudalibraryHostUniversalFunctionAndDataTable",                     {"hipLibraryHostUniversalFunctionAndDataTable",              "", CONV_TYPE, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+
+  // CUlibrary
+  {"cudaLibrary_t",                                                    {"hipLibraty",                                               "", CONV_TYPE, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+
   // 3. Enums
 
   // no analogue
@@ -357,6 +375,7 @@ const std::map<llvm::StringRef, hipCounter> CUDA_RUNTIME_TYPE_NAME_MAP {
   {"cudaChannelFormatKindSignedBlockCompressed6H",                     {"hipChannelFormatKindSignedBlockCompressed6H",              "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 28
   {"cudaChannelFormatKindUnsignedBlockCompressed7",                    {"hipChannelFormatKindUnsignedBlockCompressed7",             "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 29
   {"cudaChannelFormatKindUnsignedBlockCompressed7SRGB",                {"hipChannelFormatKindUnsignedBlockCompressed7SRGB",         "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 30
+  {"cudaChannelFormatKindUnsignedNormalized1010102",                   {"hipChannelFormatKindUnsignedNormalized1010102",            "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 31
 
   // CUcomputemode
   {"cudaComputeMode",                                                  {"hipComputeMode",                                           "", CONV_TYPE, API_RUNTIME, SEC::DATA_TYPES}},
@@ -667,6 +686,12 @@ const std::map<llvm::StringRef, hipCounter> CUDA_RUNTIME_TYPE_NAME_MAP {
   {"cudaDevAttrHostNumaId",                                            {"hipDeviceAttributeHostNumaId",                             "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 134
   // CU_DEVICE_ATTRIBUTE_D3D12_CIG_SUPPORTED
   {"cudaDevAttrD3D12CigSupported",                                     {"hipDeviceAttributeD3D12CigSupported",                      "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 135
+  // CU_DEVICE_ATTRIBUTE_GPU_PCI_DEVICE_ID
+  {"cudaDevAttrGpuPciDeviceId",                                        {"hipDeviceAttributePciDeviceId",                            "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 139
+  // CU_DEVICE_ATTRIBUTE_GPU_PCI_SUBSYSTEM_ID
+  {"cudaDevAttrGpuPciSubsystemId",                                     {"hipDeviceAttributeGpuPciSubsystemId",                      "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 140
+  // CU_DEVICE_ATTRIBUTE_HOST_NUMA_MULTINODE_IPC_SUPPORTED
+  {"cudaDevAttrHostNumaMultinodeIpcSupported",                         {"hipDeviceAttributeHostNumaMultinodeIpcSupported",          "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 143
   // CU_DEVICE_ATTRIBUTE_MAX
   {"cudaDevAttrMax",                                                   {"hipDeviceAttributeMax",                                    "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
 
@@ -1008,6 +1033,8 @@ const std::map<llvm::StringRef, hipCounter> CUDA_RUNTIME_TYPE_NAME_MAP {
   {"cudaErrorUnsupportedExecAffinity",                                 {"hipErrorUnsupportedExecAffinity",                          "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 224
   // CUDA_ERROR_UNSUPPORTED_DEVSIDE_SYNC
   {"cudaErrorUnsupportedDevSideSync",                                  {"hipErrorUnsupportedDevSideSync",                           "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 225
+  // CUDA_ERROR_CONTAINED
+  {"cudaErrorContained",                                               {"hipErrorContained",                                        "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 226
   // CUDA_ERROR_INVALID_SOURCE
   {"cudaErrorInvalidSource",                                           {"hipErrorInvalidSource",                                    "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 300
   // CUDA_ERROR_FILE_NOT_FOUND
@@ -1066,6 +1093,8 @@ const std::map<llvm::StringRef, hipCounter> CUDA_RUNTIME_TYPE_NAME_MAP {
   {"cudaErrorLaunchFailure",                                           {"hipErrorLaunchFailure",                                    "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 719
   // CUDA_ERROR_COOPERATIVE_LAUNCH_TOO_LARGE
   {"cudaErrorCooperativeLaunchTooLarge",                               {"hipErrorCooperativeLaunchTooLarge",                        "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 720
+  // CUDA_ERROR_TENSOR_MEMORY_LEAK
+  {"cudaErrorTensorMemoryLeak",                                        {"hipErrorTensorMemoryLeak",                                 "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 721
   // CUDA_ERROR_NOT_PERMITTED
   {"cudaErrorNotPermitted",                                            {"hipErrorNotPermitted",                                     "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 800
   // CUDA_ERROR_NOT_SUPPORTED
@@ -1880,6 +1909,8 @@ const std::map<llvm::StringRef, hipCounter> CUDA_RUNTIME_TYPE_NAME_MAP {
   {"cudaLaunchAttributeMemSyncDomainMap",                              {"hipLaunchAttributeMemSyncDomainMap",                       "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
   // CU_LAUNCH_ATTRIBUTE_MEM_SYNC_DOMAIN
   {"cudaLaunchAttributeMemSyncDomain",                                 {"hipLaunchAttributeMemSyncDomain",                          "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  // CU_LAUNCH_ATTRIBUTE_PREFERRED_CLUSTER_DIMENSION
+  {"cudaLaunchAttributePreferredClusterDimension",                     {"hipLaunchAttributePreferredClusterDimension",              "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
   // CU_LAUNCH_ATTRIBUTE_LAUNCH_COMPLETION_EVENT
   {"cudaLaunchAttributeLaunchCompletionEvent",                         {"hipLaunchAttributeLaunchCompletionEvent",                  "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
   // CU_LAUNCH_ATTRIBUTE_DEVICE_UPDATABLE_KERNEL_NODE
@@ -1900,6 +1931,8 @@ const std::map<llvm::StringRef, hipCounter> CUDA_RUNTIME_TYPE_NAME_MAP {
   {"cudaGraphInstantiateNodeOperationNotSupported",                    {"hipGraphInstantiateNodeOperationNotSupported",             "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}},
   // CUDA_GRAPH_INSTANTIATE_MULTIPLE_CTXS_NOT_SUPPORTED
   {"cudaGraphInstantiateMultipleDevicesNotSupported",                  {"hipGraphInstantiateMultipleDevicesNotSupported",           "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}},
+  // CUDA_GRAPH_INSTANTIATE_CONDITIONAL_HANDLE_UNUSED
+  {"cudaGraphInstantiateConditionalHandleUnused",                      {"hipGraphInstantiateConditionalHandleUnused",               "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
 
   // CUdriverProcAddressQueryResult
   {"cudaDriverEntryPointQueryResult",                                  {"hipDriverProcAddressQueryResult",                           "", CONV_TYPE, API_RUNTIME, SEC::DATA_TYPES}},
@@ -1940,6 +1973,8 @@ const std::map<llvm::StringRef, hipCounter> CUDA_RUNTIME_TYPE_NAME_MAP {
   {"cudaGraphCondTypeIf",                                              {"hipGraphCondTypeIf",                                       "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
   // CU_GRAPH_COND_TYPE_WHILE
   {"cudaGraphCondTypeWhile",                                           {"hipGraphCondTypeWhile",                                    "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  // CU_GRAPH_COND_TYPE_SWITCH
+  {"cudaGraphCondTypeSwitch",                                          {"hipGraphCondTypeSwitch",                                   "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
 
   // CUgraphDependencyType
   {"cudaGraphDependencyType",                                          {"hipGraphDependencyType",                                   "", CONV_TYPE, API_RUNTIME, SEC::DATA_TYPES}},
@@ -1958,6 +1993,104 @@ const std::map<llvm::StringRef, hipCounter> CUDA_RUNTIME_TYPE_NAME_MAP {
   {"cudaGraphKernelNodeFieldGridDim",                                  {"hipGraphKernelNodeFieldGridDim",                           "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
   {"cudaGraphKernelNodeFieldParam",                                    {"hipGraphKernelNodeFieldParam",                             "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
   {"cudaGraphKernelNodeFieldEnabled",                                  {"hipGraphKernelNodeFieldEnabled",                           "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+
+  // CUmemcpyFlags
+  {"cudaMemcpyFlags",                                                  {"hipMemcpyFlags",                                           "", CONV_TYPE, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  // cudaMemcpyFlags enum values
+  // CU_MEMCPY_FLAG_DEFAULT
+  {"cudaMemcpyFlagDefault",                                            {"HIP_MEMCPY_FLAG_DEFAULT",                                  "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  // CU_MEMCPY_FLAG_PREFER_OVERLAP_WITH_COMPUTE
+  {"cudaMemcpyFlagPreferOverlapWithCompute",                           {"HIP_MEMCPY_FLAG_PREFER_OVERLAP_WITH_COMPUTE",              "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+
+  // CUmemcpySrcAccessOrder
+  {"cudaMemcpySrcAccessOrder",                                         {"hipMemcpySrcAccessOrder",                                  "", CONV_TYPE, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  // cudaMemcpySrcAccessOrder enum values
+  // CU_MEMCPY_SRC_ACCESS_ORDER_INVALID
+  {"cudaMemcpySrcAccessOrderInvalid",                                  {"HIP_MEMCPY_SRC_ACCESS_ORDER_INVALID",                      "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  // CU_MEMCPY_SRC_ACCESS_ORDER_STREAM
+  {"cudaMemcpySrcAccessOrderStream",                                   {"HIP_MEMCPY_SRC_ACCESS_ORDER_STREAM",                       "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  // CU_MEMCPY_SRC_ACCESS_ORDER_DURING_API_CALL
+  {"cudaMemcpySrcAccessOrderDuringApiCall",                            {"HIP_MEMCPY_SRC_ACCESS_ORDER_DURING_API_CALL",              "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  // CU_MEMCPY_SRC_ACCESS_ORDER_ANY
+  {"cudaMemcpySrcAccessOrderAny",                                      {"HIP_MEMCPY_SRC_ACCESS_ORDER_ANY",                          "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  // CU_MEMCPY_SRC_ACCESS_ORDER_MAX
+  {"cudaMemcpySrcAccessOrderMax",                                      {"HIP_MEMCPY_SRC_ACCESS_ORDER_MAX",                          "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+
+  //
+  {"cudaMemcpy3DOperandType",                                          {"hipMemcpy3DOperandType",                                   "", CONV_TYPE, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  // cudaMemcpySrcAccessOrder enum values
+  //
+  {"cudaMemcpyOperandTypePointer",                                     {"hipMemcpyOperandTypePointer",                              "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  //
+  {"cudaMemcpyOperandTypeArray",                                       {"hipMemcpyOperandTypeArray",                                "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  //
+  {"cudaMemcpyOperandTypeMax",                                         {"hipMemcpyOperandTypeMax",                                  "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+
+
+  // NOTE: HIP doesn't have JIT; this dummy enum is used for syntactical compatibility
+  // CUjit_option
+  {"cudaJitOption",                                                    {"hipJitOption",                                             "", CONV_TYPE, API_RUNTIME, SEC::DATA_TYPES}},
+  // cudaJitOption enum values
+  // CU_JIT_MAX_REGISTERS
+  {"cudaJitMaxRegisters",                                              {"HIPRTC_JIT_MAX_REGISTERS",                                 "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 0
+  // CU_JIT_THREADS_PER_BLOCK
+  {"cudaJitThreadsPerBlock",                                           {"HIPRTC_JIT_THREADS_PER_BLOCK",                             "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 1
+  // CU_JIT_WALL_TIME
+  {"cudaJitWallTime",                                                  {"HIPRTC_JIT_WALL_TIME",                                     "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 2
+  // CU_JIT_INFO_LOG_BUFFER
+  {"cudaJitInfoLogBuffer",                                             {"HIPRTC_JIT_INFO_LOG_BUFFER",                               "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 3
+  // CU_JIT_INFO_LOG_BUFFER_SIZE_BYTES
+  {"cudaJitInfoLogBufferSizeBytes",                                    {"HIPRTC_JIT_INFO_LOG_BUFFER_SIZE_BYTES",                    "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 4
+  // CU_JIT_ERROR_LOG_BUFFER
+  {"cudaJitErrorLogBuffer",                                            {"HIPRTC_JIT_ERROR_LOG_BUFFER",                              "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 5
+  // CU_JIT_ERROR_LOG_BUFFER_SIZE_BYTES
+  {"cudaJitErrorLogBufferSizeBytes",                                   {"HIPRTC_JIT_ERROR_LOG_BUFFER_SIZE_BYTES",                   "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 6
+  // CU_JIT_OPTIMIZATION_LEVEL
+  {"cudaJitOptimizationLevel",                                         {"HIPRTC_JIT_OPTIMIZATION_LEVEL",                            "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 7
+  // CU_JIT_FALLBACK_STRATEGY
+  {"cudaJitFallbackStrategy",                                          {"HIPRTC_JIT_FALLBACK_STRATEGY",                             "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 10
+  // CU_JIT_GENERATE_DEBUG_INFO
+  {"cudaJitGenerateDebugInfo",                                         {"HIPRTC_JIT_GENERATE_DEBUG_INFO",                           "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 11
+  // CU_JIT_LOG_VERBOSE
+  {"cudaJitLogVerbose",                                                {"HIPRTC_JIT_LOG_VERBOSE",                                   "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 12
+  // CU_JIT_GENERATE_LINE_INFO
+  {"cudaJitGenerateLineInfo",                                          {"HIPRTC_JIT_GENERATE_LINE_INFO",                            "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 13
+  // CU_JIT_CACHE_MODE
+  {"cudaJitCacheMode",                                                 {"HIPRTC_JIT_CACHE_MODE",                                    "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 14
+  // CU_JIT_POSITION_INDEPENDENT_CODE
+  {"cudaJitPositionIndependentCode",                                   {"hipJitPositionIndependentCode",                            "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 30
+  // CU_JIT_MIN_CTA_PER_SM
+  {"cudaJitMinCtaPerSm",                                               {"hipJitMinCtaPerSm",                                        "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 31
+  // CU_JIT_MAX_THREADS_PER_BLOCK
+  {"cudaJitMaxThreadsPerBlock",                                        {"hipJitMaxThreadsPerBlock",                                 "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 32
+  // CU_JIT_OVERRIDE_DIRECTIVE_VALUES
+  {"cudaJitOverrideDirectiveValues",                                   {"hipJitOverrideDerectiveValues",                            "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 33
+
+  // CUlibraryOption
+  {"cudaLibraryOption",                                                {"hipLibraryOption",                                         "", CONV_TYPE, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  // cudaLibraryOption enum values
+  // CU_LIBRARY_HOST_UNIVERSAL_FUNCTION_AND_DATA_TABLE
+  {"cudaLibraryHostUniversalFunctionAndDataTable",                     {"HIP_LIBRARY_HOST_UNIVERSAL_FUNCTION_AND_DATA_TABLE",       "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  // CU_LIBRARY_BINARY_IS_PRESERVED
+  {"cudaLibraryBinaryIsPreserved",                                     {"HIP_LIBRARY_BINARY_IS_PRESERVED",                          "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+
+  // CUjit_cacheMode
+  {"cudaJit_CacheMode",                                                {"hipJitCacheMode",                                          "", CONV_TYPE, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  // cudaJit_CacheMode enum values
+  // CU_JIT_CACHE_OPTION_NONE
+  {"cudaJitCacheOptionNone",                                           {"hipJitCacheModeOptionNone",                                "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 0
+  // CU_JIT_CACHE_OPTION_CG
+  {"cudaJitCacheOptionCG",                                             {"hipJitCacheModeOptionCG",                                  "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  // CU_JIT_CACHE_OPTION_CA
+  {"cudaJitCacheOptionCA",                                             {"hipJitCacheModeOptionCA",                                  "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+
+  // CUjit_fallback
+  {"cudaJit_Fallback",                                                 {"hipJitFallback",                                           "", CONV_TYPE, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  // CUjit_fallback enum values
+  // CU_PREFER_PTX
+  {"cudaPreferPtx",                                                    {"hipJitFallbackPreferPtx",                                  "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 0
+  // CU_PREFER_BINARY
+  {"cudaPreferBinary",                                                 {"hipJitFallbackPreferBinary",                               "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
 
   // 4. Typedefs
 
@@ -2254,6 +2387,8 @@ const std::map<llvm::StringRef, hipCounter> CUDA_RUNTIME_TYPE_NAME_MAP {
   {"CUDART_TWO_TO_M1022",                                              {"HIP_TWO_TO_M1022",                                         "", CONV_DEFINE, API_RUNTIME, SEC::DATA_TYPES}},
   {"CUDART_TRIG_PLOSS",                                                {"HIP_TRIG_PLOSS",                                           "", CONV_DEFINE, API_RUNTIME, SEC::DATA_TYPES}},
   {"CUDART_DBL2INT_CVT",                                               {"HIP_DBL2INT_CVT",                                          "", CONV_DEFINE, API_RUNTIME, SEC::DATA_TYPES}},
+  // CU_MEM_POOL_CREATE_USAGE_HW_DECOMPRESS
+  {"cudaMemPoolCreateUsageHwDecompress",                               {"HIP_MEM_POOL_CREATE_USAGE_HW_DECOMPRESS",                  "", CONV_DEFINE, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 0x2
 };
 
 const std::map<llvm::StringRef, cudaAPIversions> CUDA_RUNTIME_TYPE_NAME_VER_MAP {
@@ -2835,6 +2970,63 @@ const std::map<llvm::StringRef, cudaAPIversions> CUDA_RUNTIME_TYPE_NAME_VER_MAP 
   {"cudaErrorFunctionNotLoaded",                                       {CUDA_126, CUDA_0,   CUDA_0  }},
   {"cudaErrorInvalidResourceType",                                     {CUDA_126, CUDA_0,   CUDA_0  }},
   {"cudaErrorInvalidResourceConfiguration",                            {CUDA_126, CUDA_0,   CUDA_0  }},
+  {"cudaErrorContained",                                               {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaErrorTensorMemoryLeak",                                        {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaChannelFormatKindUnsignedNormalized1010102",                   {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaDevAttrGpuPciDeviceId",                                        {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaDevAttrGpuPciSubsystemId",                                     {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaDevAttrHostNumaMultinodeIpcSupported",                         {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaMemPoolCreateUsageHwDecompress",                               {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaMemcpyFlags",                                                  {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaMemcpyFlagDefault",                                            {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaMemcpyFlagPreferOverlapWithCompute",                           {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaMemcpySrcAccessOrder",                                         {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaMemcpySrcAccessOrderInvalid",                                  {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaMemcpySrcAccessOrderStream",                                   {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaMemcpySrcAccessOrderDuringApiCall",                            {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaMemcpySrcAccessOrderAny",                                      {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaMemcpySrcAccessOrderMax",                                      {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaMemcpyAttributes",                                             {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaMemcpy3DOperandType",                                          {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaMemcpyOperandTypePointer",                                     {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaMemcpyOperandTypeArray",                                       {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaMemcpyOperandTypeMax",                                         {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaOffset3D",                                                     {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaMemcpy3DOperand",                                              {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaMemcpy3DBatchOp",                                              {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaJitOption",                                                    {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaJitMaxRegisters",                                              {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaJitThreadsPerBlock",                                           {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaJitWallTime",                                                  {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaJitInfoLogBuffer",                                             {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaJitInfoLogBufferSizeBytes",                                    {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaJitErrorLogBuffer",                                            {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaJitErrorLogBufferSizeBytes",                                   {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaJitOptimizationLevel",                                         {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaJitFallbackStrategy",                                          {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaJitGenerateDebugInfo",                                         {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaJitLogVerbose",                                                {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaJitGenerateLineInfo",                                          {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaJitCacheMode",                                                 {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaJitPositionIndependentCode",                                   {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaJitMinCtaPerSm",                                               {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaJitMaxThreadsPerBlock",                                        {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaJitOverrideDirectiveValues",                                   {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaLibraryOption",                                                {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaLibraryHostUniversalFunctionAndDataTable",                     {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudalibraryHostUniversalFunctionAndDataTable",                     {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaLibraryBinaryIsPreserved",                                     {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaJit_CacheMode",                                                {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaJitCacheOptionNone",                                           {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaJitCacheOptionCG",                                             {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaJitCacheOptionCA",                                             {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaJit_Fallback",                                                 {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaPreferPtx",                                                    {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaPreferBinary",                                                 {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaLibrary_t",                                                    {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaGraphCondTypeSwitch",                                          {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaGraphInstantiateConditionalHandleUnused",                      {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaLaunchAttributePreferredClusterDimension",                     {CUDA_128, CUDA_0,   CUDA_0  }},
 };
 
 const std::map<llvm::StringRef, hipAPIversions> HIP_RUNTIME_TYPE_NAME_VER_MAP {

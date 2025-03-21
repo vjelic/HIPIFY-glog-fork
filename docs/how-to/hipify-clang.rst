@@ -41,7 +41,7 @@ Release Dependencies
 
 * `LLVM+Clang <http://releases.llvm.org>`_ version is determined at least partially by 
   the CUDA version you are using, as shown in the table below. The recommended Clang release 
-  is the latest stable release `19.1.7 <https://github.com/llvm/llvm-project/releases/tag/llvmorg-19.1.7>`_, 
+  is the latest stable release `20.1.0 <https://github.com/llvm/llvm-project/releases/tag/llvmorg-20.1.0>`_, 
   or at least version `4.0.0 <http://releases.llvm.org/download.html#4.0.0>`_.
 
 .. list-table::
@@ -50,7 +50,12 @@ Release Dependencies
     - supported LLVM release versions
     - Windows
     - Linux
-  * - `12.6.3 <https://developer.nvidia.com/cuda-downloads>`_:sup:`1`
+  * 
+    - `12.8.0 <https://developer.nvidia.com/cuda-12-6-3-download-archive>`_
+    - `20.1.0 <https://github.com/llvm/llvm-project/releases/tag/llvmorg-20.1.0>`_:sup:`1`
+    - ✅
+    - ✅
+  * - `12.6.3 <https://developer.nvidia.com/cuda-12-6-3-download-archive>`_:sup:`1`
     - `19.1.0 <https://github.com/llvm/llvm-project/releases/tag/llvmorg-19.1.0>`_,
       `19.1.1 <https://github.com/llvm/llvm-project/releases/tag/llvmorg-19.1.1>`_,
       `19.1.2 <https://github.com/llvm/llvm-project/releases/tag/llvmorg-19.1.2>`_,
@@ -58,7 +63,7 @@ Release Dependencies
       `19.1.4 <https://github.com/llvm/llvm-project/releases/tag/llvmorg-19.1.4>`_,
       `19.1.5 <https://github.com/llvm/llvm-project/releases/tag/llvmorg-19.1.5>`_,
       `19.1.6 <https://github.com/llvm/llvm-project/releases/tag/llvmorg-19.1.6>`_,
-      `19.1.7 <https://github.com/llvm/llvm-project/releases/tag/llvmorg-19.1.7>`_:sup:`1`
+      `19.1.7 <https://github.com/llvm/llvm-project/releases/tag/llvmorg-19.1.7>`_
     - ✅
     - ✅
   * - `12.3.2 <https://developer.nvidia.com/cuda-12-3-2-download-archive>`_ 
@@ -235,7 +240,7 @@ Release Dependencies
 In most cases, you can get a suitable version of ``LLVM+Clang`` with your package manager. However, you can also
 `download a release archive <http://releases.llvm.org/>`_ and build or install it. In case of multiple versions of ``LLVM`` installed, set
 `CMAKE_PREFIX_PATH <https://cmake.org/cmake/help/latest/variable/CMAKE_PREFIX_PATH.html>`_ so that
-``CMake`` can find the desired version of ``LLVM``. For example, ``-DCMAKE_PREFIX_PATH=D:\LLVM\19.1.7\dist``.
+``CMake`` can find the desired version of ``LLVM``. For example, ``-DCMAKE_PREFIX_PATH=D:\LLVM\20.1.0\dist``.
 
 Usage
 =====
@@ -271,7 +276,7 @@ header files used during the hipification process:
 
 .. code:: shell
 
-  ./hipify-clang square.cu --cuda-path=/usr/local/cuda-12.6 --clang-resource-directory=/usr/llvm/19.1.7/dist/lib/clang/19
+  ./hipify-clang square.cu --cuda-path=/usr/local/cuda-12.6 --clang-resource-directory=/usr/llvm/20.1.0/dist/lib/clang/19
 
 For more information, refer to the `Clang manual for compiling CUDA <https://llvm.org/docs/CompileCudaWithLLVM.html#compiling-cuda-code>`_.
 
