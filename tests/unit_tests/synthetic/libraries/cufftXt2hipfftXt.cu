@@ -84,6 +84,25 @@ int main() {
   void *dstptr = nullptr;
   void *srcptr = nullptr;
   int dir = 0;
+  int rank = 0;
+  long long int *n = nullptr;
+  long long int *inembed = nullptr;
+  long long int istride = 0;
+  long long int idist = 0;
+  long long int *onembed = nullptr;
+  long long int ostride = 0;
+  long long int odist = 0;
+  long long int batch = 0;
+  size_t *workSize = nullptr;
+  void *input = nullptr;
+  void *output = nullptr;
+
+  // CHECK: hipDataType executionType;
+  // CHECK-NEXT: hipDataType inputType;
+  // CHECK-NEXT: hipDataType outputType;
+  cudaDataType executionType;
+  cudaDataType inputType;
+  cudaDataType outputType;
 
   // CUDA: cufftResult CUFFTAPI cufftXtSetGPUs(cufftHandle handle, int nGPUs, int *whichGPUs);
   // HIP: HIPFFT_EXPORT hipfftResult hipfftXtSetGPUs(hipfftHandle plan, int count, int* gpus);
@@ -134,6 +153,27 @@ int main() {
   // HIP: HIPFFT_EXPORT hipfftResult hipfftXtExecDescriptorZ2D(hipfftHandle plan, hipLibXtDesc* input, hipLibXtDesc* output);
   // CHECK: fftResult = hipfftXtExecDescriptorZ2D(fftHandle, input_desc, output_desc);
   fftResult = cufftXtExecDescriptorZ2D(fftHandle, input_desc, output_desc);
+
+  // CUDA: cufftResult CUFFTAPI cufftXtMakePlanMany(cufftHandle plan, int rank, long long int *n, long long int *inembed, long long int istride, long long int idist, cudaDataType inputtype, long long int *onembed, long long int ostride, long long int odist, cudaDataType outputtype, long long int batch, size_t *workSize, cudaDataType executiontype);
+  // HIP: HIPFFT_EXPORT hipfftResult hipfftXtMakePlanMany(hipfftHandle plan, int rank, long long int* n, long long int* inembed, long long int istride, long long int idist, hipDataType inputType, long long int* onembed, long long int ostride, long long int odist, hipDataType outputType, long long int batch, size_t* workSize, hipDataType executionType);
+  // CHECK: fftResult = hipfftXtMakePlanMany(fftHandle, rank, n, inembed, istride, idist, inputType, onembed, ostride, odist, outputType, batch, workSize, executionType);
+  fftResult = cufftXtMakePlanMany(fftHandle, rank, n, inembed, istride, idist, inputType, onembed, ostride, odist, outputType, batch, workSize, executionType);
+
+  // CUDA: cufftResult CUFFTAPI cufftXtGetSizeMany(cufftHandle plan, int rank, long long int *n, long long int *inembed, long long int istride, long long int idist, cudaDataType inputtype, long long int *onembed, long long int ostride, long long int odist, cudaDataType outputtype, long long int batch, size_t *workSize, cudaDataType executiontype);
+  // HIP: HIPFFT_EXPORT hipfftResult hipfftXtGetSizeMany(hipfftHandle plan, int rank, long long int* n, long long int* inembed, long long int istride, long long int idist, hipDataType inputType, long long int* onembed, long long int ostride, long long int odist, hipDataType outputType, long long int batch, size_t* workSize, hipDataType executionType);
+  // CHECK: fftResult = hipfftXtGetSizeMany(fftHandle, rank, n, inembed, istride, idist, inputType, onembed, ostride, odist, outputType, batch, workSize, executionType);
+  fftResult = cufftXtGetSizeMany(fftHandle, rank, n, inembed, istride, idist, inputType, onembed, ostride, odist, outputType, batch, workSize, executionType);
+
+
+  // CUDA: cufftResult CUFFTAPI cufftXtExec(cufftHandle plan, void *input, void *output, int direction);
+  // HIP: HIPFFT_EXPORT hipfftResult hipfftXtExec(hipfftHandle plan, void* input, void* output, int direction);
+  // CHECK: fftResult = hipfftXtExec(fftHandle, input, output, dir);
+  fftResult = cufftXtExec(fftHandle, input, output, dir);
+
+  // CUDA: cufftResult CUFFTAPI cufftXtExecDescriptor(cufftHandle plan, cudaLibXtDesc *input, cudaLibXtDesc *output, int direction);
+  // HIP: HIPFFT_EXPORT hipfftResult hipfftXtExecDescriptor(hipfftHandle plan, hipLibXtDesc* input, hipLibXtDesc* output, int direction);
+  // CHECK: fftResult = hipfftXtExecDescriptor(fftHandle, input_desc, output_desc, dir);
+  fftResult = cufftXtExecDescriptor(fftHandle, input_desc, output_desc, dir);
 
   return 0;
 }
