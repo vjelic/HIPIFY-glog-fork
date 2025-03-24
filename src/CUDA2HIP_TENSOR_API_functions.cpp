@@ -84,6 +84,8 @@ const std::map<llvm::StringRef, hipCounter> CUDA_TENSOR_FUNCTION_MAP {
   {"cutensorMgCreateContractionPlan",                {"",                                                    "", CONV_LIB_FUNC, API_TENSOR, 2, UNSUPPORTED}},
   {"cutensorMgDestroyContractionPlan",               {"",                                                    "", CONV_LIB_FUNC, API_TENSOR, 2, UNSUPPORTED}},
   {"cutensorMgContraction",                          {"",                                                    "", CONV_LIB_FUNC, API_TENSOR, 2, UNSUPPORTED}},
+  {"cutensorCreateContractionTrinary",               {"",                                                    "", CONV_LIB_FUNC, API_TENSOR, 2, UNSUPPORTED}},
+  {"cutensorContractTrinary",                        {"",                                                    "", CONV_LIB_FUNC, API_TENSOR, 2, UNSUPPORTED}},
 };
 
 const std::map<llvm::StringRef, cudaAPIversions> CUDA_TENSOR_FUNCTION_VER_MAP {
@@ -148,6 +150,8 @@ const std::map<llvm::StringRef, cudaAPIversions> CUDA_TENSOR_FUNCTION_VER_MAP {
   {"cutensorMgCreateContractionPlan",                {CUTENSOR_1400, CUDA_0,        CUDA_0        }},
   {"cutensorMgDestroyContractionPlan",               {CUTENSOR_1400, CUDA_0,        CUDA_0        }},
   {"cutensorMgContraction",                          {CUTENSOR_1400, CUDA_0,        CUDA_0        }},
+  {"cutensorCreateContractionTrinary",               {CUTENSOR_2200, CUDA_0,        CUDA_0        }},
+  {"cutensorContractTrinary",                        {CUTENSOR_2200, CUDA_0,        CUDA_0        }},
 };
 
 const std::map<llvm::StringRef, hipAPIversions> HIP_TENSOR_FUNCTION_VER_MAP {
