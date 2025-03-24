@@ -1399,38 +1399,7 @@ my %removed_funcs = (
 );
 
 my %experimental_funcs = (
-    "cusolverSpScsrlsvqr" => "6.4.0",
-    "cusolverSpDcsrlsvqr" => "6.4.0",
-    "cudaEventRecordWithFlags" => "6.4.0",
-    "cudaErrorInvalidTexture" => "6.4.0",
-    "cudaErrorInvalidChannelDescriptor" => "6.4.0",
-    "cudaDeviceGetTexture1DLinearMaxWidth" => "6.4.0",
-    "cuStreamBatchMemOp_v2" => "6.4.0",
-    "cuStreamBatchMemOp" => "6.4.0",
-    "cuGraphExecBatchMemOpNodeSetParams" => "6.4.0",
-    "cuGraphBatchMemOpNodeSetParams" => "6.4.0",
-    "cuGraphBatchMemOpNodeGetParams" => "6.4.0",
-    "cuGraphAddBatchMemOpNode" => "6.4.0",
-    "cuEventRecordWithFlags" => "6.4.0",
-    "cuDeviceGetTexture1DLinearMaxWidth" => "6.4.0",
-    "CUstreamBatchMemOpType_enum" => "6.4.0",
-    "CUstreamBatchMemOpType" => "6.4.0",
-    "CUstreamBatchMemOpParams_v1" => "6.4.0",
-    "CUstreamBatchMemOpParams_union" => "6.4.0",
-    "CUstreamBatchMemOpParams" => "6.4.0",
-    "CU_STREAM_MEM_OP_WRITE_VALUE_64" => "6.4.0",
-    "CU_STREAM_MEM_OP_WRITE_VALUE_32" => "6.4.0",
-    "CU_STREAM_MEM_OP_WAIT_VALUE_64" => "6.4.0",
-    "CU_STREAM_MEM_OP_WAIT_VALUE_32" => "6.4.0",
-    "CU_STREAM_MEM_OP_FLUSH_REMOTE_WRITES" => "6.4.0",
-    "CU_STREAM_MEM_OP_BARRIER" => "6.4.0",
-    "CU_GRAPH_NODE_TYPE_BATCH_MEM_OP" => "6.4.0",
-    "CUDA_BATCH_MEM_OP_NODE_PARAMS_v2_st" => "6.4.0",
-    "CUDA_BATCH_MEM_OP_NODE_PARAMS_v2" => "6.4.0",
-    "CUDA_BATCH_MEM_OP_NODE_PARAMS_v1_st" => "6.4.0",
-    "CUDA_BATCH_MEM_OP_NODE_PARAMS_v1" => "6.4.0",
-    "CUDA_BATCH_MEM_OP_NODE_PARAMS_st" => "6.4.0",
-    "CUDA_BATCH_MEM_OP_NODE_PARAMS" => "6.4.0"
+
 );
 
 $print_stats = 1 if $examine;
@@ -1568,38 +1537,6 @@ sub subst {
 }
 
 sub experimentalSubstitutions {
-    subst("cuDeviceGetTexture1DLinearMaxWidth", "hipDeviceGetTexture1DLinearMaxWidth", "device");
-    subst("cudaDeviceGetTexture1DLinearMaxWidth", "hipDeviceGetTexture1DLinearMaxWidth", "device");
-    subst("cuEventRecordWithFlags", "hipEventRecordWithFlags", "event");
-    subst("cudaEventRecordWithFlags", "hipEventRecordWithFlags", "event");
-    subst("cuStreamBatchMemOp", "hipStreamBatchMemOp", "stream_memory");
-    subst("cuStreamBatchMemOp_v2", "hipStreamBatchMemOp", "stream_memory");
-    subst("cuGraphAddBatchMemOpNode", "hipGraphAddBatchMemOpNode", "graph");
-    subst("cuGraphBatchMemOpNodeGetParams", "hipGraphBatchMemOpNodeGetParams", "graph");
-    subst("cuGraphBatchMemOpNodeSetParams", "hipGraphBatchMemOpNodeSetParams", "graph");
-    subst("cuGraphExecBatchMemOpNodeSetParams", "hipGraphExecBatchMemOpNodeSetParams", "graph");
-    subst("cusolverSpDcsrlsvqr", "hipsolverSpDcsrlsvqr", "library");
-    subst("cusolverSpScsrlsvqr", "hipsolverSpScsrlsvqr", "library");
-    subst("CUDA_BATCH_MEM_OP_NODE_PARAMS", "hipBatchMemOpNodeParams", "type");
-    subst("CUDA_BATCH_MEM_OP_NODE_PARAMS_st", "hipBatchMemOpNodeParams", "type");
-    subst("CUDA_BATCH_MEM_OP_NODE_PARAMS_v1", "hipBatchMemOpNodeParams", "type");
-    subst("CUDA_BATCH_MEM_OP_NODE_PARAMS_v1_st", "hipBatchMemOpNodeParams", "type");
-    subst("CUDA_BATCH_MEM_OP_NODE_PARAMS_v2", "hipBatchMemOpNodeParams", "type");
-    subst("CUDA_BATCH_MEM_OP_NODE_PARAMS_v2_st", "hipBatchMemOpNodeParams", "type");
-    subst("CUstreamBatchMemOpParams", "hipStreamBatchMemOpParams", "type");
-    subst("CUstreamBatchMemOpParams_union", "hipStreamBatchMemOpParams_union", "type");
-    subst("CUstreamBatchMemOpParams_v1", "hipStreamBatchMemOpParams", "type");
-    subst("CUstreamBatchMemOpType", "hipStreamBatchMemOpType", "type");
-    subst("CUstreamBatchMemOpType_enum", "hipStreamBatchMemOpType", "type");
-    subst("CU_GRAPH_NODE_TYPE_BATCH_MEM_OP", "hipGraphNodeTypeBatchMemOp", "numeric_literal");
-    subst("CU_STREAM_MEM_OP_BARRIER", "hipStreamMemOpBarrier", "numeric_literal");
-    subst("CU_STREAM_MEM_OP_FLUSH_REMOTE_WRITES", "hipStreamMemOpFlushRemoteWrites", "numeric_literal");
-    subst("CU_STREAM_MEM_OP_WAIT_VALUE_32", "hipStreamMemOpWaitValue32", "numeric_literal");
-    subst("CU_STREAM_MEM_OP_WAIT_VALUE_64", "hipStreamMemOpWaitValue64", "numeric_literal");
-    subst("CU_STREAM_MEM_OP_WRITE_VALUE_32", "hipStreamMemOpWriteValue32", "numeric_literal");
-    subst("CU_STREAM_MEM_OP_WRITE_VALUE_64", "hipStreamMemOpWriteValue64", "numeric_literal");
-    subst("cudaErrorInvalidChannelDescriptor", "hipErrorInvalidChannelDescriptor", "numeric_literal");
-    subst("cudaErrorInvalidTexture", "hipErrorInvalidTexture", "numeric_literal");
 }
 
 sub rocSubstitutions {
@@ -3771,6 +3708,7 @@ sub simpleSubstitutions {
     subst("cuDeviceGetDefaultMemPool", "hipDeviceGetDefaultMemPool", "device");
     subst("cuDeviceGetMemPool", "hipDeviceGetMemPool", "device");
     subst("cuDeviceGetName", "hipDeviceGetName", "device");
+    subst("cuDeviceGetTexture1DLinearMaxWidth", "hipDeviceGetTexture1DLinearMaxWidth", "device");
     subst("cuDeviceGetUuid", "hipDeviceGetUuid", "device");
     subst("cuDeviceGetUuid_v2", "hipDeviceGetUuid", "device");
     subst("cuDeviceSetMemPool", "hipDeviceSetMemPool", "device");
@@ -3787,6 +3725,7 @@ sub simpleSubstitutions {
     subst("cudaDeviceGetPCIBusId", "hipDeviceGetPCIBusId", "device");
     subst("cudaDeviceGetSharedMemConfig", "hipDeviceGetSharedMemConfig", "device");
     subst("cudaDeviceGetStreamPriorityRange", "hipDeviceGetStreamPriorityRange", "device");
+    subst("cudaDeviceGetTexture1DLinearMaxWidth", "hipDeviceGetTexture1DLinearMaxWidth", "device");
     subst("cudaDeviceReset", "hipDeviceReset", "device");
     subst("cudaDeviceSetCacheConfig", "hipDeviceSetCacheConfig", "device");
     subst("cudaDeviceSetLimit", "hipDeviceSetLimit", "device");
@@ -4083,6 +4022,7 @@ sub simpleSubstitutions {
     subst("cuEventElapsedTime", "hipEventElapsedTime", "event");
     subst("cuEventQuery", "hipEventQuery", "event");
     subst("cuEventRecord", "hipEventRecord", "event");
+    subst("cuEventRecordWithFlags", "hipEventRecordWithFlags", "event");
     subst("cuEventSynchronize", "hipEventSynchronize", "event");
     subst("cudaEventCreate", "hipEventCreate", "event");
     subst("cudaEventCreateWithFlags", "hipEventCreateWithFlags", "event");
@@ -4090,6 +4030,7 @@ sub simpleSubstitutions {
     subst("cudaEventElapsedTime", "hipEventElapsedTime", "event");
     subst("cudaEventQuery", "hipEventQuery", "event");
     subst("cudaEventRecord", "hipEventRecord", "event");
+    subst("cudaEventRecordWithFlags", "hipEventRecordWithFlags", "event");
     subst("cudaEventSynchronize", "hipEventSynchronize", "event");
     subst("cuDestroyExternalMemory", "hipDestroyExternalMemory", "external_resource");
     subst("cuDestroyExternalSemaphore", "hipDestroyExternalSemaphore", "external_resource");
@@ -4105,6 +4046,8 @@ sub simpleSubstitutions {
     subst("cudaImportExternalSemaphore", "hipImportExternalSemaphore", "external_resource");
     subst("cudaSignalExternalSemaphoresAsync", "hipSignalExternalSemaphoresAsync", "external_resource");
     subst("cudaWaitExternalSemaphoresAsync", "hipWaitExternalSemaphoresAsync", "external_resource");
+    subst("cuStreamBatchMemOp", "hipStreamBatchMemOp", "stream_memory");
+    subst("cuStreamBatchMemOp_v2", "hipStreamBatchMemOp", "stream_memory");
     subst("cuStreamWaitValue32", "hipStreamWaitValue32", "stream_memory");
     subst("cuStreamWaitValue32_v2", "hipStreamWaitValue32", "stream_memory");
     subst("cuStreamWaitValue64", "hipStreamWaitValue64", "stream_memory");
@@ -4132,6 +4075,7 @@ sub simpleSubstitutions {
     subst("cuDeviceGetGraphMemAttribute", "hipDeviceGetGraphMemAttribute", "graph");
     subst("cuDeviceGraphMemTrim", "hipDeviceGraphMemTrim", "graph");
     subst("cuDeviceSetGraphMemAttribute", "hipDeviceSetGraphMemAttribute", "graph");
+    subst("cuGraphAddBatchMemOpNode", "hipGraphAddBatchMemOpNode", "graph");
     subst("cuGraphAddChildGraphNode", "hipGraphAddChildGraphNode", "graph");
     subst("cuGraphAddDependencies", "hipGraphAddDependencies", "graph");
     subst("cuGraphAddEmptyNode", "hipGraphAddEmptyNode", "graph");
@@ -4146,6 +4090,8 @@ sub simpleSubstitutions {
     subst("cuGraphAddMemcpyNode", "hipDrvGraphAddMemcpyNode", "graph");
     subst("cuGraphAddMemsetNode", "hipDrvGraphAddMemsetNode", "graph");
     subst("cuGraphAddNode", "hipGraphAddNode", "graph");
+    subst("cuGraphBatchMemOpNodeGetParams", "hipGraphBatchMemOpNodeGetParams", "graph");
+    subst("cuGraphBatchMemOpNodeSetParams", "hipGraphBatchMemOpNodeSetParams", "graph");
     subst("cuGraphChildGraphNodeGetGraph", "hipGraphChildGraphNodeGetGraph", "graph");
     subst("cuGraphClone", "hipGraphClone", "graph");
     subst("cuGraphCreate", "hipGraphCreate", "graph");
@@ -4156,6 +4102,7 @@ sub simpleSubstitutions {
     subst("cuGraphEventRecordNodeSetEvent", "hipGraphEventRecordNodeSetEvent", "graph");
     subst("cuGraphEventWaitNodeGetEvent", "hipGraphEventWaitNodeGetEvent", "graph");
     subst("cuGraphEventWaitNodeSetEvent", "hipGraphEventWaitNodeSetEvent", "graph");
+    subst("cuGraphExecBatchMemOpNodeSetParams", "hipGraphExecBatchMemOpNodeSetParams", "graph");
     subst("cuGraphExecChildGraphNodeSetParams", "hipGraphExecChildGraphNodeSetParams", "graph");
     subst("cuGraphExecDestroy", "hipGraphExecDestroy", "graph");
     subst("cuGraphExecEventRecordNodeSetEvent", "hipGraphExecEventRecordNodeSetEvent", "graph");
@@ -5643,9 +5590,11 @@ sub simpleSubstitutions {
     subst("cusolverSpCreate", "hipsolverSpCreate", "library");
     subst("cusolverSpDcsrlsvchol", "hipsolverSpDcsrlsvchol", "library");
     subst("cusolverSpDcsrlsvcholHost", "hipsolverSpDcsrlsvcholHost", "library");
+    subst("cusolverSpDcsrlsvqr", "hipsolverSpDcsrlsvqr", "library");
     subst("cusolverSpDestroy", "hipsolverSpDestroy", "library");
     subst("cusolverSpScsrlsvchol", "hipsolverSpScsrlsvchol", "library");
     subst("cusolverSpScsrlsvcholHost", "hipsolverSpScsrlsvcholHost", "library");
+    subst("cusolverSpScsrlsvqr", "hipsolverSpScsrlsvqr", "library");
     subst("cusolverSpSetStream", "hipsolverSpSetStream", "library");
     subst("cusparseAxpby", "hipsparseAxpby", "library");
     subst("cusparseBlockedEllGet", "hipsparseBlockedEllGet", "library");
@@ -6866,6 +6815,12 @@ sub simpleSubstitutions {
     subst("CUDA_ARRAY_DESCRIPTOR_v1", "HIP_ARRAY_DESCRIPTOR", "type");
     subst("CUDA_ARRAY_DESCRIPTOR_v1_st", "HIP_ARRAY_DESCRIPTOR", "type");
     subst("CUDA_ARRAY_DESCRIPTOR_v2", "HIP_ARRAY_DESCRIPTOR", "type");
+    subst("CUDA_BATCH_MEM_OP_NODE_PARAMS", "hipBatchMemOpNodeParams", "type");
+    subst("CUDA_BATCH_MEM_OP_NODE_PARAMS_st", "hipBatchMemOpNodeParams", "type");
+    subst("CUDA_BATCH_MEM_OP_NODE_PARAMS_v1", "hipBatchMemOpNodeParams", "type");
+    subst("CUDA_BATCH_MEM_OP_NODE_PARAMS_v1_st", "hipBatchMemOpNodeParams", "type");
+    subst("CUDA_BATCH_MEM_OP_NODE_PARAMS_v2", "hipBatchMemOpNodeParams", "type");
+    subst("CUDA_BATCH_MEM_OP_NODE_PARAMS_v2_st", "hipBatchMemOpNodeParams", "type");
     subst("CUDA_CHILD_GRAPH_NODE_PARAMS", "hipChildGraphNodeParams", "type");
     subst("CUDA_CHILD_GRAPH_NODE_PARAMS_st", "hipChildGraphNodeParams", "type");
     subst("CUDA_EVENT_RECORD_NODE_PARAMS", "hipEventRecordNodeParams", "type");
@@ -7098,6 +7053,11 @@ sub simpleSubstitutions {
     subst("CUsharedconfig", "hipSharedMemConfig", "type");
     subst("CUsharedconfig_enum", "hipSharedMemConfig", "type");
     subst("CUstream", "hipStream_t", "type");
+    subst("CUstreamBatchMemOpParams", "hipStreamBatchMemOpParams", "type");
+    subst("CUstreamBatchMemOpParams_union", "hipStreamBatchMemOpParams_union", "type");
+    subst("CUstreamBatchMemOpParams_v1", "hipStreamBatchMemOpParams", "type");
+    subst("CUstreamBatchMemOpType", "hipStreamBatchMemOpType", "type");
+    subst("CUstreamBatchMemOpType_enum", "hipStreamBatchMemOpType", "type");
     subst("CUstreamCallback", "hipStreamCallback_t", "type");
     subst("CUstreamCaptureMode", "hipStreamCaptureMode", "type");
     subst("CUstreamCaptureMode_enum", "hipStreamCaptureMode", "type");
@@ -8210,6 +8170,7 @@ sub simpleSubstitutions {
     subst("CU_GRAPH_MEM_ATTR_RESERVED_MEM_HIGH", "hipGraphMemAttrReservedMemHigh", "numeric_literal");
     subst("CU_GRAPH_MEM_ATTR_USED_MEM_CURRENT", "hipGraphMemAttrUsedMemCurrent", "numeric_literal");
     subst("CU_GRAPH_MEM_ATTR_USED_MEM_HIGH", "hipGraphMemAttrUsedMemHigh", "numeric_literal");
+    subst("CU_GRAPH_NODE_TYPE_BATCH_MEM_OP", "hipGraphNodeTypeBatchMemOp", "numeric_literal");
     subst("CU_GRAPH_NODE_TYPE_COUNT", "hipGraphNodeTypeCount", "numeric_literal");
     subst("CU_GRAPH_NODE_TYPE_EMPTY", "hipGraphNodeTypeEmpty", "numeric_literal");
     subst("CU_GRAPH_NODE_TYPE_EVENT_RECORD", "hipGraphNodeTypeEventRecord", "numeric_literal");
@@ -8370,6 +8331,12 @@ sub simpleSubstitutions {
     subst("CU_STREAM_CAPTURE_STATUS_INVALIDATED", "hipStreamCaptureStatusInvalidated", "numeric_literal");
     subst("CU_STREAM_CAPTURE_STATUS_NONE", "hipStreamCaptureStatusNone", "numeric_literal");
     subst("CU_STREAM_DEFAULT", "hipStreamDefault", "numeric_literal");
+    subst("CU_STREAM_MEM_OP_BARRIER", "hipStreamMemOpBarrier", "numeric_literal");
+    subst("CU_STREAM_MEM_OP_FLUSH_REMOTE_WRITES", "hipStreamMemOpFlushRemoteWrites", "numeric_literal");
+    subst("CU_STREAM_MEM_OP_WAIT_VALUE_32", "hipStreamMemOpWaitValue32", "numeric_literal");
+    subst("CU_STREAM_MEM_OP_WAIT_VALUE_64", "hipStreamMemOpWaitValue64", "numeric_literal");
+    subst("CU_STREAM_MEM_OP_WRITE_VALUE_32", "hipStreamMemOpWriteValue32", "numeric_literal");
+    subst("CU_STREAM_MEM_OP_WRITE_VALUE_64", "hipStreamMemOpWriteValue64", "numeric_literal");
     subst("CU_STREAM_NON_BLOCKING", "hipStreamNonBlocking", "numeric_literal");
     subst("CU_STREAM_SET_CAPTURE_DEPENDENCIES", "hipStreamSetCaptureDependencies", "numeric_literal");
     subst("CU_STREAM_WAIT_VALUE_AND", "hipStreamWaitValueAnd", "numeric_literal");
@@ -8538,6 +8505,7 @@ sub simpleSubstitutions {
     subst("cudaErrorIllegalState", "hipErrorIllegalState", "numeric_literal");
     subst("cudaErrorInitializationError", "hipErrorNotInitialized", "numeric_literal");
     subst("cudaErrorInsufficientDriver", "hipErrorInsufficientDriver", "numeric_literal");
+    subst("cudaErrorInvalidChannelDescriptor", "hipErrorInvalidChannelDescriptor", "numeric_literal");
     subst("cudaErrorInvalidConfiguration", "hipErrorInvalidConfiguration", "numeric_literal");
     subst("cudaErrorInvalidDevice", "hipErrorInvalidDevice", "numeric_literal");
     subst("cudaErrorInvalidDeviceFunction", "hipErrorInvalidDeviceFunction", "numeric_literal");
@@ -8550,6 +8518,7 @@ sub simpleSubstitutions {
     subst("cudaErrorInvalidResourceHandle", "hipErrorInvalidHandle", "numeric_literal");
     subst("cudaErrorInvalidSource", "hipErrorInvalidSource", "numeric_literal");
     subst("cudaErrorInvalidSymbol", "hipErrorInvalidSymbol", "numeric_literal");
+    subst("cudaErrorInvalidTexture", "hipErrorInvalidTexture", "numeric_literal");
     subst("cudaErrorInvalidValue", "hipErrorInvalidValue", "numeric_literal");
     subst("cudaErrorLaunchFailure", "hipErrorLaunchFailure", "numeric_literal");
     subst("cudaErrorLaunchOutOfResources", "hipErrorLaunchOutOfResources", "numeric_literal");
