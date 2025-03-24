@@ -159,9 +159,9 @@ const std::map<llvm::StringRef, hipAPIversions> HIP_FFT_FUNCTION_VER_MAP {
   {"hipfftXtExecDescriptorZ2Z",                           {HIP_6000, HIP_0,    HIP_0   }},
   {"hipfftXtExecDescriptorD2Z",                           {HIP_6000, HIP_0,    HIP_0   }},
   {"hipfftXtExecDescriptorZ2D",                           {HIP_6000, HIP_0,    HIP_0   }},
-  {"hipfftXtMakePlanMany",                                {HIP_5600, HIP_0,    HIP_0   }},
-  {"hipfftXtGetSizeMany",                                 {HIP_5600, HIP_0,    HIP_0   }},
-  {"hipfftXtExec",                                        {HIP_5700, HIP_0,    HIP_0   }},
+  {"hipfftXtMakePlanMany",                                {HIP_5060, HIP_0,    HIP_0   }},
+  {"hipfftXtGetSizeMany",                                 {HIP_5060, HIP_0,    HIP_0   }},
+  {"hipfftXtExec",                                        {HIP_5070, HIP_0,    HIP_0   }},
   {"hipfftXtExecDescriptor",                              {HIP_6000, HIP_0,    HIP_0   }},
 };
 
