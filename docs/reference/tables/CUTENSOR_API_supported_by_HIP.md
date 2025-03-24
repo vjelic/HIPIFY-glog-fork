@@ -183,9 +183,11 @@
 |**CUDA**|**A**|**D**|**C**|**R**|**HIP**|**A**|**D**|**C**|**R**|**E**|
 |:--|:-:|:-:|:-:|:-:|:--|:-:|:-:|:-:|:-:|:-:|
 |`cutensorContract`|2.0.0.0| | | |`hiptensorContraction`|6.1.0| | | | |
+|`cutensorContractTrinary`|2.2.0.0| | | | | | | | | |
 |`cutensorContraction`|1.0.1.0| | |2.0.0.0|`hiptensorContraction`|6.1.0| | | | |
 |`cutensorCreate`|1.7.0.0| | | |`hiptensorCreate`|5.7.0| | | | |
 |`cutensorCreateContraction`|2.0.0.0| | | | | | | | | |
+|`cutensorCreateContractionTrinary`|2.2.0.0| | | | | | | | | |
 |`cutensorCreateElementwiseBinary`|2.0.0.0| | | | | | | | | |
 |`cutensorCreateElementwiseTrinary`|2.0.0.0| | | | | | | | | |
 |`cutensorCreatePermutation`|2.0.0.0| | | | | | | | | |
