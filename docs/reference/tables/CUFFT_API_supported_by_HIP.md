@@ -142,8 +142,8 @@
 |`cufftSetStream`| | | | |`hipfftSetStream`|1.7.0| | | | |
 |`cufftSetWorkArea`| | | | |`hipfftSetWorkArea`|1.7.0| | | | |
 |`cufftXtClearCallback`| | | | |`hipfftXtClearCallback`|4.3.0| | | | |
-|`cufftXtExec`|8.0| | | | | | | | | |
-|`cufftXtExecDescriptor`|8.0| | | | | | | | | |
+|`cufftXtExec`|8.0| | | |`hipfftXtExec`|5.6.0| | | | |
+|`cufftXtExecDescriptor`|8.0| | | |`hipfftXtExecDescriptor`|6.0.0| | | | |
 |`cufftXtExecDescriptorC2C`| | | | |`hipfftXtExecDescriptorC2C`|6.0.0| | | | |
 |`cufftXtExecDescriptorC2R`| | | | |`hipfftXtExecDescriptorC2R`|6.0.0| | | | |
 |`cufftXtExecDescriptorD2Z`| | | | |`hipfftXtExecDescriptorD2Z`|6.0.0| | | | |
@@ -151,8 +151,8 @@
 |`cufftXtExecDescriptorZ2D`| | | | |`hipfftXtExecDescriptorZ2D`|6.0.0| | | | |
 |`cufftXtExecDescriptorZ2Z`| | | | |`hipfftXtExecDescriptorZ2Z`|6.0.0| | | | |
 |`cufftXtFree`| | | | |`hipfftXtFree`|6.0.0| | | | |
-|`cufftXtGetSizeMany`|8.0| | | | | | | | | |
-|`cufftXtMakePlanMany`|8.0| | | | | | | | | |
+|`cufftXtGetSizeMany`|8.0| | | |`hipfftXtGetSizeMany`|5.6.0| | | | |
+|`cufftXtMakePlanMany`|8.0| | | |`hipfftXtMakePlanMany`|5.6.0| | | | |
 |`cufftXtMalloc`| | | | |`hipfftXtMalloc`|6.0.0| | | | |
 |`cufftXtMemcpy`| | | | |`hipfftXtMemcpy`|6.0.0| | | | |
 |`cufftXtQueryPlan`| | | | | | | | | | |

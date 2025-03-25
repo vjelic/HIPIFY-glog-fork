@@ -5276,6 +5276,8 @@ sub simpleSubstitutions {
     subst("cufftSetStream", "hipfftSetStream", "library");
     subst("cufftSetWorkArea", "hipfftSetWorkArea", "library");
     subst("cufftXtClearCallback", "hipfftXtClearCallback", "library");
+    subst("cufftXtExec", "hipfftXtExec", "library");
+    subst("cufftXtExecDescriptor", "hipfftXtExecDescriptor", "library");
     subst("cufftXtExecDescriptorC2C", "hipfftXtExecDescriptorC2C", "library");
     subst("cufftXtExecDescriptorC2R", "hipfftXtExecDescriptorC2R", "library");
     subst("cufftXtExecDescriptorD2Z", "hipfftXtExecDescriptorD2Z", "library");
@@ -5283,6 +5285,8 @@ sub simpleSubstitutions {
     subst("cufftXtExecDescriptorZ2D", "hipfftXtExecDescriptorZ2D", "library");
     subst("cufftXtExecDescriptorZ2Z", "hipfftXtExecDescriptorZ2Z", "library");
     subst("cufftXtFree", "hipfftXtFree", "library");
+    subst("cufftXtGetSizeMany", "hipfftXtGetSizeMany", "library");
+    subst("cufftXtMakePlanMany", "hipfftXtMakePlanMany", "library");
     subst("cufftXtMalloc", "hipfftXtMalloc", "library");
     subst("cufftXtMemcpy", "hipfftXtMemcpy", "library");
     subst("cufftXtSetCallback", "hipfftXtSetCallback", "library");
