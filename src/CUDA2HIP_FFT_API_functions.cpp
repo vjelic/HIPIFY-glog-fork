@@ -85,9 +85,9 @@ const std::map<llvm::StringRef, hipCounter> CUDA_FFT_FUNCTION_MAP {
   {"cufftXtExecDescriptor",                               {"hipfftXtExecDescriptor",                               "", CONV_LIB_FUNC, API_FFT, 2}},
   {"cufftXtSetWorkAreaPolicy",                            {"hipfftXtSetWorkAreaPolicy",                            "", CONV_LIB_FUNC, API_FFT, 2, UNSUPPORTED}},
   {"cufftXtSetDistribution",                              {"hipfftXtSetDistribution",                              "", CONV_LIB_FUNC, API_FFT, 2, UNSUPPORTED}},
-  {"cufftSetPlanPropertyInt64",                           {"hipfftSetPlanPropertyInt64",                           "", CONV_LIB_FUNC, API_FFT, 2, HIP_UNSUPPORTED}},
-  {"cufftGetPlanPropertyInt64",                           {"hipfftGetPlanPropertyInt64",                           "", CONV_LIB_FUNC, API_FFT, 2, HIP_UNSUPPORTED}},
-  {"cufftResetPlanProperty",                              {"hipfftResetPlanProperty",                              "", CONV_LIB_FUNC, API_FFT, 2, HIP_UNSUPPORTED}},
+  {"cufftSetPlanPropertyInt64",                           {"hipfftSetPlanPropertyInt64",                           "", CONV_LIB_FUNC, API_FFT, 2, UNSUPPORTED}},
+  {"cufftGetPlanPropertyInt64",                           {"hipfftGetPlanPropertyInt64",                           "", CONV_LIB_FUNC, API_FFT, 2, UNSUPPORTED}},
+  {"cufftResetPlanProperty",                              {"hipfftResetPlanProperty",                              "", CONV_LIB_FUNC, API_FFT, 2, UNSUPPORTED}},
 };
 
 const std::map<llvm::StringRef, cudaAPIversions> CUDA_FFT_FUNCTION_VER_MAP {
@@ -161,7 +161,7 @@ const std::map<llvm::StringRef, hipAPIversions> HIP_FFT_FUNCTION_VER_MAP {
   {"hipfftXtExecDescriptorZ2D",                           {HIP_6000, HIP_0,    HIP_0   }},
   {"hipfftXtMakePlanMany",                                {HIP_5060, HIP_0,    HIP_0   }},
   {"hipfftXtGetSizeMany",                                 {HIP_5060, HIP_0,    HIP_0   }},
-  {"hipfftXtExec",                                        {HIP_5070, HIP_0,    HIP_0   }},
+  {"hipfftXtExec",                                        {HIP_5060, HIP_0,    HIP_0   }},
   {"hipfftXtExecDescriptor",                              {HIP_6000, HIP_0,    HIP_0   }},
 };
 

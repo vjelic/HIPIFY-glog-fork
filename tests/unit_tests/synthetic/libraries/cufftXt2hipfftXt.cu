@@ -154,6 +154,7 @@ int main() {
   // CHECK: fftResult = hipfftXtExecDescriptorZ2D(fftHandle, input_desc, output_desc);
   fftResult = cufftXtExecDescriptorZ2D(fftHandle, input_desc, output_desc);
 
+#if CUDA_VERSION >= 8000
   // CUDA: cufftResult CUFFTAPI cufftXtMakePlanMany(cufftHandle plan, int rank, long long int *n, long long int *inembed, long long int istride, long long int idist, cudaDataType inputtype, long long int *onembed, long long int ostride, long long int odist, cudaDataType outputtype, long long int batch, size_t *workSize, cudaDataType executiontype);
   // HIP: HIPFFT_EXPORT hipfftResult hipfftXtMakePlanMany(hipfftHandle plan, int rank, long long int* n, long long int* inembed, long long int istride, long long int idist, hipDataType inputType, long long int* onembed, long long int ostride, long long int odist, hipDataType outputType, long long int batch, size_t* workSize, hipDataType executionType);
   // CHECK: fftResult = hipfftXtMakePlanMany(fftHandle, rank, n, inembed, istride, idist, inputType, onembed, ostride, odist, outputType, batch, workSize, executionType);
@@ -164,7 +165,6 @@ int main() {
   // CHECK: fftResult = hipfftXtGetSizeMany(fftHandle, rank, n, inembed, istride, idist, inputType, onembed, ostride, odist, outputType, batch, workSize, executionType);
   fftResult = cufftXtGetSizeMany(fftHandle, rank, n, inembed, istride, idist, inputType, onembed, ostride, odist, outputType, batch, workSize, executionType);
 
-
   // CUDA: cufftResult CUFFTAPI cufftXtExec(cufftHandle plan, void *input, void *output, int direction);
   // HIP: HIPFFT_EXPORT hipfftResult hipfftXtExec(hipfftHandle plan, void* input, void* output, int direction);
   // CHECK: fftResult = hipfftXtExec(fftHandle, input, output, dir);
@@ -174,6 +174,7 @@ int main() {
   // HIP: HIPFFT_EXPORT hipfftResult hipfftXtExecDescriptor(hipfftHandle plan, hipLibXtDesc* input, hipLibXtDesc* output, int direction);
   // CHECK: fftResult = hipfftXtExecDescriptor(fftHandle, input_desc, output_desc, dir);
   fftResult = cufftXtExecDescriptor(fftHandle, input_desc, output_desc, dir);
+#endif
 
   return 0;
 }
