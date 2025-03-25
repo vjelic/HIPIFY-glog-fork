@@ -37,6 +37,7 @@ int main() {
   cufftXtCopyType_t FFT_COPY_UNDEFINED = CUFFT_COPY_UNDEFINED;
 
   // CHECK: hipfftXtCallbackType_t fftXtCallbackType_t;
+  // CHECK-NEXT: hipfftXtCallbackType_t fftXtCallbackType;
   // CHECK-NEXT: hipfftXtCallbackType_t FFT_CB_LD_COMPLEX = HIPFFT_CB_LD_COMPLEX;
   // CHECK-NEXT: hipfftXtCallbackType_t FFT_CB_LD_COMPLEX_DOUBLE = HIPFFT_CB_LD_COMPLEX_DOUBLE;
   // CHECK-NEXT: hipfftXtCallbackType_t FFT_CB_LD_REAL = HIPFFT_CB_LD_REAL;
@@ -47,6 +48,7 @@ int main() {
   // CHECK-NEXT: hipfftXtCallbackType_t FFT_CB_ST_REAL_DOUBLE = HIPFFT_CB_ST_REAL_DOUBLE;
   // CHECK-NEXT: hipfftXtCallbackType_t FFT_CB_UNDEFINED = HIPFFT_CB_UNDEFINED;
   cufftXtCallbackType_t fftXtCallbackType_t;
+  cufftXtCallbackType_t fftXtCallbackType;
   cufftXtCallbackType_t FFT_CB_LD_COMPLEX = CUFFT_CB_LD_COMPLEX;
   cufftXtCallbackType_t FFT_CB_LD_COMPLEX_DOUBLE = CUFFT_CB_LD_COMPLEX_DOUBLE;
   cufftXtCallbackType_t FFT_CB_LD_REAL = CUFFT_CB_LD_REAL;
@@ -96,6 +98,9 @@ int main() {
   size_t *workSize = nullptr;
   void *input = nullptr;
   void *output = nullptr;
+  void **callback = nullptr;
+  void **caller = nullptr;
+  size_t sharedSize = 0;
 
   // CHECK: hipDataType executionType;
   // CHECK-NEXT: hipDataType inputType;
@@ -175,6 +180,21 @@ int main() {
   // CHECK: fftResult = hipfftXtExecDescriptor(fftHandle, input_desc, output_desc, dir);
   fftResult = cufftXtExecDescriptor(fftHandle, input_desc, output_desc, dir);
 #endif
+
+  // CUDA: cufftResult CUFFTAPI cufftXtSetCallback(cufftHandle plan, void **callback_routine, cufftXtCallbackType cbType, void **caller_info);
+  // HIP: HIPFFT_EXPORT hipfftResult hipfftXtSetCallback(hipfftHandle plan, void** callbacks, hipfftXtCallbackType cbtype, void** callbackData);
+  // CHECK: fftResult = hipfftXtSetCallback(fftHandle, callback, fftXtCallbackType, caller);
+  fftResult = cufftXtSetCallback(fftHandle, callback, fftXtCallbackType, caller);
+
+  // CUDA: cufftResult CUFFTAPI cufftXtClearCallback(cufftHandle plan, cufftXtCallbackType cbType);
+  // HIP: HIPFFT_EXPORT hipfftResult hipfftXtClearCallback(hipfftHandle plan, hipfftXtCallbackType cbtype);
+  // CHECK: fftResult = hipfftXtClearCallback(fftHandle, fftXtCallbackType);
+  fftResult = cufftXtClearCallback(fftHandle, fftXtCallbackType);
+
+  // CUDA: cufftResult CUFFTAPI cufftXtSetCallbackSharedSize(cufftHandle plan, cufftXtCallbackType cbType, size_t sharedSize);
+  // HIP: HIPFFT_EXPORT hipfftResult hipfftXtSetCallbackSharedSize(hipfftHandle plan, hipfftXtCallbackType cbtype, size_t sharedSize);
+  // CHECK: fftResult = hipfftXtSetCallbackSharedSize(fftHandle, fftXtCallbackType, sharedSize);
+  fftResult = cufftXtSetCallbackSharedSize(fftHandle, fftXtCallbackType, sharedSize);
 
   return 0;
 }
