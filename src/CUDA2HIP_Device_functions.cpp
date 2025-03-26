@@ -880,6 +880,14 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DEVICE_FUNCTION_MAP {
   {"__nv_cvt_bfloat16raw2_to_fp8x2",    {"__hip_cvt_bfloat16raw2_to_fp8x2",    "", CONV_DEVICE_FUNC, API_RUNTIME, 1}},
   {"__nv_cvt_fp8_to_halfraw",           {"__hip_cvt_fp8_to_halfraw",           "", CONV_DEVICE_FUNC, API_RUNTIME, 1}},
   {"__nv_cvt_fp8x2_to_halfraw2",        {"__hip_cvt_fp8x2_to_halfraw2",        "", CONV_DEVICE_FUNC, API_RUNTIME, 1}},
+  {"__nv_cvt_bfloat16raw_to_e8m0",      {"__hip_cvt_bfloat16raw_to_e8m0",      "", CONV_DEVICE_FUNC, API_RUNTIME, 1, UNSUPPORTED}},
+  {"__nv_cvt_bfloat162raw_to_e8m0x2",   {"__hip_cvt_bfloat162raw_to_e8m0x2",   "", CONV_DEVICE_FUNC, API_RUNTIME, 1, UNSUPPORTED}},
+  {"__nv_cvt_float_to_e8m0",            {"__hip_cvt_float_to_e8m0",            "", CONV_DEVICE_FUNC, API_RUNTIME, 1, UNSUPPORTED}},
+  {"__nv_cvt_float2_to_e8m0x2",         {"__hip_cvt_float2_to_e8m0x2",         "", CONV_DEVICE_FUNC, API_RUNTIME, 1, UNSUPPORTED}},
+  {"__nv_cvt_double_to_e8m0",           {"__hip_cvt_double_to_e8m0",           "", CONV_DEVICE_FUNC, API_RUNTIME, 1, UNSUPPORTED}},
+  {"__nv_cvt_double2_to_e8m0x2",        {"__hip_cvt_double2_to_e8m0x2",        "", CONV_DEVICE_FUNC, API_RUNTIME, 1, UNSUPPORTED}},
+  {"__nv_cvt_e8m0_to_bf16raw",          {"__hip_cvt_e8m0_to_bf16raw",          "", CONV_DEVICE_FUNC, API_RUNTIME, 1, UNSUPPORTED}},
+  {"__nv_cvt_e8m0x2_to_bf162raw",       {"__hip_cvt_e8m0x2_to_bf162raw",       "", CONV_DEVICE_FUNC, API_RUNTIME, 1, UNSUPPORTED}},
   // fp6 functions
   {"__nv_cvt_double_to_fp6",            {"__hip_cvt_double_to_fp6",            "", CONV_DEVICE_FUNC, API_RUNTIME, 1, UNSUPPORTED}},
   {"__nv_cvt_double2_to_fp6x2",         {"__hip_cvt_double2_to_fp6x2",         "", CONV_DEVICE_FUNC, API_RUNTIME, 1, UNSUPPORTED}},
@@ -1120,6 +1128,14 @@ const std::map<llvm::StringRef, cudaAPIversions> CUDA_DEVICE_FUNCTION_VER_MAP {
   {"h2tanh",                            {CUDA_128, CUDA_0,   CUDA_0  }},
   {"htanh_approx",                      {CUDA_128, CUDA_0,   CUDA_0  }},
   {"h2tanh_approx",                     {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"__nv_cvt_bfloat16raw_to_e8m0",      {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"__nv_cvt_bfloat162raw_to_e8m0x2",   {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"__nv_cvt_float_to_e8m0",            {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"__nv_cvt_float2_to_e8m0x2",         {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"__nv_cvt_double_to_e8m0",           {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"__nv_cvt_double2_to_e8m0x2",        {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"__nv_cvt_e8m0_to_bf16raw",          {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"__nv_cvt_e8m0x2_to_bf162raw",       {CUDA_128, CUDA_0,   CUDA_0  }},
 };
 
 const std::map<llvm::StringRef, hipAPIversions> HIP_DEVICE_FUNCTION_VER_MAP {
