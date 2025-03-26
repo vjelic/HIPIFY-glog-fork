@@ -102,13 +102,6 @@ int main() {
   void **caller = nullptr;
   size_t sharedSize = 0;
 
-  // CHECK: hipDataType executionType;
-  // CHECK-NEXT: hipDataType inputType;
-  // CHECK-NEXT: hipDataType outputType;
-  cudaDataType executionType;
-  cudaDataType inputType;
-  cudaDataType outputType;
-
   // CUDA: cufftResult CUFFTAPI cufftXtSetGPUs(cufftHandle handle, int nGPUs, int *whichGPUs);
   // HIP: HIPFFT_EXPORT hipfftResult hipfftXtSetGPUs(hipfftHandle plan, int count, int* gpus);
   // CHECK: fftResult = hipfftXtSetGPUs(fftHandle, count, gpu);
@@ -160,6 +153,13 @@ int main() {
   fftResult = cufftXtExecDescriptorZ2D(fftHandle, input_desc, output_desc);
 
 #if CUDA_VERSION >= 8000
+  // CHECK: hipDataType executionType;
+  // CHECK-NEXT: hipDataType inputType;
+  // CHECK-NEXT: hipDataType outputType;
+  cudaDataType executionType;
+  cudaDataType inputType;
+  cudaDataType outputType;
+
   // CUDA: cufftResult CUFFTAPI cufftXtMakePlanMany(cufftHandle plan, int rank, long long int *n, long long int *inembed, long long int istride, long long int idist, cudaDataType inputtype, long long int *onembed, long long int ostride, long long int odist, cudaDataType outputtype, long long int batch, size_t *workSize, cudaDataType executiontype);
   // HIP: HIPFFT_EXPORT hipfftResult hipfftXtMakePlanMany(hipfftHandle plan, int rank, long long int* n, long long int* inembed, long long int istride, long long int idist, hipDataType inputType, long long int* onembed, long long int ostride, long long int odist, hipDataType outputType, long long int batch, size_t* workSize, hipDataType executionType);
   // CHECK: fftResult = hipfftXtMakePlanMany(fftHandle, rank, n, inembed, istride, idist, inputType, onembed, ostride, odist, outputType, batch, workSize, executionType);
