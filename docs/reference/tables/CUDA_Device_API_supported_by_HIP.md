@@ -374,21 +374,29 @@
 |`__mul24`| | | | |`__mul24`|1.6.0| | | | |
 |`__mul64hi`| | | | |`__mul64hi`|1.6.0| | | | |
 |`__mulhi`| | | | |`__mulhi`|1.6.0| | | | |
+|`__nv_cvt_bfloat162raw_to_e8m0x2`|12.8| | | | | | | | | |
 |`__nv_cvt_bfloat16raw2_to_fp4x2`|12.8| | | | | | | | | |
 |`__nv_cvt_bfloat16raw2_to_fp6x2`|12.8| | | | | | | | | |
 |`__nv_cvt_bfloat16raw2_to_fp8x2`|11.8| | | |`__hip_cvt_bfloat16raw2_to_fp8x2`|6.2.0| | | | |
+|`__nv_cvt_bfloat16raw_to_e8m0`|12.8| | | | | | | | | |
 |`__nv_cvt_bfloat16raw_to_fp4`|12.8| | | | | | | | | |
 |`__nv_cvt_bfloat16raw_to_fp6`|12.8| | | | | | | | | |
 |`__nv_cvt_bfloat16raw_to_fp8`|11.8| | | |`__hip_cvt_bfloat16raw_to_fp8`|6.2.0| | | | |
+|`__nv_cvt_double2_to_e8m0x2`|12.8| | | | | | | | | |
 |`__nv_cvt_double2_to_fp4x2`|12.8| | | | | | | | | |
 |`__nv_cvt_double2_to_fp6x2`|12.8| | | | | | | | | |
 |`__nv_cvt_double2_to_fp8x2`|11.8| | | |`__hip_cvt_double2_to_fp8x2`|6.2.0| | | | |
+|`__nv_cvt_double_to_e8m0`|12.8| | | | | | | | | |
 |`__nv_cvt_double_to_fp4`|12.8| | | | | | | | | |
 |`__nv_cvt_double_to_fp6`|12.8| | | | | | | | | |
 |`__nv_cvt_double_to_fp8`|11.8| | | |`__hip_cvt_double_to_fp8`|6.2.0| | | | |
+|`__nv_cvt_e8m0_to_bf16raw`|12.8| | | | | | | | | |
+|`__nv_cvt_e8m0x2_to_bf162raw`|12.8| | | | | | | | | |
+|`__nv_cvt_float2_to_e8m0x2`|12.8| | | | | | | | | |
 |`__nv_cvt_float2_to_fp4x2`|12.8| | | | | | | | | |
 |`__nv_cvt_float2_to_fp6x2`|12.8| | | | | | | | | |
 |`__nv_cvt_float2_to_fp8x2`|11.8| | | |`__hip_cvt_float2_to_fp8x2`|6.2.0| | | | |
+|`__nv_cvt_float_to_e8m0`|12.8| | | | | | | | | |
 |`__nv_cvt_float_to_fp4`|12.8| | | | | | | | | |
 |`__nv_cvt_float_to_fp6`|12.8| | | | | | | | | |
 |`__nv_cvt_float_to_fp8`|11.8| | | |`__hip_cvt_float_to_fp8`|6.2.0| | | | |
@@ -917,13 +925,16 @@
 |`__nv_fp6x4_storage_t`|12.8| | | | | | | | | |
 |`__nv_fp8_e4m3`|11.8| | | |`__hip_fp8_e4m3_fnuz`|6.2.0| | | | |
 |`__nv_fp8_e5m2`|11.8| | | |`__hip_fp8_e5m2_fnuz`|6.2.0| | | | |
+|`__nv_fp8_e8m0`|12.8| | | | | | | | | |
 |`__nv_fp8_interpretation_t`|11.8| | | |`__hip_fp8_interpretation_t`|6.2.0| | | | |
 |`__nv_fp8_storage_t`|11.8| | | |`__hip_fp8_storage_t`|6.2.0| | | | |
 |`__nv_fp8x2_e4m3`|11.8| | | |`__hip_fp8x2_e4m3_fnuz`|6.2.0| | | | |
 |`__nv_fp8x2_e5m2`|11.8| | | |`__hip_fp8x2_e5m2_fnuz`|6.2.0| | | | |
+|`__nv_fp8x2_e8m0`|12.8| | | | | | | | | |
 |`__nv_fp8x2_storage_t`|11.8| | | |`__hip_fp8x2_storage_t`|6.2.0| | | | |
 |`__nv_fp8x4_e4m3`|11.8| | | |`__hip_fp8x4_e4m3_fnuz`|6.2.0| | | | |
 |`__nv_fp8x4_e5m2`|11.8| | | |`__hip_fp8x4_e5m2_fnuz`|6.2.0| | | | |
+|`__nv_fp8x4_e8m0`|12.8| | | | | | | | | |
 |`__nv_fp8x4_storage_t`|11.8| | | |`__hip_fp8x4_storage_t`|6.2.0| | | | |
 |`__nv_saturation_t`|11.8| | | |`__hip_saturation_t`|6.2.0| | | | |
 |`nv_bfloat16`|11.0| | | |`hip_bfloat16`|3.5.0| | | | |
