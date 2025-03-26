@@ -713,6 +713,10 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DEVICE_FUNCTION_MAP {
   {"make_half2",                        {"make_half2",                         "", CONV_DEVICE_FUNC, API_RUNTIME, 1}},
   {"__half2char_rz",                    {"__half2char_rz",                     "", CONV_DEVICE_FUNC, API_RUNTIME, 1, UNSUPPORTED}},
   {"__half2uchar_rz",                   {"__half2uchar_rz",                    "", CONV_DEVICE_FUNC, API_RUNTIME, 1, UNSUPPORTED}},
+  {"htanh",                             {"htanh",                              "", CONV_DEVICE_FUNC, API_RUNTIME, 1, UNSUPPORTED}},
+  {"h2tanh",                            {"h2tanh",                             "", CONV_DEVICE_FUNC, API_RUNTIME, 1, UNSUPPORTED}},
+  {"htanh_approx",                      {"htanh_approx",                       "", CONV_DEVICE_FUNC, API_RUNTIME, 1, UNSUPPORTED}},
+  {"h2tanh_approx",                     {"h2tanh_approx",                      "", CONV_DEVICE_FUNC, API_RUNTIME, 1, UNSUPPORTED}},
   // bfp16 functions
   {"__double2bfloat16",                 {"__double2bfloat16",                  "", CONV_DEVICE_FUNC, API_RUNTIME, 1}},
   {"__float2bfloat16",                  {"__float2bfloat16",                   "", CONV_DEVICE_FUNC, API_RUNTIME, 1}},
@@ -1112,6 +1116,10 @@ const std::map<llvm::StringRef, cudaAPIversions> CUDA_DEVICE_FUNCTION_VER_MAP {
   {"__nv_fp128_div",                    {CUDA_128, CUDA_0,   CUDA_0  }},
   {"__nv_fp128_isnan",                  {CUDA_128, CUDA_0,   CUDA_0  }},
   {"__nv_fp128_isunordered",            {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"htanh",                             {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"h2tanh",                            {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"htanh_approx",                      {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"h2tanh_approx",                     {CUDA_128, CUDA_0,   CUDA_0  }},
 };
 
 const std::map<llvm::StringRef, hipAPIversions> HIP_DEVICE_FUNCTION_VER_MAP {
