@@ -357,12 +357,12 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_TYPE_NAME_MAP {
   {"memoryBarrier",                                                    {"hipMemoryBarrier",                                         "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
 
   // no analogue
-  {"CUDA_BATCH_MEM_OP_NODE_PARAMS_st",                                 {"hipBatchMemOpNodeParams",                                  "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_EXPERIMENTAL | CUDA_REMOVED}},
-  {"CUDA_BATCH_MEM_OP_NODE_PARAMS_v1_st",                              {"hipBatchMemOpNodeParams",                                  "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_EXPERIMENTAL}},
-  {"CUDA_BATCH_MEM_OP_NODE_PARAMS_v2_st",                              {"hipBatchMemOpNodeParams",                                  "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_EXPERIMENTAL}},
-  {"CUDA_BATCH_MEM_OP_NODE_PARAMS",                                    {"hipBatchMemOpNodeParams",                                  "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_EXPERIMENTAL}},
-  {"CUDA_BATCH_MEM_OP_NODE_PARAMS_v1",                                 {"hipBatchMemOpNodeParams",                                  "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_EXPERIMENTAL}},
-  {"CUDA_BATCH_MEM_OP_NODE_PARAMS_v2",                                 {"hipBatchMemOpNodeParams",                                  "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_EXPERIMENTAL}},
+  {"CUDA_BATCH_MEM_OP_NODE_PARAMS_st",                                 {"hipBatchMemOpNodeParams",                                  "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, CUDA_REMOVED}},
+  {"CUDA_BATCH_MEM_OP_NODE_PARAMS_v1_st",                              {"hipBatchMemOpNodeParams",                                  "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES}},
+  {"CUDA_BATCH_MEM_OP_NODE_PARAMS_v2_st",                              {"hipBatchMemOpNodeParams",                                  "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES}},
+  {"CUDA_BATCH_MEM_OP_NODE_PARAMS",                                    {"hipBatchMemOpNodeParams",                                  "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES}},
+  {"CUDA_BATCH_MEM_OP_NODE_PARAMS_v1",                                 {"hipBatchMemOpNodeParams",                                  "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES}},
+  {"CUDA_BATCH_MEM_OP_NODE_PARAMS_v2",                                 {"hipBatchMemOpNodeParams",                                  "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES}},
 
   // cudaLaunchAttribute_st
   {"CUlaunchAttribute_st",                                             {"hipLaunchAttribute",                                       "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
@@ -525,9 +525,9 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_TYPE_NAME_MAP {
 
   // 2. Unions
 
-  {"CUstreamBatchMemOpParams",                                         {"hipStreamBatchMemOpParams",                                "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_EXPERIMENTAL}},
-  {"CUstreamBatchMemOpParams_v1",                                      {"hipStreamBatchMemOpParams",                                "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_EXPERIMENTAL}},
-  {"CUstreamBatchMemOpParams_union",                                   {"hipStreamBatchMemOpParams_union",                          "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_EXPERIMENTAL}},
+  {"CUstreamBatchMemOpParams",                                         {"hipStreamBatchMemOpParams",                                "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES}},
+  {"CUstreamBatchMemOpParams_v1",                                      {"hipStreamBatchMemOpParams",                                "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES}},
+  {"CUstreamBatchMemOpParams_union",                                   {"hipStreamBatchMemOpParams_union",                          "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES}},
 
   // cudaKernelNodeAttrValue
   // NOTE: Starting from CUDA 11.8 CUlaunchAttributeValue is used instead of CUkernelNodeAttrValue:
@@ -1389,7 +1389,7 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_TYPE_NAME_MAP {
   // cudaGraphNodeTypeMemFree
   {"CU_GRAPH_NODE_TYPE_MEM_FREE",                                      {"hipGraphNodeTypeMemFree",                                  "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}}, // 11
   //
-  {"CU_GRAPH_NODE_TYPE_BATCH_MEM_OP",                                  {"hipGraphNodeTypeBatchMemOp",                               "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_EXPERIMENTAL}}, // 12
+  {"CU_GRAPH_NODE_TYPE_BATCH_MEM_OP",                                  {"hipGraphNodeTypeBatchMemOp",                               "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}}, // 12
   // cudaGraphNodeTypeConditional
   {"CU_GRAPH_NODE_TYPE_CONDITIONAL",                                   {"hipGraphNodeTypeConditional",                              "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 13
   // cudaGraphNodeTypeCount
@@ -2029,15 +2029,15 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_TYPE_NAME_MAP {
   {"CU_STREAM_NON_BLOCKING",                                           {"hipStreamNonBlocking",                                     "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}}, // 0x1
 
   // no analogue
-  {"CUstreamBatchMemOpType",                                           {"hipStreamBatchMemOpType",                                  "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_EXPERIMENTAL}},
-  {"CUstreamBatchMemOpType_enum",                                      {"hipStreamBatchMemOpType",                                  "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_EXPERIMENTAL}},
+  {"CUstreamBatchMemOpType",                                           {"hipStreamBatchMemOpType",                                  "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES}},
+  {"CUstreamBatchMemOpType_enum",                                      {"hipStreamBatchMemOpType",                                  "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES}},
   // CUstreamBatchMemOpType enum values
-  {"CU_STREAM_MEM_OP_WAIT_VALUE_32",                                   {"hipStreamMemOpWaitValue32",                                "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_EXPERIMENTAL}}, // 1
-  {"CU_STREAM_MEM_OP_WRITE_VALUE_32",                                  {"hipStreamMemOpWriteValue32",                               "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_EXPERIMENTAL}}, // 2
-  {"CU_STREAM_MEM_OP_FLUSH_REMOTE_WRITES",                             {"hipStreamMemOpFlushRemoteWrites",                          "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_EXPERIMENTAL}}, // 3
-  {"CU_STREAM_MEM_OP_WAIT_VALUE_64",                                   {"hipStreamMemOpWaitValue64",                                "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_EXPERIMENTAL}}, // 4
-  {"CU_STREAM_MEM_OP_WRITE_VALUE_64",                                  {"hipStreamMemOpWriteValue64",                               "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_EXPERIMENTAL}}, // 5
-  {"CU_STREAM_MEM_OP_BARRIER",                                         {"hipStreamMemOpBarrier",                                    "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_EXPERIMENTAL}}, // 6
+  {"CU_STREAM_MEM_OP_WAIT_VALUE_32",                                   {"hipStreamMemOpWaitValue32",                                "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}}, // 1
+  {"CU_STREAM_MEM_OP_WRITE_VALUE_32",                                  {"hipStreamMemOpWriteValue32",                               "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}}, // 2
+  {"CU_STREAM_MEM_OP_FLUSH_REMOTE_WRITES",                             {"hipStreamMemOpFlushRemoteWrites",                          "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}}, // 3
+  {"CU_STREAM_MEM_OP_WAIT_VALUE_64",                                   {"hipStreamMemOpWaitValue64",                                "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}}, // 4
+  {"CU_STREAM_MEM_OP_WRITE_VALUE_64",                                  {"hipStreamMemOpWriteValue64",                               "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}}, // 5
+  {"CU_STREAM_MEM_OP_BARRIER",                                         {"hipStreamMemOpBarrier",                                    "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}}, // 6
 
   // cudaStreamCaptureStatus
   {"CUstreamCaptureStatus",                                            {"hipStreamCaptureStatus",                                   "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES}},
@@ -4630,15 +4630,15 @@ const std::map<llvm::StringRef, hipAPIversions> HIP_DRIVER_TYPE_NAME_VER_MAP {
   {"HIP_GET_PROC_ADDRESS_VERSION_NOT_SUFFICIENT",                      {HIP_6020, HIP_0,    HIP_0   }},
   {"HIP_MEMSET_NODE_PARAMS",                                           {HIP_6010, HIP_0,    HIP_0   }},
   {"hipStreamLegacy",                                                  {HIP_6020, HIP_0,    HIP_0   }},
-  {"hipStreamBatchMemOpParams_union",                                  {HIP_6040, HIP_0,    HIP_0,  HIP_LATEST}},
-  {"hipStreamBatchMemOpParams",                                        {HIP_6040, HIP_0,    HIP_0,  HIP_LATEST}},
-  {"hipBatchMemOpNodeParams",                                          {HIP_6040, HIP_0,    HIP_0,  HIP_LATEST}},
-  {"hipStreamBatchMemOpType",                                          {HIP_6040, HIP_0,    HIP_0,  HIP_LATEST}},
-  {"hipStreamMemOpWaitValue32",                                        {HIP_6040, HIP_0,    HIP_0,  HIP_LATEST}},
-  {"hipStreamMemOpWriteValue32",                                       {HIP_6040, HIP_0,    HIP_0,  HIP_LATEST}},
-  {"hipStreamMemOpFlushRemoteWrites",                                  {HIP_6040, HIP_0,    HIP_0,  HIP_LATEST}},
-  {"hipStreamMemOpWaitValue64",                                        {HIP_6040, HIP_0,    HIP_0,  HIP_LATEST}},
-  {"hipStreamMemOpWriteValue64",                                       {HIP_6040, HIP_0,    HIP_0,  HIP_LATEST}},
-  {"hipStreamMemOpBarrier",                                            {HIP_6040, HIP_0,    HIP_0,  HIP_LATEST}},
-  {"hipGraphNodeTypeBatchMemOp",                                       {HIP_6040, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"hipStreamBatchMemOpParams_union",                                  {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipStreamBatchMemOpParams",                                        {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipBatchMemOpNodeParams",                                          {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipStreamBatchMemOpType",                                          {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipStreamMemOpWaitValue32",                                        {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipStreamMemOpWriteValue32",                                       {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipStreamMemOpFlushRemoteWrites",                                  {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipStreamMemOpWaitValue64",                                        {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipStreamMemOpWriteValue64",                                       {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipStreamMemOpBarrier",                                            {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipGraphNodeTypeBatchMemOp",                                       {HIP_6040, HIP_0,    HIP_0   }},
 };

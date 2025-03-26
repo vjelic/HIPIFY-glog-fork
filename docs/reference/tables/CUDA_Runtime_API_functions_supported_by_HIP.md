@@ -20,7 +20,7 @@
 |`cudaDeviceGetP2PAttribute`|8.0| | | |`hipDeviceGetP2PAttribute`|3.8.0| | | | |
 |`cudaDeviceGetPCIBusId`| | | | |`hipDeviceGetPCIBusId`|1.6.0| | | | |
 |`cudaDeviceGetStreamPriorityRange`| | | | |`hipDeviceGetStreamPriorityRange`|2.0.0| | | | |
-|`cudaDeviceGetTexture1DLinearMaxWidth`|11.1| | | |`hipDeviceGetTexture1DLinearMaxWidth`|6.4.0| | | |6.4.0|
+|`cudaDeviceGetTexture1DLinearMaxWidth`|11.1| | | |`hipDeviceGetTexture1DLinearMaxWidth`|6.4.0| | | | |
 |`cudaDeviceReset`| | | | |`hipDeviceReset`|1.6.0| | | | |
 |`cudaDeviceSetCacheConfig`| | | | |`hipDeviceSetCacheConfig`|1.6.0| | | | |
 |`cudaDeviceSetLimit`| | | | |`hipDeviceSetLimit`|5.3.0| | | | |
@@ -109,7 +109,7 @@
 |`cudaEventElapsedTime_v2`|12.8| | | | | | | | | |
 |`cudaEventQuery`| | | | |`hipEventQuery`|1.6.0| | | | |
 |`cudaEventRecord`| | | | |`hipEventRecord`|1.6.0| | | | |
-|`cudaEventRecordWithFlags`|11.1| | | |`hipEventRecordWithFlags`|6.4.0| | | |6.4.0|
+|`cudaEventRecordWithFlags`|11.1| | | |`hipEventRecordWithFlags`|6.4.0| | | | |
 |`cudaEventSynchronize`| | | | |`hipEventSynchronize`|1.6.0| | | | |
 
 ## **7. External Resource Interoperability**
@@ -1073,7 +1073,7 @@
 |`cudaErrorInitializationError`| | | | |`hipErrorNotInitialized`|1.6.0| | | | |
 |`cudaErrorInsufficientDriver`| | | | |`hipErrorInsufficientDriver`|1.7.0| | | | |
 |`cudaErrorInvalidAddressSpace`| | | | | | | | | | |
-|`cudaErrorInvalidChannelDescriptor`| | | | |`hipErrorInvalidChannelDescriptor`|6.4.0| | | |6.4.0|
+|`cudaErrorInvalidChannelDescriptor`| | | | |`hipErrorInvalidChannelDescriptor`|6.4.0| | | | |
 |`cudaErrorInvalidClusterSize`|11.8| | | | | | | | | |
 |`cudaErrorInvalidConfiguration`| | | | |`hipErrorInvalidConfiguration`|1.6.0| | | | |
 |`cudaErrorInvalidDevice`| | | | |`hipErrorInvalidDevice`|1.6.0| | | | |
@@ -1094,7 +1094,7 @@
 |`cudaErrorInvalidSource`|10.1| | | |`hipErrorInvalidSource`|1.6.0| | | | |
 |`cudaErrorInvalidSurface`| | | | | | | | | | |
 |`cudaErrorInvalidSymbol`| | | | |`hipErrorInvalidSymbol`|1.6.0| | | | |
-|`cudaErrorInvalidTexture`| | | | |`hipErrorInvalidTexture`|6.4.0| | | |6.4.0|
+|`cudaErrorInvalidTexture`| | | | |`hipErrorInvalidTexture`|6.4.0| | | | |
 |`cudaErrorInvalidTextureBinding`| | | | | | | | | | |
 |`cudaErrorInvalidValue`| | | | |`hipErrorInvalidValue`|1.6.0| | | | |
 |`cudaErrorJitCompilationDisabled`|11.2| | | | | | | | | |

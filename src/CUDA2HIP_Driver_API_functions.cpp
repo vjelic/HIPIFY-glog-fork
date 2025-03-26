@@ -64,7 +64,7 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_FUNCTION_MAP {
   {"cuDeviceTotalMem",                                            {"hipDeviceTotalMem",                                           "", CONV_DEVICE, API_DRIVER, SEC::DEVICE}},
   {"cuDeviceTotalMem_v2",                                         {"hipDeviceTotalMem",                                           "", CONV_DEVICE, API_DRIVER, SEC::DEVICE}},
   // NOTE: incompatible with cudaDeviceGetTexture1DLinearMaxWidth
-  {"cuDeviceGetTexture1DLinearMaxWidth",                          {"hipDeviceGetTexture1DLinearMaxWidth",                         "", CONV_DEVICE, API_DRIVER, SEC::DEVICE, HIP_EXPERIMENTAL}},
+  {"cuDeviceGetTexture1DLinearMaxWidth",                          {"hipDeviceGetTexture1DLinearMaxWidth",                         "", CONV_DEVICE, API_DRIVER, SEC::DEVICE}},
   // cudaDeviceSetMemPool
   {"cuDeviceSetMemPool",                                          {"hipDeviceSetMemPool",                                         "", CONV_DEVICE, API_DRIVER, SEC::DEVICE}},
   // cudaDeviceGetMemPool
@@ -554,7 +554,7 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_FUNCTION_MAP {
   // cudaEventSynchronize
   {"cuEventSynchronize",                                          {"hipEventSynchronize",                                         "", CONV_EVENT, API_DRIVER, SEC::EVENT}},
   // cudaEventRecordWithFlags
-  {"cuEventRecordWithFlags",                                      {"hipEventRecordWithFlags",                                     "", CONV_EVENT, API_DRIVER, SEC::EVENT, HIP_EXPERIMENTAL}},
+  {"cuEventRecordWithFlags",                                      {"hipEventRecordWithFlags",                                     "", CONV_EVENT, API_DRIVER, SEC::EVENT}},
 
   // 20. External Resource Interoperability
   // cudaDestroyExternalMemory
@@ -576,8 +576,8 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_FUNCTION_MAP {
 
   // 21. Stream Memory Operations
   // no analogues
-  {"cuStreamBatchMemOp",                                          {"hipStreamBatchMemOp",                                         "", CONV_STREAM_MEMORY, API_DRIVER, SEC::STREAM_MEMORY, HIP_EXPERIMENTAL}},
-  {"cuStreamBatchMemOp_v2",                                       {"hipStreamBatchMemOp",                                         "", CONV_STREAM_MEMORY, API_DRIVER, SEC::STREAM_MEMORY, HIP_EXPERIMENTAL}},
+  {"cuStreamBatchMemOp",                                          {"hipStreamBatchMemOp",                                         "", CONV_STREAM_MEMORY, API_DRIVER, SEC::STREAM_MEMORY}},
+  {"cuStreamBatchMemOp_v2",                                       {"hipStreamBatchMemOp",                                         "", CONV_STREAM_MEMORY, API_DRIVER, SEC::STREAM_MEMORY}},
   // CUresult CUDAAPI cuStreamWriteValue32(CUstream stream, CUdeviceptr addr, cuuint32_t value, unsigned int flags);
   // hipError_t hipStreamWaitValue32(hipStream_t stream, void* ptr, int32_t value, unsigned int flags, uint32_t mask __dparm(0xFFFFFFFF));
   {"cuStreamWaitValue32",                                         {"hipStreamWaitValue32",                                        "", CONV_STREAM_MEMORY, API_DRIVER, SEC::STREAM_MEMORY}},
@@ -829,13 +829,13 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_FUNCTION_MAP {
   // cudaGraphInstantiateWithFlags
   {"cuGraphInstantiateWithFlags",                                 {"hipGraphInstantiateWithFlags",                                "", CONV_GRAPH, API_DRIVER, SEC::GRAPH}},
   // no analogue yet
-  {"cuGraphAddBatchMemOpNode",                                    {"hipGraphAddBatchMemOpNode",                                   "", CONV_GRAPH, API_DRIVER, SEC::GRAPH, HIP_EXPERIMENTAL}},
+  {"cuGraphAddBatchMemOpNode",                                    {"hipGraphAddBatchMemOpNode",                                   "", CONV_GRAPH, API_DRIVER, SEC::GRAPH}},
   // no analogue yet
-  {"cuGraphBatchMemOpNodeGetParams",                              {"hipGraphBatchMemOpNodeGetParams",                             "", CONV_GRAPH, API_DRIVER, SEC::GRAPH, HIP_EXPERIMENTAL}},
+  {"cuGraphBatchMemOpNodeGetParams",                              {"hipGraphBatchMemOpNodeGetParams",                             "", CONV_GRAPH, API_DRIVER, SEC::GRAPH}},
   // no analogue yet
-  {"cuGraphBatchMemOpNodeSetParams",                              {"hipGraphBatchMemOpNodeSetParams",                             "", CONV_GRAPH, API_DRIVER, SEC::GRAPH, HIP_EXPERIMENTAL}},
+  {"cuGraphBatchMemOpNodeSetParams",                              {"hipGraphBatchMemOpNodeSetParams",                             "", CONV_GRAPH, API_DRIVER, SEC::GRAPH}},
   // no analogue yet
-  {"cuGraphExecBatchMemOpNodeSetParams",                          {"hipGraphExecBatchMemOpNodeSetParams",                         "", CONV_GRAPH, API_DRIVER, SEC::GRAPH, HIP_EXPERIMENTAL}},
+  {"cuGraphExecBatchMemOpNodeSetParams",                          {"hipGraphExecBatchMemOpNodeSetParams",                         "", CONV_GRAPH, API_DRIVER, SEC::GRAPH}},
   // cudaGraphInstantiateWithParams
   {"cuGraphInstantiateWithParams",                                {"hipGraphInstantiateWithParams",                               "", CONV_GRAPH, API_DRIVER, SEC::GRAPH}},
   // cudaGraphExecGetFlags
@@ -1712,13 +1712,13 @@ const std::map<llvm::StringRef, hipAPIversions> HIP_DRIVER_FUNCTION_VER_MAP {
   {"hipDrvGraphMemcpyNodeSetParams",                              {HIP_6030, HIP_0,    HIP_0   }},
   {"hipDrvGraphExecMemcpyNodeSetParams",                          {HIP_6030, HIP_0,    HIP_0   }},
   {"hipDrvGraphExecMemsetNodeSetParams",                          {HIP_6030, HIP_0,    HIP_0   }},
-  {"hipStreamBatchMemOp",                                         {HIP_6040, HIP_0,    HIP_0,  HIP_LATEST}},
-  {"hipGraphAddBatchMemOpNode",                                   {HIP_6040, HIP_0,    HIP_0,  HIP_LATEST}},
-  {"hipGraphBatchMemOpNodeGetParams",                             {HIP_6040, HIP_0,    HIP_0,  HIP_LATEST}},
-  {"hipGraphBatchMemOpNodeSetParams",                             {HIP_6040, HIP_0,    HIP_0,  HIP_LATEST}},
-  {"hipGraphExecBatchMemOpNodeSetParams",                         {HIP_6040, HIP_0,    HIP_0,  HIP_LATEST}},
-  {"hipEventRecordWithFlags",                                     {HIP_6040, HIP_0,    HIP_0,  HIP_LATEST}},
-  {"hipDeviceGetTexture1DLinearMaxWidth",                         {HIP_6040, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"hipStreamBatchMemOp",                                         {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipGraphAddBatchMemOpNode",                                   {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipGraphBatchMemOpNodeGetParams",                             {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipGraphBatchMemOpNodeSetParams",                             {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipGraphExecBatchMemOpNodeSetParams",                         {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipEventRecordWithFlags",                                     {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipDeviceGetTexture1DLinearMaxWidth",                         {HIP_6040, HIP_0,    HIP_0   }},
 };
 
 const std::map<llvm::StringRef, cudaAPIChangedVersions> CUDA_DRIVER_FUNCTION_CHANGED_VER_MAP {

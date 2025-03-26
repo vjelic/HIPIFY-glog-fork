@@ -121,6 +121,8 @@ const std::map<llvm::StringRef, hipCounter> CUDA_FFT_TYPE_NAME_MAP {
   {"cufftXt1dFactors",                                {"hipfftXt1dFactors",                                "", CONV_TYPE, API_FFT, 1, UNSUPPORTED}},
   {"cufftBox3d_t",                                    {"hipfftBox3d_t",                                    "", CONV_TYPE, API_FFT, 1, UNSUPPORTED}},
   {"cufftBox3d",                                      {"hipfftBox3d",                                      "", CONV_TYPE, API_FFT, 1, UNSUPPORTED}},
+  {"cudaLibXtDesc_t",                                 {"hipLibXtDesc_t",                                   "", CONV_TYPE, API_FFT, 1}},
+  {"cudaLibXtDesc",                                   {"hipLibXtDesc",                                     "", CONV_TYPE, API_FFT, 1}},
 };
 
 const std::map<llvm::StringRef, cudaAPIversions> CUDA_FFT_TYPE_NAME_VER_MAP {
@@ -198,4 +200,6 @@ const std::map<llvm::StringRef, hipAPIversions> HIP_FFT_TYPE_NAME_VER_MAP {
   {"HIPFFT_CB_ST_REAL",                               {HIP_4030, HIP_0,    HIP_0   }},
   {"HIPFFT_CB_ST_REAL_DOUBLE",                        {HIP_4030, HIP_0,    HIP_0   }},
   {"HIPFFT_CB_UNDEFINED",                             {HIP_4030, HIP_0,    HIP_0   }},
+  {"hipLibXtDesc_t",                                  {HIP_6000, HIP_0,    HIP_0   }},
+  {"hipLibXtDesc",                                    {HIP_6000, HIP_0,    HIP_0   }},
 };
