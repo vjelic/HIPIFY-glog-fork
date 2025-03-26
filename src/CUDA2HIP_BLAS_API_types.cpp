@@ -163,7 +163,12 @@ const std::map<llvm::StringRef, hipCounter> CUDA_BLAS_TYPE_NAME_MAP {
   {"CUDA_R_64U",                                                     {"HIPBLAS_R_64U",                                                     "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES, UNSUPPORTED}}, // 26
   {"CUDA_C_64U",                                                     {"HIPBLAS_C_64U",                                                     "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES, UNSUPPORTED}}, // 27
   {"CUDA_R_8F_E4M3",                                                 {"HIPBLAS_R_8F_E4M3",                                                 "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES, UNSUPPORTED}}, // 28
+  {"CUDA_R_8F_UE4M3",                                                {"HIPBLAS_R_8F_E4M3",                                                 "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES, UNSUPPORTED}}, // = CUDA_R_8F_E4M = 28
   {"CUDA_R_8F_E5M2",                                                 {"HIPBLAS_R_8F_E5M2",                                                 "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES, UNSUPPORTED}}, // 29
+  {"CUDA_R_8F_UE8M0",                                                {"HIPBLAS_R_8F_UE8M0",                                                "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES, UNSUPPORTED}}, // 30
+  {"CUDA_R_6F_E2M3",                                                 {"HIPBLAS_R_6F_E2M3",                                                 "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES, UNSUPPORTED}}, // 31
+  {"CUDA_R_6F_E3M2",                                                 {"HIPBLAS_R_6F_E3M2",                                                 "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES, UNSUPPORTED}}, // 32
+  {"CUDA_R_4F_E2M1",                                                 {"HIPBLAS_R_4F_E2M1",                                                 "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES, UNSUPPORTED}}, // 33
 
   // CUBLAS Data Types
 
@@ -2093,6 +2098,11 @@ const std::map<llvm::StringRef, cudaAPIversions> CUDA_BLAS_TYPE_NAME_VER_MAP {
   {"CUBLASLT_SEARCH_RESERVED_07",                                    {CUDA_126, CUDA_0,   CUDA_0  }}, // A: CUDA_VERSION 12062, CUBLAS_VERSION 120603, CUBLAS_VER_MAJOR 12 CUBLAS_VER_MINOR 6 CUBLAS_VER_PATCH 3
   {"CUBLASLT_SEARCH_RESERVED_08",                                    {CUDA_126, CUDA_0,   CUDA_0  }}, // A: CUDA_VERSION 12062, CUBLAS_VERSION 120603, CUBLAS_VER_MAJOR 12 CUBLAS_VER_MINOR 6 CUBLAS_VER_PATCH 3
   {"CUBLASLT_SEARCH_RESERVED_09",                                    {CUDA_126, CUDA_0,   CUDA_0  }}, // A: CUDA_VERSION 12062, CUBLAS_VERSION 120603, CUBLAS_VER_MAJOR 12 CUBLAS_VER_MINOR 6 CUBLAS_VER_PATCH 3
+  {"CUDA_R_8F_UE4M3",                                                {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"CUDA_R_8F_UE8M0",                                                {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"CUDA_R_6F_E2M3",                                                 {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"CUDA_R_6F_E3M2",                                                 {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"CUDA_R_4F_E2M1",                                                 {CUDA_128, CUDA_0,   CUDA_0  }},
 };
 
 const std::map<llvm::StringRef, hipAPIversions> HIP_BLAS_TYPE_NAME_VER_MAP {
