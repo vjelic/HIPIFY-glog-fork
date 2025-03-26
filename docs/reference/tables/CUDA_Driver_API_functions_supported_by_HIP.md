@@ -34,12 +34,12 @@
 |`CUDA_ARRAY_SPARSE_PROPERTIES`|11.1| | | | | | | | | |
 |`CUDA_ARRAY_SPARSE_PROPERTIES_st`|11.1| | | | | | | | | |
 |`CUDA_ARRAY_SPARSE_PROPERTIES_v1`|11.3| | | | | | | | | |
-|`CUDA_BATCH_MEM_OP_NODE_PARAMS`|11.7| | | |`hipBatchMemOpNodeParams`|6.4.0| | | |6.4.0|
-|`CUDA_BATCH_MEM_OP_NODE_PARAMS_st`|11.7| | |12.2|`hipBatchMemOpNodeParams`|6.4.0| | | |6.4.0|
-|`CUDA_BATCH_MEM_OP_NODE_PARAMS_v1`|12.2| | | |`hipBatchMemOpNodeParams`|6.4.0| | | |6.4.0|
-|`CUDA_BATCH_MEM_OP_NODE_PARAMS_v1_st`|12.2| | | |`hipBatchMemOpNodeParams`|6.4.0| | | |6.4.0|
-|`CUDA_BATCH_MEM_OP_NODE_PARAMS_v2`|12.2| | | |`hipBatchMemOpNodeParams`|6.4.0| | | |6.4.0|
-|`CUDA_BATCH_MEM_OP_NODE_PARAMS_v2_st`|12.2| | | |`hipBatchMemOpNodeParams`|6.4.0| | | |6.4.0|
+|`CUDA_BATCH_MEM_OP_NODE_PARAMS`|11.7| | | |`hipBatchMemOpNodeParams`|6.4.0| | | | |
+|`CUDA_BATCH_MEM_OP_NODE_PARAMS_st`|11.7| | |12.2|`hipBatchMemOpNodeParams`|6.4.0| | | | |
+|`CUDA_BATCH_MEM_OP_NODE_PARAMS_v1`|12.2| | | |`hipBatchMemOpNodeParams`|6.4.0| | | | |
+|`CUDA_BATCH_MEM_OP_NODE_PARAMS_v1_st`|12.2| | | |`hipBatchMemOpNodeParams`|6.4.0| | | | |
+|`CUDA_BATCH_MEM_OP_NODE_PARAMS_v2`|12.2| | | |`hipBatchMemOpNodeParams`|6.4.0| | | | |
+|`CUDA_BATCH_MEM_OP_NODE_PARAMS_v2_st`|12.2| | | |`hipBatchMemOpNodeParams`|6.4.0| | | | |
 |`CUDA_CB`| | | | | | | | | | |
 |`CUDA_CHILD_GRAPH_NODE_PARAMS`|12.2| | | |`hipChildGraphNodeParams`|6.1.0| | | | |
 |`CUDA_CHILD_GRAPH_NODE_PARAMS_st`|12.2| | | |`hipChildGraphNodeParams`|6.1.0| | | | |
@@ -745,7 +745,7 @@
 |`CU_GRAPH_MEM_ATTR_RESERVED_MEM_HIGH`|11.4| | | |`hipGraphMemAttrReservedMemHigh`|5.3.0| | | | |
 |`CU_GRAPH_MEM_ATTR_USED_MEM_CURRENT`|11.4| | | |`hipGraphMemAttrUsedMemCurrent`|5.3.0| | | | |
 |`CU_GRAPH_MEM_ATTR_USED_MEM_HIGH`|11.4| | | |`hipGraphMemAttrUsedMemHigh`|5.3.0| | | | |
-|`CU_GRAPH_NODE_TYPE_BATCH_MEM_OP`|11.7| | | |`hipGraphNodeTypeBatchMemOp`|6.4.0| | | |6.4.0|
+|`CU_GRAPH_NODE_TYPE_BATCH_MEM_OP`|11.7| | | |`hipGraphNodeTypeBatchMemOp`|6.4.0| | | | |
 |`CU_GRAPH_NODE_TYPE_CONDITIONAL`|12.3| | | | | | | | | |
 |`CU_GRAPH_NODE_TYPE_COUNT`|10.0| | |11.0|`hipGraphNodeTypeCount`|4.3.0| | | | |
 |`CU_GRAPH_NODE_TYPE_EMPTY`|10.0| | | |`hipGraphNodeTypeEmpty`|4.3.0| | | | |
@@ -1034,12 +1034,12 @@
 |`CU_STREAM_LEGACY`| | | | |`hipStreamLegacy`|6.2.0| | | | |
 |`CU_STREAM_MEMORY_BARRIER_TYPE_GPU`|11.7| | | | | | | | | |
 |`CU_STREAM_MEMORY_BARRIER_TYPE_SYS`|11.7| | | | | | | | | |
-|`CU_STREAM_MEM_OP_BARRIER`|11.7| | | |`hipStreamMemOpBarrier`|6.4.0| | | |6.4.0|
-|`CU_STREAM_MEM_OP_FLUSH_REMOTE_WRITES`|8.0| | | |`hipStreamMemOpFlushRemoteWrites`|6.4.0| | | |6.4.0|
-|`CU_STREAM_MEM_OP_WAIT_VALUE_32`|8.0| | | |`hipStreamMemOpWaitValue32`|6.4.0| | | |6.4.0|
-|`CU_STREAM_MEM_OP_WAIT_VALUE_64`|9.0| | | |`hipStreamMemOpWaitValue64`|6.4.0| | | |6.4.0|
-|`CU_STREAM_MEM_OP_WRITE_VALUE_32`|8.0| | | |`hipStreamMemOpWriteValue32`|6.4.0| | | |6.4.0|
-|`CU_STREAM_MEM_OP_WRITE_VALUE_64`|9.0| | | |`hipStreamMemOpWriteValue64`|6.4.0| | | |6.4.0|
+|`CU_STREAM_MEM_OP_BARRIER`|11.7| | | |`hipStreamMemOpBarrier`|6.4.0| | | | |
+|`CU_STREAM_MEM_OP_FLUSH_REMOTE_WRITES`|8.0| | | |`hipStreamMemOpFlushRemoteWrites`|6.4.0| | | | |
+|`CU_STREAM_MEM_OP_WAIT_VALUE_32`|8.0| | | |`hipStreamMemOpWaitValue32`|6.4.0| | | | |
+|`CU_STREAM_MEM_OP_WAIT_VALUE_64`|9.0| | | |`hipStreamMemOpWaitValue64`|6.4.0| | | | |
+|`CU_STREAM_MEM_OP_WRITE_VALUE_32`|8.0| | | |`hipStreamMemOpWriteValue32`|6.4.0| | | | |
+|`CU_STREAM_MEM_OP_WRITE_VALUE_64`|9.0| | | |`hipStreamMemOpWriteValue64`|6.4.0| | | | |
 |`CU_STREAM_NON_BLOCKING`| | | | |`hipStreamNonBlocking`|1.6.0| | | | |
 |`CU_STREAM_PER_THREAD`| | | | |`hipStreamPerThread`|4.5.0| | | | |
 |`CU_STREAM_SET_CAPTURE_DEPENDENCIES`|11.3| | | |`hipStreamSetCaptureDependencies`|5.0.0| | | | |
@@ -1466,11 +1466,11 @@
 |`CUstreamAttrValue`|11.0| | | | | | | | | |
 |`CUstreamAttrValue_union`|11.0| | | | | | | | | |
 |`CUstreamAttrValue_v1`|11.3| | | | | | | | | |
-|`CUstreamBatchMemOpParams`|8.0| | | |`hipStreamBatchMemOpParams`|6.4.0| | | |6.4.0|
-|`CUstreamBatchMemOpParams_union`|8.0| | | |`hipStreamBatchMemOpParams_union`|6.4.0| | | |6.4.0|
-|`CUstreamBatchMemOpParams_v1`|11.3| | | |`hipStreamBatchMemOpParams`|6.4.0| | | |6.4.0|
-|`CUstreamBatchMemOpType`|8.0| | | |`hipStreamBatchMemOpType`|6.4.0| | | |6.4.0|
-|`CUstreamBatchMemOpType_enum`|8.0| | | |`hipStreamBatchMemOpType`|6.4.0| | | |6.4.0|
+|`CUstreamBatchMemOpParams`|8.0| | | |`hipStreamBatchMemOpParams`|6.4.0| | | | |
+|`CUstreamBatchMemOpParams_union`|8.0| | | |`hipStreamBatchMemOpParams_union`|6.4.0| | | | |
+|`CUstreamBatchMemOpParams_v1`|11.3| | | |`hipStreamBatchMemOpParams`|6.4.0| | | | |
+|`CUstreamBatchMemOpType`|8.0| | | |`hipStreamBatchMemOpType`|6.4.0| | | | |
+|`CUstreamBatchMemOpType_enum`|8.0| | | |`hipStreamBatchMemOpType`|6.4.0| | | | |
 |`CUstreamCallback`| | | | |`hipStreamCallback_t`|1.6.0| | | | |
 |`CUstreamCaptureMode`|10.1| | | |`hipStreamCaptureMode`|4.3.0| | | | |
 |`CUstreamCaptureMode_enum`|10.1| | | |`hipStreamCaptureMode`|4.3.0| | | | |
@@ -1570,7 +1570,7 @@
 |`cuDeviceGetMemPool`|11.2| | | |`hipDeviceGetMemPool`|5.2.0| | | | |
 |`cuDeviceGetName`| | | | |`hipDeviceGetName`|1.6.0| | | | |
 |`cuDeviceGetNvSciSyncAttributes`|10.2| | | | | | | | | |
-|`cuDeviceGetTexture1DLinearMaxWidth`|11.1| | | |`hipDeviceGetTexture1DLinearMaxWidth`|6.4.0| | | |6.4.0|
+|`cuDeviceGetTexture1DLinearMaxWidth`|11.1| | | |`hipDeviceGetTexture1DLinearMaxWidth`|6.4.0| | | | |
 |`cuDeviceGetUuid`|9.2| | | |`hipDeviceGetUuid`|5.2.0| | | | |
 |`cuDeviceGetUuid_v2`|11.4| | | |`hipDeviceGetUuid`|5.2.0| | | | |
 |`cuDeviceSetMemPool`|11.2| | | |`hipDeviceSetMemPool`|5.2.0| | | | |
@@ -1915,7 +1915,7 @@
 |`cuEventElapsedTime_v2`|12.8| | | | | | | | | |
 |`cuEventQuery`| | | | |`hipEventQuery`|1.6.0| | | | |
 |`cuEventRecord`| | | | |`hipEventRecord`|1.6.0| | | | |
-|`cuEventRecordWithFlags`|11.1| | | |`hipEventRecordWithFlags`|6.4.0| | | |6.4.0|
+|`cuEventRecordWithFlags`|11.1| | | |`hipEventRecordWithFlags`|6.4.0| | | | |
 |`cuEventSynchronize`| | | | |`hipEventSynchronize`|1.6.0| | | | |
 
 ## **20. External Resource Interoperability**
@@ -1935,8 +1935,8 @@
 
 |**CUDA**|**A**|**D**|**C**|**R**|**HIP**|**A**|**D**|**C**|**R**|**E**|
 |:--|:-:|:-:|:-:|:-:|:--|:-:|:-:|:-:|:-:|:-:|
-|`cuStreamBatchMemOp`|8.0| | | |`hipStreamBatchMemOp`|6.4.0| | | |6.4.0|
-|`cuStreamBatchMemOp_v2`|11.7| | | |`hipStreamBatchMemOp`|6.4.0| | | |6.4.0|
+|`cuStreamBatchMemOp`|8.0| | | |`hipStreamBatchMemOp`|6.4.0| | | | |
+|`cuStreamBatchMemOp_v2`|11.7| | | |`hipStreamBatchMemOp`|6.4.0| | | | |
 |`cuStreamWaitValue32`|8.0| | | |`hipStreamWaitValue32`|4.2.0| | | | |
 |`cuStreamWaitValue32_v2`|11.7| | | |`hipStreamWaitValue32`|4.2.0| | | | |
 |`cuStreamWaitValue64`|9.0| | | |`hipStreamWaitValue64`|4.2.0| | | | |
@@ -1987,7 +1987,7 @@
 |`cuDeviceGetGraphMemAttribute`|11.4| | | |`hipDeviceGetGraphMemAttribute`|5.3.0| | | | |
 |`cuDeviceGraphMemTrim`|11.4| | | |`hipDeviceGraphMemTrim`|5.3.0| | | | |
 |`cuDeviceSetGraphMemAttribute`|11.4| | | |`hipDeviceSetGraphMemAttribute`|5.3.0| | | | |
-|`cuGraphAddBatchMemOpNode`|11.7| | | |`hipGraphAddBatchMemOpNode`|6.4.0| | | |6.4.0|
+|`cuGraphAddBatchMemOpNode`|11.7| | | |`hipGraphAddBatchMemOpNode`|6.4.0| | | | |
 |`cuGraphAddChildGraphNode`|10.0| | | |`hipGraphAddChildGraphNode`|5.0.0| | | | |
 |`cuGraphAddDependencies`|10.0| | | |`hipGraphAddDependencies`|4.5.0| | | | |
 |`cuGraphAddDependencies_v2`|12.3| | | | | | | | | |
@@ -2004,8 +2004,8 @@
 |`cuGraphAddMemsetNode`|10.0| | | |`hipDrvGraphAddMemsetNode`|6.1.0| | | | |
 |`cuGraphAddNode`|12.2| | | |`hipGraphAddNode`|6.2.0| | | | |
 |`cuGraphAddNode_v2`|12.3| | | | | | | | | |
-|`cuGraphBatchMemOpNodeGetParams`|11.7| | | |`hipGraphBatchMemOpNodeGetParams`|6.4.0| | | |6.4.0|
-|`cuGraphBatchMemOpNodeSetParams`|11.7| | | |`hipGraphBatchMemOpNodeSetParams`|6.4.0| | | |6.4.0|
+|`cuGraphBatchMemOpNodeGetParams`|11.7| | | |`hipGraphBatchMemOpNodeGetParams`|6.4.0| | | | |
+|`cuGraphBatchMemOpNodeSetParams`|11.7| | | |`hipGraphBatchMemOpNodeSetParams`|6.4.0| | | | |
 |`cuGraphChildGraphNodeGetGraph`|10.0| | | |`hipGraphChildGraphNodeGetGraph`|5.0.0| | | | |
 |`cuGraphClone`|10.0| | | |`hipGraphClone`|5.0.0| | | | |
 |`cuGraphConditionalHandleCreate`|12.3| | | | | | | | | |
@@ -2017,7 +2017,7 @@
 |`cuGraphEventRecordNodeSetEvent`|11.1| | | |`hipGraphEventRecordNodeSetEvent`|5.0.0| | | | |
 |`cuGraphEventWaitNodeGetEvent`|11.1| | | |`hipGraphEventWaitNodeGetEvent`|5.0.0| | | | |
 |`cuGraphEventWaitNodeSetEvent`|11.1| | | |`hipGraphEventWaitNodeSetEvent`|5.0.0| | | | |
-|`cuGraphExecBatchMemOpNodeSetParams`|11.7| | | |`hipGraphExecBatchMemOpNodeSetParams`|6.4.0| | | |6.4.0|
+|`cuGraphExecBatchMemOpNodeSetParams`|11.7| | | |`hipGraphExecBatchMemOpNodeSetParams`|6.4.0| | | | |
 |`cuGraphExecChildGraphNodeSetParams`|11.1| | | |`hipGraphExecChildGraphNodeSetParams`|5.0.0| | | | |
 |`cuGraphExecDestroy`|10.0| | | |`hipGraphExecDestroy`|4.3.0| | | | |
 |`cuGraphExecEventRecordNodeSetEvent`|11.1| | | |`hipGraphExecEventRecordNodeSetEvent`|5.0.0| | | | |

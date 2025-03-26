@@ -64,6 +64,8 @@
 |`MAX_CUFFT_ERROR`| | | | | | | | | | |
 |`NVFFT_PLAN_PROPERTY_INT64_MAX_NUM_HOST_THREADS`|12.5| | | | | | | | | |
 |`NVFFT_PLAN_PROPERTY_INT64_PATIENT_JIT`|12.4| | | | | | | | | |
+|`cudaLibXtDesc`| | | | |`hipLibXtDesc`|6.0.0| | | | |
+|`cudaLibXtDesc_t`| | | | |`hipLibXtDesc_t`|6.0.0| | | | |
 |`cufftBox3d`|11.8| | | | | | | | | |
 |`cufftBox3d_t`|11.8| | | | | | | | | |
 |`cufftCompatibility`| | | | | | | | | | |
@@ -140,24 +142,24 @@
 |`cufftSetStream`| | | | |`hipfftSetStream`|1.7.0| | | | |
 |`cufftSetWorkArea`| | | | |`hipfftSetWorkArea`|1.7.0| | | | |
 |`cufftXtClearCallback`| | | | |`hipfftXtClearCallback`|4.3.0| | | | |
-|`cufftXtExec`|8.0| | | | | | | | | |
-|`cufftXtExecDescriptor`|8.0| | | | | | | | | |
-|`cufftXtExecDescriptorC2C`| | | | | | | | | | |
-|`cufftXtExecDescriptorC2R`| | | | | | | | | | |
-|`cufftXtExecDescriptorD2Z`| | | | | | | | | | |
-|`cufftXtExecDescriptorR2C`| | | | | | | | | | |
-|`cufftXtExecDescriptorZ2D`| | | | | | | | | | |
-|`cufftXtExecDescriptorZ2Z`| | | | | | | | | | |
-|`cufftXtFree`| | | | | | | | | | |
-|`cufftXtGetSizeMany`|8.0| | | | | | | | | |
-|`cufftXtMakePlanMany`|8.0| | | | | | | | | |
-|`cufftXtMalloc`| | | | | | | | | | |
-|`cufftXtMemcpy`| | | | | | | | | | |
+|`cufftXtExec`|8.0| | | |`hipfftXtExec`|5.6.0| | | | |
+|`cufftXtExecDescriptor`|8.0| | | |`hipfftXtExecDescriptor`|6.0.0| | | | |
+|`cufftXtExecDescriptorC2C`| | | | |`hipfftXtExecDescriptorC2C`|6.0.0| | | | |
+|`cufftXtExecDescriptorC2R`| | | | |`hipfftXtExecDescriptorC2R`|6.0.0| | | | |
+|`cufftXtExecDescriptorD2Z`| | | | |`hipfftXtExecDescriptorD2Z`|6.0.0| | | | |
+|`cufftXtExecDescriptorR2C`| | | | |`hipfftXtExecDescriptorR2C`|6.0.0| | | | |
+|`cufftXtExecDescriptorZ2D`| | | | |`hipfftXtExecDescriptorZ2D`|6.0.0| | | | |
+|`cufftXtExecDescriptorZ2Z`| | | | |`hipfftXtExecDescriptorZ2Z`|6.0.0| | | | |
+|`cufftXtFree`| | | | |`hipfftXtFree`|6.0.0| | | | |
+|`cufftXtGetSizeMany`|8.0| | | |`hipfftXtGetSizeMany`|5.6.0| | | | |
+|`cufftXtMakePlanMany`|8.0| | | |`hipfftXtMakePlanMany`|5.6.0| | | | |
+|`cufftXtMalloc`| | | | |`hipfftXtMalloc`|6.0.0| | | | |
+|`cufftXtMemcpy`| | | | |`hipfftXtMemcpy`|6.0.0| | | | |
 |`cufftXtQueryPlan`| | | | | | | | | | |
 |`cufftXtSetCallback`| | | | |`hipfftXtSetCallback`|4.3.0| | | | |
 |`cufftXtSetCallbackSharedSize`| | | | |`hipfftXtSetCallbackSharedSize`|4.3.0| | | | |
 |`cufftXtSetDistribution`|11.8| | | | | | | | | |
-|`cufftXtSetGPUs`| | | | | | | | | | |
+|`cufftXtSetGPUs`| | | | |`hipfftXtSetGPUs`|6.0.0| | | | |
 |`cufftXtSetWorkArea`| | | | | | | | | | |
 |`cufftXtSetWorkAreaPolicy`|9.2| | | | | | | | | |
 

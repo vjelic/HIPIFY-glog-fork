@@ -910,11 +910,11 @@ const std::map<llvm::StringRef, hipCounter> CUDA_RUNTIME_TYPE_NAME_MAP {
   // no analogue
   {"cudaErrorInvalidDevicePointer",                                    {"hipErrorInvalidDevicePointer",                             "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, CUDA_DEPRECATED}}, // 17
   // no analogue
-  {"cudaErrorInvalidTexture",                                          {"hipErrorInvalidTexture",                                   "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_EXPERIMENTAL}}, // 18
+  {"cudaErrorInvalidTexture",                                          {"hipErrorInvalidTexture",                                   "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 18
   // no analogue
   {"cudaErrorInvalidTextureBinding",                                   {"hipErrorInvalidTextureBinding",                            "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 19
   // no analogue
-  {"cudaErrorInvalidChannelDescriptor",                                {"hipErrorInvalidChannelDescriptor",                         "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_EXPERIMENTAL}}, // 20
+  {"cudaErrorInvalidChannelDescriptor",                                {"hipErrorInvalidChannelDescriptor",                         "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 20
   // no analogue
   {"cudaErrorInvalidMemcpyDirection",                                  {"hipErrorInvalidMemcpyDirection",                           "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 21
   // Deprecated since CUDA 3.1
@@ -3393,6 +3393,6 @@ const std::map<llvm::StringRef, hipAPIversions> HIP_RUNTIME_TYPE_NAME_VER_MAP {
   {"HIP_TWO_TO_M1022",                                                 {HIP_5070, HIP_0,    HIP_0   }},
   {"HIP_TRIG_PLOSS",                                                   {HIP_5070, HIP_0,    HIP_0   }},
   {"HIP_DBL2INT_CVT",                                                  {HIP_5070, HIP_0,    HIP_0   }},
-  {"hipErrorInvalidChannelDescriptor",                                 {HIP_6040, HIP_0,    HIP_0,  HIP_LATEST}},
-  {"hipErrorInvalidTexture",                                           {HIP_6040, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"hipErrorInvalidChannelDescriptor",                                 {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipErrorInvalidTexture",                                           {HIP_6040, HIP_0,    HIP_0   }},
 };
