@@ -915,6 +915,9 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DEVICE_FUNCTION_MAP {
   {"__any_sync",                        {"__any_sync",                         "", CONV_DEVICE_FUNC, API_RUNTIME, 1}},
   {"__ballot_sync",                     {"__ballot_sync",                      "", CONV_DEVICE_FUNC, API_RUNTIME, 1}},
   {"__activemask",                      {"__activemask",                       "", CONV_DEVICE_FUNC, API_RUNTIME, 1}},
+  {"__nv_bswap16",                      {"__hip_bswap16",                      "", CONV_DEVICE_FUNC, API_RUNTIME, 1, UNSUPPORTED}},
+  {"__nv_bswap32",                      {"__hip_bswap32",                      "", CONV_DEVICE_FUNC, API_RUNTIME, 1, UNSUPPORTED}},
+  {"__nv_bswap64",                      {"__hip_bswap64",                      "", CONV_DEVICE_FUNC, API_RUNTIME, 1, UNSUPPORTED}},
   // built-ins
   {"__match_any_sync",                  {"__match_any_sync",                   "", CONV_DEVICE_FUNC, API_RUNTIME, 1}},
   {"__match_all_sync",                  {"__match_all_sync",                   "", CONV_DEVICE_FUNC, API_RUNTIME, 1}},
@@ -1136,6 +1139,9 @@ const std::map<llvm::StringRef, cudaAPIversions> CUDA_DEVICE_FUNCTION_VER_MAP {
   {"__nv_cvt_double2_to_e8m0x2",        {CUDA_128, CUDA_0,   CUDA_0  }},
   {"__nv_cvt_e8m0_to_bf16raw",          {CUDA_128, CUDA_0,   CUDA_0  }},
   {"__nv_cvt_e8m0x2_to_bf162raw",       {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"__nv_bswap16",                      {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"__nv_bswap32",                      {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"__nv_bswap64",                      {CUDA_128, CUDA_0,   CUDA_0  }},
 };
 
 const std::map<llvm::StringRef, hipAPIversions> HIP_DEVICE_FUNCTION_VER_MAP {
