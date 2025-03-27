@@ -7087,6 +7087,7 @@ sub simpleSubstitutions {
     subst("CUuuid_st", "hipUUID_t", "type");
     subst("GLenum", "GLenum", "type");
     subst("GLuint", "GLuint", "type");
+    subst("_nvrtcProgram", "_hiprtcProgram", "type");
     subst("bsric02Info", "bsric02Info", "type");
     subst("bsric02Info_t", "bsric02Info_t", "type");
     subst("bsrilu02Info", "bsrilu02Info", "type");
