@@ -9,6 +9,7 @@
 |**CUDA**|**A**|**D**|**C**|**R**|**HIP**|**A**|**D**|**C**|**R**|**E**|
 |:--|:-:|:-:|:-:|:-:|:--|:-:|:-:|:-:|:-:|:-:|
 |`NVRTC_ERROR_BUILTIN_OPERATION_FAILURE`| | | | |`HIPRTC_ERROR_BUILTIN_OPERATION_FAILURE`|2.6.0| | | | |
+|`NVRTC_ERROR_CANCELLED`|12.8| | | | | | | | | |
 |`NVRTC_ERROR_COMPILATION`| | | | |`HIPRTC_ERROR_COMPILATION`|2.6.0| | | | |
 |`NVRTC_ERROR_INTERNAL_ERROR`|8.0| | | |`HIPRTC_ERROR_INTERNAL_ERROR`|2.6.0| | | | |
 |`NVRTC_ERROR_INVALID_INPUT`| | | | |`HIPRTC_ERROR_INVALID_INPUT`|2.6.0| | | | |
@@ -17,10 +18,14 @@
 |`NVRTC_ERROR_NAME_EXPRESSION_NOT_VALID`|8.0| | | |`HIPRTC_ERROR_NAME_EXPRESSION_NOT_VALID`|2.6.0| | | | |
 |`NVRTC_ERROR_NO_LOWERED_NAMES_BEFORE_COMPILATION`|8.0| | | |`HIPRTC_ERROR_NO_LOWERED_NAMES_BEFORE_COMPILATION`|2.6.0| | | | |
 |`NVRTC_ERROR_NO_NAME_EXPRESSIONS_AFTER_COMPILATION`|8.0| | | |`HIPRTC_ERROR_NO_NAME_EXPRESSIONS_AFTER_COMPILATION`|2.6.0| | | | |
+|`NVRTC_ERROR_NO_PCH_CREATE_ATTEMPTED`|12.8| | | | | | | | | |
 |`NVRTC_ERROR_OUT_OF_MEMORY`| | | | |`HIPRTC_ERROR_OUT_OF_MEMORY`|2.6.0| | | | |
+|`NVRTC_ERROR_PCH_CREATE`|12.8| | | | | | | | | |
+|`NVRTC_ERROR_PCH_CREATE_HEAP_EXHAUSTED`|12.8| | | | | | | | | |
 |`NVRTC_ERROR_PROGRAM_CREATION_FAILURE`| | | | |`HIPRTC_ERROR_PROGRAM_CREATION_FAILURE`|2.6.0| | | | |
 |`NVRTC_ERROR_TIME_FILE_WRITE_FAILED`|12.1| | | | | | | | | |
 |`NVRTC_SUCCESS`| | | | |`HIPRTC_SUCCESS`|2.6.0| | | | |
+|`_nvrtcProgram`| | | | |`_hiprtcProgram`|2.6.0| | | | |
 |`nvrtcProgram`| | | | |`hiprtcProgram`|2.6.0| | | | |
 |`nvrtcResult`| | | | |`hiprtcResult`|2.6.0| | | | |
 
@@ -43,10 +48,15 @@
 |`nvrtcGetNumSupportedArchs`|11.2| | | | | | | | | |
 |`nvrtcGetOptiXIR`|12.0| | | | | | | | | |
 |`nvrtcGetOptiXIRSize`|12.0| | | | | | | | | |
+|`nvrtcGetPCHCreateStatus`|12.8| | | | | | | | | |
+|`nvrtcGetPCHHeapSize`|12.8| | | | | | | | | |
+|`nvrtcGetPCHHeapSizeRequired`|12.8| | | | | | | | | |
 |`nvrtcGetPTX`| | | | |`hiprtcGetCode`|2.6.0| | | | |
 |`nvrtcGetPTXSize`| | | | |`hiprtcGetCodeSize`|2.6.0| | | | |
 |`nvrtcGetProgramLog`| | | | |`hiprtcGetProgramLog`|2.6.0| | | | |
 |`nvrtcGetProgramLogSize`| | | | |`hiprtcGetProgramLogSize`|2.6.0| | | | |
 |`nvrtcGetSupportedArchs`|11.2| | | | | | | | | |
+|`nvrtcSetFlowCallback`|12.8| | | | | | | | | |
+|`nvrtcSetPCHHeapSize`|12.8| | | | | | | | | |
 |`nvrtcVersion`| | | | |`hiprtcVersion`|2.6.0| | | | |
 
