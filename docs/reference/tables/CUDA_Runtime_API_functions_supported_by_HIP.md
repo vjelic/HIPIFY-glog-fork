@@ -985,7 +985,10 @@
 |`cudaEglColorFormatRG`|9.1| | | | | | | | | |
 |`cudaEglColorFormatRGB`|9.1| | | | | | | | | |
 |`cudaEglColorFormatRGBA`|9.1| | | | | | | | | |
+|`cudaEglColorFormatUYVY2020`|12.8| | | | | | | | | |
 |`cudaEglColorFormatUYVY422`|9.1| | | | | | | | | |
+|`cudaEglColorFormatUYVY709`|12.8| | | | | | | | | |
+|`cudaEglColorFormatUYVY709_ER`|12.8| | | | | | | | | |
 |`cudaEglColorFormatUYVY_ER`|9.1| | | | | | | | | |
 |`cudaEglColorFormatVYUY_ER`|9.1| | | | | | | | | |
 |`cudaEglColorFormatY10V10U10_420SemiPlanar`|9.1| | | | | | | | | |
