@@ -855,6 +855,12 @@ const std::map<llvm::StringRef, hipCounter> CUDA_RUNTIME_TYPE_NAME_MAP {
   {"cudaEglColorFormatBayerIspGRBG",                                   {"hipEglColorFormatBayerIspGRBG",                            "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 70
   // CU_EGL_COLOR_FORMAT_BAYER_ISP_GBRG = 0x47
   {"cudaEglColorFormatBayerIspGBRG",                                   {"hipEglColorFormatBayerIspGBRG",                            "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 71
+  //
+  {"cudaEglColorFormatUYVY709",                                        {"hipEglColorFormatUYVY709",                                 "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 114
+  //
+  {"cudaEglColorFormatUYVY709_ER",                                     {"hipEglColorFormatUYVY709_ER",                              "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 115
+  //
+  {"cudaEglColorFormatUYVY2020",                                       {"hipEglColorFormatUYVY2020",                                "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 116
 
   // CUeglFrameType
   {"cudaEglFrameType",                                                 {"hipEglFrameType",                                          "", CONV_TYPE, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
@@ -3027,6 +3033,9 @@ const std::map<llvm::StringRef, cudaAPIversions> CUDA_RUNTIME_TYPE_NAME_VER_MAP 
   {"cudaGraphCondTypeSwitch",                                          {CUDA_128, CUDA_0,   CUDA_0  }},
   {"cudaGraphInstantiateConditionalHandleUnused",                      {CUDA_128, CUDA_0,   CUDA_0  }},
   {"cudaLaunchAttributePreferredClusterDimension",                     {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatUYVY709",                                        {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatUYVY709_ER",                                     {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatUYVY2020",                                       {CUDA_128, CUDA_0,   CUDA_0  }},
 };
 
 const std::map<llvm::StringRef, hipAPIversions> HIP_RUNTIME_TYPE_NAME_VER_MAP {
