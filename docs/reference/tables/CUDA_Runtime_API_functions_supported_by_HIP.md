@@ -1003,14 +1003,24 @@
 |`cudaEglColorFormatVYUY_ER`|9.1| | | | | | | | | |
 |`cudaEglColorFormatY`|11.2| | | | | | | | | |
 |`cudaEglColorFormatY10V10U10_420SemiPlanar`|9.1| | | | | | | | | |
+|`cudaEglColorFormatY10V10U10_420SemiPlanar_2020`|11.4| | | | | | | | | |
+|`cudaEglColorFormatY10V10U10_420SemiPlanar_709`|11.4| | | | | | | | | |
+|`cudaEglColorFormatY10V10U10_422SemiPlanar`|11.4| | | | | | | | | |
+|`cudaEglColorFormatY10V10U10_422SemiPlanar_2020`|11.4| | | | | | | | | |
+|`cudaEglColorFormatY10V10U10_422SemiPlanar_709`|11.4| | | | | | | | | |
 |`cudaEglColorFormatY10V10U10_444SemiPlanar`|9.1| | | | | | | | | |
+|`cudaEglColorFormatY10_709_ER`|11.4| | | | | | | | | |
+|`cudaEglColorFormatY10_ER`|11.4| | | | | | | | | |
 |`cudaEglColorFormatY12V12U12_420SemiPlanar`|9.1| | | | | | | | | |
 |`cudaEglColorFormatY12V12U12_444SemiPlanar`|9.1| | | | | | | | | |
+|`cudaEglColorFormatY12_ER`|11.4| | | | | | | | | |
 |`cudaEglColorFormatYUV420Planar`|9.1| | | | | | | | | |
 |`cudaEglColorFormatYUV420Planar_2020`|11.4| | | | | | | | | |
+|`cudaEglColorFormatYUV420Planar_709`|11.4| | | | | | | | | |
 |`cudaEglColorFormatYUV420Planar_ER`|9.1| | | | | | | | | |
 |`cudaEglColorFormatYUV420SemiPlanar`|9.1| | | | | | | | | |
 |`cudaEglColorFormatYUV420SemiPlanar_2020`|11.4| | | | | | | | | |
+|`cudaEglColorFormatYUV420SemiPlanar_709`|11.4| | | | | | | | | |
 |`cudaEglColorFormatYUV420SemiPlanar_ER`|9.1| | | | | | | | | |
 |`cudaEglColorFormatYUV422Planar`|9.1| | | | | | | | | |
 |`cudaEglColorFormatYUV422Planar_ER`|9.1| | | | | | | | | |
@@ -1026,9 +1036,11 @@
 |`cudaEglColorFormatYUYV_ER`|9.1| | | | | | | | | |
 |`cudaEglColorFormatYVU420Planar`|9.1| | | | | | | | | |
 |`cudaEglColorFormatYVU420Planar_2020`|11.4| | | | | | | | | |
+|`cudaEglColorFormatYVU420Planar_709`|11.4| | | | | | | | | |
 |`cudaEglColorFormatYVU420Planar_ER`|9.1| | | | | | | | | |
 |`cudaEglColorFormatYVU420SemiPlanar`|9.1| | | | | | | | | |
 |`cudaEglColorFormatYVU420SemiPlanar_2020`|11.4| | | | | | | | | |
+|`cudaEglColorFormatYVU420SemiPlanar_709`|11.4| | | | | | | | | |
 |`cudaEglColorFormatYVU420SemiPlanar_ER`|9.1| | | | | | | | | |
 |`cudaEglColorFormatYVU422Planar`|9.1| | | | | | | | | |
 |`cudaEglColorFormatYVU422Planar_ER`|9.1| | | | | | | | | |
@@ -1039,6 +1051,8 @@
 |`cudaEglColorFormatYVU444SemiPlanar`|9.1| | | | | | | | | |
 |`cudaEglColorFormatYVU444SemiPlanar_ER`| | | | | | | | | | |
 |`cudaEglColorFormatYVYU_ER`|9.1| | | | | | | | | |
+|`cudaEglColorFormatY_709_ER`|11.4| | | | | | | | | |
+|`cudaEglColorFormatY_ER`|11.4| | | | | | | | | |
 |`cudaEglFrame`|9.1| | | | | | | | | |
 |`cudaEglFrameType`|9.1| | | | | | | | | |
 |`cudaEglFrameTypeArray`|9.1| | | | | | | | | |
