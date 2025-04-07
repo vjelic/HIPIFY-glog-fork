@@ -254,16 +254,22 @@
 |`CUBLASLT_MATMUL_DESC_ALPHA_VECTOR_BATCH_STRIDE`|11.4| | | | | | | | | |
 |`CUBLASLT_MATMUL_DESC_AMAX_D_POINTER`|11.8| | | | | | | | | |
 |`CUBLASLT_MATMUL_DESC_ATOMIC_SYNC_IN_COUNTERS_POINTER`|12.2| | | | | | | | | |
-|`CUBLASLT_MATMUL_DESC_ATOMIC_SYNC_NUM_CHUNKS_D_COLS`|12.2| | | | | | | | | |
-|`CUBLASLT_MATMUL_DESC_ATOMIC_SYNC_NUM_CHUNKS_D_ROWS`|12.2| | | | | | | | | |
+|`CUBLASLT_MATMUL_DESC_ATOMIC_SYNC_NUM_CHUNKS_D_COLS`|12.2|12.8| | | | | | | | |
+|`CUBLASLT_MATMUL_DESC_ATOMIC_SYNC_NUM_CHUNKS_D_ROWS`|12.2|12.8| | | | | | | | |
 |`CUBLASLT_MATMUL_DESC_ATOMIC_SYNC_OUT_COUNTERS_POINTER`|12.2| | | | | | | | | |
+|`CUBLASLT_MATMUL_DESC_A_SCALE_MODE`|12.8| | | | | | | | | |
 |`CUBLASLT_MATMUL_DESC_A_SCALE_POINTER`|11.8| | | | | | | | | |
 |`CUBLASLT_MATMUL_DESC_BIAS_BATCH_STRIDE`|11.3| | | | | | | | | |
 |`CUBLASLT_MATMUL_DESC_BIAS_DATA_TYPE`|11.8| | | | | | | | | |
 |`CUBLASLT_MATMUL_DESC_BIAS_POINTER`|10.1| | | | | | | | | |
+|`CUBLASLT_MATMUL_DESC_B_SCALE_MODE`|12.8| | | | | | | | | |
 |`CUBLASLT_MATMUL_DESC_B_SCALE_POINTER`|11.8| | | | | | | | | |
 |`CUBLASLT_MATMUL_DESC_COMPUTE_TYPE`|10.1| | | | | | | | | |
+|`CUBLASLT_MATMUL_DESC_C_SCALE_MODE`|12.8| | | | | | | | | |
 |`CUBLASLT_MATMUL_DESC_C_SCALE_POINTER`|11.8| | | | | | | | | |
+|`CUBLASLT_MATMUL_DESC_D_OUT_SCALE_MODE`|12.8| | | | | | | | | |
+|`CUBLASLT_MATMUL_DESC_D_OUT_SCALE_POINTER`|12.8| | | | | | | | | |
+|`CUBLASLT_MATMUL_DESC_D_SCALE_MODE`|12.8| | | | | | | | | |
 |`CUBLASLT_MATMUL_DESC_D_SCALE_POINTER`|11.8| | | | | | | | | |
 |`CUBLASLT_MATMUL_DESC_EPILOGUE`|10.1| | | | | | | | | |
 |`CUBLASLT_MATMUL_DESC_EPILOGUE_AUX_AMAX_POINTER`|11.8| | | | | | | | | |
@@ -271,6 +277,7 @@
 |`CUBLASLT_MATMUL_DESC_EPILOGUE_AUX_DATA_TYPE`|11.8| | | | | | | | | |
 |`CUBLASLT_MATMUL_DESC_EPILOGUE_AUX_LD`|11.3| | | | | | | | | |
 |`CUBLASLT_MATMUL_DESC_EPILOGUE_AUX_POINTER`|11.3| | | | | | | | | |
+|`CUBLASLT_MATMUL_DESC_EPILOGUE_AUX_SCALE_MODE`|12.8| | | | | | | | | |
 |`CUBLASLT_MATMUL_DESC_EPILOGUE_AUX_SCALE_POINTER`|11.8| | | | | | | | | |
 |`CUBLASLT_MATMUL_DESC_FAST_ACCUM`|11.8| | | | | | | | | |
 |`CUBLASLT_MATMUL_DESC_FILL_MODE`|10.1| | | | | | | | | |
@@ -286,6 +293,10 @@
 |`CUBLASLT_MATMUL_INNER_SHAPE_MMA1688`|11.8| | | | | | | | | |
 |`CUBLASLT_MATMUL_INNER_SHAPE_MMA884`|11.8| | | | | | | | | |
 |`CUBLASLT_MATMUL_INNER_SHAPE_UNDEFINED`|11.8| | | | | | | | | |
+|`CUBLASLT_MATMUL_MATRIX_SCALE_END`|12.8| | | | | | | | | |
+|`CUBLASLT_MATMUL_MATRIX_SCALE_SCALAR_32F`|12.8| | | | | | | | | |
+|`CUBLASLT_MATMUL_MATRIX_SCALE_VEC16_UE4M3`|12.8| | | | | | | | | |
+|`CUBLASLT_MATMUL_MATRIX_SCALE_VEC32_UE8M0`|12.8| | | | | | | | | |
 |`CUBLASLT_MATMUL_PREF_IMPL_MASK`|11.0| | | | | | | | | |
 |`CUBLASLT_MATMUL_PREF_MAX_WAVES_COUNT`|10.1| | | | | | | | | |
 |`CUBLASLT_MATMUL_PREF_MAX_WORKSPACE_BYTES`|10.1| | | | | | | | | |
@@ -310,6 +321,7 @@
 |`CUBLASLT_MATMUL_STAGES_16x5`|11.0| | | | | | | | | |
 |`CUBLASLT_MATMUL_STAGES_16x6`|11.0| | | | | | | | | |
 |`CUBLASLT_MATMUL_STAGES_16xAUTO`|11.8| | | | | | | | | |
+|`CUBLASLT_MATMUL_STAGES_256xAUTO`|12.8| | | | | | | | | |
 |`CUBLASLT_MATMUL_STAGES_32x1`|11.0| | | | | | | | | |
 |`CUBLASLT_MATMUL_STAGES_32x10`|11.0| | | | | | | | | |
 |`CUBLASLT_MATMUL_STAGES_32x2`|11.0| | | | | | | | | |
@@ -535,6 +547,7 @@
 |`CUBLASLT_MATMUL_TILE_24x640`|12.6| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_24x704`|12.6| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_24x768`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_256x1024`|12.8| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_256x104`|12.6| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_256x112`|12.6| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_256x120`|12.6| | | | | | | | | |
@@ -560,6 +573,7 @@
 |`CUBLASLT_MATMUL_TILE_256x32`|12.1| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_256x40`|12.6| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_256x48`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_256x512`|12.8| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_256x56`|12.6| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_256x64`|10.1| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_256x72`|12.6| | | | | | | | | |
@@ -712,6 +726,7 @@
 |`CUBLASLT_MATMUL_TILE_48x768`|12.6| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_496x64`|12.6| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_504x64`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_512x1024`|12.8| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_512x104`|12.6| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_512x112`|12.6| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_512x120`|12.6| | | | | | | | | |
@@ -721,6 +736,7 @@
 |`CUBLASLT_MATMUL_TILE_512x32`|12.6| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_512x40`|12.6| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_512x48`|12.6| | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_512x512`|12.8| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_512x56`|12.6| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_512x64`|10.1| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_512x72`|12.6| | | | | | | | | |
@@ -1038,6 +1054,7 @@
 |`cublasLtMatmulDesc_t`|10.1| | | | | | | | | |
 |`cublasLtMatmulHeuristicResult_t`|10.1| | | | | | | | | |
 |`cublasLtMatmulInnerShape_t`|11.8| | | | | | | | | |
+|`cublasLtMatmulMatrixScale_t`|12.8| | | | | | | | | |
 |`cublasLtMatmulPreferenceAttributes_t`|10.1| | | | | | | | | |
 |`cublasLtMatmulPreferenceOpaque_t`|11.0| | | | | | | | | |
 |`cublasLtMatmulPreference_t`|10.1| | | | | | | | | |
