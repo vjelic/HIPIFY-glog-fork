@@ -512,23 +512,23 @@ const std::map<llvm::StringRef, hipCounter> CUDA_SOLVER_FUNCTION_MAP {
   {"cusolverRfGetResetValuesFastMode",                   {"hipsolverRfGetResetValuesFastMode",                     "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, ROC_UNSUPPORTED}},
   {"cusolverRfSetResetValuesFastMode",                   {"hipsolverRfSetResetValuesFastMode",                     "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, ROC_UNSUPPORTED}},
   // NOTE: rocsolver_dcsrrf_sumlu have a harness of other ROC and HIP API calls
-  {"cusolverRfSetupHost",                                {"hipsolverRfSetupHost",                                  "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, ROC_UNSUPPORTED}},
+  {"cusolverRfSetupHost",                                {"hipsolverRfSetupHost",                                  "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, ROC_UNSUPPORTED | CUDA_DEPRECATED}},
   // NOTE: rocsolver_dcsrrf_sumlu have a harness of other ROC and HIP API calls
-  {"cusolverRfSetupDevice",                              {"hipsolverRfSetupDevice",                                "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, ROC_UNSUPPORTED}},
+  {"cusolverRfSetupDevice",                              {"hipsolverRfSetupDevice",                                "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, ROC_UNSUPPORTED | CUDA_DEPRECATED}},
   // no ROC analogues
-  {"cusolverRfResetValues",                              {"hipsolverRfResetValues",                                "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, ROC_UNSUPPORTED}},
+  {"cusolverRfResetValues",                              {"hipsolverRfResetValues",                                "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, ROC_UNSUPPORTED | CUDA_DEPRECATED}},
   // NOTE: can't call rocsolver_dcsrrf_analysis w/o using hipSOLVER's hipsolverRfHandle
-  {"cusolverRfAnalyze",                                  {"hipsolverRfAnalyze",                                    "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, ROC_UNSUPPORTED}},
+  {"cusolverRfAnalyze",                                  {"hipsolverRfAnalyze",                                    "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, ROC_UNSUPPORTED | CUDA_DEPRECATED}},
   // NOTE: can't call rocsolver_dcsrrf_refactlu w/o using hipSOLVER's hipsolverRfHandle
-  {"cusolverRfRefactor",                                 {"hipsolverRfRefactor",                                   "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, ROC_UNSUPPORTED}},
+  {"cusolverRfRefactor",                                 {"hipsolverRfRefactor",                                   "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, ROC_UNSUPPORTED | CUDA_DEPRECATED}},
   // no ROC analogues
-  {"cusolverRfAccessBundledFactorsDevice",               {"hipsolverRfAccessBundledFactorsDevice",                 "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, ROC_UNSUPPORTED}},
+  {"cusolverRfAccessBundledFactorsDevice",               {"hipsolverRfAccessBundledFactorsDevice",                 "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, ROC_UNSUPPORTED | CUDA_DEPRECATED}},
   // no ROC analogues
-  {"cusolverRfExtractBundledFactorsHost",                {"hipsolverRfExtractBundledFactorsHost",                  "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, ROC_UNSUPPORTED}},
+  {"cusolverRfExtractBundledFactorsHost",                {"hipsolverRfExtractBundledFactorsHost",                  "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, ROC_UNSUPPORTED | CUDA_DEPRECATED}},
   // no ROC analogues
-  {"cusolverRfExtractSplitFactorsHost",                  {"hipsolverRfExtractSplitFactorsHost",                    "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, ROC_UNSUPPORTED}},
+  {"cusolverRfExtractSplitFactorsHost",                  {"hipsolverRfExtractSplitFactorsHost",                    "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, ROC_UNSUPPORTED | CUDA_DEPRECATED}},
   // NOTE: can't call rocsolver_dcsrrf_solve w/o using hipSOLVER's hipsolverRfHandle
-  {"cusolverRfSolve",                                    {"hipsolverRfSolve",                                      "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, ROC_UNSUPPORTED}},
+  {"cusolverRfSolve",                                    {"hipsolverRfSolve",                                      "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, ROC_UNSUPPORTED | CUDA_DEPRECATED}},
   // no ROC analogues
   {"cusolverRfBatchSetupHost",                           {"hipsolverRfBatchSetupHost",                             "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, ROC_UNSUPPORTED}},
   // no ROC analogues
@@ -547,10 +547,10 @@ const std::map<llvm::StringRef, hipCounter> CUDA_SOLVER_FUNCTION_MAP {
   {"cusolverSpSetStream",                                {"hipsolverSpSetStream",                                  "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, ROC_UNSUPPORTED}},
   {"cusolverSpGetStream",                                {"hipsolverSpGetStream",                                  "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, UNSUPPORTED}},
   {"cusolverSpXcsrissymHost",                            {"hipsolverSpXcsrissymHost",                              "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, UNSUPPORTED}},
-  {"cusolverSpScsrlsvluHost",                            {"hipsolverSpScsrlsvluHost",                              "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, UNSUPPORTED}},
-  {"cusolverSpDcsrlsvluHost",                            {"hipsolverSpDcsrlsvluHost",                              "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, UNSUPPORTED}},
-  {"cusolverSpCcsrlsvluHost",                            {"hipsolverSpCcsrlsvluHost",                              "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, UNSUPPORTED}},
-  {"cusolverSpZcsrlsvluHost",                            {"hipsolverSpZcsrlsvluHost",                              "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, UNSUPPORTED}},
+  {"cusolverSpScsrlsvluHost",                            {"hipsolverSpScsrlsvluHost",                              "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, UNSUPPORTED | CUDA_DEPRECATED}},
+  {"cusolverSpDcsrlsvluHost",                            {"hipsolverSpDcsrlsvluHost",                              "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, UNSUPPORTED | CUDA_DEPRECATED}},
+  {"cusolverSpCcsrlsvluHost",                            {"hipsolverSpCcsrlsvluHost",                              "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, UNSUPPORTED | CUDA_DEPRECATED}},
+  {"cusolverSpZcsrlsvluHost",                            {"hipsolverSpZcsrlsvluHost",                              "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, UNSUPPORTED | CUDA_DEPRECATED}},
   {"cusolverSpScsrlsvqr",                                {"hipsolverSpScsrlsvqr",                                  "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, ROC_UNSUPPORTED}},
   {"cusolverSpDcsrlsvqr",                                {"hipsolverSpDcsrlsvqr",                                  "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, ROC_UNSUPPORTED}},
   {"cusolverSpCcsrlsvqr",                                {"hipsolverSpCcsrlsvqr",                                  "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, UNSUPPORTED}},
@@ -559,14 +559,14 @@ const std::map<llvm::StringRef, hipCounter> CUDA_SOLVER_FUNCTION_MAP {
   {"cusolverSpDcsrlsvqrHost",                            {"hipsolverSpDcsrlsvqrHost",                              "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, UNSUPPORTED}},
   {"cusolverSpCcsrlsvqrHost",                            {"hipsolverSpCcsrlsvqrHost",                              "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, UNSUPPORTED}},
   {"cusolverSpZcsrlsvqrHost",                            {"hipsolverSpZcsrlsvqrHost",                              "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, UNSUPPORTED}},
-  {"cusolverSpScsrlsvcholHost",                          {"hipsolverSpScsrlsvcholHost",                            "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, ROC_UNSUPPORTED}},
-  {"cusolverSpDcsrlsvcholHost",                          {"hipsolverSpDcsrlsvcholHost",                            "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, ROC_UNSUPPORTED}},
-  {"cusolverSpCcsrlsvcholHost",                          {"hipsolverSpCcsrlsvcholHost",                            "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, UNSUPPORTED}},
-  {"cusolverSpZcsrlsvcholHost",                          {"hipsolverSpZcsrlsvcholHost",                            "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, UNSUPPORTED}},
-  {"cusolverSpScsrlsvchol",                              {"hipsolverSpScsrlsvchol",                                "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, ROC_UNSUPPORTED}},
-  {"cusolverSpDcsrlsvchol",                              {"hipsolverSpDcsrlsvchol",                                "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, ROC_UNSUPPORTED}},
-  {"cusolverSpCcsrlsvchol",                              {"hipsolverSpCcsrlsvchol",                                "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, UNSUPPORTED}},
-  {"cusolverSpZcsrlsvchol",                              {"hipsolverSpZcsrlsvchol",                                "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, UNSUPPORTED}},
+  {"cusolverSpScsrlsvcholHost",                          {"hipsolverSpScsrlsvcholHost",                            "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, ROC_UNSUPPORTED | CUDA_DEPRECATED}},
+  {"cusolverSpDcsrlsvcholHost",                          {"hipsolverSpDcsrlsvcholHost",                            "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, ROC_UNSUPPORTED | CUDA_DEPRECATED}},
+  {"cusolverSpCcsrlsvcholHost",                          {"hipsolverSpCcsrlsvcholHost",                            "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, UNSUPPORTED | CUDA_DEPRECATED}},
+  {"cusolverSpZcsrlsvcholHost",                          {"hipsolverSpZcsrlsvcholHost",                            "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, UNSUPPORTED | CUDA_DEPRECATED}},
+  {"cusolverSpScsrlsvchol",                              {"hipsolverSpScsrlsvchol",                                "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, ROC_UNSUPPORTED | CUDA_DEPRECATED}},
+  {"cusolverSpDcsrlsvchol",                              {"hipsolverSpDcsrlsvchol",                                "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, ROC_UNSUPPORTED | CUDA_DEPRECATED}},
+  {"cusolverSpCcsrlsvchol",                              {"hipsolverSpCcsrlsvchol",                                "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, UNSUPPORTED | CUDA_DEPRECATED}},
+  {"cusolverSpZcsrlsvchol",                              {"hipsolverSpZcsrlsvchol",                                "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, UNSUPPORTED | CUDA_DEPRECATED}},
   {"cusolverSpScsrlsqvqrHost",                           {"hipsolverSpScsrlsqvqrHost",                             "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, UNSUPPORTED}},
   {"cusolverSpDcsrlsqvqrHost",                           {"hipsolverSpDcsrlsqvqrHost",                             "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, UNSUPPORTED}},
   {"cusolverSpCcsrlsqvqrHost",                           {"hipsolverSpCcsrlsqvqrHost",                             "",                                                               CONV_LIB_FUNC, API_SOLVER, 2, UNSUPPORTED}},
@@ -1169,6 +1169,27 @@ const std::map<llvm::StringRef, cudaAPIversions> CUDA_SOLVER_FUNCTION_VER_MAP {
   {"cusolverDnXgeev_bufferSize",                         {CUDA_126, CUDA_0,   CUDA_0  }}, // CUSOLVER_VERSION 11701
   {"cusolverDnXsyevBatched",                             {CUDA_126, CUDA_0,   CUDA_0  }}, // CUSOLVER_VERSION 11701
   {"cusolverDnXsyevBatched_bufferSize",                  {CUDA_126, CUDA_0,   CUDA_0  }}, // CUSOLVER_VERSION 11701
+  {"cusolverRfSetupHost",                                {CUDA_0,   CUDA_128, CUDA_0  }}, // CUSOLVER_VERSION 11702
+  {"cusolverRfSetupDevice",                              {CUDA_0,   CUDA_128, CUDA_0  }}, // CUSOLVER_VERSION 11702
+  {"cusolverRfResetValues",                              {CUDA_0,   CUDA_128, CUDA_0  }}, // CUSOLVER_VERSION 11702
+  {"cusolverRfAnalyze",                                  {CUDA_0,   CUDA_128, CUDA_0  }}, // CUSOLVER_VERSION 11702
+  {"cusolverRfRefactor",                                 {CUDA_0,   CUDA_128, CUDA_0  }}, // CUSOLVER_VERSION 11702
+  {"cusolverRfAccessBundledFactorsDevice",               {CUDA_0,   CUDA_128, CUDA_0  }}, // CUSOLVER_VERSION 11702
+  {"cusolverRfExtractBundledFactorsHost",                {CUDA_0,   CUDA_128, CUDA_0  }}, // CUSOLVER_VERSION 11702
+  {"cusolverRfExtractSplitFactorsHost",                  {CUDA_0,   CUDA_128, CUDA_0  }}, // CUSOLVER_VERSION 11702
+  {"cusolverRfSolve",                                    {CUDA_0,   CUDA_128, CUDA_0  }}, // CUSOLVER_VERSION 11702
+  {"cusolverSpScsrlsvluHost",                            {CUDA_0,   CUDA_128, CUDA_0  }}, // CUSOLVER_VERSION 11702
+  {"cusolverSpDcsrlsvluHost",                            {CUDA_0,   CUDA_128, CUDA_0  }}, // CUSOLVER_VERSION 11702
+  {"cusolverSpCcsrlsvluHost",                            {CUDA_0,   CUDA_128, CUDA_0  }}, // CUSOLVER_VERSION 11702
+  {"cusolverSpZcsrlsvluHost",                            {CUDA_0,   CUDA_128, CUDA_0  }}, // CUSOLVER_VERSION 11702
+  {"cusolverSpScsrlsvcholHost",                          {CUDA_0,   CUDA_128, CUDA_0  }}, // CUSOLVER_VERSION 11702
+  {"cusolverSpDcsrlsvcholHost",                          {CUDA_0,   CUDA_128, CUDA_0  }}, // CUSOLVER_VERSION 11702
+  {"cusolverSpCcsrlsvcholHost",                          {CUDA_0,   CUDA_128, CUDA_0  }}, // CUSOLVER_VERSION 11702
+  {"cusolverSpZcsrlsvcholHost",                          {CUDA_0,   CUDA_128, CUDA_0  }}, // CUSOLVER_VERSION 11702
+  {"cusolverSpScsrlsvchol",                              {CUDA_0,   CUDA_128, CUDA_0  }}, // CUSOLVER_VERSION 11702
+  {"cusolverSpDcsrlsvchol",                              {CUDA_0,   CUDA_128, CUDA_0  }}, // CUSOLVER_VERSION 11702
+  {"cusolverSpCcsrlsvchol",                              {CUDA_0,   CUDA_128, CUDA_0  }}, // CUSOLVER_VERSION 11702
+  {"cusolverSpZcsrlsvchol",                              {CUDA_0,   CUDA_128, CUDA_0  }}, // CUSOLVER_VERSION 11702
 };
 
 const std::map<llvm::StringRef, hipAPIversions> HIP_SOLVER_FUNCTION_VER_MAP {
