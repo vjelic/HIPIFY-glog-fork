@@ -914,6 +914,30 @@ const std::map<llvm::StringRef, hipCounter> CUDA_RUNTIME_TYPE_NAME_MAP {
   //
   {"cudaEglColorFormatY12_ER",                                         {"hipEglColorFormatY12_ER",                                  "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 100
   //
+  {"cudaEglColorFormatY12_709_ER",                                     {"hipEglColorFormatY12_709_ER",                              "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 101
+  //
+  {"cudaEglColorFormatYUVA",                                           {"hipEglColorFormatYUVA",                                    "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 102
+  //
+  {"cudaEglColorFormatYVYU",                                           {"hipEglColorFormatYVYU",                                    "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 104
+  //
+  {"cudaEglColorFormatVYUY",                                           {"hipEglColorFormatVYUY",                                    "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 105
+  //
+  {"cudaEglColorFormatY10V10U10_420SemiPlanar_ER",                     {"hipEglColorFormatY10V10U10_420SemiPlanar_ER",              "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 106
+  //
+  {"cudaEglColorFormatY10V10U10_420SemiPlanar_709_ER",                 {"hipEglColorFormatY10V10U10_420SemiPlanar_709_ER",          "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 107
+  //
+  {"cudaEglColorFormatY10V10U10_444SemiPlanar_ER",                     {"hipEglColorFormatY10V10U10_444SemiPlanar_ER",              "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 108
+  //
+  {"cudaEglColorFormatY10V10U10_444SemiPlanar_709_ER",                 {"hipEglColorFormatY10V10U10_444SemiPlanar_709_ER",          "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 109
+  //
+  {"cudaEglColorFormatY12V12U12_420SemiPlanar_ER",                     {"hipEglColorFormatY12V12U12_420SemiPlanar_ER",              "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 110
+  //
+  {"cudaEglColorFormatY12V12U12_420SemiPlanar_709_ER",                 {"hipEglColorFormatY12V12U12_420SemiPlanar_709_ER",          "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 111
+  //
+  {"cudaEglColorFormatY12V12U12_444SemiPlanar_ER",                     {"hipEglColorFormatY12V12U12_444SemiPlanar_ER",              "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 112
+  //
+  {"cudaEglColorFormatY12V12U12_444SemiPlanar_709_ER",                 {"hipEglColorFormatY12V12U12_444SemiPlanar_709_ER",          "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 113
+  //
   {"cudaEglColorFormatUYVY709",                                        {"hipEglColorFormatUYVY709",                                 "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 114
   //
   {"cudaEglColorFormatUYVY709_ER",                                     {"hipEglColorFormatUYVY709_ER",                              "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 115
@@ -3123,6 +3147,18 @@ const std::map<llvm::StringRef, cudaAPIversions> CUDA_RUNTIME_TYPE_NAME_VER_MAP 
   {"cudaEglColorFormatY10_ER",                                         {CUDA_114, CUDA_0,   CUDA_0  }},
   {"cudaEglColorFormatY10_709_ER",                                     {CUDA_114, CUDA_0,   CUDA_0  }},
   {"cudaEglColorFormatY12_ER",                                         {CUDA_114, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatY12_709_ER",                                     {CUDA_114, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatYUVA",                                           {CUDA_114, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatYVYU",                                           {CUDA_114, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatVYUY",                                           {CUDA_114, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatY10V10U10_420SemiPlanar_ER",                     {CUDA_114, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatY10V10U10_420SemiPlanar_709_ER",                 {CUDA_114, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatY10V10U10_444SemiPlanar_ER",                     {CUDA_114, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatY10V10U10_444SemiPlanar_709_ER",                 {CUDA_114, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatY12V12U12_420SemiPlanar_ER",                     {CUDA_114, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatY12V12U12_420SemiPlanar_709_ER",                 {CUDA_114, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatY12V12U12_444SemiPlanar_ER",                     {CUDA_114, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatY12V12U12_444SemiPlanar_709_ER",                 {CUDA_114, CUDA_0,   CUDA_0  }},
 };
 
 const std::map<llvm::StringRef, hipAPIversions> HIP_RUNTIME_TYPE_NAME_VER_MAP {
