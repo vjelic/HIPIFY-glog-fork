@@ -3,6 +3,16 @@
 Documentation for HIPIFY is available at
 [https://rocmdocs.amd.com/projects/HIPIFY/en/latest/](https://rocmdocs.amd.com/projects/HIPIFY/en/latest/).
 
+## HIPIFY for ROCm 6.5.0
+
+### Added
+
+* CUDA 12.8.0 support
+* cuDNN 9.8.0 support
+* cuTENSOR 2.2.0.0 support
+* LLVM 20.1.2 support
+* cuFFTXt support
+
 ## HIPIFY for ROCm 6.4.0
 
 ### Added
