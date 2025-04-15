@@ -1453,55 +1453,55 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_TYPE_NAME_MAP {
   {"CUjit_option_enum",                                                {"hipJitOption",                                             "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES}},
   // CUjit_option enum values
   // cudaJitMaxRegisters
-  {"CU_JIT_MAX_REGISTERS",                                             {"HIPRTC_JIT_MAX_REGISTERS",                                 "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}}, // 0
+  {"CU_JIT_MAX_REGISTERS",                                             {"hipJitOptionMaxRegisters",                                 "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}}, // 0
   // cudaJitThreadsPerBlock
-  {"CU_JIT_THREADS_PER_BLOCK",                                         {"HIPRTC_JIT_THREADS_PER_BLOCK",                             "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}}, // 1
+  {"CU_JIT_THREADS_PER_BLOCK",                                         {"hipJitOptionThreadsPerBlock",                              "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}}, // 1
   // cudaJitWallTime
-  {"CU_JIT_WALL_TIME",                                                 {"HIPRTC_JIT_WALL_TIME",                                     "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}}, // 2
+  {"CU_JIT_WALL_TIME",                                                 {"hipJitOptionWallTime",                                     "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}}, // 2
   // cudaJitInfoLogBuffer
-  {"CU_JIT_INFO_LOG_BUFFER",                                           {"HIPRTC_JIT_INFO_LOG_BUFFER",                               "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}}, // 3
+  {"CU_JIT_INFO_LOG_BUFFER",                                           {"hipJitOptionInfoLogBuffer",                                "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}}, // 3
   // cudaJitInfoLogBufferSizeBytes
-  {"CU_JIT_INFO_LOG_BUFFER_SIZE_BYTES",                                {"HIPRTC_JIT_INFO_LOG_BUFFER_SIZE_BYTES",                    "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}}, // 4
+  {"CU_JIT_INFO_LOG_BUFFER_SIZE_BYTES",                                {"hipJitOptionInfoLogBufferSizeBytes",                       "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}}, // 4
   // cudaJitErrorLogBuffer
-  {"CU_JIT_ERROR_LOG_BUFFER",                                          {"HIPRTC_JIT_ERROR_LOG_BUFFER",                              "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}}, // 5
+  {"CU_JIT_ERROR_LOG_BUFFER",                                          {"hipJitOptionErrorLogBuffer",                               "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}}, // 5
   // cudaJitErrorLogBufferSizeBytes
-  {"CU_JIT_ERROR_LOG_BUFFER_SIZE_BYTES",                               {"HIPRTC_JIT_ERROR_LOG_BUFFER_SIZE_BYTES",                   "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}}, // 6
+  {"CU_JIT_ERROR_LOG_BUFFER_SIZE_BYTES",                               {"hipJitOptionErrorLogBufferSizeBytes",                      "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}}, // 6
   // cudaJitOptimizationLevel
-  {"CU_JIT_OPTIMIZATION_LEVEL",                                        {"HIPRTC_JIT_OPTIMIZATION_LEVEL",                            "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}}, // 7
+  {"CU_JIT_OPTIMIZATION_LEVEL",                                        {"hipJitOptionOptimizationLevel",                            "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}}, // 7
   //
-  {"CU_JIT_TARGET_FROM_CUCONTEXT",                                     {"HIPRTC_JIT_TARGET_FROM_HIPCONTEXT",                        "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}},
+  {"CU_JIT_TARGET_FROM_CUCONTEXT",                                     {"hipJitOptionTargetFromContext",                            "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}},
   //
-  {"CU_JIT_TARGET",                                                    {"HIPRTC_JIT_TARGET",                                        "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}},
+  {"CU_JIT_TARGET",                                                    {"hipJitOptionTarget",                                       "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}},
   // cudaJitFallbackStrategy
-  {"CU_JIT_FALLBACK_STRATEGY",                                         {"HIPRTC_JIT_FALLBACK_STRATEGY",                             "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}}, // 10
+  {"CU_JIT_FALLBACK_STRATEGY",                                         {"hipJitOptionFallbackStrategy",                             "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}}, // 10
   // cudaJitGenerateDebugInfo
-  {"CU_JIT_GENERATE_DEBUG_INFO",                                       {"HIPRTC_JIT_GENERATE_DEBUG_INFO",                           "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}}, // 11
+  {"CU_JIT_GENERATE_DEBUG_INFO",                                       {"hipJitOptionGenerateDebugInfo",                            "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}}, // 11
   // cudaJitLogVerbose
-  {"CU_JIT_LOG_VERBOSE",                                               {"HIPRTC_JIT_LOG_VERBOSE",                                   "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}}, // 12
+  {"CU_JIT_LOG_VERBOSE",                                               {"hipJitOptionLogVerbose",                                   "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}}, // 12
   // cudaJitGenerateLineInfo
-  {"CU_JIT_GENERATE_LINE_INFO",                                        {"HIPRTC_JIT_GENERATE_LINE_INFO",                            "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}}, // 13
+  {"CU_JIT_GENERATE_LINE_INFO",                                        {"hipJitOptionGenerateLineInfo",                             "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}}, // 13
   // cudaJitCacheMode
-  {"CU_JIT_CACHE_MODE",                                                {"HIPRTC_JIT_CACHE_MODE",                                    "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}}, // 14
+  {"CU_JIT_CACHE_MODE",                                                {"hipJitOptionCacheMode",                                    "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}}, // 14
   //
-  {"CU_JIT_NEW_SM3X_OPT",                                              {"HIPRTC_JIT_NEW_SM3X_OPT",                                  "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}},
+  {"CU_JIT_NEW_SM3X_OPT",                                              {"hipJitOptionSm3xOpt",                                      "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}},
   //
-  {"CU_JIT_FAST_COMPILE",                                              {"HIPRTC_JIT_FAST_COMPILE",                                  "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}},
+  {"CU_JIT_FAST_COMPILE",                                              {"hipJitOptionFastCompile",                                  "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}},
   //
-  {"CU_JIT_GLOBAL_SYMBOL_NAMES",                                       {"hipJitGlobalSymbolNames",                                  "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  {"CU_JIT_GLOBAL_SYMBOL_NAMES",                                       {"hipJitOptionGlobalSymbolNames",                            "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}},
   //
-  {"CU_JIT_GLOBAL_SYMBOL_ADDRESSES",                                   {"hipJitGlobalSymbolAddresses",                              "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  {"CU_JIT_GLOBAL_SYMBOL_ADDRESSES",                                   {"hipJitOptionGlobalSymbolAddresses",                        "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}},
   //
-  {"CU_JIT_GLOBAL_SYMBOL_COUNT",                                       {"hipJitGlobalSymbolCount",                                  "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  {"CU_JIT_GLOBAL_SYMBOL_COUNT",                                       {"hipJitOptionGlobalSymbolCount",                            "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}},
   //
-  {"CU_JIT_LTO",                                                       {"hipJitLto",                                                "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED | CUDA_DEPRECATED}},
+  {"CU_JIT_LTO",                                                       {"hipJitOptionLto",                                          "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, CUDA_DEPRECATED}},
   //
-  {"CU_JIT_FTZ",                                                       {"hipJitFtz",                                                "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED | CUDA_DEPRECATED}},
+  {"CU_JIT_FTZ",                                                       {"hipJitOptionFtz",                                          "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, CUDA_DEPRECATED}},
   //
-  {"CU_JIT_PREC_DIV",                                                  {"hipJitPrecDiv",                                            "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED | CUDA_DEPRECATED}},
+  {"CU_JIT_PREC_DIV",                                                  {"hipJitOptionPrecDiv",                                      "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, CUDA_DEPRECATED}},
   //
-  {"CU_JIT_PREC_SQRT",                                                 {"hipJitPrecSqrt",                                           "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED | CUDA_DEPRECATED}},
+  {"CU_JIT_PREC_SQRT",                                                 {"hipJitOptionPrecSqrt",                                     "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, CUDA_DEPRECATED}},
   //
-  {"CU_JIT_FMA",                                                       {"hipJitFma",                                                "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED | CUDA_DEPRECATED}},
+  {"CU_JIT_FMA",                                                       {"hipJitOptionFma",                                          "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, CUDA_DEPRECATED}},
   //
   {"CU_JIT_REFERENCED_KERNEL_NAMES",                                   {"hipJitReferencedKernelNames",                              "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED | CUDA_DEPRECATED}},
   //
@@ -1513,15 +1513,15 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_TYPE_NAME_MAP {
   //
   {"CU_JIT_OPTIMIZE_UNUSED_DEVICE_VARIABLES",                          {"hipJitOptimizeUnusedDeviceVariables",                      "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED | CUDA_DEPRECATED}},
   // cudaJitPositionIndependentCode
-  {"CU_JIT_POSITION_INDEPENDENT_CODE",                                 {"hipJitPositionIndependentCode",                            "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 30
+  {"CU_JIT_POSITION_INDEPENDENT_CODE",                                 {"hipJitOptionPositionIndependentCode",                      "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}}, // 30
   // cudaJitMinCtaPerSm
-  {"CU_JIT_MIN_CTA_PER_SM",                                            {"hipJitMinCtaPerSm",                                        "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 31
+  {"CU_JIT_MIN_CTA_PER_SM",                                            {"hipJitOptionMinCTAPerSM",                                  "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}}, // 31
   // cudaJitMaxThreadsPerBlock
-  {"CU_JIT_MAX_THREADS_PER_BLOCK",                                     {"hipJitMaxThreadsPerBlock",                                 "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 32
+  {"CU_JIT_MAX_THREADS_PER_BLOCK",                                     {"hipJitOptionMaxThreadsPerBlock",                           "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}}, // 32
   // cudaJitOverrideDirectiveValues
-  {"CU_JIT_OVERRIDE_DIRECTIVE_VALUES",                                 {"hipJitOverrideDerectiveValues",                            "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 33
+  {"CU_JIT_OVERRIDE_DIRECTIVE_VALUES",                                 {"hipJitOptionOverrideDirectiveValues",                      "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}}, // 33
   //
-  {"CU_JIT_NUM_OPTIONS",                                               {"HIPRTC_JIT_NUM_OPTIONS",                                   "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}},
+  {"CU_JIT_NUM_OPTIONS",                                               {"hipJitOptionNumOptions",                                   "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}},
 
   // no analogue
   {"CUjit_target",                                                     {"hipJitTarget",                                             "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
@@ -2304,9 +2304,9 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_TYPE_NAME_MAP {
   {"CUevent_record_flags_enum",                                        {"hipEvent_record_flags",                                    "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
   // CUevent_record_flags enum values
   // cudaEventRecordDefault
-  {"CU_EVENT_RECORD_DEFAULT",                                          {"hipEventRecordDefault",                                    "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 0x0
+  {"CU_EVENT_RECORD_DEFAULT",                                          {"hipEventRecordDefault",                                    "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}}, // 0x0
   // cudaEventRecordExternal
-  {"CU_EVENT_RECORD_EXTERNAL",                                         {"hipEventRecordExternal",                                   "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 0x1
+  {"CU_EVENT_RECORD_EXTERNAL",                                         {"hipEventRecordExternal",                                   "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}}, // 0x1
 
   // no analogue
   {"CUevent_wait_flags",                                               {"hipEvent_wait_flags",                                      "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
@@ -4180,6 +4180,11 @@ const std::map<llvm::StringRef, cudaAPIversions> CUDA_DRIVER_TYPE_NAME_VER_MAP {
   {"CU_MEM_DECOMPRESS_ALGORITHM_SNAPPY",                               {CUDA_128, CUDA_0,   CUDA_0  }},
   {"CUmemDecompressParams_st",                                         {CUDA_128, CUDA_0,   CUDA_0  }},
   {"CUmemDecompressParams",                                            {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"CU_JIT_GLOBAL_SYMBOL_NAMES",                                       {CUDA_100, CUDA_0,   CUDA_0  }},
+  {"CU_JIT_GLOBAL_SYMBOL_ADDRESSES",                                   {CUDA_100, CUDA_0,   CUDA_0  }},
+  {"CU_JIT_GLOBAL_SYMBOL_COUNT",                                       {CUDA_100, CUDA_0,   CUDA_0  }},
+  {"CU_JIT_NEW_SM3X_OPT",                                              {CUDA_80,  CUDA_0,   CUDA_0  }},
+  {"CU_JIT_FAST_COMPILE",                                              {CUDA_80,  CUDA_0,   CUDA_0  }},
 };
 
 const std::map<llvm::StringRef, hipAPIversions> HIP_DRIVER_TYPE_NAME_VER_MAP {
@@ -4258,24 +4263,24 @@ const std::map<llvm::StringRef, hipAPIversions> HIP_DRIVER_TYPE_NAME_VER_MAP {
   {"hipMemRangeAttributeAccessedBy",                                   {HIP_3070, HIP_0,    HIP_0   }},
   {"hipMemRangeAttributeLastPrefetchLocation",                         {HIP_3070, HIP_0,    HIP_0   }},
   {"hipJitOption",                                                     {HIP_1060, HIP_0,    HIP_0   }},
-  {"HIPRTC_JIT_MAX_REGISTERS",                                         {HIP_1060, HIP_0,    HIP_0   }},
-  {"HIPRTC_JIT_THREADS_PER_BLOCK",                                     {HIP_1060, HIP_0,    HIP_0   }},
-  {"HIPRTC_JIT_WALL_TIME",                                             {HIP_1060, HIP_0,    HIP_0   }},
-  {"HIPRTC_JIT_INFO_LOG_BUFFER",                                       {HIP_1060, HIP_0,    HIP_0   }},
-  {"HIPRTC_JIT_INFO_LOG_BUFFER_SIZE_BYTES",                            {HIP_1060, HIP_0,    HIP_0   }},
-  {"HIPRTC_JIT_ERROR_LOG_BUFFER",                                      {HIP_1060, HIP_0,    HIP_0   }},
-  {"HIPRTC_JIT_ERROR_LOG_BUFFER_SIZE_BYTES",                           {HIP_1060, HIP_0,    HIP_0   }},
-  {"HIPRTC_JIT_OPTIMIZATION_LEVEL",                                    {HIP_1060, HIP_0,    HIP_0   }},
-  {"HIPRTC_JIT_TARGET_FROM_HIPCONTEXT",                                {HIP_1060, HIP_0,    HIP_0   }},
-  {"HIPRTC_JIT_TARGET",                                                {HIP_1060, HIP_0,    HIP_0   }},
-  {"HIPRTC_JIT_FALLBACK_STRATEGY",                                     {HIP_1060, HIP_0,    HIP_0   }},
-  {"HIPRTC_JIT_GENERATE_DEBUG_INFO",                                   {HIP_1060, HIP_0,    HIP_0   }},
-  {"HIPRTC_JIT_LOG_VERBOSE",                                           {HIP_1060, HIP_0,    HIP_0   }},
-  {"HIPRTC_JIT_GENERATE_LINE_INFO",                                    {HIP_1060, HIP_0,    HIP_0   }},
-  {"HIPRTC_JIT_CACHE_MODE",                                            {HIP_1060, HIP_0,    HIP_0   }},
-  {"HIPRTC_JIT_NEW_SM3X_OPT",                                          {HIP_1060, HIP_0,    HIP_0   }},
-  {"HIPRTC_JIT_FAST_COMPILE",                                          {HIP_1060, HIP_0,    HIP_0   }},
-  {"HIPRTC_JIT_NUM_OPTIONS",                                           {HIP_1060, HIP_0,    HIP_0   }},
+  {"hipJitOptionMaxRegisters",                                         {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipJitOptionThreadsPerBlock",                                      {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipJitOptionWallTime",                                             {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipJitOptionInfoLogBuffer",                                        {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipJitOptionInfoLogBufferSizeBytes",                               {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipJitOptionErrorLogBuffer",                                       {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipJitOptionErrorLogBufferSizeBytes",                              {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipJitOptionOptimizationLevel",                                    {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipJitOptionTargetFromContext",                                    {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipJitOptionTarget",                                               {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipJitOptionFallbackStrategy",                                     {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipJitOptionGenerateDebugInfo",                                    {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipJitOptionLogVerbose",                                           {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipJitOptionGenerateLineInfo",                                     {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipJitOptionCacheMode",                                            {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipJitOptionSm3xOpt",                                              {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipJitOptionFastCompile",                                          {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipJitOptionNumOptions",                                           {HIP_6040, HIP_0,    HIP_0   }},
   {"hipFuncCache_t",                                                   {HIP_1060, HIP_0,    HIP_0   }},
   {"hipFuncCachePreferNone",                                           {HIP_1060, HIP_0,    HIP_0   }},
   {"hipFuncCachePreferShared",                                         {HIP_1060, HIP_0,    HIP_0   }},
@@ -4641,4 +4646,16 @@ const std::map<llvm::StringRef, hipAPIversions> HIP_DRIVER_TYPE_NAME_VER_MAP {
   {"hipStreamMemOpWriteValue64",                                       {HIP_6040, HIP_0,    HIP_0   }},
   {"hipStreamMemOpBarrier",                                            {HIP_6040, HIP_0,    HIP_0   }},
   {"hipGraphNodeTypeBatchMemOp",                                       {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipJitOptionGlobalSymbolNames",                                    {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipJitOptionGlobalSymbolAddresses",                                {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipJitOptionGlobalSymbolCount",                                    {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipJitOptionLto",                                                  {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipJitOptionFtz",                                                  {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipJitOptionPrecDiv",                                              {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipJitOptionPrecSqrt",                                             {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipJitOptionFma",                                                  {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipJitOptionPositionIndependentCode",                              {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipJitOptionMinCTAPerSM",                                          {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipJitOptionMaxThreadsPerBlock",                                   {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipJitOptionOverrideDirectiveValues",                              {HIP_6040, HIP_0,    HIP_0   }},
 };

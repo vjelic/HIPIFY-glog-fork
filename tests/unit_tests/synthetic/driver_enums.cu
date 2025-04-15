@@ -315,21 +315,22 @@ int main() {
 
   // CHECK: hipJitOption jit_option;
   // CHECK-NEXT: hipJitOption jit_option_enum;
-  // CHECK-NEXT: hipJitOption JIT_MAX_REGISTERS = HIPRTC_JIT_MAX_REGISTERS;
-  // CHECK-NEXT: hipJitOption JIT_THREADS_PER_BLOCK = HIPRTC_JIT_THREADS_PER_BLOCK;
-  // CHECK-NEXT: hipJitOption JIT_WALL_TIME = HIPRTC_JIT_WALL_TIME;
-  // CHECK-NEXT: hipJitOption JIT_INFO_LOG_BUFFER = HIPRTC_JIT_INFO_LOG_BUFFER;
-  // CHECK-NEXT: hipJitOption JIT_INFO_LOG_BUFFER_SIZE_BYTES = HIPRTC_JIT_INFO_LOG_BUFFER_SIZE_BYTES;
-  // CHECK-NEXT: hipJitOption JIT_ERROR_LOG_BUFFER = HIPRTC_JIT_ERROR_LOG_BUFFER;
-  // CHECK-NEXT: hipJitOption JIT_ERROR_LOG_BUFFER_SIZE_BYTES = HIPRTC_JIT_ERROR_LOG_BUFFER_SIZE_BYTES;
-  // CHECK-NEXT: hipJitOption JIT_OPTIMIZATION_LEVEL = HIPRTC_JIT_OPTIMIZATION_LEVEL;
-  // CHECK-NEXT: hipJitOption JIT_TARGET_FROM_CUCONTEXT = HIPRTC_JIT_TARGET_FROM_HIPCONTEXT;
-  // CHECK-NEXT: hipJitOption JIT_TARGET = HIPRTC_JIT_TARGET;
-  // CHECK-NEXT: hipJitOption JIT_FALLBACK_STRATEGY = HIPRTC_JIT_FALLBACK_STRATEGY;
-  // CHECK-NEXT: hipJitOption JIT_GENERATE_DEBUG_INFO = HIPRTC_JIT_GENERATE_DEBUG_INFO;
-  // CHECK-NEXT: hipJitOption JIT_LOG_VERBOSE = HIPRTC_JIT_LOG_VERBOSE;
-  // CHECK-NEXT: hipJitOption JIT_GENERATE_LINE_INFO = HIPRTC_JIT_GENERATE_LINE_INFO;
-  // CHECK-NEXT: hipJitOption JIT_CACHE_MODE = HIPRTC_JIT_CACHE_MODE;
+  // CHECK-NEXT: hipJitOption JIT_MAX_REGISTERS = hipJitOptionMaxRegisters;
+  // CHECK-NEXT: hipJitOption JIT_THREADS_PER_BLOCK = hipJitOptionThreadsPerBlock;
+  // CHECK-NEXT: hipJitOption JIT_WALL_TIME = hipJitOptionWallTime;
+  // CHECK-NEXT: hipJitOption JIT_INFO_LOG_BUFFER = hipJitOptionInfoLogBuffer;
+  // CHECK-NEXT: hipJitOption JIT_INFO_LOG_BUFFER_SIZE_BYTES = hipJitOptionInfoLogBufferSizeBytes;
+  // CHECK-NEXT: hipJitOption JIT_ERROR_LOG_BUFFER = hipJitOptionErrorLogBuffer;
+  // CHECK-NEXT: hipJitOption JIT_ERROR_LOG_BUFFER_SIZE_BYTES = hipJitOptionErrorLogBufferSizeBytes;
+  // CHECK-NEXT: hipJitOption JIT_OPTIMIZATION_LEVEL = hipJitOptionOptimizationLevel;
+  // CHECK-NEXT: hipJitOption JIT_TARGET_FROM_CUCONTEXT = hipJitOptionTargetFromContext;
+  // CHECK-NEXT: hipJitOption JIT_TARGET = hipJitOptionTarget;
+  // CHECK-NEXT: hipJitOption JIT_FALLBACK_STRATEGY = hipJitOptionFallbackStrategy;
+  // CHECK-NEXT: hipJitOption JIT_GENERATE_DEBUG_INFO = hipJitOptionGenerateDebugInfo;
+  // CHECK-NEXT: hipJitOption JIT_LOG_VERBOSE = hipJitOptionLogVerbose;
+  // CHECK-NEXT: hipJitOption JIT_GENERATE_LINE_INFO = hipJitOptionGenerateLineInfo;
+  // CHECK-NEXT: hipJitOption JIT_CACHE_MODE = hipJitOptionCacheMode;
+  // CHECK-NEXT: hipJitOption JIT_NUM_OPTIONS = hipJitOptionNumOptions;
   CUjit_option jit_option;
   CUjit_option_enum jit_option_enum;
   CUjit_option JIT_MAX_REGISTERS = CU_JIT_MAX_REGISTERS;
@@ -347,8 +348,6 @@ int main() {
   CUjit_option JIT_LOG_VERBOSE = CU_JIT_LOG_VERBOSE;
   CUjit_option JIT_GENERATE_LINE_INFO = CU_JIT_GENERATE_LINE_INFO;
   CUjit_option JIT_CACHE_MODE = CU_JIT_CACHE_MODE;
-
-  // CHECK: hipJitOption JIT_NUM_OPTIONS = HIPRTC_JIT_NUM_OPTIONS;
   CUjit_option JIT_NUM_OPTIONS = CU_JIT_NUM_OPTIONS;
 
   // CHECK: hipLimit_t limit;
@@ -646,8 +645,8 @@ int main() {
   CUdevice_P2PAttribute DEVICE_P2P_ATTRIBUTE_ACCESS_SUPPORTED = CU_DEVICE_P2P_ATTRIBUTE_ACCESS_SUPPORTED;
   CUdevice_P2PAttribute DEVICE_P2P_ATTRIBUTE_NATIVE_ATOMIC_SUPPORTED = CU_DEVICE_P2P_ATTRIBUTE_NATIVE_ATOMIC_SUPPORTED;
 
-  // CHECK: hipJitOption JIT_NEW_SM3X_OPT = HIPRTC_JIT_NEW_SM3X_OPT;
-  // CHECK-NEXT: hipJitOption JIT_FAST_COMPILE = HIPRTC_JIT_FAST_COMPILE;
+  // CHECK: hipJitOption JIT_NEW_SM3X_OPT = hipJitOptionSm3xOpt;
+  // CHECK-NEXT: hipJitOption JIT_FAST_COMPILE = hipJitOptionFastCompile;
   CUjit_option JIT_NEW_SM3X_OPT = CU_JIT_NEW_SM3X_OPT;
   CUjit_option JIT_FAST_COMPILE = CU_JIT_FAST_COMPILE;
 
@@ -817,6 +816,13 @@ int main() {
   CUstreamCaptureStatus STREAM_CAPTURE_STATUS_NONE = CU_STREAM_CAPTURE_STATUS_NONE;
   CUstreamCaptureStatus STREAM_CAPTURE_STATUS_ACTIVE = CU_STREAM_CAPTURE_STATUS_ACTIVE;
   CUstreamCaptureStatus STREAM_CAPTURE_STATUS_INVALIDATED = CU_STREAM_CAPTURE_STATUS_INVALIDATED;
+
+  // CHECK: hipJitOption JIT_GLOBAL_SYMBOL_NAMES = hipJitOptionGlobalSymbolNames;
+  // CHECK-NEXT: hipJitOption JIT_GLOBAL_SYMBOL_ADDRESSES = hipJitOptionGlobalSymbolAddresses;
+  // CHECK-NEXT: hipJitOption JIT_GLOBAL_SYMBOL_COUNT = hipJitOptionGlobalSymbolCount;
+  CUjit_option JIT_GLOBAL_SYMBOL_NAMES = CU_JIT_GLOBAL_SYMBOL_NAMES;
+  CUjit_option JIT_GLOBAL_SYMBOL_ADDRESSES = CU_JIT_GLOBAL_SYMBOL_ADDRESSES;
+  CUjit_option JIT_GLOBAL_SYMBOL_COUNT = CU_JIT_GLOBAL_SYMBOL_COUNT;
 #endif
 
 #if CUDA_VERSION == 10010
@@ -995,6 +1001,11 @@ int main() {
   CUarraySparseSubresourceType_enum arraySparseSubresourceType_enum;
   CUarraySparseSubresourceType ARRAY_SPARSE_SUBRESOURCE_TYPE_SPARSE_LEVEL = CU_ARRAY_SPARSE_SUBRESOURCE_TYPE_SPARSE_LEVEL;
   CUarraySparseSubresourceType ARRAY_SPARSE_SUBRESOURCE_TYPE_MIPTAIL = CU_ARRAY_SPARSE_SUBRESOURCE_TYPE_MIPTAIL;
+
+  // CHECK: int EventRecordDefault = hipEventRecordDefault;
+  // CHECK-NEXT: int EventRecordExternal = hipEventRecordExternal;
+  int EventRecordDefault = CU_EVENT_RECORD_DEFAULT;
+  int EventRecordExternal = CU_EVENT_RECORD_EXTERNAL;
 #endif
 
 #if CUDA_VERSION >= 11020
@@ -1133,6 +1144,17 @@ int main() {
   // CHECK-NEXT: hipGraphNodeType GRAPH_NODE_TYPE_MEM_FREE = hipGraphNodeTypeMemFree;
   CUgraphNodeType GRAPH_NODE_TYPE_MEM_ALLOC = CU_GRAPH_NODE_TYPE_MEM_ALLOC;
   CUgraphNodeType GRAPH_NODE_TYPE_MEM_FREE = CU_GRAPH_NODE_TYPE_MEM_FREE;
+
+  // CHECK: hipJitOption JIT_LTO = hipJitOptionLto;
+  // CHECK-NEXT: hipJitOption JIT_FTZ = hipJitOptionFtz;
+  // CHECK-NEXT: hipJitOption JIT_PREC_DIV = hipJitOptionPrecDiv;
+  // CHECK-NEXT: hipJitOption JIT_PREC_SQRT = hipJitOptionPrecSqrt;
+  // CHECK-NEXT: hipJitOption JIT_FMA = hipJitOptionFma;
+  CUjit_option JIT_LTO = CU_JIT_LTO;
+  CUjit_option JIT_FTZ = CU_JIT_FTZ;
+  CUjit_option JIT_PREC_DIV = CU_JIT_PREC_DIV;
+  CUjit_option JIT_PREC_SQRT = CU_JIT_PREC_SQRT;
+  CUjit_option JIT_FMA = CU_JIT_FMA;
 #endif
 
 #if CUDA_VERSION >= 11070
@@ -1196,6 +1218,9 @@ int main() {
   CUdriverProcAddressQueryResult GET_PROC_ADDRESS_SUCCESS = CU_GET_PROC_ADDRESS_SUCCESS;
   CUdriverProcAddressQueryResult GET_PROC_ADDRESS_SYMBOL_NOT_FOUND = CU_GET_PROC_ADDRESS_SYMBOL_NOT_FOUND;
   CUdriverProcAddressQueryResult GET_PROC_ADDRESS_VERSION_NOT_SUFFICIENT = CU_GET_PROC_ADDRESS_VERSION_NOT_SUFFICIENT;
+
+  // CHECK: hipJitOption JIT_MIN_CTA_PER_SM = hipJitOptionMinCTAPerSM;
+  CUjit_option JIT_MIN_CTA_PER_SM = CU_JIT_MIN_CTA_PER_SM;
 #endif
 
 #if CUDA_VERSION >= 12030
@@ -1207,6 +1232,16 @@ int main() {
   CUgraphDependencyType_enum graphDependencyType_enum;
   CUgraphDependencyType GRAPH_DEPENDENCY_TYPE_DEFAULT = CU_GRAPH_DEPENDENCY_TYPE_DEFAULT;
   CUgraphDependencyType GRAPH_DEPENDENCY_TYPE_PROGRAMMATIC = CU_GRAPH_DEPENDENCY_TYPE_PROGRAMMATIC;
+
+  // CHECK: hipJitOption JIT_POSITION_INDEPENDENT_CODE = hipJitOptionPositionIndependentCode;
+  CUjit_option JIT_POSITION_INDEPENDENT_CODE = CU_JIT_POSITION_INDEPENDENT_CODE;
+#endif
+
+#if CUDA_VERSION >= 12040
+  // CHECK: hipJitOption JIT_MAX_THREADS_PER_BLOCK = hipJitOptionMaxThreadsPerBlock;
+  // CHECK-NEXT: hipJitOption JIT_OVERRIDE_DIRECTIVE_VALUES = hipJitOptionOverrideDirectiveValues;
+  CUjit_option JIT_MAX_THREADS_PER_BLOCK = CU_JIT_MAX_THREADS_PER_BLOCK;
+  CUjit_option JIT_OVERRIDE_DIRECTIVE_VALUES = CU_JIT_OVERRIDE_DIRECTIVE_VALUES;
 #endif
 
   return 0;

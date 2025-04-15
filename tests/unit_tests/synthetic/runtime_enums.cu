@@ -735,6 +735,11 @@ int main() {
   // CHECK-NEXT: hipGraphNodeType GraphNodeTypeEventRecord = hipGraphNodeTypeEventRecord;
   cudaGraphNodeType GraphNodeTypeWaitEvent = cudaGraphNodeTypeWaitEvent;
   cudaGraphNodeType GraphNodeTypeEventRecord = cudaGraphNodeTypeEventRecord;
+
+  // CHECK: int EventRecordDefault = hipEventRecordDefault;
+  // CHECK-NEXT: int EventRecordExternal = hipEventRecordExternal;
+  int EventRecordDefault = cudaEventRecordDefault;
+  int EventRecordExternal = cudaEventRecordExternal;
 #endif
 
 #if CUDA_VERSION >= 11020
@@ -949,19 +954,23 @@ int main() {
 
 #if CUDA_VERSION >= 12080
   // CHECK: hipJitOption jit_option;
-  // CHECK-NEXT: hipJitOption JIT_MAX_REGISTERS = HIPRTC_JIT_MAX_REGISTERS;
-  // CHECK-NEXT: hipJitOption JIT_THREADS_PER_BLOCK = HIPRTC_JIT_THREADS_PER_BLOCK;
-  // CHECK-NEXT: hipJitOption JIT_WALL_TIME = HIPRTC_JIT_WALL_TIME;
-  // CHECK-NEXT: hipJitOption JIT_INFO_LOG_BUFFER = HIPRTC_JIT_INFO_LOG_BUFFER;
-  // CHECK-NEXT: hipJitOption JIT_INFO_LOG_BUFFER_SIZE_BYTES = HIPRTC_JIT_INFO_LOG_BUFFER_SIZE_BYTES;
-  // CHECK-NEXT: hipJitOption JIT_ERROR_LOG_BUFFER = HIPRTC_JIT_ERROR_LOG_BUFFER;
-  // CHECK-NEXT: hipJitOption JIT_ERROR_LOG_BUFFER_SIZE_BYTES = HIPRTC_JIT_ERROR_LOG_BUFFER_SIZE_BYTES;
-  // CHECK-NEXT: hipJitOption JIT_OPTIMIZATION_LEVEL = HIPRTC_JIT_OPTIMIZATION_LEVEL;
-  // CHECK-NEXT: hipJitOption JIT_FALLBACK_STRATEGY = HIPRTC_JIT_FALLBACK_STRATEGY;
-  // CHECK-NEXT: hipJitOption JIT_GENERATE_DEBUG_INFO = HIPRTC_JIT_GENERATE_DEBUG_INFO;
-  // CHECK-NEXT: hipJitOption JIT_LOG_VERBOSE = HIPRTC_JIT_LOG_VERBOSE;
-  // CHECK-NEXT: hipJitOption JIT_GENERATE_LINE_INFO = HIPRTC_JIT_GENERATE_LINE_INFO;
-  // CHECK-NEXT: hipJitOption JIT_CACHE_MODE = HIPRTC_JIT_CACHE_MODE;
+  // CHECK-NEXT: hipJitOption JIT_MAX_REGISTERS = hipJitOptionMaxRegisters;
+  // CHECK-NEXT: hipJitOption JIT_THREADS_PER_BLOCK = hipJitOptionThreadsPerBlock;
+  // CHECK-NEXT: hipJitOption JIT_WALL_TIME = hipJitOptionWallTime;
+  // CHECK-NEXT: hipJitOption JIT_INFO_LOG_BUFFER = hipJitOptionInfoLogBuffer;
+  // CHECK-NEXT: hipJitOption JIT_INFO_LOG_BUFFER_SIZE_BYTES = hipJitOptionInfoLogBufferSizeBytes;
+  // CHECK-NEXT: hipJitOption JIT_ERROR_LOG_BUFFER = hipJitOptionErrorLogBuffer;
+  // CHECK-NEXT: hipJitOption JIT_ERROR_LOG_BUFFER_SIZE_BYTES = hipJitOptionErrorLogBufferSizeBytes;
+  // CHECK-NEXT: hipJitOption JIT_OPTIMIZATION_LEVEL = hipJitOptionOptimizationLevel;
+  // CHECK-NEXT: hipJitOption JIT_FALLBACK_STRATEGY = hipJitOptionFallbackStrategy;
+  // CHECK-NEXT: hipJitOption JIT_GENERATE_DEBUG_INFO = hipJitOptionGenerateDebugInfo;
+  // CHECK-NEXT: hipJitOption JIT_LOG_VERBOSE = hipJitOptionLogVerbose;
+  // CHECK-NEXT: hipJitOption JIT_GENERATE_LINE_INFO = hipJitOptionGenerateLineInfo;
+  // CHECK-NEXT: hipJitOption JIT_CACHE_MODE = hipJitOptionCacheMode;
+  // CHECK-NEXT: hipJitOption JIT_POSITION_INDEPENDENT_CODE = hipJitOptionPositionIndependentCode;
+  // CHECK-NEXT: hipJitOption JIT_MIN_CTA_PER_SM = hipJitOptionMinCTAPerSM;
+  // CHECK-NEXT: hipJitOption JIT_MAX_THREADS_PER_BLOCK = hipJitOptionMaxThreadsPerBlock;
+  // CHECK-NEXT: hipJitOption JIT_OVERRIDE_DIRECTIVE_VALUES = hipJitOptionOverrideDirectiveValues;
   cudaJitOption jit_option;
   cudaJitOption JIT_MAX_REGISTERS = cudaJitMaxRegisters;
   cudaJitOption JIT_THREADS_PER_BLOCK = cudaJitThreadsPerBlock;
@@ -976,6 +985,11 @@ int main() {
   cudaJitOption JIT_LOG_VERBOSE = cudaJitLogVerbose;
   cudaJitOption JIT_GENERATE_LINE_INFO = cudaJitGenerateLineInfo;
   cudaJitOption JIT_CACHE_MODE = cudaJitCacheMode;
+  cudaJitOption JIT_POSITION_INDEPENDENT_CODE = cudaJitPositionIndependentCode;
+  cudaJitOption JIT_MIN_CTA_PER_SM = cudaJitMinCtaPerSm;
+  cudaJitOption JIT_MAX_THREADS_PER_BLOCK = cudaJitMaxThreadsPerBlock;
+  cudaJitOption JIT_OVERRIDE_DIRECTIVE_VALUES = cudaJitOverrideDirectiveValues;
 #endif
+
   return 0;
 }
