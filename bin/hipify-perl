@@ -7643,10 +7643,16 @@ sub simpleSubstitutions {
     subst("CUBLAS_TF32_TENSOR_OP_MATH", "HIPBLAS_TF32_TENSOR_OP_MATH", "numeric_literal");
     subst("CUDA_C_16BF", "HIP_C_16BF", "numeric_literal");
     subst("CUDA_C_16F", "HIP_C_16F", "numeric_literal");
+    subst("CUDA_C_16I", "HIP_C_16I", "numeric_literal");
+    subst("CUDA_C_16U", "HIP_C_16U", "numeric_literal");
     subst("CUDA_C_32F", "HIP_C_32F", "numeric_literal");
     subst("CUDA_C_32I", "HIP_C_32I", "numeric_literal");
     subst("CUDA_C_32U", "HIP_C_32U", "numeric_literal");
+    subst("CUDA_C_4I", "HIP_C_4I", "numeric_literal");
+    subst("CUDA_C_4U", "HIP_C_4U", "numeric_literal");
     subst("CUDA_C_64F", "HIP_C_64F", "numeric_literal");
+    subst("CUDA_C_64I", "HIP_C_64I", "numeric_literal");
+    subst("CUDA_C_64U", "HIP_C_64U", "numeric_literal");
     subst("CUDA_C_8I", "HIP_C_8I", "numeric_literal");
     subst("CUDA_C_8U", "HIP_C_8U", "numeric_literal");
     subst("CUDA_ERROR_ALREADY_ACQUIRED", "hipErrorAlreadyAcquired", "numeric_literal");
@@ -7721,10 +7727,19 @@ sub simpleSubstitutions {
     subst("CUDA_GRAPH_INSTANTIATE_SUCCESS", "hipGraphInstantiateSuccess", "numeric_literal");
     subst("CUDA_R_16BF", "HIP_R_16BF", "numeric_literal");
     subst("CUDA_R_16F", "HIP_R_16F", "numeric_literal");
+    subst("CUDA_R_16I", "HIP_R_16I", "numeric_literal");
+    subst("CUDA_R_16U", "HIP_R_16U", "numeric_literal");
     subst("CUDA_R_32F", "HIP_R_32F", "numeric_literal");
     subst("CUDA_R_32I", "HIP_R_32I", "numeric_literal");
     subst("CUDA_R_32U", "HIP_R_32U", "numeric_literal");
+    subst("CUDA_R_4I", "HIP_R_4I", "numeric_literal");
+    subst("CUDA_R_4U", "HIP_R_4U", "numeric_literal");
     subst("CUDA_R_64F", "HIP_R_64F", "numeric_literal");
+    subst("CUDA_R_64I", "HIP_R_64I", "numeric_literal");
+    subst("CUDA_R_64U", "HIP_R_64U", "numeric_literal");
+    subst("CUDA_R_8F_E4M3", "HIP_R_8F_E4M3", "numeric_literal");
+    subst("CUDA_R_8F_E5M2", "HIP_R_8F_E5M2", "numeric_literal");
+    subst("CUDA_R_8F_UE4M3", "HIP_R_8F_E4M3", "numeric_literal");
     subst("CUDA_R_8I", "HIP_R_8I", "numeric_literal");
     subst("CUDA_R_8U", "HIP_R_8U", "numeric_literal");
     subst("CUDA_SUCCESS", "hipSuccess", "numeric_literal");
@@ -12712,18 +12727,9 @@ sub warnRemovedFunctions {
     "CUFFT_COMPATIBILITY_FFTW_PADDING",
     "CUFFT_COMPATIBILITY_DEFAULT",
     "CUDA_R_8F_UE8M0",
-    "CUDA_R_8F_UE4M3",
-    "CUDA_R_8F_E5M2",
-    "CUDA_R_8F_E4M3",
     "CUDA_R_6F_E3M2",
     "CUDA_R_6F_E2M3",
-    "CUDA_R_64U",
-    "CUDA_R_64I",
-    "CUDA_R_4U",
-    "CUDA_R_4I",
     "CUDA_R_4F_E2M1",
-    "CUDA_R_16U",
-    "CUDA_R_16I",
     "CUDA_POINTER_ATTRIBUTE_P2P_TOKENS_v1",
     "CUDA_POINTER_ATTRIBUTE_P2P_TOKENS_st",
     "CUDA_POINTER_ATTRIBUTE_P2P_TOKENS",
@@ -12792,12 +12798,6 @@ sub warnRemovedFunctions {
     "CUDA_ERROR_CDP_VERSION_MISMATCH",
     "CUDA_ERROR_CDP_NOT_SUPPORTED",
     "CUDA_EGL_MAX_PLANES",
-    "CUDA_C_64U",
-    "CUDA_C_64I",
-    "CUDA_C_4U",
-    "CUDA_C_4I",
-    "CUDA_C_16U",
-    "CUDA_C_16I",
     "CUDA_CONDITIONAL_NODE_PARAMS",
     "CUDA_CB",
     "CUDA_ARRAY_SPARSE_PROPERTIES_v1",

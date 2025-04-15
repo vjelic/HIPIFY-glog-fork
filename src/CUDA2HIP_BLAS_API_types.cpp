@@ -150,21 +150,21 @@ const std::map<llvm::StringRef, hipCounter> CUDA_BLAS_TYPE_NAME_MAP {
   {"CUDA_C_32U",                                                     {"HIP_C_32U",                                                         "rocblas_datatype_u32_c",                                   CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES}}, // 13 // 167
   {"CUDA_R_16BF",                                                    {"HIP_R_16BF",                                                        "rocblas_datatype_bf16_r",                                  CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES}}, // 14 // 168
   {"CUDA_C_16BF",                                                    {"HIP_C_16BF",                                                        "rocblas_datatype_bf16_c",                                  CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES}}, // 15 // 169
-  {"CUDA_R_4I",                                                      {"HIP_R_4I",                                                          "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES, UNSUPPORTED}}, // 16
-  {"CUDA_C_4I",                                                      {"HIP_C_4I",                                                          "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES, UNSUPPORTED}}, // 17
-  {"CUDA_R_4U",                                                      {"HIP_R_4U",                                                          "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES, UNSUPPORTED}}, // 18
-  {"CUDA_C_4U",                                                      {"HIP_C_4U",                                                          "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES, UNSUPPORTED}}, // 19
-  {"CUDA_R_16I",                                                     {"HIP_R_16I",                                                         "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES, UNSUPPORTED}}, // 20
-  {"CUDA_C_16I",                                                     {"HIP_C_16I",                                                         "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES, UNSUPPORTED}}, // 21
-  {"CUDA_R_16U",                                                     {"HIP_R_16U",                                                         "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES, UNSUPPORTED}}, // 22
-  {"CUDA_C_16U",                                                     {"HIP_C_16U",                                                         "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES, UNSUPPORTED}}, // 23
-  {"CUDA_R_64I",                                                     {"HIP_R_64I",                                                         "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES, UNSUPPORTED}}, // 24
-  {"CUDA_C_64I",                                                     {"HIP_C_64I",                                                         "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES, UNSUPPORTED}}, // 25
-  {"CUDA_R_64U",                                                     {"HIP_R_64U",                                                         "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES, UNSUPPORTED}}, // 26
-  {"CUDA_C_64U",                                                     {"HIP_C_64U",                                                         "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES, UNSUPPORTED}}, // 27
-  {"CUDA_R_8F_E4M3",                                                 {"HIP_R_8F_E4M3",                                                     "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES, UNSUPPORTED}}, // 28
-  {"CUDA_R_8F_UE4M3",                                                {"HIP_R_8F_E4M3",                                                     "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES, UNSUPPORTED}}, // = CUDA_R_8F_E4M = 28
-  {"CUDA_R_8F_E5M2",                                                 {"HIP_R_8F_E5M2",                                                     "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES, UNSUPPORTED}}, // 29
+  {"CUDA_R_4I",                                                      {"HIP_R_4I",                                                          "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES, ROC_UNSUPPORTED}}, // 16
+  {"CUDA_C_4I",                                                      {"HIP_C_4I",                                                          "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES, ROC_UNSUPPORTED}}, // 17
+  {"CUDA_R_4U",                                                      {"HIP_R_4U",                                                          "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES, ROC_UNSUPPORTED}}, // 18
+  {"CUDA_C_4U",                                                      {"HIP_C_4U",                                                          "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES, ROC_UNSUPPORTED}}, // 19
+  {"CUDA_R_16I",                                                     {"HIP_R_16I",                                                         "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES, ROC_UNSUPPORTED}}, // 20
+  {"CUDA_C_16I",                                                     {"HIP_C_16I",                                                         "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES, ROC_UNSUPPORTED}}, // 21
+  {"CUDA_R_16U",                                                     {"HIP_R_16U",                                                         "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES, ROC_UNSUPPORTED}}, // 22
+  {"CUDA_C_16U",                                                     {"HIP_C_16U",                                                         "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES, ROC_UNSUPPORTED}}, // 23
+  {"CUDA_R_64I",                                                     {"HIP_R_64I",                                                         "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES, ROC_UNSUPPORTED}}, // 24
+  {"CUDA_C_64I",                                                     {"HIP_C_64I",                                                         "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES, ROC_UNSUPPORTED}}, // 25
+  {"CUDA_R_64U",                                                     {"HIP_R_64U",                                                         "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES, ROC_UNSUPPORTED}}, // 26
+  {"CUDA_C_64U",                                                     {"HIP_C_64U",                                                         "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES, ROC_UNSUPPORTED}}, // 27
+  {"CUDA_R_8F_E4M3",                                                 {"HIP_R_8F_E4M3",                                                     "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES, ROC_UNSUPPORTED}}, // 28
+  {"CUDA_R_8F_UE4M3",                                                {"HIP_R_8F_E4M3",                                                     "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES, ROC_UNSUPPORTED}}, // = CUDA_R_8F_E4M3 = 28
+  {"CUDA_R_8F_E5M2",                                                 {"HIP_R_8F_E5M2",                                                     "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES, ROC_UNSUPPORTED}}, // 29
   {"CUDA_R_8F_UE8M0",                                                {"HIP_R_8F_UE8M0",                                                    "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES, UNSUPPORTED}}, // 30
   {"CUDA_R_6F_E2M3",                                                 {"HIP_R_6F_E2M3",                                                     "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES, UNSUPPORTED}}, // 31
   {"CUDA_R_6F_E3M2",                                                 {"HIP_R_6F_E3M2",                                                     "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES, UNSUPPORTED}}, // 32
@@ -2190,23 +2190,37 @@ const std::map<llvm::StringRef, hipAPIversions> HIP_BLAS_TYPE_NAME_VER_MAP {
   {"HIPBLAS_R_16B",                                                  {HIP_3000, HIP_0,    HIP_0   }},
   {"HIPBLAS_C_16B",                                                  {HIP_3000, HIP_0,    HIP_0   }},
   {"hipblasHandle_t",                                                {HIP_3000, HIP_0,    HIP_0   }},
-  {"hipDataType",                                                    {HIP_5070, HIP_0,    HIP_0   }},
-  {"HIP_R_16F",                                                      {HIP_5070, HIP_0,    HIP_0   }},
-  {"HIP_C_16F",                                                      {HIP_5070, HIP_0,    HIP_0   }},
-  {"HIP_R_32F",                                                      {HIP_5070, HIP_0,    HIP_0   }},
-  {"HIP_C_32F",                                                      {HIP_5070, HIP_0,    HIP_0   }},
-  {"HIP_R_64F",                                                      {HIP_5070, HIP_0,    HIP_0   }},
-  {"HIP_C_64F",                                                      {HIP_5070, HIP_0,    HIP_0   }},
-  {"HIP_R_8I",                                                       {HIP_5070, HIP_0,    HIP_0   }},
-  {"HIP_C_8I",                                                       {HIP_5070, HIP_0,    HIP_0   }},
-  {"HIP_R_8U",                                                       {HIP_5070, HIP_0,    HIP_0   }},
-  {"HIP_C_8U",                                                       {HIP_5070, HIP_0,    HIP_0   }},
-  {"HIP_R_32I",                                                      {HIP_5070, HIP_0,    HIP_0   }},
-  {"HIP_C_32I",                                                      {HIP_5070, HIP_0,    HIP_0   }},
-  {"HIP_R_32U",                                                      {HIP_5070, HIP_0,    HIP_0   }},
-  {"HIP_C_32U",                                                      {HIP_5070, HIP_0,    HIP_0   }},
-  {"HIP_R_16BF",                                                     {HIP_5070, HIP_0,    HIP_0   }},
-  {"HIP_C_16BF",                                                     {HIP_5070, HIP_0,    HIP_0   }},
+  {"hipDataType",                                                    {HIP_3000, HIP_0,    HIP_0   }},
+  {"HIP_R_16F",                                                      {HIP_3000, HIP_0,    HIP_0   }},
+  {"HIP_C_16F",                                                      {HIP_3000, HIP_0,    HIP_0   }},
+  {"HIP_R_32F",                                                      {HIP_3000, HIP_0,    HIP_0   }},
+  {"HIP_C_32F",                                                      {HIP_3000, HIP_0,    HIP_0   }},
+  {"HIP_R_64F",                                                      {HIP_3000, HIP_0,    HIP_0   }},
+  {"HIP_C_64F",                                                      {HIP_3000, HIP_0,    HIP_0   }},
+  {"HIP_R_8I",                                                       {HIP_5050, HIP_0,    HIP_0   }},
+  {"HIP_C_8I",                                                       {HIP_5050, HIP_0,    HIP_0   }},
+  {"HIP_R_8U",                                                       {HIP_5050, HIP_0,    HIP_0   }},
+  {"HIP_C_8U",                                                       {HIP_5050, HIP_0,    HIP_0   }},
+  {"HIP_R_32I",                                                      {HIP_5050, HIP_0,    HIP_0   }},
+  {"HIP_C_32I",                                                      {HIP_5050, HIP_0,    HIP_0   }},
+  {"HIP_R_32U",                                                      {HIP_5050, HIP_0,    HIP_0   }},
+  {"HIP_C_32U",                                                      {HIP_5050, HIP_0,    HIP_0   }},
+  {"HIP_R_16BF",                                                     {HIP_5050, HIP_0,    HIP_0   }},
+  {"HIP_C_16BF",                                                     {HIP_5050, HIP_0,    HIP_0   }},
+  {"HIP_R_4I",                                                       {HIP_5050, HIP_0,    HIP_0   }},
+  {"HIP_C_4I",                                                       {HIP_5050, HIP_0,    HIP_0   }},
+  {"HIP_R_4U",                                                       {HIP_5050, HIP_0,    HIP_0   }},
+  {"HIP_C_4U",                                                       {HIP_5050, HIP_0,    HIP_0   }},
+  {"HIP_R_16I",                                                      {HIP_5050, HIP_0,    HIP_0   }},
+  {"HIP_C_16I",                                                      {HIP_5050, HIP_0,    HIP_0   }},
+  {"HIP_R_16U",                                                      {HIP_5050, HIP_0,    HIP_0   }},
+  {"HIP_C_16U",                                                      {HIP_5050, HIP_0,    HIP_0   }},
+  {"HIP_R_64I",                                                      {HIP_5050, HIP_0,    HIP_0   }},
+  {"HIP_C_64I",                                                      {HIP_5050, HIP_0,    HIP_0   }},
+  {"HIP_R_64U",                                                      {HIP_5050, HIP_0,    HIP_0   }},
+  {"HIP_C_64U",                                                      {HIP_5050, HIP_0,    HIP_0   }},
+  {"HIP_R_8F_E4M3",                                                  {HIP_6030, HIP_0,    HIP_0   }},
+  {"HIP_R_8F_E5M2",                                                  {HIP_6030, HIP_0,    HIP_0   }},
   {"hipblasComputeType_t",                                           {HIP_6000, HIP_0,    HIP_0   }},
   {"HIPBLAS_COMPUTE_16F",                                            {HIP_6000, HIP_0,    HIP_0   }},
   {"HIPBLAS_COMPUTE_16F_PEDANTIC",                                   {HIP_6000, HIP_0,    HIP_0   }},
