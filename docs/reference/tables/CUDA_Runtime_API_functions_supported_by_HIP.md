@@ -1218,8 +1218,8 @@
 |`cudaEventDefault`| | | | |`hipEventDefault`|1.6.0| | | | |
 |`cudaEventDisableTiming`| | | | |`hipEventDisableTiming`|1.6.0| | | | |
 |`cudaEventInterprocess`| | | | |`hipEventInterprocess`|1.6.0| | | | |
-|`cudaEventRecordDefault`|11.1| | | | | | | | | |
-|`cudaEventRecordExternal`|11.1| | | | | | | | | |
+|`cudaEventRecordDefault`|11.1| | | |`hipEventRecordDefault`|6.4.0| | | | |
+|`cudaEventRecordExternal`|11.1| | | |`hipEventRecordExternal`|6.4.0| | | | |
 |`cudaEventRecordNodeParams`|12.2| | | |`hipEventRecordNodeParams`|6.1.0| | | | |
 |`cudaEventWaitDefault`|11.1| | | | | | | | | |
 |`cudaEventWaitExternal`| | | | | | | | | | |
@@ -1429,27 +1429,27 @@
 |`cudaIpcMemHandle_st`| | | | |`hipIpcMemHandle_st`|1.6.0| | | | |
 |`cudaIpcMemHandle_t`| | | | |`hipIpcMemHandle_t`|1.6.0| | | | |
 |`cudaIpcMemLazyEnablePeerAccess`| | | | |`hipIpcMemLazyEnablePeerAccess`|1.6.0| | | | |
-|`cudaJitCacheMode`|12.8| | | |`HIPRTC_JIT_CACHE_MODE`|1.6.0| | | | |
+|`cudaJitCacheMode`|12.8| | | |`hipJitOptionCacheMode`|6.4.0| | | | |
 |`cudaJitCacheOptionCA`|12.8| | | | | | | | | |
 |`cudaJitCacheOptionCG`|12.8| | | | | | | | | |
 |`cudaJitCacheOptionNone`|12.8| | | | | | | | | |
-|`cudaJitErrorLogBuffer`|12.8| | | |`HIPRTC_JIT_ERROR_LOG_BUFFER`|1.6.0| | | | |
-|`cudaJitErrorLogBufferSizeBytes`|12.8| | | |`HIPRTC_JIT_ERROR_LOG_BUFFER_SIZE_BYTES`|1.6.0| | | | |
-|`cudaJitFallbackStrategy`|12.8| | | |`HIPRTC_JIT_FALLBACK_STRATEGY`|1.6.0| | | | |
-|`cudaJitGenerateDebugInfo`|12.8| | | |`HIPRTC_JIT_GENERATE_DEBUG_INFO`|1.6.0| | | | |
-|`cudaJitGenerateLineInfo`|12.8| | | |`HIPRTC_JIT_GENERATE_LINE_INFO`|1.6.0| | | | |
-|`cudaJitInfoLogBuffer`|12.8| | | |`HIPRTC_JIT_INFO_LOG_BUFFER`|1.6.0| | | | |
-|`cudaJitInfoLogBufferSizeBytes`|12.8| | | |`HIPRTC_JIT_INFO_LOG_BUFFER_SIZE_BYTES`|1.6.0| | | | |
-|`cudaJitLogVerbose`|12.8| | | |`HIPRTC_JIT_LOG_VERBOSE`|1.6.0| | | | |
-|`cudaJitMaxRegisters`|12.8| | | |`HIPRTC_JIT_MAX_REGISTERS`|1.6.0| | | | |
-|`cudaJitMaxThreadsPerBlock`|12.8| | | | | | | | | |
-|`cudaJitMinCtaPerSm`|12.8| | | | | | | | | |
-|`cudaJitOptimizationLevel`|12.8| | | |`HIPRTC_JIT_OPTIMIZATION_LEVEL`|1.6.0| | | | |
+|`cudaJitErrorLogBuffer`|12.8| | | |`hipJitOptionErrorLogBuffer`|6.4.0| | | | |
+|`cudaJitErrorLogBufferSizeBytes`|12.8| | | |`hipJitOptionErrorLogBufferSizeBytes`|6.4.0| | | | |
+|`cudaJitFallbackStrategy`|12.8| | | |`hipJitOptionFallbackStrategy`|6.4.0| | | | |
+|`cudaJitGenerateDebugInfo`|12.8| | | |`hipJitOptionGenerateDebugInfo`|6.4.0| | | | |
+|`cudaJitGenerateLineInfo`|12.8| | | |`hipJitOptionGenerateLineInfo`|6.4.0| | | | |
+|`cudaJitInfoLogBuffer`|12.8| | | |`hipJitOptionInfoLogBuffer`|6.4.0| | | | |
+|`cudaJitInfoLogBufferSizeBytes`|12.8| | | |`hipJitOptionInfoLogBufferSizeBytes`|6.4.0| | | | |
+|`cudaJitLogVerbose`|12.8| | | |`hipJitOptionLogVerbose`|6.4.0| | | | |
+|`cudaJitMaxRegisters`|12.8| | | |`hipJitOptionMaxRegisters`|6.4.0| | | | |
+|`cudaJitMaxThreadsPerBlock`|12.8| | | |`hipJitOptionMaxThreadsPerBlock`|6.4.0| | | | |
+|`cudaJitMinCtaPerSm`|12.8| | | |`hipJitOptionMinCTAPerSM`|6.4.0| | | | |
+|`cudaJitOptimizationLevel`|12.8| | | |`hipJitOptionOptimizationLevel`|6.4.0| | | | |
 |`cudaJitOption`|12.8| | | |`hipJitOption`|1.6.0| | | | |
-|`cudaJitOverrideDirectiveValues`|12.8| | | | | | | | | |
-|`cudaJitPositionIndependentCode`|12.8| | | | | | | | | |
-|`cudaJitThreadsPerBlock`|12.8| | | |`HIPRTC_JIT_THREADS_PER_BLOCK`|1.6.0| | | | |
-|`cudaJitWallTime`|12.8| | | |`HIPRTC_JIT_WALL_TIME`|1.6.0| | | | |
+|`cudaJitOverrideDirectiveValues`|12.8| | | |`hipJitOptionOverrideDirectiveValues`|6.4.0| | | | |
+|`cudaJitPositionIndependentCode`|12.8| | | |`hipJitOptionPositionIndependentCode`|6.4.0| | | | |
+|`cudaJitThreadsPerBlock`|12.8| | | |`hipJitOptionThreadsPerBlock`|6.4.0| | | | |
+|`cudaJitWallTime`|12.8| | | |`hipJitOptionWallTime`|6.4.0| | | | |
 |`cudaJit_CacheMode`|12.8| | | | | | | | | |
 |`cudaJit_Fallback`|12.8| | | | | | | | | |
 |`cudaKernelNodeAttrID`|11.0| | | |`hipKernelNodeAttrID`|5.2.0| | | | |

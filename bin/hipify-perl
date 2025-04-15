@@ -8241,6 +8241,8 @@ sub simpleSubstitutions {
     subst("CU_EVENT_DEFAULT", "hipEventDefault", "numeric_literal");
     subst("CU_EVENT_DISABLE_TIMING", "hipEventDisableTiming", "numeric_literal");
     subst("CU_EVENT_INTERPROCESS", "hipEventInterprocess", "numeric_literal");
+    subst("CU_EVENT_RECORD_DEFAULT", "hipEventRecordDefault", "numeric_literal");
+    subst("CU_EVENT_RECORD_EXTERNAL", "hipEventRecordExternal", "numeric_literal");
     subst("CU_EXTERNAL_MEMORY_HANDLE_TYPE_D3D11_RESOURCE", "hipExternalMemoryHandleTypeD3D11Resource", "numeric_literal");
     subst("CU_EXTERNAL_MEMORY_HANDLE_TYPE_D3D11_RESOURCE_KMT", "hipExternalMemoryHandleTypeD3D11ResourceKmt", "numeric_literal");
     subst("CU_EXTERNAL_MEMORY_HANDLE_TYPE_D3D12_HEAP", "hipExternalMemoryHandleTypeD3D12Heap", "numeric_literal");
@@ -8324,31 +8326,43 @@ sub simpleSubstitutions {
     subst("CU_GRAPH_NODE_TYPE_WAIT_EVENT", "hipGraphNodeTypeWaitEvent", "numeric_literal");
     subst("CU_GRAPH_USER_OBJECT_MOVE", "hipGraphUserObjectMove", "numeric_literal");
     subst("CU_IPC_MEM_LAZY_ENABLE_PEER_ACCESS", "hipIpcMemLazyEnablePeerAccess", "numeric_literal");
-    subst("CU_JIT_CACHE_MODE", "HIPRTC_JIT_CACHE_MODE", "numeric_literal");
-    subst("CU_JIT_ERROR_LOG_BUFFER", "HIPRTC_JIT_ERROR_LOG_BUFFER", "numeric_literal");
-    subst("CU_JIT_ERROR_LOG_BUFFER_SIZE_BYTES", "HIPRTC_JIT_ERROR_LOG_BUFFER_SIZE_BYTES", "numeric_literal");
-    subst("CU_JIT_FALLBACK_STRATEGY", "HIPRTC_JIT_FALLBACK_STRATEGY", "numeric_literal");
-    subst("CU_JIT_FAST_COMPILE", "HIPRTC_JIT_FAST_COMPILE", "numeric_literal");
-    subst("CU_JIT_GENERATE_DEBUG_INFO", "HIPRTC_JIT_GENERATE_DEBUG_INFO", "numeric_literal");
-    subst("CU_JIT_GENERATE_LINE_INFO", "HIPRTC_JIT_GENERATE_LINE_INFO", "numeric_literal");
-    subst("CU_JIT_INFO_LOG_BUFFER", "HIPRTC_JIT_INFO_LOG_BUFFER", "numeric_literal");
-    subst("CU_JIT_INFO_LOG_BUFFER_SIZE_BYTES", "HIPRTC_JIT_INFO_LOG_BUFFER_SIZE_BYTES", "numeric_literal");
+    subst("CU_JIT_CACHE_MODE", "hipJitOptionCacheMode", "numeric_literal");
+    subst("CU_JIT_ERROR_LOG_BUFFER", "hipJitOptionErrorLogBuffer", "numeric_literal");
+    subst("CU_JIT_ERROR_LOG_BUFFER_SIZE_BYTES", "hipJitOptionErrorLogBufferSizeBytes", "numeric_literal");
+    subst("CU_JIT_FALLBACK_STRATEGY", "hipJitOptionFallbackStrategy", "numeric_literal");
+    subst("CU_JIT_FAST_COMPILE", "hipJitOptionFastCompile", "numeric_literal");
+    subst("CU_JIT_FMA", "hipJitOptionFma", "numeric_literal");
+    subst("CU_JIT_FTZ", "hipJitOptionFtz", "numeric_literal");
+    subst("CU_JIT_GENERATE_DEBUG_INFO", "hipJitOptionGenerateDebugInfo", "numeric_literal");
+    subst("CU_JIT_GENERATE_LINE_INFO", "hipJitOptionGenerateLineInfo", "numeric_literal");
+    subst("CU_JIT_GLOBAL_SYMBOL_ADDRESSES", "hipJitOptionGlobalSymbolAddresses", "numeric_literal");
+    subst("CU_JIT_GLOBAL_SYMBOL_COUNT", "hipJitOptionGlobalSymbolCount", "numeric_literal");
+    subst("CU_JIT_GLOBAL_SYMBOL_NAMES", "hipJitOptionGlobalSymbolNames", "numeric_literal");
+    subst("CU_JIT_INFO_LOG_BUFFER", "hipJitOptionInfoLogBuffer", "numeric_literal");
+    subst("CU_JIT_INFO_LOG_BUFFER_SIZE_BYTES", "hipJitOptionInfoLogBufferSizeBytes", "numeric_literal");
     subst("CU_JIT_INPUT_CUBIN", "HIPRTC_JIT_INPUT_CUBIN", "numeric_literal");
     subst("CU_JIT_INPUT_FATBINARY", "HIPRTC_JIT_INPUT_FATBINARY", "numeric_literal");
     subst("CU_JIT_INPUT_LIBRARY", "HIPRTC_JIT_INPUT_LIBRARY", "numeric_literal");
     subst("CU_JIT_INPUT_NVVM", "HIPRTC_JIT_INPUT_NVVM", "numeric_literal");
     subst("CU_JIT_INPUT_OBJECT", "HIPRTC_JIT_INPUT_OBJECT", "numeric_literal");
     subst("CU_JIT_INPUT_PTX", "HIPRTC_JIT_INPUT_PTX", "numeric_literal");
-    subst("CU_JIT_LOG_VERBOSE", "HIPRTC_JIT_LOG_VERBOSE", "numeric_literal");
-    subst("CU_JIT_MAX_REGISTERS", "HIPRTC_JIT_MAX_REGISTERS", "numeric_literal");
-    subst("CU_JIT_NEW_SM3X_OPT", "HIPRTC_JIT_NEW_SM3X_OPT", "numeric_literal");
+    subst("CU_JIT_LOG_VERBOSE", "hipJitOptionLogVerbose", "numeric_literal");
+    subst("CU_JIT_LTO", "hipJitOptionLto", "numeric_literal");
+    subst("CU_JIT_MAX_REGISTERS", "hipJitOptionMaxRegisters", "numeric_literal");
+    subst("CU_JIT_MAX_THREADS_PER_BLOCK", "hipJitOptionMaxThreadsPerBlock", "numeric_literal");
+    subst("CU_JIT_MIN_CTA_PER_SM", "hipJitOptionMinCTAPerSM", "numeric_literal");
+    subst("CU_JIT_NEW_SM3X_OPT", "hipJitOptionSm3xOpt", "numeric_literal");
     subst("CU_JIT_NUM_INPUT_TYPES", "HIPRTC_JIT_NUM_LEGACY_INPUT_TYPES", "numeric_literal");
-    subst("CU_JIT_NUM_OPTIONS", "HIPRTC_JIT_NUM_OPTIONS", "numeric_literal");
-    subst("CU_JIT_OPTIMIZATION_LEVEL", "HIPRTC_JIT_OPTIMIZATION_LEVEL", "numeric_literal");
-    subst("CU_JIT_TARGET", "HIPRTC_JIT_TARGET", "numeric_literal");
-    subst("CU_JIT_TARGET_FROM_CUCONTEXT", "HIPRTC_JIT_TARGET_FROM_HIPCONTEXT", "numeric_literal");
-    subst("CU_JIT_THREADS_PER_BLOCK", "HIPRTC_JIT_THREADS_PER_BLOCK", "numeric_literal");
-    subst("CU_JIT_WALL_TIME", "HIPRTC_JIT_WALL_TIME", "numeric_literal");
+    subst("CU_JIT_NUM_OPTIONS", "hipJitOptionNumOptions", "numeric_literal");
+    subst("CU_JIT_OPTIMIZATION_LEVEL", "hipJitOptionOptimizationLevel", "numeric_literal");
+    subst("CU_JIT_OVERRIDE_DIRECTIVE_VALUES", "hipJitOptionOverrideDirectiveValues", "numeric_literal");
+    subst("CU_JIT_POSITION_INDEPENDENT_CODE", "hipJitOptionPositionIndependentCode", "numeric_literal");
+    subst("CU_JIT_PREC_DIV", "hipJitOptionPrecDiv", "numeric_literal");
+    subst("CU_JIT_PREC_SQRT", "hipJitOptionPrecSqrt", "numeric_literal");
+    subst("CU_JIT_TARGET", "hipJitOptionTarget", "numeric_literal");
+    subst("CU_JIT_TARGET_FROM_CUCONTEXT", "hipJitOptionTargetFromContext", "numeric_literal");
+    subst("CU_JIT_THREADS_PER_BLOCK", "hipJitOptionThreadsPerBlock", "numeric_literal");
+    subst("CU_JIT_WALL_TIME", "hipJitOptionWallTime", "numeric_literal");
     subst("CU_KERNEL_NODE_ATTRIBUTE_ACCESS_POLICY_WINDOW", "hipKernelNodeAttributeAccessPolicyWindow", "numeric_literal");
     subst("CU_KERNEL_NODE_ATTRIBUTE_COOPERATIVE", "hipKernelNodeAttributeCooperative", "numeric_literal");
     subst("CU_KERNEL_NODE_ATTRIBUTE_PRIORITY", "hipKernelNodeAttributePriority", "numeric_literal");
@@ -8776,19 +8790,23 @@ sub simpleSubstitutions {
     subst("cudaGraphicsRegisterFlagsSurfaceLoadStore", "hipGraphicsRegisterFlagsSurfaceLoadStore", "numeric_literal");
     subst("cudaGraphicsRegisterFlagsTextureGather", "hipGraphicsRegisterFlagsTextureGather", "numeric_literal");
     subst("cudaGraphicsRegisterFlagsWriteDiscard", "hipGraphicsRegisterFlagsWriteDiscard", "numeric_literal");
-    subst("cudaJitCacheMode", "HIPRTC_JIT_CACHE_MODE", "numeric_literal");
-    subst("cudaJitErrorLogBuffer", "HIPRTC_JIT_ERROR_LOG_BUFFER", "numeric_literal");
-    subst("cudaJitErrorLogBufferSizeBytes", "HIPRTC_JIT_ERROR_LOG_BUFFER_SIZE_BYTES", "numeric_literal");
-    subst("cudaJitFallbackStrategy", "HIPRTC_JIT_FALLBACK_STRATEGY", "numeric_literal");
-    subst("cudaJitGenerateDebugInfo", "HIPRTC_JIT_GENERATE_DEBUG_INFO", "numeric_literal");
-    subst("cudaJitGenerateLineInfo", "HIPRTC_JIT_GENERATE_LINE_INFO", "numeric_literal");
-    subst("cudaJitInfoLogBuffer", "HIPRTC_JIT_INFO_LOG_BUFFER", "numeric_literal");
-    subst("cudaJitInfoLogBufferSizeBytes", "HIPRTC_JIT_INFO_LOG_BUFFER_SIZE_BYTES", "numeric_literal");
-    subst("cudaJitLogVerbose", "HIPRTC_JIT_LOG_VERBOSE", "numeric_literal");
-    subst("cudaJitMaxRegisters", "HIPRTC_JIT_MAX_REGISTERS", "numeric_literal");
-    subst("cudaJitOptimizationLevel", "HIPRTC_JIT_OPTIMIZATION_LEVEL", "numeric_literal");
-    subst("cudaJitThreadsPerBlock", "HIPRTC_JIT_THREADS_PER_BLOCK", "numeric_literal");
-    subst("cudaJitWallTime", "HIPRTC_JIT_WALL_TIME", "numeric_literal");
+    subst("cudaJitCacheMode", "hipJitOptionCacheMode", "numeric_literal");
+    subst("cudaJitErrorLogBuffer", "hipJitOptionErrorLogBuffer", "numeric_literal");
+    subst("cudaJitErrorLogBufferSizeBytes", "hipJitOptionErrorLogBufferSizeBytes", "numeric_literal");
+    subst("cudaJitFallbackStrategy", "hipJitOptionFallbackStrategy", "numeric_literal");
+    subst("cudaJitGenerateDebugInfo", "hipJitOptionGenerateDebugInfo", "numeric_literal");
+    subst("cudaJitGenerateLineInfo", "hipJitOptionGenerateLineInfo", "numeric_literal");
+    subst("cudaJitInfoLogBuffer", "hipJitOptionInfoLogBuffer", "numeric_literal");
+    subst("cudaJitInfoLogBufferSizeBytes", "hipJitOptionInfoLogBufferSizeBytes", "numeric_literal");
+    subst("cudaJitLogVerbose", "hipJitOptionLogVerbose", "numeric_literal");
+    subst("cudaJitMaxRegisters", "hipJitOptionMaxRegisters", "numeric_literal");
+    subst("cudaJitMaxThreadsPerBlock", "hipJitOptionMaxThreadsPerBlock", "numeric_literal");
+    subst("cudaJitMinCtaPerSm", "hipJitOptionMinCTAPerSM", "numeric_literal");
+    subst("cudaJitOptimizationLevel", "hipJitOptionOptimizationLevel", "numeric_literal");
+    subst("cudaJitOverrideDirectiveValues", "hipJitOptionOverrideDirectiveValues", "numeric_literal");
+    subst("cudaJitPositionIndependentCode", "hipJitOptionPositionIndependentCode", "numeric_literal");
+    subst("cudaJitThreadsPerBlock", "hipJitOptionThreadsPerBlock", "numeric_literal");
+    subst("cudaJitWallTime", "hipJitOptionWallTime", "numeric_literal");
     subst("cudaKernelNodeAttributeAccessPolicyWindow", "hipKernelNodeAttributeAccessPolicyWindow", "numeric_literal");
     subst("cudaKernelNodeAttributeCooperative", "hipKernelNodeAttributeCooperative", "numeric_literal");
     subst("cudaKernelNodeAttributePriority", "hipKernelNodeAttributePriority", "numeric_literal");
@@ -9050,6 +9068,8 @@ sub simpleSubstitutions {
     subst("cudaEventDefault", "hipEventDefault", "define");
     subst("cudaEventDisableTiming", "hipEventDisableTiming", "define");
     subst("cudaEventInterprocess", "hipEventInterprocess", "define");
+    subst("cudaEventRecordDefault", "hipEventRecordDefault", "define");
+    subst("cudaEventRecordExternal", "hipEventRecordExternal", "define");
     subst("cudaExternalMemoryDedicated", "hipExternalMemoryDedicated", "define");
     subst("cudaGraphKernelNodePortDefault", "hipGraphKernelNodePortDefault", "define");
     subst("cudaGraphKernelNodePortLaunchCompletion", "hipGraphKernelNodePortLaunchCompletion", "define");
@@ -11008,10 +11028,6 @@ sub warnRemovedFunctions {
     "cudaKernelNodeAttributeClusterDimension",
     "cudaJit_Fallback",
     "cudaJit_CacheMode",
-    "cudaJitPositionIndependentCode",
-    "cudaJitOverrideDirectiveValues",
-    "cudaJitMinCtaPerSm",
-    "cudaJitMaxThreadsPerBlock",
     "cudaJitCacheOptionNone",
     "cudaJitCacheOptionCG",
     "cudaJitCacheOptionCA",
@@ -11112,8 +11128,6 @@ sub warnRemovedFunctions {
     "cudaExternalMemoryGetMappedMipmappedArray",
     "cudaEventWaitExternal",
     "cudaEventWaitDefault",
-    "cudaEventRecordExternal",
-    "cudaEventRecordDefault",
     "cudaEventElapsedTime_v2",
     "cudaEventCreateFromEGLSync",
     "cudaErrorUnsupportedPtxVersion",
@@ -12248,19 +12262,7 @@ sub warnRemovedFunctions {
     "CU_JIT_REFERENCED_VARIABLE_COUNT",
     "CU_JIT_REFERENCED_KERNEL_NAMES",
     "CU_JIT_REFERENCED_KERNEL_COUNT",
-    "CU_JIT_PREC_SQRT",
-    "CU_JIT_PREC_DIV",
-    "CU_JIT_POSITION_INDEPENDENT_CODE",
-    "CU_JIT_OVERRIDE_DIRECTIVE_VALUES",
     "CU_JIT_OPTIMIZE_UNUSED_DEVICE_VARIABLES",
-    "CU_JIT_MIN_CTA_PER_SM",
-    "CU_JIT_MAX_THREADS_PER_BLOCK",
-    "CU_JIT_LTO",
-    "CU_JIT_GLOBAL_SYMBOL_NAMES",
-    "CU_JIT_GLOBAL_SYMBOL_COUNT",
-    "CU_JIT_GLOBAL_SYMBOL_ADDRESSES",
-    "CU_JIT_FTZ",
-    "CU_JIT_FMA",
     "CU_JIT_CACHE_OPTION_NONE",
     "CU_JIT_CACHE_OPTION_CG",
     "CU_JIT_CACHE_OPTION_CA",
@@ -12312,8 +12314,6 @@ sub warnRemovedFunctions {
     "CU_EVENT_SCHED_SPIN",
     "CU_EVENT_SCHED_BLOCKING_SYNC",
     "CU_EVENT_SCHED_AUTO",
-    "CU_EVENT_RECORD_EXTERNAL",
-    "CU_EVENT_RECORD_DEFAULT",
     "CU_EGL_RESOURCE_LOCATION_VIDMEM",
     "CU_EGL_RESOURCE_LOCATION_SYSMEM",
     "CU_EGL_FRAME_TYPE_PITCH",

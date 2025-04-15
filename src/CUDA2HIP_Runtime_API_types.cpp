@@ -2120,39 +2120,39 @@ const std::map<llvm::StringRef, hipCounter> CUDA_RUNTIME_TYPE_NAME_MAP {
   {"cudaJitOption",                                                    {"hipJitOption",                                             "", CONV_TYPE, API_RUNTIME, SEC::DATA_TYPES}},
   // cudaJitOption enum values
   // CU_JIT_MAX_REGISTERS
-  {"cudaJitMaxRegisters",                                              {"HIPRTC_JIT_MAX_REGISTERS",                                 "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 0
+  {"cudaJitMaxRegisters",                                              {"hipJitOptionMaxRegisters",                                 "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 0
   // CU_JIT_THREADS_PER_BLOCK
-  {"cudaJitThreadsPerBlock",                                           {"HIPRTC_JIT_THREADS_PER_BLOCK",                             "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 1
+  {"cudaJitThreadsPerBlock",                                           {"hipJitOptionThreadsPerBlock",                              "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 1
   // CU_JIT_WALL_TIME
-  {"cudaJitWallTime",                                                  {"HIPRTC_JIT_WALL_TIME",                                     "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 2
+  {"cudaJitWallTime",                                                  {"hipJitOptionWallTime",                                     "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 2
   // CU_JIT_INFO_LOG_BUFFER
-  {"cudaJitInfoLogBuffer",                                             {"HIPRTC_JIT_INFO_LOG_BUFFER",                               "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 3
+  {"cudaJitInfoLogBuffer",                                             {"hipJitOptionInfoLogBuffer",                                "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 3
   // CU_JIT_INFO_LOG_BUFFER_SIZE_BYTES
-  {"cudaJitInfoLogBufferSizeBytes",                                    {"HIPRTC_JIT_INFO_LOG_BUFFER_SIZE_BYTES",                    "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 4
+  {"cudaJitInfoLogBufferSizeBytes",                                    {"hipJitOptionInfoLogBufferSizeBytes",                       "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 4
   // CU_JIT_ERROR_LOG_BUFFER
-  {"cudaJitErrorLogBuffer",                                            {"HIPRTC_JIT_ERROR_LOG_BUFFER",                              "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 5
+  {"cudaJitErrorLogBuffer",                                            {"hipJitOptionErrorLogBuffer",                               "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 5
   // CU_JIT_ERROR_LOG_BUFFER_SIZE_BYTES
-  {"cudaJitErrorLogBufferSizeBytes",                                   {"HIPRTC_JIT_ERROR_LOG_BUFFER_SIZE_BYTES",                   "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 6
+  {"cudaJitErrorLogBufferSizeBytes",                                   {"hipJitOptionErrorLogBufferSizeBytes",                      "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 6
   // CU_JIT_OPTIMIZATION_LEVEL
-  {"cudaJitOptimizationLevel",                                         {"HIPRTC_JIT_OPTIMIZATION_LEVEL",                            "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 7
+  {"cudaJitOptimizationLevel",                                         {"hipJitOptionOptimizationLevel",                            "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 7
   // CU_JIT_FALLBACK_STRATEGY
-  {"cudaJitFallbackStrategy",                                          {"HIPRTC_JIT_FALLBACK_STRATEGY",                             "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 10
+  {"cudaJitFallbackStrategy",                                          {"hipJitOptionFallbackStrategy",                             "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 10
   // CU_JIT_GENERATE_DEBUG_INFO
-  {"cudaJitGenerateDebugInfo",                                         {"HIPRTC_JIT_GENERATE_DEBUG_INFO",                           "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 11
+  {"cudaJitGenerateDebugInfo",                                         {"hipJitOptionGenerateDebugInfo",                            "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 11
   // CU_JIT_LOG_VERBOSE
-  {"cudaJitLogVerbose",                                                {"HIPRTC_JIT_LOG_VERBOSE",                                   "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 12
+  {"cudaJitLogVerbose",                                                {"hipJitOptionLogVerbose",                                   "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 12
   // CU_JIT_GENERATE_LINE_INFO
-  {"cudaJitGenerateLineInfo",                                          {"HIPRTC_JIT_GENERATE_LINE_INFO",                            "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 13
+  {"cudaJitGenerateLineInfo",                                          {"hipJitOptionGenerateLineInfo",                             "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 13
   // CU_JIT_CACHE_MODE
-  {"cudaJitCacheMode",                                                 {"HIPRTC_JIT_CACHE_MODE",                                    "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 14
+  {"cudaJitCacheMode",                                                 {"hipJitOptionCacheMode",                                    "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 14
   // CU_JIT_POSITION_INDEPENDENT_CODE
-  {"cudaJitPositionIndependentCode",                                   {"hipJitPositionIndependentCode",                            "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 30
+  {"cudaJitPositionIndependentCode",                                   {"hipJitOptionPositionIndependentCode",                      "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 30
   // CU_JIT_MIN_CTA_PER_SM
-  {"cudaJitMinCtaPerSm",                                               {"hipJitMinCtaPerSm",                                        "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 31
+  {"cudaJitMinCtaPerSm",                                               {"hipJitOptionMinCTAPerSM",                                  "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 31
   // CU_JIT_MAX_THREADS_PER_BLOCK
-  {"cudaJitMaxThreadsPerBlock",                                        {"hipJitMaxThreadsPerBlock",                                 "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 32
+  {"cudaJitMaxThreadsPerBlock",                                        {"hipJitOptionMaxThreadsPerBlock",                           "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 32
   // CU_JIT_OVERRIDE_DIRECTIVE_VALUES
-  {"cudaJitOverrideDirectiveValues",                                   {"hipJitOverrideDerectiveValues",                            "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 33
+  {"cudaJitOverrideDirectiveValues",                                   {"hipJitOptionOverrideDirectiveValues",                      "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 33
 
   // CUlibraryOption
   {"cudaLibraryOption",                                                {"hipLibraryOption",                                         "", CONV_TYPE, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
@@ -2276,9 +2276,9 @@ const std::map<llvm::StringRef, hipCounter> CUDA_RUNTIME_TYPE_NAME_MAP {
   // CU_EVENT_INTERPROCESS
   {"cudaEventInterprocess",                                            {"hipEventInterprocess",                                     "", CONV_DEFINE, API_RUNTIME, SEC::DATA_TYPES}}, // 0x04
   // CU_EVENT_RECORD_DEFAULT
-  {"cudaEventRecordDefault",                                           {"hipEventRecordDefault",                                    "", CONV_DEFINE, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 0x00
+  {"cudaEventRecordDefault",                                           {"hipEventRecordDefault",                                    "", CONV_DEFINE, API_RUNTIME, SEC::DATA_TYPES}}, // 0x00
   // CU_EVENT_RECORD_EXTERNAL
-  {"cudaEventRecordExternal",                                          {"hipEventRecordExternal",                                   "", CONV_DEFINE, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 0x01
+  {"cudaEventRecordExternal",                                          {"hipEventRecordExternal",                                   "", CONV_DEFINE, API_RUNTIME, SEC::DATA_TYPES}}, // 0x01
   // CU_EVENT_WAIT_DEFAULT
   {"cudaEventWaitDefault",                                             {"hipEventWaitDefault",                                      "", CONV_DEFINE, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 0x00
   // CU_EVENT_WAIT_EXTERNAL
@@ -2759,7 +2759,6 @@ const std::map<llvm::StringRef, cudaAPIversions> CUDA_RUNTIME_TYPE_NAME_VER_MAP 
   {"cudaEventRecordDefault",                                           {CUDA_111, CUDA_0,   CUDA_0  }},
   {"cudaEventRecordExternal",                                          {CUDA_111, CUDA_0,   CUDA_0  }},
   {"cudaEventWaitDefault",                                             {CUDA_111, CUDA_0,   CUDA_0  }},
-  {"cudaEventRecordExternal",                                          {CUDA_111, CUDA_0,   CUDA_0  }},
   {"cudaArraySparse",                                                  {CUDA_111, CUDA_0,   CUDA_0  }},
   {"cudaErrorStubLibrary",                                             {CUDA_111, CUDA_0,   CUDA_0  }},
   {"cudaErrorCallRequiresNewerDriver",                                 {CUDA_111, CUDA_0,   CUDA_0  }},
@@ -3527,4 +3526,6 @@ const std::map<llvm::StringRef, hipAPIversions> HIP_RUNTIME_TYPE_NAME_VER_MAP {
   {"HIP_DBL2INT_CVT",                                                  {HIP_5070, HIP_0,    HIP_0   }},
   {"hipErrorInvalidChannelDescriptor",                                 {HIP_6040, HIP_0,    HIP_0   }},
   {"hipErrorInvalidTexture",                                           {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipEventRecordDefault",                                            {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipEventRecordExternal",                                           {HIP_6040, HIP_0,    HIP_0   }},
 };
