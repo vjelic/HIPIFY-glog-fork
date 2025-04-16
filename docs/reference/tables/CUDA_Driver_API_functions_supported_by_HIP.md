@@ -781,19 +781,19 @@
 |`CU_JIT_GLOBAL_SYMBOL_NAMES`|10.0| | | |`hipJitOptionGlobalSymbolNames`|6.4.0| | | | |
 |`CU_JIT_INFO_LOG_BUFFER`| | | | |`hipJitOptionInfoLogBuffer`|6.4.0| | | | |
 |`CU_JIT_INFO_LOG_BUFFER_SIZE_BYTES`| | | | |`hipJitOptionInfoLogBufferSizeBytes`|6.4.0| | | | |
-|`CU_JIT_INPUT_CUBIN`| | | | |`HIPRTC_JIT_INPUT_CUBIN`|5.3.0| | | | |
-|`CU_JIT_INPUT_FATBINARY`| | | | |`HIPRTC_JIT_INPUT_FATBINARY`|5.3.0| | | | |
-|`CU_JIT_INPUT_LIBRARY`| | | | |`HIPRTC_JIT_INPUT_LIBRARY`|5.3.0| | | | |
-|`CU_JIT_INPUT_NVVM`|11.4|12.0| | |`HIPRTC_JIT_INPUT_NVVM`|5.3.0| | | | |
-|`CU_JIT_INPUT_OBJECT`| | | | |`HIPRTC_JIT_INPUT_OBJECT`|5.3.0| | | | |
-|`CU_JIT_INPUT_PTX`| | | | |`HIPRTC_JIT_INPUT_PTX`|5.3.0| | | | |
+|`CU_JIT_INPUT_CUBIN`| | | | |`hipJitInputCubin`|6.4.0| | | | |
+|`CU_JIT_INPUT_FATBINARY`| | | | |`hipJitInputFatBinary`|6.4.0| | | | |
+|`CU_JIT_INPUT_LIBRARY`| | | | |`hipJitInputLibrary`|6.4.0| | | | |
+|`CU_JIT_INPUT_NVVM`|11.4|12.0| | |`hipJitInputNvvm`|6.4.0| | | | |
+|`CU_JIT_INPUT_OBJECT`| | | | |`hipJitInputObject`|6.4.0| | | | |
+|`CU_JIT_INPUT_PTX`| | | | |`hipJitInputPtx`|6.4.0| | | | |
 |`CU_JIT_LOG_VERBOSE`| | | | |`hipJitOptionLogVerbose`|6.4.0| | | | |
 |`CU_JIT_LTO`|11.4|12.0| | |`hipJitOptionLto`|6.4.0| | | | |
 |`CU_JIT_MAX_REGISTERS`| | | | |`hipJitOptionMaxRegisters`|6.4.0| | | | |
 |`CU_JIT_MAX_THREADS_PER_BLOCK`|12.4| | | |`hipJitOptionMaxThreadsPerBlock`|6.4.0| | | | |
 |`CU_JIT_MIN_CTA_PER_SM`|12.3| | | |`hipJitOptionMinCTAPerSM`|6.4.0| | | | |
 |`CU_JIT_NEW_SM3X_OPT`|8.0| | | |`hipJitOptionSm3xOpt`|6.4.0| | | | |
-|`CU_JIT_NUM_INPUT_TYPES`| | | | |`HIPRTC_JIT_NUM_LEGACY_INPUT_TYPES`|5.3.0| | | | |
+|`CU_JIT_NUM_INPUT_TYPES`| | | | |`hipJitNumLegacyInputTypes`|6.4.0| | | | |
 |`CU_JIT_NUM_OPTIONS`| | | | |`hipJitOptionNumOptions`|6.4.0| | | | |
 |`CU_JIT_OPTIMIZATION_LEVEL`| | | | |`hipJitOptionOptimizationLevel`|6.4.0| | | | |
 |`CU_JIT_OPTIMIZE_UNUSED_DEVICE_VARIABLES`|11.7|12.0| | | | | | | | |
@@ -1325,8 +1325,8 @@
 |`CUipcMemHandle_v1`|11.3| | | |`hipIpcMemHandle_t`|1.6.0| | | | |
 |`CUipcMem_flags`| | | | | | | | | | |
 |`CUipcMem_flags_enum`| | | | | | | | | | |
-|`CUjitInputType`| | | | |`hiprtcJITInputType`|5.3.0| | | | |
-|`CUjitInputType_enum`| | | | |`hiprtcJITInputType`|5.3.0| | | | |
+|`CUjitInputType`| | | | |`hipJitInputType`|6.4.0| | | | |
+|`CUjitInputType_enum`| | | | |`hipJitInputType`|6.4.0| | | | |
 |`CUjit_cacheMode`| | | | | | | | | | |
 |`CUjit_cacheMode_enum`| | | | | | | | | | |
 |`CUjit_fallback`| | | | | | | | | | |

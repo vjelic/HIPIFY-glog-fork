@@ -620,6 +620,23 @@ int main() {
   typedef struct CUgraphicsResource_st* graphicsResource_st;
   CUgraphicsResource graphicsResource;
 
+  // CHECK: hipJitInputType jitInputType;
+  // CHECK-NEXT: hipJitInputType jitInputType_enum;
+  // CHECK-NEXT: hipJitInputType JIT_INPUT_CUBIN = hipJitInputCubin;
+  // CHECK-NEXT: hipJitInputType JIT_INPUT_PTX = hipJitInputPtx;
+  // CHECK-NEXT: hipJitInputType JIT_INPUT_FATBINARY = hipJitInputFatBinary;
+  // CHECK-NEXT: hipJitInputType JIT_INPUT_OBJECT = hipJitInputObject;
+  // CHECK-NEXT: hipJitInputType JIT_INPUT_LIBRARY = hipJitInputLibrary;
+  // CHECK-NEXT: hipJitInputType JIT_NUM_INPUT_TYPES = hipJitNumLegacyInputTypes;
+  CUjitInputType jitInputType;
+  CUjitInputType_enum jitInputType_enum;
+  CUjitInputType JIT_INPUT_CUBIN = CU_JIT_INPUT_CUBIN;
+  CUjitInputType JIT_INPUT_PTX = CU_JIT_INPUT_PTX;
+  CUjitInputType JIT_INPUT_FATBINARY = CU_JIT_INPUT_FATBINARY;
+  CUjitInputType JIT_INPUT_OBJECT = CU_JIT_INPUT_OBJECT;
+  CUjitInputType JIT_INPUT_LIBRARY = CU_JIT_INPUT_LIBRARY;
+  CUjitInputType JIT_NUM_INPUT_TYPES = CU_JIT_NUM_INPUT_TYPES;
+
 #if CUDA_VERSION >= 8000
   // CHECK: hipDeviceAttribute_t DEVICE_ATTRIBUTE_HOST_NATIVE_ATOMIC_SUPPORTED = hipDeviceAttributeHostNativeAtomicSupported;
   // CHECK-NEXT: hipDeviceAttribute_t DEVICE_ATTRIBUTE_SINGLE_TO_DOUBLE_PRECISION_PERF_RATIO = hipDeviceAttributeSingleToDoublePrecisionPerfRatio;
@@ -1155,6 +1172,9 @@ int main() {
   CUjit_option JIT_PREC_DIV = CU_JIT_PREC_DIV;
   CUjit_option JIT_PREC_SQRT = CU_JIT_PREC_SQRT;
   CUjit_option JIT_FMA = CU_JIT_FMA;
+
+  // CHECK: hipJitInputType JIT_INPUT_NVVM = hipJitInputNvvm;
+  CUjitInputType JIT_INPUT_NVVM = CU_JIT_INPUT_NVVM;
 #endif
 
 #if CUDA_VERSION >= 11070
@@ -1218,9 +1238,6 @@ int main() {
   CUdriverProcAddressQueryResult GET_PROC_ADDRESS_SUCCESS = CU_GET_PROC_ADDRESS_SUCCESS;
   CUdriverProcAddressQueryResult GET_PROC_ADDRESS_SYMBOL_NOT_FOUND = CU_GET_PROC_ADDRESS_SYMBOL_NOT_FOUND;
   CUdriverProcAddressQueryResult GET_PROC_ADDRESS_VERSION_NOT_SUFFICIENT = CU_GET_PROC_ADDRESS_VERSION_NOT_SUFFICIENT;
-
-  // CHECK: hipJitOption JIT_MIN_CTA_PER_SM = hipJitOptionMinCTAPerSM;
-  CUjit_option JIT_MIN_CTA_PER_SM = CU_JIT_MIN_CTA_PER_SM;
 #endif
 
 #if CUDA_VERSION >= 12030
@@ -1234,7 +1251,9 @@ int main() {
   CUgraphDependencyType GRAPH_DEPENDENCY_TYPE_PROGRAMMATIC = CU_GRAPH_DEPENDENCY_TYPE_PROGRAMMATIC;
 
   // CHECK: hipJitOption JIT_POSITION_INDEPENDENT_CODE = hipJitOptionPositionIndependentCode;
+  // CHECK-NEXT: hipJitOption JIT_MIN_CTA_PER_SM = hipJitOptionMinCTAPerSM;
   CUjit_option JIT_POSITION_INDEPENDENT_CODE = CU_JIT_POSITION_INDEPENDENT_CODE;
+  CUjit_option JIT_MIN_CTA_PER_SM = CU_JIT_MIN_CTA_PER_SM;
 #endif
 
 #if CUDA_VERSION >= 12040
