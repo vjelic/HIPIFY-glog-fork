@@ -1566,16 +1566,16 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_TYPE_NAME_MAP {
   {"CU_TARGET_COMPUTE_120A",                                           {"hipJitTargetCompute120a",                                  "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // CU_COMPUTE_ACCELERATED_TARGET_BASE + CU_TARGET_COMPUTE_120
 
   // no analogue
-  {"CUjitInputType",                                                   {"hiprtcJITInputType",                                       "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES}},
-  {"CUjitInputType_enum",                                              {"hiprtcJITInputType",                                       "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES}},
+  {"CUjitInputType",                                                   {"hipJitInputType",                                          "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES}},
+  {"CUjitInputType_enum",                                              {"hipJitInputType",                                          "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES}},
   // CUjitInputType enum values
-  {"CU_JIT_INPUT_CUBIN",                                               {"HIPRTC_JIT_INPUT_CUBIN",                                   "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}}, // 0
-  {"CU_JIT_INPUT_PTX",                                                 {"HIPRTC_JIT_INPUT_PTX",                                     "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}},
-  {"CU_JIT_INPUT_FATBINARY",                                           {"HIPRTC_JIT_INPUT_FATBINARY",                               "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}},
-  {"CU_JIT_INPUT_OBJECT",                                              {"HIPRTC_JIT_INPUT_OBJECT",                                  "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}},
-  {"CU_JIT_INPUT_LIBRARY",                                             {"HIPRTC_JIT_INPUT_LIBRARY",                                 "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}},
-  {"CU_JIT_INPUT_NVVM",                                                {"HIPRTC_JIT_INPUT_NVVM",                                    "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, CUDA_DEPRECATED}},
-  {"CU_JIT_NUM_INPUT_TYPES",                                           {"HIPRTC_JIT_NUM_LEGACY_INPUT_TYPES",                        "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}},
+  {"CU_JIT_INPUT_CUBIN",                                               {"hipJitInputCubin",                                         "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}}, // 0
+  {"CU_JIT_INPUT_PTX",                                                 {"hipJitInputPtx",                                           "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}},
+  {"CU_JIT_INPUT_FATBINARY",                                           {"hipJitInputFatBinary",                                     "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}},
+  {"CU_JIT_INPUT_OBJECT",                                              {"hipJitInputObject",                                        "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}},
+  {"CU_JIT_INPUT_LIBRARY",                                             {"hipJitInputLibrary",                                       "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}},
+  {"CU_JIT_INPUT_NVVM",                                                {"hipJitInputNvvm",                                          "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES, CUDA_DEPRECATED}},
+  {"CU_JIT_NUM_INPUT_TYPES",                                           {"hipJitNumLegacyInputTypes",                                "", CONV_NUMERIC_LITERAL, API_DRIVER, SEC::DATA_TYPES}},
 
   // cudaLimit
   {"CUlimit",                                                          {"hipLimit_t",                                               "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES}},
@@ -4614,14 +4614,14 @@ const std::map<llvm::StringRef, hipAPIversions> HIP_DRIVER_TYPE_NAME_VER_MAP {
   {"hipDeviceAttributeVirtualMemoryManagementSupported",               {HIP_5030, HIP_0,    HIP_0   }},
   {"hipUserObject",                                                    {HIP_5030, HIP_0,    HIP_0   }},
   {"hipUserObject_t",                                                  {HIP_5030, HIP_0,    HIP_0   }},
-  {"hiprtcJITInputType",                                               {HIP_5030, HIP_0,    HIP_0   }},
-  {"HIPRTC_JIT_INPUT_CUBIN",                                           {HIP_5030, HIP_0,    HIP_0   }},
-  {"HIPRTC_JIT_INPUT_PTX",                                             {HIP_5030, HIP_0,    HIP_0   }},
-  {"HIPRTC_JIT_INPUT_FATBINARY",                                       {HIP_5030, HIP_0,    HIP_0   }},
-  {"HIPRTC_JIT_INPUT_OBJECT",                                          {HIP_5030, HIP_0,    HIP_0   }},
-  {"HIPRTC_JIT_INPUT_LIBRARY",                                         {HIP_5030, HIP_0,    HIP_0   }},
-  {"HIPRTC_JIT_INPUT_NVVM",                                            {HIP_5030, HIP_0,    HIP_0   }},
-  {"HIPRTC_JIT_NUM_LEGACY_INPUT_TYPES",                                {HIP_5030, HIP_0,    HIP_0   }},
+  {"hipJitInputType",                                                  {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipJitInputCubin",                                                 {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipJitInputPtx",                                                   {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipJitInputFatBinary",                                             {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipJitInputObject",                                                {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipJitInputLibrary",                                               {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipJitInputNvvm",                                                  {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipJitNumLegacyInputTypes",                                        {HIP_6040, HIP_0,    HIP_0   }},
   {"ihiprtcLinkState",                                                 {HIP_5030, HIP_0,    HIP_0   }},
   {"hiprtcLinkState",                                                  {HIP_5030, HIP_0,    HIP_0   }},
   {"hipFunctionLaunchParams_t",                                        {HIP_5050, HIP_0,    HIP_0   }},
