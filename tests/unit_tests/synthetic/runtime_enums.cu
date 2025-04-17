@@ -80,7 +80,7 @@ int main() {
   // CHECK-NEXT: hipDeviceAttribute_t DevAttrMaxTexture3DWidthAlt = hipDeviceAttributeMaxTexture3DAlt;
   // CHECK-NEXT: hipDeviceAttribute_t DevAttrMaxTexture3DHeightAlt = hipDeviceAttributeMaxTexture3DAlt;
   // CHECK-NEXT: hipDeviceAttribute_t DevAttrMaxTexture3DDepthAlt = hipDeviceAttributeMaxTexture3DAlt;
-  // CHECK-NEXT: hipDeviceAttribute_t DevAttrPciDomainId = hipDeviceAttributePciDomainID;
+  // CHECK-NEXT: hipDeviceAttribute_t DevAttrPciDomainId = hipDeviceAttributePciDomainId;
   // CHECK-NEXT: hipDeviceAttribute_t DevAttrTexturePitchAlignment = hipDeviceAttributeTexturePitchAlignment;
   // CHECK-NEXT: hipDeviceAttribute_t DevAttrMaxTextureCubemapWidth = hipDeviceAttributeMaxTextureCubemap;
   // CHECK-NEXT: hipDeviceAttribute_t DevAttrMaxTextureCubemapLayeredWidth = hipDeviceAttributeMaxTextureCubemapLayered;
