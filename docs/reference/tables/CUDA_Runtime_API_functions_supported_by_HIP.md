@@ -900,7 +900,7 @@
 |`cudaDevAttrPageableMemoryAccessUsesHostPageTables`|9.2| | | |`hipDeviceAttributePageableMemoryAccessUsesHostPageTables`|3.10.0| | | | |
 |`cudaDevAttrPciBusId`| | | | |`hipDeviceAttributePciBusId`|1.6.0| | | | |
 |`cudaDevAttrPciDeviceId`| | | | |`hipDeviceAttributePciDeviceId`|1.6.0| | | | |
-|`cudaDevAttrPciDomainId`| | | | |`hipDeviceAttributePciDomainID`|4.3.0| | | | |
+|`cudaDevAttrPciDomainId`| | | | |`hipDeviceAttributePciDomainId`|4.3.0| | | | |
 |`cudaDevAttrReserved122`|12.0| | | | | | | | | |
 |`cudaDevAttrReserved123`|12.0| | | | | | | | | |
 |`cudaDevAttrReserved124`|12.0| | | | | | | | | |
@@ -1467,7 +1467,7 @@
 |`cudaKernelNodeParamsV2`|12.2| | | | | | | | | |
 |`cudaKernel_t`|12.1| | | | | | | | | |
 |`cudaKeyValuePair`| | | |12.0| | | | | | |
-|`cudaLaunchAttribute`|11.8| | | | | | | | | |
+|`cudaLaunchAttribute`|11.8| | | |`hipLaunchAttribute`|6.5.0| | | | |
 |`cudaLaunchAttributeAccessPolicyWindow`|11.8| | | |`hipLaunchAttributeAccessPolicyWindow`|6.2.0| | | | |
 |`cudaLaunchAttributeClusterDimension`|11.8| | | | | | | | | |
 |`cudaLaunchAttributeClusterSchedulingPolicyPreference`|11.8| | | | | | | | | |
@@ -1485,9 +1485,7 @@
 |`cudaLaunchAttributeProgrammaticStreamSerialization`|11.8| | | | | | | | | |
 |`cudaLaunchAttributeSynchronizationPolicy`|11.8| | | | | | | | | |
 |`cudaLaunchAttributeValue`|11.8| | | |`hipLaunchAttributeValue`|6.2.0| | | | |
-|`cudaLaunchAttribute_st`|11.8| | | | | | | | | |
-|`cudaLaunchConfig_st`|11.8| | | | | | | | | |
-|`cudaLaunchConfig_t`|11.8| | | | | | | | | |
+|`cudaLaunchAttribute_st`|11.8| | | |`hipLaunchAttribute_st`|6.5.0| | | | |
 |`cudaLaunchMemSyncDomain`|12.0| | | | | | | | | |
 |`cudaLaunchMemSyncDomainDefault`|12.0| | | | | | | | | |
 |`cudaLaunchMemSyncDomainMap`|12.0| | | | | | | | | |

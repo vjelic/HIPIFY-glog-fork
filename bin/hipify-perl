@@ -7115,6 +7115,8 @@ sub simpleSubstitutions {
     subst("CUlaunchAttributeID_enum", "hipLaunchAttributeID", "type");
     subst("CUlaunchAttributeValue", "hipLaunchAttributeValue", "type");
     subst("CUlaunchAttributeValue_union", "hipLaunchAttributeValue", "type");
+    subst("CUlaunchConfig", "HIP_LAUNCH_CONFIG", "type");
+    subst("CUlaunchConfig_st", "HIP_LAUNCH_CONFIG_st", "type");
     subst("CUlimit", "hipLimit_t", "type");
     subst("CUlimit_enum", "hipLimit_t", "type");
     subst("CUlinkState", "hiprtcLinkState", "type");
@@ -7331,8 +7333,10 @@ sub simpleSubstitutions {
     subst("cudaKernelNodeAttrID", "hipKernelNodeAttrID", "type");
     subst("cudaKernelNodeAttrValue", "hipKernelNodeAttrValue", "type");
     subst("cudaKernelNodeParams", "hipKernelNodeParams", "type");
+    subst("cudaLaunchAttribute", "hipLaunchAttribute", "type");
     subst("cudaLaunchAttributeID", "hipLaunchAttributeID", "type");
     subst("cudaLaunchAttributeValue", "hipLaunchAttributeValue", "type");
+    subst("cudaLaunchAttribute_st", "hipLaunchAttribute_st", "type");
     subst("cudaLaunchParams", "hipLaunchParams", "type");
     subst("cudaLibXtDesc", "hipLibXtDesc", "type");
     subst("cudaLibXtDesc_t", "hipLibXtDesc_t", "type");
@@ -8225,7 +8229,7 @@ sub simpleSubstitutions {
     subst("CU_DEVICE_ATTRIBUTE_PAGEABLE_MEMORY_ACCESS_USES_HOST_PAGE_TABLES", "hipDeviceAttributePageableMemoryAccessUsesHostPageTables", "numeric_literal");
     subst("CU_DEVICE_ATTRIBUTE_PCI_BUS_ID", "hipDeviceAttributePciBusId", "numeric_literal");
     subst("CU_DEVICE_ATTRIBUTE_PCI_DEVICE_ID", "hipDeviceAttributePciDeviceId", "numeric_literal");
-    subst("CU_DEVICE_ATTRIBUTE_PCI_DOMAIN_ID", "hipDeviceAttributePciDomainID", "numeric_literal");
+    subst("CU_DEVICE_ATTRIBUTE_PCI_DOMAIN_ID", "hipDeviceAttributePciDomainId", "numeric_literal");
     subst("CU_DEVICE_ATTRIBUTE_REGISTERS_PER_BLOCK", "hipDeviceAttributeMaxRegistersPerBlock", "numeric_literal");
     subst("CU_DEVICE_ATTRIBUTE_SHARED_MEMORY_PER_BLOCK", "hipDeviceAttributeMaxSharedMemoryPerBlock", "numeric_literal");
     subst("CU_DEVICE_ATTRIBUTE_SINGLE_TO_DOUBLE_PRECISION_PERF_RATIO", "hipDeviceAttributeSingleToDoublePrecisionPerfRatio", "numeric_literal");
@@ -8626,7 +8630,7 @@ sub simpleSubstitutions {
     subst("cudaDevAttrPageableMemoryAccessUsesHostPageTables", "hipDeviceAttributePageableMemoryAccessUsesHostPageTables", "numeric_literal");
     subst("cudaDevAttrPciBusId", "hipDeviceAttributePciBusId", "numeric_literal");
     subst("cudaDevAttrPciDeviceId", "hipDeviceAttributePciDeviceId", "numeric_literal");
-    subst("cudaDevAttrPciDomainId", "hipDeviceAttributePciDomainID", "numeric_literal");
+    subst("cudaDevAttrPciDomainId", "hipDeviceAttributePciDomainId", "numeric_literal");
     subst("cudaDevAttrReserved94", "hipDeviceAttributeCanUseStreamWaitValue", "numeric_literal");
     subst("cudaDevAttrSingleToDoublePrecisionPerfRatio", "hipDeviceAttributeSingleToDoublePrecisionPerfRatio", "numeric_literal");
     subst("cudaDevAttrStreamPrioritiesSupported", "hipDeviceAttributeStreamPrioritiesSupported", "numeric_literal");
@@ -11007,9 +11011,6 @@ sub warnRemovedFunctions {
     "cudaLaunchMemSyncDomainDefault",
     "cudaLaunchMemSyncDomain",
     "cudaLaunchKernelExC",
-    "cudaLaunchConfig_t",
-    "cudaLaunchConfig_st",
-    "cudaLaunchAttribute_st",
     "cudaLaunchAttributeSynchronizationPolicy",
     "cudaLaunchAttributeProgrammaticStreamSerialization",
     "cudaLaunchAttributeProgrammaticEvent",
@@ -11022,7 +11023,6 @@ sub warnRemovedFunctions {
     "cudaLaunchAttributeDeviceUpdatableKernelNode",
     "cudaLaunchAttributeClusterSchedulingPolicyPreference",
     "cudaLaunchAttributeClusterDimension",
-    "cudaLaunchAttribute",
     "cudaKeyValuePair",
     "cudaKernel_t",
     "cudaKernelSetAttributeForDevice",
@@ -11972,8 +11972,6 @@ sub warnRemovedFunctions {
     "CUlaunchMemSyncDomainMap_st",
     "CUlaunchMemSyncDomainMap",
     "CUlaunchMemSyncDomain",
-    "CUlaunchConfig_st",
-    "CUlaunchConfig",
     "CUlaunchAttribute_st",
     "CUlaunchAttribute",
     "CUkernel",
