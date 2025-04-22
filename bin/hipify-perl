@@ -1516,7 +1516,17 @@ my %removed_funcs = (
 );
 
 my %experimental_funcs = (
-
+    "cudaLaunchKernelExC" => "6.5.0",
+    "cudaLaunchConfig_t" => "6.5.0",
+    "cudaLaunchConfig_st" => "6.5.0",
+    "cudaLaunchAttribute_st" => "6.5.0",
+    "cudaLaunchAttribute" => "6.5.0",
+    "cublasLtMatmulMatrixScale_t" => "6.5.0",
+    "cuLaunchKernelEx" => "6.5.0",
+    "CUBLASLT_MATMUL_MATRIX_SCALE_VEC32_UE8M0" => "6.5.0",
+    "CUBLASLT_MATMUL_MATRIX_SCALE_VEC16_UE4M3" => "6.5.0",
+    "CUBLASLT_MATMUL_MATRIX_SCALE_SCALAR_32F" => "6.5.0",
+    "CUBLASLT_MATMUL_MATRIX_SCALE_END" => "6.5.0"
 );
 
 $print_stats = 1 if $examine;
@@ -1654,6 +1664,17 @@ sub subst {
 }
 
 sub experimentalSubstitutions {
+    subst("cuLaunchKernelEx", "hipDrvLaunchKernelEx", "execution");
+    subst("cudaLaunchKernelExC", "hipLaunchKernelExC", "execution");
+    subst("cublasLtMatmulMatrixScale_t", "hipblasLtMatmulMatrixScale_t", "type");
+    subst("cudaLaunchAttribute", "hipLaunchAttribute", "type");
+    subst("cudaLaunchAttribute_st", "hipLaunchAttribute_st", "type");
+    subst("cudaLaunchConfig_st", "hipLaunchConfig_st", "type");
+    subst("cudaLaunchConfig_t", "hipLaunchConfig_t", "type");
+    subst("CUBLASLT_MATMUL_MATRIX_SCALE_END", "HIPBLASLT_MATMUL_MATRIX_SCALE_END", "numeric_literal");
+    subst("CUBLASLT_MATMUL_MATRIX_SCALE_SCALAR_32F", "HIPBLASLT_MATMUL_MATRIX_SCALE_SCALAR_32F", "numeric_literal");
+    subst("CUBLASLT_MATMUL_MATRIX_SCALE_VEC16_UE4M3", "HIPBLASLT_MATMUL_MATRIX_SCALE_VEC16_UE4M3", "numeric_literal");
+    subst("CUBLASLT_MATMUL_MATRIX_SCALE_VEC32_UE8M0", "HIPBLASLT_MATMUL_MATRIX_SCALE_VEC32_UE8M0", "numeric_literal");
 }
 
 sub rocSubstitutions {
@@ -7242,7 +7263,6 @@ sub simpleSubstitutions {
     subst("cublasLtMatmulDescOpaque_t", "hipblasLtMatmulDescOpaque_t", "type");
     subst("cublasLtMatmulDesc_t", "hipblasLtMatmulDesc_t", "type");
     subst("cublasLtMatmulHeuristicResult_t", "hipblasLtMatmulHeuristicResult_t", "type");
-    subst("cublasLtMatmulMatrixScale_t", "hipblasLtMatmulMatrixScale_t", "type");
     subst("cublasLtMatmulPreferenceAttributes_t", "hipblasLtMatmulPreferenceAttributes_t", "type");
     subst("cublasLtMatmulPreferenceOpaque_t", "hipblasLtMatmulPreferenceOpaque_t", "type");
     subst("cublasLtMatmulPreference_t", "hipblasLtMatmulPreference_t", "type");
@@ -7333,10 +7353,8 @@ sub simpleSubstitutions {
     subst("cudaKernelNodeAttrID", "hipKernelNodeAttrID", "type");
     subst("cudaKernelNodeAttrValue", "hipKernelNodeAttrValue", "type");
     subst("cudaKernelNodeParams", "hipKernelNodeParams", "type");
-    subst("cudaLaunchAttribute", "hipLaunchAttribute", "type");
     subst("cudaLaunchAttributeID", "hipLaunchAttributeID", "type");
     subst("cudaLaunchAttributeValue", "hipLaunchAttributeValue", "type");
-    subst("cudaLaunchAttribute_st", "hipLaunchAttribute_st", "type");
     subst("cudaLaunchParams", "hipLaunchParams", "type");
     subst("cudaLibXtDesc", "hipLibXtDesc", "type");
     subst("cudaLibXtDesc_t", "hipLibXtDesc_t", "type");
@@ -7587,10 +7605,6 @@ sub simpleSubstitutions {
     subst("CUBLASLT_MATMUL_DESC_POINTER_MODE", "HIPBLASLT_MATMUL_DESC_POINTER_MODE", "numeric_literal");
     subst("CUBLASLT_MATMUL_DESC_TRANSA", "HIPBLASLT_MATMUL_DESC_TRANSA", "numeric_literal");
     subst("CUBLASLT_MATMUL_DESC_TRANSB", "HIPBLASLT_MATMUL_DESC_TRANSB", "numeric_literal");
-    subst("CUBLASLT_MATMUL_MATRIX_SCALE_END", "HIPBLASLT_MATMUL_MATRIX_SCALE_END", "numeric_literal");
-    subst("CUBLASLT_MATMUL_MATRIX_SCALE_SCALAR_32F", "HIPBLASLT_MATMUL_MATRIX_SCALE_SCALAR_32F", "numeric_literal");
-    subst("CUBLASLT_MATMUL_MATRIX_SCALE_VEC16_UE4M3", "HIPBLASLT_MATMUL_MATRIX_SCALE_VEC16_UE4M3", "numeric_literal");
-    subst("CUBLASLT_MATMUL_MATRIX_SCALE_VEC32_UE8M0", "HIPBLASLT_MATMUL_MATRIX_SCALE_VEC32_UE8M0", "numeric_literal");
     subst("CUBLASLT_MATMUL_PREF_MAX_WORKSPACE_BYTES", "HIPBLASLT_MATMUL_PREF_MAX_WORKSPACE_BYTES", "numeric_literal");
     subst("CUBLASLT_MATMUL_PREF_SEARCH_MODE", "HIPBLASLT_MATMUL_PREF_SEARCH_MODE", "numeric_literal");
     subst("CUBLASLT_MATRIX_LAYOUT_BATCH_COUNT", "HIPBLASLT_MATRIX_LAYOUT_BATCH_COUNT", "numeric_literal");
@@ -11010,7 +11024,6 @@ sub warnRemovedFunctions {
     "cudaLaunchMemSyncDomainMap",
     "cudaLaunchMemSyncDomainDefault",
     "cudaLaunchMemSyncDomain",
-    "cudaLaunchKernelExC",
     "cudaLaunchAttributeSynchronizationPolicy",
     "cudaLaunchAttributeProgrammaticStreamSerialization",
     "cudaLaunchAttributeProgrammaticEvent",
@@ -11714,7 +11727,6 @@ sub warnRemovedFunctions {
     "cuLibraryGetKernel",
     "cuLibraryGetGlobal",
     "cuLibraryEnumerateKernels",
-    "cuLaunchKernelEx",
     "cuLaunchGridAsync",
     "cuLaunchGrid",
     "cuLaunch",

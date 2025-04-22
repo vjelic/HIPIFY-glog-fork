@@ -4658,6 +4658,6 @@ const std::map<llvm::StringRef, hipAPIversions> HIP_DRIVER_TYPE_NAME_VER_MAP {
   {"hipJitOptionMinCTAPerSM",                                          {HIP_6040, HIP_0,    HIP_0   }},
   {"hipJitOptionMaxThreadsPerBlock",                                   {HIP_6040, HIP_0,    HIP_0   }},
   {"hipJitOptionOverrideDirectiveValues",                              {HIP_6040, HIP_0,    HIP_0   }},
-  {"HIP_LAUNCH_CONFIG_st",                                             {HIP_6050, HIP_0,    HIP_0   }},
-  {"HIP_LAUNCH_CONFIG",                                                {HIP_6050, HIP_0,    HIP_0   }},
+  {"HIP_LAUNCH_CONFIG_st",                                             {HIP_6050, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"HIP_LAUNCH_CONFIG",                                                {HIP_6050, HIP_0,    HIP_0,  HIP_LATEST}},
 };
