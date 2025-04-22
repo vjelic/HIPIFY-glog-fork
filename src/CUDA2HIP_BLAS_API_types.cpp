@@ -165,10 +165,10 @@ const std::map<llvm::StringRef, hipCounter> CUDA_BLAS_TYPE_NAME_MAP {
   {"CUDA_R_8F_E4M3",                                                 {"HIP_R_8F_E4M3",                                                     "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES, ROC_UNSUPPORTED}}, // 28
   {"CUDA_R_8F_UE4M3",                                                {"HIP_R_8F_E4M3",                                                     "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES, ROC_UNSUPPORTED}}, // = CUDA_R_8F_E4M3 = 28
   {"CUDA_R_8F_E5M2",                                                 {"HIP_R_8F_E5M2",                                                     "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES, ROC_UNSUPPORTED}}, // 29
-  {"CUDA_R_8F_UE8M0",                                                {"HIP_R_8F_UE8M0",                                                    "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES, UNSUPPORTED}}, // 30
-  {"CUDA_R_6F_E2M3",                                                 {"HIP_R_6F_E2M3",                                                     "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES, UNSUPPORTED}}, // 31
-  {"CUDA_R_6F_E3M2",                                                 {"HIP_R_6F_E3M2",                                                     "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES, UNSUPPORTED}}, // 32
-  {"CUDA_R_4F_E2M1",                                                 {"HIP_R_4F_E2M1",                                                     "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES, UNSUPPORTED}}, // 33
+  {"CUDA_R_8F_UE8M0",                                                {"HIP_R_8F_UE8M0",                                                    "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES, HIP_EXPERIMENTAL}}, // 30
+  {"CUDA_R_6F_E2M3",                                                 {"HIP_R_6F_E2M3",                                                     "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES, HIP_EXPERIMENTAL}}, // 31
+  {"CUDA_R_6F_E3M2",                                                 {"HIP_R_6F_E3M2",                                                     "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES, HIP_EXPERIMENTAL}}, // 32
+  {"CUDA_R_4F_E2M1",                                                 {"HIP_R_4F_E2M1",                                                     "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::CUDA_DATA_TYPES, HIP_EXPERIMENTAL}}, // 33
 
   // CUBLAS Data Types
 
@@ -2307,6 +2307,10 @@ const std::map<llvm::StringRef, hipAPIversions> HIP_BLAS_TYPE_NAME_VER_MAP {
   {"HIPBLASLT_MATMUL_MATRIX_SCALE_END",                              {HIP_6050, HIP_0,    HIP_0,  HIP_LATEST}},
   {"HIPBLASLT_MATMUL_DESC_A_SCALE_MODE",                             {HIP_6050, HIP_0,    HIP_0,  HIP_LATEST}},
   {"HIPBLASLT_MATMUL_DESC_B_SCALE_MODE",                             {HIP_6050, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"HIP_R_8F_UE8M0",                                                 {HIP_6050, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"HIP_R_6F_E2M3",                                                  {HIP_6050, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"HIP_R_6F_E3M2",                                                  {HIP_6050, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"HIP_R_4F_E2M1",                                                  {HIP_6050, HIP_0,    HIP_0,  HIP_LATEST}},
 
   {"rocblas_handle",                                                 {HIP_1050, HIP_0,    HIP_0   }},
   {"_rocblas_handle",                                                {HIP_1050, HIP_0,    HIP_0   }},

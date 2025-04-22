@@ -1523,6 +1523,10 @@ my %experimental_funcs = (
     "cudaLaunchAttribute" => "6.5.0",
     "cublasLtMatmulMatrixScale_t" => "6.5.0",
     "cuLaunchKernelEx" => "6.5.0",
+    "CUDA_R_8F_UE8M0" => "6.5.0",
+    "CUDA_R_6F_E3M2" => "6.5.0",
+    "CUDA_R_6F_E2M3" => "6.5.0",
+    "CUDA_R_4F_E2M1" => "6.5.0",
     "CUBLASLT_MATMUL_MATRIX_SCALE_VEC32_UE8M0" => "6.5.0",
     "CUBLASLT_MATMUL_MATRIX_SCALE_VEC16_UE4M3" => "6.5.0",
     "CUBLASLT_MATMUL_MATRIX_SCALE_SCALAR_32F" => "6.5.0",
@@ -1675,6 +1679,10 @@ sub experimentalSubstitutions {
     subst("CUBLASLT_MATMUL_MATRIX_SCALE_SCALAR_32F", "HIPBLASLT_MATMUL_MATRIX_SCALE_SCALAR_32F", "numeric_literal");
     subst("CUBLASLT_MATMUL_MATRIX_SCALE_VEC16_UE4M3", "HIPBLASLT_MATMUL_MATRIX_SCALE_VEC16_UE4M3", "numeric_literal");
     subst("CUBLASLT_MATMUL_MATRIX_SCALE_VEC32_UE8M0", "HIPBLASLT_MATMUL_MATRIX_SCALE_VEC32_UE8M0", "numeric_literal");
+    subst("CUDA_R_4F_E2M1", "HIP_R_4F_E2M1", "numeric_literal");
+    subst("CUDA_R_6F_E2M3", "HIP_R_6F_E2M3", "numeric_literal");
+    subst("CUDA_R_6F_E3M2", "HIP_R_6F_E3M2", "numeric_literal");
+    subst("CUDA_R_8F_UE8M0", "HIP_R_8F_UE8M0", "numeric_literal");
 }
 
 sub rocSubstitutions {
@@ -12742,10 +12750,6 @@ sub warnRemovedFunctions {
     "CUFFT_LICENSE_ERROR",
     "CUFFT_COMPATIBILITY_FFTW_PADDING",
     "CUFFT_COMPATIBILITY_DEFAULT",
-    "CUDA_R_8F_UE8M0",
-    "CUDA_R_6F_E3M2",
-    "CUDA_R_6F_E2M3",
-    "CUDA_R_4F_E2M1",
     "CUDA_POINTER_ATTRIBUTE_P2P_TOKENS_v1",
     "CUDA_POINTER_ATTRIBUTE_P2P_TOKENS_st",
     "CUDA_POINTER_ATTRIBUTE_P2P_TOKENS",
@@ -14409,17 +14413,13 @@ sub warnHipOnlyUnsupportedFunctions {
     "CURAND_CHOOSE_BEST",
     "CURAND_BINARY_SEARCH",
     "CURAND_3RD",
-    "CUDA_R_8F_UE8M0",
     "CUDA_R_8F_UE4M3",
     "CUDA_R_8F_E5M2",
     "CUDA_R_8F_E4M3",
-    "CUDA_R_6F_E3M2",
-    "CUDA_R_6F_E2M3",
     "CUDA_R_64U",
     "CUDA_R_64I",
     "CUDA_R_4U",
     "CUDA_R_4I",
-    "CUDA_R_4F_E2M1",
     "CUDA_R_16U",
     "CUDA_R_16I",
     "CUDA_C_64U",
