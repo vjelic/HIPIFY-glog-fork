@@ -630,7 +630,7 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_FUNCTION_MAP {
   {"cuLaunchKernel",                                              {"hipModuleLaunchKernel",                                       "", CONV_EXECUTION, API_DRIVER, SEC::EXECUTION}},
   // no analogue
   // NOTE: Not equal to cudaLaunchKernelExC due to different signatures
-  {"cuLaunchKernelEx",                                            {"hipLaunchKernelEx",                                           "", CONV_EXECUTION, API_DRIVER, SEC::EXECUTION, HIP_UNSUPPORTED}},
+  {"cuLaunchKernelEx",                                            {"hipDrvLaunchKernelEx",                                        "", CONV_EXECUTION, API_DRIVER, SEC::EXECUTION, HIP_EXPERIMENTAL}},
   // cudaFuncGetName
   {"cuFuncGetName",                                               {"hipFuncGetName",                                              "", CONV_EXECUTION, API_DRIVER, SEC::EXECUTION, HIP_UNSUPPORTED}},
   // cudaFuncGetParamInfo
@@ -1719,6 +1719,7 @@ const std::map<llvm::StringRef, hipAPIversions> HIP_DRIVER_FUNCTION_VER_MAP {
   {"hipGraphExecBatchMemOpNodeSetParams",                         {HIP_6040, HIP_0,    HIP_0   }},
   {"hipEventRecordWithFlags",                                     {HIP_6040, HIP_0,    HIP_0   }},
   {"hipDeviceGetTexture1DLinearMaxWidth",                         {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipDrvLaunchKernelEx",                                        {HIP_6050, HIP_0,    HIP_0,  HIP_LATEST}},
 };
 
 const std::map<llvm::StringRef, cudaAPIChangedVersions> CUDA_DRIVER_FUNCTION_CHANGED_VER_MAP {

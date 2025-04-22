@@ -1348,8 +1348,8 @@
 |`CUlaunchAttributeValue`|11.8| | | |`hipLaunchAttributeValue`|6.2.0| | | | |
 |`CUlaunchAttributeValue_union`|11.8| | | |`hipLaunchAttributeValue`|6.2.0| | | | |
 |`CUlaunchAttribute_st`|11.8| | | | | | | | | |
-|`CUlaunchConfig`|11.8| | | |`HIP_LAUNCH_CONFIG`|6.5.0| | | | |
-|`CUlaunchConfig_st`|11.8| | | |`HIP_LAUNCH_CONFIG_st`|6.5.0| | | | |
+|`CUlaunchConfig`|11.8| | | |`HIP_LAUNCH_CONFIG`|6.5.0| | | |6.5.0|
+|`CUlaunchConfig_st`|11.8| | | |`HIP_LAUNCH_CONFIG_st`|6.5.0| | | |6.5.0|
 |`CUlaunchMemSyncDomain`|12.0| | | | | | | | | |
 |`CUlaunchMemSyncDomainMap`|12.0| | | | | | | | | |
 |`CUlaunchMemSyncDomainMap_st`|12.0| | | | | | | | | |
@@ -1963,7 +1963,7 @@
 |`cuLaunchCooperativeKernelMultiDevice`|9.0|11.3| | |`hipModuleLaunchCooperativeKernelMultiDevice`|5.5.0| | | | |
 |`cuLaunchHostFunc`|10.0| | | |`hipLaunchHostFunc`|5.2.0| | | | |
 |`cuLaunchKernel`| | | | |`hipModuleLaunchKernel`|1.6.0| | | | |
-|`cuLaunchKernelEx`|11.8| | | | | | | | | |
+|`cuLaunchKernelEx`|11.8| | | |`hipDrvLaunchKernelEx`|6.5.0| | | |6.5.0|
 
 ## **23. Execution Control [DEPRECATED]**
 
