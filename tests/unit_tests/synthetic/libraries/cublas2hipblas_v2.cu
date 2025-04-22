@@ -3306,11 +3306,16 @@ int main() {
 #endif
 
 #if CUDA_VERSION >= 12080
-  // CHECK: hipDataType R_8F_UE4M3 = HIP_R_8F_E4M3;
-  cublasDataType_t R_8F_UE4M3 = CUDA_R_8F_UE4M3;
-
   // CHECK: hipDataType _R_8F_UE4M3 = HIP_R_8F_E4M3;
+  // CHECK-NEXT: hipDataType _R_8F_UE8M0 = HIP_R_8F_UE8M0;
+  // CHECK-NEXT: hipDataType _R_6F_E2M3 = HIP_R_6F_E2M3;
+  // CHECK-NEXT: hipDataType _R_6F_E3M2 = HIP_R_6F_E3M2;
+  // CHECK-NEXT: hipDataType _R_4F_E2M1 = HIP_R_4F_E2M1;
   cudaDataType_t _R_8F_UE4M3 = CUDA_R_8F_UE4M3;
+  cudaDataType_t _R_8F_UE8M0 = CUDA_R_8F_UE8M0;
+  cudaDataType_t _R_6F_E2M3 = CUDA_R_6F_E2M3;
+  cudaDataType_t _R_6F_E3M2 = CUDA_R_6F_E3M2;
+  cudaDataType_t _R_4F_E2M1 = CUDA_R_4F_E2M1;
 #endif
 
   return 0;
