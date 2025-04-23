@@ -173,6 +173,21 @@ int main() {
   // HIP: __HOST_DEVICE__ __half2 make_half2(__half x, __half y);
   // CHECK: h2 = make_half2(hx, hy);
   h2 = make_half2(hx, hy);
+
+  // CHECK: __half _INF_FP16 = HIPRT_INF_FP16;
+  // CHECK-NEXT: __half _MAX_NORMAL_FP16 = HIPRT_MAX_NORMAL_FP16;
+  // CHECK-NEXT: __half _MIN_DENORM_FP16 = HIPRT_MIN_DENORM_FP16;
+  // CHECK-NEXT: __half _NAN_FP16 = HIPRT_NAN_FP16;
+  // CHECK-NEXT: __half _NEG_ZERO_FP16 = HIPRT_NEG_ZERO_FP16;
+  // CHECK-NEXT: __half _ONE_FP16 = HIPRT_ONE_FP16;
+  // CHECK-NEXT: __half _ZERO_FP16 = HIPRT_ZERO_FP16;
+  __half _INF_FP16 = CUDART_INF_FP16;
+  __half _MAX_NORMAL_FP16 = CUDART_MAX_NORMAL_FP16;
+  __half _MIN_DENORM_FP16 = CUDART_MIN_DENORM_FP16;
+  __half _NAN_FP16 = CUDART_NAN_FP16;
+  __half _NEG_ZERO_FP16 = CUDART_NEG_ZERO_FP16;
+  __half _ONE_FP16 = CUDART_ONE_FP16;
+  __half _ZERO_FP16 = CUDART_ZERO_FP16;
 #endif
 
   return 0;
