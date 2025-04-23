@@ -1527,6 +1527,13 @@ my %experimental_funcs = (
     "CUDA_R_6F_E3M2" => "6.5.0",
     "CUDA_R_6F_E2M3" => "6.5.0",
     "CUDA_R_4F_E2M1" => "6.5.0",
+    "CUDART_ZERO_FP16" => "6.5.0",
+    "CUDART_ONE_FP16" => "6.5.0",
+    "CUDART_NEG_ZERO_FP16" => "6.5.0",
+    "CUDART_NAN_FP16" => "6.5.0",
+    "CUDART_MIN_DENORM_FP16" => "6.5.0",
+    "CUDART_MAX_NORMAL_FP16" => "6.5.0",
+    "CUDART_INF_FP16" => "6.5.0",
     "CUBLASLT_MATMUL_MATRIX_SCALE_VEC32_UE8M0" => "6.5.0",
     "CUBLASLT_MATMUL_MATRIX_SCALE_VEC16_UE4M3" => "6.5.0",
     "CUBLASLT_MATMUL_MATRIX_SCALE_SCALAR_32F" => "6.5.0",
@@ -1670,6 +1677,13 @@ sub subst {
 sub experimentalSubstitutions {
     subst("cuLaunchKernelEx", "hipDrvLaunchKernelEx", "execution");
     subst("cudaLaunchKernelExC", "hipLaunchKernelExC", "execution");
+    subst("CUDART_INF_FP16", "HIPRT_INF_FP16", "device_type");
+    subst("CUDART_MAX_NORMAL_FP16", "HIPRT_MAX_NORMAL_FP16", "device_type");
+    subst("CUDART_MIN_DENORM_FP16", "HIPRT_MIN_DENORM_FP16", "device_type");
+    subst("CUDART_NAN_FP16", "HIPRT_NAN_FP16", "device_type");
+    subst("CUDART_NEG_ZERO_FP16", "HIPRT_NEG_ZERO_FP16", "device_type");
+    subst("CUDART_ONE_FP16", "HIPRT_ONE_FP16", "device_type");
+    subst("CUDART_ZERO_FP16", "HIPRT_ZERO_FP16", "device_type");
     subst("cublasLtMatmulMatrixScale_t", "hipblasLtMatmulMatrixScale_t", "type");
     subst("cudaLaunchAttribute", "hipLaunchAttribute", "type");
     subst("cudaLaunchAttribute_st", "hipLaunchAttribute_st", "type");
@@ -10196,7 +10210,14 @@ sub warnUnsupportedDeviceFunctions {
     "__NV_SATFINITE",
     "__NV_NOSAT",
     "__NV_E5M2",
-    "__NV_E4M3"
+    "__NV_E4M3",
+    "CUDART_ZERO_FP16",
+    "CUDART_ONE_FP16",
+    "CUDART_NEG_ZERO_FP16",
+    "CUDART_NAN_FP16",
+    "CUDART_MIN_DENORM_FP16",
+    "CUDART_MAX_NORMAL_FP16",
+    "CUDART_INF_FP16"
 );
 
 sub countSupportedDeviceDataTypes {

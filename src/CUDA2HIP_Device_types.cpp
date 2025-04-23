@@ -77,6 +77,14 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DEVICE_TYPE_NAME_MAP {
   {"__nv_fp4_e2m1",                        {"__hip_fp4_e2m1",                        "",                                        CONV_DEVICE_TYPE, API_RUNTIME, 2, UNSUPPORTED}},
   {"__nv_fp4x2_e2m1",                      {"__hip_fp4x2_e2m1",                      "",                                        CONV_DEVICE_TYPE, API_RUNTIME, 2, UNSUPPORTED}},
   {"__nv_fp4x4_e2m1",                      {"__hip_fp4x4_e2m1",                      "",                                        CONV_DEVICE_TYPE, API_RUNTIME, 2, UNSUPPORTED}},
+  // defines
+  {"CUDART_INF_FP16",                      {"HIPRT_INF_FP16",                        "",                                        CONV_DEVICE_TYPE, API_RUNTIME, 2, HIP_EXPERIMENTAL}},
+  {"CUDART_MAX_NORMAL_FP16",               {"HIPRT_MAX_NORMAL_FP16",                 "",                                        CONV_DEVICE_TYPE, API_RUNTIME, 2, HIP_EXPERIMENTAL}},
+  {"CUDART_MIN_DENORM_FP16",               {"HIPRT_MIN_DENORM_FP16",                 "",                                        CONV_DEVICE_TYPE, API_RUNTIME, 2, HIP_EXPERIMENTAL}},
+  {"CUDART_NAN_FP16",                      {"HIPRT_NAN_FP16",                        "",                                        CONV_DEVICE_TYPE, API_RUNTIME, 2, HIP_EXPERIMENTAL}},
+  {"CUDART_NEG_ZERO_FP16",                 {"HIPRT_NEG_ZERO_FP16",                   "",                                        CONV_DEVICE_TYPE, API_RUNTIME, 2, HIP_EXPERIMENTAL}},
+  {"CUDART_ONE_FP16",                      {"HIPRT_ONE_FP16",                        "",                                        CONV_DEVICE_TYPE, API_RUNTIME, 2, HIP_EXPERIMENTAL}},
+  {"CUDART_ZERO_FP16",                     {"HIPRT_ZERO_FP16",                       "",                                        CONV_DEVICE_TYPE, API_RUNTIME, 2, HIP_EXPERIMENTAL}},
 };
 
 const std::map<llvm::StringRef, cudaAPIversions> CUDA_DEVICE_TYPE_NAME_VER_MAP {
@@ -124,6 +132,13 @@ const std::map<llvm::StringRef, cudaAPIversions> CUDA_DEVICE_TYPE_NAME_VER_MAP {
   {"__nv_fp8_e8m0",                        {CUDA_128, CUDA_0,   CUDA_0  }},
   {"__nv_fp8x2_e8m0",                      {CUDA_128, CUDA_0,   CUDA_0  }},
   {"__nv_fp8x4_e8m0",                      {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"CUDART_INF_FP16",                      {CUDA_122, CUDA_0,   CUDA_0  }},
+  {"CUDART_MAX_NORMAL_FP16",               {CUDA_122, CUDA_0,   CUDA_0  }},
+  {"CUDART_MIN_DENORM_FP16",               {CUDA_122, CUDA_0,   CUDA_0  }},
+  {"CUDART_NAN_FP16",                      {CUDA_122, CUDA_0,   CUDA_0  }},
+  {"CUDART_NEG_ZERO_FP16",                 {CUDA_122, CUDA_0,   CUDA_0  }},
+  {"CUDART_ONE_FP16",                      {CUDA_122, CUDA_0,   CUDA_0  }},
+  {"CUDART_ZERO_FP16",                     {CUDA_122, CUDA_0,   CUDA_0  }},
 };
 
 const std::map<llvm::StringRef, hipAPIversions> HIP_DEVICE_TYPE_NAME_VER_MAP {
@@ -151,6 +166,13 @@ const std::map<llvm::StringRef, hipAPIversions> HIP_DEVICE_TYPE_NAME_VER_MAP {
   {"__hip_bfloat162_raw",                  {HIP_6020, HIP_0,    HIP_0   }},
   {"__hip_bfloat162",                      {HIP_5070, HIP_0,    HIP_0   }},
   {"hip_bfloat16",                         {HIP_3050, HIP_0,    HIP_0   }},
+  {"HIPRT_INF_FP16",                       {HIP_6050, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"HIPRT_MAX_NORMAL_FP16",                {HIP_6050, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"HIPRT_MIN_DENORM_FP16",                {HIP_6050, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"HIPRT_NAN_FP16",                       {HIP_6050, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"HIPRT_NEG_ZERO_FP16",                  {HIP_6050, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"HIPRT_ONE_FP16",                       {HIP_6050, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"HIPRT_ZERO_FP16",                      {HIP_6050, HIP_0,    HIP_0,  HIP_LATEST}},
 
   {"rocblas_half",                         {HIP_1050, HIP_0,    HIP_0   }},
   {"rocblas_bfloat16",                     {HIP_3050, HIP_0,    HIP_0   }},

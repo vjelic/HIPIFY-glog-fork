@@ -894,6 +894,13 @@
 
 |**CUDA**|**A**|**D**|**C**|**R**|**HIP**|**A**|**D**|**C**|**R**|**E**|
 |:--|:-:|:-:|:-:|:-:|:--|:-:|:-:|:-:|:-:|:-:|
+|`CUDART_INF_FP16`|12.2| | | |`HIPRT_INF_FP16`|6.5.0| | | |6.5.0|
+|`CUDART_MAX_NORMAL_FP16`|12.2| | | |`HIPRT_MAX_NORMAL_FP16`|6.5.0| | | |6.5.0|
+|`CUDART_MIN_DENORM_FP16`|12.2| | | |`HIPRT_MIN_DENORM_FP16`|6.5.0| | | |6.5.0|
+|`CUDART_NAN_FP16`|12.2| | | |`HIPRT_NAN_FP16`|6.5.0| | | |6.5.0|
+|`CUDART_NEG_ZERO_FP16`|12.2| | | |`HIPRT_NEG_ZERO_FP16`|6.5.0| | | |6.5.0|
+|`CUDART_ONE_FP16`|12.2| | | |`HIPRT_ONE_FP16`|6.5.0| | | |6.5.0|
+|`CUDART_ZERO_FP16`|12.2| | | |`HIPRT_ZERO_FP16`|6.5.0| | | |6.5.0|
 |`__NV_E2M1`|12.8| | | | | | | | | |
 |`__NV_E2M3`|12.8| | | | | | | | | |
 |`__NV_E3M2`|12.8| | | | | | | | | |
