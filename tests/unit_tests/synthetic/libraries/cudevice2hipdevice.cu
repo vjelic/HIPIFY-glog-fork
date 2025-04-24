@@ -8,6 +8,13 @@
 // CHECK-NOT: #include "hip/hip_fp8.h"
 // CHECK-NOT: #include "cuda_fp8.h"
 
+#if CUDA_VERSION >= 12080
+// CHECK: #include "hip/hip_fp4.h"
+#include "cuda_fp4.h"
+// CHECK-NOT: #include "hip/hip_fp4.h"
+// CHECK-NOT: #include "cuda_fp4.h"
+#endif
+
 int main() {
   printf("24. CUDA Device API to HIP Device API synthetic test\n");
 
@@ -24,6 +31,9 @@ int main() {
   __half2 h2 = { 0.0f, 0.0f };
   __half_raw hrx = { 0 };
   __half2_raw h2rx = { 0, 0 };
+
+  // CHECK: hipRoundMode RoundMode;
+  cudaRoundMode RoundMode;
 
 #if CUDA_VERSION >= 11000
   // CHECK: __hip_bfloat16 _bf16 = { 0.0f };
@@ -188,6 +198,49 @@ int main() {
   __half _NEG_ZERO_FP16 = CUDART_NEG_ZERO_FP16;
   __half _ONE_FP16 = CUDART_ONE_FP16;
   __half _ZERO_FP16 = CUDART_ZERO_FP16;
+#endif
+
+#if CUDA_VERSION >= 12080
+  // CHECK: __hip_fp4_storage_t fp4_storage_t;
+  // CHECK-NEXT: __hip_fp4x2_storage_t fp4x2_storage_t;
+  // CHECK-NEXT: __hip_fp4x4_storage_t fp4x4_storage_t;
+  // CHECK-NEXT: __hip_fp4_interpretation_t fp4_interpretation_t;
+  // CHECK-NEXT: __hip_fp4_interpretation_t fp4_interpretation = __HIP_E2M1;
+  __nv_fp4_storage_t fp4_storage_t;
+  __nv_fp4x2_storage_t fp4x2_storage_t;
+  __nv_fp4x4_storage_t fp4x4_storage_t;
+  __nv_fp4_interpretation_t fp4_interpretation_t;
+  __nv_fp4_interpretation_t fp4_interpretation = __NV_E2M1;
+
+  // CUDA: __CUDA_HOSTDEVICE_FP4_DECL__ __nv_fp4_storage_t __nv_cvt_double_to_fp4(const double x, const __nv_fp4_interpretation_t fp4_interpretation, const enum cudaRoundMode rounding);
+  // HIP: __FP4_HOST_DEVICE_STATIC__ __hip_fp4_storage_t __hip_cvt_double_to_fp4(const double x, const __hip_fp4_interpretation_t, const enum hipRoundMode);
+  // CHECK: fp4_storage_t = __hip_cvt_double_to_fp4(dx, fp4_interpretation_t, RoundMode);
+  fp4_storage_t = __nv_cvt_double_to_fp4(dx, fp4_interpretation_t, RoundMode);
+
+  // CUDA: __CUDA_HOSTDEVICE_FP4_DECL__ __nv_fp4x2_storage_t __nv_cvt_double2_to_fp4x2(const double2 x, const __nv_fp4_interpretation_t fp4_interpretation, const enum cudaRoundMode rounding);
+  // HIP: __FP4_HOST_DEVICE_STATIC__ __hip_fp4x2_storage_t __hip_cvt_double2_to_fp4x2(const double2 x, const __hip_fp4_interpretation_t, const enum hipRoundMode);
+  // CHECK: fp4x2_storage_t = __hip_cvt_double2_to_fp4x2(d2, fp4_interpretation_t, RoundMode);
+  fp4x2_storage_t = __nv_cvt_double2_to_fp4x2(d2, fp4_interpretation_t, RoundMode);
+
+  // CUDA: __CUDA_HOSTDEVICE_FP4_DECL__ __nv_fp4_storage_t __nv_cvt_float_to_fp4(const float x, const __nv_fp4_interpretation_t fp4_interpretation, const enum cudaRoundMode rounding);
+  // HIP: __FP4_HOST_DEVICE_STATIC__ __hip_fp4_storage_t __hip_cvt_float_to_fp4(const float x, const __hip_fp4_interpretation_t, const enum hipRoundMode);
+  // CHECK: fp4_storage_t = __hip_cvt_float_to_fp4(fx, fp4_interpretation_t, RoundMode);
+  fp4_storage_t = __nv_cvt_float_to_fp4(fx, fp4_interpretation_t, RoundMode);
+
+  // CUDA: __CUDA_HOSTDEVICE_FP4_DECL__ __nv_fp4x2_storage_t __nv_cvt_float2_to_fp4x2(const float2 x, const __nv_fp4_interpretation_t fp4_interpretation, const enum cudaRoundMode rounding);
+  // HIP: __FP4_HOST_DEVICE_STATIC__ __hip_fp4x2_storage_t __hip_cvt_float2_to_fp4x2(const float2 x, const __hip_fp4_interpretation_t, const enum hipRoundMode);
+  // CHECK: fp4x2_storage_t = __hip_cvt_float2_to_fp4x2(f2, fp4_interpretation_t, RoundMode);
+  fp4x2_storage_t = __nv_cvt_float2_to_fp4x2(f2, fp4_interpretation_t, RoundMode);
+
+  // CUDA: __CUDA_HOSTDEVICE_FP4_DECL__ __nv_fp4_storage_t __nv_cvt_bfloat16raw_to_fp4(const __nv_bfloat16_raw x, const __nv_fp4_interpretation_t fp4_interpretation, const enum cudaRoundMode rounding);
+  // HIP: __FP4_HOST_DEVICE_STATIC__ __hip_fp4_storage_t __hip_cvt_bfloat16raw_to_fp4(const __hip_bfloat16_raw x, const __hip_fp4_interpretation_t, const enum hipRoundMode);
+  // CHECK: fp4_storage_t = __hip_cvt_bfloat16raw_to_fp4(bf16r, fp4_interpretation_t, RoundMode);
+  fp4_storage_t = __nv_cvt_bfloat16raw_to_fp4(bf16r, fp4_interpretation_t, RoundMode);
+
+  // CUDA: __CUDA_HOSTDEVICE_FP4_DECL__ __nv_fp4x2_storage_t __nv_cvt_bfloat16raw2_to_fp4x2(const __nv_bfloat162_raw x, const __nv_fp4_interpretation_t fp4_interpretation, const enum cudaRoundMode rounding);
+  // HIP: __FP4_HOST_DEVICE_STATIC__ __hip_fp4x2_storage_t __hip_cvt_bfloat16raw2_to_fp4x2(const __hip_bfloat162_raw x, const __hip_fp4_interpretation_t, const enum hipRoundMode);
+  // CHECK: fp4x2_storage_t = __hip_cvt_bfloat16raw2_to_fp4x2(bf162r, fp4_interpretation_t, RoundMode);
+  fp4x2_storage_t = __nv_cvt_bfloat16raw2_to_fp4x2(bf162r, fp4_interpretation_t, RoundMode);
 #endif
 
   return 0;
