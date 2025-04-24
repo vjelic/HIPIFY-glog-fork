@@ -1516,6 +1516,11 @@ my %removed_funcs = (
 );
 
 my %experimental_funcs = (
+    "cudaRoundZero" => "6.5.0",
+    "cudaRoundPosInf" => "6.5.0",
+    "cudaRoundNearest" => "6.5.0",
+    "cudaRoundMode" => "6.5.0",
+    "cudaRoundMinInf" => "6.5.0",
     "cudaLaunchKernelExC" => "6.5.0",
     "cudaLaunchConfig_t" => "6.5.0",
     "cudaLaunchConfig_st" => "6.5.0",
@@ -1523,6 +1528,17 @@ my %experimental_funcs = (
     "cudaLaunchAttribute" => "6.5.0",
     "cublasLtMatmulMatrixScale_t" => "6.5.0",
     "cuLaunchKernelEx" => "6.5.0",
+    "__nv_fp4x4_storage_t" => "6.5.0",
+    "__nv_fp4x2_storage_t" => "6.5.0",
+    "__nv_fp4_storage_t" => "6.5.0",
+    "__nv_fp4_interpretation_t" => "6.5.0",
+    "__nv_cvt_float_to_fp4" => "6.5.0",
+    "__nv_cvt_float2_to_fp4x2" => "6.5.0",
+    "__nv_cvt_double_to_fp4" => "6.5.0",
+    "__nv_cvt_double2_to_fp4x2" => "6.5.0",
+    "__nv_cvt_bfloat16raw_to_fp4" => "6.5.0",
+    "__nv_cvt_bfloat16raw2_to_fp4x2" => "6.5.0",
+    "__NV_E2M1" => "6.5.0",
     "CUDA_R_8F_UE8M0" => "6.5.0",
     "CUDA_R_6F_E3M2" => "6.5.0",
     "CUDA_R_6F_E2M3" => "6.5.0",
@@ -1677,6 +1693,12 @@ sub subst {
 sub experimentalSubstitutions {
     subst("cuLaunchKernelEx", "hipDrvLaunchKernelEx", "execution");
     subst("cudaLaunchKernelExC", "hipLaunchKernelExC", "execution");
+    subst("__nv_cvt_bfloat16raw2_to_fp4x2", "__hip_cvt_bfloat16raw2_to_fp4x2", "device_function");
+    subst("__nv_cvt_bfloat16raw_to_fp4", "__hip_cvt_bfloat16raw_to_fp4", "device_function");
+    subst("__nv_cvt_double2_to_fp4x2", "__hip_cvt_double2_to_fp4x2", "device_function");
+    subst("__nv_cvt_double_to_fp4", "__hip_cvt_double_to_fp4", "device_function");
+    subst("__nv_cvt_float2_to_fp4x2", "__hip_cvt_float2_to_fp4x2", "device_function");
+    subst("__nv_cvt_float_to_fp4", "__hip_cvt_float_to_fp4", "device_function");
     subst("CUDART_INF_FP16", "HIPRT_INF_FP16", "device_type");
     subst("CUDART_MAX_NORMAL_FP16", "HIPRT_MAX_NORMAL_FP16", "device_type");
     subst("CUDART_MIN_DENORM_FP16", "HIPRT_MIN_DENORM_FP16", "device_type");
@@ -1684,6 +1706,11 @@ sub experimentalSubstitutions {
     subst("CUDART_NEG_ZERO_FP16", "HIPRT_NEG_ZERO_FP16", "device_type");
     subst("CUDART_ONE_FP16", "HIPRT_ONE_FP16", "device_type");
     subst("CUDART_ZERO_FP16", "HIPRT_ZERO_FP16", "device_type");
+    subst("__nv_fp4_interpretation_t", "__hip_fp4_interpretation_t", "device_type");
+    subst("__nv_fp4_storage_t", "__hip_fp4_storage_t", "device_type");
+    subst("__nv_fp4x2_storage_t", "__hip_fp4x2_storage_t", "device_type");
+    subst("__nv_fp4x4_storage_t", "__hip_fp4x4_storage_t", "device_type");
+    subst("cudaRoundMode", "hipRoundMode", "device_type");
     subst("cublasLtMatmulMatrixScale_t", "hipblasLtMatmulMatrixScale_t", "type");
     subst("cudaLaunchAttribute", "hipLaunchAttribute", "type");
     subst("cudaLaunchAttribute_st", "hipLaunchAttribute_st", "type");
@@ -1697,6 +1724,11 @@ sub experimentalSubstitutions {
     subst("CUDA_R_6F_E2M3", "HIP_R_6F_E2M3", "numeric_literal");
     subst("CUDA_R_6F_E3M2", "HIP_R_6F_E3M2", "numeric_literal");
     subst("CUDA_R_8F_UE8M0", "HIP_R_8F_UE8M0", "numeric_literal");
+    subst("__NV_E2M1", "__HIP_E2M1", "numeric_literal");
+    subst("cudaRoundMinInf", "hipRoundMinInf", "numeric_literal");
+    subst("cudaRoundNearest", "hipRoundNearest", "numeric_literal");
+    subst("cudaRoundPosInf", "hipRoundPosInf", "numeric_literal");
+    subst("cudaRoundZero", "hipRoundZero", "numeric_literal");
 }
 
 sub rocSubstitutions {
@@ -6923,6 +6955,7 @@ sub simpleSubstitutions {
     subst("cublasLt.h", "hipblaslt.h", "include");
     subst("cublas_api.h", "hipblas.h", "include");
     subst("cuda_fp16.h", "hip\/hip_fp16.h", "include");
+    subst("cuda_fp4.h", "hip\/hip_fp4.h", "include");
     subst("cuda_fp8.h", "hip\/hip_fp8.h", "include");
     subst("cuda_profiler_api.h", "hip\/hip_runtime_api.h", "include");
     subst("cuda_runtime_api.h", "hip\/hip_runtime_api.h", "include");
@@ -9566,11 +9599,17 @@ sub transformHostFunctions {
     "__nv_cvt_fp8x2_to_halfraw2",
     "__nv_cvt_fp8_to_halfraw",
     "__nv_cvt_float_to_fp8",
+    "__nv_cvt_float_to_fp4",
     "__nv_cvt_float2_to_fp8x2",
+    "__nv_cvt_float2_to_fp4x2",
     "__nv_cvt_double_to_fp8",
+    "__nv_cvt_double_to_fp4",
     "__nv_cvt_double2_to_fp8x2",
+    "__nv_cvt_double2_to_fp4x2",
     "__nv_cvt_bfloat16raw_to_fp8",
+    "__nv_cvt_bfloat16raw_to_fp4",
     "__nv_cvt_bfloat16raw2_to_fp8x2",
+    "__nv_cvt_bfloat16raw2_to_fp4x2",
     "__mulhi",
     "__mul64hi",
     "__mul24",
@@ -10024,24 +10063,18 @@ sub countSupportedDeviceFunctions {
     "__nv_cvt_fp4x2_to_halfraw2",
     "__nv_cvt_fp4_to_halfraw",
     "__nv_cvt_float_to_fp6",
-    "__nv_cvt_float_to_fp4",
     "__nv_cvt_float_to_e8m0",
     "__nv_cvt_float2_to_fp6x2",
-    "__nv_cvt_float2_to_fp4x2",
     "__nv_cvt_float2_to_e8m0x2",
     "__nv_cvt_e8m0x2_to_bf162raw",
     "__nv_cvt_e8m0_to_bf16raw",
     "__nv_cvt_double_to_fp6",
-    "__nv_cvt_double_to_fp4",
     "__nv_cvt_double_to_e8m0",
     "__nv_cvt_double2_to_fp6x2",
-    "__nv_cvt_double2_to_fp4x2",
     "__nv_cvt_double2_to_e8m0x2",
     "__nv_cvt_bfloat16raw_to_fp6",
-    "__nv_cvt_bfloat16raw_to_fp4",
     "__nv_cvt_bfloat16raw_to_e8m0",
     "__nv_cvt_bfloat16raw2_to_fp6x2",
-    "__nv_cvt_bfloat16raw2_to_fp4x2",
     "__nv_cvt_bfloat162raw_to_e8m0x2",
     "__nv_bswap64",
     "__nv_bswap32",
@@ -10188,6 +10221,11 @@ sub warnUnsupportedDeviceFunctions {
 
 @SupportedDeviceDataTypes = (
     "nv_bfloat16",
+    "cudaRoundZero",
+    "cudaRoundPosInf",
+    "cudaRoundNearest",
+    "cudaRoundMode",
+    "cudaRoundMinInf",
     "__nv_saturation_t",
     "__nv_fp8x4_storage_t",
     "__nv_fp8x4_e5m2",
@@ -10199,6 +10237,10 @@ sub warnUnsupportedDeviceFunctions {
     "__nv_fp8_interpretation_t",
     "__nv_fp8_e5m2",
     "__nv_fp8_e4m3",
+    "__nv_fp4x4_storage_t",
+    "__nv_fp4x2_storage_t",
+    "__nv_fp4_storage_t",
+    "__nv_fp4_interpretation_t",
     "__nv_bfloat16_raw",
     "__nv_bfloat162_raw",
     "__nv_bfloat162",
@@ -10211,6 +10253,7 @@ sub warnUnsupportedDeviceFunctions {
     "__NV_NOSAT",
     "__NV_E5M2",
     "__NV_E4M3",
+    "__NV_E2M1",
     "CUDART_ZERO_FP16",
     "CUDART_ONE_FP16",
     "CUDART_NEG_ZERO_FP16",
@@ -10247,16 +10290,11 @@ sub countSupportedDeviceDataTypes {
     "__nv_fp6_interpretation_t",
     "__nv_fp6_e3m2",
     "__nv_fp6_e2m3",
-    "__nv_fp4x4_storage_t",
     "__nv_fp4x4_e2m1",
-    "__nv_fp4x2_storage_t",
     "__nv_fp4x2_e2m1",
-    "__nv_fp4_storage_t",
-    "__nv_fp4_interpretation_t",
     "__nv_fp4_e2m1",
     "__NV_E3M2",
-    "__NV_E2M3",
-    "__NV_E2M1"
+    "__NV_E2M3"
 );
 
 sub warnUnsupportedDeviceDataTypes {
@@ -11908,7 +11946,6 @@ sub warnRemovedFunctions {
     "__curand_umul",
     "__NV_E3M2",
     "__NV_E2M3",
-    "__NV_E2M1",
     "__CUB_LP64__",
     "_CUB_ASM_PTR_SIZE_",
     "_CUB_ASM_PTR_",
