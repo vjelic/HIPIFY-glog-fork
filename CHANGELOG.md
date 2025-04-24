@@ -10,8 +10,8 @@ Documentation for HIPIFY is available at
 * CUDA 12.8.0 support
 * cuDNN 9.8.0 support
 * cuTENSOR 2.2.0.0 support
-* LLVM 20.1.2 support
 * cuFFTXt support
+* LLVM 20.1.3 support
 
 ## HIPIFY for ROCm 6.4.0
 
