@@ -403,16 +403,16 @@
 |`__nv_cvt_float_to_fp4`|12.8| | | |`__hip_cvt_float_to_fp4`|6.5.0| | | |6.5.0|
 |`__nv_cvt_float_to_fp6`|12.8| | | | | | | | | |
 |`__nv_cvt_float_to_fp8`|11.8| | | |`__hip_cvt_float_to_fp8`|6.2.0| | | | |
-|`__nv_cvt_fp4_to_halfraw`|12.8| | | | | | | | | |
-|`__nv_cvt_fp4x2_to_halfraw2`|12.8| | | | | | | | | |
+|`__nv_cvt_fp4_to_halfraw`|12.8| | | |`__hip_cvt_fp4_to_halfraw`|6.5.0| | | |6.5.0|
+|`__nv_cvt_fp4x2_to_halfraw2`|12.8| | | |`__hip_cvt_fp4x2_to_halfraw2`|6.5.0| | | |6.5.0|
 |`__nv_cvt_fp6_to_halfraw`|12.8| | | | | | | | | |
 |`__nv_cvt_fp6x2_to_halfraw2`|12.8| | | | | | | | | |
 |`__nv_cvt_fp8_to_halfraw`|11.8| | | |`__hip_cvt_fp8_to_halfraw`|6.2.0| | | | |
 |`__nv_cvt_fp8x2_to_halfraw2`|11.8| | | |`__hip_cvt_fp8x2_to_halfraw2`|6.2.0| | | | |
-|`__nv_cvt_halfraw2_to_fp4x2`|12.8| | | | | | | | | |
+|`__nv_cvt_halfraw2_to_fp4x2`|12.8| | | |`__hip_cvt_halfraw2_to_fp4x2`|6.5.0| | | |6.5.0|
 |`__nv_cvt_halfraw2_to_fp6x2`|12.8| | | | | | | | | |
 |`__nv_cvt_halfraw2_to_fp8x2`|11.8| | | |`__hip_cvt_halfraw2_to_fp8x2`|6.2.0| | | | |
-|`__nv_cvt_halfraw_to_fp4`|12.8| | | | | | | | | |
+|`__nv_cvt_halfraw_to_fp4`|12.8| | | |`__hip_cvt_halfraw_to_fp4`|6.5.0| | | |6.5.0|
 |`__nv_cvt_halfraw_to_fp6`|12.8| | | | | | | | | |
 |`__nv_cvt_halfraw_to_fp8`|11.8| | | |`__hip_cvt_halfraw_to_fp8`|6.2.0| | | | |
 |`__nv_fp128_acos`|12.8| | | | | | | | | |
@@ -916,12 +916,12 @@
 |`__nv_bfloat162`|11.0| | | |`__hip_bfloat162`|5.7.0| | | | |
 |`__nv_bfloat162_raw`|11.0| | | |`__hip_bfloat162_raw`|6.2.0| | | | |
 |`__nv_bfloat16_raw`|11.0| | | |`__hip_bfloat16_raw`|6.2.0| | | | |
-|`__nv_fp4_e2m1`|12.8| | | | | | | | | |
+|`__nv_fp4_e2m1`|12.8| | | |`__hip_fp4_e2m1`|6.5.0| | | |6.5.0|
 |`__nv_fp4_interpretation_t`|12.8| | | |`__hip_fp4_interpretation_t`|6.5.0| | | |6.5.0|
 |`__nv_fp4_storage_t`|12.8| | | |`__hip_fp4_storage_t`|6.5.0| | | |6.5.0|
-|`__nv_fp4x2_e2m1`|12.8| | | | | | | | | |
+|`__nv_fp4x2_e2m1`|12.8| | | |`__hip_fp4x2_e2m1`|6.5.0| | | |6.5.0|
 |`__nv_fp4x2_storage_t`|12.8| | | |`__hip_fp4x2_storage_t`|6.5.0| | | |6.5.0|
-|`__nv_fp4x4_e2m1`|12.8| | | | | | | | | |
+|`__nv_fp4x4_e2m1`|12.8| | | |`__hip_fp4x4_e2m1`|6.5.0| | | |6.5.0|
 |`__nv_fp4x4_storage_t`|12.8| | | |`__hip_fp4x4_storage_t`|6.5.0| | | |6.5.0|
 |`__nv_fp6_e2m3`|12.8| | | | | | | | | |
 |`__nv_fp6_e3m2`|12.8| | | | | | | | | |
