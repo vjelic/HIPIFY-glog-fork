@@ -1548,6 +1548,28 @@ my %experimental_funcs = (
     "__NV_E2M1" => "6.5.0",
     "CUlaunchAttribute_st" => "6.5.0",
     "CUlaunchAttribute" => "6.5.0",
+    "CUTENSOR_OP_TANH" => "6.5.0",
+    "CUTENSOR_OP_TAN" => "6.5.0",
+    "CUTENSOR_OP_SINH" => "6.5.0",
+    "CUTENSOR_OP_SIN" => "6.5.0",
+    "CUTENSOR_OP_SIGMOID" => "6.5.0",
+    "CUTENSOR_OP_RELU" => "6.5.0",
+    "CUTENSOR_OP_RCP" => "6.5.0",
+    "CUTENSOR_OP_NEG" => "6.5.0",
+    "CUTENSOR_OP_LOG" => "6.5.0",
+    "CUTENSOR_OP_FLOOR" => "6.5.0",
+    "CUTENSOR_OP_EXP" => "6.5.0",
+    "CUTENSOR_OP_COSH" => "6.5.0",
+    "CUTENSOR_OP_COS" => "6.5.0",
+    "CUTENSOR_OP_CONJ" => "6.5.0",
+    "CUTENSOR_OP_CEIL" => "6.5.0",
+    "CUTENSOR_OP_ATANH" => "6.5.0",
+    "CUTENSOR_OP_ATAN" => "6.5.0",
+    "CUTENSOR_OP_ASINH" => "6.5.0",
+    "CUTENSOR_OP_ASIN" => "6.5.0",
+    "CUTENSOR_OP_ACOSH" => "6.5.0",
+    "CUTENSOR_OP_ACOS" => "6.5.0",
+    "CUTENSOR_OP_ABS" => "6.5.0",
     "CUDA_R_8F_UE8M0" => "6.5.0",
     "CUDA_R_6F_E3M2" => "6.5.0",
     "CUDA_R_6F_E2M3" => "6.5.0",
@@ -1742,6 +1764,28 @@ sub experimentalSubstitutions {
     subst("CUDA_R_6F_E2M3", "HIP_R_6F_E2M3", "numeric_literal");
     subst("CUDA_R_6F_E3M2", "HIP_R_6F_E3M2", "numeric_literal");
     subst("CUDA_R_8F_UE8M0", "HIP_R_8F_UE8M0", "numeric_literal");
+    subst("CUTENSOR_OP_ABS", "HIPTENSOR_OP_ABS", "numeric_literal");
+    subst("CUTENSOR_OP_ACOS", "HIPTENSOR_OP_ACOS", "numeric_literal");
+    subst("CUTENSOR_OP_ACOSH", "HIPTENSOR_OP_ACOSH", "numeric_literal");
+    subst("CUTENSOR_OP_ASIN", "HIPTENSOR_OP_ASIN", "numeric_literal");
+    subst("CUTENSOR_OP_ASINH", "HIPTENSOR_OP_ASINH", "numeric_literal");
+    subst("CUTENSOR_OP_ATAN", "HIPTENSOR_OP_ATAN", "numeric_literal");
+    subst("CUTENSOR_OP_ATANH", "HIPTENSOR_OP_ATANH", "numeric_literal");
+    subst("CUTENSOR_OP_CEIL", "HIPTENSOR_OP_CEIL", "numeric_literal");
+    subst("CUTENSOR_OP_CONJ", "HIPTENSOR_OP_CONJ", "numeric_literal");
+    subst("CUTENSOR_OP_COS", "HIPTENSOR_OP_COS", "numeric_literal");
+    subst("CUTENSOR_OP_COSH", "HIPTENSOR_OP_COSH", "numeric_literal");
+    subst("CUTENSOR_OP_EXP", "HIPTENSOR_OP_EXP", "numeric_literal");
+    subst("CUTENSOR_OP_FLOOR", "HIPTENSOR_OP_FLOOR", "numeric_literal");
+    subst("CUTENSOR_OP_LOG", "HIPTENSOR_OP_LOG", "numeric_literal");
+    subst("CUTENSOR_OP_NEG", "HIPTENSOR_OP_NEG", "numeric_literal");
+    subst("CUTENSOR_OP_RCP", "HIPTENSOR_OP_RCP", "numeric_literal");
+    subst("CUTENSOR_OP_RELU", "HIPTENSOR_OP_RELU", "numeric_literal");
+    subst("CUTENSOR_OP_SIGMOID", "HIPTENSOR_OP_SIGMOID", "numeric_literal");
+    subst("CUTENSOR_OP_SIN", "HIPTENSOR_OP_SIN", "numeric_literal");
+    subst("CUTENSOR_OP_SINH", "HIPTENSOR_OP_SINH", "numeric_literal");
+    subst("CUTENSOR_OP_TAN", "HIPTENSOR_OP_TAN", "numeric_literal");
+    subst("CUTENSOR_OP_TANH", "HIPTENSOR_OP_TANH", "numeric_literal");
     subst("__NV_E2M1", "__HIP_E2M1", "numeric_literal");
     subst("cudaRoundMinInf", "hipRoundMinInf", "numeric_literal");
     subst("cudaRoundNearest", "hipRoundNearest", "numeric_literal");
@@ -12669,32 +12713,10 @@ sub warnRemovedFunctions {
     "CUTENSOR_PLAN_PREFERENCE_CACHE_MODE",
     "CUTENSOR_PLAN_PREFERENCE_AUTOTUNE_MODE",
     "CUTENSOR_PLAN_PREFERENCE_ALGO",
-    "CUTENSOR_OP_TANH",
-    "CUTENSOR_OP_TAN",
     "CUTENSOR_OP_SWISH",
     "CUTENSOR_OP_SOFT_SIGN",
     "CUTENSOR_OP_SOFT_PLUS",
-    "CUTENSOR_OP_SINH",
-    "CUTENSOR_OP_SIN",
-    "CUTENSOR_OP_SIGMOID",
-    "CUTENSOR_OP_RELU",
-    "CUTENSOR_OP_RCP",
-    "CUTENSOR_OP_NEG",
     "CUTENSOR_OP_MISH",
-    "CUTENSOR_OP_LOG",
-    "CUTENSOR_OP_FLOOR",
-    "CUTENSOR_OP_EXP",
-    "CUTENSOR_OP_COSH",
-    "CUTENSOR_OP_COS",
-    "CUTENSOR_OP_CONJ",
-    "CUTENSOR_OP_CEIL",
-    "CUTENSOR_OP_ATANH",
-    "CUTENSOR_OP_ATAN",
-    "CUTENSOR_OP_ASINH",
-    "CUTENSOR_OP_ASIN",
-    "CUTENSOR_OP_ACOSH",
-    "CUTENSOR_OP_ACOS",
-    "CUTENSOR_OP_ABS",
     "CUTENSOR_OPERATION_DESCRIPTOR_TAG",
     "CUTENSOR_OPERATION_DESCRIPTOR_SCALAR_TYPE",
     "CUTENSOR_OPERATION_DESCRIPTOR_PADDING_VALUE",
@@ -14364,32 +14386,10 @@ sub warnHipOnlyUnsupportedFunctions {
     "CUTENSOR_PLAN_PREFERENCE_CACHE_MODE",
     "CUTENSOR_PLAN_PREFERENCE_AUTOTUNE_MODE",
     "CUTENSOR_PLAN_PREFERENCE_ALGO",
-    "CUTENSOR_OP_TANH",
-    "CUTENSOR_OP_TAN",
     "CUTENSOR_OP_SWISH",
     "CUTENSOR_OP_SOFT_SIGN",
     "CUTENSOR_OP_SOFT_PLUS",
-    "CUTENSOR_OP_SINH",
-    "CUTENSOR_OP_SIN",
-    "CUTENSOR_OP_SIGMOID",
-    "CUTENSOR_OP_RELU",
-    "CUTENSOR_OP_RCP",
-    "CUTENSOR_OP_NEG",
     "CUTENSOR_OP_MISH",
-    "CUTENSOR_OP_LOG",
-    "CUTENSOR_OP_FLOOR",
-    "CUTENSOR_OP_EXP",
-    "CUTENSOR_OP_COSH",
-    "CUTENSOR_OP_COS",
-    "CUTENSOR_OP_CONJ",
-    "CUTENSOR_OP_CEIL",
-    "CUTENSOR_OP_ATANH",
-    "CUTENSOR_OP_ATAN",
-    "CUTENSOR_OP_ASINH",
-    "CUTENSOR_OP_ASIN",
-    "CUTENSOR_OP_ACOSH",
-    "CUTENSOR_OP_ACOS",
-    "CUTENSOR_OP_ABS",
     "CUTENSOR_OPERATION_DESCRIPTOR_TAG",
     "CUTENSOR_OPERATION_DESCRIPTOR_SCALAR_TYPE",
     "CUTENSOR_OPERATION_DESCRIPTOR_PADDING_VALUE",

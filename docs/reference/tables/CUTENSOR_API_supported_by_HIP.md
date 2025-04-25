@@ -58,38 +58,38 @@
 |`CUTENSOR_OPERATION_DESCRIPTOR_PADDING_VALUE`|2.0.0.0| | | | | | | | | |
 |`CUTENSOR_OPERATION_DESCRIPTOR_SCALAR_TYPE`|2.0.0.0| | | | | | | | | |
 |`CUTENSOR_OPERATION_DESCRIPTOR_TAG`|2.0.0.0| | | | | | | | | |
-|`CUTENSOR_OP_ABS`|1.0.1.0| | | | | | | | | |
-|`CUTENSOR_OP_ACOS`|1.0.1.0| | | | | | | | | |
-|`CUTENSOR_OP_ACOSH`|1.0.1.0| | | | | | | | | |
+|`CUTENSOR_OP_ABS`|1.0.1.0| | | |`HIPTENSOR_OP_ABS`|6.5.0| | | |6.5.0|
+|`CUTENSOR_OP_ACOS`|1.0.1.0| | | |`HIPTENSOR_OP_ACOS`|6.5.0| | | |6.5.0|
+|`CUTENSOR_OP_ACOSH`|1.0.1.0| | | |`HIPTENSOR_OP_ACOSH`|6.5.0| | | |6.5.0|
 |`CUTENSOR_OP_ADD`|1.0.1.0| | | |`HIPTENSOR_OP_ADD`|6.3.0| | | | |
-|`CUTENSOR_OP_ASIN`|1.0.1.0| | | | | | | | | |
-|`CUTENSOR_OP_ASINH`|1.0.1.0| | | | | | | | | |
-|`CUTENSOR_OP_ATAN`|1.0.1.0| | | | | | | | | |
-|`CUTENSOR_OP_ATANH`|1.0.1.0| | | | | | | | | |
-|`CUTENSOR_OP_CEIL`|1.0.1.0| | | | | | | | | |
-|`CUTENSOR_OP_CONJ`|1.0.1.0| | | | | | | | | |
-|`CUTENSOR_OP_COS`|1.0.1.0| | | | | | | | | |
-|`CUTENSOR_OP_COSH`|1.0.1.0| | | | | | | | | |
-|`CUTENSOR_OP_EXP`|1.0.1.0| | | | | | | | | |
-|`CUTENSOR_OP_FLOOR`|1.0.1.0| | | | | | | | | |
+|`CUTENSOR_OP_ASIN`|1.0.1.0| | | |`HIPTENSOR_OP_ASIN`|6.5.0| | | |6.5.0|
+|`CUTENSOR_OP_ASINH`|1.0.1.0| | | |`HIPTENSOR_OP_ASINH`|6.5.0| | | |6.5.0|
+|`CUTENSOR_OP_ATAN`|1.0.1.0| | | |`HIPTENSOR_OP_ATAN`|6.5.0| | | |6.5.0|
+|`CUTENSOR_OP_ATANH`|1.0.1.0| | | |`HIPTENSOR_OP_ATANH`|6.5.0| | | |6.5.0|
+|`CUTENSOR_OP_CEIL`|1.0.1.0| | | |`HIPTENSOR_OP_CEIL`|6.5.0| | | |6.5.0|
+|`CUTENSOR_OP_CONJ`|1.0.1.0| | | |`HIPTENSOR_OP_CONJ`|6.5.0| | | |6.5.0|
+|`CUTENSOR_OP_COS`|1.0.1.0| | | |`HIPTENSOR_OP_COS`|6.5.0| | | |6.5.0|
+|`CUTENSOR_OP_COSH`|1.0.1.0| | | |`HIPTENSOR_OP_COSH`|6.5.0| | | |6.5.0|
+|`CUTENSOR_OP_EXP`|1.0.1.0| | | |`HIPTENSOR_OP_EXP`|6.5.0| | | |6.5.0|
+|`CUTENSOR_OP_FLOOR`|1.0.1.0| | | |`HIPTENSOR_OP_FLOOR`|6.5.0| | | |6.5.0|
 |`CUTENSOR_OP_IDENTITY`|1.0.1.0| | | |`HIPTENSOR_OP_IDENTITY`|5.7.0| | | | |
-|`CUTENSOR_OP_LOG`|1.0.1.0| | | | | | | | | |
+|`CUTENSOR_OP_LOG`|1.0.1.0| | | |`HIPTENSOR_OP_LOG`|6.5.0| | | |6.5.0|
 |`CUTENSOR_OP_MAX`|1.0.1.0| | | |`HIPTENSOR_OP_MAX`|6.3.0| | | | |
 |`CUTENSOR_OP_MIN`|1.0.1.0| | | |`HIPTENSOR_OP_MIN`|6.3.0| | | | |
 |`CUTENSOR_OP_MISH`|2.0.0.0| | | | | | | | | |
 |`CUTENSOR_OP_MUL`|1.0.1.0| | | |`HIPTENSOR_OP_MUL`|6.3.0| | | | |
-|`CUTENSOR_OP_NEG`|1.0.1.0| | | | | | | | | |
-|`CUTENSOR_OP_RCP`|1.0.1.0| | | | | | | | | |
-|`CUTENSOR_OP_RELU`|1.0.1.0| | | | | | | | | |
-|`CUTENSOR_OP_SIGMOID`|1.0.1.0| | | | | | | | | |
-|`CUTENSOR_OP_SIN`|1.0.1.0| | | | | | | | | |
-|`CUTENSOR_OP_SINH`|1.0.1.0| | | | | | | | | |
+|`CUTENSOR_OP_NEG`|1.0.1.0| | | |`HIPTENSOR_OP_NEG`|6.5.0| | | |6.5.0|
+|`CUTENSOR_OP_RCP`|1.0.1.0| | | |`HIPTENSOR_OP_RCP`|6.5.0| | | |6.5.0|
+|`CUTENSOR_OP_RELU`|1.0.1.0| | | |`HIPTENSOR_OP_RELU`|6.5.0| | | |6.5.0|
+|`CUTENSOR_OP_SIGMOID`|1.0.1.0| | | |`HIPTENSOR_OP_SIGMOID`|6.5.0| | | |6.5.0|
+|`CUTENSOR_OP_SIN`|1.0.1.0| | | |`HIPTENSOR_OP_SIN`|6.5.0| | | |6.5.0|
+|`CUTENSOR_OP_SINH`|1.0.1.0| | | |`HIPTENSOR_OP_SINH`|6.5.0| | | |6.5.0|
 |`CUTENSOR_OP_SOFT_PLUS`|2.0.0.0| | | | | | | | | |
 |`CUTENSOR_OP_SOFT_SIGN`|2.0.0.0| | | | | | | | | |
 |`CUTENSOR_OP_SQRT`|1.0.1.0| | | |`HIPTENSOR_OP_SQRT`|6.2.0| | | | |
 |`CUTENSOR_OP_SWISH`|2.0.0.0| | | | | | | | | |
-|`CUTENSOR_OP_TAN`|1.0.1.0| | | | | | | | | |
-|`CUTENSOR_OP_TANH`|1.0.1.0| | | | | | | | | |
+|`CUTENSOR_OP_TAN`|1.0.1.0| | | |`HIPTENSOR_OP_TAN`|6.5.0| | | |6.5.0|
+|`CUTENSOR_OP_TANH`|1.0.1.0| | | |`HIPTENSOR_OP_TANH`|6.5.0| | | |6.5.0|
 |`CUTENSOR_OP_UNKNOWN`|1.0.1.0| | | |`HIPTENSOR_OP_UNKNOWN`|5.7.0| | | | |
 |`CUTENSOR_PLAN_PREFERENCE_ALGO`|2.0.0.0| | | | | | | | | |
 |`CUTENSOR_PLAN_PREFERENCE_AUTOTUNE_MODE`|2.0.0.0| | | | | | | | | |
