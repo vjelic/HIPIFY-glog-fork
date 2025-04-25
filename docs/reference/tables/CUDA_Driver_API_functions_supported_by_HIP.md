@@ -1342,12 +1342,12 @@
 |`CUkernelNodeAttrValue`|11.0| | | |`hipKernelNodeAttrValue`|5.2.0| | | | |
 |`CUkernelNodeAttrValue_union`|11.0| | |11.8|`hipKernelNodeAttrValue`|5.2.0| | | | |
 |`CUkernelNodeAttrValue_v1`|11.3| | | |`hipKernelNodeAttrValue`|5.2.0| | | | |
-|`CUlaunchAttribute`|11.8| | | | | | | | | |
+|`CUlaunchAttribute`|11.8| | | |`hipLaunchAttribute`|6.5.0| | | |6.5.0|
 |`CUlaunchAttributeID`|11.8| | | |`hipLaunchAttributeID`|6.2.0| | | | |
 |`CUlaunchAttributeID_enum`|11.8| | | |`hipLaunchAttributeID`|6.2.0| | | | |
 |`CUlaunchAttributeValue`|11.8| | | |`hipLaunchAttributeValue`|6.2.0| | | | |
 |`CUlaunchAttributeValue_union`|11.8| | | |`hipLaunchAttributeValue`|6.2.0| | | | |
-|`CUlaunchAttribute_st`|11.8| | | | | | | | | |
+|`CUlaunchAttribute_st`|11.8| | | |`hipLaunchAttribute_st`|6.5.0| | | |6.5.0|
 |`CUlaunchConfig`|11.8| | | |`HIP_LAUNCH_CONFIG`|6.5.0| | | |6.5.0|
 |`CUlaunchConfig_st`|11.8| | | |`HIP_LAUNCH_CONFIG_st`|6.5.0| | | |6.5.0|
 |`CUlaunchMemSyncDomain`|12.0| | | | | | | | | |
