@@ -323,6 +323,11 @@ int main() {
   // CHECK-NEXT: HIP_LAUNCH_CONFIG launchConfig;
   CUlaunchConfig_st LaunchConfig_st;
   CUlaunchConfig launchConfig;
+
+  // CHECK: hipLaunchAttribute_st LaunchAttribute_st;
+  // CHECK-NEXT: hipLaunchAttribute LaunchAttribute;
+  CUlaunchAttribute_st LaunchAttribute_st;
+  CUlaunchAttribute LaunchAttribute;
 #endif
 
 #if CUDA_VERSION >= 12000

@@ -1546,6 +1546,8 @@ my %experimental_funcs = (
     "__nv_cvt_bfloat16raw_to_fp4" => "6.5.0",
     "__nv_cvt_bfloat16raw2_to_fp4x2" => "6.5.0",
     "__NV_E2M1" => "6.5.0",
+    "CUlaunchAttribute_st" => "6.5.0",
+    "CUlaunchAttribute" => "6.5.0",
     "CUDA_R_8F_UE8M0" => "6.5.0",
     "CUDA_R_6F_E3M2" => "6.5.0",
     "CUDA_R_6F_E2M3" => "6.5.0",
@@ -1725,6 +1727,8 @@ sub experimentalSubstitutions {
     subst("__nv_fp4x4_e2m1", "__hip_fp4x4_e2m1", "device_type");
     subst("__nv_fp4x4_storage_t", "__hip_fp4x4_storage_t", "device_type");
     subst("cudaRoundMode", "hipRoundMode", "device_type");
+    subst("CUlaunchAttribute", "hipLaunchAttribute", "type");
+    subst("CUlaunchAttribute_st", "hipLaunchAttribute_st", "type");
     subst("cublasLtMatmulMatrixScale_t", "hipblasLtMatmulMatrixScale_t", "type");
     subst("cudaLaunchAttribute", "hipLaunchAttribute", "type");
     subst("cudaLaunchAttribute_st", "hipLaunchAttribute_st", "type");
@@ -12064,8 +12068,6 @@ sub warnRemovedFunctions {
     "CUlaunchMemSyncDomainMap_st",
     "CUlaunchMemSyncDomainMap",
     "CUlaunchMemSyncDomain",
-    "CUlaunchAttribute_st",
-    "CUlaunchAttribute",
     "CUkernel",
     "CUkern_st",
     "CUjit_target_enum",
