@@ -206,11 +206,17 @@ int main() {
   // CHECK-NEXT: __hip_fp4x4_storage_t fp4x4_storage_t;
   // CHECK-NEXT: __hip_fp4_interpretation_t fp4_interpretation_t;
   // CHECK-NEXT: __hip_fp4_interpretation_t fp4_interpretation = __HIP_E2M1;
+  // CHECK-NEXT: __hip_fp4_e2m1 fp4_e2m1;
+  // CHECK-NEXT: __hip_fp4x2_e2m1 fp4x2_e2m1;
+  // CHECK-NEXT: __hip_fp4x4_e2m1 fp4x4_e2m1;
   __nv_fp4_storage_t fp4_storage_t;
   __nv_fp4x2_storage_t fp4x2_storage_t;
   __nv_fp4x4_storage_t fp4x4_storage_t;
   __nv_fp4_interpretation_t fp4_interpretation_t;
   __nv_fp4_interpretation_t fp4_interpretation = __NV_E2M1;
+  __nv_fp4_e2m1 fp4_e2m1;
+  __nv_fp4x2_e2m1 fp4x2_e2m1;
+  __nv_fp4x4_e2m1 fp4x4_e2m1;
 
   // CUDA: __CUDA_HOSTDEVICE_FP4_DECL__ __nv_fp4_storage_t __nv_cvt_double_to_fp4(const double x, const __nv_fp4_interpretation_t fp4_interpretation, const enum cudaRoundMode rounding);
   // HIP: __FP4_HOST_DEVICE_STATIC__ __hip_fp4_storage_t __hip_cvt_double_to_fp4(const double x, const __hip_fp4_interpretation_t, const enum hipRoundMode);
@@ -241,6 +247,26 @@ int main() {
   // HIP: __FP4_HOST_DEVICE_STATIC__ __hip_fp4x2_storage_t __hip_cvt_bfloat16raw2_to_fp4x2(const __hip_bfloat162_raw x, const __hip_fp4_interpretation_t, const enum hipRoundMode);
   // CHECK: fp4x2_storage_t = __hip_cvt_bfloat16raw2_to_fp4x2(bf162r, fp4_interpretation_t, RoundMode);
   fp4x2_storage_t = __nv_cvt_bfloat16raw2_to_fp4x2(bf162r, fp4_interpretation_t, RoundMode);
+
+  // CUDA: __CUDA_HOSTDEVICE_FP4_DECL__ __nv_fp4_storage_t __nv_cvt_halfraw_to_fp4(const __half_raw x, const __nv_fp4_interpretation_t fp4_interpretation, const enum cudaRoundMode rounding);
+  // HIP: __FP4_HOST_DEVICE_STATIC__ __hip_fp4_storage_t __hip_cvt_halfraw_to_fp4(const __half_raw x, const __hip_fp4_interpretation_t, const enum hipRoundMode );
+  // CHECK: fp4_storage_t = __hip_cvt_halfraw_to_fp4(hrx, fp4_interpretation_t, RoundMode);
+  fp4_storage_t = __nv_cvt_halfraw_to_fp4(hrx, fp4_interpretation_t, RoundMode);
+
+  // CUDA: __CUDA_HOSTDEVICE_FP4_DECL__ __nv_fp4x2_storage_t __nv_cvt_halfraw2_to_fp4x2(const __half2_raw x, const __nv_fp4_interpretation_t fp4_interpretation, const enum cudaRoundMode rounding);
+  // HIP: __FP4_HOST_DEVICE_STATIC__ __hip_fp4x2_storage_t __hip_cvt_halfraw2_to_fp4x2(const __half2_raw x, const __hip_fp4_interpretation_t, const enum hipRoundMode);
+  // CHECK: fp4x2_storage_t = __hip_cvt_halfraw2_to_fp4x2(h2rx, fp4_interpretation_t, RoundMode);
+  fp4x2_storage_t = __nv_cvt_halfraw2_to_fp4x2(h2rx, fp4_interpretation_t, RoundMode);
+
+  // CUDA: __CUDA_HOSTDEVICE_FP4_DECL__ __half_raw __nv_cvt_fp4_to_halfraw(const __nv_fp4_storage_t x, const __nv_fp4_interpretation_t fp4_interpretation);
+  // HIP: __FP4_HOST_DEVICE_STATIC__ __half_raw __hip_cvt_fp4_to_halfraw(const __hip_fp4_storage_t x, const __hip_fp4_interpretation_t);
+  // CHECK: hrx = __hip_cvt_fp4_to_halfraw(fp4_storage_t, fp4_interpretation_t);
+  hrx = __nv_cvt_fp4_to_halfraw(fp4_storage_t, fp4_interpretation_t);
+
+  // CUDA: __CUDA_HOSTDEVICE_FP4_DECL__ __half2_raw __nv_cvt_fp4x2_to_halfraw2(const __nv_fp4x2_storage_t x, const __nv_fp4_interpretation_t fp4_interpretation);
+  // HIP: __FP4_HOST_DEVICE_STATIC__ __half2_raw __hip_cvt_fp4x2_to_halfraw2(const __hip_fp4x2_storage_t x, const __hip_fp4_interpretation_t);
+  // CHECK: h2rx = __hip_cvt_fp4x2_to_halfraw2(fp4x2_storage_t, fp4_interpretation_t);
+  h2rx = __nv_cvt_fp4x2_to_halfraw2(fp4x2_storage_t, fp4_interpretation_t);
 #endif
 
   return 0;

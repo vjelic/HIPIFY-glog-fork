@@ -1529,9 +1529,16 @@ my %experimental_funcs = (
     "cublasLtMatmulMatrixScale_t" => "6.5.0",
     "cuLaunchKernelEx" => "6.5.0",
     "__nv_fp4x4_storage_t" => "6.5.0",
+    "__nv_fp4x4_e2m1" => "6.5.0",
     "__nv_fp4x2_storage_t" => "6.5.0",
+    "__nv_fp4x2_e2m1" => "6.5.0",
     "__nv_fp4_storage_t" => "6.5.0",
     "__nv_fp4_interpretation_t" => "6.5.0",
+    "__nv_fp4_e2m1" => "6.5.0",
+    "__nv_cvt_halfraw_to_fp4" => "6.5.0",
+    "__nv_cvt_halfraw2_to_fp4x2" => "6.5.0",
+    "__nv_cvt_fp4x2_to_halfraw2" => "6.5.0",
+    "__nv_cvt_fp4_to_halfraw" => "6.5.0",
     "__nv_cvt_float_to_fp4" => "6.5.0",
     "__nv_cvt_float2_to_fp4x2" => "6.5.0",
     "__nv_cvt_double_to_fp4" => "6.5.0",
@@ -1699,6 +1706,10 @@ sub experimentalSubstitutions {
     subst("__nv_cvt_double_to_fp4", "__hip_cvt_double_to_fp4", "device_function");
     subst("__nv_cvt_float2_to_fp4x2", "__hip_cvt_float2_to_fp4x2", "device_function");
     subst("__nv_cvt_float_to_fp4", "__hip_cvt_float_to_fp4", "device_function");
+    subst("__nv_cvt_fp4_to_halfraw", "__hip_cvt_fp4_to_halfraw", "device_function");
+    subst("__nv_cvt_fp4x2_to_halfraw2", "__hip_cvt_fp4x2_to_halfraw2", "device_function");
+    subst("__nv_cvt_halfraw2_to_fp4x2", "__hip_cvt_halfraw2_to_fp4x2", "device_function");
+    subst("__nv_cvt_halfraw_to_fp4", "__hip_cvt_halfraw_to_fp4", "device_function");
     subst("CUDART_INF_FP16", "HIPRT_INF_FP16", "device_type");
     subst("CUDART_MAX_NORMAL_FP16", "HIPRT_MAX_NORMAL_FP16", "device_type");
     subst("CUDART_MIN_DENORM_FP16", "HIPRT_MIN_DENORM_FP16", "device_type");
@@ -1706,9 +1717,12 @@ sub experimentalSubstitutions {
     subst("CUDART_NEG_ZERO_FP16", "HIPRT_NEG_ZERO_FP16", "device_type");
     subst("CUDART_ONE_FP16", "HIPRT_ONE_FP16", "device_type");
     subst("CUDART_ZERO_FP16", "HIPRT_ZERO_FP16", "device_type");
+    subst("__nv_fp4_e2m1", "__hip_fp4_e2m1", "device_type");
     subst("__nv_fp4_interpretation_t", "__hip_fp4_interpretation_t", "device_type");
     subst("__nv_fp4_storage_t", "__hip_fp4_storage_t", "device_type");
+    subst("__nv_fp4x2_e2m1", "__hip_fp4x2_e2m1", "device_type");
     subst("__nv_fp4x2_storage_t", "__hip_fp4x2_storage_t", "device_type");
+    subst("__nv_fp4x4_e2m1", "__hip_fp4x4_e2m1", "device_type");
     subst("__nv_fp4x4_storage_t", "__hip_fp4x4_storage_t", "device_type");
     subst("cudaRoundMode", "hipRoundMode", "device_type");
     subst("cublasLtMatmulMatrixScale_t", "hipblasLtMatmulMatrixScale_t", "type");
@@ -9595,9 +9609,13 @@ sub transformHostFunctions {
     "__popcll",
     "__popc",
     "__nv_cvt_halfraw_to_fp8",
+    "__nv_cvt_halfraw_to_fp4",
     "__nv_cvt_halfraw2_to_fp8x2",
+    "__nv_cvt_halfraw2_to_fp4x2",
     "__nv_cvt_fp8x2_to_halfraw2",
     "__nv_cvt_fp8_to_halfraw",
+    "__nv_cvt_fp4x2_to_halfraw2",
+    "__nv_cvt_fp4_to_halfraw",
     "__nv_cvt_float_to_fp8",
     "__nv_cvt_float_to_fp4",
     "__nv_cvt_float2_to_fp8x2",
@@ -10055,13 +10073,9 @@ sub countSupportedDeviceFunctions {
     "__nv_fp128_acosh",
     "__nv_fp128_acos",
     "__nv_cvt_halfraw_to_fp6",
-    "__nv_cvt_halfraw_to_fp4",
     "__nv_cvt_halfraw2_to_fp6x2",
-    "__nv_cvt_halfraw2_to_fp4x2",
     "__nv_cvt_fp6x2_to_halfraw2",
     "__nv_cvt_fp6_to_halfraw",
-    "__nv_cvt_fp4x2_to_halfraw2",
-    "__nv_cvt_fp4_to_halfraw",
     "__nv_cvt_float_to_fp6",
     "__nv_cvt_float_to_e8m0",
     "__nv_cvt_float2_to_fp6x2",
@@ -10238,9 +10252,12 @@ sub warnUnsupportedDeviceFunctions {
     "__nv_fp8_e5m2",
     "__nv_fp8_e4m3",
     "__nv_fp4x4_storage_t",
+    "__nv_fp4x4_e2m1",
     "__nv_fp4x2_storage_t",
+    "__nv_fp4x2_e2m1",
     "__nv_fp4_storage_t",
     "__nv_fp4_interpretation_t",
+    "__nv_fp4_e2m1",
     "__nv_bfloat16_raw",
     "__nv_bfloat162_raw",
     "__nv_bfloat162",
@@ -10290,9 +10307,6 @@ sub countSupportedDeviceDataTypes {
     "__nv_fp6_interpretation_t",
     "__nv_fp6_e3m2",
     "__nv_fp6_e2m3",
-    "__nv_fp4x4_e2m1",
-    "__nv_fp4x2_e2m1",
-    "__nv_fp4_e2m1",
     "__NV_E3M2",
     "__NV_E2M3"
 );

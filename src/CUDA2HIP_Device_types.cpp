@@ -74,9 +74,9 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DEVICE_TYPE_NAME_MAP {
   {"__nv_fp4x4_storage_t",                 {"__hip_fp4x4_storage_t",                 "",                                        CONV_DEVICE_TYPE, API_RUNTIME, 2, HIP_EXPERIMENTAL}},
   {"__nv_fp4_interpretation_t",            {"__hip_fp4_interpretation_t",            "",                                        CONV_DEVICE_TYPE, API_RUNTIME, 2, HIP_EXPERIMENTAL}},
   {"__NV_E2M1",                            {"__HIP_E2M1",                            "",                                        CONV_NUMERIC_LITERAL, API_RUNTIME, 2, HIP_EXPERIMENTAL}},
-  {"__nv_fp4_e2m1",                        {"__hip_fp4_e2m1",                        "",                                        CONV_DEVICE_TYPE, API_RUNTIME, 2, UNSUPPORTED}},
-  {"__nv_fp4x2_e2m1",                      {"__hip_fp4x2_e2m1",                      "",                                        CONV_DEVICE_TYPE, API_RUNTIME, 2, UNSUPPORTED}},
-  {"__nv_fp4x4_e2m1",                      {"__hip_fp4x4_e2m1",                      "",                                        CONV_DEVICE_TYPE, API_RUNTIME, 2, UNSUPPORTED}},
+  {"__nv_fp4_e2m1",                        {"__hip_fp4_e2m1",                        "",                                        CONV_DEVICE_TYPE, API_RUNTIME, 2, HIP_EXPERIMENTAL}},
+  {"__nv_fp4x2_e2m1",                      {"__hip_fp4x2_e2m1",                      "",                                        CONV_DEVICE_TYPE, API_RUNTIME, 2, HIP_EXPERIMENTAL}},
+  {"__nv_fp4x4_e2m1",                      {"__hip_fp4x4_e2m1",                      "",                                        CONV_DEVICE_TYPE, API_RUNTIME, 2, HIP_EXPERIMENTAL}},
   // defines
   {"CUDART_INF_FP16",                      {"HIPRT_INF_FP16",                        "",                                        CONV_DEVICE_TYPE, API_RUNTIME, 2, HIP_EXPERIMENTAL}},
   {"CUDART_MAX_NORMAL_FP16",               {"HIPRT_MAX_NORMAL_FP16",                 "",                                        CONV_DEVICE_TYPE, API_RUNTIME, 2, HIP_EXPERIMENTAL}},
@@ -189,6 +189,9 @@ const std::map<llvm::StringRef, hipAPIversions> HIP_DEVICE_TYPE_NAME_VER_MAP {
   {"hipRoundZero",                         {HIP_6050, HIP_0,    HIP_0,  HIP_LATEST}},
   {"hipRoundPosInf",                       {HIP_6050, HIP_0,    HIP_0,  HIP_LATEST}},
   {"hipRoundMinInf",                       {HIP_6050, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"__hip_fp4_e2m1",                       {HIP_6050, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"__hip_fp4x2_e2m1",                     {HIP_6050, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"__hip_fp4x4_e2m1",                     {HIP_6050, HIP_0,    HIP_0,  HIP_LATEST}},
 
   {"rocblas_half",                         {HIP_1050, HIP_0,    HIP_0   }},
   {"rocblas_bfloat16",                     {HIP_3050, HIP_0,    HIP_0   }},
