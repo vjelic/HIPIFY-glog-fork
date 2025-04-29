@@ -1,3 +1,9 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="NVIDIA CUDA APIs supported by HIPIFY">
+    <meta name="keywords" content="HIPIFY, HIP, ROCm, NVIDIA, CUDA, CUDA2HIP, hipification, hipify-clang, hipify-perl, Runtime API">
+</head>
+
 # CUDA Runtime API supported by HIP
 
 
@@ -140,7 +146,7 @@
 |`cudaLaunchCooperativeKernelMultiDevice`|9.0|11.3| | |`hipLaunchCooperativeKernelMultiDevice`|2.6.0| | | | |
 |`cudaLaunchHostFunc`|10.0| | | |`hipLaunchHostFunc`|5.2.0| | | | |
 |`cudaLaunchKernel`| | | | |`hipLaunchKernel`|1.6.0| | | | |
-|`cudaLaunchKernelExC`|11.8| | | | | | | | | |
+|`cudaLaunchKernelExC`|11.8| | | |`hipLaunchKernelExC`|6.5.0| | | |6.5.0|
 |`cudaSetDoubleForDevice`| |10.0| | | | | | | | |
 |`cudaSetDoubleForHost`| |10.0| | | | | | | | |
 
@@ -900,7 +906,7 @@
 |`cudaDevAttrPageableMemoryAccessUsesHostPageTables`|9.2| | | |`hipDeviceAttributePageableMemoryAccessUsesHostPageTables`|3.10.0| | | | |
 |`cudaDevAttrPciBusId`| | | | |`hipDeviceAttributePciBusId`|1.6.0| | | | |
 |`cudaDevAttrPciDeviceId`| | | | |`hipDeviceAttributePciDeviceId`|1.6.0| | | | |
-|`cudaDevAttrPciDomainId`| | | | |`hipDeviceAttributePciDomainID`|4.3.0| | | | |
+|`cudaDevAttrPciDomainId`| | | | |`hipDeviceAttributePciDomainId`|4.3.0| | | | |
 |`cudaDevAttrReserved122`|12.0| | | | | | | | | |
 |`cudaDevAttrReserved123`|12.0| | | | | | | | | |
 |`cudaDevAttrReserved124`|12.0| | | | | | | | | |
@@ -957,12 +963,18 @@
 |`cudaEglColorFormatBGR`|9.1| | | | | | | | | |
 |`cudaEglColorFormatBGRA`|9.1| | | | | | | | | |
 |`cudaEglColorFormatBayer10BGGR`|9.1| | | | | | | | | |
+|`cudaEglColorFormatBayer10CCCC`|11.1| | | | | | | | | |
 |`cudaEglColorFormatBayer10GBRG`|9.1| | | | | | | | | |
 |`cudaEglColorFormatBayer10GRBG`|9.1| | | | | | | | | |
 |`cudaEglColorFormatBayer10RGGB`|9.1| | | | | | | | | |
+|`cudaEglColorFormatBayer12BCCR`|11.1| | | | | | | | | |
 |`cudaEglColorFormatBayer12BGGR`|9.1| | | | | | | | | |
+|`cudaEglColorFormatBayer12CBRC`|11.1| | | | | | | | | |
+|`cudaEglColorFormatBayer12CCCC`|11.1| | | | | | | | | |
+|`cudaEglColorFormatBayer12CRBC`|11.1| | | | | | | | | |
 |`cudaEglColorFormatBayer12GBRG`|9.1| | | | | | | | | |
 |`cudaEglColorFormatBayer12GRBG`|9.1| | | | | | | | | |
+|`cudaEglColorFormatBayer12RCCB`|11.1| | | | | | | | | |
 |`cudaEglColorFormatBayer12RGGB`|9.1| | | | | | | | | |
 |`cudaEglColorFormatBayer14BGGR`|9.1| | | | | | | | | |
 |`cudaEglColorFormatBayer14GBRG`|9.1| | | | | | | | | |
@@ -972,29 +984,59 @@
 |`cudaEglColorFormatBayer20GBRG`|9.1| | | | | | | | | |
 |`cudaEglColorFormatBayer20GRBG`|9.1| | | | | | | | | |
 |`cudaEglColorFormatBayer20RGGB`|9.1| | | | | | | | | |
+|`cudaEglColorFormatBayerBCCR`|11.1| | | | | | | | | |
 |`cudaEglColorFormatBayerBGGR`|9.1| | | | | | | | | |
+|`cudaEglColorFormatBayerCBRC`|11.1| | | | | | | | | |
+|`cudaEglColorFormatBayerCRBC`|11.1| | | | | | | | | |
 |`cudaEglColorFormatBayerGBRG`|9.1| | | | | | | | | |
 |`cudaEglColorFormatBayerGRBG`|9.1| | | | | | | | | |
 |`cudaEglColorFormatBayerIspBGGR`|9.2| | | | | | | | | |
 |`cudaEglColorFormatBayerIspGBRG`|9.2| | | | | | | | | |
 |`cudaEglColorFormatBayerIspGRBG`|9.2| | | | | | | | | |
 |`cudaEglColorFormatBayerIspRGGB`|9.2| | | | | | | | | |
+|`cudaEglColorFormatBayerRCCB`|11.1| | | | | | | | | |
 |`cudaEglColorFormatBayerRGGB`|9.1| | | | | | | | | |
 |`cudaEglColorFormatL`|9.1| | | | | | | | | |
 |`cudaEglColorFormatR`|9.1| | | | | | | | | |
 |`cudaEglColorFormatRG`|9.1| | | | | | | | | |
 |`cudaEglColorFormatRGB`|9.1| | | | | | | | | |
 |`cudaEglColorFormatRGBA`|9.1| | | | | | | | | |
+|`cudaEglColorFormatUYVY2020`|12.8| | | | | | | | | |
 |`cudaEglColorFormatUYVY422`|9.1| | | | | | | | | |
+|`cudaEglColorFormatUYVY709`|12.8| | | | | | | | | |
+|`cudaEglColorFormatUYVY709_ER`|12.8| | | | | | | | | |
 |`cudaEglColorFormatUYVY_ER`|9.1| | | | | | | | | |
+|`cudaEglColorFormatVYUY`|11.4| | | | | | | | | |
 |`cudaEglColorFormatVYUY_ER`|9.1| | | | | | | | | |
+|`cudaEglColorFormatY`|11.2| | | | | | | | | |
 |`cudaEglColorFormatY10V10U10_420SemiPlanar`|9.1| | | | | | | | | |
+|`cudaEglColorFormatY10V10U10_420SemiPlanar_2020`|11.4| | | | | | | | | |
+|`cudaEglColorFormatY10V10U10_420SemiPlanar_709`|11.4| | | | | | | | | |
+|`cudaEglColorFormatY10V10U10_420SemiPlanar_709_ER`|11.4| | | | | | | | | |
+|`cudaEglColorFormatY10V10U10_420SemiPlanar_ER`|11.4| | | | | | | | | |
+|`cudaEglColorFormatY10V10U10_422SemiPlanar`|11.4| | | | | | | | | |
+|`cudaEglColorFormatY10V10U10_422SemiPlanar_2020`|11.4| | | | | | | | | |
+|`cudaEglColorFormatY10V10U10_422SemiPlanar_709`|11.4| | | | | | | | | |
 |`cudaEglColorFormatY10V10U10_444SemiPlanar`|9.1| | | | | | | | | |
+|`cudaEglColorFormatY10V10U10_444SemiPlanar_709_ER`|11.4| | | | | | | | | |
+|`cudaEglColorFormatY10V10U10_444SemiPlanar_ER`|11.4| | | | | | | | | |
+|`cudaEglColorFormatY10_709_ER`|11.4| | | | | | | | | |
+|`cudaEglColorFormatY10_ER`|11.4| | | | | | | | | |
 |`cudaEglColorFormatY12V12U12_420SemiPlanar`|9.1| | | | | | | | | |
+|`cudaEglColorFormatY12V12U12_420SemiPlanar_709_ER`|11.4| | | | | | | | | |
+|`cudaEglColorFormatY12V12U12_420SemiPlanar_ER`|11.4| | | | | | | | | |
 |`cudaEglColorFormatY12V12U12_444SemiPlanar`|9.1| | | | | | | | | |
+|`cudaEglColorFormatY12V12U12_444SemiPlanar_709_ER`|11.4| | | | | | | | | |
+|`cudaEglColorFormatY12V12U12_444SemiPlanar_ER`|11.4| | | | | | | | | |
+|`cudaEglColorFormatY12_709_ER`|11.4| | | | | | | | | |
+|`cudaEglColorFormatY12_ER`|11.4| | | | | | | | | |
 |`cudaEglColorFormatYUV420Planar`|9.1| | | | | | | | | |
+|`cudaEglColorFormatYUV420Planar_2020`|11.4| | | | | | | | | |
+|`cudaEglColorFormatYUV420Planar_709`|11.4| | | | | | | | | |
 |`cudaEglColorFormatYUV420Planar_ER`|9.1| | | | | | | | | |
 |`cudaEglColorFormatYUV420SemiPlanar`|9.1| | | | | | | | | |
+|`cudaEglColorFormatYUV420SemiPlanar_2020`|11.4| | | | | | | | | |
+|`cudaEglColorFormatYUV420SemiPlanar_709`|11.4| | | | | | | | | |
 |`cudaEglColorFormatYUV420SemiPlanar_ER`|9.1| | | | | | | | | |
 |`cudaEglColorFormatYUV422Planar`|9.1| | | | | | | | | |
 |`cudaEglColorFormatYUV422Planar_ER`|9.1| | | | | | | | | |
@@ -1004,13 +1046,18 @@
 |`cudaEglColorFormatYUV444Planar_ER`|9.1| | | | | | | | | |
 |`cudaEglColorFormatYUV444SemiPlanar`|9.1| | | | | | | | | |
 |`cudaEglColorFormatYUV444SemiPlanar_ER`|9.1| | | | | | | | | |
+|`cudaEglColorFormatYUVA`|11.4| | | | | | | | | |
 |`cudaEglColorFormatYUVA_ER`|9.1| | | | | | | | | |
 |`cudaEglColorFormatYUV_ER`|9.1| | | | | | | | | |
 |`cudaEglColorFormatYUYV422`|9.1| | | | | | | | | |
 |`cudaEglColorFormatYUYV_ER`|9.1| | | | | | | | | |
 |`cudaEglColorFormatYVU420Planar`|9.1| | | | | | | | | |
+|`cudaEglColorFormatYVU420Planar_2020`|11.4| | | | | | | | | |
+|`cudaEglColorFormatYVU420Planar_709`|11.4| | | | | | | | | |
 |`cudaEglColorFormatYVU420Planar_ER`|9.1| | | | | | | | | |
 |`cudaEglColorFormatYVU420SemiPlanar`|9.1| | | | | | | | | |
+|`cudaEglColorFormatYVU420SemiPlanar_2020`|11.4| | | | | | | | | |
+|`cudaEglColorFormatYVU420SemiPlanar_709`|11.4| | | | | | | | | |
 |`cudaEglColorFormatYVU420SemiPlanar_ER`|9.1| | | | | | | | | |
 |`cudaEglColorFormatYVU422Planar`|9.1| | | | | | | | | |
 |`cudaEglColorFormatYVU422Planar_ER`|9.1| | | | | | | | | |
@@ -1020,7 +1067,10 @@
 |`cudaEglColorFormatYVU444Planar_ER`|9.1| | | | | | | | | |
 |`cudaEglColorFormatYVU444SemiPlanar`|9.1| | | | | | | | | |
 |`cudaEglColorFormatYVU444SemiPlanar_ER`| | | | | | | | | | |
+|`cudaEglColorFormatYVYU`|11.4| | | | | | | | | |
 |`cudaEglColorFormatYVYU_ER`|9.1| | | | | | | | | |
+|`cudaEglColorFormatY_709_ER`|11.4| | | | | | | | | |
+|`cudaEglColorFormatY_ER`|11.4| | | | | | | | | |
 |`cudaEglFrame`|9.1| | | | | | | | | |
 |`cudaEglFrameType`|9.1| | | | | | | | | |
 |`cudaEglFrameTypeArray`|9.1| | | | | | | | | |
@@ -1174,8 +1224,8 @@
 |`cudaEventDefault`| | | | |`hipEventDefault`|1.6.0| | | | |
 |`cudaEventDisableTiming`| | | | |`hipEventDisableTiming`|1.6.0| | | | |
 |`cudaEventInterprocess`| | | | |`hipEventInterprocess`|1.6.0| | | | |
-|`cudaEventRecordDefault`|11.1| | | | | | | | | |
-|`cudaEventRecordExternal`|11.1| | | | | | | | | |
+|`cudaEventRecordDefault`|11.1| | | |`hipEventRecordDefault`|6.4.0| | | | |
+|`cudaEventRecordExternal`|11.1| | | |`hipEventRecordExternal`|6.4.0| | | | |
 |`cudaEventRecordNodeParams`|12.2| | | |`hipEventRecordNodeParams`|6.1.0| | | | |
 |`cudaEventWaitDefault`|11.1| | | | | | | | | |
 |`cudaEventWaitExternal`| | | | | | | | | | |
@@ -1385,27 +1435,27 @@
 |`cudaIpcMemHandle_st`| | | | |`hipIpcMemHandle_st`|1.6.0| | | | |
 |`cudaIpcMemHandle_t`| | | | |`hipIpcMemHandle_t`|1.6.0| | | | |
 |`cudaIpcMemLazyEnablePeerAccess`| | | | |`hipIpcMemLazyEnablePeerAccess`|1.6.0| | | | |
-|`cudaJitCacheMode`|12.8| | | |`HIPRTC_JIT_CACHE_MODE`|1.6.0| | | | |
+|`cudaJitCacheMode`|12.8| | | |`hipJitOptionCacheMode`|6.4.0| | | | |
 |`cudaJitCacheOptionCA`|12.8| | | | | | | | | |
 |`cudaJitCacheOptionCG`|12.8| | | | | | | | | |
 |`cudaJitCacheOptionNone`|12.8| | | | | | | | | |
-|`cudaJitErrorLogBuffer`|12.8| | | |`HIPRTC_JIT_ERROR_LOG_BUFFER`|1.6.0| | | | |
-|`cudaJitErrorLogBufferSizeBytes`|12.8| | | |`HIPRTC_JIT_ERROR_LOG_BUFFER_SIZE_BYTES`|1.6.0| | | | |
-|`cudaJitFallbackStrategy`|12.8| | | |`HIPRTC_JIT_FALLBACK_STRATEGY`|1.6.0| | | | |
-|`cudaJitGenerateDebugInfo`|12.8| | | |`HIPRTC_JIT_GENERATE_DEBUG_INFO`|1.6.0| | | | |
-|`cudaJitGenerateLineInfo`|12.8| | | |`HIPRTC_JIT_GENERATE_LINE_INFO`|1.6.0| | | | |
-|`cudaJitInfoLogBuffer`|12.8| | | |`HIPRTC_JIT_INFO_LOG_BUFFER`|1.6.0| | | | |
-|`cudaJitInfoLogBufferSizeBytes`|12.8| | | |`HIPRTC_JIT_INFO_LOG_BUFFER_SIZE_BYTES`|1.6.0| | | | |
-|`cudaJitLogVerbose`|12.8| | | |`HIPRTC_JIT_LOG_VERBOSE`|1.6.0| | | | |
-|`cudaJitMaxRegisters`|12.8| | | |`HIPRTC_JIT_MAX_REGISTERS`|1.6.0| | | | |
-|`cudaJitMaxThreadsPerBlock`|12.8| | | | | | | | | |
-|`cudaJitMinCtaPerSm`|12.8| | | | | | | | | |
-|`cudaJitOptimizationLevel`|12.8| | | |`HIPRTC_JIT_OPTIMIZATION_LEVEL`|1.6.0| | | | |
+|`cudaJitErrorLogBuffer`|12.8| | | |`hipJitOptionErrorLogBuffer`|6.4.0| | | | |
+|`cudaJitErrorLogBufferSizeBytes`|12.8| | | |`hipJitOptionErrorLogBufferSizeBytes`|6.4.0| | | | |
+|`cudaJitFallbackStrategy`|12.8| | | |`hipJitOptionFallbackStrategy`|6.4.0| | | | |
+|`cudaJitGenerateDebugInfo`|12.8| | | |`hipJitOptionGenerateDebugInfo`|6.4.0| | | | |
+|`cudaJitGenerateLineInfo`|12.8| | | |`hipJitOptionGenerateLineInfo`|6.4.0| | | | |
+|`cudaJitInfoLogBuffer`|12.8| | | |`hipJitOptionInfoLogBuffer`|6.4.0| | | | |
+|`cudaJitInfoLogBufferSizeBytes`|12.8| | | |`hipJitOptionInfoLogBufferSizeBytes`|6.4.0| | | | |
+|`cudaJitLogVerbose`|12.8| | | |`hipJitOptionLogVerbose`|6.4.0| | | | |
+|`cudaJitMaxRegisters`|12.8| | | |`hipJitOptionMaxRegisters`|6.4.0| | | | |
+|`cudaJitMaxThreadsPerBlock`|12.8| | | |`hipJitOptionMaxThreadsPerBlock`|6.4.0| | | | |
+|`cudaJitMinCtaPerSm`|12.8| | | |`hipJitOptionMinCTAPerSM`|6.4.0| | | | |
+|`cudaJitOptimizationLevel`|12.8| | | |`hipJitOptionOptimizationLevel`|6.4.0| | | | |
 |`cudaJitOption`|12.8| | | |`hipJitOption`|1.6.0| | | | |
-|`cudaJitOverrideDirectiveValues`|12.8| | | | | | | | | |
-|`cudaJitPositionIndependentCode`|12.8| | | | | | | | | |
-|`cudaJitThreadsPerBlock`|12.8| | | |`HIPRTC_JIT_THREADS_PER_BLOCK`|1.6.0| | | | |
-|`cudaJitWallTime`|12.8| | | |`HIPRTC_JIT_WALL_TIME`|1.6.0| | | | |
+|`cudaJitOverrideDirectiveValues`|12.8| | | |`hipJitOptionOverrideDirectiveValues`|6.4.0| | | | |
+|`cudaJitPositionIndependentCode`|12.8| | | |`hipJitOptionPositionIndependentCode`|6.4.0| | | | |
+|`cudaJitThreadsPerBlock`|12.8| | | |`hipJitOptionThreadsPerBlock`|6.4.0| | | | |
+|`cudaJitWallTime`|12.8| | | |`hipJitOptionWallTime`|6.4.0| | | | |
 |`cudaJit_CacheMode`|12.8| | | | | | | | | |
 |`cudaJit_Fallback`|12.8| | | | | | | | | |
 |`cudaKernelNodeAttrID`|11.0| | | |`hipKernelNodeAttrID`|5.2.0| | | | |
@@ -1423,7 +1473,7 @@
 |`cudaKernelNodeParamsV2`|12.2| | | | | | | | | |
 |`cudaKernel_t`|12.1| | | | | | | | | |
 |`cudaKeyValuePair`| | | |12.0| | | | | | |
-|`cudaLaunchAttribute`|11.8| | | | | | | | | |
+|`cudaLaunchAttribute`|11.8| | | |`hipLaunchAttribute`|6.5.0| | | |6.5.0|
 |`cudaLaunchAttributeAccessPolicyWindow`|11.8| | | |`hipLaunchAttributeAccessPolicyWindow`|6.2.0| | | | |
 |`cudaLaunchAttributeClusterDimension`|11.8| | | | | | | | | |
 |`cudaLaunchAttributeClusterSchedulingPolicyPreference`|11.8| | | | | | | | | |
@@ -1441,9 +1491,9 @@
 |`cudaLaunchAttributeProgrammaticStreamSerialization`|11.8| | | | | | | | | |
 |`cudaLaunchAttributeSynchronizationPolicy`|11.8| | | | | | | | | |
 |`cudaLaunchAttributeValue`|11.8| | | |`hipLaunchAttributeValue`|6.2.0| | | | |
-|`cudaLaunchAttribute_st`|11.8| | | | | | | | | |
-|`cudaLaunchConfig_st`|11.8| | | | | | | | | |
-|`cudaLaunchConfig_t`|11.8| | | | | | | | | |
+|`cudaLaunchAttribute_st`|11.8| | | |`hipLaunchAttribute_st`|6.5.0| | | |6.5.0|
+|`cudaLaunchConfig_st`|11.8| | | |`hipLaunchConfig_st`|6.5.0| | | |6.5.0|
+|`cudaLaunchConfig_t`|11.8| | | |`hipLaunchConfig_t`|6.5.0| | | |6.5.0|
 |`cudaLaunchMemSyncDomain`|12.0| | | | | | | | | |
 |`cudaLaunchMemSyncDomainDefault`|12.0| | | | | | | | | |
 |`cudaLaunchMemSyncDomainMap`|12.0| | | | | | | | | |

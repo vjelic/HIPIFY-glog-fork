@@ -36,6 +36,8 @@ int main() {
   size_t bytes_2 = 0;
   void *image = nullptr;
   void *pfn = nullptr;
+  void *paramsprt = nullptr;
+  void *extraparamsprt = nullptr;
   std::string name = "str";
   std::string symbol = "symbol";
   uint32_t u_value = 0;
@@ -1918,6 +1920,18 @@ int main() {
   // HIP: hipError_t hipGraphExecBatchMemOpNodeSetParams(hipGraphExec_t hGraphExec, hipGraphNode_t hNode, const hipBatchMemOpNodeParams* nodeParams);
   // CHECK: result = hipGraphExecBatchMemOpNodeSetParams(graphExec, graphNode, &BATCH_MEM_OP_NODE_PARAMS);
   result = cuGraphExecBatchMemOpNodeSetParams(graphExec, graphNode, &BATCH_MEM_OP_NODE_PARAMS);
+#endif
+
+#if CUDA_VERSION >= 11080
+  // CHECK: HIP_LAUNCH_CONFIG_st LaunchConfig_st;
+  // CHECK-NEXT: HIP_LAUNCH_CONFIG launchConfig;
+  CUlaunchConfig_st LaunchConfig_st;
+  CUlaunchConfig launchConfig;
+
+  // CUDA: CUresult CUDAAPI cuLaunchKernelEx(const CUlaunchConfig *config, CUfunction f, void** kernelParams, void** extra);
+  // HIP: hipError_t hipDrvLaunchKernelEx(const HIP_LAUNCH_CONFIG* config, hipFunction_t f, void** params, void** extra);
+  // CHECK: result = hipDrvLaunchKernelEx(&launchConfig, function, &paramsprt, &extraparamsprt);
+  result = cuLaunchKernelEx(&launchConfig, function, &paramsprt, &extraparamsprt);
 #endif
 
 #if CUDA_VERSION >= 12000
