@@ -1515,6 +1515,37 @@ int main() {
   cublasDataType_t R_32U = CUDA_R_32U;
   cublasDataType_t C_32U = CUDA_C_32U;
 
+  // CHECK: hipDataType _blasDataType;
+  // CHECK-NEXT: hipDataType _R_16F = HIP_R_16F;
+  // CHECK-NEXT: hipDataType _C_16F = HIP_C_16F;
+  // CHECK-NEXT: hipDataType _R_32F = HIP_R_32F;
+  // CHECK-NEXT: hipDataType _C_32F = HIP_C_32F;
+  // CHECK-NEXT: hipDataType _R_64F = HIP_R_64F;
+  // CHECK-NEXT: hipDataType _C_64F = HIP_C_64F;
+  // CHECK-NEXT: hipDataType _R_8I = HIP_R_8I;
+  // CHECK-NEXT: hipDataType _C_8I = HIP_C_8I;
+  // CHECK-NEXT: hipDataType _R_8U = HIP_R_8U;
+  // CHECK-NEXT: hipDataType _C_8U = HIP_C_8U;
+  // CHECK-NEXT: hipDataType _R_32I = HIP_R_32I;
+  // CHECK-NEXT: hipDataType _C_32I = HIP_C_32I;
+  // CHECK-NEXT: hipDataType _R_32U = HIP_R_32U;
+  // CHECK-NEXT: hipDataType _C_32U = HIP_C_32U;
+  cudaDataType_t _blasDataType;
+  cudaDataType_t _R_16F = CUDA_R_16F;
+  cudaDataType_t _C_16F = CUDA_C_16F;
+  cudaDataType_t _R_32F = CUDA_R_32F;
+  cudaDataType_t _C_32F = CUDA_C_32F;
+  cudaDataType_t _R_64F = CUDA_R_64F;
+  cudaDataType_t _C_64F = CUDA_C_64F;
+  cudaDataType_t _R_8I = CUDA_R_8I;
+  cudaDataType_t _C_8I = CUDA_C_8I;
+  cudaDataType_t _R_8U = CUDA_R_8U;
+  cudaDataType_t _C_8U = CUDA_C_8U;
+  cudaDataType_t _R_32I = CUDA_R_32I;
+  cudaDataType_t _C_32I = CUDA_C_32I;
+  cudaDataType_t _R_32U = CUDA_R_32U;
+  cudaDataType_t _C_32U = CUDA_C_32U;
+
   // CHECK: hipDataType DataType_2, DataType_3;
   cudaDataType DataType_2, DataType_3;
 
@@ -1669,8 +1700,61 @@ int main() {
 #if CUDA_VERSION >= 11000
   // CHECK: hipDataType R_16BF = HIP_R_16BF;
   // CHECK-NEXT: hipDataType C_16BF = HIP_C_16BF;
+  // CHECK-NEXT: hipDataType R_4I = HIP_R_4I;
+  // CHECK-NEXT: hipDataType C_4I = HIP_C_4I;
+  // CHECK-NEXT: hipDataType R_4U = HIP_R_4U;
+  // CHECK-NEXT: hipDataType C_4U = HIP_C_4U;
+  // CHECK-NEXT: hipDataType R_16I = HIP_R_16I;
+  // CHECK-NEXT: hipDataType C_16I = HIP_C_16I;
+  // CHECK-NEXT: hipDataType R_16U = HIP_R_16U;
+  // CHECK-NEXT: hipDataType C_16U = HIP_C_16U;
+  // CHECK-NEXT: hipDataType R_64I = HIP_R_64I;
+  // CHECK-NEXT: hipDataType C_64I = HIP_C_64I;
+  // CHECK-NEXT: hipDataType R_64U = HIP_R_64U;
+  // CHECK-NEXT: hipDataType C_64U = HIP_C_64U;
   cublasDataType_t R_16BF = CUDA_R_16BF;
   cublasDataType_t C_16BF = CUDA_C_16BF;
+  cublasDataType_t R_4I = CUDA_R_4I;
+  cublasDataType_t C_4I = CUDA_C_4I;
+  cublasDataType_t R_4U = CUDA_R_4U;
+  cublasDataType_t C_4U = CUDA_C_4U;
+  cublasDataType_t R_16I = CUDA_R_16I;
+  cublasDataType_t C_16I = CUDA_C_16I;
+  cublasDataType_t R_16U = CUDA_R_16U;
+  cublasDataType_t C_16U = CUDA_C_16U;
+  cublasDataType_t R_64I = CUDA_R_64I;
+  cublasDataType_t C_64I = CUDA_C_64I;
+  cublasDataType_t R_64U = CUDA_R_64U;
+  cublasDataType_t C_64U = CUDA_C_64U;
+
+  // CHECK: hipDataType _R_16BF = HIP_R_16BF;
+  // CHECK-NEXT: hipDataType _C_16BF = HIP_C_16BF;
+  // CHECK-NEXT: hipDataType _R_4I = HIP_R_4I;
+  // CHECK-NEXT: hipDataType _C_4I = HIP_C_4I;
+  // CHECK-NEXT: hipDataType _R_4U = HIP_R_4U;
+  // CHECK-NEXT: hipDataType _C_4U = HIP_C_4U;
+  // CHECK-NEXT: hipDataType _R_16I = HIP_R_16I;
+  // CHECK-NEXT: hipDataType _C_16I = HIP_C_16I;
+  // CHECK-NEXT: hipDataType _R_16U = HIP_R_16U;
+  // CHECK-NEXT: hipDataType _C_16U = HIP_C_16U;
+  // CHECK-NEXT: hipDataType _R_64I = HIP_R_64I;
+  // CHECK-NEXT: hipDataType _C_64I = HIP_C_64I;
+  // CHECK-NEXT: hipDataType _R_64U = HIP_R_64U;
+  // CHECK-NEXT: hipDataType _C_64U = HIP_C_64U;
+  cudaDataType_t _R_16BF = CUDA_R_16BF;
+  cudaDataType_t _C_16BF = CUDA_C_16BF;
+  cudaDataType_t _R_4I = CUDA_R_4I;
+  cudaDataType_t _C_4I = CUDA_C_4I;
+  cudaDataType_t _R_4U = CUDA_R_4U;
+  cudaDataType_t _C_4U = CUDA_C_4U;
+  cudaDataType_t _R_16I = CUDA_R_16I;
+  cudaDataType_t _C_16I = CUDA_C_16I;
+  cudaDataType_t _R_16U = CUDA_R_16U;
+  cudaDataType_t _C_16U = CUDA_C_16U;
+  cudaDataType_t _R_64I = CUDA_R_64I;
+  cudaDataType_t _C_64I = CUDA_C_64I;
+  cudaDataType_t _R_64U = CUDA_R_64U;
+  cudaDataType_t _C_64U = CUDA_C_64U;
 
   // CHECK: hipblasMath_t BLAS_PEDANTIC_MATH = HIPBLAS_PEDANTIC_MATH;
   // CHECK-NEXT: hipblasMath_t BLAS_TF32_TENSOR_OP_MATH = HIPBLAS_TF32_TENSOR_OP_MATH;
@@ -1732,6 +1816,31 @@ int main() {
   // HIP: HIPBLAS_EXPORT hipblasStatus_t hipblasZgemvStridedBatched_v2(hipblasHandle_t handle, hipblasOperation_t transA, int m, int n, const hipDoubleComplex* alpha, const hipDoubleComplex* AP, int lda, hipblasStride strideA, const hipDoubleComplex* x, int incx, hipblasStride stridex, const hipDoubleComplex* beta, hipDoubleComplex* y, int incy, hipblasStride stridey, int batchCount);
   // CHECK: blasStatus = hipblasZgemvStridedBatched_v2(blasHandle, blasOperation, m, n, &dcomplexa, &dcomplexA, lda, strideA, &dcomplexx, incx, stridex, &dcomplexb, &dcomplexy, incy, stridey, batchCount);
   blasStatus = cublasZgemvStridedBatched(blasHandle, blasOperation, m, n, &dcomplexa, &dcomplexA, lda, strideA, &dcomplexx, incx, stridex, &dcomplexb, &dcomplexy, incy, stridey, batchCount);
+#endif
+
+#if CUDA_VERSION >= 11080
+  // CHECK: hipDataType R_8F_E4M3 = HIP_R_8F_E4M3;
+  // CHECK-NEXT: hipDataType R_8F_E5M2 = HIP_R_8F_E5M2;
+  cublasDataType_t R_8F_E4M3 = CUDA_R_8F_E4M3;
+  cublasDataType_t R_8F_E5M2 = CUDA_R_8F_E5M2;
+
+  // CHECK: hipDataType _R_8F_E4M3 = HIP_R_8F_E4M3;
+  // CHECK-NEXT: hipDataType _R_8F_E5M2 = HIP_R_8F_E5M2;
+  cudaDataType_t _R_8F_E4M3 = CUDA_R_8F_E4M3;
+  cudaDataType_t _R_8F_E5M2 = CUDA_R_8F_E5M2;
+#endif
+
+#if CUDA_VERSION >= 12080
+  // CHECK: hipDataType _R_8F_UE4M3 = HIP_R_8F_E4M3;
+  // CHECK-NEXT: hipDataType _R_8F_UE8M0 = HIP_R_8F_UE8M0;
+  // CHECK-NEXT: hipDataType _R_6F_E2M3 = HIP_R_6F_E2M3;
+  // CHECK-NEXT: hipDataType _R_6F_E3M2 = HIP_R_6F_E3M2;
+  // CHECK-NEXT: hipDataType _R_4F_E2M1 = HIP_R_4F_E2M1;
+  cudaDataType_t _R_8F_UE4M3 = CUDA_R_8F_UE4M3;
+  cudaDataType_t _R_8F_UE8M0 = CUDA_R_8F_UE8M0;
+  cudaDataType_t _R_6F_E2M3 = CUDA_R_6F_E2M3;
+  cudaDataType_t _R_6F_E3M2 = CUDA_R_6F_E3M2;
+  cudaDataType_t _R_4F_E2M1 = CUDA_R_4F_E2M1;
 #endif
 
   return 0;

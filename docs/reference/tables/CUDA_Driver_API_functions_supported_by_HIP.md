@@ -1,3 +1,9 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="NVIDIA CUDA APIs supported by HIPIFY">
+    <meta name="keywords" content="HIPIFY, HIP, ROCm, NVIDIA, CUDA, CUDA2HIP, hipification, hipify-clang, hipify-perl, Driver API">
+</head>
+
 # CUDA Driver API supported by HIP
 
 
@@ -511,7 +517,7 @@
 |`CU_DEVICE_ATTRIBUTE_PAGEABLE_MEMORY_ACCESS_USES_HOST_PAGE_TABLES`|9.2| | | |`hipDeviceAttributePageableMemoryAccessUsesHostPageTables`|3.10.0| | | | |
 |`CU_DEVICE_ATTRIBUTE_PCI_BUS_ID`| | | | |`hipDeviceAttributePciBusId`|1.6.0| | | | |
 |`CU_DEVICE_ATTRIBUTE_PCI_DEVICE_ID`| | | | |`hipDeviceAttributePciDeviceId`|1.6.0| | | | |
-|`CU_DEVICE_ATTRIBUTE_PCI_DOMAIN_ID`| | | | |`hipDeviceAttributePciDomainID`|4.3.0| | | | |
+|`CU_DEVICE_ATTRIBUTE_PCI_DOMAIN_ID`| | | | |`hipDeviceAttributePciDomainId`|4.3.0| | | | |
 |`CU_DEVICE_ATTRIBUTE_READ_ONLY_HOST_REGISTER_SUPPORTED`|11.1| | | | | | | | | |
 |`CU_DEVICE_ATTRIBUTE_REGISTERS_PER_BLOCK`| |5.0| | |`hipDeviceAttributeMaxRegistersPerBlock`|1.6.0| | | | |
 |`CU_DEVICE_ATTRIBUTE_RESERVED_SHARED_MEMORY_PER_BLOCK`|11.0| | | | | | | | | |
@@ -627,8 +633,8 @@
 |`CU_EVENT_DEFAULT`| | | | |`hipEventDefault`|1.6.0| | | | |
 |`CU_EVENT_DISABLE_TIMING`| | | | |`hipEventDisableTiming`|1.6.0| | | | |
 |`CU_EVENT_INTERPROCESS`| | | | |`hipEventInterprocess`|1.6.0| | | | |
-|`CU_EVENT_RECORD_DEFAULT`|11.1| | | | | | | | | |
-|`CU_EVENT_RECORD_EXTERNAL`|11.1| | | | | | | | | |
+|`CU_EVENT_RECORD_DEFAULT`|11.1| | | |`hipEventRecordDefault`|6.4.0| | | | |
+|`CU_EVENT_RECORD_EXTERNAL`|11.1| | | |`hipEventRecordExternal`|6.4.0| | | | |
 |`CU_EVENT_SCHED_AUTO`|11.8| | | | | | | | | |
 |`CU_EVENT_SCHED_BLOCKING_SYNC`|11.8| | | | | | | | | |
 |`CU_EVENT_SCHED_SPIN`|11.8| | | | | | | | | |
@@ -764,51 +770,51 @@
 |`CU_GREEN_CTX_DEFAULT_STREAM`|12.4| | | | | | | | | |
 |`CU_IPC_HANDLE_SIZE`| | | | |`HIP_IPC_HANDLE_SIZE`|1.6.0| | | | |
 |`CU_IPC_MEM_LAZY_ENABLE_PEER_ACCESS`| | | | |`hipIpcMemLazyEnablePeerAccess`|1.6.0| | | | |
-|`CU_JIT_CACHE_MODE`| | | | |`HIPRTC_JIT_CACHE_MODE`|1.6.0| | | | |
+|`CU_JIT_CACHE_MODE`| | | | |`hipJitOptionCacheMode`|6.4.0| | | | |
 |`CU_JIT_CACHE_OPTION_CA`| | | | | | | | | | |
 |`CU_JIT_CACHE_OPTION_CG`| | | | | | | | | | |
 |`CU_JIT_CACHE_OPTION_NONE`| | | | | | | | | | |
-|`CU_JIT_ERROR_LOG_BUFFER`| | | | |`HIPRTC_JIT_ERROR_LOG_BUFFER`|1.6.0| | | | |
-|`CU_JIT_ERROR_LOG_BUFFER_SIZE_BYTES`| | | | |`HIPRTC_JIT_ERROR_LOG_BUFFER_SIZE_BYTES`|1.6.0| | | | |
-|`CU_JIT_FALLBACK_STRATEGY`| | | | |`HIPRTC_JIT_FALLBACK_STRATEGY`|1.6.0| | | | |
-|`CU_JIT_FAST_COMPILE`| | | | |`HIPRTC_JIT_FAST_COMPILE`|1.6.0| | | | |
-|`CU_JIT_FMA`|11.4|12.0| | | | | | | | |
-|`CU_JIT_FTZ`|11.4|12.0| | | | | | | | |
-|`CU_JIT_GENERATE_DEBUG_INFO`| | | | |`HIPRTC_JIT_GENERATE_DEBUG_INFO`|1.6.0| | | | |
-|`CU_JIT_GENERATE_LINE_INFO`| | | | |`HIPRTC_JIT_GENERATE_LINE_INFO`|1.6.0| | | | |
-|`CU_JIT_GLOBAL_SYMBOL_ADDRESSES`| | | | | | | | | | |
-|`CU_JIT_GLOBAL_SYMBOL_COUNT`| | | | | | | | | | |
-|`CU_JIT_GLOBAL_SYMBOL_NAMES`| | | | | | | | | | |
-|`CU_JIT_INFO_LOG_BUFFER`| | | | |`HIPRTC_JIT_INFO_LOG_BUFFER`|1.6.0| | | | |
-|`CU_JIT_INFO_LOG_BUFFER_SIZE_BYTES`| | | | |`HIPRTC_JIT_INFO_LOG_BUFFER_SIZE_BYTES`|1.6.0| | | | |
-|`CU_JIT_INPUT_CUBIN`| | | | |`HIPRTC_JIT_INPUT_CUBIN`|5.3.0| | | | |
-|`CU_JIT_INPUT_FATBINARY`| | | | |`HIPRTC_JIT_INPUT_FATBINARY`|5.3.0| | | | |
-|`CU_JIT_INPUT_LIBRARY`| | | | |`HIPRTC_JIT_INPUT_LIBRARY`|5.3.0| | | | |
-|`CU_JIT_INPUT_NVVM`|11.4|12.0| | |`HIPRTC_JIT_INPUT_NVVM`|5.3.0| | | | |
-|`CU_JIT_INPUT_OBJECT`| | | | |`HIPRTC_JIT_INPUT_OBJECT`|5.3.0| | | | |
-|`CU_JIT_INPUT_PTX`| | | | |`HIPRTC_JIT_INPUT_PTX`|5.3.0| | | | |
-|`CU_JIT_LOG_VERBOSE`| | | | |`HIPRTC_JIT_LOG_VERBOSE`|1.6.0| | | | |
-|`CU_JIT_LTO`|11.4|12.0| | | | | | | | |
-|`CU_JIT_MAX_REGISTERS`| | | | |`HIPRTC_JIT_MAX_REGISTERS`|1.6.0| | | | |
-|`CU_JIT_MAX_THREADS_PER_BLOCK`|12.4| | | | | | | | | |
-|`CU_JIT_MIN_CTA_PER_SM`|12.3| | | | | | | | | |
-|`CU_JIT_NEW_SM3X_OPT`| | | | |`HIPRTC_JIT_NEW_SM3X_OPT`|1.6.0| | | | |
-|`CU_JIT_NUM_INPUT_TYPES`| | | | |`HIPRTC_JIT_NUM_LEGACY_INPUT_TYPES`|5.3.0| | | | |
-|`CU_JIT_NUM_OPTIONS`| | | | |`HIPRTC_JIT_NUM_OPTIONS`|1.6.0| | | | |
-|`CU_JIT_OPTIMIZATION_LEVEL`| | | | |`HIPRTC_JIT_OPTIMIZATION_LEVEL`|1.6.0| | | | |
+|`CU_JIT_ERROR_LOG_BUFFER`| | | | |`hipJitOptionErrorLogBuffer`|6.4.0| | | | |
+|`CU_JIT_ERROR_LOG_BUFFER_SIZE_BYTES`| | | | |`hipJitOptionErrorLogBufferSizeBytes`|6.4.0| | | | |
+|`CU_JIT_FALLBACK_STRATEGY`| | | | |`hipJitOptionFallbackStrategy`|6.4.0| | | | |
+|`CU_JIT_FAST_COMPILE`|8.0| | | |`hipJitOptionFastCompile`|6.4.0| | | | |
+|`CU_JIT_FMA`|11.4|12.0| | |`hipJitOptionFma`|6.4.0| | | | |
+|`CU_JIT_FTZ`|11.4|12.0| | |`hipJitOptionFtz`|6.4.0| | | | |
+|`CU_JIT_GENERATE_DEBUG_INFO`| | | | |`hipJitOptionGenerateDebugInfo`|6.4.0| | | | |
+|`CU_JIT_GENERATE_LINE_INFO`| | | | |`hipJitOptionGenerateLineInfo`|6.4.0| | | | |
+|`CU_JIT_GLOBAL_SYMBOL_ADDRESSES`|10.0| | | |`hipJitOptionGlobalSymbolAddresses`|6.4.0| | | | |
+|`CU_JIT_GLOBAL_SYMBOL_COUNT`|10.0| | | |`hipJitOptionGlobalSymbolCount`|6.4.0| | | | |
+|`CU_JIT_GLOBAL_SYMBOL_NAMES`|10.0| | | |`hipJitOptionGlobalSymbolNames`|6.4.0| | | | |
+|`CU_JIT_INFO_LOG_BUFFER`| | | | |`hipJitOptionInfoLogBuffer`|6.4.0| | | | |
+|`CU_JIT_INFO_LOG_BUFFER_SIZE_BYTES`| | | | |`hipJitOptionInfoLogBufferSizeBytes`|6.4.0| | | | |
+|`CU_JIT_INPUT_CUBIN`| | | | |`hipJitInputCubin`|6.4.0| | | | |
+|`CU_JIT_INPUT_FATBINARY`| | | | |`hipJitInputFatBinary`|6.4.0| | | | |
+|`CU_JIT_INPUT_LIBRARY`| | | | |`hipJitInputLibrary`|6.4.0| | | | |
+|`CU_JIT_INPUT_NVVM`|11.4|12.0| | |`hipJitInputNvvm`|6.4.0| | | | |
+|`CU_JIT_INPUT_OBJECT`| | | | |`hipJitInputObject`|6.4.0| | | | |
+|`CU_JIT_INPUT_PTX`| | | | |`hipJitInputPtx`|6.4.0| | | | |
+|`CU_JIT_LOG_VERBOSE`| | | | |`hipJitOptionLogVerbose`|6.4.0| | | | |
+|`CU_JIT_LTO`|11.4|12.0| | |`hipJitOptionLto`|6.4.0| | | | |
+|`CU_JIT_MAX_REGISTERS`| | | | |`hipJitOptionMaxRegisters`|6.4.0| | | | |
+|`CU_JIT_MAX_THREADS_PER_BLOCK`|12.4| | | |`hipJitOptionMaxThreadsPerBlock`|6.4.0| | | | |
+|`CU_JIT_MIN_CTA_PER_SM`|12.3| | | |`hipJitOptionMinCTAPerSM`|6.4.0| | | | |
+|`CU_JIT_NEW_SM3X_OPT`|8.0| | | |`hipJitOptionSm3xOpt`|6.4.0| | | | |
+|`CU_JIT_NUM_INPUT_TYPES`| | | | |`hipJitNumLegacyInputTypes`|6.4.0| | | | |
+|`CU_JIT_NUM_OPTIONS`| | | | |`hipJitOptionNumOptions`|6.4.0| | | | |
+|`CU_JIT_OPTIMIZATION_LEVEL`| | | | |`hipJitOptionOptimizationLevel`|6.4.0| | | | |
 |`CU_JIT_OPTIMIZE_UNUSED_DEVICE_VARIABLES`|11.7|12.0| | | | | | | | |
-|`CU_JIT_OVERRIDE_DIRECTIVE_VALUES`|12.4| | | | | | | | | |
-|`CU_JIT_POSITION_INDEPENDENT_CODE`|12.0| | | | | | | | | |
-|`CU_JIT_PREC_DIV`|11.4|12.0| | | | | | | | |
-|`CU_JIT_PREC_SQRT`|11.4|12.0| | | | | | | | |
+|`CU_JIT_OVERRIDE_DIRECTIVE_VALUES`|12.4| | | |`hipJitOptionOverrideDirectiveValues`|6.4.0| | | | |
+|`CU_JIT_POSITION_INDEPENDENT_CODE`|12.0| | | |`hipJitOptionPositionIndependentCode`|6.4.0| | | | |
+|`CU_JIT_PREC_DIV`|11.4|12.0| | |`hipJitOptionPrecDiv`|6.4.0| | | | |
+|`CU_JIT_PREC_SQRT`|11.4|12.0| | |`hipJitOptionPrecSqrt`|6.4.0| | | | |
 |`CU_JIT_REFERENCED_KERNEL_COUNT`|11.7|12.0| | | | | | | | |
 |`CU_JIT_REFERENCED_KERNEL_NAMES`|11.7|12.0| | | | | | | | |
 |`CU_JIT_REFERENCED_VARIABLE_COUNT`|11.7|12.0| | | | | | | | |
 |`CU_JIT_REFERENCED_VARIABLE_NAMES`|11.7|12.0| | | | | | | | |
-|`CU_JIT_TARGET`| | | | |`HIPRTC_JIT_TARGET`|1.6.0| | | | |
-|`CU_JIT_TARGET_FROM_CUCONTEXT`| | | | |`HIPRTC_JIT_TARGET_FROM_HIPCONTEXT`|1.6.0| | | | |
-|`CU_JIT_THREADS_PER_BLOCK`| | | | |`HIPRTC_JIT_THREADS_PER_BLOCK`|1.6.0| | | | |
-|`CU_JIT_WALL_TIME`| | | | |`HIPRTC_JIT_WALL_TIME`|1.6.0| | | | |
+|`CU_JIT_TARGET`| | | | |`hipJitOptionTarget`|6.4.0| | | | |
+|`CU_JIT_TARGET_FROM_CUCONTEXT`| | | | |`hipJitOptionTargetFromContext`|6.4.0| | | | |
+|`CU_JIT_THREADS_PER_BLOCK`| | | | |`hipJitOptionThreadsPerBlock`|6.4.0| | | | |
+|`CU_JIT_WALL_TIME`| | | | |`hipJitOptionWallTime`|6.4.0| | | | |
 |`CU_KERNEL_NODE_ATTRIBUTE_ACCESS_POLICY_WINDOW`|11.0| | | |`hipKernelNodeAttributeAccessPolicyWindow`|5.2.0| | | | |
 |`CU_KERNEL_NODE_ATTRIBUTE_CLUSTER_DIMENSION`|11.8| | | | | | | | | |
 |`CU_KERNEL_NODE_ATTRIBUTE_CLUSTER_SCHEDULING_POLICY_PREFERENCE`|11.8| | | | | | | | | |
@@ -1325,8 +1331,8 @@
 |`CUipcMemHandle_v1`|11.3| | | |`hipIpcMemHandle_t`|1.6.0| | | | |
 |`CUipcMem_flags`| | | | | | | | | | |
 |`CUipcMem_flags_enum`| | | | | | | | | | |
-|`CUjitInputType`| | | | |`hiprtcJITInputType`|5.3.0| | | | |
-|`CUjitInputType_enum`| | | | |`hiprtcJITInputType`|5.3.0| | | | |
+|`CUjitInputType`| | | | |`hipJitInputType`|6.4.0| | | | |
+|`CUjitInputType_enum`| | | | |`hipJitInputType`|6.4.0| | | | |
 |`CUjit_cacheMode`| | | | | | | | | | |
 |`CUjit_cacheMode_enum`| | | | | | | | | | |
 |`CUjit_fallback`| | | | | | | | | | |
@@ -1342,14 +1348,14 @@
 |`CUkernelNodeAttrValue`|11.0| | | |`hipKernelNodeAttrValue`|5.2.0| | | | |
 |`CUkernelNodeAttrValue_union`|11.0| | |11.8|`hipKernelNodeAttrValue`|5.2.0| | | | |
 |`CUkernelNodeAttrValue_v1`|11.3| | | |`hipKernelNodeAttrValue`|5.2.0| | | | |
-|`CUlaunchAttribute`|11.8| | | | | | | | | |
+|`CUlaunchAttribute`|11.8| | | |`hipLaunchAttribute`|6.5.0| | | |6.5.0|
 |`CUlaunchAttributeID`|11.8| | | |`hipLaunchAttributeID`|6.2.0| | | | |
 |`CUlaunchAttributeID_enum`|11.8| | | |`hipLaunchAttributeID`|6.2.0| | | | |
 |`CUlaunchAttributeValue`|11.8| | | |`hipLaunchAttributeValue`|6.2.0| | | | |
 |`CUlaunchAttributeValue_union`|11.8| | | |`hipLaunchAttributeValue`|6.2.0| | | | |
-|`CUlaunchAttribute_st`|11.8| | | | | | | | | |
-|`CUlaunchConfig`|11.8| | | | | | | | | |
-|`CUlaunchConfig_st`|11.8| | | | | | | | | |
+|`CUlaunchAttribute_st`|11.8| | | |`hipLaunchAttribute_st`|6.5.0| | | |6.5.0|
+|`CUlaunchConfig`|11.8| | | |`HIP_LAUNCH_CONFIG`|6.5.0| | | |6.5.0|
+|`CUlaunchConfig_st`|11.8| | | |`HIP_LAUNCH_CONFIG_st`|6.5.0| | | |6.5.0|
 |`CUlaunchMemSyncDomain`|12.0| | | | | | | | | |
 |`CUlaunchMemSyncDomainMap`|12.0| | | | | | | | | |
 |`CUlaunchMemSyncDomainMap_st`|12.0| | | | | | | | | |
@@ -1963,7 +1969,7 @@
 |`cuLaunchCooperativeKernelMultiDevice`|9.0|11.3| | |`hipModuleLaunchCooperativeKernelMultiDevice`|5.5.0| | | | |
 |`cuLaunchHostFunc`|10.0| | | |`hipLaunchHostFunc`|5.2.0| | | | |
 |`cuLaunchKernel`| | | | |`hipModuleLaunchKernel`|1.6.0| | | | |
-|`cuLaunchKernelEx`|11.8| | | | | | | | | |
+|`cuLaunchKernelEx`|11.8| | | |`hipDrvLaunchKernelEx`|6.5.0| | | |6.5.0|
 
 ## **23. Execution Control [DEPRECATED]**
 

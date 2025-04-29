@@ -285,14 +285,14 @@ const std::map<llvm::StringRef, hipCounter> CUDA_RUNTIME_TYPE_NAME_MAP {
   {"cudaLaunchAttributeValue",                                         {"hipLaunchAttributeValue",                                  "", CONV_TYPE, API_RUNTIME, SEC::DATA_TYPES}},
 
   // CUlaunchAttribute_st
-  {"cudaLaunchAttribute_st",                                           {"hipLaunchAttribute",                                       "", CONV_TYPE, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  {"cudaLaunchAttribute_st",                                           {"hipLaunchAttribute_st",                                    "", CONV_TYPE, API_RUNTIME, SEC::DATA_TYPES, HIP_EXPERIMENTAL}},
   // CUlaunchAttribute
-  {"cudaLaunchAttribute",                                              {"hipLaunchAttribute",                                       "", CONV_TYPE, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  {"cudaLaunchAttribute",                                              {"hipLaunchAttribute",                                       "", CONV_TYPE, API_RUNTIME, SEC::DATA_TYPES, HIP_EXPERIMENTAL}},
 
-  // CUlaunchConfig_st
-  {"cudaLaunchConfig_st",                                              {"hipLaunchConfig",                                          "", CONV_TYPE, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
-  // CUlaunchConfig
-  {"cudaLaunchConfig_t",                                               {"hipLaunchConfig",                                          "", CONV_TYPE, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  // NOTE: CUlaunchConfig_st struct differs
+  {"cudaLaunchConfig_st",                                              {"hipLaunchConfig_st",                                       "", CONV_TYPE, API_RUNTIME, SEC::DATA_TYPES, HIP_EXPERIMENTAL}},
+  // NOTE: CUlaunchConfig struct differs
+  {"cudaLaunchConfig_t",                                               {"hipLaunchConfig_t",                                        "", CONV_TYPE, API_RUNTIME, SEC::DATA_TYPES, HIP_EXPERIMENTAL}},
 
   // CUDA_GRAPH_INSTANTIATE_PARAMS_st
   {"cudaGraphInstantiateParams_st",                                    {"hipGraphInstantiateParams",                                "", CONV_TYPE, API_RUNTIME, SEC::DATA_TYPES}},
@@ -503,7 +503,7 @@ const std::map<llvm::StringRef, hipCounter> CUDA_RUNTIME_TYPE_NAME_MAP {
   // CUDA only
   {"cudaDevAttrMaxTexture3DDepthAlt",                                  {"hipDeviceAttributeMaxTexture3DAlt",                        "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 49
   // CU_DEVICE_ATTRIBUTE_PCI_DOMAIN_ID
-  {"cudaDevAttrPciDomainId",                                           {"hipDeviceAttributePciDomainID",                            "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 50
+  {"cudaDevAttrPciDomainId",                                           {"hipDeviceAttributePciDomainId",                            "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 50
   // CU_DEVICE_ATTRIBUTE_TEXTURE_PITCH_ALIGNMENT
   {"cudaDevAttrTexturePitchAlignment",                                 {"hipDeviceAttributeTexturePitchAlignment",                  "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 51
   // CU_DEVICE_ATTRIBUTE_MAXIMUM_TEXTURECUBEMAP_WIDTH
@@ -855,6 +855,94 @@ const std::map<llvm::StringRef, hipCounter> CUDA_RUNTIME_TYPE_NAME_MAP {
   {"cudaEglColorFormatBayerIspGRBG",                                   {"hipEglColorFormatBayerIspGRBG",                            "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 70
   // CU_EGL_COLOR_FORMAT_BAYER_ISP_GBRG = 0x47
   {"cudaEglColorFormatBayerIspGBRG",                                   {"hipEglColorFormatBayerIspGBRG",                            "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 71
+  //
+  {"cudaEglColorFormatBayerBCCR",                                      {"hipEglColorFormatBayerBCCR",                               "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 72
+  //
+  {"cudaEglColorFormatBayerRCCB",                                      {"hipEglColorFormatBayerRCCB",                               "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 73
+  //
+  {"cudaEglColorFormatBayerCRBC",                                      {"hipEglColorFormatBayerCRBC",                               "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 74
+  //
+  {"cudaEglColorFormatBayerCBRC",                                      {"hipEglColorFormatBayerCBRC",                               "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 75
+  //
+  {"cudaEglColorFormatBayer10CCCC",                                    {"hipEglColorFormatBayer10CCCC",                             "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 76
+  //
+  {"cudaEglColorFormatBayer12BCCR",                                    {"hipEglColorFormatBayer12BCCR",                             "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 77
+  //
+  {"cudaEglColorFormatBayer12RCCB",                                    {"hipEglColorFormatBayer12RCCB",                             "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 78
+  //
+  {"cudaEglColorFormatBayer12CRBC",                                    {"hipEglColorFormatBayer12CRBC",                             "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 79
+  //
+  {"cudaEglColorFormatBayer12CBRC",                                    {"hipEglColorFormatBayer12CBRC",                             "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 80
+  //
+  {"cudaEglColorFormatBayer12CCCC",                                    {"hipEglColorFormatBayer12CCCC",                             "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 81
+  //
+  {"cudaEglColorFormatY",                                              {"hipEglColorFormatY",                                       "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 82
+  //
+  {"cudaEglColorFormatYUV420SemiPlanar_2020",                          {"hipEglColorFormatYUV420SemiPlanar_2020",                   "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 83
+  //
+  {"cudaEglColorFormatYVU420SemiPlanar_2020",                          {"hipEglColorFormatYVU420SemiPlanar_2020",                   "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 84
+  //
+  {"cudaEglColorFormatYUV420Planar_2020",                              {"hipEglColorFormatYUV420Planar_2020",                       "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 85
+  //
+  {"cudaEglColorFormatYVU420Planar_2020",                              {"hipEglColorFormatYVU420Planar_2020",                       "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 86
+  //
+  {"cudaEglColorFormatYUV420SemiPlanar_709",                           {"hipEglColorFormatYUV420SemiPlanar_709",                    "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 87
+  //
+  {"cudaEglColorFormatYVU420SemiPlanar_709",                           {"hipEglColorFormatYVU420SemiPlanar_709",                    "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 88
+  //
+  {"cudaEglColorFormatYUV420Planar_709",                               {"hipEglColorFormatYUV420Planar_709",                        "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 89
+  //
+  {"cudaEglColorFormatYVU420Planar_709",                               {"hipEglColorFormatYVU420Planar_709",                        "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 90
+  //
+  {"cudaEglColorFormatY10V10U10_420SemiPlanar_709",                    {"hipEglColorFormatY10V10U10_420SemiPlanar_709",             "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 91
+  //
+  {"cudaEglColorFormatY10V10U10_420SemiPlanar_2020",                   {"hipEglColorFormatY10V10U10_420SemiPlanar_2020",            "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 92
+  //
+  {"cudaEglColorFormatY10V10U10_422SemiPlanar_2020",                   {"hipEglColorFormatY10V10U10_422SemiPlanar_2020",            "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 93
+  //
+  {"cudaEglColorFormatY10V10U10_422SemiPlanar",                        {"hipEglColorFormatY10V10U10_422SemiPlanar",                 "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 94
+  //
+  {"cudaEglColorFormatY10V10U10_422SemiPlanar_709",                    {"hipEglColorFormatY10V10U10_422SemiPlanar_709",             "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 95
+  //
+  {"cudaEglColorFormatY_ER",                                           {"hipEglColorFormatY_ER",                                    "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 96
+  //
+  {"cudaEglColorFormatY_709_ER",                                       {"hipEglColorFormatY_709_ER",                                "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 97
+  //
+  {"cudaEglColorFormatY10_ER",                                         {"hipEglColorFormatY10_ER",                                  "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 98
+  //
+  {"cudaEglColorFormatY10_709_ER",                                     {"hipEglColorFormatY10_709_ER",                              "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 99
+  //
+  {"cudaEglColorFormatY12_ER",                                         {"hipEglColorFormatY12_ER",                                  "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 100
+  //
+  {"cudaEglColorFormatY12_709_ER",                                     {"hipEglColorFormatY12_709_ER",                              "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 101
+  //
+  {"cudaEglColorFormatYUVA",                                           {"hipEglColorFormatYUVA",                                    "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 102
+  //
+  {"cudaEglColorFormatYVYU",                                           {"hipEglColorFormatYVYU",                                    "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 104
+  //
+  {"cudaEglColorFormatVYUY",                                           {"hipEglColorFormatVYUY",                                    "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 105
+  //
+  {"cudaEglColorFormatY10V10U10_420SemiPlanar_ER",                     {"hipEglColorFormatY10V10U10_420SemiPlanar_ER",              "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 106
+  //
+  {"cudaEglColorFormatY10V10U10_420SemiPlanar_709_ER",                 {"hipEglColorFormatY10V10U10_420SemiPlanar_709_ER",          "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 107
+  //
+  {"cudaEglColorFormatY10V10U10_444SemiPlanar_ER",                     {"hipEglColorFormatY10V10U10_444SemiPlanar_ER",              "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 108
+  //
+  {"cudaEglColorFormatY10V10U10_444SemiPlanar_709_ER",                 {"hipEglColorFormatY10V10U10_444SemiPlanar_709_ER",          "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 109
+  //
+  {"cudaEglColorFormatY12V12U12_420SemiPlanar_ER",                     {"hipEglColorFormatY12V12U12_420SemiPlanar_ER",              "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 110
+  //
+  {"cudaEglColorFormatY12V12U12_420SemiPlanar_709_ER",                 {"hipEglColorFormatY12V12U12_420SemiPlanar_709_ER",          "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 111
+  //
+  {"cudaEglColorFormatY12V12U12_444SemiPlanar_ER",                     {"hipEglColorFormatY12V12U12_444SemiPlanar_ER",              "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 112
+  //
+  {"cudaEglColorFormatY12V12U12_444SemiPlanar_709_ER",                 {"hipEglColorFormatY12V12U12_444SemiPlanar_709_ER",          "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 113
+  //
+  {"cudaEglColorFormatUYVY709",                                        {"hipEglColorFormatUYVY709",                                 "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 114
+  //
+  {"cudaEglColorFormatUYVY709_ER",                                     {"hipEglColorFormatUYVY709_ER",                              "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 115
+  //
+  {"cudaEglColorFormatUYVY2020",                                       {"hipEglColorFormatUYVY2020",                                "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 116
 
   // CUeglFrameType
   {"cudaEglFrameType",                                                 {"hipEglFrameType",                                          "", CONV_TYPE, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
@@ -2032,39 +2120,39 @@ const std::map<llvm::StringRef, hipCounter> CUDA_RUNTIME_TYPE_NAME_MAP {
   {"cudaJitOption",                                                    {"hipJitOption",                                             "", CONV_TYPE, API_RUNTIME, SEC::DATA_TYPES}},
   // cudaJitOption enum values
   // CU_JIT_MAX_REGISTERS
-  {"cudaJitMaxRegisters",                                              {"HIPRTC_JIT_MAX_REGISTERS",                                 "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 0
+  {"cudaJitMaxRegisters",                                              {"hipJitOptionMaxRegisters",                                 "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 0
   // CU_JIT_THREADS_PER_BLOCK
-  {"cudaJitThreadsPerBlock",                                           {"HIPRTC_JIT_THREADS_PER_BLOCK",                             "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 1
+  {"cudaJitThreadsPerBlock",                                           {"hipJitOptionThreadsPerBlock",                              "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 1
   // CU_JIT_WALL_TIME
-  {"cudaJitWallTime",                                                  {"HIPRTC_JIT_WALL_TIME",                                     "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 2
+  {"cudaJitWallTime",                                                  {"hipJitOptionWallTime",                                     "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 2
   // CU_JIT_INFO_LOG_BUFFER
-  {"cudaJitInfoLogBuffer",                                             {"HIPRTC_JIT_INFO_LOG_BUFFER",                               "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 3
+  {"cudaJitInfoLogBuffer",                                             {"hipJitOptionInfoLogBuffer",                                "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 3
   // CU_JIT_INFO_LOG_BUFFER_SIZE_BYTES
-  {"cudaJitInfoLogBufferSizeBytes",                                    {"HIPRTC_JIT_INFO_LOG_BUFFER_SIZE_BYTES",                    "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 4
+  {"cudaJitInfoLogBufferSizeBytes",                                    {"hipJitOptionInfoLogBufferSizeBytes",                       "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 4
   // CU_JIT_ERROR_LOG_BUFFER
-  {"cudaJitErrorLogBuffer",                                            {"HIPRTC_JIT_ERROR_LOG_BUFFER",                              "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 5
+  {"cudaJitErrorLogBuffer",                                            {"hipJitOptionErrorLogBuffer",                               "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 5
   // CU_JIT_ERROR_LOG_BUFFER_SIZE_BYTES
-  {"cudaJitErrorLogBufferSizeBytes",                                   {"HIPRTC_JIT_ERROR_LOG_BUFFER_SIZE_BYTES",                   "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 6
+  {"cudaJitErrorLogBufferSizeBytes",                                   {"hipJitOptionErrorLogBufferSizeBytes",                      "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 6
   // CU_JIT_OPTIMIZATION_LEVEL
-  {"cudaJitOptimizationLevel",                                         {"HIPRTC_JIT_OPTIMIZATION_LEVEL",                            "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 7
+  {"cudaJitOptimizationLevel",                                         {"hipJitOptionOptimizationLevel",                            "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 7
   // CU_JIT_FALLBACK_STRATEGY
-  {"cudaJitFallbackStrategy",                                          {"HIPRTC_JIT_FALLBACK_STRATEGY",                             "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 10
+  {"cudaJitFallbackStrategy",                                          {"hipJitOptionFallbackStrategy",                             "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 10
   // CU_JIT_GENERATE_DEBUG_INFO
-  {"cudaJitGenerateDebugInfo",                                         {"HIPRTC_JIT_GENERATE_DEBUG_INFO",                           "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 11
+  {"cudaJitGenerateDebugInfo",                                         {"hipJitOptionGenerateDebugInfo",                            "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 11
   // CU_JIT_LOG_VERBOSE
-  {"cudaJitLogVerbose",                                                {"HIPRTC_JIT_LOG_VERBOSE",                                   "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 12
+  {"cudaJitLogVerbose",                                                {"hipJitOptionLogVerbose",                                   "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 12
   // CU_JIT_GENERATE_LINE_INFO
-  {"cudaJitGenerateLineInfo",                                          {"HIPRTC_JIT_GENERATE_LINE_INFO",                            "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 13
+  {"cudaJitGenerateLineInfo",                                          {"hipJitOptionGenerateLineInfo",                             "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 13
   // CU_JIT_CACHE_MODE
-  {"cudaJitCacheMode",                                                 {"HIPRTC_JIT_CACHE_MODE",                                    "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 14
+  {"cudaJitCacheMode",                                                 {"hipJitOptionCacheMode",                                    "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 14
   // CU_JIT_POSITION_INDEPENDENT_CODE
-  {"cudaJitPositionIndependentCode",                                   {"hipJitPositionIndependentCode",                            "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 30
+  {"cudaJitPositionIndependentCode",                                   {"hipJitOptionPositionIndependentCode",                      "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 30
   // CU_JIT_MIN_CTA_PER_SM
-  {"cudaJitMinCtaPerSm",                                               {"hipJitMinCtaPerSm",                                        "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 31
+  {"cudaJitMinCtaPerSm",                                               {"hipJitOptionMinCTAPerSM",                                  "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 31
   // CU_JIT_MAX_THREADS_PER_BLOCK
-  {"cudaJitMaxThreadsPerBlock",                                        {"hipJitMaxThreadsPerBlock",                                 "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 32
+  {"cudaJitMaxThreadsPerBlock",                                        {"hipJitOptionMaxThreadsPerBlock",                           "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 32
   // CU_JIT_OVERRIDE_DIRECTIVE_VALUES
-  {"cudaJitOverrideDirectiveValues",                                   {"hipJitOverrideDerectiveValues",                            "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 33
+  {"cudaJitOverrideDirectiveValues",                                   {"hipJitOptionOverrideDirectiveValues",                      "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES}}, // 33
 
   // CUlibraryOption
   {"cudaLibraryOption",                                                {"hipLibraryOption",                                         "", CONV_TYPE, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
@@ -2188,9 +2276,9 @@ const std::map<llvm::StringRef, hipCounter> CUDA_RUNTIME_TYPE_NAME_MAP {
   // CU_EVENT_INTERPROCESS
   {"cudaEventInterprocess",                                            {"hipEventInterprocess",                                     "", CONV_DEFINE, API_RUNTIME, SEC::DATA_TYPES}}, // 0x04
   // CU_EVENT_RECORD_DEFAULT
-  {"cudaEventRecordDefault",                                           {"hipEventRecordDefault",                                    "", CONV_DEFINE, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 0x00
+  {"cudaEventRecordDefault",                                           {"hipEventRecordDefault",                                    "", CONV_DEFINE, API_RUNTIME, SEC::DATA_TYPES}}, // 0x00
   // CU_EVENT_RECORD_EXTERNAL
-  {"cudaEventRecordExternal",                                          {"hipEventRecordExternal",                                   "", CONV_DEFINE, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 0x01
+  {"cudaEventRecordExternal",                                          {"hipEventRecordExternal",                                   "", CONV_DEFINE, API_RUNTIME, SEC::DATA_TYPES}}, // 0x01
   // CU_EVENT_WAIT_DEFAULT
   {"cudaEventWaitDefault",                                             {"hipEventWaitDefault",                                      "", CONV_DEFINE, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 0x00
   // CU_EVENT_WAIT_EXTERNAL
@@ -2671,7 +2759,6 @@ const std::map<llvm::StringRef, cudaAPIversions> CUDA_RUNTIME_TYPE_NAME_VER_MAP 
   {"cudaEventRecordDefault",                                           {CUDA_111, CUDA_0,   CUDA_0  }},
   {"cudaEventRecordExternal",                                          {CUDA_111, CUDA_0,   CUDA_0  }},
   {"cudaEventWaitDefault",                                             {CUDA_111, CUDA_0,   CUDA_0  }},
-  {"cudaEventRecordExternal",                                          {CUDA_111, CUDA_0,   CUDA_0  }},
   {"cudaArraySparse",                                                  {CUDA_111, CUDA_0,   CUDA_0  }},
   {"cudaErrorStubLibrary",                                             {CUDA_111, CUDA_0,   CUDA_0  }},
   {"cudaErrorCallRequiresNewerDriver",                                 {CUDA_111, CUDA_0,   CUDA_0  }},
@@ -3027,6 +3114,50 @@ const std::map<llvm::StringRef, cudaAPIversions> CUDA_RUNTIME_TYPE_NAME_VER_MAP 
   {"cudaGraphCondTypeSwitch",                                          {CUDA_128, CUDA_0,   CUDA_0  }},
   {"cudaGraphInstantiateConditionalHandleUnused",                      {CUDA_128, CUDA_0,   CUDA_0  }},
   {"cudaLaunchAttributePreferredClusterDimension",                     {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatUYVY709",                                        {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatUYVY709_ER",                                     {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatUYVY2020",                                       {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatBayerBCCR",                                      {CUDA_111, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatBayerRCCB",                                      {CUDA_111, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatBayerCRBC",                                      {CUDA_111, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatBayerCBRC",                                      {CUDA_111, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatBayer10CCCC",                                    {CUDA_111, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatBayer12BCCR",                                    {CUDA_111, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatBayer12RCCB",                                    {CUDA_111, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatBayer12CRBC",                                    {CUDA_111, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatBayer12CBRC",                                    {CUDA_111, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatBayer12CCCC",                                    {CUDA_111, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatY",                                              {CUDA_112, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatYUV420SemiPlanar_2020",                          {CUDA_114, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatYVU420SemiPlanar_2020",                          {CUDA_114, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatYUV420Planar_2020",                              {CUDA_114, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatYVU420Planar_2020",                              {CUDA_114, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatYUV420SemiPlanar_709",                           {CUDA_114, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatYVU420SemiPlanar_709",                           {CUDA_114, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatYUV420Planar_709",                               {CUDA_114, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatYVU420Planar_709",                               {CUDA_114, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatY10V10U10_420SemiPlanar_709",                    {CUDA_114, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatY10V10U10_420SemiPlanar_2020",                   {CUDA_114, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatY10V10U10_422SemiPlanar_2020",                   {CUDA_114, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatY10V10U10_422SemiPlanar",                        {CUDA_114, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatY10V10U10_422SemiPlanar_709",                    {CUDA_114, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatY_ER",                                           {CUDA_114, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatY_709_ER",                                       {CUDA_114, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatY10_ER",                                         {CUDA_114, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatY10_709_ER",                                     {CUDA_114, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatY12_ER",                                         {CUDA_114, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatY12_709_ER",                                     {CUDA_114, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatYUVA",                                           {CUDA_114, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatYVYU",                                           {CUDA_114, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatVYUY",                                           {CUDA_114, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatY10V10U10_420SemiPlanar_ER",                     {CUDA_114, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatY10V10U10_420SemiPlanar_709_ER",                 {CUDA_114, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatY10V10U10_444SemiPlanar_ER",                     {CUDA_114, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatY10V10U10_444SemiPlanar_709_ER",                 {CUDA_114, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatY12V12U12_420SemiPlanar_ER",                     {CUDA_114, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatY12V12U12_420SemiPlanar_709_ER",                 {CUDA_114, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatY12V12U12_444SemiPlanar_ER",                     {CUDA_114, CUDA_0,   CUDA_0  }},
+  {"cudaEglColorFormatY12V12U12_444SemiPlanar_709_ER",                 {CUDA_114, CUDA_0,   CUDA_0  }},
 };
 
 const std::map<llvm::StringRef, hipAPIversions> HIP_RUNTIME_TYPE_NAME_VER_MAP {
@@ -3395,4 +3526,10 @@ const std::map<llvm::StringRef, hipAPIversions> HIP_RUNTIME_TYPE_NAME_VER_MAP {
   {"HIP_DBL2INT_CVT",                                                  {HIP_5070, HIP_0,    HIP_0   }},
   {"hipErrorInvalidChannelDescriptor",                                 {HIP_6040, HIP_0,    HIP_0   }},
   {"hipErrorInvalidTexture",                                           {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipEventRecordDefault",                                            {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipEventRecordExternal",                                           {HIP_6040, HIP_0,    HIP_0   }},
+  {"hipLaunchAttribute_st",                                            {HIP_6050, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"hipLaunchAttribute",                                               {HIP_6050, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"hipLaunchConfig_st",                                               {HIP_6050, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"hipLaunchConfig_t",                                                {HIP_6050, HIP_0,    HIP_0,  HIP_LATEST}},
 };

@@ -1,3 +1,9 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="NVIDIA CUDA APIs supported by HIPIFY">
+    <meta name="keywords" content="HIPIFY, HIP, ROCm, NVIDIA, CUDA, CUDA2HIP, hipification, hipify-clang, hipify-perl, BLAS, cuBLAS, hipBLAS, rocBLAS">
+</head>
+
 # CUBLAS API supported by HIP and ROC
 
 
@@ -112,39 +118,44 @@
 
 |**CUDA**|**A**|**D**|**C**|**R**|**HIP**|**A**|**D**|**C**|**R**|**E**|**ROC**|**A**|**D**|**C**|**R**|**E**|
 |:--|:-:|:-:|:-:|:-:|:--|:-:|:-:|:-:|:-:|:-:|:--|:-:|:-:|:-:|:-:|:-:|
-|`CUDA_C_16BF`| | | | |`HIP_C_16BF`|5.7.0| | | | |`rocblas_datatype_bf16_c`|3.5.0| | | | |
-|`CUDA_C_16F`|8.0| | | |`HIP_C_16F`|5.7.0| | | | |`rocblas_datatype_f16_c`|1.8.2| | | | |
-|`CUDA_C_16I`|11.0| | | | | | | | | | | | | | | |
-|`CUDA_C_16U`|11.0| | | | | | | | | | | | | | | |
-|`CUDA_C_32F`|8.0| | | |`HIP_C_32F`|5.7.0| | | | |`rocblas_datatype_f32_c`|1.8.2| | | | |
-|`CUDA_C_32I`|8.0| | | |`HIP_C_32I`|5.7.0| | | | |`rocblas_datatype_i32_c`|2.0.0| | | | |
-|`CUDA_C_32U`|8.0| | | |`HIP_C_32U`|5.7.0| | | | |`rocblas_datatype_u32_c`|2.0.0| | | | |
-|`CUDA_C_4I`|11.0| | | | | | | | | | | | | | | |
-|`CUDA_C_4U`|11.0| | | | | | | | | | | | | | | |
-|`CUDA_C_64F`|8.0| | | |`HIP_C_64F`|5.7.0| | | | |`rocblas_datatype_f64_c`|1.8.2| | | | |
-|`CUDA_C_64I`|11.0| | | | | | | | | | | | | | | |
-|`CUDA_C_64U`|11.0| | | | | | | | | | | | | | | |
-|`CUDA_C_8I`|8.0| | | |`HIP_C_8I`|5.7.0| | | | |`rocblas_datatype_i8_c`|2.0.0| | | | |
-|`CUDA_C_8U`|8.0| | | |`HIP_C_8U`|5.7.0| | | | |`rocblas_datatype_u8_c`|2.0.0| | | | |
-|`CUDA_R_16BF`| | | | |`HIP_R_16BF`|5.7.0| | | | |`rocblas_datatype_bf16_r`|3.5.0| | | | |
-|`CUDA_R_16F`|8.0| | | |`HIP_R_16F`|5.7.0| | | | |`rocblas_datatype_f16_r`|1.8.2| | | | |
-|`CUDA_R_16I`|11.0| | | | | | | | | | | | | | | |
-|`CUDA_R_16U`|11.0| | | | | | | | | | | | | | | |
-|`CUDA_R_32F`|8.0| | | |`HIP_R_32F`|5.7.0| | | | |`rocblas_datatype_f32_r`|1.8.2| | | | |
-|`CUDA_R_32I`|8.0| | | |`HIP_R_32I`|5.7.0| | | | |`rocblas_datatype_i32_r`|2.0.0| | | | |
-|`CUDA_R_32U`|8.0| | | |`HIP_R_32U`|5.7.0| | | | |`rocblas_datatype_u32_r`|2.0.0| | | | |
-|`CUDA_R_4I`|11.0| | | | | | | | | | | | | | | |
-|`CUDA_R_4U`|11.0| | | | | | | | | | | | | | | |
-|`CUDA_R_64F`|8.0| | | |`HIP_R_64F`|5.7.0| | | | |`rocblas_datatype_f64_r`|1.8.2| | | | |
-|`CUDA_R_64I`|11.0| | | | | | | | | | | | | | | |
-|`CUDA_R_64U`|11.0| | | | | | | | | | | | | | | |
-|`CUDA_R_8F_E4M3`|11.8| | | | | | | | | | | | | | | |
-|`CUDA_R_8F_E5M2`|11.8| | | | | | | | | | | | | | | |
-|`CUDA_R_8I`|8.0| | | |`HIP_R_8I`|5.7.0| | | | |`rocblas_datatype_i8_r`|2.0.0| | | | |
-|`CUDA_R_8U`|8.0| | | |`HIP_R_8U`|5.7.0| | | | |`rocblas_datatype_u8_r`|2.0.0| | | | |
-|`cublasDataType_t`|7.5| | | |`hipDataType`|5.7.0| | | | |`rocblas_datatype`|1.8.2| | | | |
-|`cudaDataType`|8.0| | | |`hipDataType`|5.7.0| | | | |`rocblas_datatype`|1.8.2| | | | |
-|`cudaDataType_t`|8.0| | | |`hipDataType`|5.7.0| | | | |`rocblas_datatype_`|1.8.2| | | | |
+|`CUDA_C_16BF`| | | | |`HIP_C_16BF`|5.5.0| | | | |`rocblas_datatype_bf16_c`|3.5.0| | | | |
+|`CUDA_C_16F`|8.0| | | |`HIP_C_16F`|3.0.0| | | | |`rocblas_datatype_f16_c`|1.8.2| | | | |
+|`CUDA_C_16I`|11.0| | | |`HIP_C_16I`|5.5.0| | | | | | | | | | |
+|`CUDA_C_16U`|11.0| | | |`HIP_C_16U`|5.5.0| | | | | | | | | | |
+|`CUDA_C_32F`|8.0| | | |`HIP_C_32F`|3.0.0| | | | |`rocblas_datatype_f32_c`|1.8.2| | | | |
+|`CUDA_C_32I`|8.0| | | |`HIP_C_32I`|5.5.0| | | | |`rocblas_datatype_i32_c`|2.0.0| | | | |
+|`CUDA_C_32U`|8.0| | | |`HIP_C_32U`|5.5.0| | | | |`rocblas_datatype_u32_c`|2.0.0| | | | |
+|`CUDA_C_4I`|11.0| | | |`HIP_C_4I`|5.5.0| | | | | | | | | | |
+|`CUDA_C_4U`|11.0| | | |`HIP_C_4U`|5.5.0| | | | | | | | | | |
+|`CUDA_C_64F`|8.0| | | |`HIP_C_64F`|3.0.0| | | | |`rocblas_datatype_f64_c`|1.8.2| | | | |
+|`CUDA_C_64I`|11.0| | | |`HIP_C_64I`|5.5.0| | | | | | | | | | |
+|`CUDA_C_64U`|11.0| | | |`HIP_C_64U`|5.5.0| | | | | | | | | | |
+|`CUDA_C_8I`|8.0| | | |`HIP_C_8I`|5.5.0| | | | |`rocblas_datatype_i8_c`|2.0.0| | | | |
+|`CUDA_C_8U`|8.0| | | |`HIP_C_8U`|5.5.0| | | | |`rocblas_datatype_u8_c`|2.0.0| | | | |
+|`CUDA_R_16BF`| | | | |`HIP_R_16BF`|5.5.0| | | | |`rocblas_datatype_bf16_r`|3.5.0| | | | |
+|`CUDA_R_16F`|8.0| | | |`HIP_R_16F`|3.0.0| | | | |`rocblas_datatype_f16_r`|1.8.2| | | | |
+|`CUDA_R_16I`|11.0| | | |`HIP_R_16I`|5.5.0| | | | | | | | | | |
+|`CUDA_R_16U`|11.0| | | |`HIP_R_16U`|5.5.0| | | | | | | | | | |
+|`CUDA_R_32F`|8.0| | | |`HIP_R_32F`|3.0.0| | | | |`rocblas_datatype_f32_r`|1.8.2| | | | |
+|`CUDA_R_32I`|8.0| | | |`HIP_R_32I`|5.5.0| | | | |`rocblas_datatype_i32_r`|2.0.0| | | | |
+|`CUDA_R_32U`|8.0| | | |`HIP_R_32U`|5.5.0| | | | |`rocblas_datatype_u32_r`|2.0.0| | | | |
+|`CUDA_R_4F_E2M1`|12.8| | | |`HIP_R_4F_E2M1`|6.5.0| | | |6.5.0| | | | | | |
+|`CUDA_R_4I`|11.0| | | |`HIP_R_4I`|5.5.0| | | | | | | | | | |
+|`CUDA_R_4U`|11.0| | | |`HIP_R_4U`|5.5.0| | | | | | | | | | |
+|`CUDA_R_64F`|8.0| | | |`HIP_R_64F`|3.0.0| | | | |`rocblas_datatype_f64_r`|1.8.2| | | | |
+|`CUDA_R_64I`|11.0| | | |`HIP_R_64I`|5.5.0| | | | | | | | | | |
+|`CUDA_R_64U`|11.0| | | |`HIP_R_64U`|5.5.0| | | | | | | | | | |
+|`CUDA_R_6F_E2M3`|12.8| | | |`HIP_R_6F_E2M3`|6.5.0| | | |6.5.0| | | | | | |
+|`CUDA_R_6F_E3M2`|12.8| | | |`HIP_R_6F_E3M2`|6.5.0| | | |6.5.0| | | | | | |
+|`CUDA_R_8F_E4M3`|11.8| | | |`HIP_R_8F_E4M3`|6.3.0| | | | | | | | | | |
+|`CUDA_R_8F_E5M2`|11.8| | | |`HIP_R_8F_E5M2`|6.3.0| | | | | | | | | | |
+|`CUDA_R_8F_UE4M3`|12.8| | | |`HIP_R_8F_E4M3`|6.3.0| | | | | | | | | | |
+|`CUDA_R_8F_UE8M0`|12.8| | | |`HIP_R_8F_UE8M0`|6.5.0| | | |6.5.0| | | | | | |
+|`CUDA_R_8I`|8.0| | | |`HIP_R_8I`|5.5.0| | | | |`rocblas_datatype_i8_r`|2.0.0| | | | |
+|`CUDA_R_8U`|8.0| | | |`HIP_R_8U`|5.5.0| | | | |`rocblas_datatype_u8_r`|2.0.0| | | | |
+|`cublasDataType_t`|7.5| | | |`hipDataType`|3.0.0| | | | |`rocblas_datatype`|1.8.2| | | | |
+|`cudaDataType`|8.0| | | |`hipDataType`|3.0.0| | | | |`rocblas_datatype`|1.8.2| | | | |
+|`cudaDataType_t`|8.0| | | |`hipDataType`|3.0.0| | | | |`rocblas_datatype_`|1.8.2| | | | |
 
 ## **3. CUBLASLt Data types**
 
@@ -249,16 +260,22 @@
 |`CUBLASLT_MATMUL_DESC_ALPHA_VECTOR_BATCH_STRIDE`|11.4| | | | | | | | | | | | | | | |
 |`CUBLASLT_MATMUL_DESC_AMAX_D_POINTER`|11.8| | | |`HIPBLASLT_MATMUL_DESC_AMAX_D_POINTER`|6.2.0| | | | | | | | | | |
 |`CUBLASLT_MATMUL_DESC_ATOMIC_SYNC_IN_COUNTERS_POINTER`|12.2| | | | | | | | | | | | | | | |
-|`CUBLASLT_MATMUL_DESC_ATOMIC_SYNC_NUM_CHUNKS_D_COLS`|12.2| | | | | | | | | | | | | | | |
-|`CUBLASLT_MATMUL_DESC_ATOMIC_SYNC_NUM_CHUNKS_D_ROWS`|12.2| | | | | | | | | | | | | | | |
+|`CUBLASLT_MATMUL_DESC_ATOMIC_SYNC_NUM_CHUNKS_D_COLS`|12.2|12.8| | | | | | | | | | | | | | |
+|`CUBLASLT_MATMUL_DESC_ATOMIC_SYNC_NUM_CHUNKS_D_ROWS`|12.2|12.8| | | | | | | | | | | | | | |
 |`CUBLASLT_MATMUL_DESC_ATOMIC_SYNC_OUT_COUNTERS_POINTER`|12.2| | | | | | | | | | | | | | | |
+|`CUBLASLT_MATMUL_DESC_A_SCALE_MODE`|12.8| | | |`HIPBLASLT_MATMUL_DESC_A_SCALE_MODE`|6.5.0| | | |6.5.0| | | | | | |
 |`CUBLASLT_MATMUL_DESC_A_SCALE_POINTER`|11.8| | | |`HIPBLASLT_MATMUL_DESC_A_SCALE_POINTER`|6.0.0| | | | | | | | | | |
 |`CUBLASLT_MATMUL_DESC_BIAS_BATCH_STRIDE`|11.3| | | | | | | | | | | | | | | |
 |`CUBLASLT_MATMUL_DESC_BIAS_DATA_TYPE`|11.8| | | |`HIPBLASLT_MATMUL_DESC_BIAS_DATA_TYPE`|5.5.0| | | | | | | | | | |
 |`CUBLASLT_MATMUL_DESC_BIAS_POINTER`|10.1| | | |`HIPBLASLT_MATMUL_DESC_BIAS_POINTER`|5.5.0| | | | | | | | | | |
+|`CUBLASLT_MATMUL_DESC_B_SCALE_MODE`|12.8| | | |`HIPBLASLT_MATMUL_DESC_B_SCALE_MODE`|6.5.0| | | |6.5.0| | | | | | |
 |`CUBLASLT_MATMUL_DESC_B_SCALE_POINTER`|11.8| | | |`HIPBLASLT_MATMUL_DESC_B_SCALE_POINTER`|6.0.0| | | | | | | | | | |
 |`CUBLASLT_MATMUL_DESC_COMPUTE_TYPE`|10.1| | | | | | | | | | | | | | | |
+|`CUBLASLT_MATMUL_DESC_C_SCALE_MODE`|12.8| | | | | | | | | | | | | | | |
 |`CUBLASLT_MATMUL_DESC_C_SCALE_POINTER`|11.8| | | |`HIPBLASLT_MATMUL_DESC_C_SCALE_POINTER`|6.0.0| | | | | | | | | | |
+|`CUBLASLT_MATMUL_DESC_D_OUT_SCALE_MODE`|12.8| | | | | | | | | | | | | | | |
+|`CUBLASLT_MATMUL_DESC_D_OUT_SCALE_POINTER`|12.8| | | | | | | | | | | | | | | |
+|`CUBLASLT_MATMUL_DESC_D_SCALE_MODE`|12.8| | | | | | | | | | | | | | | |
 |`CUBLASLT_MATMUL_DESC_D_SCALE_POINTER`|11.8| | | |`HIPBLASLT_MATMUL_DESC_D_SCALE_POINTER`|5.5.0| | | | | | | | | | |
 |`CUBLASLT_MATMUL_DESC_EPILOGUE`|10.1| | | |`HIPBLASLT_MATMUL_DESC_EPILOGUE`|5.5.0| | | | | | | | | | |
 |`CUBLASLT_MATMUL_DESC_EPILOGUE_AUX_AMAX_POINTER`|11.8| | | | | | | | | | | | | | | |
@@ -266,6 +283,7 @@
 |`CUBLASLT_MATMUL_DESC_EPILOGUE_AUX_DATA_TYPE`|11.8| | | | | | | | | | | | | | | |
 |`CUBLASLT_MATMUL_DESC_EPILOGUE_AUX_LD`|11.3| | | |`HIPBLASLT_MATMUL_DESC_EPILOGUE_AUX_LD`|5.7.0| | | | | | | | | | |
 |`CUBLASLT_MATMUL_DESC_EPILOGUE_AUX_POINTER`|11.3| | | |`HIPBLASLT_MATMUL_DESC_EPILOGUE_AUX_POINTER`|5.7.0| | | | | | | | | | |
+|`CUBLASLT_MATMUL_DESC_EPILOGUE_AUX_SCALE_MODE`|12.8| | | | | | | | | | | | | | | |
 |`CUBLASLT_MATMUL_DESC_EPILOGUE_AUX_SCALE_POINTER`|11.8| | | |`HIPBLASLT_MATMUL_DESC_EPILOGUE_AUX_SCALE_POINTER`|6.0.0| | | | | | | | | | |
 |`CUBLASLT_MATMUL_DESC_FAST_ACCUM`|11.8| | | | | | | | | | | | | | | |
 |`CUBLASLT_MATMUL_DESC_FILL_MODE`|10.1| | | | | | | | | | | | | | | |
@@ -281,6 +299,10 @@
 |`CUBLASLT_MATMUL_INNER_SHAPE_MMA1688`|11.8| | | | | | | | | | | | | | | |
 |`CUBLASLT_MATMUL_INNER_SHAPE_MMA884`|11.8| | | | | | | | | | | | | | | |
 |`CUBLASLT_MATMUL_INNER_SHAPE_UNDEFINED`|11.8| | | | | | | | | | | | | | | |
+|`CUBLASLT_MATMUL_MATRIX_SCALE_END`|12.8| | | |`HIPBLASLT_MATMUL_MATRIX_SCALE_END`|6.5.0| | | |6.5.0| | | | | | |
+|`CUBLASLT_MATMUL_MATRIX_SCALE_SCALAR_32F`|12.8| | | |`HIPBLASLT_MATMUL_MATRIX_SCALE_SCALAR_32F`|6.5.0| | | |6.5.0| | | | | | |
+|`CUBLASLT_MATMUL_MATRIX_SCALE_VEC16_UE4M3`|12.8| | | |`HIPBLASLT_MATMUL_MATRIX_SCALE_VEC16_UE4M3`|6.5.0| | | |6.5.0| | | | | | |
+|`CUBLASLT_MATMUL_MATRIX_SCALE_VEC32_UE8M0`|12.8| | | |`HIPBLASLT_MATMUL_MATRIX_SCALE_VEC32_UE8M0`|6.5.0| | | |6.5.0| | | | | | |
 |`CUBLASLT_MATMUL_PREF_IMPL_MASK`|11.0| | | | | | | | | | | | | | | |
 |`CUBLASLT_MATMUL_PREF_MAX_WAVES_COUNT`|10.1| | | | | | | | | | | | | | | |
 |`CUBLASLT_MATMUL_PREF_MAX_WORKSPACE_BYTES`|10.1| | | |`HIPBLASLT_MATMUL_PREF_MAX_WORKSPACE_BYTES`|5.5.0| | | | | | | | | | |
@@ -305,6 +327,7 @@
 |`CUBLASLT_MATMUL_STAGES_16x5`|11.0| | | | | | | | | | | | | | | |
 |`CUBLASLT_MATMUL_STAGES_16x6`|11.0| | | | | | | | | | | | | | | |
 |`CUBLASLT_MATMUL_STAGES_16xAUTO`|11.8| | | | | | | | | | | | | | | |
+|`CUBLASLT_MATMUL_STAGES_256xAUTO`|12.8| | | | | | | | | | | | | | | |
 |`CUBLASLT_MATMUL_STAGES_32x1`|11.0| | | | | | | | | | | | | | | |
 |`CUBLASLT_MATMUL_STAGES_32x10`|11.0| | | | | | | | | | | | | | | |
 |`CUBLASLT_MATMUL_STAGES_32x2`|11.0| | | | | | | | | | | | | | | |
@@ -530,6 +553,7 @@
 |`CUBLASLT_MATMUL_TILE_24x640`|12.6| | | | | | | | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_24x704`|12.6| | | | | | | | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_24x768`|12.6| | | | | | | | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_256x1024`|12.8| | | | | | | | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_256x104`|12.6| | | | | | | | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_256x112`|12.6| | | | | | | | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_256x120`|12.6| | | | | | | | | | | | | | | |
@@ -555,6 +579,7 @@
 |`CUBLASLT_MATMUL_TILE_256x32`|12.1| | | | | | | | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_256x40`|12.6| | | | | | | | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_256x48`|12.6| | | | | | | | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_256x512`|12.8| | | | | | | | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_256x56`|12.6| | | | | | | | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_256x64`|10.1| | | | | | | | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_256x72`|12.6| | | | | | | | | | | | | | | |
@@ -707,6 +732,7 @@
 |`CUBLASLT_MATMUL_TILE_48x768`|12.6| | | | | | | | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_496x64`|12.6| | | | | | | | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_504x64`|12.6| | | | | | | | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_512x1024`|12.8| | | | | | | | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_512x104`|12.6| | | | | | | | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_512x112`|12.6| | | | | | | | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_512x120`|12.6| | | | | | | | | | | | | | | |
@@ -716,6 +742,7 @@
 |`CUBLASLT_MATMUL_TILE_512x32`|12.6| | | | | | | | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_512x40`|12.6| | | | | | | | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_512x48`|12.6| | | | | | | | | | | | | | | |
+|`CUBLASLT_MATMUL_TILE_512x512`|12.8| | | | | | | | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_512x56`|12.6| | | | | | | | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_512x64`|10.1| | | | | | | | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_512x72`|12.6| | | | | | | | | | | | | | | |
@@ -1033,6 +1060,7 @@
 |`cublasLtMatmulDesc_t`|10.1| | | |`hipblasLtMatmulDesc_t`|5.5.0| | | | | | | | | | |
 |`cublasLtMatmulHeuristicResult_t`|10.1| | | |`hipblasLtMatmulHeuristicResult_t`|5.5.0| | | | | | | | | | |
 |`cublasLtMatmulInnerShape_t`|11.8| | | | | | | | | | | | | | | |
+|`cublasLtMatmulMatrixScale_t`|12.8| | | |`hipblasLtMatmulMatrixScale_t`|6.5.0| | | |6.5.0| | | | | | |
 |`cublasLtMatmulPreferenceAttributes_t`|10.1| | | |`hipblasLtMatmulPreferenceAttributes_t`|5.5.0| | | | | | | | | | |
 |`cublasLtMatmulPreferenceOpaque_t`|11.0| | | |`hipblasLtMatmulPreferenceOpaque_t`|5.5.0| | | | | | | | | | |
 |`cublasLtMatmulPreference_t`|10.1| | | |`hipblasLtMatmulPreference_t`|5.5.0| | | | | | | | | | |

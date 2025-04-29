@@ -109,7 +109,12 @@ my %deprecated_funcs = (
     "cusparseZgtsv" => "10.2",
     "cusparseZgthrz" => "11.0",
     "cusparseZgthr" => "11.0",
+    "cusparseZgemvi_bufferSize" => "12.8",
+    "cusparseZgemvi" => "12.8",
     "cusparseZgemmi" => "11.0",
+    "cusparseZgebsr2gebsr_bufferSizeExt" => "12.8",
+    "cusparseZgebsr2gebsr_bufferSize" => "12.8",
+    "cusparseZgebsr2gebsr" => "12.8",
     "cusparseZgebsr2csr" => "12.4",
     "cusparseZdoti" => "10.2",
     "cusparseZdotci" => "10.2",
@@ -166,6 +171,7 @@ my %deprecated_funcs = (
     "cusparseZbsrsm2_bufferSizeExt" => "12.2",
     "cusparseZbsrsm2_bufferSize" => "12.2",
     "cusparseZbsrsm2_analysis" => "12.2",
+    "cusparseZbsrmm" => "12.8",
     "cusparseZbsrilu02_numericBoost" => "12.2",
     "cusparseZbsrilu02_bufferSizeExt" => "12.2",
     "cusparseZbsrilu02_bufferSize" => "12.2",
@@ -175,7 +181,9 @@ my %deprecated_funcs = (
     "cusparseZbsric02_bufferSize" => "12.2",
     "cusparseZbsric02_analysis" => "12.2",
     "cusparseZbsric02" => "12.2",
+    "cusparseZbsr2csr" => "12.8",
     "cusparseZaxpyi" => "11.0",
+    "cusparseXgebsr2gebsrNnz" => "12.8",
     "cusparseXgebsr2csr" => "12.4",
     "cusparseXcsrsv2_zeroPivot" => "11.3",
     "cusparseXcsrsm2_zeroPivot" => "11.3",
@@ -203,6 +211,8 @@ my %deprecated_funcs = (
     "cusparseSpruneCsr2csrByPercentage_bufferSizeExt" => "12.2",
     "cusparseSpruneCsr2csrByPercentage" => "12.2",
     "cusparseSpruneCsr2csr" => "12.2",
+    "cusparseSpVV_bufferSize" => "12.8",
+    "cusparseSpVV" => "12.8",
     "cusparseSolvePolicy_t" => "12.2",
     "cusparseSolveAnalysisInfo_t" => "10.2",
     "cusparseSolveAnalysisInfo" => "10.2",
@@ -218,7 +228,12 @@ my %deprecated_funcs = (
     "cusparseSgtsv" => "10.2",
     "cusparseSgthrz" => "11.0",
     "cusparseSgthr" => "11.0",
+    "cusparseSgemvi_bufferSize" => "12.8",
+    "cusparseSgemvi" => "12.8",
     "cusparseSgemmi" => "11.0",
+    "cusparseSgebsr2gebsr_bufferSizeExt" => "12.8",
+    "cusparseSgebsr2gebsr_bufferSize" => "12.8",
+    "cusparseSgebsr2gebsr" => "12.8",
     "cusparseSgebsr2csr" => "12.4",
     "cusparseSdoti" => "10.2",
     "cusparseSdense2hyb" => "10.2",
@@ -274,6 +289,7 @@ my %deprecated_funcs = (
     "cusparseSbsrsm2_bufferSizeExt" => "12.2",
     "cusparseSbsrsm2_bufferSize" => "12.2",
     "cusparseSbsrsm2_analysis" => "12.2",
+    "cusparseSbsrmm" => "12.8",
     "cusparseSbsrilu02_numericBoost" => "12.2",
     "cusparseSbsrilu02_bufferSizeExt" => "12.2",
     "cusparseSbsrilu02_bufferSize" => "12.2",
@@ -283,6 +299,7 @@ my %deprecated_funcs = (
     "cusparseSbsric02_bufferSize" => "12.2",
     "cusparseSbsric02_analysis" => "12.2",
     "cusparseSbsric02" => "12.2",
+    "cusparseSbsr2csr" => "12.8",
     "cusparseSaxpyi" => "11.0",
     "cusparseRot" => "12.2",
     "cusparseHybPartition_t" => "10.2",
@@ -326,7 +343,12 @@ my %deprecated_funcs = (
     "cusparseDgtsv" => "10.2",
     "cusparseDgthrz" => "11.0",
     "cusparseDgthr" => "11.0",
+    "cusparseDgemvi_bufferSize" => "12.8",
+    "cusparseDgemvi" => "12.8",
     "cusparseDgemmi" => "11.0",
+    "cusparseDgebsr2gebsr_bufferSizeExt" => "12.8",
+    "cusparseDgebsr2gebsr_bufferSize" => "12.8",
+    "cusparseDgebsr2gebsr" => "12.8",
     "cusparseDgebsr2csr" => "12.4",
     "cusparseDestroySolveAnalysisInfo" => "10.2",
     "cusparseDestroyPruneInfo" => "12.2",
@@ -396,6 +418,7 @@ my %deprecated_funcs = (
     "cusparseDbsrsm2_bufferSizeExt" => "12.2",
     "cusparseDbsrsm2_bufferSize" => "12.2",
     "cusparseDbsrsm2_analysis" => "12.2",
+    "cusparseDbsrmm" => "12.8",
     "cusparseDbsrilu02_numericBoost" => "12.2",
     "cusparseDbsrilu02_bufferSizeExt" => "12.2",
     "cusparseDbsrilu02_bufferSize" => "12.2",
@@ -405,6 +428,7 @@ my %deprecated_funcs = (
     "cusparseDbsric02_bufferSize" => "12.2",
     "cusparseDbsric02_analysis" => "12.2",
     "cusparseDbsric02" => "12.2",
+    "cusparseDbsr2csr" => "12.8",
     "cusparseDaxpyi" => "11.0",
     "cusparseCsrsv_solveEx" => "10.2",
     "cusparseCsrsv_analysisEx" => "10.2",
@@ -447,7 +471,12 @@ my %deprecated_funcs = (
     "cusparseCgtsv" => "10.2",
     "cusparseCgthrz" => "11.0",
     "cusparseCgthr" => "11.0",
+    "cusparseCgemvi_bufferSize" => "12.8",
+    "cusparseCgemvi" => "12.8",
     "cusparseCgemmi" => "11.0",
+    "cusparseCgebsr2gebsr_bufferSizeExt" => "12.8",
+    "cusparseCgebsr2gebsr_bufferSize" => "12.8",
+    "cusparseCgebsr2gebsr" => "12.8",
     "cusparseCgebsr2csr" => "12.4",
     "cusparseCdoti" => "10.2",
     "cusparseCdotci" => "10.2",
@@ -504,6 +533,7 @@ my %deprecated_funcs = (
     "cusparseCbsrsm2_bufferSizeExt" => "12.2",
     "cusparseCbsrsm2_bufferSize" => "12.2",
     "cusparseCbsrsm2_analysis" => "12.2",
+    "cusparseCbsrmm" => "12.8",
     "cusparseCbsrilu02_numericBoost" => "12.2",
     "cusparseCbsrilu02_bufferSizeExt" => "12.2",
     "cusparseCbsrilu02_bufferSize" => "12.2",
@@ -513,7 +543,92 @@ my %deprecated_funcs = (
     "cusparseCbsric02_bufferSize" => "12.2",
     "cusparseCbsric02_analysis" => "12.2",
     "cusparseCbsric02" => "12.2",
+    "cusparseCbsr2csr" => "12.8",
     "cusparseCaxpyi" => "11.0",
+    "cusparseAxpby" => "12.8",
+    "cusolverSpZcsrluZeroPivotHost" => "12.8",
+    "cusolverSpZcsrluSolveHost" => "12.8",
+    "cusolverSpZcsrluFactorHost" => "12.8",
+    "cusolverSpZcsrluExtractHost" => "12.8",
+    "cusolverSpZcsrluBufferInfoHost" => "12.8",
+    "cusolverSpZcsrlsvluHost" => "12.8",
+    "cusolverSpZcsrlsvcholHost" => "12.8",
+    "cusolverSpZcsrlsvchol" => "12.8",
+    "cusolverSpZcsrcholZeroPivotHost" => "12.8",
+    "cusolverSpZcsrcholZeroPivot" => "12.8",
+    "cusolverSpZcsrcholSolveHost" => "12.8",
+    "cusolverSpZcsrcholSolve" => "12.8",
+    "cusolverSpZcsrcholFactorHost" => "12.8",
+    "cusolverSpZcsrcholFactor" => "12.8",
+    "cusolverSpZcsrcholDiag" => "12.8",
+    "cusolverSpZcsrcholBufferInfoHost" => "12.8",
+    "cusolverSpZcsrcholBufferInfo" => "12.8",
+    "cusolverSpXcsrluNnzHost" => "12.8",
+    "cusolverSpXcsrluAnalysisHost" => "12.8",
+    "cusolverSpXcsrcholAnalysisHost" => "12.8",
+    "cusolverSpXcsrcholAnalysis" => "12.8",
+    "cusolverSpScsrluZeroPivotHost" => "12.8",
+    "cusolverSpScsrluSolveHost" => "12.8",
+    "cusolverSpScsrluFactorHost" => "12.8",
+    "cusolverSpScsrluExtractHost" => "12.8",
+    "cusolverSpScsrluBufferInfoHost" => "12.8",
+    "cusolverSpScsrlsvluHost" => "12.8",
+    "cusolverSpScsrlsvcholHost" => "12.8",
+    "cusolverSpScsrlsvchol" => "12.8",
+    "cusolverSpScsrcholZeroPivotHost" => "12.8",
+    "cusolverSpScsrcholZeroPivot" => "12.8",
+    "cusolverSpScsrcholSolveHost" => "12.8",
+    "cusolverSpScsrcholSolve" => "12.8",
+    "cusolverSpScsrcholFactorHost" => "12.8",
+    "cusolverSpScsrcholFactor" => "12.8",
+    "cusolverSpScsrcholDiag" => "12.8",
+    "cusolverSpScsrcholBufferInfoHost" => "12.8",
+    "cusolverSpScsrcholBufferInfo" => "12.8",
+    "cusolverSpDestroyCsrcholInfo" => "12.8",
+    "cusolverSpDcsrluZeroPivotHost" => "12.8",
+    "cusolverSpDcsrluSolveHost" => "12.8",
+    "cusolverSpDcsrluFactorHost" => "12.8",
+    "cusolverSpDcsrluExtractHost" => "12.8",
+    "cusolverSpDcsrluBufferInfoHost" => "12.8",
+    "cusolverSpDcsrlsvluHost" => "12.8",
+    "cusolverSpDcsrlsvcholHost" => "12.8",
+    "cusolverSpDcsrlsvchol" => "12.8",
+    "cusolverSpDcsrcholZeroPivotHost" => "12.8",
+    "cusolverSpDcsrcholZeroPivot" => "12.8",
+    "cusolverSpDcsrcholSolveHost" => "12.8",
+    "cusolverSpDcsrcholSolve" => "12.8",
+    "cusolverSpDcsrcholFactorHost" => "12.8",
+    "cusolverSpDcsrcholFactor" => "12.8",
+    "cusolverSpDcsrcholDiag" => "12.8",
+    "cusolverSpDcsrcholBufferInfoHost" => "12.8",
+    "cusolverSpDcsrcholBufferInfo" => "12.8",
+    "cusolverSpCreateCsrcholInfo" => "12.8",
+    "cusolverSpCcsrluZeroPivotHost" => "12.8",
+    "cusolverSpCcsrluSolveHost" => "12.8",
+    "cusolverSpCcsrluFactorHost" => "12.8",
+    "cusolverSpCcsrluExtractHost" => "12.8",
+    "cusolverSpCcsrluBufferInfoHost" => "12.8",
+    "cusolverSpCcsrlsvluHost" => "12.8",
+    "cusolverSpCcsrlsvcholHost" => "12.8",
+    "cusolverSpCcsrlsvchol" => "12.8",
+    "cusolverSpCcsrcholZeroPivotHost" => "12.8",
+    "cusolverSpCcsrcholZeroPivot" => "12.8",
+    "cusolverSpCcsrcholSolveHost" => "12.8",
+    "cusolverSpCcsrcholSolve" => "12.8",
+    "cusolverSpCcsrcholFactorHost" => "12.8",
+    "cusolverSpCcsrcholFactor" => "12.8",
+    "cusolverSpCcsrcholDiag" => "12.8",
+    "cusolverSpCcsrcholBufferInfoHost" => "12.8",
+    "cusolverSpCcsrcholBufferInfo" => "12.8",
+    "cusolverRfSolve" => "12.8",
+    "cusolverRfSetupHost" => "12.8",
+    "cusolverRfSetupDevice" => "12.8",
+    "cusolverRfResetValues" => "12.8",
+    "cusolverRfRefactor" => "12.8",
+    "cusolverRfExtractSplitFactorsHost" => "12.8",
+    "cusolverRfExtractBundledFactorsHost" => "12.8",
+    "cusolverRfAnalyze" => "12.8",
+    "cusolverRfAccessBundledFactorsDevice" => "12.8",
     "cudnnTransformTensorEx" => "9.0.0",
     "cudnnTransformTensor" => "9.0.0",
     "cudnnTransformFilter" => "9.0.0",
@@ -1026,7 +1141,9 @@ my %deprecated_funcs = (
     "CUDA_ERROR_PROFILER_ALREADY_STARTED" => "5.0",
     "CUDA_ERROR_CONTEXT_ALREADY_CURRENT" => "3.2",
     "CUDA_ARRAY3D_2DARRAY" => "5.0",
-    "CUBLAS_TENSOR_OP_MATH" => "11.0"
+    "CUBLAS_TENSOR_OP_MATH" => "11.0",
+    "CUBLASLT_MATMUL_DESC_ATOMIC_SYNC_NUM_CHUNKS_D_ROWS" => "12.8",
+    "CUBLASLT_MATMUL_DESC_ATOMIC_SYNC_NUM_CHUNKS_D_COLS" => "12.8"
 );
 
 my %removed_funcs = (
@@ -1399,7 +1516,75 @@ my %removed_funcs = (
 );
 
 my %experimental_funcs = (
-
+    "cudaRoundZero" => "6.5.0",
+    "cudaRoundPosInf" => "6.5.0",
+    "cudaRoundNearest" => "6.5.0",
+    "cudaRoundMode" => "6.5.0",
+    "cudaRoundMinInf" => "6.5.0",
+    "cudaLaunchKernelExC" => "6.5.0",
+    "cudaLaunchConfig_t" => "6.5.0",
+    "cudaLaunchConfig_st" => "6.5.0",
+    "cudaLaunchAttribute_st" => "6.5.0",
+    "cudaLaunchAttribute" => "6.5.0",
+    "cublasLtMatmulMatrixScale_t" => "6.5.0",
+    "cuLaunchKernelEx" => "6.5.0",
+    "__nv_fp4x4_storage_t" => "6.5.0",
+    "__nv_fp4x4_e2m1" => "6.5.0",
+    "__nv_fp4x2_storage_t" => "6.5.0",
+    "__nv_fp4x2_e2m1" => "6.5.0",
+    "__nv_fp4_storage_t" => "6.5.0",
+    "__nv_fp4_interpretation_t" => "6.5.0",
+    "__nv_fp4_e2m1" => "6.5.0",
+    "__nv_cvt_halfraw_to_fp4" => "6.5.0",
+    "__nv_cvt_halfraw2_to_fp4x2" => "6.5.0",
+    "__nv_cvt_fp4x2_to_halfraw2" => "6.5.0",
+    "__nv_cvt_fp4_to_halfraw" => "6.5.0",
+    "__nv_cvt_float_to_fp4" => "6.5.0",
+    "__nv_cvt_float2_to_fp4x2" => "6.5.0",
+    "__nv_cvt_double_to_fp4" => "6.5.0",
+    "__nv_cvt_double2_to_fp4x2" => "6.5.0",
+    "__nv_cvt_bfloat16raw_to_fp4" => "6.5.0",
+    "__nv_cvt_bfloat16raw2_to_fp4x2" => "6.5.0",
+    "__NV_E2M1" => "6.5.0",
+    "CUlaunchAttribute_st" => "6.5.0",
+    "CUlaunchAttribute" => "6.5.0",
+    "CUTENSOR_OP_TANH" => "6.5.0",
+    "CUTENSOR_OP_TAN" => "6.5.0",
+    "CUTENSOR_OP_SINH" => "6.5.0",
+    "CUTENSOR_OP_SIN" => "6.5.0",
+    "CUTENSOR_OP_SIGMOID" => "6.5.0",
+    "CUTENSOR_OP_RELU" => "6.5.0",
+    "CUTENSOR_OP_RCP" => "6.5.0",
+    "CUTENSOR_OP_NEG" => "6.5.0",
+    "CUTENSOR_OP_LOG" => "6.5.0",
+    "CUTENSOR_OP_FLOOR" => "6.5.0",
+    "CUTENSOR_OP_EXP" => "6.5.0",
+    "CUTENSOR_OP_COSH" => "6.5.0",
+    "CUTENSOR_OP_COS" => "6.5.0",
+    "CUTENSOR_OP_CONJ" => "6.5.0",
+    "CUTENSOR_OP_CEIL" => "6.5.0",
+    "CUTENSOR_OP_ATANH" => "6.5.0",
+    "CUTENSOR_OP_ATAN" => "6.5.0",
+    "CUTENSOR_OP_ASINH" => "6.5.0",
+    "CUTENSOR_OP_ASIN" => "6.5.0",
+    "CUTENSOR_OP_ACOSH" => "6.5.0",
+    "CUTENSOR_OP_ACOS" => "6.5.0",
+    "CUTENSOR_OP_ABS" => "6.5.0",
+    "CUDA_R_8F_UE8M0" => "6.5.0",
+    "CUDA_R_6F_E3M2" => "6.5.0",
+    "CUDA_R_6F_E2M3" => "6.5.0",
+    "CUDA_R_4F_E2M1" => "6.5.0",
+    "CUDART_ZERO_FP16" => "6.5.0",
+    "CUDART_ONE_FP16" => "6.5.0",
+    "CUDART_NEG_ZERO_FP16" => "6.5.0",
+    "CUDART_NAN_FP16" => "6.5.0",
+    "CUDART_MIN_DENORM_FP16" => "6.5.0",
+    "CUDART_MAX_NORMAL_FP16" => "6.5.0",
+    "CUDART_INF_FP16" => "6.5.0",
+    "CUBLASLT_MATMUL_MATRIX_SCALE_VEC32_UE8M0" => "6.5.0",
+    "CUBLASLT_MATMUL_MATRIX_SCALE_VEC16_UE4M3" => "6.5.0",
+    "CUBLASLT_MATMUL_MATRIX_SCALE_SCALAR_32F" => "6.5.0",
+    "CUBLASLT_MATMUL_MATRIX_SCALE_END" => "6.5.0"
 );
 
 $print_stats = 1 if $examine;
@@ -1537,6 +1722,75 @@ sub subst {
 }
 
 sub experimentalSubstitutions {
+    subst("cuLaunchKernelEx", "hipDrvLaunchKernelEx", "execution");
+    subst("cudaLaunchKernelExC", "hipLaunchKernelExC", "execution");
+    subst("__nv_cvt_bfloat16raw2_to_fp4x2", "__hip_cvt_bfloat16raw2_to_fp4x2", "device_function");
+    subst("__nv_cvt_bfloat16raw_to_fp4", "__hip_cvt_bfloat16raw_to_fp4", "device_function");
+    subst("__nv_cvt_double2_to_fp4x2", "__hip_cvt_double2_to_fp4x2", "device_function");
+    subst("__nv_cvt_double_to_fp4", "__hip_cvt_double_to_fp4", "device_function");
+    subst("__nv_cvt_float2_to_fp4x2", "__hip_cvt_float2_to_fp4x2", "device_function");
+    subst("__nv_cvt_float_to_fp4", "__hip_cvt_float_to_fp4", "device_function");
+    subst("__nv_cvt_fp4_to_halfraw", "__hip_cvt_fp4_to_halfraw", "device_function");
+    subst("__nv_cvt_fp4x2_to_halfraw2", "__hip_cvt_fp4x2_to_halfraw2", "device_function");
+    subst("__nv_cvt_halfraw2_to_fp4x2", "__hip_cvt_halfraw2_to_fp4x2", "device_function");
+    subst("__nv_cvt_halfraw_to_fp4", "__hip_cvt_halfraw_to_fp4", "device_function");
+    subst("CUDART_INF_FP16", "HIPRT_INF_FP16", "device_type");
+    subst("CUDART_MAX_NORMAL_FP16", "HIPRT_MAX_NORMAL_FP16", "device_type");
+    subst("CUDART_MIN_DENORM_FP16", "HIPRT_MIN_DENORM_FP16", "device_type");
+    subst("CUDART_NAN_FP16", "HIPRT_NAN_FP16", "device_type");
+    subst("CUDART_NEG_ZERO_FP16", "HIPRT_NEG_ZERO_FP16", "device_type");
+    subst("CUDART_ONE_FP16", "HIPRT_ONE_FP16", "device_type");
+    subst("CUDART_ZERO_FP16", "HIPRT_ZERO_FP16", "device_type");
+    subst("__nv_fp4_e2m1", "__hip_fp4_e2m1", "device_type");
+    subst("__nv_fp4_interpretation_t", "__hip_fp4_interpretation_t", "device_type");
+    subst("__nv_fp4_storage_t", "__hip_fp4_storage_t", "device_type");
+    subst("__nv_fp4x2_e2m1", "__hip_fp4x2_e2m1", "device_type");
+    subst("__nv_fp4x2_storage_t", "__hip_fp4x2_storage_t", "device_type");
+    subst("__nv_fp4x4_e2m1", "__hip_fp4x4_e2m1", "device_type");
+    subst("__nv_fp4x4_storage_t", "__hip_fp4x4_storage_t", "device_type");
+    subst("cudaRoundMode", "hipRoundMode", "device_type");
+    subst("CUlaunchAttribute", "hipLaunchAttribute", "type");
+    subst("CUlaunchAttribute_st", "hipLaunchAttribute_st", "type");
+    subst("cublasLtMatmulMatrixScale_t", "hipblasLtMatmulMatrixScale_t", "type");
+    subst("cudaLaunchAttribute", "hipLaunchAttribute", "type");
+    subst("cudaLaunchAttribute_st", "hipLaunchAttribute_st", "type");
+    subst("cudaLaunchConfig_st", "hipLaunchConfig_st", "type");
+    subst("cudaLaunchConfig_t", "hipLaunchConfig_t", "type");
+    subst("CUBLASLT_MATMUL_MATRIX_SCALE_END", "HIPBLASLT_MATMUL_MATRIX_SCALE_END", "numeric_literal");
+    subst("CUBLASLT_MATMUL_MATRIX_SCALE_SCALAR_32F", "HIPBLASLT_MATMUL_MATRIX_SCALE_SCALAR_32F", "numeric_literal");
+    subst("CUBLASLT_MATMUL_MATRIX_SCALE_VEC16_UE4M3", "HIPBLASLT_MATMUL_MATRIX_SCALE_VEC16_UE4M3", "numeric_literal");
+    subst("CUBLASLT_MATMUL_MATRIX_SCALE_VEC32_UE8M0", "HIPBLASLT_MATMUL_MATRIX_SCALE_VEC32_UE8M0", "numeric_literal");
+    subst("CUDA_R_4F_E2M1", "HIP_R_4F_E2M1", "numeric_literal");
+    subst("CUDA_R_6F_E2M3", "HIP_R_6F_E2M3", "numeric_literal");
+    subst("CUDA_R_6F_E3M2", "HIP_R_6F_E3M2", "numeric_literal");
+    subst("CUDA_R_8F_UE8M0", "HIP_R_8F_UE8M0", "numeric_literal");
+    subst("CUTENSOR_OP_ABS", "HIPTENSOR_OP_ABS", "numeric_literal");
+    subst("CUTENSOR_OP_ACOS", "HIPTENSOR_OP_ACOS", "numeric_literal");
+    subst("CUTENSOR_OP_ACOSH", "HIPTENSOR_OP_ACOSH", "numeric_literal");
+    subst("CUTENSOR_OP_ASIN", "HIPTENSOR_OP_ASIN", "numeric_literal");
+    subst("CUTENSOR_OP_ASINH", "HIPTENSOR_OP_ASINH", "numeric_literal");
+    subst("CUTENSOR_OP_ATAN", "HIPTENSOR_OP_ATAN", "numeric_literal");
+    subst("CUTENSOR_OP_ATANH", "HIPTENSOR_OP_ATANH", "numeric_literal");
+    subst("CUTENSOR_OP_CEIL", "HIPTENSOR_OP_CEIL", "numeric_literal");
+    subst("CUTENSOR_OP_CONJ", "HIPTENSOR_OP_CONJ", "numeric_literal");
+    subst("CUTENSOR_OP_COS", "HIPTENSOR_OP_COS", "numeric_literal");
+    subst("CUTENSOR_OP_COSH", "HIPTENSOR_OP_COSH", "numeric_literal");
+    subst("CUTENSOR_OP_EXP", "HIPTENSOR_OP_EXP", "numeric_literal");
+    subst("CUTENSOR_OP_FLOOR", "HIPTENSOR_OP_FLOOR", "numeric_literal");
+    subst("CUTENSOR_OP_LOG", "HIPTENSOR_OP_LOG", "numeric_literal");
+    subst("CUTENSOR_OP_NEG", "HIPTENSOR_OP_NEG", "numeric_literal");
+    subst("CUTENSOR_OP_RCP", "HIPTENSOR_OP_RCP", "numeric_literal");
+    subst("CUTENSOR_OP_RELU", "HIPTENSOR_OP_RELU", "numeric_literal");
+    subst("CUTENSOR_OP_SIGMOID", "HIPTENSOR_OP_SIGMOID", "numeric_literal");
+    subst("CUTENSOR_OP_SIN", "HIPTENSOR_OP_SIN", "numeric_literal");
+    subst("CUTENSOR_OP_SINH", "HIPTENSOR_OP_SINH", "numeric_literal");
+    subst("CUTENSOR_OP_TAN", "HIPTENSOR_OP_TAN", "numeric_literal");
+    subst("CUTENSOR_OP_TANH", "HIPTENSOR_OP_TANH", "numeric_literal");
+    subst("__NV_E2M1", "__HIP_E2M1", "numeric_literal");
+    subst("cudaRoundMinInf", "hipRoundMinInf", "numeric_literal");
+    subst("cudaRoundNearest", "hipRoundNearest", "numeric_literal");
+    subst("cudaRoundPosInf", "hipRoundPosInf", "numeric_literal");
+    subst("cudaRoundZero", "hipRoundZero", "numeric_literal");
 }
 
 sub rocSubstitutions {
@@ -6752,6 +7006,7 @@ sub simpleSubstitutions {
     subst("__nv_fp8x2_e5m2", "__hip_fp8x2_e5m2_fnuz", "device_type");
     subst("__nv_fp8x2_storage_t", "__hip_fp8x2_storage_t", "device_type");
     subst("__nv_fp8x4_e4m3", "__hip_fp8x4_e4m3_fnuz", "device_type");
+    subst("__nv_fp8x4_e5m2", "__hip_fp8x4_e5m2_fnuz", "device_type");
     subst("__nv_fp8x4_storage_t", "__hip_fp8x4_storage_t", "device_type");
     subst("__nv_saturation_t", "__hip_saturation_t", "device_type");
     subst("nv_bfloat16", "hip_bfloat16", "device_type");
@@ -6762,6 +7017,7 @@ sub simpleSubstitutions {
     subst("cublasLt.h", "hipblaslt.h", "include");
     subst("cublas_api.h", "hipblas.h", "include");
     subst("cuda_fp16.h", "hip\/hip_fp16.h", "include");
+    subst("cuda_fp4.h", "hip\/hip_fp4.h", "include");
     subst("cuda_fp8.h", "hip\/hip_fp8.h", "include");
     subst("cuda_profiler_api.h", "hip\/hip_runtime_api.h", "include");
     subst("cuda_runtime_api.h", "hip\/hip_runtime_api.h", "include");
@@ -6984,8 +7240,8 @@ sub simpleSubstitutions {
     subst("CUipcMemHandle", "hipIpcMemHandle_t", "type");
     subst("CUipcMemHandle_st", "hipIpcMemHandle_st", "type");
     subst("CUipcMemHandle_v1", "hipIpcMemHandle_t", "type");
-    subst("CUjitInputType", "hiprtcJITInputType", "type");
-    subst("CUjitInputType_enum", "hiprtcJITInputType", "type");
+    subst("CUjitInputType", "hipJitInputType", "type");
+    subst("CUjitInputType_enum", "hipJitInputType", "type");
     subst("CUjit_option", "hipJitOption", "type");
     subst("CUjit_option_enum", "hipJitOption", "type");
     subst("CUkernelNodeAttrID", "hipKernelNodeAttrID", "type");
@@ -6997,6 +7253,8 @@ sub simpleSubstitutions {
     subst("CUlaunchAttributeID_enum", "hipLaunchAttributeID", "type");
     subst("CUlaunchAttributeValue", "hipLaunchAttributeValue", "type");
     subst("CUlaunchAttributeValue_union", "hipLaunchAttributeValue", "type");
+    subst("CUlaunchConfig", "HIP_LAUNCH_CONFIG", "type");
+    subst("CUlaunchConfig_st", "HIP_LAUNCH_CONFIG_st", "type");
     subst("CUlimit", "hipLimit_t", "type");
     subst("CUlimit_enum", "hipLimit_t", "type");
     subst("CUlinkState", "hiprtcLinkState", "type");
@@ -7086,6 +7344,7 @@ sub simpleSubstitutions {
     subst("CUuuid_st", "hipUUID_t", "type");
     subst("GLenum", "GLenum", "type");
     subst("GLuint", "GLuint", "type");
+    subst("_nvrtcProgram", "_hiprtcProgram", "type");
     subst("bsric02Info", "bsric02Info", "type");
     subst("bsric02Info_t", "bsric02Info_t", "type");
     subst("bsrilu02Info", "bsrilu02Info", "type");
@@ -7447,9 +7706,11 @@ sub simpleSubstitutions {
     subst("CUBLASLT_EPILOGUE_RELU", "HIPBLASLT_EPILOGUE_RELU", "numeric_literal");
     subst("CUBLASLT_EPILOGUE_RELU_BIAS", "HIPBLASLT_EPILOGUE_RELU_BIAS", "numeric_literal");
     subst("CUBLASLT_MATMUL_DESC_AMAX_D_POINTER", "HIPBLASLT_MATMUL_DESC_AMAX_D_POINTER", "numeric_literal");
+    subst("CUBLASLT_MATMUL_DESC_A_SCALE_MODE", "HIPBLASLT_MATMUL_DESC_A_SCALE_MODE", "numeric_literal");
     subst("CUBLASLT_MATMUL_DESC_A_SCALE_POINTER", "HIPBLASLT_MATMUL_DESC_A_SCALE_POINTER", "numeric_literal");
     subst("CUBLASLT_MATMUL_DESC_BIAS_DATA_TYPE", "HIPBLASLT_MATMUL_DESC_BIAS_DATA_TYPE", "numeric_literal");
     subst("CUBLASLT_MATMUL_DESC_BIAS_POINTER", "HIPBLASLT_MATMUL_DESC_BIAS_POINTER", "numeric_literal");
+    subst("CUBLASLT_MATMUL_DESC_B_SCALE_MODE", "HIPBLASLT_MATMUL_DESC_B_SCALE_MODE", "numeric_literal");
     subst("CUBLASLT_MATMUL_DESC_B_SCALE_POINTER", "HIPBLASLT_MATMUL_DESC_B_SCALE_POINTER", "numeric_literal");
     subst("CUBLASLT_MATMUL_DESC_C_SCALE_POINTER", "HIPBLASLT_MATMUL_DESC_C_SCALE_POINTER", "numeric_literal");
     subst("CUBLASLT_MATMUL_DESC_D_SCALE_POINTER", "HIPBLASLT_MATMUL_DESC_D_SCALE_POINTER", "numeric_literal");
@@ -7524,10 +7785,16 @@ sub simpleSubstitutions {
     subst("CUBLAS_TF32_TENSOR_OP_MATH", "HIPBLAS_TF32_TENSOR_OP_MATH", "numeric_literal");
     subst("CUDA_C_16BF", "HIP_C_16BF", "numeric_literal");
     subst("CUDA_C_16F", "HIP_C_16F", "numeric_literal");
+    subst("CUDA_C_16I", "HIP_C_16I", "numeric_literal");
+    subst("CUDA_C_16U", "HIP_C_16U", "numeric_literal");
     subst("CUDA_C_32F", "HIP_C_32F", "numeric_literal");
     subst("CUDA_C_32I", "HIP_C_32I", "numeric_literal");
     subst("CUDA_C_32U", "HIP_C_32U", "numeric_literal");
+    subst("CUDA_C_4I", "HIP_C_4I", "numeric_literal");
+    subst("CUDA_C_4U", "HIP_C_4U", "numeric_literal");
     subst("CUDA_C_64F", "HIP_C_64F", "numeric_literal");
+    subst("CUDA_C_64I", "HIP_C_64I", "numeric_literal");
+    subst("CUDA_C_64U", "HIP_C_64U", "numeric_literal");
     subst("CUDA_C_8I", "HIP_C_8I", "numeric_literal");
     subst("CUDA_C_8U", "HIP_C_8U", "numeric_literal");
     subst("CUDA_ERROR_ALREADY_ACQUIRED", "hipErrorAlreadyAcquired", "numeric_literal");
@@ -7602,10 +7869,19 @@ sub simpleSubstitutions {
     subst("CUDA_GRAPH_INSTANTIATE_SUCCESS", "hipGraphInstantiateSuccess", "numeric_literal");
     subst("CUDA_R_16BF", "HIP_R_16BF", "numeric_literal");
     subst("CUDA_R_16F", "HIP_R_16F", "numeric_literal");
+    subst("CUDA_R_16I", "HIP_R_16I", "numeric_literal");
+    subst("CUDA_R_16U", "HIP_R_16U", "numeric_literal");
     subst("CUDA_R_32F", "HIP_R_32F", "numeric_literal");
     subst("CUDA_R_32I", "HIP_R_32I", "numeric_literal");
     subst("CUDA_R_32U", "HIP_R_32U", "numeric_literal");
+    subst("CUDA_R_4I", "HIP_R_4I", "numeric_literal");
+    subst("CUDA_R_4U", "HIP_R_4U", "numeric_literal");
     subst("CUDA_R_64F", "HIP_R_64F", "numeric_literal");
+    subst("CUDA_R_64I", "HIP_R_64I", "numeric_literal");
+    subst("CUDA_R_64U", "HIP_R_64U", "numeric_literal");
+    subst("CUDA_R_8F_E4M3", "HIP_R_8F_E4M3", "numeric_literal");
+    subst("CUDA_R_8F_E5M2", "HIP_R_8F_E5M2", "numeric_literal");
+    subst("CUDA_R_8F_UE4M3", "HIP_R_8F_E4M3", "numeric_literal");
     subst("CUDA_R_8I", "HIP_R_8I", "numeric_literal");
     subst("CUDA_R_8U", "HIP_R_8U", "numeric_literal");
     subst("CUDA_SUCCESS", "hipSuccess", "numeric_literal");
@@ -8084,7 +8360,7 @@ sub simpleSubstitutions {
     subst("CU_DEVICE_ATTRIBUTE_PAGEABLE_MEMORY_ACCESS_USES_HOST_PAGE_TABLES", "hipDeviceAttributePageableMemoryAccessUsesHostPageTables", "numeric_literal");
     subst("CU_DEVICE_ATTRIBUTE_PCI_BUS_ID", "hipDeviceAttributePciBusId", "numeric_literal");
     subst("CU_DEVICE_ATTRIBUTE_PCI_DEVICE_ID", "hipDeviceAttributePciDeviceId", "numeric_literal");
-    subst("CU_DEVICE_ATTRIBUTE_PCI_DOMAIN_ID", "hipDeviceAttributePciDomainID", "numeric_literal");
+    subst("CU_DEVICE_ATTRIBUTE_PCI_DOMAIN_ID", "hipDeviceAttributePciDomainId", "numeric_literal");
     subst("CU_DEVICE_ATTRIBUTE_REGISTERS_PER_BLOCK", "hipDeviceAttributeMaxRegistersPerBlock", "numeric_literal");
     subst("CU_DEVICE_ATTRIBUTE_SHARED_MEMORY_PER_BLOCK", "hipDeviceAttributeMaxSharedMemoryPerBlock", "numeric_literal");
     subst("CU_DEVICE_ATTRIBUTE_SINGLE_TO_DOUBLE_PRECISION_PERF_RATIO", "hipDeviceAttributeSingleToDoublePrecisionPerfRatio", "numeric_literal");
@@ -8107,6 +8383,8 @@ sub simpleSubstitutions {
     subst("CU_EVENT_DEFAULT", "hipEventDefault", "numeric_literal");
     subst("CU_EVENT_DISABLE_TIMING", "hipEventDisableTiming", "numeric_literal");
     subst("CU_EVENT_INTERPROCESS", "hipEventInterprocess", "numeric_literal");
+    subst("CU_EVENT_RECORD_DEFAULT", "hipEventRecordDefault", "numeric_literal");
+    subst("CU_EVENT_RECORD_EXTERNAL", "hipEventRecordExternal", "numeric_literal");
     subst("CU_EXTERNAL_MEMORY_HANDLE_TYPE_D3D11_RESOURCE", "hipExternalMemoryHandleTypeD3D11Resource", "numeric_literal");
     subst("CU_EXTERNAL_MEMORY_HANDLE_TYPE_D3D11_RESOURCE_KMT", "hipExternalMemoryHandleTypeD3D11ResourceKmt", "numeric_literal");
     subst("CU_EXTERNAL_MEMORY_HANDLE_TYPE_D3D12_HEAP", "hipExternalMemoryHandleTypeD3D12Heap", "numeric_literal");
@@ -8190,31 +8468,43 @@ sub simpleSubstitutions {
     subst("CU_GRAPH_NODE_TYPE_WAIT_EVENT", "hipGraphNodeTypeWaitEvent", "numeric_literal");
     subst("CU_GRAPH_USER_OBJECT_MOVE", "hipGraphUserObjectMove", "numeric_literal");
     subst("CU_IPC_MEM_LAZY_ENABLE_PEER_ACCESS", "hipIpcMemLazyEnablePeerAccess", "numeric_literal");
-    subst("CU_JIT_CACHE_MODE", "HIPRTC_JIT_CACHE_MODE", "numeric_literal");
-    subst("CU_JIT_ERROR_LOG_BUFFER", "HIPRTC_JIT_ERROR_LOG_BUFFER", "numeric_literal");
-    subst("CU_JIT_ERROR_LOG_BUFFER_SIZE_BYTES", "HIPRTC_JIT_ERROR_LOG_BUFFER_SIZE_BYTES", "numeric_literal");
-    subst("CU_JIT_FALLBACK_STRATEGY", "HIPRTC_JIT_FALLBACK_STRATEGY", "numeric_literal");
-    subst("CU_JIT_FAST_COMPILE", "HIPRTC_JIT_FAST_COMPILE", "numeric_literal");
-    subst("CU_JIT_GENERATE_DEBUG_INFO", "HIPRTC_JIT_GENERATE_DEBUG_INFO", "numeric_literal");
-    subst("CU_JIT_GENERATE_LINE_INFO", "HIPRTC_JIT_GENERATE_LINE_INFO", "numeric_literal");
-    subst("CU_JIT_INFO_LOG_BUFFER", "HIPRTC_JIT_INFO_LOG_BUFFER", "numeric_literal");
-    subst("CU_JIT_INFO_LOG_BUFFER_SIZE_BYTES", "HIPRTC_JIT_INFO_LOG_BUFFER_SIZE_BYTES", "numeric_literal");
-    subst("CU_JIT_INPUT_CUBIN", "HIPRTC_JIT_INPUT_CUBIN", "numeric_literal");
-    subst("CU_JIT_INPUT_FATBINARY", "HIPRTC_JIT_INPUT_FATBINARY", "numeric_literal");
-    subst("CU_JIT_INPUT_LIBRARY", "HIPRTC_JIT_INPUT_LIBRARY", "numeric_literal");
-    subst("CU_JIT_INPUT_NVVM", "HIPRTC_JIT_INPUT_NVVM", "numeric_literal");
-    subst("CU_JIT_INPUT_OBJECT", "HIPRTC_JIT_INPUT_OBJECT", "numeric_literal");
-    subst("CU_JIT_INPUT_PTX", "HIPRTC_JIT_INPUT_PTX", "numeric_literal");
-    subst("CU_JIT_LOG_VERBOSE", "HIPRTC_JIT_LOG_VERBOSE", "numeric_literal");
-    subst("CU_JIT_MAX_REGISTERS", "HIPRTC_JIT_MAX_REGISTERS", "numeric_literal");
-    subst("CU_JIT_NEW_SM3X_OPT", "HIPRTC_JIT_NEW_SM3X_OPT", "numeric_literal");
-    subst("CU_JIT_NUM_INPUT_TYPES", "HIPRTC_JIT_NUM_LEGACY_INPUT_TYPES", "numeric_literal");
-    subst("CU_JIT_NUM_OPTIONS", "HIPRTC_JIT_NUM_OPTIONS", "numeric_literal");
-    subst("CU_JIT_OPTIMIZATION_LEVEL", "HIPRTC_JIT_OPTIMIZATION_LEVEL", "numeric_literal");
-    subst("CU_JIT_TARGET", "HIPRTC_JIT_TARGET", "numeric_literal");
-    subst("CU_JIT_TARGET_FROM_CUCONTEXT", "HIPRTC_JIT_TARGET_FROM_HIPCONTEXT", "numeric_literal");
-    subst("CU_JIT_THREADS_PER_BLOCK", "HIPRTC_JIT_THREADS_PER_BLOCK", "numeric_literal");
-    subst("CU_JIT_WALL_TIME", "HIPRTC_JIT_WALL_TIME", "numeric_literal");
+    subst("CU_JIT_CACHE_MODE", "hipJitOptionCacheMode", "numeric_literal");
+    subst("CU_JIT_ERROR_LOG_BUFFER", "hipJitOptionErrorLogBuffer", "numeric_literal");
+    subst("CU_JIT_ERROR_LOG_BUFFER_SIZE_BYTES", "hipJitOptionErrorLogBufferSizeBytes", "numeric_literal");
+    subst("CU_JIT_FALLBACK_STRATEGY", "hipJitOptionFallbackStrategy", "numeric_literal");
+    subst("CU_JIT_FAST_COMPILE", "hipJitOptionFastCompile", "numeric_literal");
+    subst("CU_JIT_FMA", "hipJitOptionFma", "numeric_literal");
+    subst("CU_JIT_FTZ", "hipJitOptionFtz", "numeric_literal");
+    subst("CU_JIT_GENERATE_DEBUG_INFO", "hipJitOptionGenerateDebugInfo", "numeric_literal");
+    subst("CU_JIT_GENERATE_LINE_INFO", "hipJitOptionGenerateLineInfo", "numeric_literal");
+    subst("CU_JIT_GLOBAL_SYMBOL_ADDRESSES", "hipJitOptionGlobalSymbolAddresses", "numeric_literal");
+    subst("CU_JIT_GLOBAL_SYMBOL_COUNT", "hipJitOptionGlobalSymbolCount", "numeric_literal");
+    subst("CU_JIT_GLOBAL_SYMBOL_NAMES", "hipJitOptionGlobalSymbolNames", "numeric_literal");
+    subst("CU_JIT_INFO_LOG_BUFFER", "hipJitOptionInfoLogBuffer", "numeric_literal");
+    subst("CU_JIT_INFO_LOG_BUFFER_SIZE_BYTES", "hipJitOptionInfoLogBufferSizeBytes", "numeric_literal");
+    subst("CU_JIT_INPUT_CUBIN", "hipJitInputCubin", "numeric_literal");
+    subst("CU_JIT_INPUT_FATBINARY", "hipJitInputFatBinary", "numeric_literal");
+    subst("CU_JIT_INPUT_LIBRARY", "hipJitInputLibrary", "numeric_literal");
+    subst("CU_JIT_INPUT_NVVM", "hipJitInputNvvm", "numeric_literal");
+    subst("CU_JIT_INPUT_OBJECT", "hipJitInputObject", "numeric_literal");
+    subst("CU_JIT_INPUT_PTX", "hipJitInputPtx", "numeric_literal");
+    subst("CU_JIT_LOG_VERBOSE", "hipJitOptionLogVerbose", "numeric_literal");
+    subst("CU_JIT_LTO", "hipJitOptionLto", "numeric_literal");
+    subst("CU_JIT_MAX_REGISTERS", "hipJitOptionMaxRegisters", "numeric_literal");
+    subst("CU_JIT_MAX_THREADS_PER_BLOCK", "hipJitOptionMaxThreadsPerBlock", "numeric_literal");
+    subst("CU_JIT_MIN_CTA_PER_SM", "hipJitOptionMinCTAPerSM", "numeric_literal");
+    subst("CU_JIT_NEW_SM3X_OPT", "hipJitOptionSm3xOpt", "numeric_literal");
+    subst("CU_JIT_NUM_INPUT_TYPES", "hipJitNumLegacyInputTypes", "numeric_literal");
+    subst("CU_JIT_NUM_OPTIONS", "hipJitOptionNumOptions", "numeric_literal");
+    subst("CU_JIT_OPTIMIZATION_LEVEL", "hipJitOptionOptimizationLevel", "numeric_literal");
+    subst("CU_JIT_OVERRIDE_DIRECTIVE_VALUES", "hipJitOptionOverrideDirectiveValues", "numeric_literal");
+    subst("CU_JIT_POSITION_INDEPENDENT_CODE", "hipJitOptionPositionIndependentCode", "numeric_literal");
+    subst("CU_JIT_PREC_DIV", "hipJitOptionPrecDiv", "numeric_literal");
+    subst("CU_JIT_PREC_SQRT", "hipJitOptionPrecSqrt", "numeric_literal");
+    subst("CU_JIT_TARGET", "hipJitOptionTarget", "numeric_literal");
+    subst("CU_JIT_TARGET_FROM_CUCONTEXT", "hipJitOptionTargetFromContext", "numeric_literal");
+    subst("CU_JIT_THREADS_PER_BLOCK", "hipJitOptionThreadsPerBlock", "numeric_literal");
+    subst("CU_JIT_WALL_TIME", "hipJitOptionWallTime", "numeric_literal");
     subst("CU_KERNEL_NODE_ATTRIBUTE_ACCESS_POLICY_WINDOW", "hipKernelNodeAttributeAccessPolicyWindow", "numeric_literal");
     subst("CU_KERNEL_NODE_ATTRIBUTE_COOPERATIVE", "hipKernelNodeAttributeCooperative", "numeric_literal");
     subst("CU_KERNEL_NODE_ATTRIBUTE_PRIORITY", "hipKernelNodeAttributePriority", "numeric_literal");
@@ -8370,7 +8660,6 @@ sub simpleSubstitutions {
     subst("__NV_E5M2", "__HIP_E5M2_FNUZ", "numeric_literal");
     subst("__NV_NOSAT", "__HIP_NOSAT", "numeric_literal");
     subst("__NV_SATFINITE", "__HIP_SATFINITE", "numeric_literal");
-    subst("__nv_fp8x4_e5m2", "__hip_fp8x4_e5m2_fnuz", "numeric_literal");
     subst("cublasLtOrder_t", "hipblasLtOrder_t", "numeric_literal");
     subst("cudaAccessPropertyNormal", "hipAccessPropertyNormal", "numeric_literal");
     subst("cudaAccessPropertyPersisting", "hipAccessPropertyPersisting", "numeric_literal");
@@ -8472,7 +8761,7 @@ sub simpleSubstitutions {
     subst("cudaDevAttrPageableMemoryAccessUsesHostPageTables", "hipDeviceAttributePageableMemoryAccessUsesHostPageTables", "numeric_literal");
     subst("cudaDevAttrPciBusId", "hipDeviceAttributePciBusId", "numeric_literal");
     subst("cudaDevAttrPciDeviceId", "hipDeviceAttributePciDeviceId", "numeric_literal");
-    subst("cudaDevAttrPciDomainId", "hipDeviceAttributePciDomainID", "numeric_literal");
+    subst("cudaDevAttrPciDomainId", "hipDeviceAttributePciDomainId", "numeric_literal");
     subst("cudaDevAttrReserved94", "hipDeviceAttributeCanUseStreamWaitValue", "numeric_literal");
     subst("cudaDevAttrSingleToDoublePrecisionPerfRatio", "hipDeviceAttributeSingleToDoublePrecisionPerfRatio", "numeric_literal");
     subst("cudaDevAttrStreamPrioritiesSupported", "hipDeviceAttributeStreamPrioritiesSupported", "numeric_literal");
@@ -8643,19 +8932,23 @@ sub simpleSubstitutions {
     subst("cudaGraphicsRegisterFlagsSurfaceLoadStore", "hipGraphicsRegisterFlagsSurfaceLoadStore", "numeric_literal");
     subst("cudaGraphicsRegisterFlagsTextureGather", "hipGraphicsRegisterFlagsTextureGather", "numeric_literal");
     subst("cudaGraphicsRegisterFlagsWriteDiscard", "hipGraphicsRegisterFlagsWriteDiscard", "numeric_literal");
-    subst("cudaJitCacheMode", "HIPRTC_JIT_CACHE_MODE", "numeric_literal");
-    subst("cudaJitErrorLogBuffer", "HIPRTC_JIT_ERROR_LOG_BUFFER", "numeric_literal");
-    subst("cudaJitErrorLogBufferSizeBytes", "HIPRTC_JIT_ERROR_LOG_BUFFER_SIZE_BYTES", "numeric_literal");
-    subst("cudaJitFallbackStrategy", "HIPRTC_JIT_FALLBACK_STRATEGY", "numeric_literal");
-    subst("cudaJitGenerateDebugInfo", "HIPRTC_JIT_GENERATE_DEBUG_INFO", "numeric_literal");
-    subst("cudaJitGenerateLineInfo", "HIPRTC_JIT_GENERATE_LINE_INFO", "numeric_literal");
-    subst("cudaJitInfoLogBuffer", "HIPRTC_JIT_INFO_LOG_BUFFER", "numeric_literal");
-    subst("cudaJitInfoLogBufferSizeBytes", "HIPRTC_JIT_INFO_LOG_BUFFER_SIZE_BYTES", "numeric_literal");
-    subst("cudaJitLogVerbose", "HIPRTC_JIT_LOG_VERBOSE", "numeric_literal");
-    subst("cudaJitMaxRegisters", "HIPRTC_JIT_MAX_REGISTERS", "numeric_literal");
-    subst("cudaJitOptimizationLevel", "HIPRTC_JIT_OPTIMIZATION_LEVEL", "numeric_literal");
-    subst("cudaJitThreadsPerBlock", "HIPRTC_JIT_THREADS_PER_BLOCK", "numeric_literal");
-    subst("cudaJitWallTime", "HIPRTC_JIT_WALL_TIME", "numeric_literal");
+    subst("cudaJitCacheMode", "hipJitOptionCacheMode", "numeric_literal");
+    subst("cudaJitErrorLogBuffer", "hipJitOptionErrorLogBuffer", "numeric_literal");
+    subst("cudaJitErrorLogBufferSizeBytes", "hipJitOptionErrorLogBufferSizeBytes", "numeric_literal");
+    subst("cudaJitFallbackStrategy", "hipJitOptionFallbackStrategy", "numeric_literal");
+    subst("cudaJitGenerateDebugInfo", "hipJitOptionGenerateDebugInfo", "numeric_literal");
+    subst("cudaJitGenerateLineInfo", "hipJitOptionGenerateLineInfo", "numeric_literal");
+    subst("cudaJitInfoLogBuffer", "hipJitOptionInfoLogBuffer", "numeric_literal");
+    subst("cudaJitInfoLogBufferSizeBytes", "hipJitOptionInfoLogBufferSizeBytes", "numeric_literal");
+    subst("cudaJitLogVerbose", "hipJitOptionLogVerbose", "numeric_literal");
+    subst("cudaJitMaxRegisters", "hipJitOptionMaxRegisters", "numeric_literal");
+    subst("cudaJitMaxThreadsPerBlock", "hipJitOptionMaxThreadsPerBlock", "numeric_literal");
+    subst("cudaJitMinCtaPerSm", "hipJitOptionMinCTAPerSM", "numeric_literal");
+    subst("cudaJitOptimizationLevel", "hipJitOptionOptimizationLevel", "numeric_literal");
+    subst("cudaJitOverrideDirectiveValues", "hipJitOptionOverrideDirectiveValues", "numeric_literal");
+    subst("cudaJitPositionIndependentCode", "hipJitOptionPositionIndependentCode", "numeric_literal");
+    subst("cudaJitThreadsPerBlock", "hipJitOptionThreadsPerBlock", "numeric_literal");
+    subst("cudaJitWallTime", "hipJitOptionWallTime", "numeric_literal");
     subst("cudaKernelNodeAttributeAccessPolicyWindow", "hipKernelNodeAttributeAccessPolicyWindow", "numeric_literal");
     subst("cudaKernelNodeAttributeCooperative", "hipKernelNodeAttributeCooperative", "numeric_literal");
     subst("cudaKernelNodeAttributePriority", "hipKernelNodeAttributePriority", "numeric_literal");
@@ -8917,6 +9210,8 @@ sub simpleSubstitutions {
     subst("cudaEventDefault", "hipEventDefault", "define");
     subst("cudaEventDisableTiming", "hipEventDisableTiming", "define");
     subst("cudaEventInterprocess", "hipEventInterprocess", "define");
+    subst("cudaEventRecordDefault", "hipEventRecordDefault", "define");
+    subst("cudaEventRecordExternal", "hipEventRecordExternal", "define");
     subst("cudaExternalMemoryDedicated", "hipExternalMemoryDedicated", "define");
     subst("cudaGraphKernelNodePortDefault", "hipGraphKernelNodePortDefault", "define");
     subst("cudaGraphKernelNodePortLaunchCompletion", "hipGraphKernelNodePortLaunchCompletion", "define");
@@ -9362,15 +9657,25 @@ sub transformHostFunctions {
     "__popcll",
     "__popc",
     "__nv_cvt_halfraw_to_fp8",
+    "__nv_cvt_halfraw_to_fp4",
     "__nv_cvt_halfraw2_to_fp8x2",
+    "__nv_cvt_halfraw2_to_fp4x2",
     "__nv_cvt_fp8x2_to_halfraw2",
     "__nv_cvt_fp8_to_halfraw",
+    "__nv_cvt_fp4x2_to_halfraw2",
+    "__nv_cvt_fp4_to_halfraw",
     "__nv_cvt_float_to_fp8",
+    "__nv_cvt_float_to_fp4",
     "__nv_cvt_float2_to_fp8x2",
+    "__nv_cvt_float2_to_fp4x2",
     "__nv_cvt_double_to_fp8",
+    "__nv_cvt_double_to_fp4",
     "__nv_cvt_double2_to_fp8x2",
+    "__nv_cvt_double2_to_fp4x2",
     "__nv_cvt_bfloat16raw_to_fp8",
+    "__nv_cvt_bfloat16raw_to_fp4",
     "__nv_cvt_bfloat16raw2_to_fp8x2",
+    "__nv_cvt_bfloat16raw2_to_fp4x2",
     "__mulhi",
     "__mul64hi",
     "__mul24",
@@ -9816,25 +10121,26 @@ sub countSupportedDeviceFunctions {
     "__nv_fp128_acosh",
     "__nv_fp128_acos",
     "__nv_cvt_halfraw_to_fp6",
-    "__nv_cvt_halfraw_to_fp4",
     "__nv_cvt_halfraw2_to_fp6x2",
-    "__nv_cvt_halfraw2_to_fp4x2",
     "__nv_cvt_fp6x2_to_halfraw2",
     "__nv_cvt_fp6_to_halfraw",
-    "__nv_cvt_fp4x2_to_halfraw2",
-    "__nv_cvt_fp4_to_halfraw",
     "__nv_cvt_float_to_fp6",
-    "__nv_cvt_float_to_fp4",
+    "__nv_cvt_float_to_e8m0",
     "__nv_cvt_float2_to_fp6x2",
-    "__nv_cvt_float2_to_fp4x2",
+    "__nv_cvt_float2_to_e8m0x2",
+    "__nv_cvt_e8m0x2_to_bf162raw",
+    "__nv_cvt_e8m0_to_bf16raw",
     "__nv_cvt_double_to_fp6",
-    "__nv_cvt_double_to_fp4",
+    "__nv_cvt_double_to_e8m0",
     "__nv_cvt_double2_to_fp6x2",
-    "__nv_cvt_double2_to_fp4x2",
+    "__nv_cvt_double2_to_e8m0x2",
     "__nv_cvt_bfloat16raw_to_fp6",
-    "__nv_cvt_bfloat16raw_to_fp4",
+    "__nv_cvt_bfloat16raw_to_e8m0",
     "__nv_cvt_bfloat16raw2_to_fp6x2",
-    "__nv_cvt_bfloat16raw2_to_fp4x2",
+    "__nv_cvt_bfloat162raw_to_e8m0x2",
+    "__nv_bswap64",
+    "__nv_bswap32",
+    "__nv_bswap16",
     "__ll2bfloat16_rz",
     "__ll2bfloat16_ru",
     "__ll2bfloat16_rn",
@@ -9977,6 +10283,11 @@ sub warnUnsupportedDeviceFunctions {
 
 @SupportedDeviceDataTypes = (
     "nv_bfloat16",
+    "cudaRoundZero",
+    "cudaRoundPosInf",
+    "cudaRoundNearest",
+    "cudaRoundMode",
+    "cudaRoundMinInf",
     "__nv_saturation_t",
     "__nv_fp8x4_storage_t",
     "__nv_fp8x4_e5m2",
@@ -9988,6 +10299,13 @@ sub warnUnsupportedDeviceFunctions {
     "__nv_fp8_interpretation_t",
     "__nv_fp8_e5m2",
     "__nv_fp8_e4m3",
+    "__nv_fp4x4_storage_t",
+    "__nv_fp4x4_e2m1",
+    "__nv_fp4x2_storage_t",
+    "__nv_fp4x2_e2m1",
+    "__nv_fp4_storage_t",
+    "__nv_fp4_interpretation_t",
+    "__nv_fp4_e2m1",
     "__nv_bfloat16_raw",
     "__nv_bfloat162_raw",
     "__nv_bfloat162",
@@ -9999,7 +10317,15 @@ sub warnUnsupportedDeviceFunctions {
     "__NV_SATFINITE",
     "__NV_NOSAT",
     "__NV_E5M2",
-    "__NV_E4M3"
+    "__NV_E4M3",
+    "__NV_E2M1",
+    "CUDART_ZERO_FP16",
+    "CUDART_ONE_FP16",
+    "CUDART_NEG_ZERO_FP16",
+    "CUDART_NAN_FP16",
+    "CUDART_MIN_DENORM_FP16",
+    "CUDART_MAX_NORMAL_FP16",
+    "CUDART_INF_FP16"
 );
 
 sub countSupportedDeviceDataTypes {
@@ -10016,6 +10342,9 @@ sub countSupportedDeviceDataTypes {
 
 @UnsupportedDeviceDataTypes = (
     "nv_bfloat162",
+    "__nv_fp8x4_e8m0",
+    "__nv_fp8x2_e8m0",
+    "__nv_fp8_e8m0",
     "__nv_fp6x4_storage_t",
     "__nv_fp6x4_e3m2",
     "__nv_fp6x4_e2m3",
@@ -10026,16 +10355,8 @@ sub countSupportedDeviceDataTypes {
     "__nv_fp6_interpretation_t",
     "__nv_fp6_e3m2",
     "__nv_fp6_e2m3",
-    "__nv_fp4x4_storage_t",
-    "__nv_fp4x4_e2m1",
-    "__nv_fp4x2_storage_t",
-    "__nv_fp4x2_e2m1",
-    "__nv_fp4_storage_t",
-    "__nv_fp4_interpretation_t",
-    "__nv_fp4_e2m1",
     "__NV_E3M2",
-    "__NV_E2M3",
-    "__NV_E2M1"
+    "__NV_E2M3"
 );
 
 sub warnUnsupportedDeviceDataTypes {
@@ -10105,9 +10426,24 @@ sub warnRemovedFunctions {
 }
 
 @HipOnlyUnsupportedFunctions = (
+    "syevjInfo",
+    "nvrtcSetPCHHeapSize",
+    "nvrtcSetFlowCallback",
+    "nvrtcGetSupportedArchs",
+    "nvrtcGetPCHHeapSizeRequired",
+    "nvrtcGetPCHHeapSize",
+    "nvrtcGetPCHCreateStatus",
+    "nvrtcGetOptiXIRSize",
+    "nvrtcGetOptiXIR",
+    "nvrtcGetNumSupportedArchs",
+    "nvrtcGetNVVMSize",
+    "nvrtcGetNVVM",
+    "nvrtcGetLTOIRSize",
+    "nvrtcGetLTOIR",
     "memoryBarrier",
     "libraryPropertyType_t",
     "libraryPropertyType",
+    "gesvdjInfo",
     "cutensorWriteKernelCacheToFile",
     "cutensorTensorDescriptor",
     "cutensorReduce",
@@ -10333,6 +10669,345 @@ sub warnRemovedFunctions {
     "cusparseCbsric02_bufferSizeExt",
     "cusparseBsrSetStridedBatch",
     "cusparseAlgMode_t",
+    "cusolverStorevMode_t",
+    "cusolverSpZcsrzfdHost",
+    "cusolverSpZcsrqrsvBatched",
+    "cusolverSpZcsrqrZeroPivotHost",
+    "cusolverSpZcsrqrZeroPivot",
+    "cusolverSpZcsrqrSolveHost",
+    "cusolverSpZcsrqrSolve",
+    "cusolverSpZcsrqrSetupHost",
+    "cusolverSpZcsrqrSetup",
+    "cusolverSpZcsrqrFactorHost",
+    "cusolverSpZcsrqrFactor",
+    "cusolverSpZcsrqrBufferInfoHost",
+    "cusolverSpZcsrqrBufferInfoBatched",
+    "cusolverSpZcsrqrBufferInfo",
+    "cusolverSpZcsrluZeroPivotHost",
+    "cusolverSpZcsrluSolveHost",
+    "cusolverSpZcsrluFactorHost",
+    "cusolverSpZcsrluExtractHost",
+    "cusolverSpZcsrluBufferInfoHost",
+    "cusolverSpZcsrlsvqrHost",
+    "cusolverSpZcsrlsvqr",
+    "cusolverSpZcsrlsvluHost",
+    "cusolverSpZcsrlsvcholHost",
+    "cusolverSpZcsrlsvchol",
+    "cusolverSpZcsrlsqvqrHost",
+    "cusolverSpZcsreigvsiHost",
+    "cusolverSpZcsreigvsi",
+    "cusolverSpZcsreigsHost",
+    "cusolverSpZcsrcholZeroPivotHost",
+    "cusolverSpZcsrcholZeroPivot",
+    "cusolverSpZcsrcholSolveHost",
+    "cusolverSpZcsrcholSolve",
+    "cusolverSpZcsrcholFactorHost",
+    "cusolverSpZcsrcholFactor",
+    "cusolverSpZcsrcholDiag",
+    "cusolverSpZcsrcholBufferInfoHost",
+    "cusolverSpZcsrcholBufferInfo",
+    "cusolverSpXcsrsymrcmHost",
+    "cusolverSpXcsrsymmdqHost",
+    "cusolverSpXcsrsymamdHost",
+    "cusolverSpXcsrqrAnalysisHost",
+    "cusolverSpXcsrqrAnalysisBatched",
+    "cusolverSpXcsrqrAnalysis",
+    "cusolverSpXcsrperm_bufferSizeHost",
+    "cusolverSpXcsrpermHost",
+    "cusolverSpXcsrmetisndHost",
+    "cusolverSpXcsrluNnzHost",
+    "cusolverSpXcsrluAnalysisHost",
+    "cusolverSpXcsrissymHost",
+    "cusolverSpXcsrcholAnalysisHost",
+    "cusolverSpXcsrcholAnalysis",
+    "cusolverSpScsrzfdHost",
+    "cusolverSpScsrqrsvBatched",
+    "cusolverSpScsrqrZeroPivotHost",
+    "cusolverSpScsrqrZeroPivot",
+    "cusolverSpScsrqrSolveHost",
+    "cusolverSpScsrqrSolve",
+    "cusolverSpScsrqrSetupHost",
+    "cusolverSpScsrqrSetup",
+    "cusolverSpScsrqrFactorHost",
+    "cusolverSpScsrqrFactor",
+    "cusolverSpScsrqrBufferInfoHost",
+    "cusolverSpScsrqrBufferInfoBatched",
+    "cusolverSpScsrqrBufferInfo",
+    "cusolverSpScsrluZeroPivotHost",
+    "cusolverSpScsrluSolveHost",
+    "cusolverSpScsrluFactorHost",
+    "cusolverSpScsrluExtractHost",
+    "cusolverSpScsrluBufferInfoHost",
+    "cusolverSpScsrlsvqrHost",
+    "cusolverSpScsrlsvluHost",
+    "cusolverSpScsrlsqvqrHost",
+    "cusolverSpScsreigvsiHost",
+    "cusolverSpScsreigvsi",
+    "cusolverSpScsreigsHost",
+    "cusolverSpScsrcholZeroPivotHost",
+    "cusolverSpScsrcholZeroPivot",
+    "cusolverSpScsrcholSolveHost",
+    "cusolverSpScsrcholSolve",
+    "cusolverSpScsrcholFactorHost",
+    "cusolverSpScsrcholFactor",
+    "cusolverSpScsrcholDiag",
+    "cusolverSpScsrcholBufferInfoHost",
+    "cusolverSpScsrcholBufferInfo",
+    "cusolverSpGetStream",
+    "cusolverSpDestroyCsrqrInfoHost",
+    "cusolverSpDestroyCsrqrInfo",
+    "cusolverSpDestroyCsrluInfoHost",
+    "cusolverSpDestroyCsrcholInfoHost",
+    "cusolverSpDestroyCsrcholInfo",
+    "cusolverSpDcsrzfdHost",
+    "cusolverSpDcsrqrsvBatched",
+    "cusolverSpDcsrqrZeroPivotHost",
+    "cusolverSpDcsrqrZeroPivot",
+    "cusolverSpDcsrqrSolveHost",
+    "cusolverSpDcsrqrSolve",
+    "cusolverSpDcsrqrSetupHost",
+    "cusolverSpDcsrqrSetup",
+    "cusolverSpDcsrqrFactorHost",
+    "cusolverSpDcsrqrFactor",
+    "cusolverSpDcsrqrBufferInfoHost",
+    "cusolverSpDcsrqrBufferInfoBatched",
+    "cusolverSpDcsrqrBufferInfo",
+    "cusolverSpDcsrluZeroPivotHost",
+    "cusolverSpDcsrluSolveHost",
+    "cusolverSpDcsrluFactorHost",
+    "cusolverSpDcsrluExtractHost",
+    "cusolverSpDcsrluBufferInfoHost",
+    "cusolverSpDcsrlsvqrHost",
+    "cusolverSpDcsrlsvluHost",
+    "cusolverSpDcsrlsqvqrHost",
+    "cusolverSpDcsreigvsiHost",
+    "cusolverSpDcsreigvsi",
+    "cusolverSpDcsreigsHost",
+    "cusolverSpDcsrcholZeroPivotHost",
+    "cusolverSpDcsrcholZeroPivot",
+    "cusolverSpDcsrcholSolveHost",
+    "cusolverSpDcsrcholSolve",
+    "cusolverSpDcsrcholFactorHost",
+    "cusolverSpDcsrcholFactor",
+    "cusolverSpDcsrcholDiag",
+    "cusolverSpDcsrcholBufferInfoHost",
+    "cusolverSpDcsrcholBufferInfo",
+    "cusolverSpCreateCsrqrInfoHost",
+    "cusolverSpCreateCsrqrInfo",
+    "cusolverSpCreateCsrluInfoHost",
+    "cusolverSpCreateCsrcholInfoHost",
+    "cusolverSpCreateCsrcholInfo",
+    "cusolverSpContext",
+    "cusolverSpCcsrzfdHost",
+    "cusolverSpCcsrqrsvBatched",
+    "cusolverSpCcsrqrZeroPivotHost",
+    "cusolverSpCcsrqrZeroPivot",
+    "cusolverSpCcsrqrSolveHost",
+    "cusolverSpCcsrqrSolve",
+    "cusolverSpCcsrqrSetupHost",
+    "cusolverSpCcsrqrSetup",
+    "cusolverSpCcsrqrFactorHost",
+    "cusolverSpCcsrqrFactor",
+    "cusolverSpCcsrqrBufferInfoHost",
+    "cusolverSpCcsrqrBufferInfoBatched",
+    "cusolverSpCcsrqrBufferInfo",
+    "cusolverSpCcsrluZeroPivotHost",
+    "cusolverSpCcsrluSolveHost",
+    "cusolverSpCcsrluFactorHost",
+    "cusolverSpCcsrluExtractHost",
+    "cusolverSpCcsrluBufferInfoHost",
+    "cusolverSpCcsrlsvqrHost",
+    "cusolverSpCcsrlsvqr",
+    "cusolverSpCcsrlsvluHost",
+    "cusolverSpCcsrlsvcholHost",
+    "cusolverSpCcsrlsvchol",
+    "cusolverSpCcsrlsqvqrHost",
+    "cusolverSpCcsreigvsiHost",
+    "cusolverSpCcsreigvsi",
+    "cusolverSpCcsreigsHost",
+    "cusolverSpCcsrcholZeroPivotHost",
+    "cusolverSpCcsrcholZeroPivot",
+    "cusolverSpCcsrcholSolveHost",
+    "cusolverSpCcsrcholSolve",
+    "cusolverSpCcsrcholFactorHost",
+    "cusolverSpCcsrcholFactor",
+    "cusolverSpCcsrcholDiag",
+    "cusolverSpCcsrcholBufferInfoHost",
+    "cusolverSpCcsrcholBufferInfo",
+    "cusolverRfGetAlgs",
+    "cusolverRfCommon",
+    "cusolverPrecType_t",
+    "cusolverNorm_t",
+    "cusolverMgSyevd_bufferSize",
+    "cusolverMgSyevd",
+    "cusolverMgPotrs_bufferSize",
+    "cusolverMgPotrs",
+    "cusolverMgPotri_bufferSize",
+    "cusolverMgPotri",
+    "cusolverMgPotrf_bufferSize",
+    "cusolverMgPotrf",
+    "cusolverMgHandle_t",
+    "cusolverMgGridMapping_t",
+    "cusolverMgGetrs_bufferSize",
+    "cusolverMgGetrs",
+    "cusolverMgGetrf_bufferSize",
+    "cusolverMgGetrf",
+    "cusolverMgDeviceSelect",
+    "cusolverMgDestroyGrid",
+    "cusolverMgDestroy",
+    "cusolverMgCreateMatrixDesc",
+    "cusolverMgCreateDeviceGrid",
+    "cusolverMgCreate",
+    "cusolverMgContext",
+    "cusolverIRSRefinement_t",
+    "cusolverDnZsytri_bufferSize",
+    "cusolverDnZsytri",
+    "cusolverDnZlauum_bufferSize",
+    "cusolverDnZlauum",
+    "cusolverDnZlaswp",
+    "cusolverDnZYgesv_bufferSize",
+    "cusolverDnZYgesv",
+    "cusolverDnZYgels_bufferSize",
+    "cusolverDnZYgels",
+    "cusolverDnZKgesv_bufferSize",
+    "cusolverDnZKgesv",
+    "cusolverDnZKgels_bufferSize",
+    "cusolverDnZKgels",
+    "cusolverDnZEgesv_bufferSize",
+    "cusolverDnZEgesv",
+    "cusolverDnZEgels_bufferSize",
+    "cusolverDnZEgels",
+    "cusolverDnZCgesv_bufferSize",
+    "cusolverDnZCgesv",
+    "cusolverDnZCgels_bufferSize",
+    "cusolverDnZCgels",
+    "cusolverDnXtrtri_bufferSize",
+    "cusolverDnXtrtri",
+    "cusolverDnXsytrs_bufferSize",
+    "cusolverDnXsytrs",
+    "cusolverDnXsyevdx_bufferSize",
+    "cusolverDnXsyevdx",
+    "cusolverDnXsyevd_bufferSize",
+    "cusolverDnXsyevd",
+    "cusolverDnXsyevBatched_bufferSize",
+    "cusolverDnXsyevBatched",
+    "cusolverDnXlarft_bufferSize",
+    "cusolverDnXlarft",
+    "cusolverDnXgesvdr_bufferSize",
+    "cusolverDnXgesvdr",
+    "cusolverDnXgesvdp_bufferSize",
+    "cusolverDnXgesvdp",
+    "cusolverDnXgesvd_bufferSize",
+    "cusolverDnXgesvd",
+    "cusolverDnXgeev_bufferSize",
+    "cusolverDnXgeev",
+    "cusolverDnSyevdx_bufferSize",
+    "cusolverDnSyevdx",
+    "cusolverDnSyevd_bufferSize",
+    "cusolverDnSyevd",
+    "cusolverDnSsytri_bufferSize",
+    "cusolverDnSsytri",
+    "cusolverDnSlauum_bufferSize",
+    "cusolverDnSlauum",
+    "cusolverDnSlaswp",
+    "cusolverDnSXgesv_bufferSize",
+    "cusolverDnSXgesv",
+    "cusolverDnSXgels_bufferSize",
+    "cusolverDnSXgels",
+    "cusolverDnSHgesv_bufferSize",
+    "cusolverDnSHgesv",
+    "cusolverDnSHgels_bufferSize",
+    "cusolverDnSHgels",
+    "cusolverDnSBgesv_bufferSize",
+    "cusolverDnSBgesv",
+    "cusolverDnSBgels_bufferSize",
+    "cusolverDnSBgels",
+    "cusolverDnPotrs",
+    "cusolverDnPotrf_bufferSize",
+    "cusolverDnPotrf",
+    "cusolverDnParams",
+    "cusolverDnLoggerSetMask",
+    "cusolverDnLoggerSetLevel",
+    "cusolverDnLoggerSetFile",
+    "cusolverDnLoggerSetCallback",
+    "cusolverDnLoggerOpenFile",
+    "cusolverDnLoggerForceDisable",
+    "cusolverDnLoggerCallback_t",
+    "cusolverDnIRSXgesv_bufferSize",
+    "cusolverDnIRSXgesv",
+    "cusolverDnIRSXgels_bufferSize",
+    "cusolverDnIRSXgels",
+    "cusolverDnIRSParams_t",
+    "cusolverDnIRSParamsSetTolInner",
+    "cusolverDnIRSParamsSetTol",
+    "cusolverDnIRSParamsSetSolverPrecisions",
+    "cusolverDnIRSParamsSetSolverMainPrecision",
+    "cusolverDnIRSParamsSetSolverLowestPrecision",
+    "cusolverDnIRSParamsSetRefinementSolver",
+    "cusolverDnIRSParamsSetMaxItersInner",
+    "cusolverDnIRSParamsSetMaxIters",
+    "cusolverDnIRSParamsGetMaxIters",
+    "cusolverDnIRSParamsEnableFallback",
+    "cusolverDnIRSParamsDisableFallback",
+    "cusolverDnIRSParamsDestroy",
+    "cusolverDnIRSParamsCreate",
+    "cusolverDnIRSParams",
+    "cusolverDnIRSInfos_t",
+    "cusolverDnIRSInfosRequestResidual",
+    "cusolverDnIRSInfosGetResidualHistory",
+    "cusolverDnIRSInfosGetOuterNiters",
+    "cusolverDnIRSInfosGetNiters",
+    "cusolverDnIRSInfosGetMaxIters",
+    "cusolverDnIRSInfosDestroy",
+    "cusolverDnIRSInfosCreate",
+    "cusolverDnIRSInfos",
+    "cusolverDnGetrs",
+    "cusolverDnGetrf_bufferSize",
+    "cusolverDnGetrf",
+    "cusolverDnGesvd_bufferSize",
+    "cusolverDnGesvd",
+    "cusolverDnGeqrf_bufferSize",
+    "cusolverDnGeqrf",
+    "cusolverDnDsytri_bufferSize",
+    "cusolverDnDsytri",
+    "cusolverDnDlauum_bufferSize",
+    "cusolverDnDlauum",
+    "cusolverDnDlaswp",
+    "cusolverDnDXgesv_bufferSize",
+    "cusolverDnDXgesv",
+    "cusolverDnDXgels_bufferSize",
+    "cusolverDnDXgels",
+    "cusolverDnDSgesv_bufferSize",
+    "cusolverDnDSgesv",
+    "cusolverDnDSgels_bufferSize",
+    "cusolverDnDSgels",
+    "cusolverDnDHgesv_bufferSize",
+    "cusolverDnDHgesv",
+    "cusolverDnDHgels_bufferSize",
+    "cusolverDnDHgels",
+    "cusolverDnDBgesv_bufferSize",
+    "cusolverDnDBgesv",
+    "cusolverDnDBgels_bufferSize",
+    "cusolverDnDBgels",
+    "cusolverDnCsytri_bufferSize",
+    "cusolverDnCsytri",
+    "cusolverDnContext",
+    "cusolverDnClauum_bufferSize",
+    "cusolverDnClauum",
+    "cusolverDnClaswp",
+    "cusolverDnCYgesv_bufferSize",
+    "cusolverDnCYgesv",
+    "cusolverDnCYgels_bufferSize",
+    "cusolverDnCYgels",
+    "cusolverDnCKgesv_bufferSize",
+    "cusolverDnCKgesv",
+    "cusolverDnCKgels_bufferSize",
+    "cusolverDnCKgels",
+    "cusolverDnCEgesv_bufferSize",
+    "cusolverDnCEgesv",
+    "cusolverDnCEgels_bufferSize",
+    "cusolverDnCEgels",
+    "cusolverDirectMode_t",
     "curand_mtgp32_specific",
     "curand_mtgp32_single_specific",
     "curand_mtgp32_single",
@@ -10352,6 +11027,25 @@ sub warnRemovedFunctions {
     "curandDistributionShift_st",
     "curandDistributionM2Shift_t",
     "curandDistributionM2Shift_st",
+    "cufftXtWorkAreaPolicy_t",
+    "cufftXtWorkAreaPolicy",
+    "cufftXtSetWorkAreaPolicy",
+    "cufftXtSetWorkArea",
+    "cufftXtSetDistribution",
+    "cufftXtQueryType_t",
+    "cufftXtQueryType",
+    "cufftXtQueryPlan",
+    "cufftXt1dFactors_t",
+    "cufftXt1dFactors",
+    "cufftSetPlanPropertyInt64",
+    "cufftResetPlanProperty",
+    "cufftProperty_t",
+    "cufftProperty",
+    "cufftGetPlanPropertyInt64",
+    "cufftCompatibility_t",
+    "cufftCompatibility",
+    "cufftBox3d_t",
+    "cufftBox3d",
     "cudalibraryHostUniversalFunctionAndDataTable",
     "cudaWGLGetDevice",
     "cudaVDPAUSetVDPAUDevice",
@@ -10452,15 +11146,13 @@ sub warnRemovedFunctions {
     "cudaLibraryGetGlobal",
     "cudaLibraryEnumerateKernels",
     "cudaLibraryBinaryIsPreserved",
+    "cudaLibMgMatrixDesc_t",
+    "cudaLibMgGrid_t",
     "cudaLaunchMemSyncDomainRemote",
     "cudaLaunchMemSyncDomainMap_st",
     "cudaLaunchMemSyncDomainMap",
     "cudaLaunchMemSyncDomainDefault",
     "cudaLaunchMemSyncDomain",
-    "cudaLaunchKernelExC",
-    "cudaLaunchConfig_t",
-    "cudaLaunchConfig_st",
-    "cudaLaunchAttribute_st",
     "cudaLaunchAttributeSynchronizationPolicy",
     "cudaLaunchAttributeProgrammaticStreamSerialization",
     "cudaLaunchAttributeProgrammaticEvent",
@@ -10473,7 +11165,6 @@ sub warnRemovedFunctions {
     "cudaLaunchAttributeDeviceUpdatableKernelNode",
     "cudaLaunchAttributeClusterSchedulingPolicyPreference",
     "cudaLaunchAttributeClusterDimension",
-    "cudaLaunchAttribute",
     "cudaKeyValuePair",
     "cudaKernel_t",
     "cudaKernelSetAttributeForDevice",
@@ -10486,10 +11177,6 @@ sub warnRemovedFunctions {
     "cudaKernelNodeAttributeClusterDimension",
     "cudaJit_Fallback",
     "cudaJit_CacheMode",
-    "cudaJitPositionIndependentCode",
-    "cudaJitOverrideDirectiveValues",
-    "cudaJitMinCtaPerSm",
-    "cudaJitMaxThreadsPerBlock",
     "cudaJitCacheOptionNone",
     "cudaJitCacheOptionCG",
     "cudaJitCacheOptionCA",
@@ -10590,8 +11277,6 @@ sub warnRemovedFunctions {
     "cudaExternalMemoryGetMappedMipmappedArray",
     "cudaEventWaitExternal",
     "cudaEventWaitDefault",
-    "cudaEventRecordExternal",
-    "cudaEventRecordDefault",
     "cudaEventElapsedTime_v2",
     "cudaEventCreateFromEGLSync",
     "cudaErrorUnsupportedPtxVersion",
@@ -10669,7 +11354,10 @@ sub warnRemovedFunctions {
     "cudaEglFrameTypeArray",
     "cudaEglFrameType",
     "cudaEglFrame",
+    "cudaEglColorFormatY_ER",
+    "cudaEglColorFormatY_709_ER",
     "cudaEglColorFormatYVYU_ER",
+    "cudaEglColorFormatYVYU",
     "cudaEglColorFormatYVU444SemiPlanar_ER",
     "cudaEglColorFormatYVU444SemiPlanar",
     "cudaEglColorFormatYVU444Planar_ER",
@@ -10679,13 +11367,18 @@ sub warnRemovedFunctions {
     "cudaEglColorFormatYVU422Planar_ER",
     "cudaEglColorFormatYVU422Planar",
     "cudaEglColorFormatYVU420SemiPlanar_ER",
+    "cudaEglColorFormatYVU420SemiPlanar_709",
+    "cudaEglColorFormatYVU420SemiPlanar_2020",
     "cudaEglColorFormatYVU420SemiPlanar",
     "cudaEglColorFormatYVU420Planar_ER",
+    "cudaEglColorFormatYVU420Planar_709",
+    "cudaEglColorFormatYVU420Planar_2020",
     "cudaEglColorFormatYVU420Planar",
     "cudaEglColorFormatYUYV_ER",
     "cudaEglColorFormatYUYV422",
     "cudaEglColorFormatYUV_ER",
     "cudaEglColorFormatYUVA_ER",
+    "cudaEglColorFormatYUVA",
     "cudaEglColorFormatYUV444SemiPlanar_ER",
     "cudaEglColorFormatYUV444SemiPlanar",
     "cudaEglColorFormatYUV444Planar_ER",
@@ -10695,29 +11388,59 @@ sub warnRemovedFunctions {
     "cudaEglColorFormatYUV422Planar_ER",
     "cudaEglColorFormatYUV422Planar",
     "cudaEglColorFormatYUV420SemiPlanar_ER",
+    "cudaEglColorFormatYUV420SemiPlanar_709",
+    "cudaEglColorFormatYUV420SemiPlanar_2020",
     "cudaEglColorFormatYUV420SemiPlanar",
     "cudaEglColorFormatYUV420Planar_ER",
+    "cudaEglColorFormatYUV420Planar_709",
+    "cudaEglColorFormatYUV420Planar_2020",
     "cudaEglColorFormatYUV420Planar",
+    "cudaEglColorFormatY12_ER",
+    "cudaEglColorFormatY12_709_ER",
+    "cudaEglColorFormatY12V12U12_444SemiPlanar_ER",
+    "cudaEglColorFormatY12V12U12_444SemiPlanar_709_ER",
     "cudaEglColorFormatY12V12U12_444SemiPlanar",
+    "cudaEglColorFormatY12V12U12_420SemiPlanar_ER",
+    "cudaEglColorFormatY12V12U12_420SemiPlanar_709_ER",
     "cudaEglColorFormatY12V12U12_420SemiPlanar",
+    "cudaEglColorFormatY10_ER",
+    "cudaEglColorFormatY10_709_ER",
+    "cudaEglColorFormatY10V10U10_444SemiPlanar_ER",
+    "cudaEglColorFormatY10V10U10_444SemiPlanar_709_ER",
     "cudaEglColorFormatY10V10U10_444SemiPlanar",
+    "cudaEglColorFormatY10V10U10_422SemiPlanar_709",
+    "cudaEglColorFormatY10V10U10_422SemiPlanar_2020",
+    "cudaEglColorFormatY10V10U10_422SemiPlanar",
+    "cudaEglColorFormatY10V10U10_420SemiPlanar_ER",
+    "cudaEglColorFormatY10V10U10_420SemiPlanar_709_ER",
+    "cudaEglColorFormatY10V10U10_420SemiPlanar_709",
+    "cudaEglColorFormatY10V10U10_420SemiPlanar_2020",
     "cudaEglColorFormatY10V10U10_420SemiPlanar",
+    "cudaEglColorFormatY",
     "cudaEglColorFormatVYUY_ER",
+    "cudaEglColorFormatVYUY",
     "cudaEglColorFormatUYVY_ER",
+    "cudaEglColorFormatUYVY709_ER",
+    "cudaEglColorFormatUYVY709",
     "cudaEglColorFormatUYVY422",
+    "cudaEglColorFormatUYVY2020",
     "cudaEglColorFormatRGBA",
     "cudaEglColorFormatRGB",
     "cudaEglColorFormatRG",
     "cudaEglColorFormatR",
     "cudaEglColorFormatL",
     "cudaEglColorFormatBayerRGGB",
+    "cudaEglColorFormatBayerRCCB",
     "cudaEglColorFormatBayerIspRGGB",
     "cudaEglColorFormatBayerIspGRBG",
     "cudaEglColorFormatBayerIspGBRG",
     "cudaEglColorFormatBayerIspBGGR",
     "cudaEglColorFormatBayerGRBG",
     "cudaEglColorFormatBayerGBRG",
+    "cudaEglColorFormatBayerCRBC",
+    "cudaEglColorFormatBayerCBRC",
     "cudaEglColorFormatBayerBGGR",
+    "cudaEglColorFormatBayerBCCR",
     "cudaEglColorFormatBayer20RGGB",
     "cudaEglColorFormatBayer20GRBG",
     "cudaEglColorFormatBayer20GBRG",
@@ -10727,12 +11450,18 @@ sub warnRemovedFunctions {
     "cudaEglColorFormatBayer14GBRG",
     "cudaEglColorFormatBayer14BGGR",
     "cudaEglColorFormatBayer12RGGB",
+    "cudaEglColorFormatBayer12RCCB",
     "cudaEglColorFormatBayer12GRBG",
     "cudaEglColorFormatBayer12GBRG",
+    "cudaEglColorFormatBayer12CRBC",
+    "cudaEglColorFormatBayer12CCCC",
+    "cudaEglColorFormatBayer12CBRC",
     "cudaEglColorFormatBayer12BGGR",
+    "cudaEglColorFormatBayer12BCCR",
     "cudaEglColorFormatBayer10RGGB",
     "cudaEglColorFormatBayer10GRBG",
     "cudaEglColorFormatBayer10GBRG",
+    "cudaEglColorFormatBayer10CCCC",
     "cudaEglColorFormatBayer10BGGR",
     "cudaEglColorFormatBGRA",
     "cudaEglColorFormatBGR",
@@ -11127,7 +11856,6 @@ sub warnRemovedFunctions {
     "cuLibraryGetKernel",
     "cuLibraryGetGlobal",
     "cuLibraryEnumerateKernels",
-    "cuLaunchKernelEx",
     "cuLaunchGridAsync",
     "cuLaunchGrid",
     "cuLaunch",
@@ -11263,6 +11991,16 @@ sub warnRemovedFunctions {
     "cuArrayGetMemoryRequirements",
     "csrsv2Info",
     "csrsm2Info",
+    "csrqrInfo_t",
+    "csrqrInfoHost_t",
+    "csrqrInfoHost",
+    "csrqrInfo",
+    "csrluInfoHost_t",
+    "csrluInfoHost",
+    "csrcholInfo_t",
+    "csrcholInfoHost_t",
+    "csrcholInfoHost",
+    "csrcholInfo",
     "cl_event_flags_enum",
     "cl_event_flags",
     "cl_context_flags_enum",
@@ -11270,7 +12008,16 @@ sub warnRemovedFunctions {
     "__curand_umul",
     "__NV_E3M2",
     "__NV_E2M3",
-    "__NV_E2M1",
+    "__CUB_LP64__",
+    "_CUB_ASM_PTR_SIZE_",
+    "_CUB_ASM_PTR_",
+    "NVRTC_ERROR_TIME_FILE_WRITE_FAILED",
+    "NVRTC_ERROR_PCH_CREATE_HEAP_EXHAUSTED",
+    "NVRTC_ERROR_PCH_CREATE",
+    "NVRTC_ERROR_NO_PCH_CREATE_ATTEMPTED",
+    "NVRTC_ERROR_CANCELLED",
+    "NVFFT_PLAN_PROPERTY_INT64_PATIENT_JIT",
+    "NVFFT_PLAN_PROPERTY_INT64_MAX_NUM_HOST_THREADS",
     "NVCL_EVENT_SCHED_YIELD",
     "NVCL_EVENT_SCHED_SPIN",
     "NVCL_EVENT_SCHED_BLOCKING_SYNC",
@@ -11279,6 +12026,9 @@ sub warnRemovedFunctions {
     "NVCL_CTX_SCHED_SPIN",
     "NVCL_CTX_SCHED_BLOCKING_SYNC",
     "NVCL_CTX_SCHED_AUTO",
+    "MAX_CUFFT_ERROR",
+    "CubVector",
+    "CubDebugExit",
     "CUtensorMap_st",
     "CUtensorMapSwizzle_enum",
     "CUtensorMapSwizzle",
@@ -11362,10 +12112,6 @@ sub warnRemovedFunctions {
     "CUlaunchMemSyncDomainMap_st",
     "CUlaunchMemSyncDomainMap",
     "CUlaunchMemSyncDomain",
-    "CUlaunchConfig_st",
-    "CUlaunchConfig",
-    "CUlaunchAttribute_st",
-    "CUlaunchAttribute",
     "CUkernel",
     "CUkern_st",
     "CUjit_target_enum",
@@ -11658,19 +12404,7 @@ sub warnRemovedFunctions {
     "CU_JIT_REFERENCED_VARIABLE_COUNT",
     "CU_JIT_REFERENCED_KERNEL_NAMES",
     "CU_JIT_REFERENCED_KERNEL_COUNT",
-    "CU_JIT_PREC_SQRT",
-    "CU_JIT_PREC_DIV",
-    "CU_JIT_POSITION_INDEPENDENT_CODE",
-    "CU_JIT_OVERRIDE_DIRECTIVE_VALUES",
     "CU_JIT_OPTIMIZE_UNUSED_DEVICE_VARIABLES",
-    "CU_JIT_MIN_CTA_PER_SM",
-    "CU_JIT_MAX_THREADS_PER_BLOCK",
-    "CU_JIT_LTO",
-    "CU_JIT_GLOBAL_SYMBOL_NAMES",
-    "CU_JIT_GLOBAL_SYMBOL_COUNT",
-    "CU_JIT_GLOBAL_SYMBOL_ADDRESSES",
-    "CU_JIT_FTZ",
-    "CU_JIT_FMA",
     "CU_JIT_CACHE_OPTION_NONE",
     "CU_JIT_CACHE_OPTION_CG",
     "CU_JIT_CACHE_OPTION_CA",
@@ -11722,8 +12456,6 @@ sub warnRemovedFunctions {
     "CU_EVENT_SCHED_SPIN",
     "CU_EVENT_SCHED_BLOCKING_SYNC",
     "CU_EVENT_SCHED_AUTO",
-    "CU_EVENT_RECORD_EXTERNAL",
-    "CU_EVENT_RECORD_DEFAULT",
     "CU_EGL_RESOURCE_LOCATION_VIDMEM",
     "CU_EGL_RESOURCE_LOCATION_SYSMEM",
     "CU_EGL_FRAME_TYPE_PITCH",
@@ -11981,32 +12713,10 @@ sub warnRemovedFunctions {
     "CUTENSOR_PLAN_PREFERENCE_CACHE_MODE",
     "CUTENSOR_PLAN_PREFERENCE_AUTOTUNE_MODE",
     "CUTENSOR_PLAN_PREFERENCE_ALGO",
-    "CUTENSOR_OP_TANH",
-    "CUTENSOR_OP_TAN",
     "CUTENSOR_OP_SWISH",
     "CUTENSOR_OP_SOFT_SIGN",
     "CUTENSOR_OP_SOFT_PLUS",
-    "CUTENSOR_OP_SINH",
-    "CUTENSOR_OP_SIN",
-    "CUTENSOR_OP_SIGMOID",
-    "CUTENSOR_OP_RELU",
-    "CUTENSOR_OP_RCP",
-    "CUTENSOR_OP_NEG",
     "CUTENSOR_OP_MISH",
-    "CUTENSOR_OP_LOG",
-    "CUTENSOR_OP_FLOOR",
-    "CUTENSOR_OP_EXP",
-    "CUTENSOR_OP_COSH",
-    "CUTENSOR_OP_COS",
-    "CUTENSOR_OP_CONJ",
-    "CUTENSOR_OP_CEIL",
-    "CUTENSOR_OP_ATANH",
-    "CUTENSOR_OP_ATAN",
-    "CUTENSOR_OP_ASINH",
-    "CUTENSOR_OP_ASIN",
-    "CUTENSOR_OP_ACOSH",
-    "CUTENSOR_OP_ACOS",
-    "CUTENSOR_OP_ABS",
     "CUTENSOR_OPERATION_DESCRIPTOR_TAG",
     "CUTENSOR_OPERATION_DESCRIPTOR_SCALAR_TYPE",
     "CUTENSOR_OPERATION_DESCRIPTOR_PADDING_VALUE",
@@ -12067,6 +12777,49 @@ sub warnRemovedFunctions {
     "CUSPARSE_ALG_MERGE_PATH",
     "CUSPARSE_ALG1",
     "CUSPARSE_ALG0",
+    "CUSOLVER_STATUS_IRS_PARAMS_NOT_INITIALIZED",
+    "CUSOLVER_STATUS_IRS_PARAMS_INVALID_REFINE",
+    "CUSOLVER_STATUS_IRS_PARAMS_INVALID_PREC",
+    "CUSOLVER_STATUS_IRS_PARAMS_INVALID_MAXITER",
+    "CUSOLVER_STATUS_IRS_OUT_OF_RANGE",
+    "CUSOLVER_STATUS_IRS_NRHS_NOT_SUPPORTED_FOR_REFINE_GMRES",
+    "CUSOLVER_STATUS_IRS_MATRIX_SINGULAR",
+    "CUSOLVER_STATUS_IRS_INFOS_NOT_INITIALIZED",
+    "CUSOLVER_STATUS_IRS_INFOS_NOT_DESTROYED",
+    "CUSOLVER_STATUS_INVALID_WORKSPACE",
+    "CUSOLVER_STATUS_INVALID_LICENSE",
+    "CUSOLVER_R_TF32",
+    "CUSOLVER_R_AP",
+    "CUSOLVER_R_8U",
+    "CUSOLVER_R_8I",
+    "CUSOLVER_R_64F",
+    "CUSOLVER_R_32F",
+    "CUSOLVER_R_16F",
+    "CUSOLVER_R_16BF",
+    "CUSOLVER_PREC_SS",
+    "CUSOLVER_PREC_SHT",
+    "CUSOLVER_PREC_DD",
+    "CUSOLVER_ONE_NORM",
+    "CUSOLVER_MAX_NORM",
+    "CUSOLVER_IRS_REFINE_NOT_SET",
+    "CUSOLVER_IRS_REFINE_NONE",
+    "CUSOLVER_IRS_REFINE_GMRES_NOPCOND",
+    "CUSOLVER_IRS_REFINE_GMRES_GMRES",
+    "CUSOLVER_IRS_REFINE_GMRES",
+    "CUSOLVER_IRS_REFINE_CLASSICAL_GMRES",
+    "CUSOLVER_IRS_REFINE_CLASSICAL",
+    "CUSOLVER_INF_NORM",
+    "CUSOLVER_FRO_NORM",
+    "CUSOLVER_C_TF32",
+    "CUSOLVER_C_AP",
+    "CUSOLVER_C_8U",
+    "CUSOLVER_C_8I",
+    "CUSOLVER_C_64F",
+    "CUSOLVER_C_32F",
+    "CUSOLVER_C_16F",
+    "CUSOLVER_C_16BF",
+    "CUSOLVER_ALG_2",
+    "CUSOLVERDN_POTRF",
     "CURAND_REJECTION",
     "CURAND_POISSON",
     "CURAND_M2",
@@ -12083,14 +12836,16 @@ sub warnRemovedFunctions {
     "CURAND_3RD",
     "CUGLmap_flags_enum",
     "CUGLmap_flags",
-    "CUDA_R_8F_E5M2",
-    "CUDA_R_8F_E4M3",
-    "CUDA_R_64U",
-    "CUDA_R_64I",
-    "CUDA_R_4U",
-    "CUDA_R_4I",
-    "CUDA_R_16U",
-    "CUDA_R_16I",
+    "CUFFT_XT_FORMAT_DISTRIBUTED_OUTPUT",
+    "CUFFT_XT_FORMAT_DISTRIBUTED_INPUT",
+    "CUFFT_WORKAREA_USER",
+    "CUFFT_WORKAREA_PERFORMANCE",
+    "CUFFT_WORKAREA_MINIMAL",
+    "CUFFT_QUERY_UNDEFINED",
+    "CUFFT_QUERY_1D_FACTORS",
+    "CUFFT_LICENSE_ERROR",
+    "CUFFT_COMPATIBILITY_FFTW_PADDING",
+    "CUFFT_COMPATIBILITY_DEFAULT",
     "CUDA_POINTER_ATTRIBUTE_P2P_TOKENS_v1",
     "CUDA_POINTER_ATTRIBUTE_P2P_TOKENS_st",
     "CUDA_POINTER_ATTRIBUTE_P2P_TOKENS",
@@ -12159,12 +12914,6 @@ sub warnRemovedFunctions {
     "CUDA_ERROR_CDP_VERSION_MISMATCH",
     "CUDA_ERROR_CDP_NOT_SUPPORTED",
     "CUDA_EGL_MAX_PLANES",
-    "CUDA_C_64U",
-    "CUDA_C_64I",
-    "CUDA_C_4U",
-    "CUDA_C_4I",
-    "CUDA_C_16U",
-    "CUDA_C_16I",
     "CUDA_CONDITIONAL_NODE_PARAMS",
     "CUDA_CB",
     "CUDA_ARRAY_SPARSE_PROPERTIES_v1",
@@ -12179,7 +12928,65 @@ sub warnRemovedFunctions {
     "CUDA_ARRAY3D_DEFERRED_MAPPING",
     "CUDA_ARRAY3D_COLOR_ATTACHMENT",
     "CUDA_ARRAY3D_2DARRAY",
+    "CUDALIBMG_GRID_MAPPING_ROW_MAJOR",
+    "CUDALIBMG_GRID_MAPPING_COL_MAJOR",
     "CUCoredumpGenerationFlags",
+    "CUB_USE_COOPERATIVE_GROUPS",
+    "CUB_SUBSCRIPTION_FACTOR",
+    "CUB_STATIC_ASSERT",
+    "CUB_SMEM_BANKS",
+    "CUB_RUNTIME_ENABLED",
+    "CUB_ROUND_UP_NEAREST",
+    "CUB_ROUND_DOWN_NEAREST",
+    "CUB_QUOTIENT_FLOOR",
+    "CUB_QUOTIENT_CEILING",
+    "CUB_PTX_SUBSCRIPTION_FACTOR",
+    "CUB_PTX_SMEM_BANKS",
+    "CUB_PTX_PREFER_CONFLICT_OVER_PADDING",
+    "CUB_PTX_LOG_WARP_THREADS",
+    "CUB_PTX_LOG_SMEM_BANKS",
+    "CUB_PREVENT_MACRO_SUBSTITUTION",
+    "CUB_PREFER_CONFLICT_OVER_PADDING",
+    "CUB_MSVC_VERSION_FULL",
+    "CUB_MSVC_VERSION",
+    "CUB_MAX_DEVICES",
+    "CUB_LOG_WARP_THREADS",
+    "CUB_LOG_SMEM_BANKS",
+    "CUB_IS_HOST_CODE",
+    "CUB_IS_DEVICE_CODE",
+    "CUB_INCLUDE_HOST_CODE",
+    "CUB_INCLUDE_DEVICE_CODE",
+    "CUB_IGNORE_DEPRECATED_DIALECT",
+    "CUB_IGNORE_DEPRECATED_CPP_DIALECT",
+    "CUB_IGNORE_DEPRECATED_CPP_11",
+    "CUB_IGNORE_DEPRECATED_COMPILER",
+    "CUB_IGNORE_DEPRECATED_API",
+    "CUB_HOST_COMPILER_UNKNOWN",
+    "CUB_HOST_COMPILER_MSVC",
+    "CUB_HOST_COMPILER_GCC",
+    "CUB_HOST_COMPILER_CLANG",
+    "CUB_HOST_COMPILER",
+    "CUB_DEVICE_COMPILER_UNKNOWN",
+    "CUB_DEVICE_COMPILER_NVCC",
+    "CUB_DEVICE_COMPILER_MSVC",
+    "CUB_DEVICE_COMPILER_GCC",
+    "CUB_DEVICE_COMPILER_CLANG",
+    "CUB_DEVICE_COMPILER",
+    "CUB_DEPRECATED",
+    "CUB_DEFINE_VECTOR_TYPE",
+    "CUB_DEFINE_DETECT_NESTED_TYPE",
+    "CUB_CPP_DIALECT",
+    "CUB_CPLUSPLUS",
+    "CUB_COMP_DEPR_IMPL1",
+    "CUB_COMP_DEPR_IMPL0",
+    "CUB_COMP_DEPR_IMPL",
+    "CUB_COMPILER_DEPRECATION_SOFT",
+    "CUB_COMPILER_DEPRECATION",
+    "CUB_CAT_",
+    "CUB_CAT",
+    "CUB_ALIGN",
+    "CUBLAS_STOREV_ROWWISE",
+    "CUBLAS_STOREV_COLUMNWISE",
     "CUBLAS_OP_CONJG",
     "CUBLAS_GEMM_DFALT_TENSOR_OP",
     "CUBLAS_GEMM_DEFAULT_TENSOR_OP",
@@ -12223,6 +13030,8 @@ sub warnRemovedFunctions {
     "CUBLAS_GEMM_ALGO1",
     "CUBLAS_GEMM_ALGO0_TENSOR_OP",
     "CUBLAS_GEMM_ALGO0",
+    "CUBLAS_DIRECT_FORWARD",
+    "CUBLAS_DIRECT_BACKWARD",
     "CUBLASLT_SEARCH_RESERVED_09",
     "CUBLASLT_SEARCH_RESERVED_08",
     "CUBLASLT_SEARCH_RESERVED_07",
@@ -12511,6 +13320,7 @@ sub warnRemovedFunctions {
     "CUBLASLT_MATMUL_TILE_512x72",
     "CUBLASLT_MATMUL_TILE_512x64",
     "CUBLASLT_MATMUL_TILE_512x56",
+    "CUBLASLT_MATMUL_TILE_512x512",
     "CUBLASLT_MATMUL_TILE_512x48",
     "CUBLASLT_MATMUL_TILE_512x40",
     "CUBLASLT_MATMUL_TILE_512x32",
@@ -12520,6 +13330,7 @@ sub warnRemovedFunctions {
     "CUBLASLT_MATMUL_TILE_512x120",
     "CUBLASLT_MATMUL_TILE_512x112",
     "CUBLASLT_MATMUL_TILE_512x104",
+    "CUBLASLT_MATMUL_TILE_512x1024",
     "CUBLASLT_MATMUL_TILE_504x64",
     "CUBLASLT_MATMUL_TILE_496x64",
     "CUBLASLT_MATMUL_TILE_48x768",
@@ -12672,6 +13483,7 @@ sub warnRemovedFunctions {
     "CUBLASLT_MATMUL_TILE_256x72",
     "CUBLASLT_MATMUL_TILE_256x64",
     "CUBLASLT_MATMUL_TILE_256x56",
+    "CUBLASLT_MATMUL_TILE_256x512",
     "CUBLASLT_MATMUL_TILE_256x48",
     "CUBLASLT_MATMUL_TILE_256x40",
     "CUBLASLT_MATMUL_TILE_256x32",
@@ -12697,6 +13509,7 @@ sub warnRemovedFunctions {
     "CUBLASLT_MATMUL_TILE_256x120",
     "CUBLASLT_MATMUL_TILE_256x112",
     "CUBLASLT_MATMUL_TILE_256x104",
+    "CUBLASLT_MATMUL_TILE_256x1024",
     "CUBLASLT_MATMUL_TILE_24x768",
     "CUBLASLT_MATMUL_TILE_24x704",
     "CUBLASLT_MATMUL_TILE_24x640",
@@ -12922,6 +13735,7 @@ sub warnRemovedFunctions {
     "CUBLASLT_MATMUL_STAGES_32x2",
     "CUBLASLT_MATMUL_STAGES_32x10",
     "CUBLASLT_MATMUL_STAGES_32x1",
+    "CUBLASLT_MATMUL_STAGES_256xAUTO",
     "CUBLASLT_MATMUL_STAGES_16xAUTO",
     "CUBLASLT_MATMUL_STAGES_16x6",
     "CUBLASLT_MATMUL_STAGES_16x5",
@@ -12955,8 +13769,13 @@ sub warnRemovedFunctions {
     "CUBLASLT_MATMUL_DESC_SCALE_TYPE",
     "CUBLASLT_MATMUL_DESC_FILL_MODE",
     "CUBLASLT_MATMUL_DESC_FAST_ACCUM",
+    "CUBLASLT_MATMUL_DESC_EPILOGUE_AUX_SCALE_MODE",
     "CUBLASLT_MATMUL_DESC_EPILOGUE_AUX_DATA_TYPE",
     "CUBLASLT_MATMUL_DESC_EPILOGUE_AUX_AMAX_POINTER",
+    "CUBLASLT_MATMUL_DESC_D_SCALE_MODE",
+    "CUBLASLT_MATMUL_DESC_D_OUT_SCALE_POINTER",
+    "CUBLASLT_MATMUL_DESC_D_OUT_SCALE_MODE",
+    "CUBLASLT_MATMUL_DESC_C_SCALE_MODE",
     "CUBLASLT_MATMUL_DESC_COMPUTE_TYPE",
     "CUBLASLT_MATMUL_DESC_BIAS_BATCH_STRIDE",
     "CUBLASLT_MATMUL_DESC_ATOMIC_SYNC_OUT_COUNTERS_POINTER",
@@ -13435,6 +14254,7 @@ sub warnHipOnlyUnsupportedFunctions {
     "cublasLtMatmulPreferenceDestroy",
     "cublasLtMatmulPreferenceCreate",
     "cublasLtMatmulPreferenceAttributes_t",
+    "cublasLtMatmulMatrixScale_t",
     "cublasLtMatmulInnerShape_t",
     "cublasLtMatmulHeuristicResult_t",
     "cublasLtMatmulDescSetAttribute",
@@ -13566,32 +14386,10 @@ sub warnHipOnlyUnsupportedFunctions {
     "CUTENSOR_PLAN_PREFERENCE_CACHE_MODE",
     "CUTENSOR_PLAN_PREFERENCE_AUTOTUNE_MODE",
     "CUTENSOR_PLAN_PREFERENCE_ALGO",
-    "CUTENSOR_OP_TANH",
-    "CUTENSOR_OP_TAN",
     "CUTENSOR_OP_SWISH",
     "CUTENSOR_OP_SOFT_SIGN",
     "CUTENSOR_OP_SOFT_PLUS",
-    "CUTENSOR_OP_SINH",
-    "CUTENSOR_OP_SIN",
-    "CUTENSOR_OP_SIGMOID",
-    "CUTENSOR_OP_RELU",
-    "CUTENSOR_OP_RCP",
-    "CUTENSOR_OP_NEG",
     "CUTENSOR_OP_MISH",
-    "CUTENSOR_OP_LOG",
-    "CUTENSOR_OP_FLOOR",
-    "CUTENSOR_OP_EXP",
-    "CUTENSOR_OP_COSH",
-    "CUTENSOR_OP_COS",
-    "CUTENSOR_OP_CONJ",
-    "CUTENSOR_OP_CEIL",
-    "CUTENSOR_OP_ATANH",
-    "CUTENSOR_OP_ATAN",
-    "CUTENSOR_OP_ASINH",
-    "CUTENSOR_OP_ASIN",
-    "CUTENSOR_OP_ACOSH",
-    "CUTENSOR_OP_ACOS",
-    "CUTENSOR_OP_ABS",
     "CUTENSOR_OPERATION_DESCRIPTOR_TAG",
     "CUTENSOR_OPERATION_DESCRIPTOR_SCALAR_TYPE",
     "CUTENSOR_OPERATION_DESCRIPTOR_PADDING_VALUE",
@@ -13689,6 +14487,7 @@ sub warnHipOnlyUnsupportedFunctions {
     "CURAND_CHOOSE_BEST",
     "CURAND_BINARY_SEARCH",
     "CURAND_3RD",
+    "CUDA_R_8F_UE4M3",
     "CUDA_R_8F_E5M2",
     "CUDA_R_8F_E4M3",
     "CUDA_R_64U",
@@ -14064,6 +14863,7 @@ sub warnHipOnlyUnsupportedFunctions {
     "CUBLASLT_MATMUL_TILE_512x72",
     "CUBLASLT_MATMUL_TILE_512x64",
     "CUBLASLT_MATMUL_TILE_512x56",
+    "CUBLASLT_MATMUL_TILE_512x512",
     "CUBLASLT_MATMUL_TILE_512x48",
     "CUBLASLT_MATMUL_TILE_512x40",
     "CUBLASLT_MATMUL_TILE_512x32",
@@ -14073,6 +14873,7 @@ sub warnHipOnlyUnsupportedFunctions {
     "CUBLASLT_MATMUL_TILE_512x120",
     "CUBLASLT_MATMUL_TILE_512x112",
     "CUBLASLT_MATMUL_TILE_512x104",
+    "CUBLASLT_MATMUL_TILE_512x1024",
     "CUBLASLT_MATMUL_TILE_504x64",
     "CUBLASLT_MATMUL_TILE_496x64",
     "CUBLASLT_MATMUL_TILE_48x768",
@@ -14225,6 +15026,7 @@ sub warnHipOnlyUnsupportedFunctions {
     "CUBLASLT_MATMUL_TILE_256x72",
     "CUBLASLT_MATMUL_TILE_256x64",
     "CUBLASLT_MATMUL_TILE_256x56",
+    "CUBLASLT_MATMUL_TILE_256x512",
     "CUBLASLT_MATMUL_TILE_256x48",
     "CUBLASLT_MATMUL_TILE_256x40",
     "CUBLASLT_MATMUL_TILE_256x32",
@@ -14250,6 +15052,7 @@ sub warnHipOnlyUnsupportedFunctions {
     "CUBLASLT_MATMUL_TILE_256x120",
     "CUBLASLT_MATMUL_TILE_256x112",
     "CUBLASLT_MATMUL_TILE_256x104",
+    "CUBLASLT_MATMUL_TILE_256x1024",
     "CUBLASLT_MATMUL_TILE_24x768",
     "CUBLASLT_MATMUL_TILE_24x704",
     "CUBLASLT_MATMUL_TILE_24x640",
@@ -14475,6 +15278,7 @@ sub warnHipOnlyUnsupportedFunctions {
     "CUBLASLT_MATMUL_STAGES_32x2",
     "CUBLASLT_MATMUL_STAGES_32x10",
     "CUBLASLT_MATMUL_STAGES_32x1",
+    "CUBLASLT_MATMUL_STAGES_256xAUTO",
     "CUBLASLT_MATMUL_STAGES_16xAUTO",
     "CUBLASLT_MATMUL_STAGES_16x6",
     "CUBLASLT_MATMUL_STAGES_16x5",
@@ -14499,6 +15303,10 @@ sub warnHipOnlyUnsupportedFunctions {
     "CUBLASLT_MATMUL_PREF_MAX_WORKSPACE_BYTES",
     "CUBLASLT_MATMUL_PREF_MAX_WAVES_COUNT",
     "CUBLASLT_MATMUL_PREF_IMPL_MASK",
+    "CUBLASLT_MATMUL_MATRIX_SCALE_VEC32_UE8M0",
+    "CUBLASLT_MATMUL_MATRIX_SCALE_VEC16_UE4M3",
+    "CUBLASLT_MATMUL_MATRIX_SCALE_SCALAR_32F",
+    "CUBLASLT_MATMUL_MATRIX_SCALE_END",
     "CUBLASLT_MATMUL_INNER_SHAPE_UNDEFINED",
     "CUBLASLT_MATMUL_INNER_SHAPE_MMA884",
     "CUBLASLT_MATMUL_INNER_SHAPE_MMA1688",
@@ -14514,6 +15322,7 @@ sub warnHipOnlyUnsupportedFunctions {
     "CUBLASLT_MATMUL_DESC_FILL_MODE",
     "CUBLASLT_MATMUL_DESC_FAST_ACCUM",
     "CUBLASLT_MATMUL_DESC_EPILOGUE_AUX_SCALE_POINTER",
+    "CUBLASLT_MATMUL_DESC_EPILOGUE_AUX_SCALE_MODE",
     "CUBLASLT_MATMUL_DESC_EPILOGUE_AUX_POINTER",
     "CUBLASLT_MATMUL_DESC_EPILOGUE_AUX_LD",
     "CUBLASLT_MATMUL_DESC_EPILOGUE_AUX_DATA_TYPE",
@@ -14521,17 +15330,24 @@ sub warnHipOnlyUnsupportedFunctions {
     "CUBLASLT_MATMUL_DESC_EPILOGUE_AUX_AMAX_POINTER",
     "CUBLASLT_MATMUL_DESC_EPILOGUE",
     "CUBLASLT_MATMUL_DESC_D_SCALE_POINTER",
+    "CUBLASLT_MATMUL_DESC_D_SCALE_MODE",
+    "CUBLASLT_MATMUL_DESC_D_OUT_SCALE_POINTER",
+    "CUBLASLT_MATMUL_DESC_D_OUT_SCALE_MODE",
     "CUBLASLT_MATMUL_DESC_C_SCALE_POINTER",
+    "CUBLASLT_MATMUL_DESC_C_SCALE_MODE",
     "CUBLASLT_MATMUL_DESC_COMPUTE_TYPE",
     "CUBLASLT_MATMUL_DESC_B_SCALE_POINTER",
+    "CUBLASLT_MATMUL_DESC_B_SCALE_MODE",
     "CUBLASLT_MATMUL_DESC_BIAS_POINTER",
     "CUBLASLT_MATMUL_DESC_BIAS_DATA_TYPE",
     "CUBLASLT_MATMUL_DESC_BIAS_BATCH_STRIDE",
     "CUBLASLT_MATMUL_DESC_A_SCALE_POINTER",
+    "CUBLASLT_MATMUL_DESC_A_SCALE_MODE",
     "CUBLASLT_MATMUL_DESC_ATOMIC_SYNC_OUT_COUNTERS_POINTER",
     "CUBLASLT_MATMUL_DESC_ATOMIC_SYNC_NUM_CHUNKS_D_ROWS",
     "CUBLASLT_MATMUL_DESC_ATOMIC_SYNC_NUM_CHUNKS_D_COLS",
     "CUBLASLT_MATMUL_DESC_ATOMIC_SYNC_IN_COUNTERS_POINTER",
+    "CUBLASLT_MATMUL_DESC_AMAX_D_POINTER",
     "CUBLASLT_MATMUL_DESC_ALPHA_VECTOR_BATCH_STRIDE",
     "CUBLASLT_EPILOGUE_RELU_BIAS",
     "CUBLASLT_EPILOGUE_RELU_AUX_BIAS",
@@ -16251,7 +17067,7 @@ if ($help) {
     print STDERR "$USAGE\n";
 }
 if ($version) {
-    print STDERR "HIP version 6.4.0\n";
+    print STDERR "HIP version 6.5.0\n";
 }
 while (@ARGV) {
     $fileName=shift (@ARGV);

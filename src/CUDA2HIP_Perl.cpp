@@ -625,9 +625,7 @@ namespace perl {
     for (auto ma = CUDA_RENAMES_MAP().rbegin(); ma != CUDA_RENAMES_MAP().rend(); ++ma) {
       TranslateToRoc = false;
       if (Statistics::isUnsupported(ma->second)) {
-        if (ma->second.type == CONV_DEVICE_FUNC || ma->second.type == CONV_DEVICE_TYPE)
-          continue;
-        if (ma->second.apiType == API_BLAS || ma->second.apiType == API_SPARSE || ma->second.apiType == API_RAND || ma->second.apiType == API_TENSOR || ma->second.apiType == API_DRIVER || ma->second.apiType == API_RUNTIME || ma->second.apiType == API_COMPLEX) {
+        if (ma->second.type != CONV_DEVICE_FUNC && ma->second.type != CONV_DEVICE_TYPE && ma->second.apiType != API_DNN) {
           hip_unsupported << (countHipOnlyUnsupported ? ",\n" : "") << tab << "\"" << ma->first.str() << "\"";
           countHipOnlyUnsupported++;
         }
