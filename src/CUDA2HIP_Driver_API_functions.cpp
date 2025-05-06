@@ -1719,7 +1719,7 @@ const std::map<llvm::StringRef, hipAPIversions> HIP_DRIVER_FUNCTION_VER_MAP {
   {"hipGraphExecBatchMemOpNodeSetParams",                         {HIP_6040, HIP_0,    HIP_0   }},
   {"hipEventRecordWithFlags",                                     {HIP_6040, HIP_0,    HIP_0   }},
   {"hipDeviceGetTexture1DLinearMaxWidth",                         {HIP_6040, HIP_0,    HIP_0   }},
-  {"hipDrvLaunchKernelEx",                                        {HIP_6050, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"hipDrvLaunchKernelEx",                                        {HIP_7000, HIP_0,    HIP_0,  HIP_LATEST}},
 };
 
 const std::map<llvm::StringRef, cudaAPIChangedVersions> CUDA_DRIVER_FUNCTION_CHANGED_VER_MAP {
