@@ -1481,7 +1481,7 @@ const std::map<llvm::StringRef, hipAPIversions> HIP_RUNTIME_FUNCTION_VER_MAP {
   {"hipGraphExecGetFlags",                                    {HIP_6030, HIP_0,    HIP_0   }},
   {"hipGraphNodeSetParams",                                   {HIP_6030, HIP_0,    HIP_0   }},
   {"hipGraphExecNodeSetParams",                               {HIP_6030, HIP_0,    HIP_0   }},
-  {"hipLaunchKernelExC",                                      {HIP_6050, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"hipLaunchKernelExC",                                      {HIP_7000, HIP_0,    HIP_0,  HIP_LATEST}},
 };
 
 const std::map<llvm::StringRef, cudaAPIChangedVersions> CUDA_RUNTIME_FUNCTION_CHANGED_VER_MAP {
