@@ -19,6 +19,7 @@
 |`CUBLAS_COMPUTE_16F`|11.0| | | |`HIPBLAS_COMPUTE_16F`|6.0.0| | | | | | | | | | |
 |`CUBLAS_COMPUTE_16F_PEDANTIC`|11.0| | | |`HIPBLAS_COMPUTE_16F_PEDANTIC`|6.0.0| | | | | | | | | | |
 |`CUBLAS_COMPUTE_32F`|11.0| | | |`HIPBLAS_COMPUTE_32F`|6.0.0| | | | |`rocblas_compute_type_f32`|5.7.0| | | | |
+|`CUBLAS_COMPUTE_32F_EMULATED_16BFX9`|12.9| | | | | | | | | | | | | | | |
 |`CUBLAS_COMPUTE_32F_FAST_16BF`|11.0| | | |`HIPBLAS_COMPUTE_32F_FAST_16BF`|6.0.0| | | | | | | | | | |
 |`CUBLAS_COMPUTE_32F_FAST_16F`|11.0| | | |`HIPBLAS_COMPUTE_32F_FAST_16F`|6.0.0| | | | | | | | | | |
 |`CUBLAS_COMPUTE_32F_FAST_TF32`|11.0| | | |`HIPBLAS_COMPUTE_32F_FAST_TF32`|6.0.0| | | | | | | | | | |
@@ -30,9 +31,13 @@
 |`CUBLAS_DEFAULT_MATH`|9.0| | | |`HIPBLAS_DEFAULT_MATH`|6.1.0| | | | |`rocblas_default_math`|5.7.0| | | | |
 |`CUBLAS_DIAG_NON_UNIT`| | | | |`HIPBLAS_DIAG_NON_UNIT`|1.8.2| | | | |`rocblas_diagonal_non_unit`|1.5.0| | | | |
 |`CUBLAS_DIAG_UNIT`| | | | |`HIPBLAS_DIAG_UNIT`|1.8.2| | | | |`rocblas_diagonal_unit`|1.5.0| | | | |
+|`CUBLAS_EMULATION_STRATEGY_DEFAULT`|12.9| | | | | | | | | | | | | | | |
+|`CUBLAS_EMULATION_STRATEGY_EAGER`|12.9| | | | | | | | | | | | | | | |
+|`CUBLAS_EMULATION_STRATEGY_PERFORMANT`|12.9| | | | | | | | | | | | | | | |
 |`CUBLAS_FILL_MODE_FULL`|10.1| | | |`HIPBLAS_FILL_MODE_FULL`|1.8.2| | | | |`rocblas_fill_full`|1.5.0| | | | |
 |`CUBLAS_FILL_MODE_LOWER`| | | | |`HIPBLAS_FILL_MODE_LOWER`|1.8.2| | | | |`rocblas_fill_lower`|1.5.0| | | | |
 |`CUBLAS_FILL_MODE_UPPER`| | | | |`HIPBLAS_FILL_MODE_UPPER`|1.8.2| | | | |`rocblas_fill_upper`|1.5.0| | | | |
+|`CUBLAS_FP32_EMULATED_BF16X9_MATH`|12.9| | | |`HIPBLAS_FP32_EMULATED_BF16X9_MATH`| | | | | | | | | | | |
 |`CUBLAS_GEMM_ALGO0`|8.0| | | | | | | | | | | | | | | |
 |`CUBLAS_GEMM_ALGO0_TENSOR_OP`|9.0| | | | | | | | | | | | | | | |
 |`CUBLAS_GEMM_ALGO1`|8.0| | | | | | | | | | | | | | | |
@@ -104,6 +109,7 @@
 |`cublasComputeType_t`|11.0| | | |`hipblasComputeType_t`|6.0.0| | | | |`rocblas_computetype`|5.7.0| | | | |
 |`cublasContext`| | | | | | | | | | |`_rocblas_handle`|1.5.0| | | | |
 |`cublasDiagType_t`| | | | |`hipblasDiagType_t`|1.8.2| | | | |`rocblas_diagonal`|1.5.0| | | | |
+|`cublasEmulationStrategy_t`|12.9| | | |`hipblasEmulationStrategy_t`| | | | | | | | | | | |
 |`cublasFillMode_t`| | | | |`hipblasFillMode_t`|1.8.2| | | | |`rocblas_fill`|1.5.0| | | | |
 |`cublasGemmAlgo_t`|8.0| | | |`hipblasGemmAlgo_t`|1.8.2| | | | |`rocblas_gemm_algo`|1.8.2| | | | |
 |`cublasHandle_t`| | | | |`hipblasHandle_t`|3.0.0| | | | |`rocblas_handle`|1.5.0| | | | |
@@ -1092,6 +1098,7 @@
 |`cublasFree`| | | | | | | | | | | | | | | | |
 |`cublasGetAtomicsMode`| | | | |`hipblasGetAtomicsMode`|3.10.0| | | | |`rocblas_get_atomics_mode`|3.8.0| | | | |
 |`cublasGetCudartVersion`|10.1| | | | | | | | | | | | | | | |
+|`cublasGetEmulationStrategy`|12.9| | | | | | | | | | | | | | | |
 |`cublasGetError`| | | | | | | | | | | | | | | | |
 |`cublasGetLoggerCallback`|9.2| | | | | | | | | | | | | | | |
 |`cublasGetMathMode`|9.0| | | |`hipblasGetMathMode`|6.1.0| | | | |`rocblas_get_math_mode`|5.7.0| | | | |
@@ -1118,6 +1125,7 @@
 |`cublasLoggerConfigure`|9.2| | | | | | | | | | | | | | | |
 |`cublasMigrateComputeType`|11.0| | | | | | | | | | | | | | | |
 |`cublasSetAtomicsMode`| | | | |`hipblasSetAtomicsMode`|3.10.0| | | | |`rocblas_set_atomics_mode`|3.8.0| | | | |
+|`cublasSetEmulationStrategy`|12.9| | | | | | | | | | | | | | | |
 |`cublasSetKernelStream`| | | | | | | | | | | | | | | | |
 |`cublasSetLoggerCallback`|9.2| | | | | | | | | | | | | | | |
 |`cublasSetMathMode`|9.0| | | |`hipblasSetMathMode`|6.1.0| | | | |`rocblas_set_math_mode`|5.7.0| | | | |

@@ -7372,6 +7372,7 @@ sub simpleSubstitutions {
     subst("cublasComputeType_t", "hipblasComputeType_t", "type");
     subst("cublasDataType_t", "hipDataType", "type");
     subst("cublasDiagType_t", "hipblasDiagType_t", "type");
+    subst("cublasEmulationStrategy_t", "hipblasEmulationStrategy_t", "type");
     subst("cublasFillMode_t", "hipblasFillMode_t", "type");
     subst("cublasGemmAlgo_t", "hipblasGemmAlgo_t", "type");
     subst("cublasHandle_t", "hipblasHandle_t", "type");
@@ -7761,6 +7762,7 @@ sub simpleSubstitutions {
     subst("CUBLAS_FILL_MODE_FULL", "HIPBLAS_FILL_MODE_FULL", "numeric_literal");
     subst("CUBLAS_FILL_MODE_LOWER", "HIPBLAS_FILL_MODE_LOWER", "numeric_literal");
     subst("CUBLAS_FILL_MODE_UPPER", "HIPBLAS_FILL_MODE_UPPER", "numeric_literal");
+    subst("CUBLAS_FP32_EMULATED_BF16X9_MATH", "HIPBLAS_FP32_EMULATED_BF16X9_MATH", "numeric_literal");
     subst("CUBLAS_GEMM_DEFAULT", "HIPBLAS_GEMM_DEFAULT", "numeric_literal");
     subst("CUBLAS_GEMM_DFALT", "HIPBLAS_GEMM_DEFAULT", "numeric_literal");
     subst("CUBLAS_MATH_DISALLOW_REDUCED_PRECISION_REDUCTION", "HIPBLAS_MATH_DISALLOW_REDUCED_PRECISION_REDUCTION", "numeric_literal");
@@ -11677,6 +11679,7 @@ sub warnRemovedFunctions {
     "cublasSetMatrixAsync_64",
     "cublasSetLoggerCallback",
     "cublasSetKernelStream",
+    "cublasSetEmulationStrategy",
     "cublasRotmgEx",
     "cublasRotmEx_64",
     "cublasRotmEx",
@@ -11745,6 +11748,7 @@ sub warnRemovedFunctions {
     "cublasGetMatrixAsync_64",
     "cublasGetLoggerCallback",
     "cublasGetError",
+    "cublasGetEmulationStrategy",
     "cublasGetCudartVersion",
     "cublasGemmGroupedBatchedEx_64",
     "cublasGemmGroupedBatchedEx",
@@ -13032,8 +13036,12 @@ sub warnRemovedFunctions {
     "CUBLAS_GEMM_ALGO1",
     "CUBLAS_GEMM_ALGO0_TENSOR_OP",
     "CUBLAS_GEMM_ALGO0",
+    "CUBLAS_EMULATION_STRATEGY_PERFORMANT",
+    "CUBLAS_EMULATION_STRATEGY_EAGER",
+    "CUBLAS_EMULATION_STRATEGY_DEFAULT",
     "CUBLAS_DIRECT_FORWARD",
     "CUBLAS_DIRECT_BACKWARD",
+    "CUBLAS_COMPUTE_32F_EMULATED_16BFX9",
     "CUBLASLT_SEARCH_RESERVED_09",
     "CUBLASLT_SEARCH_RESERVED_08",
     "CUBLASLT_SEARCH_RESERVED_07",
@@ -14224,6 +14232,7 @@ sub warnHipOnlyUnsupportedFunctions {
     "cublasSetMatrixAsync_64",
     "cublasSetLoggerCallback",
     "cublasSetKernelStream",
+    "cublasSetEmulationStrategy",
     "cublasRotmgEx",
     "cublasRotmEx_64",
     "cublasRotmEx",
@@ -14310,6 +14319,7 @@ sub warnHipOnlyUnsupportedFunctions {
     "cublasGetMatrixAsync_64",
     "cublasGetLoggerCallback",
     "cublasGetError",
+    "cublasGetEmulationStrategy",
     "cublasGetCudartVersion",
     "cublasGemmStridedBatchedEx_64",
     "cublasGemmGroupedBatchedEx_64",
@@ -14552,6 +14562,10 @@ sub warnHipOnlyUnsupportedFunctions {
     "CUBLAS_GEMM_ALGO1",
     "CUBLAS_GEMM_ALGO0_TENSOR_OP",
     "CUBLAS_GEMM_ALGO0",
+    "CUBLAS_FP32_EMULATED_BF16X9_MATH",
+    "CUBLAS_EMULATION_STRATEGY_PERFORMANT",
+    "CUBLAS_EMULATION_STRATEGY_EAGER",
+    "CUBLAS_EMULATION_STRATEGY_DEFAULT",
     "CUBLAS_COMPUTE_64F_PEDANTIC",
     "CUBLAS_COMPUTE_64F",
     "CUBLAS_COMPUTE_32I_PEDANTIC",
@@ -14560,6 +14574,7 @@ sub warnHipOnlyUnsupportedFunctions {
     "CUBLAS_COMPUTE_32F_FAST_TF32",
     "CUBLAS_COMPUTE_32F_FAST_16F",
     "CUBLAS_COMPUTE_32F_FAST_16BF",
+    "CUBLAS_COMPUTE_32F_EMULATED_16BFX9",
     "CUBLAS_COMPUTE_16F_PEDANTIC",
     "CUBLAS_COMPUTE_16F",
     "CUBLASLT_SEARCH_RESERVED_09",
