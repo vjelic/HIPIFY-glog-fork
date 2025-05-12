@@ -41,6 +41,8 @@ const std::map<llvm::StringRef, hipCounter> CUDA_BLAS_FUNCTION_MAP {
   {"cublasMigrateComputeType",                             {"hipblasMigrateComputeType",                                 "",                                                   CONV_LIB_FUNC, API_BLAS, SEC::BLAS_HELPER, UNSUPPORTED}},
   {"cublasGetSmCountTarget",                               {"hipblasGetSmCountTarget",                                   "",                                                   CONV_LIB_FUNC, API_BLAS, SEC::BLAS_HELPER, UNSUPPORTED}},
   {"cublasSetSmCountTarget",                               {"hipblasSetSmCountTarget",                                   "",                                                   CONV_LIB_FUNC, API_BLAS, SEC::BLAS_HELPER, UNSUPPORTED}},
+  {"cublasGetEmulationStrategy",                           {"hipblasGetEmulationStrategy",                               "",                                                   CONV_LIB_FUNC, API_BLAS, SEC::BLAS_HELPER, UNSUPPORTED}},
+  {"cublasSetEmulationStrategy",                           {"hipblasSetEmulationStrategy",                               "",                                                   CONV_LIB_FUNC, API_BLAS, SEC::BLAS_HELPER, UNSUPPORTED}},
   {"cublasGetStatusName",                                  {"hipblasGetStatusName",                                      "",                                                   CONV_LIB_FUNC, API_BLAS, SEC::BLAS_HELPER, UNSUPPORTED}},
   {"cublasGetStatusString",                                {"hipblasGetStatusString",                                    "rocblas_status_to_string",                           CONV_LIB_FUNC, API_BLAS, SEC::BLAS_HELPER, HIP_UNSUPPORTED}},
 
@@ -1626,6 +1628,8 @@ const std::map<llvm::StringRef, cudaAPIversions> CUDA_BLAS_FUNCTION_VER_MAP {
   {"cublasLtLoggerForceDisable",                           {CUDA_110, CUDA_0,   CUDA_0   }}, // A: CUDA_VERSION 11003, CUBLAS_VERSION 11200, CUBLAS_VER_MAJOR 11 CUBLAS_VER_MINOR 2
   {"cublasGemmGroupedBatchedEx",                           {CUDA_125, CUDA_0,   CUDA_0   }},
   {"cublasGemmGroupedBatchedEx_64",                        {CUDA_125, CUDA_0,   CUDA_0   }},
+  {"cublasGetEmulationStrategy",                           {CUDA_129, CUDA_0,   CUDA_0   }},
+  {"cublasSetEmulationStrategy",                           {CUDA_129, CUDA_0,   CUDA_0   }},
 };
 
 const std::map<llvm::StringRef, hipAPIversions> HIP_BLAS_FUNCTION_VER_MAP {

@@ -80,6 +80,7 @@ const std::map<llvm::StringRef, hipCounter> CUDA_BLAS_TYPE_NAME_MAP {
   {"CUBLAS_TENSOR_OP_MATH",                                          {"HIPBLAS_TENSOR_OP_MATH",                                            "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::BLAS_DATA_TYPES, ROC_UNSUPPORTED | CUDA_DEPRECATED}}, // 1
   {"CUBLAS_PEDANTIC_MATH",                                           {"HIPBLAS_PEDANTIC_MATH",                                             "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::BLAS_DATA_TYPES, ROC_UNSUPPORTED}}, // 2
   {"CUBLAS_TF32_TENSOR_OP_MATH",                                     {"HIPBLAS_TF32_TENSOR_OP_MATH",                                       "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::BLAS_DATA_TYPES, ROC_UNSUPPORTED}}, // 3
+  {"CUBLAS_FP32_EMULATED_BF16X9_MATH",                               {"HIPBLAS_FP32_EMULATED_BF16X9_MATH",                                 "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::BLAS_DATA_TYPES, ROC_UNSUPPORTED}}, // 4
   {"CUBLAS_MATH_DISALLOW_REDUCED_PRECISION_REDUCTION",               {"HIPBLAS_MATH_DISALLOW_REDUCED_PRECISION_REDUCTION",                 "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::BLAS_DATA_TYPES, ROC_UNSUPPORTED}}, // 16
 
   // Blass different GEMM algorithms
@@ -184,10 +185,16 @@ const std::map<llvm::StringRef, hipCounter> CUDA_BLAS_TYPE_NAME_MAP {
   {"CUBLAS_COMPUTE_32F_FAST_16F",                                    {"HIPBLAS_COMPUTE_32F_FAST_16F",                                      "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::BLAS_DATA_TYPES, ROC_UNSUPPORTED}}, // 74
   {"CUBLAS_COMPUTE_32F_FAST_16BF",                                   {"HIPBLAS_COMPUTE_32F_FAST_16BF",                                     "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::BLAS_DATA_TYPES, ROC_UNSUPPORTED}}, // 75
   {"CUBLAS_COMPUTE_32F_FAST_TF32",                                   {"HIPBLAS_COMPUTE_32F_FAST_TF32",                                     "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::BLAS_DATA_TYPES, ROC_UNSUPPORTED}}, // 77
+  {"CUBLAS_COMPUTE_32F_EMULATED_16BFX9",                             {"HIPBLAS_COMPUTE_32F_EMULATED_16BFX9",                               "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::BLAS_DATA_TYPES, UNSUPPORTED}}, // 78
   {"CUBLAS_COMPUTE_64F",                                             {"HIPBLAS_COMPUTE_64F",                                               "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::BLAS_DATA_TYPES, ROC_UNSUPPORTED}}, // 70
   {"CUBLAS_COMPUTE_64F_PEDANTIC",                                    {"HIPBLAS_COMPUTE_64F_PEDANTIC",                                      "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::BLAS_DATA_TYPES, ROC_UNSUPPORTED}}, // 71
   {"CUBLAS_COMPUTE_32I",                                             {"HIPBLAS_COMPUTE_32I",                                               "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::BLAS_DATA_TYPES, ROC_UNSUPPORTED}}, // 72
   {"CUBLAS_COMPUTE_32I_PEDANTIC",                                    {"HIPBLAS_COMPUTE_32I_PEDANTIC",                                      "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::BLAS_DATA_TYPES, ROC_UNSUPPORTED}}, // 73
+
+  {"cublasEmulationStrategy_t",                                      {"hipblasEmulationStrategy_t",                                        "",                                                         CONV_TYPE, API_BLAS, SEC::BLAS_DATA_TYPES}},
+  {"CUBLAS_EMULATION_STRATEGY_DEFAULT",                              {"HIPBLAS_EMULATION_STRATEGY_DEFAULT",                                "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::BLAS_DATA_TYPES, UNSUPPORTED}}, // 0
+  {"CUBLAS_EMULATION_STRATEGY_PERFORMANT",                           {"HIPBLAS_EMULATION_STRATEGY_PERFORMANT",                             "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::BLAS_DATA_TYPES, UNSUPPORTED}}, // 1
+  {"CUBLAS_EMULATION_STRATEGY_EAGER",                                {"HIPBLAS_EMULATION_STRATEGY_EAGER",                                  "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::BLAS_DATA_TYPES, UNSUPPORTED}}, // 2
 
   // cuBLASLt Data Types
 
@@ -2137,6 +2144,12 @@ const std::map<llvm::StringRef, cudaAPIversions> CUDA_BLAS_TYPE_NAME_VER_MAP {
   {"CUBLASLT_MATMUL_MATRIX_SCALE_VEC16_UE4M3",                       {CUDA_128, CUDA_0,   CUDA_0  }},
   {"CUBLASLT_MATMUL_MATRIX_SCALE_VEC32_UE8M0",                       {CUDA_128, CUDA_0,   CUDA_0  }},
   {"CUBLASLT_MATMUL_MATRIX_SCALE_END",                               {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"CUBLAS_FP32_EMULATED_BF16X9_MATH",                               {CUDA_129, CUDA_0,   CUDA_0  }},
+  {"CUBLAS_COMPUTE_32F_EMULATED_16BFX9",                             {CUDA_129, CUDA_0,   CUDA_0  }},
+  {"cublasEmulationStrategy_t",                                      {CUDA_129, CUDA_0,   CUDA_0  }},
+  {"CUBLAS_EMULATION_STRATEGY_DEFAULT",                              {CUDA_129, CUDA_0,   CUDA_0  }},
+  {"CUBLAS_EMULATION_STRATEGY_PERFORMANT",                           {CUDA_129, CUDA_0,   CUDA_0  }},
+  {"CUBLAS_EMULATION_STRATEGY_EAGER",                                {CUDA_129, CUDA_0,   CUDA_0  }},
 };
 
 const std::map<llvm::StringRef, hipAPIversions> HIP_BLAS_TYPE_NAME_VER_MAP {
