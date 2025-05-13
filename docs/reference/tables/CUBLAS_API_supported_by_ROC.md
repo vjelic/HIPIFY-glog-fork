@@ -172,6 +172,7 @@
 |`CUBLASLT_ALGO_CAP_CUSTOM_MEMORY_ORDER`|10.1| | | | | | | | | |
 |`CUBLASLT_ALGO_CAP_CUSTOM_OPTION_MAX`|10.1| | | | | | | | | |
 |`CUBLASLT_ALGO_CAP_EPILOGUE_MASK`|10.1| | | | | | | | | |
+|`CUBLASLT_ALGO_CAP_FLOATING_POINT_EMULATION_SUPPORT`|12.9| | | | | | | | | |
 |`CUBLASLT_ALGO_CAP_LD_NEGATIVE`|11.0| | | | | | | | | |
 |`CUBLASLT_ALGO_CAP_MIN_ALIGNMENT_A_BYTES`|11.0| | | | | | | | | |
 |`CUBLASLT_ALGO_CAP_MIN_ALIGNMENT_B_BYTES`|11.0| | | | | | | | | |
@@ -179,6 +180,7 @@
 |`CUBLASLT_ALGO_CAP_MIN_ALIGNMENT_D_BYTES`|11.0| | | | | | | | | |
 |`CUBLASLT_ALGO_CAP_NUMERICAL_IMPL_FLAGS`|11.0| | | | | | | | | |
 |`CUBLASLT_ALGO_CAP_OUT_OF_PLACE_RESULT_SUPPORT`|10.1| | | | | | | | | |
+|`CUBLASLT_ALGO_CAP_POINTER_ARRAY_BATCH_SUPPORT`|12.9| | | | | | | | | |
 |`CUBLASLT_ALGO_CAP_POINTER_MODE_MASK`|10.1| | | | | | | | | |
 |`CUBLASLT_ALGO_CAP_REDUCTION_SCHEME_MASK`|10.1| | | | | | | | | |
 |`CUBLASLT_ALGO_CAP_SPLITK_SUPPORT`|10.1| | | | | | | | | |
@@ -195,6 +197,8 @@
 |`CUBLASLT_ALGO_CONFIG_SPLITK_NUM`|10.1| | | | | | | | | |
 |`CUBLASLT_ALGO_CONFIG_STAGES_ID`|11.0| | | | | | | | | |
 |`CUBLASLT_ALGO_CONFIG_TILE_ID`|10.1| | | | | | | | | |
+|`CUBLASLT_BATCH_MODE_POINTER_ARRAY`|12.9| | | | | | | | | |
+|`CUBLASLT_BATCH_MODE_STRIDED`|12.9| | | | | | | | | |
 |`CUBLASLT_CLUSTER_SHAPE_10x1x1`|11.8| | | | | | | | | |
 |`CUBLASLT_CLUSTER_SHAPE_11x1x1`|11.8| | | | | | | | | |
 |`CUBLASLT_CLUSTER_SHAPE_12x1x1`|11.8| | | | | | | | | |
@@ -305,8 +309,11 @@
 |`CUBLASLT_MATMUL_INNER_SHAPE_MMA1688`|11.8| | | | | | | | | |
 |`CUBLASLT_MATMUL_INNER_SHAPE_MMA884`|11.8| | | | | | | | | |
 |`CUBLASLT_MATMUL_INNER_SHAPE_UNDEFINED`|11.8| | | | | | | | | |
+|`CUBLASLT_MATMUL_MATRIX_SCALE_BLK128x128_32F`|12.9| | | | | | | | | |
 |`CUBLASLT_MATMUL_MATRIX_SCALE_END`|12.8| | | | | | | | | |
+|`CUBLASLT_MATMUL_MATRIX_SCALE_OUTER_VEC_32F`|12.9| | | | | | | | | |
 |`CUBLASLT_MATMUL_MATRIX_SCALE_SCALAR_32F`|12.8| | | | | | | | | |
+|`CUBLASLT_MATMUL_MATRIX_SCALE_VEC128_32F`|12.9| | | | | | | | | |
 |`CUBLASLT_MATMUL_MATRIX_SCALE_VEC16_UE4M3`|12.8| | | | | | | | | |
 |`CUBLASLT_MATMUL_MATRIX_SCALE_VEC32_UE8M0`|12.8| | | | | | | | | |
 |`CUBLASLT_MATMUL_PREF_IMPL_MASK`|11.0| | | | | | | | | |
@@ -991,6 +998,7 @@
 |`CUBLASLT_MATMUL_TILE_END`|10.1| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_UNDEFINED`|10.1| | | | | | | | | |
 |`CUBLASLT_MATRIX_LAYOUT_BATCH_COUNT`|10.1| | | | | | | | | |
+|`CUBLASLT_MATRIX_LAYOUT_BATCH_MODE`|12.9| | | | | | | | | |
 |`CUBLASLT_MATRIX_LAYOUT_COLS`|10.1| | | | | | | | | |
 |`CUBLASLT_MATRIX_LAYOUT_LD`|10.1| | | | | | | | | |
 |`CUBLASLT_MATRIX_LAYOUT_ORDER`|10.1| | | | | | | | | |
@@ -1053,6 +1061,7 @@
 |`CUBLASLT_SEARCH_RESERVED_07`|12.6| | | | | | | | | |
 |`CUBLASLT_SEARCH_RESERVED_08`|12.6| | | | | | | | | |
 |`CUBLASLT_SEARCH_RESERVED_09`|12.6| | | | | | | | | |
+|`cublasLtBatchMode_t`|12.9| | | | | | | | | |
 |`cublasLtClusterShape_t`|11.8| | | | | | | | | |
 |`cublasLtContext`|10.1| | | | | | | | | |
 |`cublasLtEpilogue_t`|10.1| | | | | | | | | |
