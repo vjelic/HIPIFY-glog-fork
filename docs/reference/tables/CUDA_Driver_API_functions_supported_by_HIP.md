@@ -334,6 +334,7 @@
 |`CU_COMPUTEMODE_EXCLUSIVE_PROCESS`| | | | |`hipComputeModeExclusiveProcess`|2.0.0| | | | |
 |`CU_COMPUTEMODE_PROHIBITED`| | | | |`hipComputeModeProhibited`|1.9.0| | | | |
 |`CU_COMPUTE_ACCELERATED_TARGET_BASE`|12.0| | | | | | | | | |
+|`CU_COMPUTE_FAMILY_TARGET_BASE`|12.9| | | | | | | | | |
 |`CU_COREDUMP_DEFAULT_FLAGS`|12.5| | | | | | | | | |
 |`CU_COREDUMP_ENABLE_ON_EXCEPTION`|12.1| | | | | | | | | |
 |`CU_COREDUMP_ENABLE_USER_TRIGGER`|12.1| | | | | | | | | |
@@ -431,7 +432,9 @@
 |`CU_DEVICE_ATTRIBUTE_HANDLE_TYPE_WIN32_KMT_HANDLE_SUPPORTED`|10.2| | | | | | | | | |
 |`CU_DEVICE_ATTRIBUTE_HOST_NATIVE_ATOMIC_SUPPORTED`|8.0| | | |`hipDeviceAttributeHostNativeAtomicSupported`|4.3.0| | | | |
 |`CU_DEVICE_ATTRIBUTE_HOST_NUMA_ID`|12.2| | | | | | | | | |
+|`CU_DEVICE_ATTRIBUTE_HOST_NUMA_MEMORY_POOLS_SUPPORTED`|12.9| | | | | | | | | |
 |`CU_DEVICE_ATTRIBUTE_HOST_NUMA_MULTINODE_IPC_SUPPORTED`|12.8| | | | | | | | | |
+|`CU_DEVICE_ATTRIBUTE_HOST_NUMA_VIRTUAL_MEMORY_MANAGEMENT_SUPPORTED`|12.9| | | | | | | | | |
 |`CU_DEVICE_ATTRIBUTE_HOST_REGISTER_SUPPORTED`|9.2| | | |`hipDeviceAttributeHostRegisterSupported`|6.0.0| | | | |
 |`CU_DEVICE_ATTRIBUTE_INTEGRATED`| | | | |`hipDeviceAttributeIntegrated`|1.9.0| | | | |
 |`CU_DEVICE_ATTRIBUTE_IPC_EVENT_SUPPORTED`|12.0| | | | | | | | | |
@@ -536,6 +539,7 @@
 |`CU_DEVICE_ATTRIBUTE_UNIFIED_FUNCTION_POINTERS`|12.0| | | | | | | | | |
 |`CU_DEVICE_ATTRIBUTE_VIRTUAL_ADDRESS_MANAGEMENT_SUPPORTED`|10.2|11.2| | | | | | | | |
 |`CU_DEVICE_ATTRIBUTE_VIRTUAL_MEMORY_MANAGEMENT_SUPPORTED`|11.2| | | |`hipDeviceAttributeVirtualMemoryManagementSupported`|5.3.0| | | | |
+|`CU_DEVICE_ATTRIBUTE_VULKAN_CIG_SUPPORTED`|12.9| | | | | | | | | |
 |`CU_DEVICE_ATTRIBUTE_WARP_SIZE`| | | | |`hipDeviceAttributeWarpSize`|1.6.0| | | | |
 |`CU_DEVICE_CPU`|8.0| | | |`hipCpuDeviceId`|3.7.0| | | | |
 |`CU_DEVICE_INVALID`|8.0| | | |`hipInvalidDeviceId`|3.7.0| | | | |
@@ -1063,12 +1067,21 @@
 |`CU_TARGET_COMPUTE_10`| | | |9.0| | | | | | |
 |`CU_TARGET_COMPUTE_100`|12.8| | | | | | | | | |
 |`CU_TARGET_COMPUTE_100A`|12.8| | | | | | | | | |
+|`CU_TARGET_COMPUTE_100F`|12.9| | | | | | | | | |
 |`CU_TARGET_COMPUTE_101`|12.8| | | | | | | | | |
 |`CU_TARGET_COMPUTE_101A`|12.8| | | | | | | | | |
+|`CU_TARGET_COMPUTE_101F`|12.9| | | | | | | | | |
+|`CU_TARGET_COMPUTE_103`|12.9| | | | | | | | | |
+|`CU_TARGET_COMPUTE_103A`|12.9| | | | | | | | | |
+|`CU_TARGET_COMPUTE_103F`|12.9| | | | | | | | | |
 |`CU_TARGET_COMPUTE_11`| | | |9.0| | | | | | |
 |`CU_TARGET_COMPUTE_12`| | | |9.0| | | | | | |
 |`CU_TARGET_COMPUTE_120`|12.8| | | | | | | | | |
 |`CU_TARGET_COMPUTE_120A`|12.8| | | | | | | | | |
+|`CU_TARGET_COMPUTE_120F`|12.9| | | | | | | | | |
+|`CU_TARGET_COMPUTE_121`|12.9| | | | | | | | | |
+|`CU_TARGET_COMPUTE_121A`|12.9| | | | | | | | | |
+|`CU_TARGET_COMPUTE_121F`|12.9| | | | | | | | | |
 |`CU_TARGET_COMPUTE_13`| | | |9.0| | | | | | |
 |`CU_TARGET_COMPUTE_20`| | | |12.0| | | | | | |
 |`CU_TARGET_COMPUTE_21`| | | |12.0| | | | | | |
