@@ -15,6 +15,7 @@
 |**CUDA**|**A**|**D**|**C**|**R**|**HIP**|**A**|**D**|**C**|**R**|**E**|
 |:--|:-:|:-:|:-:|:-:|:--|:-:|:-:|:-:|:-:|:-:|
 |`CIG_DATA_TYPE_D3D12_COMMAND_QUEUE`|12.5| | | | | | | | | |
+|`CIG_DATA_TYPE_NV_BLOB`|12.9| | | | | | | | | |
 |`CUCoredumpGenerationFlags`|12.5| | | | | | | | | |
 |`CUDA_ARRAY3D_2DARRAY`| |5.0| | | | | | | | |
 |`CUDA_ARRAY3D_COLOR_ATTACHMENT`|10.0| | | | | | | | | |
@@ -717,6 +718,8 @@
 |`CU_GRAPHICS_REGISTER_FLAGS_SURFACE_LDST`| | | | |`hipGraphicsRegisterFlagsSurfaceLoadStore`|4.4.0| | | | |
 |`CU_GRAPHICS_REGISTER_FLAGS_TEXTURE_GATHER`| | | | |`hipGraphicsRegisterFlagsTextureGather`|4.4.0| | | | |
 |`CU_GRAPHICS_REGISTER_FLAGS_WRITE_DISCARD`| | | | |`hipGraphicsRegisterFlagsWriteDiscard`|4.4.0| | | | |
+|`CU_GRAPH_CHILD_GRAPH_OWNERSHIP_CLONE`|12.9| | | | | | | | | |
+|`CU_GRAPH_CHILD_GRAPH_OWNERSHIP_MOVE`|12.9| | | | | | | | | |
 |`CU_GRAPH_COND_ASSIGN_DEFAULT`|12.3| | | | | | | | | |
 |`CU_GRAPH_COND_TYPE_IF`|12.3| | | | | | | | | |
 |`CU_GRAPH_COND_TYPE_SWITCH`|12.8| | | | | | | | | |
@@ -845,6 +848,7 @@
 |`CU_LAUNCH_ATTRIBUTE_PROGRAMMATIC_EVENT`|11.8| | | | | | | | | |
 |`CU_LAUNCH_ATTRIBUTE_PROGRAMMATIC_STREAM_SERIALIZATION`|11.8| | | | | | | | | |
 |`CU_LAUNCH_ATTRIBUTE_SYNCHRONIZATION_POLICY`|11.8| | | | | | | | | |
+|`CU_LAUNCH_KERNEL_REQUIRED_BLOCK_DIM`|12.9| | | | | | | | | |
 |`CU_LAUNCH_MEM_SYNC_DOMAIN_DEFAULT`|12.0| | | | | | | | | |
 |`CU_LAUNCH_MEM_SYNC_DOMAIN_REMOTE`|12.0| | | | | | | | | |
 |`CU_LAUNCH_PARAM_BUFFER_POINTER`| | | | |`HIP_LAUNCH_PARAM_BUFFER_POINTER`|1.6.0| | | | |
@@ -867,6 +871,8 @@
 |`CU_LIMIT_PRINTF_FIFO_SIZE`| | | | |`hipLimitPrintfFifoSize`|4.5.0| | | | |
 |`CU_LIMIT_SHMEM_SIZE`|12.5| | | | | | | | | |
 |`CU_LIMIT_STACK_SIZE`| | | | |`hipLimitStackSize`|5.3.0| | | | |
+|`CU_LOG_LEVEL_ERROR`|12.9| | | | | | | | | |
+|`CU_LOG_LEVEL_WARNING`|12.9| | | | | | | | | |
 |`CU_MEMCPY_FLAG_DEFAULT`|12.8| | | | | | | | | |
 |`CU_MEMCPY_FLAG_PREFER_OVERLAP_WITH_COMPUTE`|12.8| | | | | | | | | |
 |`CU_MEMCPY_OPERAND_TYPE_ARRAY`|12.8| | | | | | | | | |
@@ -917,6 +923,7 @@
 |`CU_MEM_CREATE_USAGE_HW_DECOMPRESS`|12.8| | | | | | | | | |
 |`CU_MEM_CREATE_USAGE_TILE_POOL`|11.1| | | | | | | | | |
 |`CU_MEM_DECOMPRESS_ALGORITHM_DEFLATE`|12.8| | | | | | | | | |
+|`CU_MEM_DECOMPRESS_ALGORITHM_LZ4`|12.9| | | | | | | | | |
 |`CU_MEM_DECOMPRESS_ALGORITHM_SNAPPY`|12.8| | | | | | | | | |
 |`CU_MEM_DECOMPRESS_UNSUPPORTED`|12.8| | | | | | | | | |
 |`CU_MEM_HANDLE_TYPE_FABRIC`|12.3| | | | | | | | | |
@@ -1295,6 +1302,8 @@
 |`CUfunction_attribute`| | | | |`hipFunction_attribute`|2.8.0| | | | |
 |`CUfunction_attribute_enum`| | | | |`hipFunction_attribute`|2.8.0| | | | |
 |`CUgraph`|10.0| | | |`hipGraph_t`|4.3.0| | | | |
+|`CUgraphChildGraphNodeOwnership`|12.9| | | | | | | | | |
+|`CUgraphChildGraphNodeOwnership_enum`|12.9| | | | | | | | | |
 |`CUgraphConditionalHandle`|12.3| | | | | | | | | |
 |`CUgraphConditionalNodeType`|12.3| | | | | | | | | |
 |`CUgraphConditionalNodeType_enum`|12.3| | | | | | | | | |
@@ -1383,6 +1392,8 @@
 |`CUlimit_enum`| | | | |`hipLimit_t`|1.6.0| | | | |
 |`CUlinkState`| | | | |`hiprtcLinkState`|5.3.0| | | | |
 |`CUlinkState_st`| | | | |`ihiprtcLinkState`|5.3.0| | | | |
+|`CUlogLevel`|12.9| | | | | | | | | |
+|`CUlogLevel_enum`|12.9| | | | | | | | | |
 |`CUmemAccessDesc`|10.2| | | |`hipMemAccessDesc`|5.2.0| | | | |
 |`CUmemAccessDesc_st`|10.2| | | |`hipMemAccessDesc`|5.2.0| | | | |
 |`CUmemAccessDesc_v1`|11.3| | | |`hipMemAccessDesc`|5.2.0| | | | |
