@@ -251,7 +251,7 @@ if (NOT HIPIFY_CLANG_TESTS_ONLY)
     # Get rid of any RPATH definations already.
     set_target_properties(hipify-clang PROPERTIES INSTALL_RPATH "")
     # Set RPATH for the binary.
-    set_target_properties(hipify-clang PROPERTIES LINK_FLAGS "-Wl,--enable-new-dtags -Wl,--rpath,$ORIGIN/../lib" )
+    set_target_properties(hipify-clang PROPERTIES LINK_FLAGS "-Wl,--enable-new-dtags -Wl,--rpath,\\$ORIGIN/../lib" )
 
     option(FILE_REORG_BACKWARD_COMPATIBILITY "Enable File Reorg with backward compatibility" OFF)
 
