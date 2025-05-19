@@ -1392,8 +1392,12 @@
 |`CUlimit_enum`| | | | |`hipLimit_t`|1.6.0| | | | |
 |`CUlinkState`| | | | |`hiprtcLinkState`|5.3.0| | | | |
 |`CUlinkState_st`| | | | |`ihiprtcLinkState`|5.3.0| | | | |
+|`CUlogIterator`|12.9| | | | | | | | | |
 |`CUlogLevel`|12.9| | | | | | | | | |
 |`CUlogLevel_enum`|12.9| | | | | | | | | |
+|`CUlogsCallback`|12.9| | | | | | | | | |
+|`CUlogsCallbackEntry_st`|12.9| | | | | | | | | |
+|`CUlogsCallbackHandle`|12.9| | | | | | | | | |
 |`CUmemAccessDesc`|10.2| | | |`hipMemAccessDesc`|5.2.0| | | | |
 |`CUmemAccessDesc_st`|10.2| | | |`hipMemAccessDesc`|5.2.0| | | | |
 |`CUmemAccessDesc_v1`|11.3| | | |`hipMemAccessDesc`|5.2.0| | | | |
