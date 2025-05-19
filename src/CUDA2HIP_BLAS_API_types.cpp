@@ -80,6 +80,7 @@ const std::map<llvm::StringRef, hipCounter> CUDA_BLAS_TYPE_NAME_MAP {
   {"CUBLAS_TENSOR_OP_MATH",                                          {"HIPBLAS_TENSOR_OP_MATH",                                            "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::BLAS_DATA_TYPES, ROC_UNSUPPORTED | CUDA_DEPRECATED}}, // 1
   {"CUBLAS_PEDANTIC_MATH",                                           {"HIPBLAS_PEDANTIC_MATH",                                             "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::BLAS_DATA_TYPES, ROC_UNSUPPORTED}}, // 2
   {"CUBLAS_TF32_TENSOR_OP_MATH",                                     {"HIPBLAS_TF32_TENSOR_OP_MATH",                                       "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::BLAS_DATA_TYPES, ROC_UNSUPPORTED}}, // 3
+  {"CUBLAS_FP32_EMULATED_BF16X9_MATH",                               {"HIPBLAS_FP32_EMULATED_BF16X9_MATH",                                 "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::BLAS_DATA_TYPES, ROC_UNSUPPORTED}}, // 4
   {"CUBLAS_MATH_DISALLOW_REDUCED_PRECISION_REDUCTION",               {"HIPBLAS_MATH_DISALLOW_REDUCED_PRECISION_REDUCTION",                 "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::BLAS_DATA_TYPES, ROC_UNSUPPORTED}}, // 16
 
   // Blass different GEMM algorithms
@@ -184,10 +185,16 @@ const std::map<llvm::StringRef, hipCounter> CUDA_BLAS_TYPE_NAME_MAP {
   {"CUBLAS_COMPUTE_32F_FAST_16F",                                    {"HIPBLAS_COMPUTE_32F_FAST_16F",                                      "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::BLAS_DATA_TYPES, ROC_UNSUPPORTED}}, // 74
   {"CUBLAS_COMPUTE_32F_FAST_16BF",                                   {"HIPBLAS_COMPUTE_32F_FAST_16BF",                                     "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::BLAS_DATA_TYPES, ROC_UNSUPPORTED}}, // 75
   {"CUBLAS_COMPUTE_32F_FAST_TF32",                                   {"HIPBLAS_COMPUTE_32F_FAST_TF32",                                     "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::BLAS_DATA_TYPES, ROC_UNSUPPORTED}}, // 77
+  {"CUBLAS_COMPUTE_32F_EMULATED_16BFX9",                             {"HIPBLAS_COMPUTE_32F_EMULATED_16BFX9",                               "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::BLAS_DATA_TYPES, UNSUPPORTED}}, // 78
   {"CUBLAS_COMPUTE_64F",                                             {"HIPBLAS_COMPUTE_64F",                                               "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::BLAS_DATA_TYPES, ROC_UNSUPPORTED}}, // 70
   {"CUBLAS_COMPUTE_64F_PEDANTIC",                                    {"HIPBLAS_COMPUTE_64F_PEDANTIC",                                      "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::BLAS_DATA_TYPES, ROC_UNSUPPORTED}}, // 71
   {"CUBLAS_COMPUTE_32I",                                             {"HIPBLAS_COMPUTE_32I",                                               "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::BLAS_DATA_TYPES, ROC_UNSUPPORTED}}, // 72
   {"CUBLAS_COMPUTE_32I_PEDANTIC",                                    {"HIPBLAS_COMPUTE_32I_PEDANTIC",                                      "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::BLAS_DATA_TYPES, ROC_UNSUPPORTED}}, // 73
+
+  {"cublasEmulationStrategy_t",                                      {"hipblasEmulationStrategy_t",                                        "",                                                         CONV_TYPE, API_BLAS, SEC::BLAS_DATA_TYPES}},
+  {"CUBLAS_EMULATION_STRATEGY_DEFAULT",                              {"HIPBLAS_EMULATION_STRATEGY_DEFAULT",                                "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::BLAS_DATA_TYPES, UNSUPPORTED}}, // 0
+  {"CUBLAS_EMULATION_STRATEGY_PERFORMANT",                           {"HIPBLAS_EMULATION_STRATEGY_PERFORMANT",                             "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::BLAS_DATA_TYPES, UNSUPPORTED}}, // 1
+  {"CUBLAS_EMULATION_STRATEGY_EAGER",                                {"HIPBLAS_EMULATION_STRATEGY_EAGER",                                  "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::BLAS_DATA_TYPES, UNSUPPORTED}}, // 2
 
   // cuBLASLt Data Types
 
@@ -991,6 +998,7 @@ const std::map<llvm::StringRef, hipCounter> CUDA_BLAS_TYPE_NAME_MAP {
   {"CUBLASLT_MATRIX_LAYOUT_BATCH_COUNT",                             {"HIPBLASLT_MATRIX_LAYOUT_BATCH_COUNT",                               "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::BLAS_LT_DATA_TYPES, ROC_UNSUPPORTED}},
   {"CUBLASLT_MATRIX_LAYOUT_STRIDED_BATCH_OFFSET",                    {"HIPBLASLT_MATRIX_LAYOUT_STRIDED_BATCH_OFFSET",                      "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::BLAS_LT_DATA_TYPES, ROC_UNSUPPORTED}},
   {"CUBLASLT_MATRIX_LAYOUT_PLANE_OFFSET",                            {"HIPBLASLT_MATRIX_LAYOUT_PLANE_OFFSET",                              "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::BLAS_LT_DATA_TYPES, UNSUPPORTED}},
+  {"CUBLASLT_MATRIX_LAYOUT_BATCH_MODE",                              {"HIPBLASLT_MATRIX_LAYOUT_BATCH_MODE",                                "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::BLAS_LT_DATA_TYPES, UNSUPPORTED}},
   {"cublasLtMatmulDescAttributes_t",                                 {"hipblasLtMatmulDescAttributes_t",                                   "",                                                         CONV_TYPE, API_BLAS, SEC::BLAS_LT_DATA_TYPES, ROC_UNSUPPORTED}},
   {"CUBLASLT_MATMUL_DESC_COMPUTE_TYPE",                              {"HIPBLASLT_MATMUL_DESC_COMPUTE_TYPE",                                "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::BLAS_LT_DATA_TYPES, UNSUPPORTED}},
   {"CUBLASLT_MATMUL_DESC_SCALE_TYPE",                                {"HIPBLASLT_MATMUL_DESC_SCALE_TYPE",                                  "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::BLAS_LT_DATA_TYPES, UNSUPPORTED}},
@@ -1098,6 +1106,8 @@ const std::map<llvm::StringRef, hipCounter> CUDA_BLAS_TYPE_NAME_MAP {
   {"CUBLASLT_ALGO_CAP_MIN_ALIGNMENT_C_BYTES",                        {"HIPBLASLT_ALGO_CAP_MIN_ALIGNMENT_C_BYTES",                          "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::BLAS_LT_DATA_TYPES, UNSUPPORTED}},
   {"CUBLASLT_ALGO_CAP_MIN_ALIGNMENT_D_BYTES",                        {"HIPBLASLT_ALGO_CAP_MIN_ALIGNMENT_D_BYTES",                          "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::BLAS_LT_DATA_TYPES, UNSUPPORTED}},
   {"CUBLASLT_ALGO_CAP_ATOMIC_SYNC",                                  {"HIPBLASLT_ALGO_CAP_ATOMIC_SYNC",                                    "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::BLAS_LT_DATA_TYPES, UNSUPPORTED}},
+  {"CUBLASLT_ALGO_CAP_POINTER_ARRAY_BATCH_SUPPORT",                  {"HIPBLASLT_ALGO_CAP_POINTER_ARRAY_BATCH_SUPPORT",                    "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::BLAS_LT_DATA_TYPES, UNSUPPORTED}},
+  {"CUBLASLT_ALGO_CAP_FLOATING_POINT_EMULATION_SUPPORT",             {"HIPBLASLT_ALGO_CAP_FLOATING_POINT_EMULATION_SUPPORT",               "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::BLAS_LT_DATA_TYPES, UNSUPPORTED}},
   {"cublasLtMatmulAlgoConfigAttributes_t",                           {"hipblasLtMatmulAlgoConfigAttributes_t",                             "",                                                         CONV_TYPE, API_BLAS, SEC::BLAS_LT_DATA_TYPES, UNSUPPORTED}},
   {"CUBLASLT_ALGO_CONFIG_ID",                                        {"HIPBLASLT_ALGO_CONFIG_ID",                                          "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::BLAS_LT_DATA_TYPES, UNSUPPORTED}},
   {"CUBLASLT_ALGO_CONFIG_TILE_ID",                                   {"HIPBLASLT_ALGO_CONFIG_TILE_ID",                                     "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::BLAS_LT_DATA_TYPES, UNSUPPORTED}},
@@ -1113,7 +1123,13 @@ const std::map<llvm::StringRef, hipCounter> CUDA_BLAS_TYPE_NAME_MAP {
   {"CUBLASLT_MATMUL_MATRIX_SCALE_SCALAR_32F",                        {"HIPBLASLT_MATMUL_MATRIX_SCALE_SCALAR_32F",                          "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::BLAS_LT_DATA_TYPES, ROC_UNSUPPORTED | HIP_EXPERIMENTAL}},
   {"CUBLASLT_MATMUL_MATRIX_SCALE_VEC16_UE4M3",                       {"HIPBLASLT_MATMUL_MATRIX_SCALE_VEC16_UE4M3",                         "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::BLAS_LT_DATA_TYPES, ROC_UNSUPPORTED | HIP_EXPERIMENTAL}},
   {"CUBLASLT_MATMUL_MATRIX_SCALE_VEC32_UE8M0",                       {"HIPBLASLT_MATMUL_MATRIX_SCALE_VEC32_UE8M0",                         "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::BLAS_LT_DATA_TYPES, ROC_UNSUPPORTED | HIP_EXPERIMENTAL}},
+  {"CUBLASLT_MATMUL_MATRIX_SCALE_OUTER_VEC_32F",                     {"HIPBLASLT_MATMUL_MATRIX_SCALE_OUTER_VEC_32F",                       "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::BLAS_LT_DATA_TYPES, UNSUPPORTED}},
+  {"CUBLASLT_MATMUL_MATRIX_SCALE_VEC128_32F",                        {"HIPBLASLT_MATMUL_MATRIX_SCALE_VEC128_32F",                          "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::BLAS_LT_DATA_TYPES, UNSUPPORTED}},
+  {"CUBLASLT_MATMUL_MATRIX_SCALE_BLK128x128_32F",                    {"HIPBLASLT_MATMUL_MATRIX_SCALE_BLK128x128_32F",                      "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::BLAS_LT_DATA_TYPES, UNSUPPORTED}},
   {"CUBLASLT_MATMUL_MATRIX_SCALE_END",                               {"HIPBLASLT_MATMUL_MATRIX_SCALE_END",                                 "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::BLAS_LT_DATA_TYPES, ROC_UNSUPPORTED | HIP_EXPERIMENTAL}},
+  {"cublasLtBatchMode_t",                                            {"hipblasLtBatchMode_t",                                              "",                                                         CONV_TYPE, API_BLAS, SEC::BLAS_LT_DATA_TYPES, UNSUPPORTED}},
+  {"CUBLASLT_BATCH_MODE_STRIDED",                                    {"HIPBLASLT_BATCH_MODE_STRIDED",                                      "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::BLAS_LT_DATA_TYPES, UNSUPPORTED}},
+  {"CUBLASLT_BATCH_MODE_POINTER_ARRAY",                              {"HIPBLASLT_BATCH_MODE_POINTER_ARRAY",                                "",                                                         CONV_NUMERIC_LITERAL, API_BLAS, SEC::BLAS_LT_DATA_TYPES, UNSUPPORTED}},
 };
 
 const std::map<llvm::StringRef, cudaAPIversions> CUDA_BLAS_TYPE_NAME_VER_MAP {
@@ -2137,6 +2153,21 @@ const std::map<llvm::StringRef, cudaAPIversions> CUDA_BLAS_TYPE_NAME_VER_MAP {
   {"CUBLASLT_MATMUL_MATRIX_SCALE_VEC16_UE4M3",                       {CUDA_128, CUDA_0,   CUDA_0  }},
   {"CUBLASLT_MATMUL_MATRIX_SCALE_VEC32_UE8M0",                       {CUDA_128, CUDA_0,   CUDA_0  }},
   {"CUBLASLT_MATMUL_MATRIX_SCALE_END",                               {CUDA_128, CUDA_0,   CUDA_0  }},
+  {"CUBLAS_FP32_EMULATED_BF16X9_MATH",                               {CUDA_129, CUDA_0,   CUDA_0  }},
+  {"CUBLAS_COMPUTE_32F_EMULATED_16BFX9",                             {CUDA_129, CUDA_0,   CUDA_0  }},
+  {"cublasEmulationStrategy_t",                                      {CUDA_129, CUDA_0,   CUDA_0  }},
+  {"CUBLAS_EMULATION_STRATEGY_DEFAULT",                              {CUDA_129, CUDA_0,   CUDA_0  }},
+  {"CUBLAS_EMULATION_STRATEGY_PERFORMANT",                           {CUDA_129, CUDA_0,   CUDA_0  }},
+  {"CUBLAS_EMULATION_STRATEGY_EAGER",                                {CUDA_129, CUDA_0,   CUDA_0  }},
+  {"CUBLASLT_MATMUL_MATRIX_SCALE_OUTER_VEC_32F",                     {CUDA_129, CUDA_0,   CUDA_0  }},
+  {"CUBLASLT_MATMUL_MATRIX_SCALE_VEC128_32F",                        {CUDA_129, CUDA_0,   CUDA_0  }},
+  {"CUBLASLT_MATMUL_MATRIX_SCALE_BLK128x128_32F",                    {CUDA_129, CUDA_0,   CUDA_0  }},
+  {"cublasLtBatchMode_t",                                            {CUDA_129, CUDA_0,   CUDA_0  }},
+  {"CUBLASLT_BATCH_MODE_STRIDED",                                    {CUDA_129, CUDA_0,   CUDA_0  }},
+  {"CUBLASLT_BATCH_MODE_POINTER_ARRAY",                              {CUDA_129, CUDA_0,   CUDA_0  }},
+  {"CUBLASLT_MATRIX_LAYOUT_BATCH_MODE",                              {CUDA_129, CUDA_0,   CUDA_0  }},
+  {"CUBLASLT_ALGO_CAP_POINTER_ARRAY_BATCH_SUPPORT",                  {CUDA_129, CUDA_0,   CUDA_0  }},
+  {"CUBLASLT_ALGO_CAP_FLOATING_POINT_EMULATION_SUPPORT",             {CUDA_129, CUDA_0,   CUDA_0  }},
 };
 
 const std::map<llvm::StringRef, hipAPIversions> HIP_BLAS_TYPE_NAME_VER_MAP {
@@ -2300,17 +2331,17 @@ const std::map<llvm::StringRef, hipAPIversions> HIP_BLAS_TYPE_NAME_VER_MAP {
   {"HIPBLASLT_MATMUL_PREF_MAX_WORKSPACE_BYTES",                      {HIP_5050, HIP_0,    HIP_0   }},
   {"hipblasLtMatmulHeuristicResult_t",                               {HIP_5050, HIP_0,    HIP_0   }},
   {"HIPBLASLT_MATMUL_DESC_AMAX_D_POINTER",                           {HIP_6020, HIP_0,    HIP_0   }},
-  {"hipblasLtMatmulMatrixScale_t",                                   {HIP_6050, HIP_0,    HIP_0,  HIP_LATEST}},
-  {"HIPBLASLT_MATMUL_MATRIX_SCALE_SCALAR_32F",                       {HIP_6050, HIP_0,    HIP_0,  HIP_LATEST}},
-  {"HIPBLASLT_MATMUL_MATRIX_SCALE_VEC16_UE4M3",                      {HIP_6050, HIP_0,    HIP_0,  HIP_LATEST}},
-  {"HIPBLASLT_MATMUL_MATRIX_SCALE_VEC32_UE8M0",                      {HIP_6050, HIP_0,    HIP_0,  HIP_LATEST}},
-  {"HIPBLASLT_MATMUL_MATRIX_SCALE_END",                              {HIP_6050, HIP_0,    HIP_0,  HIP_LATEST}},
-  {"HIPBLASLT_MATMUL_DESC_A_SCALE_MODE",                             {HIP_6050, HIP_0,    HIP_0,  HIP_LATEST}},
-  {"HIPBLASLT_MATMUL_DESC_B_SCALE_MODE",                             {HIP_6050, HIP_0,    HIP_0,  HIP_LATEST}},
-  {"HIP_R_8F_UE8M0",                                                 {HIP_6050, HIP_0,    HIP_0,  HIP_LATEST}},
-  {"HIP_R_6F_E2M3",                                                  {HIP_6050, HIP_0,    HIP_0,  HIP_LATEST}},
-  {"HIP_R_6F_E3M2",                                                  {HIP_6050, HIP_0,    HIP_0,  HIP_LATEST}},
-  {"HIP_R_4F_E2M1",                                                  {HIP_6050, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"hipblasLtMatmulMatrixScale_t",                                   {HIP_7000, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"HIPBLASLT_MATMUL_MATRIX_SCALE_SCALAR_32F",                       {HIP_7000, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"HIPBLASLT_MATMUL_MATRIX_SCALE_VEC16_UE4M3",                      {HIP_7000, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"HIPBLASLT_MATMUL_MATRIX_SCALE_VEC32_UE8M0",                      {HIP_7000, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"HIPBLASLT_MATMUL_MATRIX_SCALE_END",                              {HIP_7000, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"HIPBLASLT_MATMUL_DESC_A_SCALE_MODE",                             {HIP_7000, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"HIPBLASLT_MATMUL_DESC_B_SCALE_MODE",                             {HIP_7000, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"HIP_R_8F_UE8M0",                                                 {HIP_7000, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"HIP_R_6F_E2M3",                                                  {HIP_7000, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"HIP_R_6F_E3M2",                                                  {HIP_7000, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"HIP_R_4F_E2M1",                                                  {HIP_7000, HIP_0,    HIP_0,  HIP_LATEST}},
 
   {"rocblas_handle",                                                 {HIP_1050, HIP_0,    HIP_0   }},
   {"_rocblas_handle",                                                {HIP_1050, HIP_0,    HIP_0   }},

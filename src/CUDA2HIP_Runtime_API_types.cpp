@@ -3528,8 +3528,8 @@ const std::map<llvm::StringRef, hipAPIversions> HIP_RUNTIME_TYPE_NAME_VER_MAP {
   {"hipErrorInvalidTexture",                                           {HIP_6040, HIP_0,    HIP_0   }},
   {"hipEventRecordDefault",                                            {HIP_6040, HIP_0,    HIP_0   }},
   {"hipEventRecordExternal",                                           {HIP_6040, HIP_0,    HIP_0   }},
-  {"hipLaunchAttribute_st",                                            {HIP_6050, HIP_0,    HIP_0,  HIP_LATEST}},
-  {"hipLaunchAttribute",                                               {HIP_6050, HIP_0,    HIP_0,  HIP_LATEST}},
-  {"hipLaunchConfig_st",                                               {HIP_6050, HIP_0,    HIP_0,  HIP_LATEST}},
-  {"hipLaunchConfig_t",                                                {HIP_6050, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"hipLaunchAttribute_st",                                            {HIP_7000, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"hipLaunchAttribute",                                               {HIP_7000, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"hipLaunchConfig_st",                                               {HIP_7000, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"hipLaunchConfig_t",                                                {HIP_7000, HIP_0,    HIP_0,  HIP_LATEST}},
 };
