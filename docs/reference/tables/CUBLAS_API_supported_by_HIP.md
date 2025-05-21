@@ -19,6 +19,7 @@
 |`CUBLAS_COMPUTE_16F`|11.0| | | |`HIPBLAS_COMPUTE_16F`|6.0.0| | | | |
 |`CUBLAS_COMPUTE_16F_PEDANTIC`|11.0| | | |`HIPBLAS_COMPUTE_16F_PEDANTIC`|6.0.0| | | | |
 |`CUBLAS_COMPUTE_32F`|11.0| | | |`HIPBLAS_COMPUTE_32F`|6.0.0| | | | |
+|`CUBLAS_COMPUTE_32F_EMULATED_16BFX9`|12.9| | | | | | | | | |
 |`CUBLAS_COMPUTE_32F_FAST_16BF`|11.0| | | |`HIPBLAS_COMPUTE_32F_FAST_16BF`|6.0.0| | | | |
 |`CUBLAS_COMPUTE_32F_FAST_16F`|11.0| | | |`HIPBLAS_COMPUTE_32F_FAST_16F`|6.0.0| | | | |
 |`CUBLAS_COMPUTE_32F_FAST_TF32`|11.0| | | |`HIPBLAS_COMPUTE_32F_FAST_TF32`|6.0.0| | | | |
@@ -30,9 +31,13 @@
 |`CUBLAS_DEFAULT_MATH`|9.0| | | |`HIPBLAS_DEFAULT_MATH`|6.1.0| | | | |
 |`CUBLAS_DIAG_NON_UNIT`| | | | |`HIPBLAS_DIAG_NON_UNIT`|1.8.2| | | | |
 |`CUBLAS_DIAG_UNIT`| | | | |`HIPBLAS_DIAG_UNIT`|1.8.2| | | | |
+|`CUBLAS_EMULATION_STRATEGY_DEFAULT`|12.9| | | | | | | | | |
+|`CUBLAS_EMULATION_STRATEGY_EAGER`|12.9| | | | | | | | | |
+|`CUBLAS_EMULATION_STRATEGY_PERFORMANT`|12.9| | | | | | | | | |
 |`CUBLAS_FILL_MODE_FULL`|10.1| | | |`HIPBLAS_FILL_MODE_FULL`|1.8.2| | | | |
 |`CUBLAS_FILL_MODE_LOWER`| | | | |`HIPBLAS_FILL_MODE_LOWER`|1.8.2| | | | |
 |`CUBLAS_FILL_MODE_UPPER`| | | | |`HIPBLAS_FILL_MODE_UPPER`|1.8.2| | | | |
+|`CUBLAS_FP32_EMULATED_BF16X9_MATH`|12.9| | | |`HIPBLAS_FP32_EMULATED_BF16X9_MATH`| | | | | |
 |`CUBLAS_GEMM_ALGO0`|8.0| | | | | | | | | |
 |`CUBLAS_GEMM_ALGO0_TENSOR_OP`|9.0| | | | | | | | | |
 |`CUBLAS_GEMM_ALGO1`|8.0| | | | | | | | | |
@@ -104,6 +109,7 @@
 |`cublasComputeType_t`|11.0| | | |`hipblasComputeType_t`|6.0.0| | | | |
 |`cublasContext`| | | | | | | | | | |
 |`cublasDiagType_t`| | | | |`hipblasDiagType_t`|1.8.2| | | | |
+|`cublasEmulationStrategy_t`|12.9| | | |`hipblasEmulationStrategy_t`| | | | | |
 |`cublasFillMode_t`| | | | |`hipblasFillMode_t`|1.8.2| | | | |
 |`cublasGemmAlgo_t`|8.0| | | |`hipblasGemmAlgo_t`|1.8.2| | | | |
 |`cublasHandle_t`| | | | |`hipblasHandle_t`|3.0.0| | | | |
@@ -139,18 +145,18 @@
 |`CUDA_R_32F`|8.0| | | |`HIP_R_32F`|3.0.0| | | | |
 |`CUDA_R_32I`|8.0| | | |`HIP_R_32I`|5.5.0| | | | |
 |`CUDA_R_32U`|8.0| | | |`HIP_R_32U`|5.5.0| | | | |
-|`CUDA_R_4F_E2M1`|12.8| | | |`HIP_R_4F_E2M1`|6.5.0| | | |6.5.0|
+|`CUDA_R_4F_E2M1`|12.8| | | |`HIP_R_4F_E2M1`|7.0.0| | | |7.0.0|
 |`CUDA_R_4I`|11.0| | | |`HIP_R_4I`|5.5.0| | | | |
 |`CUDA_R_4U`|11.0| | | |`HIP_R_4U`|5.5.0| | | | |
 |`CUDA_R_64F`|8.0| | | |`HIP_R_64F`|3.0.0| | | | |
 |`CUDA_R_64I`|11.0| | | |`HIP_R_64I`|5.5.0| | | | |
 |`CUDA_R_64U`|11.0| | | |`HIP_R_64U`|5.5.0| | | | |
-|`CUDA_R_6F_E2M3`|12.8| | | |`HIP_R_6F_E2M3`|6.5.0| | | |6.5.0|
-|`CUDA_R_6F_E3M2`|12.8| | | |`HIP_R_6F_E3M2`|6.5.0| | | |6.5.0|
+|`CUDA_R_6F_E2M3`|12.8| | | |`HIP_R_6F_E2M3`|7.0.0| | | |7.0.0|
+|`CUDA_R_6F_E3M2`|12.8| | | |`HIP_R_6F_E3M2`|7.0.0| | | |7.0.0|
 |`CUDA_R_8F_E4M3`|11.8| | | |`HIP_R_8F_E4M3`|6.3.0| | | | |
 |`CUDA_R_8F_E5M2`|11.8| | | |`HIP_R_8F_E5M2`|6.3.0| | | | |
 |`CUDA_R_8F_UE4M3`|12.8| | | |`HIP_R_8F_E4M3`|6.3.0| | | | |
-|`CUDA_R_8F_UE8M0`|12.8| | | |`HIP_R_8F_UE8M0`|6.5.0| | | |6.5.0|
+|`CUDA_R_8F_UE8M0`|12.8| | | |`HIP_R_8F_UE8M0`|7.0.0| | | |7.0.0|
 |`CUDA_R_8I`|8.0| | | |`HIP_R_8I`|5.5.0| | | | |
 |`CUDA_R_8U`|8.0| | | |`HIP_R_8U`|5.5.0| | | | |
 |`cublasDataType_t`|7.5| | | |`hipDataType`|3.0.0| | | | |
@@ -166,6 +172,7 @@
 |`CUBLASLT_ALGO_CAP_CUSTOM_MEMORY_ORDER`|10.1| | | | | | | | | |
 |`CUBLASLT_ALGO_CAP_CUSTOM_OPTION_MAX`|10.1| | | | | | | | | |
 |`CUBLASLT_ALGO_CAP_EPILOGUE_MASK`|10.1| | | | | | | | | |
+|`CUBLASLT_ALGO_CAP_FLOATING_POINT_EMULATION_SUPPORT`|12.9| | | | | | | | | |
 |`CUBLASLT_ALGO_CAP_LD_NEGATIVE`|11.0| | | | | | | | | |
 |`CUBLASLT_ALGO_CAP_MIN_ALIGNMENT_A_BYTES`|11.0| | | | | | | | | |
 |`CUBLASLT_ALGO_CAP_MIN_ALIGNMENT_B_BYTES`|11.0| | | | | | | | | |
@@ -173,6 +180,7 @@
 |`CUBLASLT_ALGO_CAP_MIN_ALIGNMENT_D_BYTES`|11.0| | | | | | | | | |
 |`CUBLASLT_ALGO_CAP_NUMERICAL_IMPL_FLAGS`|11.0| | | | | | | | | |
 |`CUBLASLT_ALGO_CAP_OUT_OF_PLACE_RESULT_SUPPORT`|10.1| | | | | | | | | |
+|`CUBLASLT_ALGO_CAP_POINTER_ARRAY_BATCH_SUPPORT`|12.9| | | | | | | | | |
 |`CUBLASLT_ALGO_CAP_POINTER_MODE_MASK`|10.1| | | | | | | | | |
 |`CUBLASLT_ALGO_CAP_REDUCTION_SCHEME_MASK`|10.1| | | | | | | | | |
 |`CUBLASLT_ALGO_CAP_SPLITK_SUPPORT`|10.1| | | | | | | | | |
@@ -189,6 +197,8 @@
 |`CUBLASLT_ALGO_CONFIG_SPLITK_NUM`|10.1| | | | | | | | | |
 |`CUBLASLT_ALGO_CONFIG_STAGES_ID`|11.0| | | | | | | | | |
 |`CUBLASLT_ALGO_CONFIG_TILE_ID`|10.1| | | | | | | | | |
+|`CUBLASLT_BATCH_MODE_POINTER_ARRAY`|12.9| | | | | | | | | |
+|`CUBLASLT_BATCH_MODE_STRIDED`|12.9| | | | | | | | | |
 |`CUBLASLT_CLUSTER_SHAPE_10x1x1`|11.8| | | | | | | | | |
 |`CUBLASLT_CLUSTER_SHAPE_11x1x1`|11.8| | | | | | | | | |
 |`CUBLASLT_CLUSTER_SHAPE_12x1x1`|11.8| | | | | | | | | |
@@ -263,12 +273,12 @@
 |`CUBLASLT_MATMUL_DESC_ATOMIC_SYNC_NUM_CHUNKS_D_COLS`|12.2|12.8| | | | | | | | |
 |`CUBLASLT_MATMUL_DESC_ATOMIC_SYNC_NUM_CHUNKS_D_ROWS`|12.2|12.8| | | | | | | | |
 |`CUBLASLT_MATMUL_DESC_ATOMIC_SYNC_OUT_COUNTERS_POINTER`|12.2| | | | | | | | | |
-|`CUBLASLT_MATMUL_DESC_A_SCALE_MODE`|12.8| | | |`HIPBLASLT_MATMUL_DESC_A_SCALE_MODE`|6.5.0| | | |6.5.0|
+|`CUBLASLT_MATMUL_DESC_A_SCALE_MODE`|12.8| | | |`HIPBLASLT_MATMUL_DESC_A_SCALE_MODE`|7.0.0| | | |7.0.0|
 |`CUBLASLT_MATMUL_DESC_A_SCALE_POINTER`|11.8| | | |`HIPBLASLT_MATMUL_DESC_A_SCALE_POINTER`|6.0.0| | | | |
 |`CUBLASLT_MATMUL_DESC_BIAS_BATCH_STRIDE`|11.3| | | | | | | | | |
 |`CUBLASLT_MATMUL_DESC_BIAS_DATA_TYPE`|11.8| | | |`HIPBLASLT_MATMUL_DESC_BIAS_DATA_TYPE`|5.5.0| | | | |
 |`CUBLASLT_MATMUL_DESC_BIAS_POINTER`|10.1| | | |`HIPBLASLT_MATMUL_DESC_BIAS_POINTER`|5.5.0| | | | |
-|`CUBLASLT_MATMUL_DESC_B_SCALE_MODE`|12.8| | | |`HIPBLASLT_MATMUL_DESC_B_SCALE_MODE`|6.5.0| | | |6.5.0|
+|`CUBLASLT_MATMUL_DESC_B_SCALE_MODE`|12.8| | | |`HIPBLASLT_MATMUL_DESC_B_SCALE_MODE`|7.0.0| | | |7.0.0|
 |`CUBLASLT_MATMUL_DESC_B_SCALE_POINTER`|11.8| | | |`HIPBLASLT_MATMUL_DESC_B_SCALE_POINTER`|6.0.0| | | | |
 |`CUBLASLT_MATMUL_DESC_COMPUTE_TYPE`|10.1| | | | | | | | | |
 |`CUBLASLT_MATMUL_DESC_C_SCALE_MODE`|12.8| | | | | | | | | |
@@ -299,10 +309,13 @@
 |`CUBLASLT_MATMUL_INNER_SHAPE_MMA1688`|11.8| | | | | | | | | |
 |`CUBLASLT_MATMUL_INNER_SHAPE_MMA884`|11.8| | | | | | | | | |
 |`CUBLASLT_MATMUL_INNER_SHAPE_UNDEFINED`|11.8| | | | | | | | | |
-|`CUBLASLT_MATMUL_MATRIX_SCALE_END`|12.8| | | |`HIPBLASLT_MATMUL_MATRIX_SCALE_END`|6.5.0| | | |6.5.0|
-|`CUBLASLT_MATMUL_MATRIX_SCALE_SCALAR_32F`|12.8| | | |`HIPBLASLT_MATMUL_MATRIX_SCALE_SCALAR_32F`|6.5.0| | | |6.5.0|
-|`CUBLASLT_MATMUL_MATRIX_SCALE_VEC16_UE4M3`|12.8| | | |`HIPBLASLT_MATMUL_MATRIX_SCALE_VEC16_UE4M3`|6.5.0| | | |6.5.0|
-|`CUBLASLT_MATMUL_MATRIX_SCALE_VEC32_UE8M0`|12.8| | | |`HIPBLASLT_MATMUL_MATRIX_SCALE_VEC32_UE8M0`|6.5.0| | | |6.5.0|
+|`CUBLASLT_MATMUL_MATRIX_SCALE_BLK128x128_32F`|12.9| | | | | | | | | |
+|`CUBLASLT_MATMUL_MATRIX_SCALE_END`|12.8| | | |`HIPBLASLT_MATMUL_MATRIX_SCALE_END`|7.0.0| | | |7.0.0|
+|`CUBLASLT_MATMUL_MATRIX_SCALE_OUTER_VEC_32F`|12.9| | | | | | | | | |
+|`CUBLASLT_MATMUL_MATRIX_SCALE_SCALAR_32F`|12.8| | | |`HIPBLASLT_MATMUL_MATRIX_SCALE_SCALAR_32F`|7.0.0| | | |7.0.0|
+|`CUBLASLT_MATMUL_MATRIX_SCALE_VEC128_32F`|12.9| | | | | | | | | |
+|`CUBLASLT_MATMUL_MATRIX_SCALE_VEC16_UE4M3`|12.8| | | |`HIPBLASLT_MATMUL_MATRIX_SCALE_VEC16_UE4M3`|7.0.0| | | |7.0.0|
+|`CUBLASLT_MATMUL_MATRIX_SCALE_VEC32_UE8M0`|12.8| | | |`HIPBLASLT_MATMUL_MATRIX_SCALE_VEC32_UE8M0`|7.0.0| | | |7.0.0|
 |`CUBLASLT_MATMUL_PREF_IMPL_MASK`|11.0| | | | | | | | | |
 |`CUBLASLT_MATMUL_PREF_MAX_WAVES_COUNT`|10.1| | | | | | | | | |
 |`CUBLASLT_MATMUL_PREF_MAX_WORKSPACE_BYTES`|10.1| | | |`HIPBLASLT_MATMUL_PREF_MAX_WORKSPACE_BYTES`|5.5.0| | | | |
@@ -985,6 +998,7 @@
 |`CUBLASLT_MATMUL_TILE_END`|10.1| | | | | | | | | |
 |`CUBLASLT_MATMUL_TILE_UNDEFINED`|10.1| | | | | | | | | |
 |`CUBLASLT_MATRIX_LAYOUT_BATCH_COUNT`|10.1| | | |`HIPBLASLT_MATRIX_LAYOUT_BATCH_COUNT`|5.5.0| | | | |
+|`CUBLASLT_MATRIX_LAYOUT_BATCH_MODE`|12.9| | | | | | | | | |
 |`CUBLASLT_MATRIX_LAYOUT_COLS`|10.1| | | |`HIPBLASLT_MATRIX_LAYOUT_COLS`|6.0.0| | | | |
 |`CUBLASLT_MATRIX_LAYOUT_LD`|10.1| | | |`HIPBLASLT_MATRIX_LAYOUT_LD`|6.0.0| | | | |
 |`CUBLASLT_MATRIX_LAYOUT_ORDER`|10.1| | | |`HIPBLASLT_MATRIX_LAYOUT_ORDER`|6.0.0| | | | |
@@ -1047,6 +1061,7 @@
 |`CUBLASLT_SEARCH_RESERVED_07`|12.6| | | | | | | | | |
 |`CUBLASLT_SEARCH_RESERVED_08`|12.6| | | | | | | | | |
 |`CUBLASLT_SEARCH_RESERVED_09`|12.6| | | | | | | | | |
+|`cublasLtBatchMode_t`|12.9| | | | | | | | | |
 |`cublasLtClusterShape_t`|11.8| | | | | | | | | |
 |`cublasLtContext`|10.1| | | | | | | | | |
 |`cublasLtEpilogue_t`|10.1| | | |`hipblasLtEpilogue_t`|5.5.0| | | | |
@@ -1060,7 +1075,7 @@
 |`cublasLtMatmulDesc_t`|10.1| | | |`hipblasLtMatmulDesc_t`|5.5.0| | | | |
 |`cublasLtMatmulHeuristicResult_t`|10.1| | | |`hipblasLtMatmulHeuristicResult_t`|5.5.0| | | | |
 |`cublasLtMatmulInnerShape_t`|11.8| | | | | | | | | |
-|`cublasLtMatmulMatrixScale_t`|12.8| | | |`hipblasLtMatmulMatrixScale_t`|6.5.0| | | |6.5.0|
+|`cublasLtMatmulMatrixScale_t`|12.8| | | |`hipblasLtMatmulMatrixScale_t`|7.0.0| | | |7.0.0|
 |`cublasLtMatmulPreferenceAttributes_t`|10.1| | | |`hipblasLtMatmulPreferenceAttributes_t`|5.5.0| | | | |
 |`cublasLtMatmulPreferenceOpaque_t`|11.0| | | |`hipblasLtMatmulPreferenceOpaque_t`|5.5.0| | | | |
 |`cublasLtMatmulPreference_t`|10.1| | | |`hipblasLtMatmulPreference_t`|5.5.0| | | | |
@@ -1092,6 +1107,7 @@
 |`cublasFree`| | | | | | | | | | |
 |`cublasGetAtomicsMode`| | | | |`hipblasGetAtomicsMode`|3.10.0| | | | |
 |`cublasGetCudartVersion`|10.1| | | | | | | | | |
+|`cublasGetEmulationStrategy`|12.9| | | | | | | | | |
 |`cublasGetError`| | | | | | | | | | |
 |`cublasGetLoggerCallback`|9.2| | | | | | | | | |
 |`cublasGetMathMode`|9.0| | | |`hipblasGetMathMode`|6.1.0| | | | |
@@ -1118,6 +1134,7 @@
 |`cublasLoggerConfigure`|9.2| | | | | | | | | |
 |`cublasMigrateComputeType`|11.0| | | | | | | | | |
 |`cublasSetAtomicsMode`| | | | |`hipblasSetAtomicsMode`|3.10.0| | | | |
+|`cublasSetEmulationStrategy`|12.9| | | | | | | | | |
 |`cublasSetKernelStream`| | | | | | | | | | |
 |`cublasSetLoggerCallback`|9.2| | | | | | | | | |
 |`cublasSetMathMode`|9.0| | | |`hipblasSetMathMode`|6.1.0| | | | |

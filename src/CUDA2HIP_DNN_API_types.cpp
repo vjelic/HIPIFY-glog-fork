@@ -472,7 +472,7 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DNN_TYPE_NAME_MAP {
   {"CUDNN_ATTR_ENGINECFG_KNOB_CHOICES",                                {"HIPDNN_ATTR_ENGINECFG_KNOB_CHOICES",                              "MIOPEN_ATTR_ENGINECFG_KNOB_CHOICES",                              CONV_NUMERIC_LITERAL, API_DNN, 1, HIP_UNSUPPORTED}},    // 302
   {"CUDNN_ATTR_ENGINECFG_WORKSPACE_SIZE",                              {"HIPDNN_ATTR_ENGINECFG_WORKSPACE_SIZE",                            "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},    // 303
   {"CUDNN_ATTR_ENGINECFG_SHARED_MEMORY_USED",                          {"HIPDNN_ATTR_ENGINECFG_SHARED_MEMORY_USED",                        "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},    // 304
-  {"CUDNN_ATTR_EXECUTION_PLAN_HANDLE",                                 {"HIPDNN_ATTR_EXECUTION_PLAN_HANDLE",                               "MIOPEN_ATTR_EXECUTION_PLAN_HANDLE",                               CONV_NUMERIC_LITERAL, API_DNN, 1, HIP_UNSUPPORTED}},    // 400
+  {"CUDNN_ATTR_EXECUTION_PLAN_HANDLE",                                 {"HIPDNN_ATTR_EXECUTION_PLAN_HANDLE",                               "MIOPEN_ATTR_EXECUTION_PLAN_HANDLE",                               CONV_NUMERIC_LITERAL, API_DNN, 1, HIP_UNSUPPORTED | CUDA_DEPRECATED}},    // 400
   {"CUDNN_ATTR_EXECUTION_PLAN_ENGINE_CONFIG",                          {"HIPDNN_ATTR_EXECUTION_PLAN_ENGINE_CONFIG",                        "MIOPEN_ATTR_EXECUTION_PLAN_ENGINE_CONFIG",                        CONV_NUMERIC_LITERAL, API_DNN, 1, HIP_UNSUPPORTED}},    // 401
   {"CUDNN_ATTR_EXECUTION_PLAN_WORKSPACE_SIZE",                         {"HIPDNN_ATTR_EXECUTION_PLAN_WORKSPACE_SIZE",                       "MIOPEN_ATTR_EXECUTION_PLAN_WORKSPACE_SIZE",                       CONV_NUMERIC_LITERAL, API_DNN, 1, HIP_UNSUPPORTED}},    // 402
   {"CUDNN_ATTR_EXECUTION_PLAN_COMPUTED_INTERMEDIATE_UIDS",             {"HIPDNN_ATTR_EXECUTION_PLAN_COMPUTED_INTERMEDIATE_UIDS",           "MIOPEN_ATTR_EXECUTION_PLAN_COMPUTED_INTERMEDIATE_UIDS",           CONV_NUMERIC_LITERAL, API_DNN, 1, HIP_UNSUPPORTED}},    // 403
@@ -535,7 +535,7 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DNN_TYPE_NAME_MAP {
   {"CUDNN_ATTR_OPERATION_BN_FINALIZE_ACCUM_COUNT_DESC",                {"HIPDNN_ATTR_OPERATION_BN_FINALIZE_ACCUM_COUNT_DESC",              "MIOPEN_ATTR_OPERATION_BN_FINALIZE_ACCUM_COUNT_DESC",              CONV_NUMERIC_LITERAL, API_DNN, 1, HIP_UNSUPPORTED}},    // 794
   {"CUDNN_ATTR_OPERATION_BN_FINALIZE_EPSILON_DESC",                    {"HIPDNN_ATTR_OPERATION_BN_FINALIZE_EPSILON_DESC",                  "MIOPEN_ATTR_OPERATION_BN_FINALIZE_EPSILON_DESC",                  CONV_NUMERIC_LITERAL, API_DNN, 1, HIP_UNSUPPORTED}},    // 795
   {"CUDNN_ATTR_OPERATION_BN_FINALIZE_EXP_AVERATE_FACTOR_DESC",         {"HIPDNN_ATTR_OPERATION_BN_FINALIZE_EXP_AVERATE_FACTOR_DESC",       "MIOPEN_ATTR_OPERATION_BN_FINALIZE_EXP_AVERATE_FACTOR_DESC",       CONV_NUMERIC_LITERAL, API_DNN, 1, HIP_UNSUPPORTED}},    // 796
-  {"CUDNN_ATTR_OPERATIONGRAPH_HANDLE",                                 {"HIPDNN_ATTR_OPERATIONGRAPH_HANDLE",                               "MIOPEN_ATTR_OPERATIONGRAPH_HANDLE",                               CONV_NUMERIC_LITERAL, API_DNN, 1, HIP_UNSUPPORTED}},    // 800
+  {"CUDNN_ATTR_OPERATIONGRAPH_HANDLE",                                 {"HIPDNN_ATTR_OPERATIONGRAPH_HANDLE",                               "MIOPEN_ATTR_OPERATIONGRAPH_HANDLE",                               CONV_NUMERIC_LITERAL, API_DNN, 1, HIP_UNSUPPORTED | CUDA_DEPRECATED}},    // 800
   {"CUDNN_ATTR_OPERATIONGRAPH_OPS",                                    {"HIPDNN_ATTR_OPERATIONGRAPH_OPS",                                  "MIOPEN_ATTR_OPERATIONGRAPH_OPS",                                  CONV_NUMERIC_LITERAL, API_DNN, 1, HIP_UNSUPPORTED}},    // 801
   {"CUDNN_ATTR_OPERATIONGRAPH_ENGINE_GLOBAL_COUNT",                    {"HIPDNN_ATTR_OPERATIONGRAPH_ENGINE_GLOBAL_COUNT",                  "MIOPEN_ATTR_OPERATIONGRAPH_ENGINE_GLOBAL_COUNT",                  CONV_NUMERIC_LITERAL, API_DNN, 1, HIP_UNSUPPORTED}},    // 802
   {"CUDNN_ATTR_OPERATIONGRAPH_IS_DYNAMIC_SHAPE_ENABLED",               {"HIPDNN_ATTR_OPERATIONGRAPH_IS_DYNAMIC_SHAPE_ENABLED",             "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},    // 803
@@ -659,6 +659,20 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DNN_TYPE_NAME_MAP {
   {"CUDNN_ATTR_OPERATION_NORM_BWD_PEER_STAT_DESCS",                    {"HIPDNN_ATTR_OPERATION_NORM_BWD_PEER_STAT_DESCS",                  "MIOPEN_ATTR_OPERATION_NORM_BWD_PEER_STAT_DESCS",                  CONV_NUMERIC_LITERAL, API_DNN, 1, HIP_UNSUPPORTED}},    // 2110
   {"CUDNN_ATTR_OPERATION_RESHAPE_XDESC",                               {"HIPDNN_ATTR_OPERATION_RESHAPE_XDESC",                             "MIOPEN_ATTR_OPERATION_RESHAPE_XDESC",                             CONV_NUMERIC_LITERAL, API_DNN, 1, HIP_UNSUPPORTED}},    // 2200
   {"CUDNN_ATTR_OPERATION_RESHAPE_YDESC",                               {"HIPDNN_ATTR_OPERATION_RESHAPE_YDESC",                             "MIOPEN_ATTR_OPERATION_RESHAPE_YDESC",                             CONV_NUMERIC_LITERAL, API_DNN, 1, HIP_UNSUPPORTED}},    // 2201
+  {"CUDNN_ATTR_OPERATION_EXPAND_BAND_MATRIX_XDESC",                    {"HIPDNN_ATTR_OPERATION_EXPAND_BAND_MATRIX_XDESC",                  "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},    // 2250
+  {"CUDNN_ATTR_OPERATION_EXPAND_BAND_MATRIX_YDESC",                    {"HIPDNN_ATTR_OPERATION_EXPAND_BAND_MATRIX_YDESC",                  "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},    // 2251
+  {"CUDNN_ATTR_OPERATION_EXPAND_BAND_MATRIX_LOWER_BANDWIDTH",          {"HIPDNN_ATTR_OPERATION_EXPAND_BAND_MATRIX_LOWER_BANDWIDTH",        "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},    // 2252
+  {"CUDNN_ATTR_OPERATION_EXPAND_BAND_MATRIX_UPPER_BANDWIDTH",          {"HIPDNN_ATTR_OPERATION_EXPAND_BAND_MATRIX_UPPER_BANDWIDTH",        "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},    // 2253
+  {"CUDNN_ATTR_OPERATION_EXPAND_BAND_MATRIX_AXIS",                     {"HIPDNN_ATTR_OPERATION_EXPAND_BAND_MATRIX_AXIS",                   "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},    // 2254
+  {"CUDNN_ATTR_OPERATION_EXPAND_BAND_MATRIX_PAD_VALUE",                {"HIPDNN_ATTR_OPERATION_EXPAND_BAND_MATRIX_PAD_VALUE",              "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},    // 2255
+  {"CUDNN_ATTR_OPERATION_EXPAND_BAND_MATRIX_KV_TOKEN_OFFSET_DESC",     {"HIPDNN_ATTR_OPERATION_EXPAND_BAND_MATRIX_KV_TOKEN_OFFSET_DESC",   "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},    // 2256
+  {"CUDNN_ATTR_OPERATION_CONTRACT_BAND_MATRIX_XDESC",                  {"HIPDNN_ATTR_OPERATION_CONTRACT_BAND_MATRIX_XDESC",                "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},    // 2270
+  {"CUDNN_ATTR_OPERATION_CONTRACT_BAND_MATRIX_YDESC",                  {"HIPDNN_ATTR_OPERATION_CONTRACT_BAND_MATRIX_YDESC",                "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},    // 2271
+  {"CUDNN_ATTR_OPERATION_CONTRACT_BAND_MATRIX_LOWER_BANDWIDTH",        {"HIPDNN_ATTR_OPERATION_CONTRACT_BAND_MATRIX_LOWER_BANDWIDTH",      "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},    // 2272
+  {"CUDNN_ATTR_OPERATION_CONTRACT_BAND_MATRIX_UPPER_BANDWIDTH",        {"HIPDNN_ATTR_OPERATION_CONTRACT_BAND_MATRIX_UPPER_BANDWIDTH",      "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},    // 2273
+  {"CUDNN_ATTR_OPERATION_CONTRACT_BAND_MATRIX_AXIS",                   {"HIPDNN_ATTR_OPERATION_CONTRACT_BAND_MATRIX_AXIS",                 "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},    // 2274
+  {"CUDNN_ATTR_OPERATION_CONTRACT_BAND_MATRIX_PAD_VALUE",              {"HIPDNN_ATTR_OPERATION_CONTRACT_BAND_MATRIX_PAD_VALUE",            "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},    // 2275
+  {"CUDNN_ATTR_OPERATION_CONTRACT_BAND_MAX_TOKEN_VALUE",               {"HIPDNN_ATTR_OPERATION_CONTRACT_BAND_MAX_TOKEN_VALUE",             "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},    // 2276
   {"CUDNN_ATTR_RNG_DISTRIBUTION",                                      {"HIPDNN_ATTR_RNG_DISTRIBUTION",                                    "MIOPEN_ATTR_RNG_DISTRIBUTION",                                    CONV_NUMERIC_LITERAL, API_DNN, 1, HIP_UNSUPPORTED}},    // 2300
   {"CUDNN_ATTR_RNG_NORMAL_DIST_MEAN",                                  {"HIPDNN_ATTR_RNG_NORMAL_DIST_MEAN",                                "MIOPEN_ATTR_RNG_NORMAL_DIST_MEAN",                                CONV_NUMERIC_LITERAL, API_DNN, 1, HIP_UNSUPPORTED}},    // 2301
   {"CUDNN_ATTR_RNG_NORMAL_DIST_STANDARD_DEVIATION",                    {"HIPDNN_ATTR_RNG_NORMAL_DIST_STANDARD_DEVIATION",                  "MIOPEN_ATTR_RNG_NORMAL_DIST_STANDARD_DEVIATION",                  CONV_NUMERIC_LITERAL, API_DNN, 1, HIP_UNSUPPORTED}},    // 2302
@@ -671,6 +685,7 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DNN_TYPE_NAME_MAP {
   {"CUDNN_ATTR_OPERATION_RNG_OFFSET_DESC",                             {"HIPDNN_ATTR_OPERATION_RNG_OFFSET_DESC",                           "MIOPEN_ATTR_OPERATION_RNG_OFFSET_DESC",                           CONV_NUMERIC_LITERAL, API_DNN, 1, HIP_UNSUPPORTED}},    // 2313
   {"CUDNN_ATTR_KERNEL_CACHE_OPERATION_GRAPH",                          {"HIPDNN_ATTR_KERNEL_CACHE_OPERATION_GRAPH",                        "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},    // 2400
   {"CUDNN_ATTR_KERNEL_CACHE_IS_ENGINECFG_KERNEL_CACHED",               {"HIPDNN_ATTR_KERNEL_CACHE_IS_ENGINECFG_KERNEL_CACHED",             "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},    // 2401
+  {"CUDNN_ATTR_KERNEL_CACHE_JSON_REPRESENTATION",                      {"HIPDNN_ATTR_KERNEL_CACHE_JSON_REPRESENTATION",                    "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},    // 2402
   {"CUDNN_ATTR_OPERATION_BLOCK_SCALE_QUANTIZE_XDESC",                  {"HIPDNN_ATTR_OPERATION_BLOCK_SCALE_QUANTIZE_XDESC",                "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},    // 2500
   {"CUDNN_ATTR_OPERATION_BLOCK_SCALE_QUANTIZE_YDESC",                  {"HIPDNN_ATTR_OPERATION_BLOCK_SCALE_QUANTIZE_YDESC",                "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},    // 2501
   {"CUDNN_ATTR_OPERATION_BLOCK_SCALE_QUANTIZE_SCALE_DESC",             {"HIPDNN_ATTR_OPERATION_BLOCK_SCALE_QUANTIZE_SCALE_DESC",           "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},    // 2502
@@ -753,6 +768,8 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DNN_TYPE_NAME_MAP {
   {"CUDNN_BACKEND_OPERATION_RNG_DESCRIPTOR",                           {"HIPDNN_BACKEND_OPERATION_RNG_DESCRIPTOR",                         "MIOPEN_BACKEND_OPERATION_RNG_DESCRIPTOR",                         CONV_NUMERIC_LITERAL, API_DNN, 1, HIP_UNSUPPORTED}},
   {"CUDNN_BACKEND_KERNEL_CACHE_DESCRIPTOR",                            {"HIPDNN_BACKEND_KERNEL_CACHE_DESCRIPTOR",                          "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},
   {"CUDNN_BACKEND_OPERATION_PAGED_CACHE_LOAD_DESCRIPTOR",              {"HIPDNN_BACKEND_OPERATION_PAGED_CACHE_LOAD_DESCRIPTOR",            "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},
+  {"CUDNN_BACKEND_OPERATION_EXPAND_BAND_MATRIX_DESCRIPTOR",            {"HIPDNN_BACKEND_OPERATION_EXPAND_BAND_MATRIX_DESCRIPTOR",          "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},
+  {"CUDNN_BACKEND_OPERATION_CONTRACT_BAND_MATRIX_DESCRIPTOR",          {"HIPDNN_BACKEND_OPERATION_CONTRACT_BAND_MATRIX_DESCRIPTOR",        "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},
   {"CUDNN_BACKEND_OPERATION_BLOCK_SCALE_QUANTIZE_DESCRIPTOR",          {"HIPDNN_BACKEND_OPERATION_BLOCK_SCALE_QUANTIZE_DESCRIPTOR",        "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},
   {"CUDNN_BACKEND_OPERATION_BLOCK_SCALE_DEQUANTIZE_DESCRIPTOR",        {"HIPDNN_BACKEND_OPERATION_BLOCK_SCALE_DEQUANTIZE_DESCRIPTOR",      "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},
   {"CUDNN_BACKEND_DEVICEPROP_DESCRIPTOR",                              {"HIPDNN_BACKEND_DEVICEPROP_DESCRIPTOR",                            "",                                                                CONV_NUMERIC_LITERAL, API_DNN, 1, UNSUPPORTED}},
@@ -1032,7 +1049,7 @@ const std::map<llvm::StringRef, cudaAPIversions> CUDA_DNN_TYPE_NAME_VER_MAP {
   {"CUDNN_ATTR_ENGINECFG_ENGINE",                                      {CUDNN_801, CUDA_0,    CUDA_0   }},
   {"CUDNN_ATTR_ENGINECFG_INTERMEDIATE_INFO",                           {CUDNN_801, CUDA_0,    CUDA_0   }},
   {"CUDNN_ATTR_ENGINECFG_KNOB_CHOICES",                                {CUDNN_801, CUDA_0,    CUDA_0   }},
-  {"CUDNN_ATTR_EXECUTION_PLAN_HANDLE",                                 {CUDNN_801, CUDA_0,    CUDA_0   }},
+  {"CUDNN_ATTR_EXECUTION_PLAN_HANDLE",                                 {CUDNN_801, CUDNN_990, CUDA_0   }},
   {"CUDNN_ATTR_EXECUTION_PLAN_WORKSPACE_SIZE",                         {CUDNN_801, CUDA_0,    CUDA_0   }},
   {"CUDNN_ATTR_EXECUTION_PLAN_COMPUTED_INTERMEDIATE_UIDS",             {CUDNN_802, CUDA_0,    CUDA_0   }},
   {"CUDNN_ATTR_EXECUTION_PLAN_RUN_ONLY_INTERMEDIATE_UIDS",             {CUDNN_802, CUDA_0,    CUDA_0   }},
@@ -1091,7 +1108,7 @@ const std::map<llvm::StringRef, cudaAPIversions> CUDA_DNN_TYPE_NAME_VER_MAP {
   {"CUDNN_ATTR_OPERATION_BN_FINALIZE_ACCUM_COUNT_DESC",                {CUDNN_810, CUDA_0,    CUDA_0   }},
   {"CUDNN_ATTR_OPERATION_BN_FINALIZE_EPSILON_DESC",                    {CUDNN_810, CUDA_0,    CUDA_0   }},
   {"CUDNN_ATTR_OPERATION_BN_FINALIZE_EXP_AVERATE_FACTOR_DESC",         {CUDNN_810, CUDA_0,    CUDA_0   }},
-  {"CUDNN_ATTR_OPERATIONGRAPH_HANDLE",                                 {CUDNN_801, CUDA_0,    CUDA_0   }},
+  {"CUDNN_ATTR_OPERATIONGRAPH_HANDLE",                                 {CUDNN_801, CUDNN_990, CUDA_0   }},
   {"CUDNN_ATTR_OPERATIONGRAPH_OPS",                                    {CUDNN_801, CUDA_0,    CUDA_0   }},
   {"CUDNN_ATTR_OPERATIONGRAPH_ENGINE_GLOBAL_COUNT",                    {CUDNN_801, CUDA_0,    CUDA_0   }},
   {"CUDNN_ATTR_TENSOR_BYTE_ALIGNMENT",                                 {CUDNN_801, CUDA_0,    CUDA_0   }},
@@ -1863,6 +1880,23 @@ const std::map<llvm::StringRef, cudaAPIversions> CUDA_DNN_TYPE_NAME_VER_MAP {
   {"CUDNN_ATTR_DEVICEPROP_HANDLE",                                     {CUDNN_980, CUDA_0,    CUDA_0   }},
   {"CUDNN_ATTR_DEVICEPROP_JSON_REPRESENTATION",                        {CUDNN_980, CUDA_0,    CUDA_0   }},
   {"CUDNN_BACKEND_DEVICEPROP_DESCRIPTOR",                              {CUDNN_980, CUDA_0,    CUDA_0   }},
+  {"CUDNN_ATTR_OPERATION_EXPAND_BAND_MATRIX_XDESC",                    {CUDNN_9100,CUDA_0,    CUDA_0   }},
+  {"CUDNN_ATTR_OPERATION_EXPAND_BAND_MATRIX_YDESC",                    {CUDNN_9100,CUDA_0,    CUDA_0   }},
+  {"CUDNN_ATTR_OPERATION_EXPAND_BAND_MATRIX_LOWER_BANDWIDTH",          {CUDNN_9100,CUDA_0,    CUDA_0   }},
+  {"CUDNN_ATTR_OPERATION_EXPAND_BAND_MATRIX_UPPER_BANDWIDTH",          {CUDNN_9100,CUDA_0,    CUDA_0   }},
+  {"CUDNN_ATTR_OPERATION_EXPAND_BAND_MATRIX_AXIS",                     {CUDNN_9100,CUDA_0,    CUDA_0   }},
+  {"CUDNN_ATTR_OPERATION_EXPAND_BAND_MATRIX_PAD_VALUE",                {CUDNN_9100,CUDA_0,    CUDA_0   }},
+  {"CUDNN_ATTR_OPERATION_EXPAND_BAND_MATRIX_KV_TOKEN_OFFSET_DESC",     {CUDNN_9100,CUDA_0,    CUDA_0   }},
+  {"CUDNN_ATTR_OPERATION_CONTRACT_BAND_MATRIX_XDESC",                  {CUDNN_9100,CUDA_0,    CUDA_0   }},
+  {"CUDNN_ATTR_OPERATION_CONTRACT_BAND_MATRIX_YDESC",                  {CUDNN_9100,CUDA_0,    CUDA_0   }},
+  {"CUDNN_ATTR_OPERATION_CONTRACT_BAND_MATRIX_LOWER_BANDWIDTH",        {CUDNN_9100,CUDA_0,    CUDA_0   }},
+  {"CUDNN_ATTR_OPERATION_CONTRACT_BAND_MATRIX_UPPER_BANDWIDTH",        {CUDNN_9100,CUDA_0,    CUDA_0   }},
+  {"CUDNN_ATTR_OPERATION_CONTRACT_BAND_MATRIX_AXIS",                   {CUDNN_9100,CUDA_0,    CUDA_0   }},
+  {"CUDNN_ATTR_OPERATION_CONTRACT_BAND_MATRIX_PAD_VALUE",              {CUDNN_9100,CUDA_0,    CUDA_0   }},
+  {"CUDNN_ATTR_OPERATION_CONTRACT_BAND_MAX_TOKEN_VALUE",               {CUDNN_9100,CUDA_0,    CUDA_0   }},
+  {"CUDNN_ATTR_KERNEL_CACHE_JSON_REPRESENTATION",                      {CUDNN_9100,CUDA_0,    CUDA_0   }},
+  {"CUDNN_BACKEND_OPERATION_EXPAND_BAND_MATRIX_DESCRIPTOR",            {CUDNN_9100,CUDA_0,    CUDA_0   }},
+  {"CUDNN_BACKEND_OPERATION_CONTRACT_BAND_MATRIX_DESCRIPTOR",          {CUDNN_9100,CUDA_0,    CUDA_0   }},
 };
 
 const std::map<llvm::StringRef, hipAPIversions> HIP_DNN_TYPE_NAME_VER_MAP {

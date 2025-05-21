@@ -15,6 +15,7 @@
 |**CUDA**|**A**|**D**|**C**|**R**|**HIP**|**A**|**D**|**C**|**R**|**E**|
 |:--|:-:|:-:|:-:|:-:|:--|:-:|:-:|:-:|:-:|:-:|
 |`CIG_DATA_TYPE_D3D12_COMMAND_QUEUE`|12.5| | | | | | | | | |
+|`CIG_DATA_TYPE_NV_BLOB`|12.9| | | | | | | | | |
 |`CUCoredumpGenerationFlags`|12.5| | | | | | | | | |
 |`CUDA_ARRAY3D_2DARRAY`| |5.0| | | | | | | | |
 |`CUDA_ARRAY3D_COLOR_ATTACHMENT`|10.0| | | | | | | | | |
@@ -334,6 +335,7 @@
 |`CU_COMPUTEMODE_EXCLUSIVE_PROCESS`| | | | |`hipComputeModeExclusiveProcess`|2.0.0| | | | |
 |`CU_COMPUTEMODE_PROHIBITED`| | | | |`hipComputeModeProhibited`|1.9.0| | | | |
 |`CU_COMPUTE_ACCELERATED_TARGET_BASE`|12.0| | | | | | | | | |
+|`CU_COMPUTE_FAMILY_TARGET_BASE`|12.9| | | | | | | | | |
 |`CU_COREDUMP_DEFAULT_FLAGS`|12.5| | | | | | | | | |
 |`CU_COREDUMP_ENABLE_ON_EXCEPTION`|12.1| | | | | | | | | |
 |`CU_COREDUMP_ENABLE_USER_TRIGGER`|12.1| | | | | | | | | |
@@ -431,7 +433,9 @@
 |`CU_DEVICE_ATTRIBUTE_HANDLE_TYPE_WIN32_KMT_HANDLE_SUPPORTED`|10.2| | | | | | | | | |
 |`CU_DEVICE_ATTRIBUTE_HOST_NATIVE_ATOMIC_SUPPORTED`|8.0| | | |`hipDeviceAttributeHostNativeAtomicSupported`|4.3.0| | | | |
 |`CU_DEVICE_ATTRIBUTE_HOST_NUMA_ID`|12.2| | | | | | | | | |
+|`CU_DEVICE_ATTRIBUTE_HOST_NUMA_MEMORY_POOLS_SUPPORTED`|12.9| | | | | | | | | |
 |`CU_DEVICE_ATTRIBUTE_HOST_NUMA_MULTINODE_IPC_SUPPORTED`|12.8| | | | | | | | | |
+|`CU_DEVICE_ATTRIBUTE_HOST_NUMA_VIRTUAL_MEMORY_MANAGEMENT_SUPPORTED`|12.9| | | | | | | | | |
 |`CU_DEVICE_ATTRIBUTE_HOST_REGISTER_SUPPORTED`|9.2| | | |`hipDeviceAttributeHostRegisterSupported`|6.0.0| | | | |
 |`CU_DEVICE_ATTRIBUTE_INTEGRATED`| | | | |`hipDeviceAttributeIntegrated`|1.9.0| | | | |
 |`CU_DEVICE_ATTRIBUTE_IPC_EVENT_SUPPORTED`|12.0| | | | | | | | | |
@@ -536,6 +540,7 @@
 |`CU_DEVICE_ATTRIBUTE_UNIFIED_FUNCTION_POINTERS`|12.0| | | | | | | | | |
 |`CU_DEVICE_ATTRIBUTE_VIRTUAL_ADDRESS_MANAGEMENT_SUPPORTED`|10.2|11.2| | | | | | | | |
 |`CU_DEVICE_ATTRIBUTE_VIRTUAL_MEMORY_MANAGEMENT_SUPPORTED`|11.2| | | |`hipDeviceAttributeVirtualMemoryManagementSupported`|5.3.0| | | | |
+|`CU_DEVICE_ATTRIBUTE_VULKAN_CIG_SUPPORTED`|12.9| | | | | | | | | |
 |`CU_DEVICE_ATTRIBUTE_WARP_SIZE`| | | | |`hipDeviceAttributeWarpSize`|1.6.0| | | | |
 |`CU_DEVICE_CPU`|8.0| | | |`hipCpuDeviceId`|3.7.0| | | | |
 |`CU_DEVICE_INVALID`|8.0| | | |`hipInvalidDeviceId`|3.7.0| | | | |
@@ -713,6 +718,8 @@
 |`CU_GRAPHICS_REGISTER_FLAGS_SURFACE_LDST`| | | | |`hipGraphicsRegisterFlagsSurfaceLoadStore`|4.4.0| | | | |
 |`CU_GRAPHICS_REGISTER_FLAGS_TEXTURE_GATHER`| | | | |`hipGraphicsRegisterFlagsTextureGather`|4.4.0| | | | |
 |`CU_GRAPHICS_REGISTER_FLAGS_WRITE_DISCARD`| | | | |`hipGraphicsRegisterFlagsWriteDiscard`|4.4.0| | | | |
+|`CU_GRAPH_CHILD_GRAPH_OWNERSHIP_CLONE`|12.9| | | | | | | | | |
+|`CU_GRAPH_CHILD_GRAPH_OWNERSHIP_MOVE`|12.9| | | | | | | | | |
 |`CU_GRAPH_COND_ASSIGN_DEFAULT`|12.3| | | | | | | | | |
 |`CU_GRAPH_COND_TYPE_IF`|12.3| | | | | | | | | |
 |`CU_GRAPH_COND_TYPE_SWITCH`|12.8| | | | | | | | | |
@@ -841,6 +848,7 @@
 |`CU_LAUNCH_ATTRIBUTE_PROGRAMMATIC_EVENT`|11.8| | | | | | | | | |
 |`CU_LAUNCH_ATTRIBUTE_PROGRAMMATIC_STREAM_SERIALIZATION`|11.8| | | | | | | | | |
 |`CU_LAUNCH_ATTRIBUTE_SYNCHRONIZATION_POLICY`|11.8| | | | | | | | | |
+|`CU_LAUNCH_KERNEL_REQUIRED_BLOCK_DIM`|12.9| | | | | | | | | |
 |`CU_LAUNCH_MEM_SYNC_DOMAIN_DEFAULT`|12.0| | | | | | | | | |
 |`CU_LAUNCH_MEM_SYNC_DOMAIN_REMOTE`|12.0| | | | | | | | | |
 |`CU_LAUNCH_PARAM_BUFFER_POINTER`| | | | |`HIP_LAUNCH_PARAM_BUFFER_POINTER`|1.6.0| | | | |
@@ -863,6 +871,8 @@
 |`CU_LIMIT_PRINTF_FIFO_SIZE`| | | | |`hipLimitPrintfFifoSize`|4.5.0| | | | |
 |`CU_LIMIT_SHMEM_SIZE`|12.5| | | | | | | | | |
 |`CU_LIMIT_STACK_SIZE`| | | | |`hipLimitStackSize`|5.3.0| | | | |
+|`CU_LOG_LEVEL_ERROR`|12.9| | | | | | | | | |
+|`CU_LOG_LEVEL_WARNING`|12.9| | | | | | | | | |
 |`CU_MEMCPY_FLAG_DEFAULT`|12.8| | | | | | | | | |
 |`CU_MEMCPY_FLAG_PREFER_OVERLAP_WITH_COMPUTE`|12.8| | | | | | | | | |
 |`CU_MEMCPY_OPERAND_TYPE_ARRAY`|12.8| | | | | | | | | |
@@ -913,6 +923,7 @@
 |`CU_MEM_CREATE_USAGE_HW_DECOMPRESS`|12.8| | | | | | | | | |
 |`CU_MEM_CREATE_USAGE_TILE_POOL`|11.1| | | | | | | | | |
 |`CU_MEM_DECOMPRESS_ALGORITHM_DEFLATE`|12.8| | | | | | | | | |
+|`CU_MEM_DECOMPRESS_ALGORITHM_LZ4`|12.9| | | | | | | | | |
 |`CU_MEM_DECOMPRESS_ALGORITHM_SNAPPY`|12.8| | | | | | | | | |
 |`CU_MEM_DECOMPRESS_UNSUPPORTED`|12.8| | | | | | | | | |
 |`CU_MEM_HANDLE_TYPE_FABRIC`|12.3| | | | | | | | | |
@@ -1063,12 +1074,21 @@
 |`CU_TARGET_COMPUTE_10`| | | |9.0| | | | | | |
 |`CU_TARGET_COMPUTE_100`|12.8| | | | | | | | | |
 |`CU_TARGET_COMPUTE_100A`|12.8| | | | | | | | | |
+|`CU_TARGET_COMPUTE_100F`|12.9| | | | | | | | | |
 |`CU_TARGET_COMPUTE_101`|12.8| | | | | | | | | |
 |`CU_TARGET_COMPUTE_101A`|12.8| | | | | | | | | |
+|`CU_TARGET_COMPUTE_101F`|12.9| | | | | | | | | |
+|`CU_TARGET_COMPUTE_103`|12.9| | | | | | | | | |
+|`CU_TARGET_COMPUTE_103A`|12.9| | | | | | | | | |
+|`CU_TARGET_COMPUTE_103F`|12.9| | | | | | | | | |
 |`CU_TARGET_COMPUTE_11`| | | |9.0| | | | | | |
 |`CU_TARGET_COMPUTE_12`| | | |9.0| | | | | | |
 |`CU_TARGET_COMPUTE_120`|12.8| | | | | | | | | |
 |`CU_TARGET_COMPUTE_120A`|12.8| | | | | | | | | |
+|`CU_TARGET_COMPUTE_120F`|12.9| | | | | | | | | |
+|`CU_TARGET_COMPUTE_121`|12.9| | | | | | | | | |
+|`CU_TARGET_COMPUTE_121A`|12.9| | | | | | | | | |
+|`CU_TARGET_COMPUTE_121F`|12.9| | | | | | | | | |
 |`CU_TARGET_COMPUTE_13`| | | |9.0| | | | | | |
 |`CU_TARGET_COMPUTE_20`| | | |12.0| | | | | | |
 |`CU_TARGET_COMPUTE_21`| | | |12.0| | | | | | |
@@ -1282,6 +1302,8 @@
 |`CUfunction_attribute`| | | | |`hipFunction_attribute`|2.8.0| | | | |
 |`CUfunction_attribute_enum`| | | | |`hipFunction_attribute`|2.8.0| | | | |
 |`CUgraph`|10.0| | | |`hipGraph_t`|4.3.0| | | | |
+|`CUgraphChildGraphNodeOwnership`|12.9| | | | | | | | | |
+|`CUgraphChildGraphNodeOwnership_enum`|12.9| | | | | | | | | |
 |`CUgraphConditionalHandle`|12.3| | | | | | | | | |
 |`CUgraphConditionalNodeType`|12.3| | | | | | | | | |
 |`CUgraphConditionalNodeType_enum`|12.3| | | | | | | | | |
@@ -1348,14 +1370,14 @@
 |`CUkernelNodeAttrValue`|11.0| | | |`hipKernelNodeAttrValue`|5.2.0| | | | |
 |`CUkernelNodeAttrValue_union`|11.0| | |11.8|`hipKernelNodeAttrValue`|5.2.0| | | | |
 |`CUkernelNodeAttrValue_v1`|11.3| | | |`hipKernelNodeAttrValue`|5.2.0| | | | |
-|`CUlaunchAttribute`|11.8| | | |`hipLaunchAttribute`|6.5.0| | | |6.5.0|
+|`CUlaunchAttribute`|11.8| | | |`hipLaunchAttribute`|7.0.0| | | |7.0.0|
 |`CUlaunchAttributeID`|11.8| | | |`hipLaunchAttributeID`|6.2.0| | | | |
 |`CUlaunchAttributeID_enum`|11.8| | | |`hipLaunchAttributeID`|6.2.0| | | | |
 |`CUlaunchAttributeValue`|11.8| | | |`hipLaunchAttributeValue`|6.2.0| | | | |
 |`CUlaunchAttributeValue_union`|11.8| | | |`hipLaunchAttributeValue`|6.2.0| | | | |
-|`CUlaunchAttribute_st`|11.8| | | |`hipLaunchAttribute_st`|6.5.0| | | |6.5.0|
-|`CUlaunchConfig`|11.8| | | |`HIP_LAUNCH_CONFIG`|6.5.0| | | |6.5.0|
-|`CUlaunchConfig_st`|11.8| | | |`HIP_LAUNCH_CONFIG_st`|6.5.0| | | |6.5.0|
+|`CUlaunchAttribute_st`|11.8| | | |`hipLaunchAttribute_st`|7.0.0| | | |7.0.0|
+|`CUlaunchConfig`|11.8| | | |`HIP_LAUNCH_CONFIG`|7.0.0| | | |7.0.0|
+|`CUlaunchConfig_st`|11.8| | | |`HIP_LAUNCH_CONFIG_st`|7.0.0| | | |7.0.0|
 |`CUlaunchMemSyncDomain`|12.0| | | | | | | | | |
 |`CUlaunchMemSyncDomainMap`|12.0| | | | | | | | | |
 |`CUlaunchMemSyncDomainMap_st`|12.0| | | | | | | | | |
@@ -1370,6 +1392,8 @@
 |`CUlimit_enum`| | | | |`hipLimit_t`|1.6.0| | | | |
 |`CUlinkState`| | | | |`hiprtcLinkState`|5.3.0| | | | |
 |`CUlinkState_st`| | | | |`ihiprtcLinkState`|5.3.0| | | | |
+|`CUlogLevel`|12.9| | | | | | | | | |
+|`CUlogLevel_enum`|12.9| | | | | | | | | |
 |`CUmemAccessDesc`|10.2| | | |`hipMemAccessDesc`|5.2.0| | | | |
 |`CUmemAccessDesc_st`|10.2| | | |`hipMemAccessDesc`|5.2.0| | | | |
 |`CUmemAccessDesc_v1`|11.3| | | |`hipMemAccessDesc`|5.2.0| | | | |
@@ -1969,7 +1993,7 @@
 |`cuLaunchCooperativeKernelMultiDevice`|9.0|11.3| | |`hipModuleLaunchCooperativeKernelMultiDevice`|5.5.0| | | | |
 |`cuLaunchHostFunc`|10.0| | | |`hipLaunchHostFunc`|5.2.0| | | | |
 |`cuLaunchKernel`| | | | |`hipModuleLaunchKernel`|1.6.0| | | | |
-|`cuLaunchKernelEx`|11.8| | | |`hipDrvLaunchKernelEx`|6.5.0| | | |6.5.0|
+|`cuLaunchKernelEx`|11.8| | | |`hipDrvLaunchKernelEx`|7.0.0| | | |7.0.0|
 
 ## **23. Execution Control [DEPRECATED]**
 

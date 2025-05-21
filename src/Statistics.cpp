@@ -494,6 +494,7 @@ std::string Statistics::getCudaVersion(const cudaVersions &ver) {
     case CUDA_125: return "12.5";
     case CUDA_126: return "12.6";
     case CUDA_128: return "12.8";
+    case CUDA_129: return "12.9";
     case CUDNN_10: return "1.0.0";
     case CUDNN_20: return "2.0.0";
     case CUDNN_30: return "3.0.0";
@@ -551,6 +552,8 @@ std::string Statistics::getCudaVersion(const cudaVersions &ver) {
     case CUDNN_960: return "9.6.0";
     case CUDNN_970: return "9.7.0";
     case CUDNN_980: return "9.8.0";
+    case CUDNN_990: return "9.9.0";
+    case CUDNN_9100: return "9.10.0";
     case CUTENSOR_1010: return "1.0.1.0";
     case CUTENSOR_1100: return "1.1.0.0";
     case CUTENSOR_1200: return "1.2.0.0";
@@ -647,7 +650,7 @@ std::string Statistics::getHipVersion(const hipVersions &ver) {
     case HIP_6020: return "6.2.0";
     case HIP_6030: return "6.3.0";
     case HIP_6040: return "6.4.0";
-    case HIP_6050: return "6.5.0";
+    case HIP_7000: return "7.0.0";
   }
   return "";
 }
