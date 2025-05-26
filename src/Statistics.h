@@ -116,6 +116,8 @@ enum ConvTypes {
   CONV_CPP,
   //  driver::COREDUMP
   CONV_COREDUMP,
+  //  driver::GREEN_CONTEXT
+  CONV_GREEN_CONTEXT,
   // runtime::DRIVER_INTERACT
   CONV_DRIVER_INTERACT,
   //  driver::PROFILER_DEPRECATED

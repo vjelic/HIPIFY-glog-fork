@@ -990,29 +990,29 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_FUNCTION_MAP {
 
   // 35. Green Contexts
   //
-  {"cuGreenCtxCreate",                                            {"hipGreenCtxCreate",                                           "", CONV_COREDUMP, API_DRIVER, SEC::GREEN_CONTEXT, HIP_UNSUPPORTED}},
+  {"cuGreenCtxCreate",                                            {"hipGreenCtxCreate",                                           "", CONV_GREEN_CONTEXT, API_DRIVER, SEC::GREEN_CONTEXT, HIP_UNSUPPORTED}},
   //
-  {"cuGreenCtxDestroy",                                           {"hipGreenCtxDestroy",                                          "", CONV_COREDUMP, API_DRIVER, SEC::GREEN_CONTEXT, HIP_UNSUPPORTED}},
+  {"cuGreenCtxDestroy",                                           {"hipGreenCtxDestroy",                                          "", CONV_GREEN_CONTEXT, API_DRIVER, SEC::GREEN_CONTEXT, HIP_UNSUPPORTED}},
   //
-  {"cuCtxFromGreenCtx",                                           {"hipCtxFromGreenCtx",                                          "", CONV_COREDUMP, API_DRIVER, SEC::GREEN_CONTEXT, HIP_UNSUPPORTED}},
+  {"cuCtxFromGreenCtx",                                           {"hipCtxFromGreenCtx",                                          "", CONV_GREEN_CONTEXT, API_DRIVER, SEC::GREEN_CONTEXT, HIP_UNSUPPORTED}},
   //
-  {"cuDeviceGetDevResource",                                      {"hipDeviceGetDevResource",                                     "", CONV_COREDUMP, API_DRIVER, SEC::GREEN_CONTEXT, HIP_UNSUPPORTED}},
+  {"cuDeviceGetDevResource",                                      {"hipDeviceGetDevResource",                                     "", CONV_GREEN_CONTEXT, API_DRIVER, SEC::GREEN_CONTEXT, HIP_UNSUPPORTED}},
   //
-  {"cuCtxGetDevResource",                                         {"hipCtxGetDevResource",                                        "", CONV_COREDUMP, API_DRIVER, SEC::GREEN_CONTEXT, HIP_UNSUPPORTED}},
+  {"cuCtxGetDevResource",                                         {"hipCtxGetDevResource",                                        "", CONV_GREEN_CONTEXT, API_DRIVER, SEC::GREEN_CONTEXT, HIP_UNSUPPORTED}},
   //
-  {"cuGreenCtxGetDevResource",                                    {"hipGreenCtxGetDevResource",                                   "", CONV_COREDUMP, API_DRIVER, SEC::GREEN_CONTEXT, HIP_UNSUPPORTED}},
+  {"cuGreenCtxGetDevResource",                                    {"hipGreenCtxGetDevResource",                                   "", CONV_GREEN_CONTEXT, API_DRIVER, SEC::GREEN_CONTEXT, HIP_UNSUPPORTED}},
   //
-  {"cuDevSmResourceSplitByCount",                                 {"hipDevSmResourceSplitByCount",                                "", CONV_COREDUMP, API_DRIVER, SEC::GREEN_CONTEXT, HIP_UNSUPPORTED}},
+  {"cuDevSmResourceSplitByCount",                                 {"hipDevSmResourceSplitByCount",                                "", CONV_GREEN_CONTEXT, API_DRIVER, SEC::GREEN_CONTEXT, HIP_UNSUPPORTED}},
   //
-  {"cuDevResourceGenerateDesc",                                   {"hipDevResourceGenerateDesc",                                  "", CONV_COREDUMP, API_DRIVER, SEC::GREEN_CONTEXT, HIP_UNSUPPORTED}},
+  {"cuDevResourceGenerateDesc",                                   {"hipDevResourceGenerateDesc",                                  "", CONV_GREEN_CONTEXT, API_DRIVER, SEC::GREEN_CONTEXT, HIP_UNSUPPORTED}},
   //
-  {"cuGreenCtxRecordEvent",                                       {"hipGreenCtxRecordEvent",                                      "", CONV_COREDUMP, API_DRIVER, SEC::GREEN_CONTEXT, HIP_UNSUPPORTED}},
+  {"cuGreenCtxRecordEvent",                                       {"hipGreenCtxRecordEvent",                                      "", CONV_GREEN_CONTEXT, API_DRIVER, SEC::GREEN_CONTEXT, HIP_UNSUPPORTED}},
   //
-  {"cuGreenCtxWaitEvent",                                         {"hipGreenCtxWaitEvent",                                        "", CONV_COREDUMP, API_DRIVER, SEC::GREEN_CONTEXT, HIP_UNSUPPORTED}},
+  {"cuGreenCtxWaitEvent",                                         {"hipGreenCtxWaitEvent",                                        "", CONV_GREEN_CONTEXT, API_DRIVER, SEC::GREEN_CONTEXT, HIP_UNSUPPORTED}},
   //
-  {"cuStreamGetGreenCtx",                                         {"hipStreamGetGreenCtx",                                        "", CONV_COREDUMP, API_DRIVER, SEC::GREEN_CONTEXT, HIP_UNSUPPORTED}},
+  {"cuStreamGetGreenCtx",                                         {"hipStreamGetGreenCtx",                                        "", CONV_GREEN_CONTEXT, API_DRIVER, SEC::GREEN_CONTEXT, HIP_UNSUPPORTED}},
   //
-  {"cuGreenCtxStreamCreate",                                      {"hipGreenCtxStreamCreate",                                     "", CONV_COREDUMP, API_DRIVER, SEC::GREEN_CONTEXT, HIP_UNSUPPORTED}},
+  {"cuGreenCtxStreamCreate",                                      {"hipGreenCtxStreamCreate",                                     "", CONV_GREEN_CONTEXT, API_DRIVER, SEC::GREEN_CONTEXT, HIP_UNSUPPORTED}},
 
   // 36. Error Log Management Functions
   //

@@ -55,6 +55,7 @@ const char *counterNames[NUM_CONV_TYPES] = {
   "driver_entry_point", // CONV_DRIVER_ENTRY_POINT
   "cpp", // CONV_CPP
   "coredump", // CONV_COREDUMP
+  "green_context", // CONV_GREEN_CONTEXT
   "driver_interact", // CONV_DRIVER_INTERACT
   "profiler", // CONV_PROFILER
   "openGL", // CONV_OPENGL
@@ -108,6 +109,7 @@ const char *counterTypes[NUM_CONV_TYPES] = {
   "CONV_DRIVER_ENTRY_POINT",
   "CONV_CPP",
   "CONV_COREDUMP",
+  "CONV_GREEN_CONTEXT",
   "CONV_DRIVER_INTERACT",
   "CONV_PROFILER",
   "CONV_OPENGL",
