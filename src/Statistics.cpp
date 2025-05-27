@@ -56,6 +56,7 @@ const char *counterNames[NUM_CONV_TYPES] = {
   "cpp", // CONV_CPP
   "coredump", // CONV_COREDUMP
   "green_context", // CONV_GREEN_CONTEXT
+  "error_log", // CONV_ERROR_LOG
   "driver_interact", // CONV_DRIVER_INTERACT
   "profiler", // CONV_PROFILER
   "openGL", // CONV_OPENGL
@@ -110,6 +111,7 @@ const char *counterTypes[NUM_CONV_TYPES] = {
   "CONV_CPP",
   "CONV_COREDUMP",
   "CONV_GREEN_CONTEXT",
+  "CONV_ERROR_LOG",
   "CONV_DRIVER_INTERACT",
   "CONV_PROFILER",
   "CONV_OPENGL",
