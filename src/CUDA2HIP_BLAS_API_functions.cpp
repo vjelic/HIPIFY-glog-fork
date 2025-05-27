@@ -837,7 +837,7 @@ const std::map<llvm::StringRef, hipCounter> CUDA_BLAS_FUNCTION_MAP {
   {"cublasSgemmEx_64",                                     {"hipblasSgemmEx_64",                                         "",                                                   CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT, UNSUPPORTED}},
   {"cublasGemmEx",                                         {"hipblasGemmEx_v2",                                          "rocblas_gemm_ex",                                    CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT}},
   {"cublasGemmEx_64",                                      {"hipblasGemmEx_v2_64",                                       "rocblas_gemm_ex_64",                                 CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT, ROC_UNSUPPORTED}},
-  {"cublasGemmBatchedEx",                                  {"hipblasGemmBatchedEx_v2",                                   "rocblas_gemm_batched_ex",                            CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT}},
+  {"cublasGemmBatchedEx",                                  {"hipblasGemmBatchedEx",                                      "rocblas_gemm_batched_ex",                            CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT}},
   {"cublasGemmBatchedEx_64",                               {"hipblasGemmBatchedEx_v2_64",                                "rocblas_gemm_batched_ex_64",                         CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT, ROC_UNSUPPORTED}},
   {"cublasGemmStridedBatchedEx",                           {"hipblasGemmStridedBatchedEx_v2",                            "rocblas_gemm_strided_batched_ex",                    CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT}},
   {"cublasGemmStridedBatchedEx_64",                        {"hipblasGemmStridedBatchedEx_v2_64",                         "rocblas_gemm_strided_batched_ex_64",                 CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT, ROC_UNSUPPORTED}},
@@ -1857,7 +1857,7 @@ const std::map<llvm::StringRef, hipAPIversions> HIP_BLAS_FUNCTION_VER_MAP {
   {"hipblasCgeqrfBatched_v2",                              {HIP_6000, HIP_0,    HIP_0   }},
   {"hipblasZgeqrfBatched_v2",                              {HIP_6000, HIP_0,    HIP_0   }},
   {"hipblasGemmEx_v2",                                     {HIP_6000, HIP_0,    HIP_0   }},
-  {"hipblasGemmBatchedEx_v2",                              {HIP_6000, HIP_0,    HIP_0   }},
+  {"hipblasGemmBatchedEx",                                 {HIP_3060, HIP_0,    HIP_0   }},
   {"hipblasGemmStridedBatchedEx_v2",                       {HIP_6000, HIP_0,    HIP_0   }},
   {"hipblasAxpyEx_v2",                                     {HIP_6000, HIP_0,    HIP_0   }},
   {"hipblasDotEx_v2",                                      {HIP_6000, HIP_0,    HIP_0   }},
@@ -2535,6 +2535,8 @@ const std::map<llvm::StringRef, hipAPIversions> HIP_BLAS_FUNCTION_VER_MAP {
 const std::map<llvm::StringRef, hipAPIChangedVersions> HIP_BLAS_FUNCTION_CHANGED_VER_MAP {
   {"hipblasStrmm",                                         {HIP_6000}},
   {"hipblasDtrmm",                                         {HIP_6000}},
+  {"hipblasGemmBatchedEx",                                 {HIP_7000}},
+
   {"rocblas_strmm",                                        {HIP_6000}},
   {"rocblas_dtrmm",                                        {HIP_6000}},
   {"rocblas_ctrmm",                                        {HIP_6000}},

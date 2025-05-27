@@ -4960,7 +4960,7 @@ sub simpleSubstitutions {
     subst("cublasDznrm2_64", "hipblasDznrm2_v2_64", "library");
     subst("cublasDznrm2_v2", "hipblasDznrm2_v2", "library");
     subst("cublasDznrm2_v2_64", "hipblasDznrm2_v2_64", "library");
-    subst("cublasGemmBatchedEx", "hipblasGemmBatchedEx_v2", "library");
+    subst("cublasGemmBatchedEx", "hipblasGemmBatchedEx", "library");
     subst("cublasGemmBatchedEx_64", "hipblasGemmBatchedEx_v2_64", "library");
     subst("cublasGemmEx", "hipblasGemmEx_v2", "library");
     subst("cublasGemmEx_64", "hipblasGemmEx_v2_64", "library");

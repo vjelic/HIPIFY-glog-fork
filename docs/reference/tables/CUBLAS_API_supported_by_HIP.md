@@ -1917,7 +1917,7 @@
 |`cublasDtrsmBatched`| | | | |`hipblasDtrsmBatched`|3.2.0| | | | |
 |`cublasDtrsmBatched_64`|12.0| | | |`hipblasDtrsmBatched_64`|6.3.0| | | | |
 |`cublasDtrttp`| | | | | | | | | | |
-|`cublasGemmBatchedEx`|9.1| |11.0| |`hipblasGemmBatchedEx_v2`|6.0.0| | | | |
+|`cublasGemmBatchedEx`|9.1| |11.0| |`hipblasGemmBatchedEx`|3.6.0| |7.0.0| | |
 |`cublasGemmBatchedEx_64`|12.0| | | |`hipblasGemmBatchedEx_v2_64`|6.3.0| | | | |
 |`cublasGemmEx`|8.0| |11.0| |`hipblasGemmEx_v2`|6.0.0| | | | |
 |`cublasGemmEx_64`|12.0| | | |`hipblasGemmEx_v2_64`|6.3.0| | | | |
