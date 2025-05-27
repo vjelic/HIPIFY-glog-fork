@@ -118,6 +118,8 @@ enum ConvTypes {
   CONV_COREDUMP,
   //  driver::GREEN_CONTEXT
   CONV_GREEN_CONTEXT,
+  //  driver::ERROR_LOG
+  CONV_ERROR_LOG,
   // runtime::DRIVER_INTERACT
   CONV_DRIVER_INTERACT,
   //  driver::PROFILER_DEPRECATED

@@ -1016,15 +1016,15 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_FUNCTION_MAP {
 
   // 36. Error Log Management Functions
   //
-  {"cuLogsRegisterCallback",                                      {"hipLogsRegisterCallback",                                     "", CONV_COREDUMP, API_DRIVER, SEC::ERROR_LOG, HIP_UNSUPPORTED}},
+  {"cuLogsRegisterCallback",                                      {"hipLogsRegisterCallback",                                     "", CONV_ERROR_LOG, API_DRIVER, SEC::ERROR_LOG, HIP_UNSUPPORTED}},
   //
-  {"cuLogsUnregisterCallback",                                    {"hipLogsUnregisterCallback",                                   "", CONV_COREDUMP, API_DRIVER, SEC::ERROR_LOG, HIP_UNSUPPORTED}},
+  {"cuLogsUnregisterCallback",                                    {"hipLogsUnregisterCallback",                                   "", CONV_ERROR_LOG, API_DRIVER, SEC::ERROR_LOG, HIP_UNSUPPORTED}},
   //
-  {"cuLogsCurrent",                                               {"hipLogsCurrent",                                              "", CONV_COREDUMP, API_DRIVER, SEC::ERROR_LOG, HIP_UNSUPPORTED}},
+  {"cuLogsCurrent",                                               {"hipLogsCurrent",                                              "", CONV_ERROR_LOG, API_DRIVER, SEC::ERROR_LOG, HIP_UNSUPPORTED}},
   //
-  {"cuLogsDumpToFile",                                            {"hipLogsDumpToFile",                                           "", CONV_COREDUMP, API_DRIVER, SEC::ERROR_LOG, HIP_UNSUPPORTED}},
+  {"cuLogsDumpToFile",                                            {"hipLogsDumpToFile",                                           "", CONV_ERROR_LOG, API_DRIVER, SEC::ERROR_LOG, HIP_UNSUPPORTED}},
   //
-  {"cuLogsDumpToMemory",                                          {"hipLogsDumpToMemory",                                         "", CONV_COREDUMP, API_DRIVER, SEC::ERROR_LOG, HIP_UNSUPPORTED}},
+  {"cuLogsDumpToMemory",                                          {"hipLogsDumpToMemory",                                         "", CONV_ERROR_LOG, API_DRIVER, SEC::ERROR_LOG, HIP_UNSUPPORTED}},
 
   // 37. Checkpointing
   //
