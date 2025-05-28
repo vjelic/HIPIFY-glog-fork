@@ -4964,7 +4964,7 @@ sub simpleSubstitutions {
     subst("cublasGemmBatchedEx_64", "hipblasGemmBatchedEx_v2_64", "library");
     subst("cublasGemmEx", "hipblasGemmEx_v2", "library");
     subst("cublasGemmEx_64", "hipblasGemmEx_v2_64", "library");
-    subst("cublasGemmStridedBatchedEx", "hipblasGemmStridedBatchedEx_v2", "library");
+    subst("cublasGemmStridedBatchedEx", "hipblasGemmStridedBatchedEx", "library");
     subst("cublasGemmStridedBatchedEx_64", "hipblasGemmStridedBatchedEx_v2_64", "library");
     subst("cublasGetAtomicsMode", "hipblasGetAtomicsMode", "library");
     subst("cublasGetMathMode", "hipblasGetMathMode", "library");
