@@ -1392,8 +1392,12 @@
 |`CUlimit_enum`| | | | |`hipLimit_t`|1.6.0| | | | |
 |`CUlinkState`| | | | |`hiprtcLinkState`|5.3.0| | | | |
 |`CUlinkState_st`| | | | |`ihiprtcLinkState`|5.3.0| | | | |
+|`CUlogIterator`|12.9| | | | | | | | | |
 |`CUlogLevel`|12.9| | | | | | | | | |
 |`CUlogLevel_enum`|12.9| | | | | | | | | |
+|`CUlogsCallback`|12.9| | | | | | | | | |
+|`CUlogsCallbackEntry_st`|12.9| | | | | | | | | |
+|`CUlogsCallbackHandle`|12.9| | | | | | | | | |
 |`CUmemAccessDesc`|10.2| | | |`hipMemAccessDesc`|5.2.0| | | | |
 |`CUmemAccessDesc_st`|10.2| | | |`hipMemAccessDesc`|5.2.0| | | | |
 |`CUmemAccessDesc_v1`|11.3| | | |`hipMemAccessDesc`|5.2.0| | | | |
@@ -2242,7 +2246,17 @@
 |`cuGreenCtxWaitEvent`|12.4| | | | | | | | | |
 |`cuStreamGetGreenCtx`|12.4| | | | | | | | | |
 
-## **36. Checkpointing**
+## **36. Error Log Management**
+
+|**CUDA**|**A**|**D**|**C**|**R**|**HIP**|**A**|**D**|**C**|**R**|**E**|
+|:--|:-:|:-:|:-:|:-:|:--|:-:|:-:|:-:|:-:|:-:|
+|`cuLogsCurrent`|12.9| | | | | | | | | |
+|`cuLogsDumpToFile`|12.9| | | | | | | | | |
+|`cuLogsDumpToMemory`|12.9| | | | | | | | | |
+|`cuLogsRegisterCallback`|12.9| | | | | | | | | |
+|`cuLogsUnregisterCallback`|12.9| | | | | | | | | |
+
+## **37. Checkpointing**
 
 |**CUDA**|**A**|**D**|**C**|**R**|**HIP**|**A**|**D**|**C**|**R**|**E**|
 |:--|:-:|:-:|:-:|:-:|:--|:-:|:-:|:-:|:-:|:-:|
@@ -2253,20 +2267,20 @@
 |`cuCheckpointProcessRestore`|12.8| | | | | | | | | |
 |`cuCheckpointProcessUnlock`|12.8| | | | | | | | | |
 
-## **37. Profiler Control [DEPRECATED]**
+## **38. Profiler Control [DEPRECATED]**
 
 |**CUDA**|**A**|**D**|**C**|**R**|**HIP**|**A**|**D**|**C**|**R**|**E**|
 |:--|:-:|:-:|:-:|:-:|:--|:-:|:-:|:-:|:-:|:-:|
 |`cuProfilerInitialize`| |11.0| | | | | | | | |
 
-## **38. Profiler Control**
+## **39. Profiler Control**
 
 |**CUDA**|**A**|**D**|**C**|**R**|**HIP**|**A**|**D**|**C**|**R**|**E**|
 |:--|:-:|:-:|:-:|:-:|:--|:-:|:-:|:-:|:-:|:-:|
 |`cuProfilerStart`| | | | |`hipProfilerStart`|1.6.0|3.0.0| | | |
 |`cuProfilerStop`| | | | |`hipProfilerStop`|1.6.0|3.0.0| | | |
 
-## **39. OpenGL Interoperability**
+## **40. OpenGL Interoperability**
 
 |**CUDA**|**A**|**D**|**C**|**R**|**HIP**|**A**|**D**|**C**|**R**|**E**|
 |:--|:-:|:-:|:-:|:-:|:--|:-:|:-:|:-:|:-:|:-:|
@@ -2284,7 +2298,7 @@
 |`cuGraphicsGLRegisterImage`| | | | |`hipGraphicsGLRegisterImage`|5.1.0| | | | |
 |`cuWGLGetDevice`| | | | | | | | | | |
 
-## **40. Direct3D 9 Interoperability**
+## **41. Direct3D 9 Interoperability**
 
 |**CUDA**|**A**|**D**|**C**|**R**|**HIP**|**A**|**D**|**C**|**R**|**E**|
 |:--|:-:|:-:|:-:|:-:|:--|:-:|:-:|:-:|:-:|:-:|
@@ -2305,7 +2319,7 @@
 |`cuD3D9UnregisterResource`| |9.2| | | | | | | | |
 |`cuGraphicsD3D9RegisterResource`| | | | | | | | | | |
 
-## **41. Direct3D 10 Interoperability**
+## **42. Direct3D 10 Interoperability**
 
 |**CUDA**|**A**|**D**|**C**|**R**|**HIP**|**A**|**D**|**C**|**R**|**E**|
 |:--|:-:|:-:|:-:|:-:|:--|:-:|:-:|:-:|:-:|:-:|
@@ -2326,7 +2340,7 @@
 |`cuD3D10UnregisterResource`| |9.2| | | | | | | | |
 |`cuGraphicsD3D10RegisterResource`| | | | | | | | | | |
 
-## **42. Direct3D 11 Interoperability**
+## **43. Direct3D 11 Interoperability**
 
 |**CUDA**|**A**|**D**|**C**|**R**|**HIP**|**A**|**D**|**C**|**R**|**E**|
 |:--|:-:|:-:|:-:|:-:|:--|:-:|:-:|:-:|:-:|:-:|
@@ -2337,7 +2351,7 @@
 |`cuD3D11GetDirect3DDevice`| |9.2| | | | | | | | |
 |`cuGraphicsD3D11RegisterResource`| | | | | | | | | | |
 
-## **43. VDPAU Interoperability**
+## **44. VDPAU Interoperability**
 
 |**CUDA**|**A**|**D**|**C**|**R**|**HIP**|**A**|**D**|**C**|**R**|**E**|
 |:--|:-:|:-:|:-:|:-:|:--|:-:|:-:|:-:|:-:|:-:|
@@ -2346,7 +2360,7 @@
 |`cuVDPAUCtxCreate`| | | | | | | | | | |
 |`cuVDPAUGetDevice`| | | | | | | | | | |
 
-## **44. EGL Interoperability**
+## **45. EGL Interoperability**
 
 |**CUDA**|**A**|**D**|**C**|**R**|**HIP**|**A**|**D**|**C**|**R**|**E**|
 |:--|:-:|:-:|:-:|:-:|:--|:-:|:-:|:-:|:-:|:-:|

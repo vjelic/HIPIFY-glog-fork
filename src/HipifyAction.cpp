@@ -3349,6 +3349,5 @@ void HipifyAction::run(const mat::MatchFinder::MatchResult &Result) {
   if (cubNamespacePrefix(Result)) return;
   if (cubFunctionTemplateDecl(Result)) return;
   if (cubUsingNamespaceDecl(Result)) return;
-  if (UseHipDataType && dataTypeSelection(Result)) return;
   if (!NoUndocumented && half2Member(Result)) return;
 }
