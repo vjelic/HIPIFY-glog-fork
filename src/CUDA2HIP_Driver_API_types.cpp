@@ -523,6 +523,11 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_TYPE_NAME_MAP {
   //
   {"CUmemDecompressParams",                                            {"hipMemDecompressParams",                                   "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
 
+  //
+  {"CUlogsCallbackEntry_st",                                           {"hipLogsCallbackEntry_st",                                  "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  //
+  {"CUlogsCallbackHandle",                                             {"hipLogsCallbackHandle",                                    "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+
   // 2. Unions
 
   {"CUstreamBatchMemOpParams",                                         {"hipStreamBatchMemOpParams",                                "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES}},
@@ -3067,6 +3072,9 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_TYPE_NAME_MAP {
   //
   {"CUDA_MEMCPY3D_BATCH_OP_v1",                                        {"HIP_MEMCPY3D_BATCH_OP",                                    "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
 
+  //
+  {"CUlogsCallback",                                                   {"hipLogsCallback",                                          "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+
   // 5. Defines
 
   {"__CUDACC__",                                                       {"__HIPCC__",                                                "", CONV_DEFINE, API_DRIVER, SEC::DATA_TYPES}},
@@ -3175,6 +3183,8 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_TYPE_NAME_MAP {
   {"CU_COMPUTE_FAMILY_TARGET_BASE",                                    {"HIP_COMPUTE_FAMILY_TARGET_BASE",                           "", CONV_DEFINE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 0x20000
   //
   {"CU_LAUNCH_KERNEL_REQUIRED_BLOCK_DIM",                              {"HIP_LAUNCH_KERNEL_REQUIRED_BLOCK_DIM",                     "", CONV_DEFINE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 1
+  //
+  {"CUlogIterator",                                                    {"hipLogIterator",                                           "", CONV_DEFINE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
 };
 
 const std::map<llvm::StringRef, cudaAPIversions> CUDA_DRIVER_TYPE_NAME_VER_MAP {
@@ -4252,6 +4262,10 @@ const std::map<llvm::StringRef, cudaAPIversions> CUDA_DRIVER_TYPE_NAME_VER_MAP {
   {"CUlogLevel_enum",                                                  {CUDA_129, CUDA_0,   CUDA_0  }},
   {"CU_LOG_LEVEL_ERROR",                                               {CUDA_129, CUDA_0,   CUDA_0  }},
   {"CU_LOG_LEVEL_WARNING",                                             {CUDA_129, CUDA_0,   CUDA_0  }},
+  {"CUlogsCallbackEntry_st",                                           {CUDA_129, CUDA_0,   CUDA_0  }},
+  {"CUlogsCallbackHandle",                                             {CUDA_129, CUDA_0,   CUDA_0  }},
+  {"CUlogsCallback",                                                   {CUDA_129, CUDA_0,   CUDA_0  }},
+  {"CUlogIterator",                                                    {CUDA_129, CUDA_0,   CUDA_0  }},
 };
 
 const std::map<llvm::StringRef, hipAPIversions> HIP_DRIVER_TYPE_NAME_VER_MAP {
