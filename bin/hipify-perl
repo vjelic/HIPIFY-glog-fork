@@ -7045,6 +7045,8 @@ sub simpleSubstitutions {
     subst("device_functions.h", "hip\/device_functions.h", "include");
     subst("device_launch_parameters.h", "", "include");
     subst("driver_types.h", "hip\/driver_types.h", "include");
+    subst("helper_cuda.h", "hip\/hip_runtime_api.h", "include");
+    subst("helper_math.h", "hip\/hip_vector_types.h", "include");
     subst("library_types.h", "hip\/library_types.h", "include");
     subst("math_constants.h", "hip\/hip_math_constants.h", "include");
     subst("texture_fetch_functions.h", "", "include");
