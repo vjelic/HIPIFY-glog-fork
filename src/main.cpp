@@ -81,9 +81,9 @@ void cleanupHipifyOptions(std::vector<const char*> &args) {
 
 void sortInputFiles(int argc, const char **argv, std::vector<std::string> &files) {
   if (files.size() < 2) return;
-  std::unique_ptr<clang::DiagnosticOptions> diagOpts(new clang::DiagnosticOptions());
-  clang::TextDiagnosticPrinter diagClient(llvm::errs(), *diagOpts);
-  clang::DiagnosticsEngine Diagnostics(IntrusiveRefCntPtr<clang::DiagnosticIDs>(new clang::DiagnosticIDs()), *diagOpts, &diagClient, false);
+  IntrusiveRefCntPtr<clang::DiagnosticOptions> diagOpts(new clang::DiagnosticOptions());
+  clang::TextDiagnosticPrinter diagClient(llvm::errs(), &*diagOpts);
+  clang::DiagnosticsEngine Diagnostics(IntrusiveRefCntPtr<clang::DiagnosticIDs>(new clang::DiagnosticIDs()), &*diagOpts, &diagClient, false);
   std::unique_ptr<clang::driver::Driver> driver(new clang::driver::Driver("", "nvptx64-nvidia-cuda", Diagnostics));
   std::vector<const char*> Args(argv, argv + argc);
   cleanupHipifyOptions(Args);
