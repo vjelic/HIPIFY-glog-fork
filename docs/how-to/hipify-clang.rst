@@ -50,8 +50,11 @@ Release Dependencies
     - supported LLVM release versions
     - Windows
     - Linux
-  * 
-    - `12.8.1 <https://developer.nvidia.com/cuda-12-8-1-download-archive>`_:sup:`1`
+  * - `12.9.0 <https://developer.nvidia.com/cuda-downloads>`_
+    - `21.0.0git <https://github.com/llvm/llvm-project>`_
+    - ✅
+    - ✅
+  * - `12.8.1 <https://developer.nvidia.com/cuda-12-8-1-download-archive>`_:sup:`1`
     - `20.1.0 <https://github.com/llvm/llvm-project/releases/tag/llvmorg-20.1.0>`_,
       `20.1.1 <https://github.com/llvm/llvm-project/releases/tag/llvmorg-20.1.1>`_,
       `20.1.2 <https://github.com/llvm/llvm-project/releases/tag/llvmorg-20.1.2>`_,
@@ -71,7 +74,7 @@ Release Dependencies
       `19.1.7 <https://github.com/llvm/llvm-project/releases/tag/llvmorg-19.1.7>`_
     - ✅
     - ✅
-  * - `12.3.2 <https://developer.nvidia.com/cuda-12-3-2-download-archive>`_ 
+  * - `12.3.2 <https://developer.nvidia.com/cuda-12-3-2-download-archive>`_
     - `17.0.1 <https://github.com/llvm/llvm-project/releases/tag/llvmorg-17.0.1>`_,
       `17.0.2 <https://github.com/llvm/llvm-project/releases/tag/llvmorg-17.0.2>`_,
       `17.0.3 <https://github.com/llvm/llvm-project/releases/tag/llvmorg-17.0.3>`_,
