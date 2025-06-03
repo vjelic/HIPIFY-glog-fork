@@ -1158,10 +1158,10 @@
 
 |**CUDA**|**A**|**D**|**C**|**R**|**HIP**|**A**|**D**|**C**|**R**|**E**|
 |:--|:-:|:-:|:-:|:-:|:--|:-:|:-:|:-:|:-:|:-:|
-|`cublasCaxpy`| | | | |`hipblasCaxpy_v2`|6.0.0| | | | |
-|`cublasCaxpy_64`|12.0| | | |`hipblasCaxpy_v2_64`|6.1.0| | | | |
-|`cublasCaxpy_v2`| | | | |`hipblasCaxpy_v2`|6.0.0| | | | |
-|`cublasCaxpy_v2_64`|12.0| | | |`hipblasCaxpy_v2_64`|6.1.0| | | | |
+|`cublasCaxpy`| | | | |`hipblasCaxpy`|3.0.0| |7.0.0| | |
+|`cublasCaxpy_64`|12.0| | | |`hipblasCaxpy_64`|6.1.0| |7.0.0| | |
+|`cublasCaxpy_v2`| | | | |`hipblasCaxpy`|3.0.0| |7.0.0| | |
+|`cublasCaxpy_v2_64`|12.0| | | |`hipblasCaxpy_64`|6.1.0| |7.0.0| | |
 |`cublasCcopy`| | | | |`hipblasCcopy_v2`|6.0.0| | | | |
 |`cublasCcopy_64`|12.0| | | |`hipblasCcopy_v2_64`|6.1.0| | | | |
 |`cublasCcopy_v2`| | | | |`hipblasCcopy_v2`|6.0.0| | | | |
@@ -1326,10 +1326,10 @@
 |`cublasSswap_64`|12.0| | | |`hipblasSswap_64`|6.1.0| | | | |
 |`cublasSswap_v2`| | | | |`hipblasSswap`|3.0.0| | | | |
 |`cublasSswap_v2_64`|12.0| | | |`hipblasSswap_64`|6.1.0| | | | |
-|`cublasZaxpy`| | | | |`hipblasZaxpy_v2`|6.0.0| | | | |
-|`cublasZaxpy_64`|12.0| | | |`hipblasZaxpy_v2_64`|6.1.0| | | | |
-|`cublasZaxpy_v2`| | | | |`hipblasZaxpy_v2`|6.0.0| | | | |
-|`cublasZaxpy_v2_64`|12.0| | | |`hipblasZaxpy_v2_64`|6.1.0| | | | |
+|`cublasZaxpy`| | | | |`hipblasZaxpy`|3.0.0| |7.0.0| | |
+|`cublasZaxpy_64`|12.0| | | |`hipblasZaxpy_64`|6.1.0| |7.0.0| | |
+|`cublasZaxpy_v2`| | | | |`hipblasZaxpy`|3.0.0| |7.0.0| | |
+|`cublasZaxpy_v2_64`|12.0| | | |`hipblasZaxpy_64`|6.1.0| |7.0.0| | |
 |`cublasZcopy`| | | | |`hipblasZcopy_v2`|6.0.0| | | | |
 |`cublasZcopy_64`|12.0| | | |`hipblasZcopy_v2_64`|6.1.0| | | | |
 |`cublasZcopy_v2`| | | | |`hipblasZcopy_v2`|6.0.0| | | | |
