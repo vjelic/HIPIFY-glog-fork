@@ -1240,10 +1240,10 @@
 |`cublasDzasum_64`|12.0| | | |`hipblasDzasum_64`|6.1.0| |7.0.0| | |`rocblas_dzasum_64`|6.1.0| | | | |
 |`cublasDzasum_v2`| | | | |`hipblasDzasum`|3.0.0| |7.0.0| | |`rocblas_dzasum`|1.5.0| | | | |
 |`cublasDzasum_v2_64`|12.0| | | |`hipblasDzasum_64`|6.1.0| |7.0.0| | |`rocblas_dzasum_64`|6.1.0| | | | |
-|`cublasDznrm2`| | | | |`hipblasDznrm2_v2`|6.0.0| | | | |`rocblas_dznrm2`|1.5.0| | | | |
-|`cublasDznrm2_64`|12.0| | | |`hipblasDznrm2_v2_64`|6.1.0| | | | |`rocblas_dznrm2_64`|6.1.0| | | | |
-|`cublasDznrm2_v2`| | | | |`hipblasDznrm2_v2`|6.0.0| | | | |`rocblas_dznrm2`|1.5.0| | | | |
-|`cublasDznrm2_v2_64`|12.0| | | |`hipblasDznrm2_v2_64`|6.1.0| | | | |`rocblas_dznrm2_64`|6.1.0| | | | |
+|`cublasDznrm2`| | | | |`hipblasDznrm2`|3.0.0| |7.0.0| | |`rocblas_dznrm2`|1.5.0| | | | |
+|`cublasDznrm2_64`|12.0| | | |`hipblasDznrm2_64`|6.1.0| |7.0.0| | |`rocblas_dznrm2_64`|6.1.0| | | | |
+|`cublasDznrm2_v2`| | | | |`hipblasDznrm2`|3.0.0| |7.0.0| | |`rocblas_dznrm2`|1.5.0| | | | |
+|`cublasDznrm2_v2_64`|12.0| | | |`hipblasDznrm2_64`|6.1.0| |7.0.0| | |`rocblas_dznrm2_64`|6.1.0| | | | |
 |`cublasIcamax`| | | | |`hipblasIcamax`|3.0.0| |7.0.0| | |`rocblas_icamax`|3.5.0| | | | |
 |`cublasIcamax_64`|12.0| | | |`hipblasIcamax_64`|6.1.0| |7.0.0| | |`rocblas_icamax_64`|6.1.0| | | | |
 |`cublasIcamax_v2`| | | | |`hipblasIcamax`|3.0.0| |7.0.0| | |`rocblas_icamax`|3.5.0| | | | |
@@ -1290,10 +1290,10 @@
 |`cublasScasum_64`|12.0| | | |`hipblasScasum_64`|6.1.0| |7.0.0| | |`rocblas_scasum_64`|6.1.0| | | | |
 |`cublasScasum_v2`| | | | |`hipblasScasum`|3.0.0| |7.0.0| | |`rocblas_scasum`|1.5.0| | | | |
 |`cublasScasum_v2_64`|12.0| | | |`hipblasScasum_64`|6.1.0| |7.0.0| | |`rocblas_scasum_64`|6.1.0| | | | |
-|`cublasScnrm2`| | | | |`hipblasScnrm2_v2`|6.0.0| | | | |`rocblas_scnrm2`|1.5.0| | | | |
-|`cublasScnrm2_64`|12.0| | | |`hipblasScnrm2_v2_64`|6.1.0| | | | |`rocblas_scnrm2_64`|6.1.0| | | | |
-|`cublasScnrm2_v2`| | | | |`hipblasScnrm2_v2`|6.0.0| | | | |`rocblas_scnrm2`|1.5.0| | | | |
-|`cublasScnrm2_v2_64`|12.0| | | |`hipblasScnrm2_v2_64`|6.1.0| | | | |`rocblas_scnrm2_64`|6.1.0| | | | |
+|`cublasScnrm2`| | | | |`hipblasScnrm2`|3.0.0| |7.0.0| | |`rocblas_scnrm2`|1.5.0| | | | |
+|`cublasScnrm2_64`|12.0| | | |`hipblasScnrm2_64`|6.1.0| |7.0.0| | |`rocblas_scnrm2_64`|6.1.0| | | | |
+|`cublasScnrm2_v2`| | | | |`hipblasScnrm2`|3.0.0| |7.0.0| | |`rocblas_scnrm2`|1.5.0| | | | |
+|`cublasScnrm2_v2_64`|12.0| | | |`hipblasScnrm2_64`|6.1.0| |7.0.0| | |`rocblas_scnrm2_64`|6.1.0| | | | |
 |`cublasScopy`| | | | |`hipblasScopy`|1.8.2| | | | |`rocblas_scopy`|1.5.0| | | | |
 |`cublasScopy_64`|12.0| | | |`hipblasScopy_64`|6.1.0| | | | |`rocblas_scopy_64`|6.1.0| | | | |
 |`cublasScopy_v2`| | | | |`hipblasScopy`|1.8.2| | | | |`rocblas_scopy`|1.5.0| | | | |
@@ -1334,9 +1334,9 @@
 |`cublasZcopy_64`|12.0| | | |`hipblasZcopy_64`|6.1.0| |7.0.0| | |`rocblas_zcopy_64`|6.1.0| | | | |
 |`cublasZcopy_v2`| | | | |`hipblasZcopy`|3.0.0| |7.0.0| | |`rocblas_zcopy`|1.5.0| | | | |
 |`cublasZcopy_v2_64`|12.0| | | |`hipblasZcopy_64`|6.1.0| |7.0.0| | |`rocblas_zcopy_64`|6.1.0| | | | |
-|`cublasZdotc`| | | | |`hipblasZdotc`|6.0.0| |7.0.0| | |`rocblas_zdotc`|3.5.0| | | | |
+|`cublasZdotc`| | | | |`hipblasZdotc`|3.0.0| |7.0.0| | |`rocblas_zdotc`|3.5.0| | | | |
 |`cublasZdotc_64`|12.0| | | |`hipblasZdotc_64`|6.1.0| |7.0.0| | |`rocblas_zdotc_64`|6.1.0| | | | |
-|`cublasZdotc_v2`| | | | |`hipblasZdotc`|6.0.0| |7.0.0| | |`rocblas_zdotc`|3.5.0| | | | |
+|`cublasZdotc_v2`| | | | |`hipblasZdotc`|3.0.0| |7.0.0| | |`rocblas_zdotc`|3.5.0| | | | |
 |`cublasZdotc_v2_64`|12.0| | | |`hipblasZdotc_64`|6.1.0| |7.0.0| | |`rocblas_zdotc_64`|6.1.0| | | | |
 |`cublasZdotu`| | | | |`hipblasZdotu`|3.0.0| |7.0.0| | |`rocblas_zdotu`|1.5.0| | | | |
 |`cublasZdotu_64`|12.0| | | |`hipblasZdotu_64`|6.1.0| |7.0.0| | |`rocblas_zdotu_64`|6.1.0| | | | |
