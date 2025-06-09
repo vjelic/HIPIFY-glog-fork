@@ -1192,10 +1192,10 @@
 |`cublasCsscal_64`|12.0| | | |`hipblasCsscal_64`|6.1.0| |7.0.0| | |`rocblas_csscal_64`|6.1.0| | | | |
 |`cublasCsscal_v2`| | | | |`hipblasCsscal`|3.0.0| |7.0.0| | |`rocblas_csscal`|3.5.0| | | | |
 |`cublasCsscal_v2_64`|12.0| | | |`hipblasCsscal_64`|6.1.0| |7.0.0| | |`rocblas_csscal_64`|6.1.0| | | | |
-|`cublasCswap`| | | | |`hipblasCswap_v2`|6.0.0| | | | |`rocblas_cswap`|1.5.0| | | | |
-|`cublasCswap_64`|12.0| | | |`hipblasCswap_v2_64`|6.1.0| | | | |`rocblas_cswap_64`|6.1.0| | | | |
-|`cublasCswap_v2`| | | | |`hipblasCswap_v2`|6.0.0| | | | |`rocblas_cswap`|1.5.0| | | | |
-|`cublasCswap_v2_64`|12.0| | | |`hipblasCswap_v2_64`|6.1.0| | | | |`rocblas_cswap_64`|6.1.0| | | | |
+|`cublasCswap`| | | | |`hipblasCswap`|3.0.0| |7.0.0| | |`rocblas_cswap`|1.5.0| | | | |
+|`cublasCswap_64`|12.0| | | |`hipblasCswap_64`|6.1.0| |7.0.0| | |`rocblas_cswap_64`|6.1.0| | | | |
+|`cublasCswap_v2`| | | | |`hipblasCswap`|3.0.0| |7.0.0| | |`rocblas_cswap`|1.5.0| | | | |
+|`cublasCswap_v2_64`|12.0| | | |`hipblasCswap_64`|6.1.0| |7.0.0| | |`rocblas_cswap_64`|6.1.0| | | | |
 |`cublasDasum`| | | | |`hipblasDasum`|1.8.2| | | | |`rocblas_dasum`|1.5.0| | | | |
 |`cublasDasum_64`|12.0| | | |`hipblasDasum_64`|6.1.0| | | | |`rocblas_dasum_64`|6.1.0| | | | |
 |`cublasDasum_v2`| | | | |`hipblasDasum`|1.8.2| | | | |`rocblas_dasum`|1.5.0| | | | |
@@ -1360,10 +1360,10 @@
 |`cublasZscal_64`|12.0| | | |`hipblasZscal_64`|6.1.0| |7.0.0| | |`rocblas_zscal_64`|6.1.0| | | | |
 |`cublasZscal_v2`| | | | |`hipblasZscal`|1.6.0| |7.0.0| | |`rocblas_zscal`|1.5.0| | | | |
 |`cublasZscal_v2_64`|12.0| | | |`hipblasZscal_64`|6.1.0| |7.0.0| | |`rocblas_zscal_64`|6.1.0| | | | |
-|`cublasZswap`| | | | |`hipblasZswap_v2`|6.0.0| | | | |`rocblas_zswap`|1.5.0| | | | |
-|`cublasZswap_64`|12.0| | | |`hipblasZswap_v2_64`|6.1.0| | | | |`rocblas_zswap_64`|6.1.0| | | | |
-|`cublasZswap_v2`| | | | |`hipblasZswap_v2`|6.0.0| | | | |`rocblas_zswap`|1.5.0| | | | |
-|`cublasZswap_v2_64`|12.0| | | |`hipblasZswap_v2_64`|6.1.0| | | | |`rocblas_zswap_64`|6.1.0| | | | |
+|`cublasZswap`| | | | |`hipblasZswap`|3.0.0| |7.0.0| | |`rocblas_zswap`|1.5.0| | | | |
+|`cublasZswap_64`|12.0| | | |`hipblasZswap_64`|6.1.0| |7.0.0| | |`rocblas_zswap_64`|6.1.0| | | | |
+|`cublasZswap_v2`| | | | |`hipblasZswap`|3.0.0| |7.0.0| | |`rocblas_zswap`|1.5.0| | | | |
+|`cublasZswap_v2_64`|12.0| | | |`hipblasZswap_64`|6.1.0| |7.0.0| | |`rocblas_zswap_64`|6.1.0| | | | |
 
 ## **6. CUBLAS Level-2 Function Reference**
 
