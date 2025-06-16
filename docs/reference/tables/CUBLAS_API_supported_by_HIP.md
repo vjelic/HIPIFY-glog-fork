@@ -1369,10 +1369,10 @@
 
 |**CUDA**|**A**|**D**|**C**|**R**|**HIP**|**A**|**D**|**C**|**R**|**E**|
 |:--|:-:|:-:|:-:|:-:|:--|:-:|:-:|:-:|:-:|:-:|
-|`cublasCgbmv`| | | | |`hipblasCgbmv_v2`|6.0.0| | | | |
-|`cublasCgbmv_64`|12.0| | | |`hipblasCgbmv_v2_64`|6.2.0| | | | |
-|`cublasCgbmv_v2`| | | | |`hipblasCgbmv_v2`|6.0.0| | | | |
-|`cublasCgbmv_v2_64`|12.0| | | |`hipblasCgbmv_v2_64`|6.2.0| | | | |
+|`cublasCgbmv`| | | | |`hipblasCgbmv`|3.5.0| |7.0.0| | |
+|`cublasCgbmv_64`|12.0| | | |`hipblasCgbmv_64`|6.2.0| |7.0.0| | |
+|`cublasCgbmv_v2`| | | | |`hipblasCgbmv`|3.5.0| |7.0.0| | |
+|`cublasCgbmv_v2_64`|12.0| | | |`hipblasCgbmv_64`|6.2.0| |7.0.0| | |
 |`cublasCgemv`| | | | |`hipblasCgemv_v2`|6.0.0| | | | |
 |`cublasCgemv_64`|12.0| | | |`hipblasCgemv_v2_64`|6.2.0| | | | |
 |`cublasCgemv_v2`| | | | |`hipblasCgemv_v2`|6.0.0| | | | |
@@ -1577,10 +1577,10 @@
 |`cublasStrsv_64`|12.0| | | |`hipblasStrsv_64`|6.2.0| | | | |
 |`cublasStrsv_v2`| | | | |`hipblasStrsv`|3.0.0| | | | |
 |`cublasStrsv_v2_64`|12.0| | | |`hipblasStrsv_64`|6.2.0| | | | |
-|`cublasZgbmv`| | | | |`hipblasZgbmv_v2`|6.0.0| | | | |
-|`cublasZgbmv_64`|12.0| | | |`hipblasZgbmv_v2_64`|6.2.0| | | | |
-|`cublasZgbmv_v2`| | | | |`hipblasZgbmv_v2`|6.0.0| | | | |
-|`cublasZgbmv_v2_64`|12.0| | | |`hipblasZgbmv_v2_64`|6.2.0| | | | |
+|`cublasZgbmv`| | | | |`hipblasZgbmv`|3.5.0| |7.0.0| | |
+|`cublasZgbmv_64`|12.0| | | |`hipblasZgbmv_64`|6.2.0| |7.0.0| | |
+|`cublasZgbmv_v2`| | | | |`hipblasZgbmv`|3.5.0| |7.0.0| | |
+|`cublasZgbmv_v2_64`|12.0| | | |`hipblasZgbmv_64`|6.2.0| |7.0.0| | |
 |`cublasZgemv`| | | | |`hipblasZgemv_v2`|6.0.0| | | | |
 |`cublasZgemv_64`|12.0| | | |`hipblasZgemv_v2_64`|6.2.0| | | | |
 |`cublasZgemv_v2`| | | | |`hipblasZgemv_v2`|6.0.0| | | | |
