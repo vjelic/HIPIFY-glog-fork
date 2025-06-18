@@ -35,20 +35,20 @@
 |`CUTENSOR_COMPUTE_8I`|1.0.1.0| | |2.0.0.0|`HIPTENSOR_COMPUTE_8I`|5.7.0| | | | |
 |`CUTENSOR_COMPUTE_8U`|1.0.1.0| | |2.0.0.0|`HIPTENSOR_COMPUTE_8U`|5.7.0| | | | |
 |`CUTENSOR_COMPUTE_TF32`|1.0.1.0| | |2.0.0.0| | | | | | |
-|`CUTENSOR_C_16BF`|2.0.0.0| | | | | | | | | |
-|`CUTENSOR_C_16F`|2.0.0.0| | | | | | | | | |
-|`CUTENSOR_C_16I`|2.0.0.0| | | | | | | | | |
-|`CUTENSOR_C_16U`|2.0.0.0| | | | | | | | | |
-|`CUTENSOR_C_32F`|2.0.0.0| | | |`HIPTENSOR_COMPUTE_C32F`|6.1.0| | | | |
-|`CUTENSOR_C_32I`|2.0.0.0| | | | | | | | | |
-|`CUTENSOR_C_32U`|2.0.0.0| | | | | | | | | |
-|`CUTENSOR_C_4I`|2.0.0.0| | | | | | | | | |
-|`CUTENSOR_C_4U`|2.0.0.0| | | | | | | | | |
-|`CUTENSOR_C_64F`|2.0.0.0| | | |`HIPTENSOR_COMPUTE_C64F`|5.7.0| | | | |
-|`CUTENSOR_C_64I`|2.0.0.0| | | | | | | | | |
-|`CUTENSOR_C_64U`|2.0.0.0| | | | | | | | | |
-|`CUTENSOR_C_8I`|2.0.0.0| | | | | | | | | |
-|`CUTENSOR_C_8U`|2.0.0.0| | | | | | | | | |
+|`CUTENSOR_C_16BF`|2.0.0.0| | | |`HIPTENSOR_C_16BF`|7.0.0| | | |7.0.0|
+|`CUTENSOR_C_16F`|2.0.0.0| | | |`HIPTENSOR_C_16F`|7.0.0| | | |7.0.0|
+|`CUTENSOR_C_16I`|2.0.0.0| | | |`HIPTENSOR_C_16I`|7.0.0| | | |7.0.0|
+|`CUTENSOR_C_16U`|2.0.0.0| | | |`HIPTENSOR_C_16U`|7.0.0| | | |7.0.0|
+|`CUTENSOR_C_32F`|2.0.0.0| | | |`HIPTENSOR_C_32F`|7.0.0| | | |7.0.0|
+|`CUTENSOR_C_32I`|2.0.0.0| | | |`HIPTENSOR_C_32I`|7.0.0| | | |7.0.0|
+|`CUTENSOR_C_32U`|2.0.0.0| | | |`HIPTENSOR_C_32U`|7.0.0| | | |7.0.0|
+|`CUTENSOR_C_4I`|2.0.0.0| | | |`HIPTENSOR_C_4I`|7.0.0| | | |7.0.0|
+|`CUTENSOR_C_4U`|2.0.0.0| | | |`HIPTENSOR_C_4U`|7.0.0| | | |7.0.0|
+|`CUTENSOR_C_64F`|2.0.0.0| | | |`HIPTENSOR_C_64F`|7.0.0| | | |7.0.0|
+|`CUTENSOR_C_64I`|2.0.0.0| | | |`HIPTENSOR_C_64I`|7.0.0| | | |7.0.0|
+|`CUTENSOR_C_64U`|2.0.0.0| | | |`HIPTENSOR_C_64U`|7.0.0| | | |7.0.0|
+|`CUTENSOR_C_8I`|2.0.0.0| | | |`HIPTENSOR_C_8I`|7.0.0| | | |7.0.0|
+|`CUTENSOR_C_8U`|2.0.0.0| | | |`HIPTENSOR_C_8U`|7.0.0| | | |7.0.0|
 |`CUTENSOR_C_MIN_16F`|1.0.1.0|1.2.0.0| |2.0.0.0| | | | | | |
 |`CUTENSOR_C_MIN_32F`|1.0.1.0|1.2.0.0| |2.0.0.0| | | | | | |
 |`CUTENSOR_C_MIN_64F`|1.0.1.0|1.2.0.0| |2.0.0.0| | | | | | |
@@ -104,20 +104,20 @@
 |`CUTENSOR_PLAN_PREFERENCE_JIT`|2.0.0.0| | | | | | | | | |
 |`CUTENSOR_PLAN_PREFERENCE_KERNEL_RANK`|2.0.0.0| | | | | | | | | |
 |`CUTENSOR_PLAN_REQUIRED_WORKSPACE`|2.0.0.0| | | | | | | | | |
-|`CUTENSOR_R_16BF`|2.0.0.0| | | |`HIPTENSOR_COMPUTE_16BF`|5.7.0| | | | |
-|`CUTENSOR_R_16F`|2.0.0.0| | | |`HIPTENSOR_COMPUTE_16F`|5.7.0| | | | |
-|`CUTENSOR_R_16I`|2.0.0.0| | | | | | | | | |
-|`CUTENSOR_R_16U`|2.0.0.0| | | | | | | | | |
-|`CUTENSOR_R_32F`|2.0.0.0| | | |`HIPTENSOR_COMPUTE_32F`|5.7.0| | | | |
-|`CUTENSOR_R_32I`|2.0.0.0| | | |`HIPTENSOR_COMPUTE_32I`|5.7.0| | | | |
-|`CUTENSOR_R_32U`|2.0.0.0| | | |`HIPTENSOR_COMPUTE_32U`|5.7.0| | | | |
-|`CUTENSOR_R_4I`|2.0.0.0| | | | | | | | | |
-|`CUTENSOR_R_4U`|2.0.0.0| | | | | | | | | |
-|`CUTENSOR_R_64F`|2.0.0.0| | | |`HIPTENSOR_COMPUTE_64F`|5.7.0| | | | |
-|`CUTENSOR_R_64I`|2.0.0.0| | | | | | | | | |
-|`CUTENSOR_R_64U`|2.0.0.0| | | | | | | | | |
-|`CUTENSOR_R_8I`|2.0.0.0| | | |`HIPTENSOR_COMPUTE_8I`|5.7.0| | | | |
-|`CUTENSOR_R_8U`|2.0.0.0| | | |`HIPTENSOR_COMPUTE_8U`|5.7.0| | | | |
+|`CUTENSOR_R_16BF`|2.0.0.0| | | |`HIPTENSOR_R_16BF`|7.0.0| | | |7.0.0|
+|`CUTENSOR_R_16F`|2.0.0.0| | | |`HIPTENSOR_R_16F`|7.0.0| | | |7.0.0|
+|`CUTENSOR_R_16I`|2.0.0.0| | | |`HIPTENSOR_R_16I`|7.0.0| | | |7.0.0|
+|`CUTENSOR_R_16U`|2.0.0.0| | | |`HIPTENSOR_R_16U`|7.0.0| | | |7.0.0|
+|`CUTENSOR_R_32F`|2.0.0.0| | | |`HIPTENSOR_R_32F`|7.0.0| | | |7.0.0|
+|`CUTENSOR_R_32I`|2.0.0.0| | | |`HIPTENSOR_R_32I`|7.0.0| | | |7.0.0|
+|`CUTENSOR_R_32U`|2.0.0.0| | | |`HIPTENSOR_R_32U`|7.0.0| | | |7.0.0|
+|`CUTENSOR_R_4I`|2.0.0.0| | | |`HIPTENSOR_R_4I`|7.0.0| | | |7.0.0|
+|`CUTENSOR_R_4U`|2.0.0.0| | | |`HIPTENSOR_R_4U`|7.0.0| | | |7.0.0|
+|`CUTENSOR_R_64F`|2.0.0.0| | | |`HIPTENSOR_R_64F`|7.0.0| | | |7.0.0|
+|`CUTENSOR_R_64I`|2.0.0.0| | | |`HIPTENSOR_R_64I`|7.0.0| | | |7.0.0|
+|`CUTENSOR_R_64U`|2.0.0.0| | | |`HIPTENSOR_R_64U`|7.0.0| | | |7.0.0|
+|`CUTENSOR_R_8I`|2.0.0.0| | | |`HIPTENSOR_R_8I`|7.0.0| | | |7.0.0|
+|`CUTENSOR_R_8U`|2.0.0.0| | | |`HIPTENSOR_R_8U`|7.0.0| | | |7.0.0|
 |`CUTENSOR_R_MIN_16BF`|1.0.1.0|1.2.0.0| |2.0.0.0| | | | | | |
 |`CUTENSOR_R_MIN_16F`|1.0.1.0|1.2.0.0| |2.0.0.0| | | | | | |
 |`CUTENSOR_R_MIN_32F`|1.0.1.0|1.2.0.0| |2.0.0.0| | | | | | |
@@ -142,16 +142,16 @@
 |`CUTENSOR_STATUS_NOT_INITIALIZED`|1.0.1.0| | | |`HIPTENSOR_STATUS_NOT_INITIALIZED`|5.7.0| | | | |
 |`CUTENSOR_STATUS_NOT_SUPPORTED`|1.0.1.0| | | |`HIPTENSOR_STATUS_NOT_SUPPORTED`|5.7.0| | | | |
 |`CUTENSOR_STATUS_SUCCESS`|1.0.1.0| | | |`HIPTENSOR_STATUS_SUCCESS`|5.7.0| | | | |
-|`CUTENSOR_WORKSPACE_DEFAULT`|2.0.0.0| | | | | | | | | |
+|`CUTENSOR_WORKSPACE_DEFAULT`|2.0.0.0| | | |`HIPTENSOR_WORKSPACE_DEFAULT`|7.0.0| | | |7.0.0|
 |`CUTENSOR_WORKSPACE_MAX`|1.0.1.0| | | |`HIPTENSOR_WORKSPACE_MAX`|5.7.0| | | | |
 |`CUTENSOR_WORKSPACE_MIN`|1.0.1.0| | | |`HIPTENSOR_WORKSPACE_MIN`|5.7.0| | | | |
-|`CUTENSOR_WORKSPACE_RECOMMENDED`|1.0.1.0| | |2.0.0.0|`HIPTENSOR_WORKSPACE_RECOMMENDED`|5.7.0| | | | |
+|`CUTENSOR_WORKSPACE_RECOMMENDED`|1.0.1.0| | |2.0.0.0| | | | | | |
 |`cutensorAlgo_t`|1.0.1.0| | | |`hiptensorAlgo_t`|5.7.0| | | | |
 |`cutensorAutotuneMode_t`|1.2.0.0| | | | | | | | | |
 |`cutensorCacheMode_t`|1.2.0.0| | | | | | | | | |
 |`cutensorComputeType_t`| | | | |`hiptensorComputeType_t`|5.7.0| | | | |
 |`cutensorContractionPlan_t`|1.0.1.0| | |2.0.0.0|`hiptensorContractionPlan_t`|5.7.0| | | | |
-|`cutensorDataType_t`|2.0.0.0| | | |`hiptensorComputeType_t`|5.7.0| | | | |
+|`cutensorDataType_t`|2.0.0.0| | | |`hiptensorDataType_t`|7.0.0| | | |7.0.0|
 |`cutensorHandle`|2.0.0.0| | | | | | | | | |
 |`cutensorHandle_t`|1.0.1.0| | | |`hiptensorHandle_t`|5.7.0| | | | |
 |`cutensorJitMode_t`|2.0.0.0| | | | | | | | | |
