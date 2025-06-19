@@ -5913,6 +5913,7 @@ sub simpleSubstitutions {
     subst("cusolverRfSetupDevice", "hipsolverRfSetupDevice", "library");
     subst("cusolverRfSetupHost", "hipsolverRfSetupHost", "library");
     subst("cusolverRfSolve", "hipsolverRfSolve", "library");
+    subst("cusolverSpCcsrlsvqr", "hipsolverSpCcsrlsvqr", "library");
     subst("cusolverSpCreate", "hipsolverSpCreate", "library");
     subst("cusolverSpDcsrlsvchol", "hipsolverSpDcsrlsvchol", "library");
     subst("cusolverSpDcsrlsvcholHost", "hipsolverSpDcsrlsvcholHost", "library");
@@ -5922,6 +5923,7 @@ sub simpleSubstitutions {
     subst("cusolverSpScsrlsvcholHost", "hipsolverSpScsrlsvcholHost", "library");
     subst("cusolverSpScsrlsvqr", "hipsolverSpScsrlsvqr", "library");
     subst("cusolverSpSetStream", "hipsolverSpSetStream", "library");
+    subst("cusolverSpZcsrlsvqr", "hipsolverSpZcsrlsvqr", "library");
     subst("cusparseAxpby", "hipsparseAxpby", "library");
     subst("cusparseBlockedEllGet", "hipsparseBlockedEllGet", "library");
     subst("cusparseCaxpyi", "hipsparseCaxpyi", "library");
@@ -10750,7 +10752,6 @@ sub warnRemovedFunctions {
     "cusolverSpZcsrluExtractHost",
     "cusolverSpZcsrluBufferInfoHost",
     "cusolverSpZcsrlsvqrHost",
-    "cusolverSpZcsrlsvqr",
     "cusolverSpZcsrlsvluHost",
     "cusolverSpZcsrlsvcholHost",
     "cusolverSpZcsrlsvchol",
@@ -10878,7 +10879,6 @@ sub warnRemovedFunctions {
     "cusolverSpCcsrluExtractHost",
     "cusolverSpCcsrluBufferInfoHost",
     "cusolverSpCcsrlsvqrHost",
-    "cusolverSpCcsrlsvqr",
     "cusolverSpCcsrlsvluHost",
     "cusolverSpCcsrlsvcholHost",
     "cusolverSpCcsrlsvchol",
