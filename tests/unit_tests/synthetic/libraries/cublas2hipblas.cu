@@ -948,14 +948,14 @@ int main() {
 
   // NOTE: void CUBLASWINAPI cublasCher(char uplo, int n, float alpha, const cuComplex* x, int incx, cuComplex* A, int lda); is not supported by HIP
   // CUDA: CUBLASAPI cublasStatus_t CUBLASWINAPI cublasCher_v2(cublasHandle_t handle, cublasFillMode_t uplo, int n, const float* alpha, const cuComplex* x, int incx, cuComplex* A, int lda);
-  // HIP: HIPBLAS_EXPORT hipblasStatus_t hipblasCher_v2(hipblasHandle_t handle, hipblasFillMode_t uplo, int n, const float* alpha, const hipComplex* x, int incx, hipComplex* AP, int lda);
-  // CHECK: blasStatus = hipblasCher_v2(blasHandle, blasFillMode, n, &fa, &complexx, incx, &complexA, lda);
+  // HIP: HIPBLAS_EXPORT hipblasStatus_t hipblasCher(hipblasHandle_t handle, hipblasFillMode_t uplo, int n, const float* alpha, const hipComplex* x, int incx, hipComplex* AP, int lda);
+  // CHECK: blasStatus = hipblasCher(blasHandle, blasFillMode, n, &fa, &complexx, incx, &complexA, lda);
   blasStatus = cublasCher_v2(blasHandle, blasFillMode, n, &fa, &complexx, incx, &complexA, lda);
 
   // NOTE: void CUBLASWINAPI cublasZher(char uplo, int n, double alpha, const cuDoubleComplex* x, int incx, cuDoubleComplex* A, int lda); is not supported by HIP
   // CUDA: CUBLASAPI cublasStatus_t CUBLASWINAPI cublasZher_v2(cublasHandle_t handle, cublasFillMode_t uplo, int n, const double* alpha, const cuDoubleComplex* x, int incx, cuDoubleComplex* A, int lda);
-  // HIP: HIPBLAS_EXPORT hipblasStatus_t hipblasZher_v2(hipblasHandle_t handle, hipblasFillMode_t uplo, int n, const double* alpha, const hipDoubleComplex* x, int incx, hipDoubleComplex* AP, int lda);
-  // CHECK: blasStatus = hipblasZher_v2(blasHandle, blasFillMode, n, &da, &dcomplexx, incx, &dcomplexA, lda);
+  // HIP: HIPBLAS_EXPORT hipblasStatus_t hipblasZher(hipblasHandle_t handle, hipblasFillMode_t uplo, int n, const double* alpha, const hipDoubleComplex* x, int incx, hipDoubleComplex* AP, int lda);
+  // CHECK: blasStatus = hipblasZher(blasHandle, blasFillMode, n, &da, &dcomplexx, incx, &dcomplexA, lda);
   blasStatus = cublasZher_v2(blasHandle, blasFillMode, n, &da, &dcomplexx, incx, &dcomplexA, lda);
 
   // NOTE: void CUBLASWINAPI cublasSspr(char uplo, int n, float alpha, const float* x, int incx, float* AP); is not supported by HIP
@@ -1006,14 +1006,14 @@ int main() {
 
   // NOTE: void CUBLASWINAPI cublasCher2(char uplo, int n, cuComplex alpha, const cuComplex* x, int incx, const cuComplex* y, int incy, cuComplex* A, int lda); is not supported by HIP
   // CUDA: CUBLASAPI cublasStatus_t CUBLASWINAPI cublasCher2_v2(cublasHandle_t handle, cublasFillMode_t uplo, int n, const cuComplex* alpha, const cuComplex* x, int incx, const cuComplex* y, int incy, cuComplex* A, int lda);
-  // HIP: HIPBLAS_EXPORT hipblasStatus_t hipblasCher2_v2(hipblasHandle_t handle, hipblasFillMode_t uplo, int n, const hipComplex* alpha, const hipComplex* x, int incx, const hipComplex* y, int incy, hipComplex* AP, int lda);
-  // CHECK: blasStatus = hipblasCher2_v2(blasHandle, blasFillMode, n, &complexa, &complexx, incx, &complexy, incy, &complexA, lda);
+  // HIP: HIPBLAS_EXPORT hipblasStatus_t hipblasCher2(hipblasHandle_t handle, hipblasFillMode_t uplo, int n, const hipComplex* alpha, const hipComplex* x, int incx, const hipComplex* y, int incy, hipComplex* AP, int lda);
+  // CHECK: blasStatus = hipblasCher2(blasHandle, blasFillMode, n, &complexa, &complexx, incx, &complexy, incy, &complexA, lda);
   blasStatus = cublasCher2_v2(blasHandle, blasFillMode, n, &complexa, &complexx, incx, &complexy, incy, &complexA, lda);
 
   // NOTE: void CUBLASWINAPI cublasZher2(char uplo, int n, cuDoubleComplex alpha, const cuDoubleComplex* x, int incx, const cuDoubleComplex* y, int incy, cuDoubleComplex* A, int lda); is not supported by HIP
   // CUDA: CUBLASAPI cublasStatus_t CUBLASWINAPI cublasZher2_v2(cublasHandle_t handle, cublasFillMode_t uplo, int n, const cuDoubleComplex* alpha, const cuDoubleComplex* x, int incx, const cuDoubleComplex* y, int incy, cuDoubleComplex* A, int lda);
-  // HIP: HIPBLAS_EXPORT hipblasStatus_t hipblasZher2_v2(hipblasHandle_t handle, hipblasFillMode_t uplo, int n, const hipDoubleComplex* alpha, const hipDoubleComplex* x, int incx, const hipDoubleComplex* y, int incy, hipDoubleComplex* AP, int lda);
-  // CHECK: blasStatus = hipblasZher2_v2(blasHandle, blasFillMode, n, &dcomplexa, &dcomplexx, incx, &dcomplexy, incy, &dcomplexA, lda);
+  // HIP: HIPBLAS_EXPORT hipblasStatus_t hipblasZher2(hipblasHandle_t handle, hipblasFillMode_t uplo, int n, const hipDoubleComplex* alpha, const hipDoubleComplex* x, int incx, const hipDoubleComplex* y, int incy, hipDoubleComplex* AP, int lda);
+  // CHECK: blasStatus = hipblasZher2(blasHandle, blasFillMode, n, &dcomplexa, &dcomplexx, incx, &dcomplexy, incy, &dcomplexA, lda);
   blasStatus = cublasZher2_v2(blasHandle, blasFillMode, n, &dcomplexa, &dcomplexx, incx, &dcomplexy, incy, &dcomplexA, lda);
 
   // NOTE: void CUBLASWINAPI cublasSspr2(char uplo, int n, float alpha, const float* x, int incx, const float* y, int incy, float* AP); is not supported by HIP
