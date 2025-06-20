@@ -25,15 +25,15 @@
 |`CUTENSOR_AUTOTUNE_MODE_NONE`|2.0.0.0| | | | | | | | | |
 |`CUTENSOR_CACHE_MODE_NONE`|1.2.0.0| | | | | | | | | |
 |`CUTENSOR_CACHE_MODE_PEDANTIC`|1.2.0.0| | | | | | | | | |
-|`CUTENSOR_COMPUTE_16BF`|1.0.1.0| | |2.0.0.0|`HIPTENSOR_COMPUTE_16BF`|5.7.0| | | | |
-|`CUTENSOR_COMPUTE_16F`|1.0.1.0| | |2.0.0.0|`HIPTENSOR_COMPUTE_16F`|5.7.0| | | | |
-|`CUTENSOR_COMPUTE_32F`|1.0.1.0| | |2.0.0.0|`HIPTENSOR_COMPUTE_32F`|5.7.0| | | | |
-|`CUTENSOR_COMPUTE_32I`|1.0.1.0| | |2.0.0.0|`HIPTENSOR_COMPUTE_32I`|5.7.0| | | | |
-|`CUTENSOR_COMPUTE_32U`|1.0.1.0| | |2.0.0.0|`HIPTENSOR_COMPUTE_32U`|5.7.0| | | | |
+|`CUTENSOR_COMPUTE_16BF`|1.0.1.0| | |2.0.0.0|`HIPTENSOR_COMPUTE_DESC_16BF`|7.0.0| | | |7.0.0|
+|`CUTENSOR_COMPUTE_16F`|1.0.1.0| | |2.0.0.0|`HIPTENSOR_COMPUTE_DESC_16F`|7.0.0| | | |7.0.0|
+|`CUTENSOR_COMPUTE_32F`|1.0.1.0| | |2.0.0.0|`HIPTENSOR_COMPUTE_DESC_32F`|7.0.0| | | |7.0.0|
+|`CUTENSOR_COMPUTE_32I`|1.0.1.0| | |2.0.0.0|`HIPTENSOR_COMPUTE_DESC_32I`|7.0.0| | | |7.0.0|
+|`CUTENSOR_COMPUTE_32U`|1.0.1.0| | |2.0.0.0|`HIPTENSOR_COMPUTE_DESC_32U`|7.0.0| | | |7.0.0|
 |`CUTENSOR_COMPUTE_3XTF32`|2.0.0.0| | | | | | | | | |
-|`CUTENSOR_COMPUTE_64F`|1.0.1.0| | |2.0.0.0|`HIPTENSOR_COMPUTE_64F`|5.7.0| | | | |
-|`CUTENSOR_COMPUTE_8I`|1.0.1.0| | |2.0.0.0|`HIPTENSOR_COMPUTE_8I`|5.7.0| | | | |
-|`CUTENSOR_COMPUTE_8U`|1.0.1.0| | |2.0.0.0|`HIPTENSOR_COMPUTE_8U`|5.7.0| | | | |
+|`CUTENSOR_COMPUTE_64F`|1.0.1.0| | |2.0.0.0|`HIPTENSOR_COMPUTE_DESC_64F`|7.0.0| | | |7.0.0|
+|`CUTENSOR_COMPUTE_8I`|1.0.1.0| | |2.0.0.0|`HIPTENSOR_COMPUTE_DESC_8I`|7.0.0| | | |7.0.0|
+|`CUTENSOR_COMPUTE_8U`|1.0.1.0| | |2.0.0.0|`HIPTENSOR_COMPUTE_DESC_8U`|7.0.0| | | |7.0.0|
 |`CUTENSOR_COMPUTE_TF32`|1.0.1.0| | |2.0.0.0| | | | | | |
 |`CUTENSOR_C_16BF`|2.0.0.0| | | |`HIPTENSOR_C_16BF`|7.0.0| | | |7.0.0|
 |`CUTENSOR_C_16F`|2.0.0.0| | | |`HIPTENSOR_C_16F`|7.0.0| | | |7.0.0|
@@ -57,13 +57,13 @@
 |`CUTENSOR_JIT_MODE_NONE`|2.0.0.0| | | | | | | | | |
 |`CUTENSOR_MG_DEVICE_HOST`|1.4.0.0| | | | | | | | | |
 |`CUTENSOR_MG_DEVICE_HOST_PINNED`|1.4.0.0| | | | | | | | | |
-|`CUTENSOR_OPERATION_DESCRIPTOR_FLOPS`|2.0.0.0| | | | | | | | | |
-|`CUTENSOR_OPERATION_DESCRIPTOR_MOVED_BYTES`|2.0.0.0| | | | | | | | | |
-|`CUTENSOR_OPERATION_DESCRIPTOR_PADDING_LEFT`|2.0.0.0| | | | | | | | | |
-|`CUTENSOR_OPERATION_DESCRIPTOR_PADDING_RIGHT`|2.0.0.0| | | | | | | | | |
-|`CUTENSOR_OPERATION_DESCRIPTOR_PADDING_VALUE`|2.0.0.0| | | | | | | | | |
-|`CUTENSOR_OPERATION_DESCRIPTOR_SCALAR_TYPE`|2.0.0.0| | | | | | | | | |
-|`CUTENSOR_OPERATION_DESCRIPTOR_TAG`|2.0.0.0| | | | | | | | | |
+|`CUTENSOR_OPERATION_DESCRIPTOR_FLOPS`|2.0.0.0| | | |`HIPTENSOR_OPERATION_DESCRIPTOR_FLOPS`|7.0.0| | | |7.0.0|
+|`CUTENSOR_OPERATION_DESCRIPTOR_MOVED_BYTES`|2.0.0.0| | | |`HIPTENSOR_OPERATION_DESCRIPTOR_MOVED_BYTES`|7.0.0| | | |7.0.0|
+|`CUTENSOR_OPERATION_DESCRIPTOR_PADDING_LEFT`|2.0.0.0| | | |`HIPTENSOR_OPERATION_DESCRIPTOR_PADDING_LEFT`|7.0.0| | | |7.0.0|
+|`CUTENSOR_OPERATION_DESCRIPTOR_PADDING_RIGHT`|2.0.0.0| | | |`HIPTENSOR_OPERATION_DESCRIPTOR_PADDING_RIGHT`|7.0.0| | | |7.0.0|
+|`CUTENSOR_OPERATION_DESCRIPTOR_PADDING_VALUE`|2.0.0.0| | | |`HIPTENSOR_OPERATION_DESCRIPTOR_PADDING_VALUE`|7.0.0| | | |7.0.0|
+|`CUTENSOR_OPERATION_DESCRIPTOR_SCALAR_TYPE`|2.0.0.0| | | |`HIPTENSOR_OPERATION_DESCRIPTOR_SCALAR_TYPE`|7.0.0| | | |7.0.0|
+|`CUTENSOR_OPERATION_DESCRIPTOR_TAG`|2.0.0.0| | | |`HIPTENSOR_OPERATION_DESCRIPTOR_TAG`|7.0.0| | | |7.0.0|
 |`CUTENSOR_OP_ABS`|1.0.1.0| | | |`HIPTENSOR_OP_ABS`|7.0.0| | | |7.0.0|
 |`CUTENSOR_OP_ACOS`|1.0.1.0| | | |`HIPTENSOR_OP_ACOS`|7.0.0| | | |7.0.0|
 |`CUTENSOR_OP_ACOSH`|1.0.1.0| | | |`HIPTENSOR_OP_ACOSH`|7.0.0| | | |7.0.0|
@@ -149,7 +149,7 @@
 |`cutensorAlgo_t`|1.0.1.0| | | |`hiptensorAlgo_t`|5.7.0| | | | |
 |`cutensorAutotuneMode_t`|1.2.0.0| | | | | | | | | |
 |`cutensorCacheMode_t`|1.2.0.0| | | | | | | | | |
-|`cutensorComputeType_t`| | | | |`hiptensorComputeType_t`|5.7.0| | | | |
+|`cutensorComputeType_t`| | | | |`hiptensorComputeDescriptor_t`|7.0.0| | | |7.0.0|
 |`cutensorContractionPlan_t`|1.0.1.0| | |2.0.0.0|`hiptensorContractionPlan_t`|5.7.0| | | | |
 |`cutensorDataType_t`|2.0.0.0| | | |`hiptensorDataType_t`|7.0.0| | | |7.0.0|
 |`cutensorHandle`|2.0.0.0| | | | | | | | | |
@@ -173,7 +173,7 @@
 |`cutensorMgHostDevice_t`|1.4.0.0| | | | | | | | | |
 |`cutensorMgTensorDescriptor_s`|1.4.0.0| | | | | | | | | |
 |`cutensorMgTensorDescriptor_t`|1.4.0.0| | | | | | | | | |
-|`cutensorOperationDescriptorAttribute_t`|2.0.0.0| | | | | | | | | |
+|`cutensorOperationDescriptorAttribute_t`|2.0.0.0| | | |`hiptensorOperationDescriptorAttribute_t`|7.0.0| | | |7.0.0|
 |`cutensorOperator_t`|1.0.1.0| | | |`hiptensorOperator_t`|5.7.0| | | | |
 |`cutensorPlan`|2.0.0.0| | | | | | | | | |
 |`cutensorPlanAttribute_t`|2.0.0.0| | | | | | | | | |
