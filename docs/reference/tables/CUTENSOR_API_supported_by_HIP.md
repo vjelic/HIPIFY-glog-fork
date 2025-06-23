@@ -21,8 +21,10 @@
 |`CUTENSOR_ALGO_GETT`|1.0.1.0| | | | | | | | | |
 |`CUTENSOR_ALGO_TGETT`|1.0.1.0| | | | | | | | | |
 |`CUTENSOR_ALGO_TTGT`|1.0.1.0| | | | | | | | | |
-|`CUTENSOR_AUTOTUNE_MODE_INCREMENTAL`|2.0.0.0| | | | | | | | | |
-|`CUTENSOR_AUTOTUNE_MODE_NONE`|2.0.0.0| | | | | | | | | |
+|`CUTENSOR_AUTOTUNE_INCREMENTAL`|1.2.0.0| | |2.0.0.0|`HIPTENSOR_AUTOTUNE_MODE_INCREMENTAL`|7.0.0| | | |7.0.0|
+|`CUTENSOR_AUTOTUNE_MODE_INCREMENTAL`|2.0.0.0| | | |`HIPTENSOR_AUTOTUNE_MODE_INCREMENTAL`|7.0.0| | | |7.0.0|
+|`CUTENSOR_AUTOTUNE_MODE_NONE`|2.0.0.0| | | |`HIPTENSOR_AUTOTUNE_MODE_NONE`|7.0.0| | | |7.0.0|
+|`CUTENSOR_AUTOTUNE_NONE`|1.2.0.0| | |2.0.0.0|`HIPTENSOR_AUTOTUNE_MODE_NONE`|7.0.0| | | |7.0.0|
 |`CUTENSOR_CACHE_MODE_NONE`|1.2.0.0| | | | | | | | | |
 |`CUTENSOR_CACHE_MODE_PEDANTIC`|1.2.0.0| | | | | | | | | |
 |`CUTENSOR_COMPUTE_16BF`|1.0.1.0| | |2.0.0.0|`HIPTENSOR_COMPUTE_DESC_16BF`|7.0.0| | | |7.0.0|
@@ -97,13 +99,13 @@
 |`CUTENSOR_OP_TAN`|1.0.1.0| | | |`HIPTENSOR_OP_TAN`|7.0.0| | | |7.0.0|
 |`CUTENSOR_OP_TANH`|1.0.1.0| | | |`HIPTENSOR_OP_TANH`|7.0.0| | | |7.0.0|
 |`CUTENSOR_OP_UNKNOWN`|1.0.1.0| | | |`HIPTENSOR_OP_UNKNOWN`|5.7.0| | | | |
-|`CUTENSOR_PLAN_PREFERENCE_ALGO`|2.0.0.0| | | | | | | | | |
-|`CUTENSOR_PLAN_PREFERENCE_AUTOTUNE_MODE`|2.0.0.0| | | | | | | | | |
-|`CUTENSOR_PLAN_PREFERENCE_CACHE_MODE`|2.0.0.0| | | | | | | | | |
-|`CUTENSOR_PLAN_PREFERENCE_INCREMENTAL_COUNT`|2.0.0.0| | | | | | | | | |
-|`CUTENSOR_PLAN_PREFERENCE_JIT`|2.0.0.0| | | | | | | | | |
-|`CUTENSOR_PLAN_PREFERENCE_KERNEL_RANK`|2.0.0.0| | | | | | | | | |
-|`CUTENSOR_PLAN_REQUIRED_WORKSPACE`|2.0.0.0| | | | | | | | | |
+|`CUTENSOR_PLAN_PREFERENCE_ALGO`|2.0.0.0| | | |`HIPTENSOR_PLAN_PREFERENCE_ALGO`|7.0.0| | | |7.0.0|
+|`CUTENSOR_PLAN_PREFERENCE_AUTOTUNE_MODE`|2.0.0.0| | | |`HIPTENSOR_PLAN_PREFERENCE_AUTOTUNE_MODE`|7.0.0| | | |7.0.0|
+|`CUTENSOR_PLAN_PREFERENCE_CACHE_MODE`|2.0.0.0| | | |`HIPTENSOR_PLAN_PREFERENCE_CACHE_MODE`|7.0.0| | | |7.0.0|
+|`CUTENSOR_PLAN_PREFERENCE_INCREMENTAL_COUNT`|2.0.0.0| | | |`HIPTENSOR_PLAN_PREFERENCE_INCREMENTAL_COUNT`|7.0.0| | | |7.0.0|
+|`CUTENSOR_PLAN_PREFERENCE_JIT`|2.0.0.0| | | |`HIPTENSOR_PLAN_PREFERENCE_JIT`|7.0.0| | | |7.0.0|
+|`CUTENSOR_PLAN_PREFERENCE_KERNEL_RANK`|2.0.0.0| | | |`HIPTENSOR_PLAN_PREFERENCE_KERNEL_RANK`|7.0.0| | | |7.0.0|
+|`CUTENSOR_PLAN_REQUIRED_WORKSPACE`|2.0.0.0| | | |`HIPTENSOR_PLAN_REQUIRED_WORKSPACE`|7.0.0| | | |7.0.0|
 |`CUTENSOR_R_16BF`|2.0.0.0| | | |`HIPTENSOR_R_16BF`|7.0.0| | | |7.0.0|
 |`CUTENSOR_R_16F`|2.0.0.0| | | |`HIPTENSOR_R_16F`|7.0.0| | | |7.0.0|
 |`CUTENSOR_R_16I`|2.0.0.0| | | |`HIPTENSOR_R_16I`|7.0.0| | | |7.0.0|
@@ -147,7 +149,7 @@
 |`CUTENSOR_WORKSPACE_MIN`|1.0.1.0| | | |`HIPTENSOR_WORKSPACE_MIN`|5.7.0| | | | |
 |`CUTENSOR_WORKSPACE_RECOMMENDED`|1.0.1.0| | |2.0.0.0| | | | | | |
 |`cutensorAlgo_t`|1.0.1.0| | | |`hiptensorAlgo_t`|5.7.0| | | | |
-|`cutensorAutotuneMode_t`|1.2.0.0| | | | | | | | | |
+|`cutensorAutotuneMode_t`|1.2.0.0| | | |`hiptensorAutotuneMode_t`|7.0.0| | | |7.0.0|
 |`cutensorCacheMode_t`|1.2.0.0| | | | | | | | | |
 |`cutensorComputeType_t`| | | | |`hiptensorComputeDescriptor_t`|7.0.0| | | |7.0.0|
 |`cutensorContractionPlan_t`|1.0.1.0| | |2.0.0.0|`hiptensorContractionPlan_t`|5.7.0| | | | |
@@ -176,8 +178,8 @@
 |`cutensorOperationDescriptorAttribute_t`|2.0.0.0| | | |`hiptensorOperationDescriptorAttribute_t`|7.0.0| | | |7.0.0|
 |`cutensorOperator_t`|1.0.1.0| | | |`hiptensorOperator_t`|5.7.0| | | | |
 |`cutensorPlan`|2.0.0.0| | | | | | | | | |
-|`cutensorPlanAttribute_t`|2.0.0.0| | | | | | | | | |
-|`cutensorPlanPreferenceAttribute_t`|2.0.0.0| | | | | | | | | |
+|`cutensorPlanAttribute_t`|2.0.0.0| | | |`hiptensorPlanAttribute_t`|7.0.0| | | |7.0.0|
+|`cutensorPlanPreferenceAttribute_t`|2.0.0.0| | | |`hiptensorPlanPreferenceAttribute_t`|7.0.0| | | |7.0.0|
 |`cutensorPlan_t`|2.0.0.0| | | |`hiptensorContractionPlan_t`|5.7.0| | | | |
 |`cutensorStatus_t`|1.0.1.0| | | |`hiptensorStatus_t`|5.7.0| | | | |
 |`cutensorTensorDescriptor`|2.0.0.0| | | | | | | | | |
