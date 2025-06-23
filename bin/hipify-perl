@@ -1477,6 +1477,8 @@ my %removed_funcs = (
     "CU_DEVICE_ATTRIBUTE_CAN_USE_STREAM_MEM_OPS" => "12.0",
     "CU_DEVICE_ATTRIBUTE_CAN_USE_64_BIT_STREAM_MEM_OPS_V2" => "12.0",
     "CU_COMPUTEMODE_EXCLUSIVE" => "8.0",
+    "CUTENSOR_AUTOTUNE_NONE" => "2.0.0.0",
+    "CUTENSOR_AUTOTUNE_INCREMENTAL" => "2.0.0.0",
     "CUSPARSE_SPMMA_PREPROCESS" => "11.2",
     "CUSPARSE_SPMMA_ALG4" => "11.2",
     "CUSPARSE_SPMMA_ALG3" => "11.2",
@@ -1518,8 +1520,11 @@ my %removed_funcs = (
 );
 
 my %experimental_funcs = (
+    "cutensorPlanPreferenceAttribute_t" => "7.0.0",
+    "cutensorPlanAttribute_t" => "7.0.0",
     "cutensorOperationDescriptorAttribute_t" => "7.0.0",
     "cutensorDataType_t" => "7.0.0",
+    "cutensorAutotuneMode_t" => "7.0.0",
     "cudaRoundZero" => "7.0.0",
     "cudaRoundPosInf" => "7.0.0",
     "cudaRoundNearest" => "7.0.0",
@@ -1567,6 +1572,13 @@ my %experimental_funcs = (
     "CUTENSOR_R_16I" => "7.0.0",
     "CUTENSOR_R_16F" => "7.0.0",
     "CUTENSOR_R_16BF" => "7.0.0",
+    "CUTENSOR_PLAN_REQUIRED_WORKSPACE" => "7.0.0",
+    "CUTENSOR_PLAN_PREFERENCE_KERNEL_RANK" => "7.0.0",
+    "CUTENSOR_PLAN_PREFERENCE_JIT" => "7.0.0",
+    "CUTENSOR_PLAN_PREFERENCE_INCREMENTAL_COUNT" => "7.0.0",
+    "CUTENSOR_PLAN_PREFERENCE_CACHE_MODE" => "7.0.0",
+    "CUTENSOR_PLAN_PREFERENCE_AUTOTUNE_MODE" => "7.0.0",
+    "CUTENSOR_PLAN_PREFERENCE_ALGO" => "7.0.0",
     "CUTENSOR_OP_TANH" => "7.0.0",
     "CUTENSOR_OP_TAN" => "7.0.0",
     "CUTENSOR_OP_SINH" => "7.0.0",
@@ -1618,6 +1630,10 @@ my %experimental_funcs = (
     "CUTENSOR_COMPUTE_32F" => "7.0.0",
     "CUTENSOR_COMPUTE_16F" => "7.0.0",
     "CUTENSOR_COMPUTE_16BF" => "7.0.0",
+    "CUTENSOR_AUTOTUNE_NONE" => "7.0.0",
+    "CUTENSOR_AUTOTUNE_MODE_NONE" => "7.0.0",
+    "CUTENSOR_AUTOTUNE_MODE_INCREMENTAL" => "7.0.0",
+    "CUTENSOR_AUTOTUNE_INCREMENTAL" => "7.0.0",
     "CUDA_R_8F_UE8M0" => "7.0.0",
     "CUDA_R_6F_E3M2" => "7.0.0",
     "CUDA_R_6F_E2M3" => "7.0.0",
@@ -1807,8 +1823,11 @@ sub experimentalSubstitutions {
     subst("cudaLaunchAttribute_st", "hipLaunchAttribute_st", "type");
     subst("cudaLaunchConfig_st", "hipLaunchConfig_st", "type");
     subst("cudaLaunchConfig_t", "hipLaunchConfig_t", "type");
+    subst("cutensorAutotuneMode_t", "hiptensorAutotuneMode_t", "type");
     subst("cutensorDataType_t", "hiptensorDataType_t", "type");
     subst("cutensorOperationDescriptorAttribute_t", "hiptensorOperationDescriptorAttribute_t", "type");
+    subst("cutensorPlanAttribute_t", "hiptensorPlanAttribute_t", "type");
+    subst("cutensorPlanPreferenceAttribute_t", "hiptensorPlanPreferenceAttribute_t", "type");
     subst("CUBLASLT_MATMUL_MATRIX_SCALE_BLK128x128_32F", "HIPBLASLT_MATMUL_MATRIX_SCALE_BLK128x128_32F", "numeric_literal");
     subst("CUBLASLT_MATMUL_MATRIX_SCALE_END", "HIPBLASLT_MATMUL_MATRIX_SCALE_END", "numeric_literal");
     subst("CUBLASLT_MATMUL_MATRIX_SCALE_OUTER_VEC_32F", "HIPBLASLT_MATMUL_MATRIX_SCALE_OUTER_VEC_32F", "numeric_literal");
@@ -1820,6 +1839,10 @@ sub experimentalSubstitutions {
     subst("CUDA_R_6F_E2M3", "HIP_R_6F_E2M3", "numeric_literal");
     subst("CUDA_R_6F_E3M2", "HIP_R_6F_E3M2", "numeric_literal");
     subst("CUDA_R_8F_UE8M0", "HIP_R_8F_UE8M0", "numeric_literal");
+    subst("CUTENSOR_AUTOTUNE_INCREMENTAL", "HIPTENSOR_AUTOTUNE_MODE_INCREMENTAL", "numeric_literal");
+    subst("CUTENSOR_AUTOTUNE_MODE_INCREMENTAL", "HIPTENSOR_AUTOTUNE_MODE_INCREMENTAL", "numeric_literal");
+    subst("CUTENSOR_AUTOTUNE_MODE_NONE", "HIPTENSOR_AUTOTUNE_MODE_NONE", "numeric_literal");
+    subst("CUTENSOR_AUTOTUNE_NONE", "HIPTENSOR_AUTOTUNE_MODE_NONE", "numeric_literal");
     subst("CUTENSOR_COMPUTE_16BF", "HIPTENSOR_COMPUTE_DESC_16BF", "numeric_literal");
     subst("CUTENSOR_COMPUTE_16F", "HIPTENSOR_COMPUTE_DESC_16F", "numeric_literal");
     subst("CUTENSOR_COMPUTE_32F", "HIPTENSOR_COMPUTE_DESC_32F", "numeric_literal");
@@ -1871,6 +1894,13 @@ sub experimentalSubstitutions {
     subst("CUTENSOR_OP_SINH", "HIPTENSOR_OP_SINH", "numeric_literal");
     subst("CUTENSOR_OP_TAN", "HIPTENSOR_OP_TAN", "numeric_literal");
     subst("CUTENSOR_OP_TANH", "HIPTENSOR_OP_TANH", "numeric_literal");
+    subst("CUTENSOR_PLAN_PREFERENCE_ALGO", "HIPTENSOR_PLAN_PREFERENCE_ALGO", "numeric_literal");
+    subst("CUTENSOR_PLAN_PREFERENCE_AUTOTUNE_MODE", "HIPTENSOR_PLAN_PREFERENCE_AUTOTUNE_MODE", "numeric_literal");
+    subst("CUTENSOR_PLAN_PREFERENCE_CACHE_MODE", "HIPTENSOR_PLAN_PREFERENCE_CACHE_MODE", "numeric_literal");
+    subst("CUTENSOR_PLAN_PREFERENCE_INCREMENTAL_COUNT", "HIPTENSOR_PLAN_PREFERENCE_INCREMENTAL_COUNT", "numeric_literal");
+    subst("CUTENSOR_PLAN_PREFERENCE_JIT", "HIPTENSOR_PLAN_PREFERENCE_JIT", "numeric_literal");
+    subst("CUTENSOR_PLAN_PREFERENCE_KERNEL_RANK", "HIPTENSOR_PLAN_PREFERENCE_KERNEL_RANK", "numeric_literal");
+    subst("CUTENSOR_PLAN_REQUIRED_WORKSPACE", "HIPTENSOR_PLAN_REQUIRED_WORKSPACE", "numeric_literal");
     subst("CUTENSOR_R_16BF", "HIPTENSOR_R_16BF", "numeric_literal");
     subst("CUTENSOR_R_16F", "HIPTENSOR_R_16F", "numeric_literal");
     subst("CUTENSOR_R_16I", "HIPTENSOR_R_16I", "numeric_literal");
@@ -10536,9 +10566,7 @@ sub warnRemovedFunctions {
     "cutensorReduce",
     "cutensorReadKernelCacheFromFile",
     "cutensorPlanPreferenceSetAttribute",
-    "cutensorPlanPreferenceAttribute_t",
     "cutensorPlanGetAttribute",
-    "cutensorPlanAttribute_t",
     "cutensorPlan",
     "cutensorPermute",
     "cutensorOperationDescriptorSetAttribute",
@@ -10603,7 +10631,6 @@ sub warnRemovedFunctions {
     "cutensorCreateContraction",
     "cutensorContractTrinary",
     "cutensorCacheMode_t",
-    "cutensorAutotuneMode_t",
     "cusparseZhybsv_solve",
     "cusparseZhybsv_analysis",
     "cusparseZhyb2dense",
@@ -12825,13 +12852,6 @@ sub warnRemovedFunctions {
     "CUTENSOR_R_MIN_32F",
     "CUTENSOR_R_MIN_16F",
     "CUTENSOR_R_MIN_16BF",
-    "CUTENSOR_PLAN_REQUIRED_WORKSPACE",
-    "CUTENSOR_PLAN_PREFERENCE_KERNEL_RANK",
-    "CUTENSOR_PLAN_PREFERENCE_JIT",
-    "CUTENSOR_PLAN_PREFERENCE_INCREMENTAL_COUNT",
-    "CUTENSOR_PLAN_PREFERENCE_CACHE_MODE",
-    "CUTENSOR_PLAN_PREFERENCE_AUTOTUNE_MODE",
-    "CUTENSOR_PLAN_PREFERENCE_ALGO",
     "CUTENSOR_OP_SWISH",
     "CUTENSOR_OP_SOFT_SIGN",
     "CUTENSOR_OP_SOFT_PLUS",
@@ -12848,8 +12868,6 @@ sub warnRemovedFunctions {
     "CUTENSOR_COMPUTE_3XTF32",
     "CUTENSOR_CACHE_MODE_PEDANTIC",
     "CUTENSOR_CACHE_MODE_NONE",
-    "CUTENSOR_AUTOTUNE_MODE_NONE",
-    "CUTENSOR_AUTOTUNE_MODE_INCREMENTAL",
     "CUTENSOR_ALGO_TTGT",
     "CUTENSOR_ALGO_TGETT",
     "CUTENSOR_ALGO_GETT",
@@ -13999,9 +14017,7 @@ sub warnHipOnlyUnsupportedFunctions {
     "cutensorReduce",
     "cutensorReadKernelCacheFromFile",
     "cutensorPlanPreferenceSetAttribute",
-    "cutensorPlanPreferenceAttribute_t",
     "cutensorPlanGetAttribute",
-    "cutensorPlanAttribute_t",
     "cutensorPlan",
     "cutensorPermute",
     "cutensorOperationDescriptorSetAttribute",
@@ -14066,7 +14082,6 @@ sub warnHipOnlyUnsupportedFunctions {
     "cutensorCreateContraction",
     "cutensorContractTrinary",
     "cutensorCacheMode_t",
-    "cutensorAutotuneMode_t",
     "cusparseZhybsv_solve",
     "cusparseZhybsv_analysis",
     "cusparseZhyb2dense",
@@ -14484,13 +14499,6 @@ sub warnHipOnlyUnsupportedFunctions {
     "CUTENSOR_R_MIN_32F",
     "CUTENSOR_R_MIN_16F",
     "CUTENSOR_R_MIN_16BF",
-    "CUTENSOR_PLAN_REQUIRED_WORKSPACE",
-    "CUTENSOR_PLAN_PREFERENCE_KERNEL_RANK",
-    "CUTENSOR_PLAN_PREFERENCE_JIT",
-    "CUTENSOR_PLAN_PREFERENCE_INCREMENTAL_COUNT",
-    "CUTENSOR_PLAN_PREFERENCE_CACHE_MODE",
-    "CUTENSOR_PLAN_PREFERENCE_AUTOTUNE_MODE",
-    "CUTENSOR_PLAN_PREFERENCE_ALGO",
     "CUTENSOR_OP_SWISH",
     "CUTENSOR_OP_SOFT_SIGN",
     "CUTENSOR_OP_SOFT_PLUS",
@@ -14507,8 +14515,6 @@ sub warnHipOnlyUnsupportedFunctions {
     "CUTENSOR_COMPUTE_3XTF32",
     "CUTENSOR_CACHE_MODE_PEDANTIC",
     "CUTENSOR_CACHE_MODE_NONE",
-    "CUTENSOR_AUTOTUNE_MODE_NONE",
-    "CUTENSOR_AUTOTUNE_MODE_INCREMENTAL",
     "CUTENSOR_ALGO_TTGT",
     "CUTENSOR_ALGO_TGETT",
     "CUTENSOR_ALGO_GETT",
