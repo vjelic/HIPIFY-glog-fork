@@ -168,13 +168,13 @@ const std::map<llvm::StringRef, hipCounter> CUDA_TENSOR_TYPE_NAME_MAP {
   {"CUTENSOR_AUTOTUNE_MODE_INCREMENTAL",               {"HIPTENSOR_AUTOTUNE_MODE_INCREMENTAL",                      "", CONV_NUMERIC_LITERAL, API_TENSOR, 1, HIP_EXPERIMENTAL}},
   {"CUTENSOR_AUTOTUNE_INCREMENTAL",                    {"HIPTENSOR_AUTOTUNE_MODE_INCREMENTAL",                      "", CONV_NUMERIC_LITERAL, API_TENSOR, 1, HIP_EXPERIMENTAL | CUDA_REMOVED}},
 
-  {"cutensorJitMode_t",                                {"",                                                         "", CONV_TYPE, API_TENSOR, 1, UNSUPPORTED}},
-  {"CUTENSOR_JIT_MODE_NONE",                           {"",                                                         "", CONV_NUMERIC_LITERAL, API_TENSOR, 1, UNSUPPORTED}},
-  {"CUTENSOR_JIT_MODE_DEFAULT",                        {"",                                                         "", CONV_NUMERIC_LITERAL, API_TENSOR, 1, UNSUPPORTED}},
+  {"cutensorJitMode_t",                                {"hiptensorJitMode_t",                                       "", CONV_TYPE, API_TENSOR, 1, HIP_EXPERIMENTAL}},
+  {"CUTENSOR_JIT_MODE_NONE",                           {"HIPTENSOR_JIT_MODE_NONE",                                  "", CONV_NUMERIC_LITERAL, API_TENSOR, 1, HIP_EXPERIMENTAL}},
+  {"CUTENSOR_JIT_MODE_DEFAULT",                        {"HIPTENSOR_JIT_MODE_DEFAULT",                               "", CONV_NUMERIC_LITERAL, API_TENSOR, 1, HIP_EXPERIMENTAL}},
 
-  {"cutensorCacheMode_t",                              {"",                                                         "", CONV_TYPE, API_TENSOR, 1, UNSUPPORTED}},
-  {"CUTENSOR_CACHE_MODE_NONE",                         {"",                                                         "", CONV_NUMERIC_LITERAL, API_TENSOR, 1, UNSUPPORTED}},
-  {"CUTENSOR_CACHE_MODE_PEDANTIC",                     {"",                                                         "", CONV_NUMERIC_LITERAL, API_TENSOR, 1, UNSUPPORTED}},
+  {"cutensorCacheMode_t",                              {"hiptensorCacheMode_t",                                     "", CONV_TYPE, API_TENSOR, 1, HIP_EXPERIMENTAL}},
+  {"CUTENSOR_CACHE_MODE_NONE",                         {"HIPTENSOR_CACHE_MODE_NONE",                                "", CONV_NUMERIC_LITERAL, API_TENSOR, 1, HIP_EXPERIMENTAL}},
+  {"CUTENSOR_CACHE_MODE_PEDANTIC",                     {"HIPTENSOR_CACHE_MODE_PEDANTIC",                            "", CONV_NUMERIC_LITERAL, API_TENSOR, 1, HIP_EXPERIMENTAL}},
 
   {"cutensorPlanAttribute_t",                          {"hiptensorPlanAttribute_t",                                 "", CONV_TYPE, API_TENSOR, 1, HIP_EXPERIMENTAL}},
   {"CUTENSOR_PLAN_REQUIRED_WORKSPACE",                 {"HIPTENSOR_PLAN_REQUIRED_WORKSPACE",                        "", CONV_NUMERIC_LITERAL, API_TENSOR, 1, HIP_EXPERIMENTAL}},
@@ -190,27 +190,44 @@ const std::map<llvm::StringRef, hipCounter> CUDA_TENSOR_TYPE_NAME_MAP {
   {"CUTENSORMG_CONTRACTION_FIND_ATTRIBUTE_MAX",        {"",                                                         "", CONV_NUMERIC_LITERAL, API_TENSOR, 1, UNSUPPORTED}},
 
   {"cutensorHandle_t",                                 {"hiptensorHandle_t",                                        "", CONV_TYPE, API_TENSOR, 1}},
-  {"cutensorHandle",                                   {"",                                                         "", CONV_TYPE, API_TENSOR, 1, UNSUPPORTED}},
+  {"cutensorHandle",                                   {"hiptensorHandle",                                          "", CONV_TYPE, API_TENSOR, 1, HIP_EXPERIMENTAL}},
+
   {"cutensorTensorDescriptor_t",                       {"hiptensorTensorDescriptor_t",                              "", CONV_TYPE, API_TENSOR, 1}},
-  {"cutensorTensorDescriptor",                         {"",                                                         "", CONV_TYPE, API_TENSOR, 1, UNSUPPORTED}},
+  {"cutensorTensorDescriptor",                         {"hiptensorTensorDescriptor",                                "", CONV_TYPE, API_TENSOR, 1, HIP_EXPERIMENTAL}},
+
+  {"cutensorOperationDescriptor_t",                    {"hiptensorOperationDescriptor_t",                           "", CONV_TYPE, API_TENSOR, 1, HIP_EXPERIMENTAL}},
+  {"cutensorOperationDescriptor",                      {"hiptensorOperationDescriptor",                             "", CONV_TYPE, API_TENSOR, 1, HIP_EXPERIMENTAL}},
+
   {"cutensorContractionPlan_t",                        {"hiptensorContractionPlan_t",                               "", CONV_TYPE, API_TENSOR, 1}},
-  {"cutensorPlan_t",                                   {"hiptensorContractionPlan_t",                               "", CONV_TYPE, API_TENSOR, 1}},
-  {"cutensorPlan",                                     {"",                                                         "", CONV_TYPE, API_TENSOR, 1, UNSUPPORTED}},
+
+  {"cutensorPlan_t",                                   {"hiptensorPlan_t",                                          "", CONV_TYPE, API_TENSOR, 1, HIP_EXPERIMENTAL}},
+  {"cutensorPlan",                                     {"hiptensorPlan",                                            "", CONV_TYPE, API_TENSOR, 1, HIP_EXPERIMENTAL}},
+
   {"cutensorLoggerCallback_t",                         {"hiptensorLoggerCallback_t",                                "", CONV_TYPE, API_TENSOR, 1}},
+
   {"cutensorMgHandle_t",                               {"",                                                         "", CONV_TYPE, API_TENSOR, 1, UNSUPPORTED}},
   {"cutensorMgHandle_s",                               {"",                                                         "", CONV_TYPE, API_TENSOR, 1, UNSUPPORTED}},
+
   {"cutensorMgTensorDescriptor_t",                     {"",                                                         "", CONV_TYPE, API_TENSOR, 1, UNSUPPORTED}},
   {"cutensorMgTensorDescriptor_s",                     {"",                                                         "", CONV_TYPE, API_TENSOR, 1, UNSUPPORTED}},
+
   {"cutensorMgCopyDescriptor_t",                       {"",                                                         "", CONV_TYPE, API_TENSOR, 1, UNSUPPORTED}},
   {"cutensorMgCopyDescriptor_s",                       {"",                                                         "", CONV_TYPE, API_TENSOR, 1, UNSUPPORTED}},
+
   {"cutensorMgCopyPlan_t",                             {"",                                                         "", CONV_TYPE, API_TENSOR, 1, UNSUPPORTED}},
   {"cutensorMgCopyPlan_s",                             {"",                                                         "", CONV_TYPE, API_TENSOR, 1, UNSUPPORTED}},
+
   {"cutensorMgContractionDescriptor_t",                {"",                                                         "", CONV_TYPE, API_TENSOR, 1, UNSUPPORTED}},
   {"cutensorMgContractionDescriptor_s",                {"",                                                         "", CONV_TYPE, API_TENSOR, 1, UNSUPPORTED}},
+
   {"cutensorMgContractionFind_t",                      {"",                                                         "", CONV_TYPE, API_TENSOR, 1, UNSUPPORTED}},
   {"cutensorMgContractionFind_s",                      {"",                                                         "", CONV_TYPE, API_TENSOR, 1, UNSUPPORTED}},
+
   {"cutensorMgContractionPlan_t",                      {"",                                                         "", CONV_TYPE, API_TENSOR, 1, UNSUPPORTED}},
   {"cutensorMgContractionPlan_s",                      {"",                                                         "", CONV_TYPE, API_TENSOR, 1, UNSUPPORTED}},
+
+  {"cutensorPlanPreference_t",                         {"hiptensorPlanPreference_t",                                "", CONV_TYPE, API_TENSOR, 1, HIP_EXPERIMENTAL}},
+  {"cutensorPlanPreference",                           {"hiptensorPlanPreference",                                  "", CONV_TYPE, API_TENSOR, 1, HIP_EXPERIMENTAL}},
 };
 
 const std::map<llvm::StringRef, cudaAPIversions> CUDA_TENSOR_TYPE_NAME_VER_MAP {
@@ -384,6 +401,10 @@ const std::map<llvm::StringRef, cudaAPIversions> CUDA_TENSOR_TYPE_NAME_VER_MAP {
   {"CUTENSORMG_ALGO_DEFAULT",                          {CUTENSOR_1400, CUDA_0,        CUDA_0        }},
   {"cutensorMgContractionFindAttribute_t",             {CUTENSOR_1500, CUDA_0,        CUDA_0        }},
   {"CUTENSORMG_CONTRACTION_FIND_ATTRIBUTE_MAX",        {CUTENSOR_1500, CUDA_0,        CUDA_0        }},
+  {"cutensorPlanPreference",                           {CUTENSOR_2000, CUDA_0,        CUDA_0        }},
+  {"cutensorPlanPreference_t",                         {CUTENSOR_2000, CUDA_0,        CUDA_0        }},
+  {"cutensorOperationDescriptor_t",                    {CUTENSOR_2000, CUDA_0,        CUDA_0        }},
+  {"cutensorOperationDescriptor",                      {CUTENSOR_2000, CUDA_0,        CUDA_0        }},
 };
 
 const std::map<llvm::StringRef, hipAPIversions> HIP_TENSOR_TYPE_NAME_VER_MAP {
@@ -499,4 +520,18 @@ const std::map<llvm::StringRef, hipAPIversions> HIP_TENSOR_TYPE_NAME_VER_MAP {
   {"hiptensorAutotuneMode_t",                          {HIP_7000,      HIP_0,         HIP_0,        HIP_LATEST}},
   {"HIPTENSOR_AUTOTUNE_MODE_NONE",                     {HIP_7000,      HIP_0,         HIP_0,        HIP_LATEST}},
   {"HIPTENSOR_AUTOTUNE_MODE_INCREMENTAL",              {HIP_7000,      HIP_0,         HIP_0,        HIP_LATEST}},
+  {"hiptensorCacheMode_t",                             {HIP_7000,      HIP_0,         HIP_0,        HIP_LATEST}},
+  {"HIPTENSOR_CACHE_MODE_NONE",                        {HIP_7000,      HIP_0,         HIP_0,        HIP_LATEST}},
+  {"HIPTENSOR_CACHE_MODE_PEDANTIC",                    {HIP_7000,      HIP_0,         HIP_0,        HIP_LATEST}},
+  {"hiptensorJitMode_t",                               {HIP_7000,      HIP_0,         HIP_0,        HIP_LATEST}},
+  {"HIPTENSOR_JIT_MODE_NONE",                          {HIP_7000,      HIP_0,         HIP_0,        HIP_LATEST}},
+  {"HIPTENSOR_JIT_MODE_DEFAULT",                       {HIP_7000,      HIP_0,         HIP_0,        HIP_LATEST}},
+  {"hiptensorPlan_t",                                  {HIP_7000,      HIP_0,         HIP_0,        HIP_LATEST}},
+  {"hiptensorPlan",                                    {HIP_7000,      HIP_0,         HIP_0,        HIP_LATEST}},
+  {"hiptensorPlanPreference_t",                        {HIP_7000,      HIP_0,         HIP_0,        HIP_LATEST}},
+  {"hiptensorPlanPreference",                          {HIP_7000,      HIP_0,         HIP_0,        HIP_LATEST}},
+  {"hiptensorHandle",                                  {HIP_7000,      HIP_0,         HIP_0,        HIP_LATEST}},
+  {"hiptensorOperationDescriptor_t",                   {HIP_7000,      HIP_0,         HIP_0,        HIP_LATEST}},
+  {"hiptensorOperationDescriptor",                     {HIP_7000,      HIP_0,         HIP_0,        HIP_LATEST}},
+  {"hiptensorTensorDescriptor",                        {HIP_7000,      HIP_0,         HIP_0,        HIP_LATEST}},
 };
