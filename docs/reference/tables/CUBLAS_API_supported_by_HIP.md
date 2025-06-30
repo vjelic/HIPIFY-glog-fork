@@ -1662,7 +1662,7 @@
 
 |**CUDA**|**A**|**D**|**C**|**R**|**HIP**|**A**|**D**|**C**|**R**|**E**|
 |:--|:-:|:-:|:-:|:-:|:--|:-:|:-:|:-:|:-:|:-:|
-|`cublasCgemm`| | | | |`hipblasCgemm_v2`|6.0.0| | | | |
+|`cublasCgemm`| | | | |`hipblasCgemm`|1.6.0| |7.0.0| | |
 |`cublasCgemm3m`|8.0| | | | | | | | | |
 |`cublasCgemm3mBatched`|8.0| | | | | | | | | |
 |`cublasCgemm3mBatched_64`|12.0| | | | | | | | | |
@@ -1671,13 +1671,13 @@
 |`cublasCgemm3mStridedBatched`|8.0| | | | | | | | | |
 |`cublasCgemm3mStridedBatched_64`|12.0| | | | | | | | | |
 |`cublasCgemm3m_64`|12.0| | | | | | | | | |
-|`cublasCgemmBatched`| | | | |`hipblasCgemmBatched_v2`|6.0.0| | | | |
-|`cublasCgemmBatched_64`|12.0| | | |`hipblasCgemmBatched_v2_64`|6.3.0| | | | |
-|`cublasCgemmStridedBatched`|8.0| | | |`hipblasCgemmStridedBatched_v2`|6.0.0| | | | |
-|`cublasCgemmStridedBatched_64`|12.0| | | |`hipblasCgemmStridedBatched_v2_64`|6.3.0| | | | |
-|`cublasCgemm_64`|12.0| | | |`hipblasCgemm_v2_64`|6.3.0| | | | |
-|`cublasCgemm_v2`| | | | |`hipblasCgemm_v2`|6.0.0| | | | |
-|`cublasCgemm_v2_64`|12.0| | | |`hipblasCgemm_v2_64`|6.3.0| | | | |
+|`cublasCgemmBatched`| | | | |`hipblasCgemmBatched`|1.6.0| |7.0.0| | |
+|`cublasCgemmBatched_64`|12.0| | | |`hipblasCgemmBatched_64`|6.3.0| |7.0.0| | |
+|`cublasCgemmStridedBatched`|8.0| | | |`hipblasCgemmStridedBatched`|3.0.0| |7.0.0| | |
+|`cublasCgemmStridedBatched_64`|12.0| | | |`hipblasCgemmStridedBatched_64`|6.3.0| |7.0.0| | |
+|`cublasCgemm_64`|12.0| | | |`hipblasCgemm_64`|6.3.0| |7.0.0| | |
+|`cublasCgemm_v2`| | | | |`hipblasCgemm`|1.6.0| |7.0.0| | |
+|`cublasCgemm_v2_64`|12.0| | | |`hipblasCgemm_64`|6.3.0| |7.0.0| | |
 |`cublasCgemvBatched`|11.6| | | |`hipblasCgemvBatched`|3.0.0| |7.0.0| | |
 |`cublasCgemvBatched_64`|12.0| | | |`hipblasCgemvBatched_64`|6.2.0| |7.0.0| | |
 |`cublasCgemvStridedBatched`|11.6| | | |`hipblasCgemvStridedBatched`|3.0.0| |7.0.0| | |
@@ -1814,16 +1814,16 @@
 |`cublasTSTgemvBatched_64`|12.0| | | | | | | | | |
 |`cublasTSTgemvStridedBatched`|11.6| | | | | | | | | |
 |`cublasTSTgemvStridedBatched_64`|12.0| | | | | | | | | |
-|`cublasZgemm`| | | | |`hipblasZgemm_v2`|6.0.0| | | | |
+|`cublasZgemm`| | | | |`hipblasZgemm`|1.6.0| |7.0.0| | |
 |`cublasZgemm3m`|8.0| | | | | | | | | |
 |`cublasZgemm3m_64`|12.0| | | | | | | | | |
-|`cublasZgemmBatched`| | | | |`hipblasZgemmBatched_v2`|6.0.0| | | | |
-|`cublasZgemmBatched_64`|12.0| | | |`hipblasZgemmBatched_v2_64`|6.3.0| | | | |
-|`cublasZgemmStridedBatched`|8.0| | | |`hipblasZgemmStridedBatched_v2`|6.0.0| | | | |
-|`cublasZgemmStridedBatched_64`|12.0| | | |`hipblasZgemmStridedBatched_v2_64`|6.3.0| | | | |
-|`cublasZgemm_64`|12.0| | | |`hipblasZgemm_v2_64`|6.3.0| | | | |
-|`cublasZgemm_v2`| | | | |`hipblasZgemm_v2`|6.0.0| | | | |
-|`cublasZgemm_v2_64`|12.0| | | |`hipblasZgemm_v2_64`|6.3.0| | | | |
+|`cublasZgemmBatched`| | | | |`hipblasZgemmBatched`|1.6.0| |7.0.0| | |
+|`cublasZgemmBatched_64`|12.0| | | |`hipblasZgemmBatched_64`|6.3.0| |7.0.0| | |
+|`cublasZgemmStridedBatched`|8.0| | | |`hipblasZgemmStridedBatched`|3.0.0| |7.0.0| | |
+|`cublasZgemmStridedBatched_64`|12.0| | | |`hipblasZgemmStridedBatched_64`|6.3.0| |7.0.0| | |
+|`cublasZgemm_64`|12.0| | | |`hipblasZgemm_64`|6.3.0| |7.0.0| | |
+|`cublasZgemm_v2`| | | | |`hipblasZgemm`|1.6.0| |7.0.0| | |
+|`cublasZgemm_v2_64`|12.0| | | |`hipblasZgemm_64`|6.3.0| |7.0.0| | |
 |`cublasZgemvBatched`|11.6| | | |`hipblasZgemvBatched`|3.0.0| |7.0.0| | |
 |`cublasZgemvBatched_64`|12.0| | | |`hipblasZgemvBatched_64`|6.2.0| |7.0.0| | |
 |`cublasZgemvStridedBatched`|11.6| | | |`hipblasZgemvStridedBatched`|3.0.0| |7.0.0| | |
