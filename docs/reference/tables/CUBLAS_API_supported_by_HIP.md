@@ -1696,10 +1696,10 @@
 |`cublasCherk_v2_64`|12.0| | | |`hipblasCherk_64`|6.3.0| |7.0.0| | |
 |`cublasCherkx`| | | | |`hipblasCherkx`|3.5.0| |7.0.0| | |
 |`cublasCherkx_64`|12.0| | | |`hipblasCherkx_64`|6.3.0| |7.0.0| | |
-|`cublasCsymm`| | | | |`hipblasCsymm_v2`|6.0.0| | | | |
-|`cublasCsymm_64`|12.0| | | |`hipblasCsymm_v2_64`|6.3.0| | | | |
-|`cublasCsymm_v2`| | | | |`hipblasCsymm_v2`|6.0.0| | | | |
-|`cublasCsymm_v2_64`|12.0| | | |`hipblasCsymm_v2_64`|6.3.0| | | | |
+|`cublasCsymm`| | | | |`hipblasCsymm`|3.6.0| |7.0.0| | |
+|`cublasCsymm_64`|12.0| | | |`hipblasCsymm_64`|6.3.0| |7.0.0| | |
+|`cublasCsymm_v2`| | | | |`hipblasCsymm`|3.6.0| |7.0.0| | |
+|`cublasCsymm_v2_64`|12.0| | | |`hipblasCsymm_64`|6.3.0| |7.0.0| | |
 |`cublasCsyr2k`| | | | |`hipblasCsyr2k`|3.5.0| |7.0.0| | |
 |`cublasCsyr2k_64`|12.0| | | |`hipblasCsyr2k_64`|6.3.0| |7.0.0| | |
 |`cublasCsyr2k_v2`| | | | |`hipblasCsyr2k`|3.5.0| |7.0.0| | |
@@ -1842,10 +1842,10 @@
 |`cublasZherk_v2_64`|12.0| | | |`hipblasZherk_64`|6.3.0| |7.0.0| | |
 |`cublasZherkx`| | | | |`hipblasZherkx`|3.5.0| |7.0.0| | |
 |`cublasZherkx_64`|12.0| | | |`hipblasZherkx_64`|6.3.0| |7.0.0| | |
-|`cublasZsymm`| | | | |`hipblasZsymm_v2`|6.0.0| | | | |
-|`cublasZsymm_64`|12.0| | | |`hipblasZsymm_v2_64`|6.3.0| | | | |
-|`cublasZsymm_v2`| | | | |`hipblasZsymm_v2`|6.0.0| | | | |
-|`cublasZsymm_v2_64`|12.0| | | |`hipblasZsymm_v2_64`|6.3.0| | | | |
+|`cublasZsymm`| | | | |`hipblasZsymm`|3.6.0| |7.0.0| | |
+|`cublasZsymm_64`|12.0| | | |`hipblasZsymm_64`|6.3.0| |7.0.0| | |
+|`cublasZsymm_v2`| | | | |`hipblasZsymm`|3.6.0| |7.0.0| | |
+|`cublasZsymm_v2_64`|12.0| | | |`hipblasZsymm_64`|6.3.0| |7.0.0| | |
 |`cublasZsyr2k`| | | | |`hipblasZsyr2k`|3.5.0| |7.0.0| | |
 |`cublasZsyr2k_64`|12.0| | | |`hipblasZsyr2k_64`|6.3.0| |7.0.0| | |
 |`cublasZsyr2k_v2`| | | | |`hipblasZsyr2k`|3.5.0| |7.0.0| | |
