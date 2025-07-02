@@ -1714,10 +1714,10 @@
 |`cublasCtrmm_64`|12.0| | | |`hipblasCtrmm_64`|6.3.0| |7.0.0| | |`rocblas_ctrmm_64`|6.3.0| | | | |
 |`cublasCtrmm_v2`| | | | |`hipblasCtrmm`|3.5.0| |7.0.0| | |`rocblas_ctrmm`|3.5.0| |6.0.0| | |
 |`cublasCtrmm_v2_64`|12.0| | | |`hipblasCtrmm_64`|6.3.0| |7.0.0| | |`rocblas_ctrmm_64`|6.3.0| | | | |
-|`cublasCtrsm`| | | | |`hipblasCtrsm_v2`|6.0.0| | | | |`rocblas_ctrsm`|3.5.0| | | | |
-|`cublasCtrsm_64`|12.0| | | |`hipblasCtrsm_v2_64`|6.3.0| | | | |`rocblas_ctrsm_64`|6.2.0| | | | |
-|`cublasCtrsm_v2`| | | | |`hipblasCtrsm_v2`|6.0.0| | | | |`rocblas_ctrsm`|3.5.0| | | | |
-|`cublasCtrsm_v2_64`|12.0| | | |`hipblasCtrsm_v2_64`|6.3.0| | | | |`rocblas_ctrsm_64`|6.2.0| | | | |
+|`cublasCtrsm`| | | | |`hipblasCtrsm`|3.5.0| |7.0.0| | |`rocblas_ctrsm`|3.5.0| | | | |
+|`cublasCtrsm_64`|12.0| | | |`hipblasCtrsm_64`|6.3.0| |7.0.0| | |`rocblas_ctrsm_64`|6.2.0| | | | |
+|`cublasCtrsm_v2`| | | | |`hipblasCtrsm`|3.5.0| |7.0.0| | |`rocblas_ctrsm`|3.5.0| | | | |
+|`cublasCtrsm_v2_64`|12.0| | | |`hipblasCtrsm_64`|6.3.0| |7.0.0| | |`rocblas_ctrsm_64`|6.2.0| | | | |
 |`cublasDgemm`| | | | |`hipblasDgemm`|1.8.2| | | | |`rocblas_dgemm`|1.5.0| | | | |
 |`cublasDgemmBatched`| | | | |`hipblasDgemmBatched`|1.8.2| | | | |`rocblas_dgemm_batched`|3.5.0| | | | |
 |`cublasDgemmBatched_64`|12.0| | | |`hipblasDgemmBatched_64`|6.3.0| | | | |`rocblas_dgemm_batched_64`|6.3.0| | | | |
@@ -1860,10 +1860,10 @@
 |`cublasZtrmm_64`|12.0| | | |`hipblasZtrmm_64`|6.3.0| |7.0.0| | |`rocblas_ztrmm_64`|6.3.0| | | | |
 |`cublasZtrmm_v2`| | | | |`hipblasZtrmm`|3.5.0| |7.0.0| | |`rocblas_ztrmm`|3.5.0| |6.0.0| | |
 |`cublasZtrmm_v2_64`|12.0| | | |`hipblasZtrmm_64`|6.3.0| |7.0.0| | |`rocblas_ztrmm_64`|6.3.0| | | | |
-|`cublasZtrsm`| | | | |`hipblasZtrsm_v2`|6.0.0| | | | |`rocblas_ztrsm`|3.5.0| | | | |
-|`cublasZtrsm_64`|12.0| | | |`hipblasZtrsm_v2_64`|6.3.0| | | | |`rocblas_ztrsm_64`|6.2.0| | | | |
-|`cublasZtrsm_v2`| | | | |`hipblasZtrsm_v2`|6.0.0| | | | |`rocblas_ztrsm`|3.5.0| | | | |
-|`cublasZtrsm_v2_64`|12.0| | | |`hipblasZtrsm_v2_64`|6.3.0| | | | |`rocblas_ztrsm_64`|6.2.0| | | | |
+|`cublasZtrsm`| | | | |`hipblasZtrsm`|3.5.0| |7.0.0| | |`rocblas_ztrsm`|3.5.0| | | | |
+|`cublasZtrsm_64`|12.0| | | |`hipblasZtrsm_64`|6.3.0| |7.0.0| | |`rocblas_ztrsm_64`|6.2.0| | | | |
+|`cublasZtrsm_v2`| | | | |`hipblasZtrsm`|3.5.0| |7.0.0| | |`rocblas_ztrsm`|3.5.0| | | | |
+|`cublasZtrsm_v2_64`|12.0| | | |`hipblasZtrsm_64`|6.3.0| |7.0.0| | |`rocblas_ztrsm_64`|6.2.0| | | | |
 
 ## **8. BLAS-like Extension**
 
@@ -1896,8 +1896,8 @@
 |`cublasCsyrkEx`|8.0| | | | | | | | | | | | | | | |
 |`cublasCsyrkEx_64`|12.0| | | | | | | | | | | | | | | |
 |`cublasCtpttr`| | | | | | | | | | | | | | | | |
-|`cublasCtrsmBatched`| | | | |`hipblasCtrsmBatched_v2`|6.0.0| | | | |`rocblas_ctrsm_batched`|3.5.0| | | | |
-|`cublasCtrsmBatched_64`|12.0| | | |`hipblasCtrsmBatched_v2_64`|6.3.0| | | | |`rocblas_ctrsm_batched_64`|6.2.0| | | | |
+|`cublasCtrsmBatched`| | | | |`hipblasCtrsmBatched`|3.5.0| |7.0.0| | |`rocblas_ctrsm_batched`|3.5.0| | | | |
+|`cublasCtrsmBatched_64`|12.0| | | |`hipblasCtrsmBatched_64`|6.3.0| |7.0.0| | |`rocblas_ctrsm_batched_64`|6.2.0| | | | |
 |`cublasCtrttp`| | | | | | | | | | | | | | | | |
 |`cublasDdgmm`| | | | |`hipblasDdgmm`|3.6.0| | | | |`rocblas_ddgmm`|3.5.0| | | | |
 |`cublasDdgmm_64`|12.0| | | |`hipblasDdgmm_64`|6.3.0| | | | |`rocblas_ddgmm_64`|6.3.0| | | | |
@@ -1965,8 +1965,8 @@
 |`cublasZgetrsBatched`| | | | |`hipblasZgetrsBatched_v2`|6.0.0| | | | | | | | | | |
 |`cublasZmatinvBatched`| | | | | | | | | | | | | | | | |
 |`cublasZtpttr`| | | | | | | | | | | | | | | | |
-|`cublasZtrsmBatched`| | | | |`hipblasZtrsmBatched_v2`|6.0.0| | | | |`rocblas_ztrsm_batched`|3.5.0| | | | |
-|`cublasZtrsmBatched_64`|12.0| | | |`hipblasZtrsmBatched_v2_64`|6.3.0| | | | |`rocblas_ztrsm_batched_64`|6.2.0| | | | |
+|`cublasZtrsmBatched`| | | | |`hipblasZtrsmBatched`|3.5.0| |7.0.0| | |`rocblas_ztrsm_batched`|3.5.0| | | | |
+|`cublasZtrsmBatched_64`|12.0| | | |`hipblasZtrsmBatched_64`|6.3.0| |7.0.0| | |`rocblas_ztrsm_batched_64`|6.2.0| | | | |
 |`cublasZtrttp`| | | | | | | | | | | | | | | | |
 
 ## **9. BLASLt Function Reference**
