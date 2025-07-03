@@ -4824,9 +4824,9 @@ sub simpleSubstitutions {
     subst("cublasCgeru_64", "hipblasCgeru_64", "library");
     subst("cublasCgeru_v2", "hipblasCgeru", "library");
     subst("cublasCgeru_v2_64", "hipblasCgeru_64", "library");
-    subst("cublasCgetrfBatched", "hipblasCgetrfBatched_v2", "library");
+    subst("cublasCgetrfBatched", "hipblasCgetrfBatched", "library");
     subst("cublasCgetriBatched", "hipblasCgetriBatched_v2", "library");
-    subst("cublasCgetrsBatched", "hipblasCgetrsBatched_v2", "library");
+    subst("cublasCgetrsBatched", "hipblasCgetrsBatched", "library");
     subst("cublasChbmv", "hipblasChbmv", "library");
     subst("cublasChbmv_64", "hipblasChbmv_64", "library");
     subst("cublasChbmv_v2", "hipblasChbmv", "library");
@@ -5422,9 +5422,9 @@ sub simpleSubstitutions {
     subst("cublasZgeru_64", "hipblasZgeru_64", "library");
     subst("cublasZgeru_v2", "hipblasZgeru", "library");
     subst("cublasZgeru_v2_64", "hipblasZgeru_64", "library");
-    subst("cublasZgetrfBatched", "hipblasZgetrfBatched_v2", "library");
+    subst("cublasZgetrfBatched", "hipblasZgetrfBatched", "library");
     subst("cublasZgetriBatched", "hipblasZgetriBatched_v2", "library");
-    subst("cublasZgetrsBatched", "hipblasZgetrsBatched_v2", "library");
+    subst("cublasZgetrsBatched", "hipblasZgetrsBatched", "library");
     subst("cublasZhbmv", "hipblasZhbmv", "library");
     subst("cublasZhbmv_64", "hipblasZhbmv_64", "library");
     subst("cublasZhbmv_v2", "hipblasZhbmv", "library");
