@@ -580,8 +580,8 @@ const std::map<llvm::StringRef, hipCounter> CUDA_BLAS_FUNCTION_MAP {
   // Batched inversion based on LU factorization from getrf
   {"cublasSgetriBatched",                                  {"hipblasSgetriBatched",                                      "",                                                   CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT, ROC_UNSUPPORTED}},
   {"cublasDgetriBatched",                                  {"hipblasDgetriBatched",                                      "",                                                   CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT, ROC_UNSUPPORTED}},
-  {"cublasCgetriBatched",                                  {"hipblasCgetriBatched_v2",                                   "",                                                   CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT, ROC_UNSUPPORTED}},
-  {"cublasZgetriBatched",                                  {"hipblasZgetriBatched_v2",                                   "",                                                   CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT, ROC_UNSUPPORTED}},
+  {"cublasCgetriBatched",                                  {"hipblasCgetriBatched",                                      "",                                                   CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT, ROC_UNSUPPORTED}},
+  {"cublasZgetriBatched",                                  {"hipblasZgetriBatched",                                      "",                                                   CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT, ROC_UNSUPPORTED}},
 
   // Batched solver based on LU factorization from getrf
   {"cublasSgetrsBatched",                                  {"hipblasSgetrsBatched",                                      "",                                                   CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT, ROC_UNSUPPORTED}},
@@ -608,14 +608,14 @@ const std::map<llvm::StringRef, hipCounter> CUDA_BLAS_FUNCTION_MAP {
   // Batch QR Factorization
   {"cublasSgeqrfBatched",                                  {"hipblasSgeqrfBatched",                                      "",                                                   CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT, ROC_UNSUPPORTED}},
   {"cublasDgeqrfBatched",                                  {"hipblasDgeqrfBatched",                                      "",                                                   CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT, ROC_UNSUPPORTED}},
-  {"cublasCgeqrfBatched",                                  {"hipblasCgeqrfBatched_v2",                                   "",                                                   CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT, ROC_UNSUPPORTED}},
-  {"cublasZgeqrfBatched",                                  {"hipblasZgeqrfBatched_v2",                                   "",                                                   CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT, ROC_UNSUPPORTED}},
+  {"cublasCgeqrfBatched",                                  {"hipblasCgeqrfBatched",                                      "",                                                   CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT, ROC_UNSUPPORTED}},
+  {"cublasZgeqrfBatched",                                  {"hipblasZgeqrfBatched",                                      "",                                                   CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT, ROC_UNSUPPORTED}},
 
   // Least Square Min only m >= n and Non-transpose supported
   {"cublasSgelsBatched",                                   {"hipblasSgelsBatched",                                       "",                                                   CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT, ROC_UNSUPPORTED}},
   {"cublasDgelsBatched",                                   {"hipblasDgelsBatched",                                       "",                                                   CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT, ROC_UNSUPPORTED}},
-  {"cublasCgelsBatched",                                   {"hipblasCgelsBatched_v2",                                    "",                                                   CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT, ROC_UNSUPPORTED}},
-  {"cublasZgelsBatched",                                   {"hipblasZgelsBatched_v2",                                    "",                                                   CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT, ROC_UNSUPPORTED}},
+  {"cublasCgelsBatched",                                   {"hipblasCgelsBatched",                                       "",                                                   CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT, ROC_UNSUPPORTED}},
+  {"cublasZgelsBatched",                                   {"hipblasZgelsBatched",                                       "",                                                   CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT, ROC_UNSUPPORTED}},
 
   // DGMM
   {"cublasSdgmm",                                          {"hipblasSdgmm",                                              "rocblas_sdgmm",                                      CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT}},
@@ -1850,12 +1850,12 @@ const std::map<llvm::StringRef, hipAPIversions> HIP_BLAS_FUNCTION_VER_MAP {
   {"hipblasZgetrfBatched",                                 {HIP_3050, HIP_0,    HIP_0   }},
   {"hipblasCgetrsBatched",                                 {HIP_3050, HIP_0,    HIP_0   }},
   {"hipblasZgetrsBatched",                                 {HIP_3050, HIP_0,    HIP_0   }},
-  {"hipblasCgetriBatched_v2",                              {HIP_6000, HIP_0,    HIP_0   }},
-  {"hipblasZgetriBatched_v2",                              {HIP_6000, HIP_0,    HIP_0   }},
-  {"hipblasCgelsBatched_v2",                               {HIP_6000, HIP_0,    HIP_0   }},
-  {"hipblasZgelsBatched_v2",                               {HIP_6000, HIP_0,    HIP_0   }},
-  {"hipblasCgeqrfBatched_v2",                              {HIP_6000, HIP_0,    HIP_0   }},
-  {"hipblasZgeqrfBatched_v2",                              {HIP_6000, HIP_0,    HIP_0   }},
+  {"hipblasCgetriBatched",                                 {HIP_3070, HIP_0,    HIP_0   }},
+  {"hipblasZgetriBatched",                                 {HIP_3070, HIP_0,    HIP_0   }},
+  {"hipblasCgelsBatched",                                  {HIP_5040, HIP_0,    HIP_0   }},
+  {"hipblasZgelsBatched",                                  {HIP_5040, HIP_0,    HIP_0   }},
+  {"hipblasCgeqrfBatched",                                 {HIP_3050, HIP_0,    HIP_0   }},
+  {"hipblasZgeqrfBatched",                                 {HIP_3050, HIP_0,    HIP_0   }},
   {"hipblasGemmEx",                                        {HIP_1082, HIP_0,    HIP_0   }},
   {"hipblasGemmBatchedEx",                                 {HIP_3060, HIP_0,    HIP_0   }},
   {"hipblasGemmStridedBatchedEx",                          {HIP_3060, HIP_0,    HIP_0   }},
@@ -2751,6 +2751,12 @@ const std::map<llvm::StringRef, hipAPIChangedVersions> HIP_BLAS_FUNCTION_CHANGED
   {"hipblasZgetrfBatched",                                 {HIP_7000}},
   {"hipblasCgetrsBatched",                                 {HIP_7000}},
   {"hipblasZgetrsBatched",                                 {HIP_7000}},
+  {"hipblasCgetriBatched",                                 {HIP_7000}},
+  {"hipblasZgetriBatched",                                 {HIP_7000}},
+  {"hipblasCgelsBatched",                                  {HIP_7000}},
+  {"hipblasZgelsBatched",                                  {HIP_7000}},
+  {"hipblasCgeqrfBatched",                                 {HIP_7000}},
+  {"hipblasZgeqrfBatched",                                 {HIP_7000}},
 
   {"rocblas_strmm",                                        {HIP_6000}},
   {"rocblas_dtrmm",                                        {HIP_6000}},
