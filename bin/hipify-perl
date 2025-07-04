@@ -4772,8 +4772,8 @@ sub simpleSubstitutions {
     subst("make_cuComplex", "make_hipComplex", "complex");
     subst("make_cuDoubleComplex", "make_hipDoubleComplex", "complex");
     subst("make_cuFloatComplex", "make_hipFloatComplex", "complex");
-    subst("cublasAxpyEx", "hipblasAxpyEx_v2", "library");
-    subst("cublasAxpyEx_64", "hipblasAxpyEx_v2_64", "library");
+    subst("cublasAxpyEx", "hipblasAxpyEx", "library");
+    subst("cublasAxpyEx_64", "hipblasAxpyEx_64", "library");
     subst("cublasCaxpy", "hipblasCaxpy", "library");
     subst("cublasCaxpy_64", "hipblasCaxpy_64", "library");
     subst("cublasCaxpy_v2", "hipblasCaxpy", "library");
@@ -5008,10 +5008,10 @@ sub simpleSubstitutions {
     subst("cublasDnrm2_64", "hipblasDnrm2_64", "library");
     subst("cublasDnrm2_v2", "hipblasDnrm2", "library");
     subst("cublasDnrm2_v2_64", "hipblasDnrm2_64", "library");
-    subst("cublasDotEx", "hipblasDotEx_v2", "library");
-    subst("cublasDotEx_64", "hipblasDotEx_v2_64", "library");
-    subst("cublasDotcEx", "hipblasDotcEx_v2", "library");
-    subst("cublasDotcEx_64", "hipblasDotcEx_v2_64", "library");
+    subst("cublasDotEx", "hipblasDotEx", "library");
+    subst("cublasDotEx_64", "hipblasDotEx_64", "library");
+    subst("cublasDotcEx", "hipblasDotcEx", "library");
+    subst("cublasDotcEx_64", "hipblasDotcEx_64", "library");
     subst("cublasDrot", "hipblasDrot", "library");
     subst("cublasDrot_64", "hipblasDrot_64", "library");
     subst("cublasDrot_v2", "hipblasDrot", "library");
