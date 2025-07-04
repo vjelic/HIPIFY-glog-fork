@@ -824,6 +824,7 @@
 |`cudaDevAttrGpuPciSubsystemId`|12.8| | | | | | | | | |
 |`cudaDevAttrHostNativeAtomicSupported`|8.0| | | |`hipDeviceAttributeHostNativeAtomicSupported`|4.3.0| | | | |
 |`cudaDevAttrHostNumaId`|12.2| | | | | | | | | |
+|`cudaDevAttrHostNumaMemoryPoolsSupported`|12.9| | | | | | | | | |
 |`cudaDevAttrHostNumaMultinodeIpcSupported`|12.8| | | | | | | | | |
 |`cudaDevAttrHostRegisterReadOnlySupported`|11.1| | | | | | | | | |
 |`cudaDevAttrHostRegisterSupported`|9.2| | | |`hipDeviceAttributeHostRegisterSupported`|6.0.0| | | | |
@@ -914,6 +915,7 @@
 |`cudaDevAttrReserved128`|12.1| | | | | | | | | |
 |`cudaDevAttrReserved129`|12.1| | | | | | | | | |
 |`cudaDevAttrReserved132`|12.1| | | | | | | | | |
+|`cudaDevAttrReserved141`|12.9| | | | | | | | | |
 |`cudaDevAttrReserved92`|9.0| | | | | | | | | |
 |`cudaDevAttrReserved93`|9.0| | | | | | | | | |
 |`cudaDevAttrReserved94`|9.0| | | |`hipDeviceAttributeCanUseStreamWaitValue`|4.3.0| | | | |
@@ -928,6 +930,7 @@
 |`cudaDevAttrTimelineSemaphoreInteropSupported`|11.5| | | | | | | | | |
 |`cudaDevAttrTotalConstantMemory`| | | | |`hipDeviceAttributeTotalConstantMemory`|1.6.0| | | | |
 |`cudaDevAttrUnifiedAddressing`| | | | |`hipDeviceAttributeUnifiedAddressing`|4.3.0| | | | |
+|`cudaDevAttrVulkanCigSupported`|12.9| | | | | | | | | |
 |`cudaDevAttrWarpSize`| | | | |`hipDeviceAttributeWarpSize`|1.6.0| | | | |
 |`cudaDevP2PAttrAccessSupported`|8.0| | | |`hipDevP2PAttrAccessSupported`|3.8.0| | | | |
 |`cudaDevP2PAttrCudaArrayAccessSupported`|9.2| | | |`hipDevP2PAttrHipArrayAccessSupported`|3.8.0| | | | |
@@ -1311,6 +1314,9 @@
 |`cudaGPUDirectRDMAWritesOrderingNone`|11.3| | | |`hipGPUDirectRDMAWritesOrderingNone`|6.1.0| | | | |
 |`cudaGPUDirectRDMAWritesOrderingOwner`|11.3| | | |`hipGPUDirectRDMAWritesOrderingOwner`|6.1.0| | | | |
 |`cudaGetDriverEntryPointFlags`|11.3| | | | | | | | | |
+|`cudaGraphChildGraphNodeOwnership`|12.9| | | | | | | | | |
+|`cudaGraphChildGraphOwnershipClone`|12.9| | | | | | | | | |
+|`cudaGraphChildGraphOwnershipMove`|12.9| | | | | | | | | |
 |`cudaGraphCondAssignDefault`|12.3| | | | | | | | | |
 |`cudaGraphCondTypeIf`|12.3| | | | | | | | | |
 |`cudaGraphCondTypeSwitch`|12.8| | | | | | | | | |
