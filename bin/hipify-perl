@@ -5191,10 +5191,10 @@ sub simpleSubstitutions {
     subst("cublasLtMatrixTransformDescDestroy", "hipblasLtMatrixTransformDescDestroy", "library");
     subst("cublasLtMatrixTransformDescGetAttribute", "hipblasLtMatrixTransformDescGetAttribute", "library");
     subst("cublasLtMatrixTransformDescSetAttribute", "hipblasLtMatrixTransformDescSetAttribute", "library");
-    subst("cublasNrm2Ex", "hipblasNrm2Ex_v2", "library");
-    subst("cublasNrm2Ex_64", "hipblasNrm2Ex_v2_64", "library");
-    subst("cublasRotEx", "hipblasRotEx_v2", "library");
-    subst("cublasRotEx_64", "hipblasRotEx_v2_64", "library");
+    subst("cublasNrm2Ex", "hipblasNrm2Ex", "library");
+    subst("cublasNrm2Ex_64", "hipblasNrm2Ex_64", "library");
+    subst("cublasRotEx", "hipblasRotEx", "library");
+    subst("cublasRotEx_64", "hipblasRotEx_64", "library");
     subst("cublasSasum", "hipblasSasum", "library");
     subst("cublasSasum_64", "hipblasSasum_64", "library");
     subst("cublasSasum_v2", "hipblasSasum", "library");
@@ -5203,8 +5203,8 @@ sub simpleSubstitutions {
     subst("cublasSaxpy_64", "hipblasSaxpy_64", "library");
     subst("cublasSaxpy_v2", "hipblasSaxpy", "library");
     subst("cublasSaxpy_v2_64", "hipblasSaxpy_64", "library");
-    subst("cublasScalEx", "hipblasScalEx_v2", "library");
-    subst("cublasScalEx_64", "hipblasScalEx_v2_64", "library");
+    subst("cublasScalEx", "hipblasScalEx", "library");
+    subst("cublasScalEx_64", "hipblasScalEx_64", "library");
     subst("cublasScasum", "hipblasScasum", "library");
     subst("cublasScasum_64", "hipblasScasum_64", "library");
     subst("cublasScasum_v2", "hipblasScasum", "library");
