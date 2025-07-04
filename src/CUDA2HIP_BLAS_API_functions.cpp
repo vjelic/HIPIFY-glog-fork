@@ -98,8 +98,8 @@ const std::map<llvm::StringRef, hipCounter> CUDA_BLAS_FUNCTION_MAP {
   {"cublasScnrm2_64",                                      {"hipblasScnrm2_64",                                          "rocblas_scnrm2_64",                                  CONV_LIB_FUNC, API_BLAS, SEC::BLAS_LEVEL_1}},
   {"cublasDznrm2",                                         {"hipblasDznrm2",                                             "rocblas_dznrm2",                                     CONV_LIB_FUNC, API_BLAS, SEC::BLAS_LEVEL_1, HIP_SUPPORTED_V2_ONLY}},
   {"cublasDznrm2_64",                                      {"hipblasDznrm2_64",                                          "rocblas_dznrm2_64",                                  CONV_LIB_FUNC, API_BLAS, SEC::BLAS_LEVEL_1}},
-  {"cublasNrm2Ex",                                         {"hipblasNrm2Ex_v2",                                          "rocblas_nrm2_ex",                                    CONV_LIB_FUNC, API_BLAS, SEC::BLAS_LEVEL_1}},
-  {"cublasNrm2Ex_64",                                      {"hipblasNrm2Ex_v2_64",                                       "rocblas_nrm2_ex_64",                                 CONV_LIB_FUNC, API_BLAS, SEC::BLAS_LEVEL_1}},
+  {"cublasNrm2Ex",                                         {"hipblasNrm2Ex",                                             "rocblas_nrm2_ex",                                    CONV_LIB_FUNC, API_BLAS, SEC::BLAS_LEVEL_1}},
+  {"cublasNrm2Ex_64",                                      {"hipblasNrm2Ex_64",                                          "rocblas_nrm2_ex_64",                                 CONV_LIB_FUNC, API_BLAS, SEC::BLAS_LEVEL_1}},
 
   // DOT
   // DOT functions' signatures differ from _v2 ones, hipblas and rocblas DOT functions have mapping to DOT_v2 functions only
@@ -958,8 +958,8 @@ const std::map<llvm::StringRef, hipCounter> CUDA_BLAS_FUNCTION_MAP {
   {"cublasZdotc_v2_64",                                    {"hipblasZdotc_64",                                           "rocblas_zdotc_64",                                   CONV_LIB_FUNC, API_BLAS, SEC::BLAS_LEVEL_1}},
 
   // SCAL
-  {"cublasScalEx",                                         {"hipblasScalEx_v2",                                          "rocblas_scal_ex",                                    CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT}},
-  {"cublasScalEx_64",                                      {"hipblasScalEx_v2_64",                                       "rocblas_scal_ex_64",                                 CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT}},
+  {"cublasScalEx",                                         {"hipblasScalEx",                                             "rocblas_scal_ex",                                    CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT}},
+  {"cublasScalEx_64",                                      {"hipblasScalEx_64",                                          "rocblas_scal_ex_64",                                 CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT}},
   {"cublasSscal_v2",                                       {"hipblasSscal",                                              "rocblas_sscal",                                      CONV_LIB_FUNC, API_BLAS, SEC::BLAS_LEVEL_1}},
   {"cublasSscal_v2_64",                                    {"hipblasSscal_64",                                           "rocblas_sscal_64",                                   CONV_LIB_FUNC, API_BLAS, SEC::BLAS_LEVEL_1}},
   {"cublasDscal_v2",                                       {"hipblasDscal",                                              "rocblas_dscal",                                      CONV_LIB_FUNC, API_BLAS, SEC::BLAS_LEVEL_1}},
@@ -1046,8 +1046,8 @@ const std::map<llvm::StringRef, hipCounter> CUDA_BLAS_FUNCTION_MAP {
   {"cublasDzasum_v2_64",                                   {"hipblasDzasum_64",                                          "rocblas_dzasum_64",                                  CONV_LIB_FUNC, API_BLAS, SEC::BLAS_LEVEL_1}},
 
   // ROT
-  {"cublasRotEx",                                          {"hipblasRotEx_v2",                                           "rocblas_rot_ex",                                     CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT}},
-  {"cublasRotEx_64",                                       {"hipblasRotEx_v2_64",                                        "rocblas_rot_ex_64",                                  CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT}},
+  {"cublasRotEx",                                          {"hipblasRotEx",                                              "rocblas_rot_ex",                                     CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT}},
+  {"cublasRotEx_64",                                       {"hipblasRotEx_64",                                           "rocblas_rot_ex_64",                                  CONV_LIB_FUNC, API_BLAS, SEC::BLAS_EXT}},
   {"cublasSrot_v2",                                        {"hipblasSrot",                                               "rocblas_srot",                                       CONV_LIB_FUNC, API_BLAS, SEC::BLAS_LEVEL_1}},
   {"cublasSrot_v2_64",                                     {"hipblasSrot_64",                                            "rocblas_srot_64",                                    CONV_LIB_FUNC, API_BLAS, SEC::BLAS_LEVEL_1}},
   {"cublasDrot_v2",                                        {"hipblasDrot",                                               "rocblas_drot",                                       CONV_LIB_FUNC, API_BLAS, SEC::BLAS_LEVEL_1}},
@@ -1862,9 +1862,9 @@ const std::map<llvm::StringRef, hipAPIversions> HIP_BLAS_FUNCTION_VER_MAP {
   {"hipblasAxpyEx",                                        {HIP_4010, HIP_0,    HIP_0   }},
   {"hipblasDotEx",                                         {HIP_4010, HIP_0,    HIP_0   }},
   {"hipblasDotcEx",                                        {HIP_4010, HIP_0,    HIP_0   }},
-  {"hipblasNrm2Ex_v2",                                     {HIP_6000, HIP_0,    HIP_0   }},
-  {"hipblasRotEx_v2",                                      {HIP_6000, HIP_0,    HIP_0   }},
-  {"hipblasScalEx_v2",                                     {HIP_6000, HIP_0,    HIP_0   }},
+  {"hipblasNrm2Ex",                                        {HIP_4010, HIP_0,    HIP_0   }},
+  {"hipblasRotEx",                                         {HIP_4010, HIP_0,    HIP_0   }},
+  {"hipblasScalEx",                                        {HIP_4010, HIP_0,    HIP_0   }},
   {"hipblasSetMathMode",                                   {HIP_6010, HIP_0,    HIP_0   }},
   {"hipblasGetMathMode",                                   {HIP_6010, HIP_0,    HIP_0   }},
   {"hipblasIsamax_64",                                     {HIP_6010, HIP_0,    HIP_0   }},
@@ -2023,9 +2023,9 @@ const std::map<llvm::StringRef, hipAPIversions> HIP_BLAS_FUNCTION_VER_MAP {
   {"hipblasAxpyEx_64",                                     {HIP_6020, HIP_0,    HIP_0   }},
   {"hipblasDotEx_64",                                      {HIP_6020, HIP_0,    HIP_0   }},
   {"hipblasDotcEx_64",                                     {HIP_6020, HIP_0,    HIP_0   }},
-  {"hipblasNrm2Ex_v2_64",                                  {HIP_6020, HIP_0,    HIP_0   }},
-  {"hipblasRotEx_v2_64",                                   {HIP_6020, HIP_0,    HIP_0   }},
-  {"hipblasScalEx_v2_64",                                  {HIP_6020, HIP_0,    HIP_0   }},
+  {"hipblasNrm2Ex_64",                                     {HIP_6020, HIP_0,    HIP_0   }},
+  {"hipblasRotEx_64",                                      {HIP_6020, HIP_0,    HIP_0   }},
+  {"hipblasScalEx_64",                                     {HIP_6020, HIP_0,    HIP_0   }},
   {"hipblasHgemm_64",                                      {HIP_6030, HIP_0,    HIP_0   }},
   {"hipblasSgemm_64",                                      {HIP_6030, HIP_0,    HIP_0   }},
   {"hipblasDgemm_64",                                      {HIP_6030, HIP_0,    HIP_0   }},
@@ -2763,6 +2763,12 @@ const std::map<llvm::StringRef, hipAPIChangedVersions> HIP_BLAS_FUNCTION_CHANGED
   {"hipblasDotEx_64",                                      {HIP_7000}},
   {"hipblasDotcEx",                                        {HIP_7000}},
   {"hipblasDotcEx_64",                                     {HIP_7000}},
+  {"hipblasNrm2Ex",                                        {HIP_7000}},
+  {"hipblasNrm2Ex_64",                                     {HIP_7000}},
+  {"hipblasRotEx",                                         {HIP_7000}},
+  {"hipblasRotEx_64",                                      {HIP_7000}},
+  {"hipblasScalEx",                                        {HIP_7000}},
+  {"hipblasScalEx_64",                                     {HIP_7000}},
 
   {"rocblas_strmm",                                        {HIP_6000}},
   {"rocblas_dtrmm",                                        {HIP_6000}},
