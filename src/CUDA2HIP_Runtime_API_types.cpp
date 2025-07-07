@@ -686,10 +686,16 @@ const std::map<llvm::StringRef, hipCounter> CUDA_RUNTIME_TYPE_NAME_MAP {
   {"cudaDevAttrHostNumaId",                                            {"hipDeviceAttributeHostNumaId",                             "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 134
   // CU_DEVICE_ATTRIBUTE_D3D12_CIG_SUPPORTED
   {"cudaDevAttrD3D12CigSupported",                                     {"hipDeviceAttributeD3D12CigSupported",                      "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 135
+  // CU_DEVICE_ATTRIBUTE_VULKAN_CIG_SUPPORTED
+  {"cudaDevAttrVulkanCigSupported",                                    {"hipDevAttrVulkanCigSupported",                             "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 138
   // CU_DEVICE_ATTRIBUTE_GPU_PCI_DEVICE_ID
   {"cudaDevAttrGpuPciDeviceId",                                        {"hipDeviceAttributePciDeviceId",                            "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 139
   // CU_DEVICE_ATTRIBUTE_GPU_PCI_SUBSYSTEM_ID
   {"cudaDevAttrGpuPciSubsystemId",                                     {"hipDeviceAttributeGpuPciSubsystemId",                      "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 140
+  //
+  {"cudaDevAttrReserved141",                                           {"hipDevAttrReserved141",                                    "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 141
+  // CU_DEVICE_ATTRIBUTE_HOST_NUMA_MEMORY_POOLS_SUPPORTED
+  {"cudaDevAttrHostNumaMemoryPoolsSupported",                          {"hipDevAttrHostNumaMemoryPoolsSupported",                   "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 142
   // CU_DEVICE_ATTRIBUTE_HOST_NUMA_MULTINODE_IPC_SUPPORTED
   {"cudaDevAttrHostNumaMultinodeIpcSupported",                         {"hipDeviceAttributeHostNumaMultinodeIpcSupported",          "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}}, // 143
   // CU_DEVICE_ATTRIBUTE_MAX
@@ -2180,6 +2186,14 @@ const std::map<llvm::StringRef, hipCounter> CUDA_RUNTIME_TYPE_NAME_MAP {
   // CU_PREFER_BINARY
   {"cudaPreferBinary",                                                 {"hipJitFallbackPreferBinary",                               "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
 
+  // CUgraphChildGraphNodeOwnership
+  {"cudaGraphChildGraphNodeOwnership",                                 {"hipGraphChildGraphNodeOwnership",                          "", CONV_TYPE, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  // CUgraphChildGraphNodeOwnership enum values
+  // CU_GRAPH_CHILD_GRAPH_OWNERSHIP_CLONE
+  {"cudaGraphChildGraphOwnershipClone",                                {"hipGraphChildGraphOwnershipClone",                         "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+  // CU_GRAPH_CHILD_GRAPH_OWNERSHIP_MOVE
+  {"cudaGraphChildGraphOwnershipMove",                                 {"hipGraphChildGraphOwnershipMove",                          "", CONV_NUMERIC_LITERAL, API_RUNTIME, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
+
   // 4. Typedefs
 
   // CUhostFn
@@ -3158,6 +3172,12 @@ const std::map<llvm::StringRef, cudaAPIversions> CUDA_RUNTIME_TYPE_NAME_VER_MAP 
   {"cudaEglColorFormatY12V12U12_420SemiPlanar_709_ER",                 {CUDA_114, CUDA_0,   CUDA_0  }},
   {"cudaEglColorFormatY12V12U12_444SemiPlanar_ER",                     {CUDA_114, CUDA_0,   CUDA_0  }},
   {"cudaEglColorFormatY12V12U12_444SemiPlanar_709_ER",                 {CUDA_114, CUDA_0,   CUDA_0  }},
+  {"cudaDevAttrVulkanCigSupported",                                    {CUDA_129, CUDA_0,   CUDA_0  }},
+  {"cudaDevAttrReserved141",                                           {CUDA_129, CUDA_0,   CUDA_0  }},
+  {"cudaDevAttrHostNumaMemoryPoolsSupported",                          {CUDA_129, CUDA_0,   CUDA_0  }},
+  {"cudaGraphChildGraphNodeOwnership",                                 {CUDA_129, CUDA_0,   CUDA_0  }},
+  {"cudaGraphChildGraphOwnershipClone",                                {CUDA_129, CUDA_0,   CUDA_0  }},
+  {"cudaGraphChildGraphOwnershipMove",                                 {CUDA_129, CUDA_0,   CUDA_0  }},
 };
 
 const std::map<llvm::StringRef, hipAPIversions> HIP_RUNTIME_TYPE_NAME_VER_MAP {
