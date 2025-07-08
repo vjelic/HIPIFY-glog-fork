@@ -10,9 +10,11 @@
 int main() {
   printf("25. cuTensor API to hipTensor API synthetic test\n");
 
-  // CHECK: hiptensorHandle_t handle;
+  // CHECK: hiptensorHandle *handle_p = nullptr;
+  // CHECK-NEXT: hiptensorHandle_t handle;
   // CHECK-NEXT: const hiptensorHandle_t *handle_c = nullptr;
   // CHECK-NEXT: hiptensorHandle_t *handle2 = nullptr;
+  cutensorHandle *handle_p = nullptr;
   cutensorHandle_t handle;
   const cutensorHandle_t *handle_c = nullptr;
   cutensorHandle_t *handle2 = nullptr;
@@ -64,20 +66,40 @@ int main() {
   int32_t mask = 0;
 
 #if CUTENSOR_MAJOR >= 2
-  // CHECK: hiptensorComputeType_t tensorDataType_t;
-  // CHECK-NEXT hiptensorComputeType_t TENSOR_R_16F = HIPTENSOR_COMPUTE_16F;
-  // CHECK-NEXT hiptensorComputeType_t TENSOR_R_16BF = HIPTENSOR_COMPUTE_16BF;
-  // CHECK-NEXT hiptensorComputeType_t TENSOR_R_32F = HIPTENSOR_COMPUTE_32F;
-  // CHECK-NEXT hiptensorComputeType_t TENSOR_C_32F = HIPTENSOR_COMPUTE_C32F;
-  // CHECK-NEXT hiptensorComputeType_t TENSOR_R_64F = HIPTENSOR_COMPUTE_64F;
-  // CHECK-NEXT hiptensorComputeType_t TENSOR_C_64F = HIPTENSOR_COMPUTE_C64F;
-  // CHECK-NEXT hiptensorComputeType_t TENSOR_R_8I = HIPTENSOR_COMPUTE_8I;
-  // CHECK-NEXT hiptensorComputeType_t TENSOR_R_8U = HIPTENSOR_COMPUTE_8U;
-  // CHECK-NEXT hiptensorComputeType_t TENSOR_R_32I = HIPTENSOR_COMPUTE_32I;
-  // CHECK-NEXT hiptensorComputeType_t TENSOR_R_32U = HIPTENSOR_COMPUTE_32U;
+  // CHECK: hiptensorDataType_t tensorDataType_t;
+  // CHECK-NEXT hiptensorDataType_t TENSOR_R_16F = HIPTENSOR_R_16F;
+  // CHECK-NEXT hiptensorDataType_t TENSOR_C_16F = HIPTENSOR_C_16F;
+  // CHECK-NEXT hiptensorDataType_t TENSOR_R_16BF = HIPTENSOR_R_16BF;
+  // CHECK-NEXT hiptensorDataType_t TENSOR_C_16BF = HIPTENSOR_C_16BF;
+  // CHECK-NEXT hiptensorDataType_t TENSOR_R_32F = HIPTENSOR_R_32F;
+  // CHECK-NEXT hiptensorDataType_t TENSOR_C_32F = HIPTENSOR_C_32F;
+  // CHECK-NEXT hiptensorDataType_t TENSOR_R_64F = HIPTENSOR_R_64F;
+  // CHECK-NEXT hiptensorDataType_t TENSOR_C_64F = HIPTENSOR_C_64F;
+  // CHECK-NEXT hiptensorDataType_t TENSOR_R_8I = HIPTENSOR_R_8I;
+  // CHECK-NEXT hiptensorDataType_t TENSOR_R_8U = HIPTENSOR_R_8U;
+  // CHECK-NEXT hiptensorDataType_t TENSOR_R_32I = HIPTENSOR_R_32I;
+  // CHECK-NEXT hiptensorDataType_t TENSOR_R_32U = HIPTENSOR_R_32U;
+  // CHECK-NEXT hiptensorDataType_t TENSOR_R_4I = HIPTENSOR_R_4I;
+  // CHECK-NEXT hiptensorDataType_t TENSOR_C_4I = HIPTENSOR_C_4I;
+  // CHECK-NEXT hiptensorDataType_t TENSOR_R_4U = HIPTENSOR_R_4U;
+  // CHECK-NEXT hiptensorDataType_t TENSOR_C_4U = HIPTENSOR_C_4U;
+  // CHECK-NEXT hiptensorDataType_t TENSOR_C_8I = HIPTENSOR_C_8I;
+  // CHECK-NEXT hiptensorDataType_t TENSOR_C_8U = HIPTENSOR_C_8U;
+  // CHECK-NEXT hiptensorDataType_t TENSOR_R_16I = HIPTENSOR_R_16I;
+  // CHECK-NEXT hiptensorDataType_t TENSOR_C_16I = HIPTENSOR_C_16I;
+  // CHECK-NEXT hiptensorDataType_t TENSOR_R_16U = HIPTENSOR_R_16U;
+  // CHECK-NEXT hiptensorDataType_t TENSOR_C_16U = HIPTENSOR_C_16U;
+  // CHECK-NEXT hiptensorDataType_t TENSOR_C_32I = HIPTENSOR_C_32I;
+  // CHECK-NEXT hiptensorDataType_t TENSOR_C_32U = HIPTENSOR_C_32U;
+  // CHECK-NEXT hiptensorDataType_t TENSOR_R_64I = HIPTENSOR_R_64I;
+  // CHECK-NEXT hiptensorDataType_t TENSOR_C_64I = HIPTENSOR_C_64I;
+  // CHECK-NEXT hiptensorDataType_t TENSOR_R_64U = HIPTENSOR_R_64U;
+  // CHECK-NEXT hiptensorDataType_t TENSOR_C_64U = HIPTENSOR_C_64U;
   cutensorDataType_t tensorDataType_t;
   cutensorDataType_t TENSOR_R_16F = CUTENSOR_R_16F;
+  cutensorDataType_t TENSOR_C_16F = CUTENSOR_C_16F;
   cutensorDataType_t TENSOR_R_16BF = CUTENSOR_R_16BF;
+  cutensorDataType_t TENSOR_C_16BF = CUTENSOR_C_16BF;
   cutensorDataType_t TENSOR_R_32F = CUTENSOR_R_32F;
   cutensorDataType_t TENSOR_C_32F = CUTENSOR_C_32F;
   cutensorDataType_t TENSOR_R_64F = CUTENSOR_R_64F;
@@ -86,14 +108,91 @@ int main() {
   cutensorDataType_t TENSOR_R_8U = CUTENSOR_R_8U;
   cutensorDataType_t TENSOR_R_32I = CUTENSOR_R_32I;
   cutensorDataType_t TENSOR_R_32U = CUTENSOR_R_32U;
+  cutensorDataType_t TENSOR_R_4I = CUTENSOR_R_4I;
+  cutensorDataType_t TENSOR_C_4I = CUTENSOR_C_4I;
+  cutensorDataType_t TENSOR_R_4U = CUTENSOR_R_4U;
+  cutensorDataType_t TENSOR_C_4U = CUTENSOR_C_4U;
+  cutensorDataType_t TENSOR_C_8I = CUTENSOR_C_8I;
+  cutensorDataType_t TENSOR_C_8U = CUTENSOR_C_8U;
+  cutensorDataType_t TENSOR_R_16I = CUTENSOR_R_16I;
+  cutensorDataType_t TENSOR_C_16I = CUTENSOR_C_16I;
+  cutensorDataType_t TENSOR_R_16U = CUTENSOR_R_16U;
+  cutensorDataType_t TENSOR_C_16U = CUTENSOR_C_16U;
+  cutensorDataType_t TENSOR_C_32I = CUTENSOR_C_32I;
+  cutensorDataType_t TENSOR_C_32U = CUTENSOR_C_32U;
+  cutensorDataType_t TENSOR_R_64I = CUTENSOR_R_64I;
+  cutensorDataType_t TENSOR_C_64I = CUTENSOR_C_64I;
+  cutensorDataType_t TENSOR_R_64U = CUTENSOR_R_64U;
+  cutensorDataType_t TENSOR_C_64U = CUTENSOR_C_64U;
 
-  // CHECK: hiptensorContractionPlan_t tensorPlan2_t;
-  cutensorPlan_t tensorPlan2_t;
+  // CHECK: hiptensorOperationDescriptorAttribute_t tensorOperationDescriptorAttribute_t;
+  // CHECK-NEXT hiptensorOperationDescriptorAttribute_t TENSOR_OPERATION_DESCRIPTOR_TAG = HIPTENSOR_OPERATION_DESCRIPTOR_TAG;
+  // CHECK-NEXT hiptensorOperationDescriptorAttribute_t TENSOR_OPERATION_DESCRIPTOR_SCALAR_TYPE = HIPTENSOR_OPERATION_DESCRIPTOR_SCALAR_TYPE;
+  // CHECK-NEXT hiptensorOperationDescriptorAttribute_t TENSOR_OPERATION_DESCRIPTOR_FLOPS = HIPTENSOR_OPERATION_DESCRIPTOR_FLOPS;
+  // CHECK-NEXT hiptensorOperationDescriptorAttribute_t TENSOR_OPERATION_DESCRIPTOR_MOVED_BYTES = HIPTENSOR_OPERATION_DESCRIPTOR_MOVED_BYTES;
+  // CHECK-NEXT hiptensorOperationDescriptorAttribute_t TENSOR_OPERATION_DESCRIPTOR_PADDING_LEFT = HIPTENSOR_OPERATION_DESCRIPTOR_PADDING_LEFT;
+  // CHECK-NEXT hiptensorOperationDescriptorAttribute_t TENSOR_OPERATION_DESCRIPTOR_PADDING_RIGHT = HIPTENSOR_OPERATION_DESCRIPTOR_PADDING_RIGHT;
+  // CHECK-NEXT hiptensorOperationDescriptorAttribute_t TENSOR_OPERATION_DESCRIPTOR_PADDING_VALUE = HIPTENSOR_OPERATION_DESCRIPTOR_PADDING_VALUE;
+  cutensorOperationDescriptorAttribute_t tensorOperationDescriptorAttribute_t;
+  cutensorOperationDescriptorAttribute_t TENSOR_OPERATION_DESCRIPTOR_TAG = CUTENSOR_OPERATION_DESCRIPTOR_TAG;
+  cutensorOperationDescriptorAttribute_t TENSOR_OPERATION_DESCRIPTOR_SCALAR_TYPE = CUTENSOR_OPERATION_DESCRIPTOR_SCALAR_TYPE;
+  cutensorOperationDescriptorAttribute_t TENSOR_OPERATION_DESCRIPTOR_FLOPS = CUTENSOR_OPERATION_DESCRIPTOR_FLOPS;
+  cutensorOperationDescriptorAttribute_t TENSOR_OPERATION_DESCRIPTOR_MOVED_BYTES = CUTENSOR_OPERATION_DESCRIPTOR_MOVED_BYTES;
+  cutensorOperationDescriptorAttribute_t TENSOR_OPERATION_DESCRIPTOR_PADDING_LEFT = CUTENSOR_OPERATION_DESCRIPTOR_PADDING_LEFT;
+  cutensorOperationDescriptorAttribute_t TENSOR_OPERATION_DESCRIPTOR_PADDING_RIGHT = CUTENSOR_OPERATION_DESCRIPTOR_PADDING_RIGHT;
+  cutensorOperationDescriptorAttribute_t TENSOR_OPERATION_DESCRIPTOR_PADDING_VALUE = CUTENSOR_OPERATION_DESCRIPTOR_PADDING_VALUE;
+
+  // CHECK: hiptensorPlanPreferenceAttribute_t tensorPlanPreferenceAttribute_t;
+  // CHECK-NEXT hiptensorPlanPreferenceAttribute_t TENSOR_PLAN_PREFERENCE_AUTOTUNE_MODE = HIPTENSOR_PLAN_PREFERENCE_AUTOTUNE_MODE;
+  // CHECK-NEXT hiptensorPlanPreferenceAttribute_t TENSOR_PLAN_PREFERENCE_CACHE_MODE = HIPTENSOR_PLAN_PREFERENCE_CACHE_MODE;
+  // CHECK-NEXT hiptensorPlanPreferenceAttribute_t TENSOR_PLAN_PREFERENCE_INCREMENTAL_COUNT = HIPTENSOR_PLAN_PREFERENCE_INCREMENTAL_COUNT;
+  // CHECK-NEXT hiptensorPlanPreferenceAttribute_t TENSOR_PLAN_PREFERENCE_ALGO = HIPTENSOR_PLAN_PREFERENCE_ALGO;
+  // CHECK-NEXT hiptensorPlanPreferenceAttribute_t TENSOR_PLAN_PREFERENCE_KERNEL_RANK = HIPTENSOR_PLAN_PREFERENCE_KERNEL_RANK;
+  // CHECK-NEXT hiptensorPlanPreferenceAttribute_t TENSOR_PLAN_PREFERENCE_JIT = HIPTENSOR_PLAN_PREFERENCE_JIT;
+  cutensorPlanPreferenceAttribute_t tensorPlanPreferenceAttribute_t;
+  cutensorPlanPreferenceAttribute_t TENSOR_PLAN_PREFERENCE_AUTOTUNE_MODE = CUTENSOR_PLAN_PREFERENCE_AUTOTUNE_MODE;
+  cutensorPlanPreferenceAttribute_t TENSOR_PLAN_PREFERENCE_CACHE_MODE = CUTENSOR_PLAN_PREFERENCE_CACHE_MODE;
+  cutensorPlanPreferenceAttribute_t TENSOR_PLAN_PREFERENCE_INCREMENTAL_COUNT = CUTENSOR_PLAN_PREFERENCE_INCREMENTAL_COUNT;
+  cutensorPlanPreferenceAttribute_t TENSOR_PLAN_PREFERENCE_ALGO = CUTENSOR_PLAN_PREFERENCE_ALGO;
+  cutensorPlanPreferenceAttribute_t TENSOR_PLAN_PREFERENCE_KERNEL_RANK = CUTENSOR_PLAN_PREFERENCE_KERNEL_RANK;
+  cutensorPlanPreferenceAttribute_t TENSOR_PLAN_PREFERENCE_JIT = CUTENSOR_PLAN_PREFERENCE_JIT;
+
+  // CHECK: hiptensorJitMode_t tensorJitMode_t;
+  // CHECK-NEXT hiptensorJitMode_t TENSOR_JIT_MODE_NONE = HIPTENSOR_JIT_MODE_NONE;
+  // CHECK-NEXT hiptensorJitMode_t TENSOR_JIT_MODE_DEFAULT = HIPTENSOR_JIT_MODE_DEFAULT;
+  cutensorJitMode_t tensorJitMode_t;
+  cutensorJitMode_t TENSOR_JIT_MODE_NONE = CUTENSOR_JIT_MODE_NONE;
+  cutensorJitMode_t TENSOR_JIT_MODE_DEFAULT = CUTENSOR_JIT_MODE_DEFAULT;
+
+  // CHECK: hiptensorPlanAttribute_t tensorPlanAttribute_t;
+  // CHECK-NEXT hiptensorPlanAttribute_t TENSOR_PLAN_REQUIRED_WORKSPACE = HIPTENSOR_PLAN_REQUIRED_WORKSPACE;
+  cutensorPlanAttribute_t tensorPlanAttribute_t;
+  cutensorPlanAttribute_t TENSOR_PLAN_REQUIRED_WORKSPACE = CUTENSOR_PLAN_REQUIRED_WORKSPACE;
+
+  // CHECK: hiptensorAutotuneMode_t TENSOR_AUTOTUNE_MODE_NONE = HIPTENSOR_AUTOTUNE_MODE_NONE;
+  // CHECK-NEXT hiptensorAutotuneMode_t TENSOR_AUTOTUNE_MODE_INCREMENTAL = HIPTENSOR_AUTOTUNE_MODE_INCREMENTAL;
+  cutensorAutotuneMode_t TENSOR_AUTOTUNE_MODE_NONE = CUTENSOR_AUTOTUNE_MODE_NONE;
+  cutensorAutotuneMode_t TENSOR_AUTOTUNE_MODE_INCREMENTAL = CUTENSOR_AUTOTUNE_MODE_INCREMENTAL;
+
+  // CHECK: hiptensorPlan *tensorPlan_p = nullptr;
+  // CHECK-NEXT: hiptensorPlan_t tensorPlan_t;
+  cutensorPlan *tensorPlan_p = nullptr;
+  cutensorPlan_t tensorPlan_t;
+
+  // CHECK: hiptensorPlanPreference *tensorPlanRef_p = nullptr;
+  // CHECK-NEXT: hiptensorPlanPreference_t tensorPlanPreference_t;
+  cutensorPlanPreference *tensorPlanRef_p = nullptr;
+  cutensorPlanPreference_t tensorPlanPreference_t;
+
+  // CHECK: hiptensorOperationDescriptor *tensorOperationDescriptor_p = nullptr;
+  // CHECK-NEXT: hiptensorOperationDescriptor_t tensorOperationDescriptor_t;
+  cutensorOperationDescriptor *tensorOperationDescriptor_p = nullptr;
+  cutensorOperationDescriptor_t tensorOperationDescriptor_t;
 
   // CUDA: cutensorStatus_t cutensorContract(const cutensorHandle_t handle, const cutensorPlan_t plan, const void* alpha, const void *A, const void *B, const void* beta, const void *C, void *D, void* workspace, uint64_t workspaceSize, cudaStream_t stream);
   // HIP: hiptensorStatus_t hiptensorContraction(const hiptensorHandle_t* handle, const hiptensorContractionPlan_t* plan, const void* alpha, const void* A, const void* B, const void* beta, const void* C, void* D, void* workspace, uint64_t workspaceSize, hipStream_t stream);
-  // CHECK: status = hiptensorContraction(handle, tensorPlan2_t, alpha, A, B_1, beta, C, D, workspace,  workspaceSize2, stream_t);
-  status = cutensorContract(handle, tensorPlan2_t, alpha, A, B_1, beta, C, D, workspace, workspaceSize2, stream_t);
+  // CHECK: status = hiptensorContraction(handle, tensorPlan_t, alpha, A, B_1, beta, C, D, workspace,  workspaceSize2, stream_t);
+  status = cutensorContract(handle, tensorPlan_t, alpha, A, B_1, beta, C, D, workspace, workspaceSize2, stream_t);
 
    // CUDA: cutensorStatus_t cutensorCreate(cutensorHandle_t* handle);
    // HIP: hiptensorStatus_t hiptensorCreate(hiptensorHandle_t** handle);
@@ -220,21 +319,27 @@ int main() {
 #endif
 
 #if (CUTENSOR_MAJOR >= 1 && CUTENSOR_MAJOR < 2)
-  // CHECK: hiptensorComputeType_t tensorComputeType_t;
+  // CHECK: hiptensorComputeDescriptor_t tensorComputeType_t;
   cutensorComputeType_t tensorComputeType_t;
 
+  // CHECK: hiptensorContractionPlan_t tensorPlan2_t;
+  cutensorContractionPlan_t tensorPlan2_t;
+
 #if CUTENSOR_MINOR >= 2
+  // CHECK: hiptensorAutotuneMode_t tensorAutotuneMode_t;
+  cutensorAutotuneMode_t tensorAutotuneMode_t;
+
   // CHECK: hiptensorStatus_t TENSOR_STATUS_IO_ERROR = HIPTENSOR_STATUS_IO_ERROR;
   cutensorStatus_t TENSOR_STATUS_IO_ERROR = CUTENSOR_STATUS_IO_ERROR;
 
-  // CHECK hiptensorComputeType_t TENSOR_COMPUTE_16F = HIPTENSOR_COMPUTE_16F;
-  // CHECK-NEXT hiptensorComputeType_t TENSOR_COMPUTE_16BF = HIPTENSOR_COMPUTE_16BF;
-  // CHECK-NEXT hiptensorComputeType_t TENSOR_COMPUTE_32F = HIPTENSOR_COMPUTE_32F;
-  // CHECK-NEXT hiptensorComputeType_t TENSOR_COMPUTE_64F = HIPTENSOR_COMPUTE_64F;
-  // CHECK-NEXT hiptensorComputeType_t TENSOR_COMPUTE_8U = HIPTENSOR_COMPUTE_8U;
-  // CHECK-NEXT hiptensorComputeType_t TENSOR_COMPUTE_8I = HIPTENSOR_COMPUTE_8I;
-  // CHECK-NEXT hiptensorComputeType_t TENSOR_COMPUTE_32U = HIPTENSOR_COMPUTE_32U;
-  // CHECK-NEXT hiptensorComputeType_t TENSOR_COMPUTE_32I = HIPTENSOR_COMPUTE_32I;
+  // CHECK hiptensorComputeDescriptor_t TENSOR_COMPUTE_16F = HIPTENSOR_COMPUTE_DESC_16F;
+  // CHECK-NEXT hiptensorComputeDescriptor_t TENSOR_COMPUTE_16BF = HIPTENSOR_COMPUTE_DESC_16BF;
+  // CHECK-NEXT hiptensorComputeDescriptor_t TENSOR_COMPUTE_32F = HIPTENSOR_COMPUTE_DESC_32F;
+  // CHECK-NEXT hiptensorComputeDescriptor_t TENSOR_COMPUTE_64F = HIPTENSOR_COMPUTE_DESC_64F;
+  // CHECK-NEXT hiptensorComputeDescriptor_t TENSOR_COMPUTE_8U = HIPTENSOR_COMPUTE_DESC_8U;
+  // CHECK-NEXT hiptensorComputeDescriptor_t TENSOR_COMPUTE_8I = HIPTENSOR_COMPUTE_DESC_8I;
+  // CHECK-NEXT hiptensorComputeDescriptor_t TENSOR_COMPUTE_32U = HIPTENSOR_COMPUTE_DESC_32U;
+  // CHECK-NEXT hiptensorComputeDescriptor_t TENSOR_COMPUTE_32I = HIPTENSOR_COMPUTE_DESC_32I;
   cutensorComputeType_t TENSOR_COMPUTE_16F = CUTENSOR_COMPUTE_16F;
   cutensorComputeType_t TENSOR_COMPUTE_16BF = CUTENSOR_COMPUTE_16BF;
   cutensorComputeType_t TENSOR_COMPUTE_32F = CUTENSOR_COMPUTE_32F;
@@ -243,13 +348,20 @@ int main() {
   cutensorComputeType_t TENSOR_COMPUTE_8I = CUTENSOR_COMPUTE_8I;
   cutensorComputeType_t TENSOR_COMPUTE_32U = CUTENSOR_COMPUTE_32U;
   cutensorComputeType_t TENSOR_COMPUTE_32I = CUTENSOR_COMPUTE_32I;
+
+  // CHECK: hiptensorCacheMode_t tensorCacheMode_t;
+  // CHECK-NEXT hiptensorCacheMode_t TENSOR_CACHE_MODE_NONE = HIPTENSOR_CACHE_MODE_NONE;
+  // CHECK-NEXT hiptensorCacheMode_t TENSOR_CACHE_MODE_PEDANTIC = HIPTENSOR_CACHE_MODE_PEDANTIC;
+  cutensorCacheMode_t tensorCacheMode_t;
+  cutensorCacheMode_t TENSOR_CACHE_MODE_NONE = CUTENSOR_CACHE_MODE_NONE;
+  cutensorCacheMode_t TENSOR_CACHE_MODE_PEDANTIC = CUTENSOR_CACHE_MODE_PEDANTIC;
 #endif
 
   // CHECK: const hiptensorContractionPlan_t *plan_c = nullptr;
   const cutensorContractionPlan_t *plan_c = nullptr;
 
-  // CHECK: hiptensorWorksizePreference_t TENSOR_WORKSPACE_RECOMMENDED = HIPTENSOR_WORKSPACE_RECOMMENDED;
-  cutensorWorksizePreference_t TENSOR_WORKSPACE_RECOMMENDED = CUTENSOR_WORKSPACE_RECOMMENDED;
+  // CHECK: hiptensorWorksizePreference_t TENSOR_WORKSPACE_DEFAULT = HIPTENSOR_WORKSPACE_DEFAULT;
+  cutensorWorksizePreference_t TENSOR_WORKSPACE_DEFAULT = CUTENSOR_WORKSPACE_DEFAULT;
 
 #if CUDA_VERSION >= 8000
   // CUDA: cutensorStatus_t cutensorInitTensorDescriptor(const cutensorHandle_t* handle, cutensorTensorDescriptor_t* desc, const uint32_t numModes, const int64_t extent[], const int64_t stride[], cudaDataType_t dataType, cutensorOperator_t unaryOp);

@@ -31,6 +31,14 @@ if config.cuda_dnn_root and config.cuda_dnn_root != "OFF":
             if 'CUDNN_MAJOR 9' in f.read():
                 config.cudnn_version_major = int("9")
 
+config.cutensor_version_major = int("1")
+if config.cuda_tensor_root and config.cuda_tensor_root != "OFF":
+    cuda_tensor_file = config.cuda_tensor_root + '/include/cutensor.h';
+    if os.path.isfile(cuda_tensor_file):
+        with open(cuda_tensor_file) as f:
+            if 'CUTENSOR_MAJOR 2' in f.read():
+                config.cutensor_version_major = int("2")
+
 # Support substitution of the tools and libs dirs with user parameters. This is
 # used when we can't determine the tool dir at configuration time.
 try:
