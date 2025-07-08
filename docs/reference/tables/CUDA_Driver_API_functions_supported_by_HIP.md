@@ -950,9 +950,9 @@
 |`CU_MEM_RANGE_ATTRIBUTE_PREFERRED_LOCATION_ID`|12.2| | | | | | | | | |
 |`CU_MEM_RANGE_ATTRIBUTE_PREFERRED_LOCATION_TYPE`|12.2| | | | | | | | | |
 |`CU_MEM_RANGE_ATTRIBUTE_READ_MOSTLY`|8.0| | | |`hipMemRangeAttributeReadMostly`|3.7.0| | | | |
-|`CU_MEM_RANGE_FLAG_DMA_BUF_MAPPING_TYPE_PCIE`|12.8| | | | | | | | | |
-|`CU_MEM_RANGE_HANDLE_TYPE_DMA_BUF_FD`|11.7| | | | | | | | | |
-|`CU_MEM_RANGE_HANDLE_TYPE_MAX`|11.7| | | | | | | | | |
+|`CU_MEM_RANGE_FLAG_DMA_BUF_MAPPING_TYPE_PCIE`|12.8| | | |`hipMemRangeFlagDmaBufMappingTypePcie`|7.0.0| | | |7.0.0|
+|`CU_MEM_RANGE_HANDLE_TYPE_DMA_BUF_FD`|11.7| | | |`hipMemRangeHandleTypeDmaBufFd`|7.0.0| | | |7.0.0|
+|`CU_MEM_RANGE_HANDLE_TYPE_MAX`|11.7| | | |`hipMemRangeHandleTypeMax`|7.0.0| | | |7.0.0|
 |`CU_MODULE_EAGER_LOADING`|11.7| | | | | | | | | |
 |`CU_MODULE_LAZY_LOADING`|11.7| | | | | | | | | |
 |`CU_MULTICAST_GRANULARITY_MINIMUM`|12.1| | | | | | | | | |
@@ -1441,10 +1441,10 @@
 |`CUmemPoolPtrExportData_v1`|11.3| | | |`hipMemPoolPtrExportData`|5.2.0| | | | |
 |`CUmemPool_attribute`|11.2| | | |`hipMemPoolAttr`|5.2.0| | | | |
 |`CUmemPool_attribute_enum`|11.2| | | |`hipMemPoolAttr`|5.2.0| | | | |
-|`CUmemRangeFlags`|12.8| | | | | | | | | |
-|`CUmemRangeFlags_enum`|12.8| | | | | | | | | |
-|`CUmemRangeHandleType`|11.7| | | | | | | | | |
-|`CUmemRangeHandleType_enum`|11.7| | | | | | | | | |
+|`CUmemRangeFlags`|12.8| | | |`hipMemRangeFlags`|7.0.0| | | |7.0.0|
+|`CUmemRangeFlags_enum`|12.8| | | |`hipMemRangeFlags`|7.0.0| | | |7.0.0|
+|`CUmemRangeHandleType`|11.7| | | |`hipMemRangeHandleType`|7.0.0| | | |7.0.0|
+|`CUmemRangeHandleType_enum`|11.7| | | |`hipMemRangeHandleType`|7.0.0| | | |7.0.0|
 |`CUmem_advise`|8.0| | | |`hipMemoryAdvise`|3.7.0| | | | |
 |`CUmem_advise_enum`|8.0| | | |`hipMemoryAdvise`|3.7.0| | | | |
 |`CUmem_range_attribute`|8.0| | | |`hipMemRangeAttribute`|3.7.0| | | | |
