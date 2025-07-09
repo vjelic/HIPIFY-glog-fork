@@ -1546,6 +1546,7 @@ my %experimental_funcs = (
     "cudaLaunchAttribute_st" => "7.0.0",
     "cudaLaunchAttribute" => "7.0.0",
     "cublasLtMatmulMatrixScale_t" => "7.0.0",
+    "cuMemGetHandleForAddressRange" => "7.0.0",
     "cuLaunchKernelEx" => "7.0.0",
     "__nv_fp4x4_storage_t" => "7.0.0",
     "__nv_fp4x4_e2m1" => "7.0.0",
@@ -1810,6 +1811,7 @@ sub subst {
 }
 
 sub experimentalSubstitutions {
+    subst("cuMemGetHandleForAddressRange", "hipMemGetHandleForAddressRange", "memory");
     subst("cuLaunchKernelEx", "hipDrvLaunchKernelEx", "execution");
     subst("cudaLaunchKernelExC", "hipLaunchKernelExC", "execution");
     subst("__nv_cvt_bfloat16raw2_to_fp4x2", "__hip_cvt_bfloat16raw2_to_fp4x2", "device_function");
@@ -7311,9 +7313,9 @@ sub simpleSubstitutions {
     subst("CUDA_MEMCPY3D_v2", "HIP_MEMCPY3D", "type");
     subst("CUDA_MEMCPY_NODE_PARAMS", "hipMemcpyNodeParams", "type");
     subst("CUDA_MEMCPY_NODE_PARAMS_st", "hipMemcpyNodeParams", "type");
-    subst("CUDA_MEMSET_NODE_PARAMS", "HIP_MEMSET_NODE_PARAMS", "type");
-    subst("CUDA_MEMSET_NODE_PARAMS_st", "HIP_MEMSET_NODE_PARAMS", "type");
-    subst("CUDA_MEMSET_NODE_PARAMS_v1", "HIP_MEMSET_NODE_PARAMS", "type");
+    subst("CUDA_MEMSET_NODE_PARAMS", "hipMemsetParams", "type");
+    subst("CUDA_MEMSET_NODE_PARAMS_st", "hipMemsetParams", "type");
+    subst("CUDA_MEMSET_NODE_PARAMS_v1", "hipMemsetParams", "type");
     subst("CUDA_MEM_ALLOC_NODE_PARAMS", "hipMemAllocNodeParams", "type");
     subst("CUDA_MEM_ALLOC_NODE_PARAMS_st", "hipMemAllocNodeParams", "type");
     subst("CUDA_MEM_ALLOC_NODE_PARAMS_v1", "hipMemAllocNodeParams", "type");
@@ -11999,7 +12001,6 @@ sub warnRemovedFunctions {
     "cuMemcpy3DBatchAsync",
     "cuMemcpy",
     "cuMemPrefetchAsync_v2",
-    "cuMemGetHandleForAddressRange",
     "cuMemBatchDecompressAsync",
     "cuMemAdvise_v2",
     "cuLogsUnregisterCallback",

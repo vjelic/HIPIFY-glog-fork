@@ -114,10 +114,10 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_TYPE_NAME_MAP {
   // cudaMemcpyNodeParams
   {"CUDA_MEMCPY_NODE_PARAMS",                                          {"hipMemcpyNodeParams",                                      "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES}},
 
-  {"CUDA_MEMSET_NODE_PARAMS_st",                                       {"HIP_MEMSET_NODE_PARAMS",                                   "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES}},
+  {"CUDA_MEMSET_NODE_PARAMS_st",                                       {"hipMemsetParams",                                          "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES}},
   //
-  {"CUDA_MEMSET_NODE_PARAMS",                                          {"HIP_MEMSET_NODE_PARAMS",                                   "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES}},
-  {"CUDA_MEMSET_NODE_PARAMS_v1",                                       {"HIP_MEMSET_NODE_PARAMS",                                   "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES}},
+  {"CUDA_MEMSET_NODE_PARAMS",                                          {"hipMemsetParams",                                          "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES}},
+  {"CUDA_MEMSET_NODE_PARAMS_v1",                                       {"hipMemsetParams",                                          "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES}},
   {"CUDA_MEMSET_NODE_PARAMS_v2_st",                                    {"hipMemsetParams_v2",                                       "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
   //
   {"CUDA_MEMSET_NODE_PARAMS_v2",                                       {"hipMemsetParams_v2",                                       "", CONV_TYPE, API_DRIVER, SEC::DATA_TYPES, HIP_UNSUPPORTED}},
@@ -4714,7 +4714,7 @@ const std::map<llvm::StringRef, hipAPIversions> HIP_DRIVER_TYPE_NAME_VER_MAP {
   {"HIP_GET_PROC_ADDRESS_SUCCESS",                                     {HIP_6020, HIP_0,    HIP_0   }},
   {"HIP_GET_PROC_ADDRESS_SYMBOL_NOT_FOUND",                            {HIP_6020, HIP_0,    HIP_0   }},
   {"HIP_GET_PROC_ADDRESS_VERSION_NOT_SUFFICIENT",                      {HIP_6020, HIP_0,    HIP_0   }},
-  {"HIP_MEMSET_NODE_PARAMS",                                           {HIP_6010, HIP_0,    HIP_0   }},
+  {"HIP_MEMSET_NODE_PARAMS",                                           {HIP_6010, HIP_0,    HIP_7000}},
   {"hipStreamLegacy",                                                  {HIP_6020, HIP_0,    HIP_0   }},
   {"hipStreamBatchMemOpParams_union",                                  {HIP_6040, HIP_0,    HIP_0   }},
   {"hipStreamBatchMemOpParams",                                        {HIP_6040, HIP_0,    HIP_0   }},
