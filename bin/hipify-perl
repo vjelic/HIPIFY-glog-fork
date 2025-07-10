@@ -3344,6 +3344,8 @@ sub rocSubstitutions {
     subst("curandStateSobol32_t", "rocrand_state_sobol32", "type");
     subst("curandStateSobol64", "rocrand_device::sobol64_engine<false>", "type");
     subst("curandStateSobol64_t", "rocrand_state_sobol64", "type");
+    subst("curandStateXORWOW", "rocrand_device::xorwow_engine", "type");
+    subst("curandStateXORWOW_t", "rocrand_state_xorwow", "type");
     subst("curandStatus", "rocrand_status", "type");
     subst("curandStatus_t", "rocrand_status", "type");
     subst("cusolverDnHandle_t", "rocblas_handle", "type");
@@ -14312,8 +14314,6 @@ sub warnHipOnlyUnsupportedFunctions {
     "curand_mtgp32_single",
     "curand_Philox4x32_10",
     "curandState_t",
-    "curandStateXORWOW_t",
-    "curandStateXORWOW",
     "curandState",
     "curandMethod_t",
     "curandMethod",
