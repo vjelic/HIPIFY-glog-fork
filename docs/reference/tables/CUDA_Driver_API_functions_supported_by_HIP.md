@@ -232,9 +232,9 @@
 |`CUDA_MEMCPY3D_v2`|11.3| | | |`HIP_MEMCPY3D`|3.2.0| | | | |
 |`CUDA_MEMCPY_NODE_PARAMS`|12.2| | | |`hipMemcpyNodeParams`|6.1.0| | | | |
 |`CUDA_MEMCPY_NODE_PARAMS_st`|12.2| | | |`hipMemcpyNodeParams`|6.1.0| | | | |
-|`CUDA_MEMSET_NODE_PARAMS`|10.0| | | |`HIP_MEMSET_NODE_PARAMS`|6.1.0| | | | |
-|`CUDA_MEMSET_NODE_PARAMS_st`|10.0| | | |`HIP_MEMSET_NODE_PARAMS`|6.1.0| | | | |
-|`CUDA_MEMSET_NODE_PARAMS_v1`|11.3| | | |`HIP_MEMSET_NODE_PARAMS`|6.1.0| | | | |
+|`CUDA_MEMSET_NODE_PARAMS`|10.0| | | |`hipMemsetParams`|4.3.0| | | | |
+|`CUDA_MEMSET_NODE_PARAMS_st`|10.0| | | |`hipMemsetParams`|4.3.0| | | | |
+|`CUDA_MEMSET_NODE_PARAMS_v1`|11.3| | | |`hipMemsetParams`|4.3.0| | | | |
 |`CUDA_MEMSET_NODE_PARAMS_v2`|12.2| | | | | | | | | |
 |`CUDA_MEMSET_NODE_PARAMS_v2_st`|12.2| | | | | | | | | |
 |`CUDA_MEM_ALLOC_NODE_PARAMS`|11.4| | | |`hipMemAllocNodeParams`|5.5.0| | | | |
@@ -950,9 +950,9 @@
 |`CU_MEM_RANGE_ATTRIBUTE_PREFERRED_LOCATION_ID`|12.2| | | | | | | | | |
 |`CU_MEM_RANGE_ATTRIBUTE_PREFERRED_LOCATION_TYPE`|12.2| | | | | | | | | |
 |`CU_MEM_RANGE_ATTRIBUTE_READ_MOSTLY`|8.0| | | |`hipMemRangeAttributeReadMostly`|3.7.0| | | | |
-|`CU_MEM_RANGE_FLAG_DMA_BUF_MAPPING_TYPE_PCIE`|12.8| | | | | | | | | |
-|`CU_MEM_RANGE_HANDLE_TYPE_DMA_BUF_FD`|11.7| | | | | | | | | |
-|`CU_MEM_RANGE_HANDLE_TYPE_MAX`|11.7| | | | | | | | | |
+|`CU_MEM_RANGE_FLAG_DMA_BUF_MAPPING_TYPE_PCIE`|12.8| | | |`hipMemRangeFlagDmaBufMappingTypePcie`|7.0.0| | | |7.0.0|
+|`CU_MEM_RANGE_HANDLE_TYPE_DMA_BUF_FD`|11.7| | | |`hipMemRangeHandleTypeDmaBufFd`|7.0.0| | | |7.0.0|
+|`CU_MEM_RANGE_HANDLE_TYPE_MAX`|11.7| | | |`hipMemRangeHandleTypeMax`|7.0.0| | | |7.0.0|
 |`CU_MODULE_EAGER_LOADING`|11.7| | | | | | | | | |
 |`CU_MODULE_LAZY_LOADING`|11.7| | | | | | | | | |
 |`CU_MULTICAST_GRANULARITY_MINIMUM`|12.1| | | | | | | | | |
@@ -1441,10 +1441,10 @@
 |`CUmemPoolPtrExportData_v1`|11.3| | | |`hipMemPoolPtrExportData`|5.2.0| | | | |
 |`CUmemPool_attribute`|11.2| | | |`hipMemPoolAttr`|5.2.0| | | | |
 |`CUmemPool_attribute_enum`|11.2| | | |`hipMemPoolAttr`|5.2.0| | | | |
-|`CUmemRangeFlags`|12.8| | | | | | | | | |
-|`CUmemRangeFlags_enum`|12.8| | | | | | | | | |
-|`CUmemRangeHandleType`|11.7| | | | | | | | | |
-|`CUmemRangeHandleType_enum`|11.7| | | | | | | | | |
+|`CUmemRangeFlags`|12.8| | | |`hipMemRangeFlags`|7.0.0| | | |7.0.0|
+|`CUmemRangeFlags_enum`|12.8| | | |`hipMemRangeFlags`|7.0.0| | | |7.0.0|
+|`CUmemRangeHandleType`|11.7| | | |`hipMemRangeHandleType`|7.0.0| | | |7.0.0|
+|`CUmemRangeHandleType_enum`|11.7| | | |`hipMemRangeHandleType`|7.0.0| | | |7.0.0|
 |`CUmem_advise`|8.0| | | |`hipMemoryAdvise`|3.7.0| | | | |
 |`CUmem_advise_enum`|8.0| | | |`hipMemoryAdvise`|3.7.0| | | | |
 |`CUmem_range_attribute`|8.0| | | |`hipMemRangeAttribute`|3.7.0| | | | |
@@ -1642,7 +1642,7 @@
 |`cuCtxCreate_v4`|12.5| | | | | | | | | |
 |`cuCtxDestroy`| | | | |`hipCtxDestroy`|1.6.0|1.9.0| | | |
 |`cuCtxDestroy_v2`| | | | |`hipCtxDestroy`|1.6.0|1.9.0| | | |
-|`cuCtxGetApiVersion`| | | | |`hipCtxGetApiVersion`|1.9.0|1.9.0| | | |
+|`cuCtxGetApiVersion`| | | | |`hipCtxGetApiVersion`|1.9.0|1.9.0|7.0.0| | |
 |`cuCtxGetCacheConfig`| | | | |`hipCtxGetCacheConfig`|1.9.0|1.9.0| | | |
 |`cuCtxGetCurrent`| | | | |`hipCtxGetCurrent`|1.6.0|1.9.0| | | |
 |`cuCtxGetDevice`| | | | |`hipCtxGetDevice`|1.6.0|1.9.0| | | |
@@ -1763,7 +1763,7 @@
 |`cuMemFree_v2`| | | | |`hipFree`|1.5.0| | | | |
 |`cuMemGetAddressRange`| | | | |`hipMemGetAddressRange`|1.9.0| | | | |
 |`cuMemGetAddressRange_v2`| | | | |`hipMemGetAddressRange`|1.9.0| | | | |
-|`cuMemGetHandleForAddressRange`|11.7| | | | | | | | | |
+|`cuMemGetHandleForAddressRange`|11.7| | | |`hipMemGetHandleForAddressRange`|7.0.0| | | |7.0.0|
 |`cuMemGetInfo`| | | | |`hipMemGetInfo`|1.6.0| | | | |
 |`cuMemGetInfo_v2`| | | | |`hipMemGetInfo`|1.6.0| | | | |
 |`cuMemHostAlloc`| | | | |`hipHostAlloc`|1.6.0| | | | |
@@ -2035,7 +2035,7 @@
 |`cuGraphAddMemAllocNode`|11.4| | | |`hipGraphAddMemAllocNode`|5.5.0| | | | |
 |`cuGraphAddMemFreeNode`|11.4| | | |`hipDrvGraphAddMemFreeNode`|6.3.0| | | | |
 |`cuGraphAddMemcpyNode`|10.0| | | |`hipDrvGraphAddMemcpyNode`|6.0.0| | | | |
-|`cuGraphAddMemsetNode`|10.0| | | |`hipDrvGraphAddMemsetNode`|6.1.0| | | | |
+|`cuGraphAddMemsetNode`|10.0| | | |`hipDrvGraphAddMemsetNode`|6.1.0| |7.0.0| | |
 |`cuGraphAddNode`|12.2| | | |`hipGraphAddNode`|6.2.0| | | | |
 |`cuGraphAddNode_v2`|12.3| | | | | | | | | |
 |`cuGraphBatchMemOpNodeGetParams`|11.7| | | |`hipGraphBatchMemOpNodeGetParams`|6.4.0| | | | |
@@ -2062,7 +2062,7 @@
 |`cuGraphExecHostNodeSetParams`|10.2| | | |`hipGraphExecHostNodeSetParams`|5.0.0| | | | |
 |`cuGraphExecKernelNodeSetParams`|10.1| | | |`hipGraphExecKernelNodeSetParams`|4.5.0| | | | |
 |`cuGraphExecMemcpyNodeSetParams`|10.2| | | |`hipDrvGraphExecMemcpyNodeSetParams`|6.3.0| | | | |
-|`cuGraphExecMemsetNodeSetParams`|10.2| | | |`hipDrvGraphExecMemsetNodeSetParams`|6.3.0| | | | |
+|`cuGraphExecMemsetNodeSetParams`|10.2| | | |`hipDrvGraphExecMemsetNodeSetParams`|6.3.0| |7.0.0| | |
 |`cuGraphExecNodeSetParams`|12.2| | | |`hipGraphExecNodeSetParams`|6.3.0| | | | |
 |`cuGraphExecUpdate`|10.2| | | |`hipGraphExecUpdate`|5.0.0| | | | |
 |`cuGraphExternalSemaphoresSignalNodeGetParams`|11.2| | | |`hipGraphExternalSemaphoresSignalNodeGetParams`|5.7.0| | | | |
