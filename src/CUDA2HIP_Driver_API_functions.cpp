@@ -391,7 +391,7 @@ const std::map<llvm::StringRef, hipCounter> CUDA_DRIVER_FUNCTION_MAP {
   // cudaArrayGetPlane
   {"cuArrayGetPlane",                                             {"hipArrayGetPlane",                                            "", CONV_MEMORY, API_DRIVER, SEC::MEMORY, HIP_UNSUPPORTED}},
   //
-  {"cuMemGetHandleForAddressRange",                               {"hipMemGetHandleForAddressRange",                              "", CONV_MEMORY, API_DRIVER, SEC::MEMORY, HIP_UNSUPPORTED}},
+  {"cuMemGetHandleForAddressRange",                               {"hipMemGetHandleForAddressRange",                              "", CONV_MEMORY, API_DRIVER, SEC::MEMORY, HIP_EXPERIMENTAL}},
   // cudaDeviceRegisterAsyncNotification
   {"cuDeviceRegisterAsyncNotification",                           {"hipDeviceRegisterAsyncNotification",                          "", CONV_MEMORY, API_DRIVER, SEC::MEMORY, HIP_UNSUPPORTED}},
   // cudaDeviceUnregisterAsyncNotification
@@ -1737,10 +1737,17 @@ const std::map<llvm::StringRef, hipAPIversions> HIP_DRIVER_FUNCTION_VER_MAP {
   {"hipEventRecordWithFlags",                                     {HIP_6040, HIP_0,    HIP_0   }},
   {"hipDeviceGetTexture1DLinearMaxWidth",                         {HIP_6040, HIP_0,    HIP_0   }},
   {"hipDrvLaunchKernelEx",                                        {HIP_7000, HIP_0,    HIP_0,  HIP_LATEST}},
+  {"hipMemGetHandleForAddressRange",                              {HIP_7000, HIP_0,    HIP_0,  HIP_LATEST}},
 };
 
 const std::map<llvm::StringRef, cudaAPIChangedVersions> CUDA_DRIVER_FUNCTION_CHANGED_VER_MAP {
   {"cuGetProcAddress",                                            {CUDA_120}},
+};
+
+const std::map<llvm::StringRef, hipAPIChangedVersions> HIP_DRIVER_FUNCTION_CHANGED_VER_MAP {
+  {"hipCtxGetApiVersion",                                         {HIP_7000}},
+  {"hipDrvGraphAddMemsetNode",                                    {HIP_7000}},
+  {"hipDrvGraphExecMemsetNodeSetParams",                          {HIP_7000}},
 };
 
 const std::map<unsigned int, llvm::StringRef> CUDA_DRIVER_API_SECTION_MAP {
