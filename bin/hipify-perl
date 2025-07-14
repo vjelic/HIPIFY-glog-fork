@@ -1546,6 +1546,7 @@ my %experimental_funcs = (
     "cudaLaunchAttribute_st" => "7.0.0",
     "cudaLaunchAttribute" => "7.0.0",
     "cublasLtMatmulMatrixScale_t" => "7.0.0",
+    "cuMemGetHandleForAddressRange" => "7.0.0",
     "cuLaunchKernelEx" => "7.0.0",
     "__nv_fp4x4_storage_t" => "7.0.0",
     "__nv_fp4x4_e2m1" => "7.0.0",
@@ -1565,8 +1566,15 @@ my %experimental_funcs = (
     "__nv_cvt_bfloat16raw_to_fp4" => "7.0.0",
     "__nv_cvt_bfloat16raw2_to_fp4x2" => "7.0.0",
     "__NV_E2M1" => "7.0.0",
+    "CUmemRangeHandleType_enum" => "7.0.0",
+    "CUmemRangeHandleType" => "7.0.0",
+    "CUmemRangeFlags_enum" => "7.0.0",
+    "CUmemRangeFlags" => "7.0.0",
     "CUlaunchAttribute_st" => "7.0.0",
     "CUlaunchAttribute" => "7.0.0",
+    "CU_MEM_RANGE_HANDLE_TYPE_MAX" => "7.0.0",
+    "CU_MEM_RANGE_HANDLE_TYPE_DMA_BUF_FD" => "7.0.0",
+    "CU_MEM_RANGE_FLAG_DMA_BUF_MAPPING_TYPE_PCIE" => "7.0.0",
     "CUTENSOR_WORKSPACE_DEFAULT" => "7.0.0",
     "CUTENSOR_R_8U" => "7.0.0",
     "CUTENSOR_R_8I" => "7.0.0",
@@ -1803,6 +1811,7 @@ sub subst {
 }
 
 sub experimentalSubstitutions {
+    subst("cuMemGetHandleForAddressRange", "hipMemGetHandleForAddressRange", "memory");
     subst("cuLaunchKernelEx", "hipDrvLaunchKernelEx", "execution");
     subst("cudaLaunchKernelExC", "hipLaunchKernelExC", "execution");
     subst("__nv_cvt_bfloat16raw2_to_fp4x2", "__hip_cvt_bfloat16raw2_to_fp4x2", "device_function");
@@ -1832,6 +1841,10 @@ sub experimentalSubstitutions {
     subst("cudaRoundMode", "hipRoundMode", "device_type");
     subst("CUlaunchAttribute", "hipLaunchAttribute", "type");
     subst("CUlaunchAttribute_st", "hipLaunchAttribute_st", "type");
+    subst("CUmemRangeFlags", "hipMemRangeFlags", "type");
+    subst("CUmemRangeFlags_enum", "hipMemRangeFlags", "type");
+    subst("CUmemRangeHandleType", "hipMemRangeHandleType", "type");
+    subst("CUmemRangeHandleType_enum", "hipMemRangeHandleType", "type");
     subst("cublasLtMatmulMatrixScale_t", "hipblasLtMatmulMatrixScale_t", "type");
     subst("cudaLaunchAttribute", "hipLaunchAttribute", "type");
     subst("cudaLaunchAttribute_st", "hipLaunchAttribute_st", "type");
@@ -1944,6 +1957,9 @@ sub experimentalSubstitutions {
     subst("CUTENSOR_R_8I", "HIPTENSOR_R_8I", "numeric_literal");
     subst("CUTENSOR_R_8U", "HIPTENSOR_R_8U", "numeric_literal");
     subst("CUTENSOR_WORKSPACE_DEFAULT", "HIPTENSOR_WORKSPACE_DEFAULT", "numeric_literal");
+    subst("CU_MEM_RANGE_FLAG_DMA_BUF_MAPPING_TYPE_PCIE", "hipMemRangeFlagDmaBufMappingTypePcie", "numeric_literal");
+    subst("CU_MEM_RANGE_HANDLE_TYPE_DMA_BUF_FD", "hipMemRangeHandleTypeDmaBufFd", "numeric_literal");
+    subst("CU_MEM_RANGE_HANDLE_TYPE_MAX", "hipMemRangeHandleTypeMax", "numeric_literal");
     subst("__NV_E2M1", "__HIP_E2M1", "numeric_literal");
     subst("cudaRoundMinInf", "hipRoundMinInf", "numeric_literal");
     subst("cudaRoundNearest", "hipRoundNearest", "numeric_literal");
@@ -3328,6 +3344,8 @@ sub rocSubstitutions {
     subst("curandStateSobol32_t", "rocrand_state_sobol32", "type");
     subst("curandStateSobol64", "rocrand_device::sobol64_engine<false>", "type");
     subst("curandStateSobol64_t", "rocrand_state_sobol64", "type");
+    subst("curandStateXORWOW", "rocrand_device::xorwow_engine", "type");
+    subst("curandStateXORWOW_t", "rocrand_state_xorwow", "type");
     subst("curandStatus", "rocrand_status", "type");
     subst("curandStatus_t", "rocrand_status", "type");
     subst("cusolverDnHandle_t", "rocblas_handle", "type");
@@ -7297,9 +7315,9 @@ sub simpleSubstitutions {
     subst("CUDA_MEMCPY3D_v2", "HIP_MEMCPY3D", "type");
     subst("CUDA_MEMCPY_NODE_PARAMS", "hipMemcpyNodeParams", "type");
     subst("CUDA_MEMCPY_NODE_PARAMS_st", "hipMemcpyNodeParams", "type");
-    subst("CUDA_MEMSET_NODE_PARAMS", "HIP_MEMSET_NODE_PARAMS", "type");
-    subst("CUDA_MEMSET_NODE_PARAMS_st", "HIP_MEMSET_NODE_PARAMS", "type");
-    subst("CUDA_MEMSET_NODE_PARAMS_v1", "HIP_MEMSET_NODE_PARAMS", "type");
+    subst("CUDA_MEMSET_NODE_PARAMS", "hipMemsetParams", "type");
+    subst("CUDA_MEMSET_NODE_PARAMS_st", "hipMemsetParams", "type");
+    subst("CUDA_MEMSET_NODE_PARAMS_v1", "hipMemsetParams", "type");
     subst("CUDA_MEM_ALLOC_NODE_PARAMS", "hipMemAllocNodeParams", "type");
     subst("CUDA_MEM_ALLOC_NODE_PARAMS_st", "hipMemAllocNodeParams", "type");
     subst("CUDA_MEM_ALLOC_NODE_PARAMS_v1", "hipMemAllocNodeParams", "type");
@@ -11985,7 +12003,6 @@ sub warnRemovedFunctions {
     "cuMemcpy3DBatchAsync",
     "cuMemcpy",
     "cuMemPrefetchAsync_v2",
-    "cuMemGetHandleForAddressRange",
     "cuMemBatchDecompressAsync",
     "cuMemAdvise_v2",
     "cuLogsUnregisterCallback",
@@ -12236,10 +12253,6 @@ sub warnRemovedFunctions {
     "CUmemcpy3DOperandType_enum",
     "CUmemcpy3DOperandType",
     "CUmemcpy3DOperand",
-    "CUmemRangeHandleType_enum",
-    "CUmemRangeHandleType",
-    "CUmemRangeFlags_enum",
-    "CUmemRangeFlags",
     "CUmemFabricHandle_v1",
     "CUmemFabricHandle_st",
     "CUmemFabricHandle",
@@ -12498,9 +12511,6 @@ sub warnRemovedFunctions {
     "CU_MULTICAST_GRANULARITY_MINIMUM",
     "CU_MODULE_LAZY_LOADING",
     "CU_MODULE_EAGER_LOADING",
-    "CU_MEM_RANGE_HANDLE_TYPE_MAX",
-    "CU_MEM_RANGE_HANDLE_TYPE_DMA_BUF_FD",
-    "CU_MEM_RANGE_FLAG_DMA_BUF_MAPPING_TYPE_PCIE",
     "CU_MEM_RANGE_ATTRIBUTE_PREFERRED_LOCATION_TYPE",
     "CU_MEM_RANGE_ATTRIBUTE_PREFERRED_LOCATION_ID",
     "CU_MEM_RANGE_ATTRIBUTE_LAST_PREFETCH_LOCATION_TYPE",
@@ -14304,8 +14314,6 @@ sub warnHipOnlyUnsupportedFunctions {
     "curand_mtgp32_single",
     "curand_Philox4x32_10",
     "curandState_t",
-    "curandStateXORWOW_t",
-    "curandStateXORWOW",
     "curandState",
     "curandMethod_t",
     "curandMethod",
