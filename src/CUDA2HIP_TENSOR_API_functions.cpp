@@ -171,6 +171,10 @@ const std::map<llvm::StringRef, hipAPIversions> HIP_TENSOR_FUNCTION_VER_MAP {
   {"hiptensorLoggerForceDisable",                    {HIP_5070,      HIP_0,         HIP_0         }},
 };
 
+const std::map<llvm::StringRef, cudaAPIChangedVersions> CUDA_TENSOR_FUNCTION_CHANGED_VER_MAP {
+  {"cutensorCreate",                                 {CUTENSOR_2000}},
+};
+
 const std::map<unsigned int, llvm::StringRef> CUDA_TENSOR_API_SECTION_MAP {
   {1, "CUTENSOR Data types"},
   {2, "CUTENSOR Function Reference"},

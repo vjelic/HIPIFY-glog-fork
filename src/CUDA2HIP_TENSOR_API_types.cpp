@@ -535,3 +535,7 @@ const std::map<llvm::StringRef, hipAPIversions> HIP_TENSOR_TYPE_NAME_VER_MAP {
   {"hiptensorOperationDescriptor",                     {HIP_7000,      HIP_0,         HIP_0,        HIP_LATEST}},
   {"hiptensorTensorDescriptor",                        {HIP_7000,      HIP_0,         HIP_0,        HIP_LATEST}},
 };
+
+const std::map<llvm::StringRef, cudaAPIChangedVersions> CUDA_TENSOR_TYPE_CHANGED_VER_MAP {
+  {"cutensorAutotuneMode_t",                           {CUTENSOR_2000}},
+};
