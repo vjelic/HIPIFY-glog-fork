@@ -2223,6 +2223,8 @@ void HipifyAction::RewriteString(StringRef s, clang::SourceLocation start) {
     StringRef name = s.slice(begin, end);
     const auto found = CUDA_RENAMES_MAP().find(name);
     if (found != CUDA_RENAMES_MAP().end()) {
+      if (!HipDnnSupport && found->second.apiType == API_DNN && !Statistics::isToMIOpen(found->second))
+        return;
       StringRef repName = Statistics::isToRoc(found->second) ? found->second.rocName : found->second.hipName;
       hipCounter counter = {s_string_literal, "", ConvTypes::CONV_LITERAL, ApiTypes::API_RUNTIME, found->second.supportDegree};
       Statistics::current().incrementCounter(counter, name.str());
@@ -2289,6 +2291,8 @@ void HipifyAction::FindAndReplace(StringRef name,
     // So it's an identifier, but not CUDA? Boring.
     return;
   }
+  if (!HipDnnSupport && found->second.apiType == API_DNN && !Statistics::isToMIOpen(found->second))
+    return;
   Statistics::current().incrementCounter(found->second, name.str());
   clang::DiagnosticsEngine &DE = getCompilerInstance().getDiagnostics();
   // Warn about the deprecated identifier in CUDA but hipify it.
@@ -2492,6 +2496,8 @@ void HipifyAction::InclusionDirective(clang::SourceLocation hash_loc,
   bool exclude = Exclude(found->second);
   Statistics::current().incrementCounter(found->second, file_name.str());
   clang::SourceLocation sl = filename_range.getBegin();
+  if (!HipDnnSupport && found->second.apiType == API_DNN && !Statistics::isToMIOpen(found->second))
+    return;
   if (Statistics::isUnsupported(found->second)) {
     clang::DiagnosticsEngine &DE = getCompilerInstance().getDiagnostics();
     std::string sWarn;
