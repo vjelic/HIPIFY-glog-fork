@@ -1001,8 +1001,10 @@ namespace doc {
       docs.addDoc(&rocsparse);
       docs.addDoc(&rocsolver);
     }
-    DNN dnn(sOut);
-    docs.addDoc(&dnn);
+    if (HipDnnSupport) {
+      DNN dnn(sOut);
+      docs.addDoc(&dnn);
+    }
     FFT fft(sOut);
     docs.addDoc(&fft);
     SPARSE sparse(sOut);
