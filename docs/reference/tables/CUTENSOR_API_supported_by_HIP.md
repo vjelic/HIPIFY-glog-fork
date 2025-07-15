@@ -149,7 +149,7 @@
 |`CUTENSOR_WORKSPACE_MIN`|1.0.1.0| | | |`HIPTENSOR_WORKSPACE_MIN`|5.7.0| | | | |
 |`CUTENSOR_WORKSPACE_RECOMMENDED`|1.0.1.0| | |2.0.0.0| | | | | | |
 |`cutensorAlgo_t`|1.0.1.0| | | |`hiptensorAlgo_t`|5.7.0| | | | |
-|`cutensorAutotuneMode_t`|1.2.0.0| | | |`hiptensorAutotuneMode_t`|7.0.0| | | |7.0.0|
+|`cutensorAutotuneMode_t`|1.2.0.0| |2.0.0.0| |`hiptensorAutotuneMode_t`|7.0.0| | | |7.0.0|
 |`cutensorCacheMode_t`|1.2.0.0| | | |`hiptensorCacheMode_t`|7.0.0| | | |7.0.0|
 |`cutensorComputeType_t`| | | | |`hiptensorComputeDescriptor_t`|7.0.0| | | |7.0.0|
 |`cutensorContractionPlan_t`|1.0.1.0| | |2.0.0.0|`hiptensorContractionPlan_t`|5.7.0| | | | |
@@ -197,7 +197,7 @@
 |`cutensorContract`|2.0.0.0| | | |`hiptensorContraction`|6.1.0| | | | |
 |`cutensorContractTrinary`|2.2.0.0| | | | | | | | | |
 |`cutensorContraction`|1.0.1.0| | |2.0.0.0|`hiptensorContraction`|6.1.0| | | | |
-|`cutensorCreate`|1.7.0.0| | | |`hiptensorCreate`|5.7.0| | | | |
+|`cutensorCreate`|1.7.0.0| |2.0.0.0| |`hiptensorCreate`|5.7.0| | | | |
 |`cutensorCreateContraction`|2.0.0.0| | | | | | | | | |
 |`cutensorCreateContractionTrinary`|2.2.0.0| | | | | | | | | |
 |`cutensorCreateElementwiseBinary`|2.0.0.0| | | | | | | | | |
