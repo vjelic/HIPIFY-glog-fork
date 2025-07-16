@@ -255,6 +255,7 @@
 |`CUDNN_ATTR_POINTWISE_SOFTPLUS_BETA`|8.1.0| | | |`MIOPEN_ATTR_POINTWISE_SOFTPLUS_BETA`|6.2.0| | | | |
 |`CUDNN_ATTR_POINTWISE_SWISH_BETA`|8.1.0| | | |`MIOPEN_ATTR_POINTWISE_SWISH_BETA`|6.2.0| | | | |
 |`CUDNN_ATTR_REDUCTION_COMP_TYPE`|8.1.0| | | |`MIOPEN_ATTR_REDUCTION_COMP_TYPE`|6.2.0| | | | |
+|`CUDNN_ATTR_REDUCTION_IS_DETERMINISTIC`|9.11.0| | | | | | | | | |
 |`CUDNN_ATTR_REDUCTION_OPERATOR`|8.1.0| | | |`MIOPEN_ATTR_REDUCTION_OPERATOR`|6.2.0| | | | |
 |`CUDNN_ATTR_RESAMPLE_COMP_TYPE`|8.3.0| | | |`MIOPEN_ATTR_RESAMPLE_COMP_TYPE`|6.2.0| | | | |
 |`CUDNN_ATTR_RESAMPLE_MODE`|8.3.0| | | |`MIOPEN_ATTR_RESAMPLE_MODE`|6.2.0| | | | |
@@ -393,10 +394,13 @@
 |`CUDNN_DATA_FP8_E8M0`|9.7.0| | | | | | | | | |
 |`CUDNN_DATA_HALF`|3.0.0| | | |`miopenHalf`|2.1.0| | | | |
 |`CUDNN_DATA_INT32`|6.0.0| | | |`miopenInt32`|2.1.0| | | | |
+|`CUDNN_DATA_INT4`|9.11.0| | | | | | | | | |
 |`CUDNN_DATA_INT64`|8.1.0| | | |`miopenInt64`|6.2.0| | | | |
 |`CUDNN_DATA_INT8`|6.0.0| | | |`miopenInt8`|2.1.0| | | | |
 |`CUDNN_DATA_INT8x32`|7.2.1|9.0.0| | | | | | | | |
 |`CUDNN_DATA_INT8x4`|6.0.0|9.0.0| | |`miopenInt8x4`|2.3.0| | | | |
+|`CUDNN_DATA_UINT32`|9.11.0| | | | | | | | | |
+|`CUDNN_DATA_UINT4`|9.11.0| | | | | | | | | |
 |`CUDNN_DATA_UINT8`|7.1.3| | | | | | | | | |
 |`CUDNN_DATA_UINT8x4`|7.1.3|9.0.0| | | | | | | | |
 |`CUDNN_DEFAULT_MATH`|7.0.5| | | | | | | | | |
