@@ -42,6 +42,7 @@ int main() {
   cudaStream_t stream_t;
 
   const uint32_t numModes = 0;
+  uint32_t numCachelinesRead = 0;
   const int64_t *extent = nullptr;
   const int64_t *stride = nullptr;
   const uint64_t workspaceSize = 0;
@@ -60,6 +61,7 @@ int main() {
   void *workspace = nullptr;
   const char *err = nullptr;
   const char *log = nullptr;
+  const char *filename = nullptr;
   size_t ver = 0;
   FILE *file = nullptr;
   int32_t level = 0;
@@ -194,15 +196,40 @@ int main() {
   // CHECK: status = hiptensorContraction(handle, tensorPlan_t, alpha, A, B_1, beta, C, D, workspace,  workspaceSize2, stream_t);
   status = cutensorContract(handle, tensorPlan_t, alpha, A, B_1, beta, C, D, workspace, workspaceSize2, stream_t);
 
-   // CUDA: cutensorStatus_t cutensorCreate(cutensorHandle_t* handle);
-   // HIP: hiptensorStatus_t hiptensorCreate(hiptensorHandle_t** handle);
-   // CHECK: status = hiptensorCreate(&handle);
-   status = cutensorCreate(&handle);
+  // CUDA: cutensorStatus_t cutensorCreate(cutensorHandle_t* handle);
+  // HIP: hiptensorStatus_t hiptensorCreate(hiptensorHandle_t* handle);
+  // CHECK: status = hiptensorCreate(&handle);
+  status = cutensorCreate(&handle);
 
-   // CUDA: cutensorStatus_t cutensorDestroy(cutensorHandle_t handle);
-   // HIP: hiptensorStatus_t hiptensorDestroy(hiptensorHandle_t* handle);
-   // CHECK: status = hiptensorDestroy(handle);
-   status = cutensorDestroy(handle);
+  // CUDA: cutensorStatus_t cutensorDestroy(cutensorHandle_t handle);
+  // HIP: hiptensorStatus_t hiptensorDestroy(hiptensorHandle_t handle);
+  // CHECK: status = hiptensorDestroy(handle);
+  status = cutensorDestroy(handle);
+
+  // CUDA: cutensorStatus_t cutensorHandleResizePlanCache(cutensorHandle_t handle, const uint32_t numEntries);
+  // HIP: hiptensorStatus_t hiptensorHandleResizePlanCache(hiptensorHandle_t handle, const uint32_t numEntries);
+  // CHECK: status = hiptensorHandleResizePlanCache(handle, numModes);
+  status = cutensorHandleResizePlanCache(handle, numModes);
+
+  // CUDA: cutensorStatus_t cutensorHandleWritePlanCacheToFile(const cutensorHandle_t handle, const char filename[]);
+  // HIP: hiptensorStatus_t hiptensorHandleWritePlanCacheToFile(const hiptensorHandle_t handle, const char filename[]);
+  // CHECK: status = hiptensorHandleWritePlanCacheToFile(handle, filename);
+  status = cutensorHandleWritePlanCacheToFile(handle, filename);
+
+  // CUDA: cutensorStatus_t cutensorHandleReadPlanCacheFromFile(cutensorHandle_t handle, const char filename[], uint32_t* numCachelinesRead);
+  // HIP: hiptensorStatus_t hiptensorHandleReadPlanCacheFromFile(hiptensorHandle_t handle, const char filename[], uint32_t* numCachelinesRead);
+  // CHECK: status = hiptensorHandleReadPlanCacheFromFile(handle, filename, &numCachelinesRead);
+  status = cutensorHandleReadPlanCacheFromFile(handle, filename, &numCachelinesRead);
+
+  // CUDA: cutensorStatus_t cutensorWriteKernelCacheToFile(const cutensorHandle_t handle, const char filename[]);
+  // HIP: hiptensorStatus_t hiptensorWriteKernelCacheToFile(const hiptensorHandle_t handle, const char filename[]);
+  // CHECK: status = hiptensorWriteKernelCacheToFile(handle, filename);
+  status = cutensorWriteKernelCacheToFile(handle, filename);
+
+  // CUDA: cutensorStatus_t cutensorReadKernelCacheFromFile(cutensorHandle_t handle, const char filename[]);
+  // HIP: hiptensorStatus_t hiptensorReadKernelCacheFromFile(hiptensorHandle_t handle, const char filename[]);
+  // CHECK: status = hiptensorReadKernelCacheFromFile(handle, filename);
+  status = cutensorReadKernelCacheFromFile(handle, filename);
 #endif
 
 #if CUTENSOR_MAJOR >= 1
@@ -385,18 +412,6 @@ int main() {
   // CHECK: status = hiptensorReduction(handle_c, alpha, A, descA, modeA, beta, C, descC, modeC, D, descD, modeD, tensorOperator_t, tensorComputeType_t, workspace, workspaceSize2, stream_t);
   status = cutensorReduction(handle_c, alpha, A, descA, modeA, beta, C, descC, modeC, D, descD, modeD, tensorOperator_t, tensorComputeType_t, workspace, workspaceSize2, stream_t);
 #endif
-
-#if (CUTENSOR_MAJOR == 1 && CUTENSOR_MINOR >= 7)
-  // CUDA: cutensorStatus_t cutensorCreate(cutensorHandle_t* handle);
-  // HIP: hiptensorStatus_t hiptensorCreate(hiptensorHandle_t** handle);
-  // CHECK: status = hiptensorCreate(&handle2);
-  status = cutensorCreate(&handle2);
-
-  // CUDA: cutensorStatus_t cutensorDestroy(cutensorHandle_t handle);
-  // HIP: hiptensorStatus_t hiptensorDestroy(hiptensorHandle_t* handle);
-  // CHECK: status = hiptensorDestroy(handle2);
-  status = cutensorDestroy(handle2);
- #endif
 
 #if (CUTENSOR_MAJOR == 1 && CUTENSOR_MINOR >= 3 && CUTENSOR_PATCH >= 2) || CUTENSOR_MAJOR >= 2
   // CHECK: hiptensorLoggerCallback_t callback;
