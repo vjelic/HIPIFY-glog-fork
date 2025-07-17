@@ -1533,6 +1533,7 @@ my %experimental_funcs = (
     "cutensorJitMode_t" => "7.0.0",
     "cutensorHandle" => "7.0.0",
     "cutensorDataType_t" => "7.0.0",
+    "cutensorComputeDescriptor_t" => "7.0.0",
     "cutensorCacheMode_t" => "7.0.0",
     "cutensorAutotuneMode_t" => "7.0.0",
     "cudaRoundZero" => "7.0.0",
@@ -1852,6 +1853,7 @@ sub experimentalSubstitutions {
     subst("cudaLaunchConfig_t", "hipLaunchConfig_t", "type");
     subst("cutensorAutotuneMode_t", "hiptensorAutotuneMode_t", "type");
     subst("cutensorCacheMode_t", "hiptensorCacheMode_t", "type");
+    subst("cutensorComputeDescriptor_t", "hiptensorComputeDescriptor_t", "type");
     subst("cutensorDataType_t", "hiptensorDataType_t", "type");
     subst("cutensorHandle", "hiptensorHandle", "type");
     subst("cutensorJitMode_t", "hiptensorJitMode_t", "type");
@@ -6572,7 +6574,11 @@ sub simpleSubstitutions {
     subst("cutensorContract", "hiptensorContraction", "library");
     subst("cutensorContraction", "hiptensorContraction", "library");
     subst("cutensorCreate", "hiptensorCreate", "library");
+    subst("cutensorCreateContraction", "hiptensorCreateContraction", "library");
+    subst("cutensorCreateTensorDescriptor", "hiptensorCreateTensorDescriptor", "library");
     subst("cutensorDestroy", "hiptensorDestroy", "library");
+    subst("cutensorDestroyOperationDescriptor", "hiptensorDestroyOperationDescriptor", "library");
+    subst("cutensorDestroyTensorDescriptor", "hiptensorDestroyTensorDescriptor", "library");
     subst("cutensorGetCudartVersion", "hiptensorGetHiprtVersion", "library");
     subst("cutensorGetErrorString", "hiptensorGetErrorString", "library");
     subst("cutensorHandleReadPlanCacheFromFile", "hiptensorHandleReadPlanCacheFromFile", "library");
@@ -6585,6 +6591,8 @@ sub simpleSubstitutions {
     subst("cutensorLoggerSetFile", "hiptensorLoggerSetFile", "library");
     subst("cutensorLoggerSetLevel", "hiptensorLoggerSetLevel", "library");
     subst("cutensorLoggerSetMask", "hiptensorLoggerSetMask", "library");
+    subst("cutensorOperationDescriptorGetAttribute", "hiptensorOperationDescriptorGetAttribute", "library");
+    subst("cutensorOperationDescriptorSetAttribute", "hiptensorOperationDescriptorSetAttribute", "library");
     subst("cutensorPermutation", "hiptensorPermutation", "library");
     subst("cutensorReadKernelCacheFromFile", "hiptensorReadKernelCacheFromFile", "library");
     subst("cutensorReduction", "hiptensorReduction", "library");
@@ -10615,8 +10623,6 @@ sub warnRemovedFunctions {
     "cutensorPlanPreferenceSetAttribute",
     "cutensorPlanGetAttribute",
     "cutensorPermute",
-    "cutensorOperationDescriptorSetAttribute",
-    "cutensorOperationDescriptorGetAttribute",
     "cutensorMgTensorDescriptor_t",
     "cutensorMgTensorDescriptor_s",
     "cutensorMgHostDevice_t",
@@ -10657,11 +10663,8 @@ sub warnRemovedFunctions {
     "cutensorEstimateWorkspaceSize",
     "cutensorElementwiseTrinaryExecute",
     "cutensorElementwiseBinaryExecute",
-    "cutensorDestroyTensorDescriptor",
     "cutensorDestroyPlanPreference",
     "cutensorDestroyPlan",
-    "cutensorDestroyOperationDescriptor",
-    "cutensorCreateTensorDescriptor",
     "cutensorCreateReduction",
     "cutensorCreatePlanPreference",
     "cutensorCreatePlan",
@@ -10669,8 +10672,8 @@ sub warnRemovedFunctions {
     "cutensorCreateElementwiseTrinary",
     "cutensorCreateElementwiseBinary",
     "cutensorCreateContractionTrinary",
-    "cutensorCreateContraction",
     "cutensorContractTrinary",
+    "cutensorComputeDescriptor",
     "cusparseZhybsv_solve",
     "cusparseZhybsv_analysis",
     "cusparseZhyb2dense",
@@ -14044,8 +14047,6 @@ sub warnHipOnlyUnsupportedFunctions {
     "cutensorPlanPreferenceSetAttribute",
     "cutensorPlanGetAttribute",
     "cutensorPermute",
-    "cutensorOperationDescriptorSetAttribute",
-    "cutensorOperationDescriptorGetAttribute",
     "cutensorMgTensorDescriptor_t",
     "cutensorMgTensorDescriptor_s",
     "cutensorMgHostDevice_t",
@@ -14086,11 +14087,8 @@ sub warnHipOnlyUnsupportedFunctions {
     "cutensorEstimateWorkspaceSize",
     "cutensorElementwiseTrinaryExecute",
     "cutensorElementwiseBinaryExecute",
-    "cutensorDestroyTensorDescriptor",
     "cutensorDestroyPlanPreference",
     "cutensorDestroyPlan",
-    "cutensorDestroyOperationDescriptor",
-    "cutensorCreateTensorDescriptor",
     "cutensorCreateReduction",
     "cutensorCreatePlanPreference",
     "cutensorCreatePlan",
@@ -14098,8 +14096,8 @@ sub warnHipOnlyUnsupportedFunctions {
     "cutensorCreateElementwiseTrinary",
     "cutensorCreateElementwiseBinary",
     "cutensorCreateContractionTrinary",
-    "cutensorCreateContraction",
     "cutensorContractTrinary",
+    "cutensorComputeDescriptor",
     "cusparseZhybsv_solve",
     "cusparseZhybsv_analysis",
     "cusparseZhyb2dense",

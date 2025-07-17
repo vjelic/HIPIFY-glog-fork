@@ -151,6 +151,8 @@
 |`cutensorAlgo_t`|1.0.1.0| | | |`hiptensorAlgo_t`|5.7.0| | | | |
 |`cutensorAutotuneMode_t`|1.2.0.0| |2.0.0.0| |`hiptensorAutotuneMode_t`|7.0.0| | | |7.0.0|
 |`cutensorCacheMode_t`|1.2.0.0| | | |`hiptensorCacheMode_t`|7.0.0| | | |7.0.0|
+|`cutensorComputeDescriptor`|2.0.0.0| | | | | | | | | |
+|`cutensorComputeDescriptor_t`|2.0.0.0| | | |`hiptensorComputeDescriptor_t`|7.0.0| | | |7.0.0|
 |`cutensorComputeType_t`| | | | |`hiptensorComputeDescriptor_t`|7.0.0| | | |7.0.0|
 |`cutensorContractionPlan_t`|1.0.1.0| | |2.0.0.0|`hiptensorContractionPlan_t`|5.7.0| | | | |
 |`cutensorDataType_t`|2.0.0.0| | | |`hiptensorDataType_t`|7.0.0| | | |7.0.0|
@@ -198,7 +200,7 @@
 |`cutensorContractTrinary`|2.2.0.0| | | | | | | | | |
 |`cutensorContraction`|1.0.1.0| | |2.0.0.0|`hiptensorContraction`|6.1.0| | | | |
 |`cutensorCreate`|1.7.0.0| |2.0.0.0| |`hiptensorCreate`|5.7.0| |7.0.0| | |
-|`cutensorCreateContraction`|2.0.0.0| | | | | | | | | |
+|`cutensorCreateContraction`|2.0.0.0| | | |`hiptensorCreateContraction`|7.0.0| | | | |
 |`cutensorCreateContractionTrinary`|2.2.0.0| | | | | | | | | |
 |`cutensorCreateElementwiseBinary`|2.0.0.0| | | | | | | | | |
 |`cutensorCreateElementwiseTrinary`|2.0.0.0| | | | | | | | | |
@@ -206,12 +208,12 @@
 |`cutensorCreatePlan`|2.0.0.0| | | | | | | | | |
 |`cutensorCreatePlanPreference`|2.0.0.0| | | | | | | | | |
 |`cutensorCreateReduction`|2.0.0.0| | | | | | | | | |
-|`cutensorCreateTensorDescriptor`|2.0.0.0| | | | | | | | | |
+|`cutensorCreateTensorDescriptor`|2.0.0.0| | | |`hiptensorCreateTensorDescriptor`|7.0.0| | | | |
 |`cutensorDestroy`|1.7.0.0| | | |`hiptensorDestroy`|5.7.0| |7.0.0| | |
-|`cutensorDestroyOperationDescriptor`|2.0.0.0| | | | | | | | | |
+|`cutensorDestroyOperationDescriptor`|2.0.0.0| | | |`hiptensorDestroyOperationDescriptor`|7.0.0| | | | |
 |`cutensorDestroyPlan`|2.0.0.0| | | | | | | | | |
 |`cutensorDestroyPlanPreference`|2.0.0.0| | | | | | | | | |
-|`cutensorDestroyTensorDescriptor`|2.0.0.0| | | | | | | | | |
+|`cutensorDestroyTensorDescriptor`|2.0.0.0| | | |`hiptensorDestroyTensorDescriptor`|7.0.0| | | | |
 |`cutensorElementwiseBinaryExecute`|2.0.0.0| | | | | | | | | |
 |`cutensorElementwiseTrinaryExecute`|2.0.0.0| | | | | | | | | |
 |`cutensorEstimateWorkspaceSize`|2.0.0.0| | | | | | | | | |
@@ -247,8 +249,8 @@
 |`cutensorMgDestroyCopyDescriptor`|1.4.0.0| | | | | | | | | |
 |`cutensorMgDestroyCopyPlan`|1.4.0.0| | | | | | | | | |
 |`cutensorMgDestroyTensorDescriptor`|1.4.0.0| | | | | | | | | |
-|`cutensorOperationDescriptorGetAttribute`|2.0.0.0| | | | | | | | | |
-|`cutensorOperationDescriptorSetAttribute`|2.0.0.0| | | | | | | | | |
+|`cutensorOperationDescriptorGetAttribute`|2.0.0.0| | | |`hiptensorOperationDescriptorGetAttribute`|7.0.0| | | | |
+|`cutensorOperationDescriptorSetAttribute`|2.0.0.0| | | |`hiptensorOperationDescriptorSetAttribute`|7.0.0| | | | |
 |`cutensorPermutation`|1.0.1.0| | |2.0.0.0|`hiptensorPermutation`|6.1.0| | | | |
 |`cutensorPermute`|2.0.0.0| | | | | | | | | |
 |`cutensorPlanGetAttribute`|2.0.0.0| | | | | | | | | |
