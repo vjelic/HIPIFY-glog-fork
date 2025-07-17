@@ -202,13 +202,14 @@ namespace doc {
       virtual const hipVersionMap &getHipFunctionVersions() const = 0;
       virtual const hipChangedVersionMap &getHipChangedFunctionVersions() const { return hipChangedVersionMapEmpty; };
       virtual const cudaChangedVersionMap &getCudaChangedFunctionVersions() const { return cudaChangedVersionMapEmpty; };
+      virtual const cudaChangedVersionMap &getCudaChangedTypeVersions() const { return cudaChangedVersionMapEmpty; };
       virtual const versionMap &getTypeVersions() const = 0;
       virtual const hipVersionMap &getHipTypeVersions() const = 0;
       virtual const string &getAPI() const { return sHIP; }
       virtual const string &getSecondAPI() const { return sROC; }
       virtual const string &getJointAPI() const { return sEmpty; }
       virtual bool isJoint() const { return roc == joint && hasROC; }
-      virtual const string& getAdditionalMetaKeywords() const = 0;
+      virtual const string &getAdditionalMetaKeywords() const = 0;
       virtual const string &writeAdditionalMetaKeywords() const { return getAdditionalMetaKeywords(); }
       virtual void writeHeadMeta(const docType doc) {
           *streams[doc].get() << "<head>" << endl_tab;
@@ -269,11 +270,12 @@ namespace doc {
           *streams[doc].get() << endl << (format == full ? "**A** - Added; **D** - Deprecated; **C** - Changed; **R** - Removed; **E** - Experimental" : "**D** - Deprecated; **E** - Experimental") << endl << endl;
           unsigned int compact_only_cur_sec_num = 1;
           for (auto &s : getSections()) {
-            const functionMap &ftMap = isTypeSection(s.first, getSections()) ? getTypes() : getFunctions();
-            const versionMap &vMap = isTypeSection(s.first, getSections()) ? getTypeVersions() : getFunctionVersions();
-            const hipVersionMap &hMap = commonHipVersionMap.empty() ? (isTypeSection(s.first, getSections()) ? getHipTypeVersions() : getHipFunctionVersions()) : commonHipVersionMap;
+            bool isType = isTypeSection(s.first, getSections());
+            const functionMap &ftMap = isType ? getTypes() : getFunctions();
+            const versionMap &vMap = isType ? getTypeVersions() : getFunctionVersions();
+            const hipVersionMap &hMap = commonHipVersionMap.empty() ? ((isType) ? getHipTypeVersions() : getHipFunctionVersions()) : commonHipVersionMap;
             const hipChangedVersionMap &hChangedMap = getHipChangedFunctionVersions();
-            const cudaChangedVersionMap &cudaChangedMap = getCudaChangedFunctionVersions();
+            const cudaChangedVersionMap &cudaChangedMap = isType ? getCudaChangedTypeVersions() : getCudaChangedFunctionVersions();
             functionMap fMap;
             for (auto &f : ftMap) {
               if (f.second.apiSection == s.first) {
@@ -538,7 +540,7 @@ namespace doc {
       const typeMap &getTypes() const override { return CUDA_RUNTIME_TYPE_NAME_MAP; }
       const versionMap &getFunctionVersions() const override { return CUDA_RUNTIME_FUNCTION_VER_MAP; }
       const hipVersionMap &getHipFunctionVersions() const override { return HIP_RUNTIME_FUNCTION_VER_MAP; }
-      const cudaChangedVersionMap& getCudaChangedFunctionVersions() const override { return CUDA_RUNTIME_FUNCTION_CHANGED_VER_MAP; }
+      const cudaChangedVersionMap &getCudaChangedFunctionVersions() const override { return CUDA_RUNTIME_FUNCTION_CHANGED_VER_MAP; }
       const versionMap &getTypeVersions() const override { return CUDA_RUNTIME_TYPE_NAME_VER_MAP; }
       const hipVersionMap &getHipTypeVersions() const override { return HIP_RUNTIME_TYPE_NAME_VER_MAP; }
       const string &getName() const override { return sCUDA_RUNTIME; }
@@ -665,7 +667,7 @@ namespace doc {
     virtual ~ROCSOLVER() {}
   protected:
     const string sMetaKeywords = "SOLVER, cuSOLVER, rocSOLVER";
-    const string& getAdditionalMetaKeywords() const override { return sMetaKeywords; }
+    const string &getAdditionalMetaKeywords() const override { return sMetaKeywords; }
     const string &getAPI() const override { return sROC; }
     const string &getFileName(docType format) const override {
       switch (format) {
@@ -705,13 +707,13 @@ namespace doc {
 
   class ROCRAND : public RAND {
   public:
-      ROCRAND(const string& outDir) : RAND(outDir) { hasROC = false; isROC = true; }
+      ROCRAND(const string &outDir) : RAND(outDir) { hasROC = false; isROC = true; }
       virtual ~ROCRAND() {}
   protected:
       const string sMetaKeywords = "RAND, cuRAND, rocRAND";
       const string &getAdditionalMetaKeywords() const override { return sMetaKeywords; }
-      const string& getAPI() const override { return sROC; }
-      const string& getFileName(docType format) const override {
+      const string &getAPI() const override { return sROC; }
+      const string &getFileName(docType format) const override {
           switch (format) {
           case none:
           default: return sEmpty;
@@ -930,6 +932,8 @@ namespace doc {
       const typeMap &getTypes() const override { return CUDA_TENSOR_TYPE_NAME_MAP; }
       const versionMap &getFunctionVersions() const override { return CUDA_TENSOR_FUNCTION_VER_MAP; }
       const hipVersionMap &getHipFunctionVersions() const override { return HIP_TENSOR_FUNCTION_VER_MAP; }
+      const cudaChangedVersionMap &getCudaChangedFunctionVersions() const override { return CUDA_TENSOR_FUNCTION_CHANGED_VER_MAP; }
+      const cudaChangedVersionMap &getCudaChangedTypeVersions() const override { return CUDA_TENSOR_TYPE_CHANGED_VER_MAP; }
       const versionMap &getTypeVersions() const override { return CUDA_TENSOR_TYPE_NAME_VER_MAP; }
       const hipVersionMap &getHipTypeVersions() const override { return HIP_TENSOR_TYPE_NAME_VER_MAP; }
       const string &getName() const override { return sCUTENSOR; }
@@ -997,8 +1001,10 @@ namespace doc {
       docs.addDoc(&rocsparse);
       docs.addDoc(&rocsolver);
     }
-    DNN dnn(sOut);
-    docs.addDoc(&dnn);
+    if (HipDnnSupport) {
+      DNN dnn(sOut);
+      docs.addDoc(&dnn);
+    }
     FFT fft(sOut);
     docs.addDoc(&fft);
     SPARSE sparse(sOut);
