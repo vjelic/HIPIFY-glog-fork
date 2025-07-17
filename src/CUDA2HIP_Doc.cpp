@@ -932,6 +932,7 @@ namespace doc {
       const typeMap &getTypes() const override { return CUDA_TENSOR_TYPE_NAME_MAP; }
       const versionMap &getFunctionVersions() const override { return CUDA_TENSOR_FUNCTION_VER_MAP; }
       const hipVersionMap &getHipFunctionVersions() const override { return HIP_TENSOR_FUNCTION_VER_MAP; }
+      const hipChangedVersionMap &getHipChangedFunctionVersions() const override { return HIP_TENSOR_FUNCTION_CHANGED_VER_MAP; }
       const cudaChangedVersionMap &getCudaChangedFunctionVersions() const override { return CUDA_TENSOR_FUNCTION_CHANGED_VER_MAP; }
       const cudaChangedVersionMap &getCudaChangedTypeVersions() const override { return CUDA_TENSOR_TYPE_CHANGED_VER_MAP; }
       const versionMap &getTypeVersions() const override { return CUDA_TENSOR_TYPE_NAME_VER_MAP; }

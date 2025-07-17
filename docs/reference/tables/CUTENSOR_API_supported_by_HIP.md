@@ -197,7 +197,7 @@
 |`cutensorContract`|2.0.0.0| | | |`hiptensorContraction`|6.1.0| | | | |
 |`cutensorContractTrinary`|2.2.0.0| | | | | | | | | |
 |`cutensorContraction`|1.0.1.0| | |2.0.0.0|`hiptensorContraction`|6.1.0| | | | |
-|`cutensorCreate`|1.7.0.0| |2.0.0.0| |`hiptensorCreate`|5.7.0| | | | |
+|`cutensorCreate`|1.7.0.0| |2.0.0.0| |`hiptensorCreate`|5.7.0| |7.0.0| | |
 |`cutensorCreateContraction`|2.0.0.0| | | | | | | | | |
 |`cutensorCreateContractionTrinary`|2.2.0.0| | | | | | | | | |
 |`cutensorCreateElementwiseBinary`|2.0.0.0| | | | | | | | | |
@@ -207,7 +207,7 @@
 |`cutensorCreatePlanPreference`|2.0.0.0| | | | | | | | | |
 |`cutensorCreateReduction`|2.0.0.0| | | | | | | | | |
 |`cutensorCreateTensorDescriptor`|2.0.0.0| | | | | | | | | |
-|`cutensorDestroy`|1.7.0.0| | | |`hiptensorDestroy`|5.7.0| | | | |
+|`cutensorDestroy`|1.7.0.0| | | |`hiptensorDestroy`|5.7.0| |7.0.0| | |
 |`cutensorDestroyOperationDescriptor`|2.0.0.0| | | | | | | | | |
 |`cutensorDestroyPlan`|2.0.0.0| | | | | | | | | |
 |`cutensorDestroyPlanPreference`|2.0.0.0| | | | | | | | | |
@@ -218,9 +218,9 @@
 |`cutensorGetCudartVersion`|1.0.1.0| | | |`hiptensorGetHiprtVersion`|5.7.0| | | | |
 |`cutensorGetErrorString`|1.0.1.0| | | |`hiptensorGetErrorString`|5.7.0| | | | |
 |`cutensorGetVersion`|1.0.1.0| | | | | | | | | |
-|`cutensorHandleReadPlanCacheFromFile`|2.0.0.0| | | | | | | | | |
-|`cutensorHandleResizePlanCache`|2.0.0.0| | | | | | | | | |
-|`cutensorHandleWritePlanCacheToFile`|2.0.0.0| | | | | | | | | |
+|`cutensorHandleReadPlanCacheFromFile`|2.0.0.0| | | |`hiptensorHandleReadPlanCacheFromFile`|7.0.0| | | | |
+|`cutensorHandleResizePlanCache`|2.0.0.0| | | |`hiptensorHandleResizePlanCache`|7.0.0| | | | |
+|`cutensorHandleWritePlanCacheToFile`|2.0.0.0| | | |`hiptensorHandleWritePlanCacheToFile`|7.0.0| | | | |
 |`cutensorInitTensorDescriptor`|1.0.1.0| | |2.0.0.0|`hiptensorInitTensorDescriptor`|5.7.0| | | | |
 |`cutensorLoggerForceDisable`|1.3.2.0| | | |`hiptensorLoggerForceDisable`|5.7.0| | | | |
 |`cutensorLoggerOpenFile`|1.3.2.0| | | |`hiptensorLoggerOpenFile`|5.7.0| | | | |
@@ -253,8 +253,8 @@
 |`cutensorPermute`|2.0.0.0| | | | | | | | | |
 |`cutensorPlanGetAttribute`|2.0.0.0| | | | | | | | | |
 |`cutensorPlanPreferenceSetAttribute`|2.0.0.0| | | | | | | | | |
-|`cutensorReadKernelCacheFromFile`|2.0.0.0| | | | | | | | | |
+|`cutensorReadKernelCacheFromFile`|2.0.0.0| | | |`hiptensorReadKernelCacheFromFile`|7.0.0| | | | |
 |`cutensorReduce`|2.0.0.0| | | | | | | | | |
 |`cutensorReduction`|1.0.1.0| | |2.0.0.0|`hiptensorReduction`|6.3.0| | | | |
-|`cutensorWriteKernelCacheToFile`|2.0.0.0| | | | | | | | | |
+|`cutensorWriteKernelCacheToFile`|2.0.0.0| | | |`hiptensorWriteKernelCacheToFile`|7.0.0| | | | |
 

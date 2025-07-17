@@ -6575,6 +6575,9 @@ sub simpleSubstitutions {
     subst("cutensorDestroy", "hiptensorDestroy", "library");
     subst("cutensorGetCudartVersion", "hiptensorGetHiprtVersion", "library");
     subst("cutensorGetErrorString", "hiptensorGetErrorString", "library");
+    subst("cutensorHandleReadPlanCacheFromFile", "hiptensorHandleReadPlanCacheFromFile", "library");
+    subst("cutensorHandleResizePlanCache", "hiptensorHandleResizePlanCache", "library");
+    subst("cutensorHandleWritePlanCacheToFile", "hiptensorHandleWritePlanCacheToFile", "library");
     subst("cutensorInitTensorDescriptor", "hiptensorInitTensorDescriptor", "library");
     subst("cutensorLoggerForceDisable", "hiptensorLoggerForceDisable", "library");
     subst("cutensorLoggerOpenFile", "hiptensorLoggerOpenFile", "library");
@@ -6583,7 +6586,9 @@ sub simpleSubstitutions {
     subst("cutensorLoggerSetLevel", "hiptensorLoggerSetLevel", "library");
     subst("cutensorLoggerSetMask", "hiptensorLoggerSetMask", "library");
     subst("cutensorPermutation", "hiptensorPermutation", "library");
+    subst("cutensorReadKernelCacheFromFile", "hiptensorReadKernelCacheFromFile", "library");
     subst("cutensorReduction", "hiptensorReduction", "library");
+    subst("cutensorWriteKernelCacheToFile", "hiptensorWriteKernelCacheToFile", "library");
     subst("nvrtcAddNameExpression", "hiprtcAddNameExpression", "library");
     subst("nvrtcCompileProgram", "hiprtcCompileProgram", "library");
     subst("nvrtcCreateProgram", "hiprtcCreateProgram", "library");
@@ -10606,9 +10611,7 @@ sub warnRemovedFunctions {
     "libraryPropertyType_t",
     "libraryPropertyType",
     "gesvdjInfo",
-    "cutensorWriteKernelCacheToFile",
     "cutensorReduce",
-    "cutensorReadKernelCacheFromFile",
     "cutensorPlanPreferenceSetAttribute",
     "cutensorPlanGetAttribute",
     "cutensorPermute",
@@ -10650,9 +10653,6 @@ sub warnRemovedFunctions {
     "cutensorMgContractionDescriptor_s",
     "cutensorMgContraction",
     "cutensorMgAlgo_t",
-    "cutensorHandleWritePlanCacheToFile",
-    "cutensorHandleResizePlanCache",
-    "cutensorHandleReadPlanCacheFromFile",
     "cutensorGetVersion",
     "cutensorEstimateWorkspaceSize",
     "cutensorElementwiseTrinaryExecute",
@@ -14040,9 +14040,7 @@ sub warnHipOnlyUnsupportedFunctions {
 }
 
 @RocOnlyUnsupportedFunctions = (
-    "cutensorWriteKernelCacheToFile",
     "cutensorReduce",
-    "cutensorReadKernelCacheFromFile",
     "cutensorPlanPreferenceSetAttribute",
     "cutensorPlanGetAttribute",
     "cutensorPermute",
@@ -14084,9 +14082,6 @@ sub warnHipOnlyUnsupportedFunctions {
     "cutensorMgContractionDescriptor_s",
     "cutensorMgContraction",
     "cutensorMgAlgo_t",
-    "cutensorHandleWritePlanCacheToFile",
-    "cutensorHandleResizePlanCache",
-    "cutensorHandleReadPlanCacheFromFile",
     "cutensorGetVersion",
     "cutensorEstimateWorkspaceSize",
     "cutensorElementwiseTrinaryExecute",
