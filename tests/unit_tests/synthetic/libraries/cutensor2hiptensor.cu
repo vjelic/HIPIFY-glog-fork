@@ -57,6 +57,7 @@ int main() {
   const int32_t *modeB = nullptr;
   const void *C = nullptr;
   const int32_t *modeC = nullptr;
+  const void* gamma = nullptr;
   void *D = nullptr;
   const int32_t *modeD = nullptr;
   void *workspace = nullptr;
@@ -72,7 +73,7 @@ int main() {
   uint64_t workspaceSizeEstimate = 0;
 
 #if CUTENSOR_MAJOR >= 1
-  // CHECK: hiptensorOperator_t tensorOperator_t, OpA, OpB, OpC;
+  // CHECK: hiptensorOperator_t tensorOperator_t, OpA, OpB, OpC, OpAB, OpABC, OpAC, OpReduce;
   // CHECK-NEXT hiptensorOperator_t TENSOR_OP_IDENTITY = HIPTENSOR_OP_IDENTITY;
   // CHECK-NEXT hiptensorOperator_t TENSOR_OP_SQRT = HIPTENSOR_OP_SQRT;
   // CHECK-NEXT hiptensorOperator_t TENSOR_OP_RELU = HIPTENSOR_OP_RELU;
@@ -102,7 +103,7 @@ int main() {
   // CHECK-NEXT hiptensorOperator_t TENSOR_OP_MAX = HIPTENSOR_OP_MAX;
   // CHECK-NEXT hiptensorOperator_t TENSOR_OP_MIN = HIPTENSOR_OP_MIN;
   // CHECK-NEXT hiptensorOperator_t TENSOR_OP_UNKNOWN = HIPTENSOR_OP_UNKNOWN;
-  cutensorOperator_t tensorOperator_t, OpA, OpB, OpC;
+  cutensorOperator_t tensorOperator_t, OpA, OpB, OpC, OpAB, OpABC, OpAC, OpReduce;
   cutensorOperator_t TENSOR_OP_IDENTITY = CUTENSOR_OP_IDENTITY;
   cutensorOperator_t TENSOR_OP_SQRT = CUTENSOR_OP_SQRT;
   cutensorOperator_t TENSOR_OP_RELU = CUTENSOR_OP_RELU;
@@ -240,11 +241,6 @@ int main() {
   // HIP: hiptensorStatus_t hiptensorPermutation(const hiptensorHandle_t* handle, const void* alpha, const void* A, const hiptensorTensorDescriptor_t* descA, const int32_t modeA[], void* B, const hiptensorTensorDescriptor_t* descB, const int32_t modeB[], const hipDataType typeScalar, const hipStream_t stream);
   // CHECK: status = hiptensorPermutation(handle_c, alpha, A, descA, modeA, B, descB, modeB, dataType, stream_t);
   status = cutensorPermutation(handle_c, alpha, A, descA, modeA, B, descB, modeB, dataType, stream_t);
-
-  // CUDA: cutensorStatus_t cutensorContraction(const cutensorHandle_t* handle, const cutensorContractionPlan_t* plan, const void* alpha, const void* A, const void* B, const void* beta, const void* C, void* D, void *workspace, uint64_t workspaceSize, cudaStream_t stream);
-  // HIP: hiptensorStatus_t hiptensorContraction(const hiptensorHandle_t* handle, const hiptensorContractionPlan_t* plan, const void* alpha, const void* A, const void* B, const void* beta, const void* C, void* D, void* workspace, uint64_t workspaceSize, hipStream_t stream);
-  // CHECK: status = hiptensorContraction(handle_c, plan_c, alpha, A, B_1, beta, C, D, workspace, workspaceSize, stream_t);
-  status = cutensorContraction(handle_c, plan_c, alpha, A, B_1, beta, C, D, workspace, workspaceSize, stream_t);
 
   // CUDA: cutensorStatus_t cutensorReduction(const cutensorHandle_t* handle, const void* alpha, const void* A, const cutensorTensorDescriptor_t* descA, const int32_t modeA[], const void* beta, const void* C, const cutensorTensorDescriptor_t* descC, const int32_t modeC[], void* D, const cutensorTensorDescriptor_t* descD, const int32_t modeD[], cutensorOperator_t opReduce, cutensorComputeType_t typeCompute, void *workspace, uint64_t workspaceSize, cudaStream_t stream);
   // HIP: hiptensorStatus_t hiptensorReduction(const hiptensorHandle_t* handle, const void* alpha, const void* A, const hiptensorTensorDescriptor_t* descA, const int32_t modeA[], const void* beta, const void* C, const hiptensorTensorDescriptor_t* descC, const int32_t modeC[], void* D, const hiptensorTensorDescriptor_t* descD,  const int32_t modeD[], hiptensorOperator_t opReduce, hiptensorComputeType_t typeCompute, void* workspace, uint64_t workspaceSize, hipStream_t stream);
@@ -412,8 +408,8 @@ int main() {
   cutensorOperationDescriptor_t tensorOperationDescriptor_t;
 
   // CUDA: cutensorStatus_t cutensorContract(const cutensorHandle_t handle, const cutensorPlan_t plan, const void* alpha, const void *A, const void *B, const void* beta, const void *C, void *D, void* workspace, uint64_t workspaceSize, cudaStream_t stream);
-  // HIP: hiptensorStatus_t hiptensorContraction(const hiptensorHandle_t* handle, const hiptensorContractionPlan_t* plan, const void* alpha, const void* A, const void* B, const void* beta, const void* C, void* D, void* workspace, uint64_t workspaceSize, hipStream_t stream);
-  // CHECK: status = hiptensorContraction(handle, tensorPlan_t, alpha, A, B_1, beta, C, D, workspace,  workspaceSize2, stream_t);
+  // HIP: hiptensorStatus_t hiptensorContract(const hiptensorHandle_t handle, const hiptensorPlan_t plan, const void* alpha, const void* A, const void* B, const void* beta, const void* C, void* D, void* workspace, uint64_t workspaceSize, hipStream_t stream);
+  // CHECK: status = hiptensorContract(handle, tensorPlan_t, alpha, A, B_1, beta, C, D, workspace,  workspaceSize2, stream_t);
   status = cutensorContract(handle, tensorPlan_t, alpha, A, B_1, beta, C, D, workspace, workspaceSize2, stream_t);
 
   // CUDA: cutensorStatus_t cutensorCreate(cutensorHandle_t* handle);
@@ -523,6 +519,41 @@ int main() {
   // HIP: hiptensorStatus_t hiptensorDestroyPlan(hiptensorPlan_t plan);
   // CHECK: status = hiptensorDestroyPlan(tensorPlan_t);
   status = cutensorDestroyPlan(tensorPlan_t);
+
+  // CUDA: cutensorStatus_t cutensorPermute(const cutensorHandle_t handle, const cutensorPlan_t plan, const void* alpha, const void* A, void* B, const cudaStream_t stream);
+  // HIP: hiptensorStatus_t hiptensorPermute(const hiptensorHandle_t handle, const hiptensorPlan_t plan, const void* alpha, const void* A, void* B, const hipStream_t stream);
+  // CHECK: status = hiptensorPermute(handle, tensorPlan_t, alpha, A, B, stream_t);
+  status = cutensorPermute(handle, tensorPlan_t, alpha, A, B, stream_t);
+
+  // CUDA: cutensorStatus_t cutensorCreateElementwiseBinary(const cutensorHandle_t handle, cutensorOperationDescriptor_t* desc, const cutensorTensorDescriptor_t descA, const int32_t modeA[], cutensorOperator_t opA, const cutensorTensorDescriptor_t descC, const int32_t modeC[], cutensorOperator_t opC, const cutensorTensorDescriptor_t descD, const int32_t modeD[], cutensorOperator_t opAC, const cutensorComputeDescriptor_t descCompute);
+  // HIP: hiptensorStatus_t hiptensorCreateElementwiseBinary(const hiptensorHandle_t handle, hiptensorOperationDescriptor_t* desc, const hiptensorTensorDescriptor_t descA, const int32_t modeA[], hiptensorOperator_t opA, const hiptensorTensorDescriptor_t descC, const int32_t modeC[], hiptensorOperator_t opC, const hiptensorTensorDescriptor_t descD, const int32_t modeD[], hiptensorOperator_t opAC, const hiptensorComputeDescriptor_t descCompute);
+  // CHECK: status = hiptensorCreateElementwiseBinary(handle, &tensorOperationDescriptor_t, *descA, modeA, OpA, *descC, modeC, OpC, *descD, modeD, OpAC, tensorComputeDescriptor_t);
+  status = cutensorCreateElementwiseBinary(handle, &tensorOperationDescriptor_t, *descA, modeA, OpA, *descC, modeC, OpC, *descD, modeD, OpAC, tensorComputeDescriptor_t);
+
+  // CUDA: cutensorStatus_t cutensorElementwiseBinaryExecute(const cutensorHandle_t handle, const cutensorPlan_t plan, const void* alpha, const void* A, const void* gamma, const void* C, void* D, cudaStream_t stream);
+  // HIP: hiptensorStatus_t hiptensorElementwiseBinaryExecute(const hiptensorHandle_t handle, const hiptensorPlan_t plan, const void* alpha, const void* A, const void* gamma, const void* C, void* D, hipStream_t stream);
+  // CHECK: status = hiptensorElementwiseBinaryExecute(handle, tensorPlan_t, alpha, A, gamma, C, D, stream_t);
+  status = cutensorElementwiseBinaryExecute(handle, tensorPlan_t, alpha, A, gamma, C, D, stream_t);
+
+  // CUDA: cutensorStatus_t cutensorCreateElementwiseTrinary(const cutensorHandle_t handle, cutensorOperationDescriptor_t* desc, const cutensorTensorDescriptor_t descA, const int32_t modeA[], cutensorOperator_t opA, const cutensorTensorDescriptor_t descB, const int32_t modeB[], cutensorOperator_t opB, const cutensorTensorDescriptor_t descC, const int32_t modeC[], cutensorOperator_t opC, const cutensorTensorDescriptor_t descD, const int32_t modeD[], cutensorOperator_t opAB, cutensorOperator_t opABC, const cutensorComputeDescriptor_t descCompute);
+  // HIP: hiptensorStatus_t hiptensorCreateElementwiseTrinary(const hiptensorHandle_t handle, hiptensorOperationDescriptor_t* desc, const hiptensorTensorDescriptor_t descA, const int32_t modeA[], hiptensorOperator_t opA, const hiptensorTensorDescriptor_t descB, const int32_t modeB[], hiptensorOperator_t opB, const hiptensorTensorDescriptor_t descC, const int32_t modeC[], hiptensorOperator_t opC, const hiptensorTensorDescriptor_t descD, const int32_t modeD[], hiptensorOperator_t opAB, hiptensorOperator_t opABC, const hiptensorComputeDescriptor_t descCompute);
+  // CHECK: status = hiptensorCreateElementwiseTrinary(handle, &tensorOperationDescriptor_t, *descA, modeA, OpA, *descB, modeB, OpB, *descC, modeC, OpC, *descD, modeD, OpAB, OpABC, tensorComputeDescriptor_t);
+  status = cutensorCreateElementwiseTrinary(handle, &tensorOperationDescriptor_t, *descA, modeA, OpA, *descB, modeB, OpB, *descC, modeC, OpC, *descD, modeD, OpAB, OpABC, tensorComputeDescriptor_t);
+
+  // CUDA: cutensorStatus_t cutensorElementwiseTrinaryExecute(const cutensorHandle_t handle, const cutensorPlan_t plan, const void* alpha, const void* A, const void* beta, const void* B, const void* gamma, const void* C, void* D, cudaStream_t stream);
+  // HIP: hiptensorStatus_t hiptensorElementwiseTrinaryExecute(const hiptensorHandle_t handle, const hiptensorPlan_t plan, const void* alpha, const void* A, const void* beta, const void* B, const void* gamma, const void* C, void* D, hipStream_t stream);
+  // CHECK: status = hiptensorElementwiseTrinaryExecute(handle, tensorPlan_t, alpha, A, beta, B, gamma, C, D, stream_t);
+  status = cutensorElementwiseTrinaryExecute(handle, tensorPlan_t, alpha, A, beta, B, gamma, C, D, stream_t);
+
+  // CUDA: cutensorStatus_t cutensorCreateReduction(const cutensorHandle_t handle, cutensorOperationDescriptor_t* desc, const cutensorTensorDescriptor_t descA, const int32_t modeA[], cutensorOperator_t opA, const cutensorTensorDescriptor_t descC, const int32_t modeC[], cutensorOperator_t opC, const cutensorTensorDescriptor_t descD, const int32_t modeD[], cutensorOperator_t opReduce, const cutensorComputeDescriptor_t descCompute);
+  // HIP: hiptensorStatus_t hiptensorCreateReduction(const hiptensorHandle_t handle, hiptensorOperationDescriptor_t* desc, const hiptensorTensorDescriptor_t descA, const int32_t modeA[], hiptensorOperator_t opA, const hiptensorTensorDescriptor_t descC, const int32_t modeC[], hiptensorOperator_t opC, const hiptensorTensorDescriptor_t descD, const int32_t modeD[], hiptensorOperator_t opReduce, const hiptensorComputeDescriptor_t descCompute);
+  // CHECK: status = hiptensorCreateReduction(handle, &tensorOperationDescriptor_t, *descA, modeA, OpA, *descC, modeC, OpC, *descD, modeD, OpReduce, tensorComputeDescriptor_t);
+  status = cutensorCreateReduction(handle, &tensorOperationDescriptor_t, *descA, modeA, OpA, *descC, modeC, OpC, *descD, modeD, OpReduce, tensorComputeDescriptor_t);
+
+  // CUDA: cutensorStatus_t cutensorReduce(const cutensorHandle_t handle, const cutensorPlan_t plan, const void* alpha, const void* A, const void* beta, const void* C, void* D, void* workspace, uint64_t workspaceSize, cudaStream_t stream);
+  // HIP: hiptensorStatus_t hiptensorReduce(const hiptensorHandle_t handle, const hiptensorPlan_t plan, const void* alpha, const void* A, const void* beta, const void* C, void* D, void* workspace, uint64_t workspaceSize, hipStream_t stream);
+  // CHECK: status = hiptensorReduce(handle, tensorPlan_t, alpha, A, beta, C, D, workspace, workspaceSize, stream_t);
+  status = cutensorReduce(handle, tensorPlan_t, alpha, A, beta, C, D, workspace, workspaceSize, stream_t);
 #endif
 
   return 0;

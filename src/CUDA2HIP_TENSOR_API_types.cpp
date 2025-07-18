@@ -231,7 +231,8 @@ const std::map<llvm::StringRef, hipCounter> CUDA_TENSOR_TYPE_NAME_MAP {
 
   {"cutensorComputeDescriptor",                        {"",                                                         "", CONV_TYPE, API_TENSOR, 1, UNSUPPORTED}},
   // NOTE: cutensorComputeDescriptor_t is a pointer to struct cutensorComputeDescriptor, whereas hiptensorComputeDescriptor_t is enum
-  // NOTE: Hipification of cutensorCreateContraction -> hiptensorCreateContraction, cutensorCreatePermutation -> hiptensorCreatePermutation are incorrect
+  // NOTE: Hipification of cutensorCreateContraction -> hiptensorCreateContraction, cutensorCreatePermutation -> hiptensorCreatePermutation,
+  //       cutensorCreateElementwiseBinary -> hiptensorCreateElementwiseBinary are incorrect
   // TODO: File a corresponding ticket to the Tensor team
   {"cutensorComputeDescriptor_t",                      {"hiptensorComputeDescriptor_t",                             "", CONV_TYPE, API_TENSOR, 1, HIP_EXPERIMENTAL}},
 };
