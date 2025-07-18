@@ -2635,7 +2635,7 @@ bool HipifyAction::cubNamespacePrefix(const mat::MatchFinder::MatchResult &Resul
     if (!et) return false;
     const clang::NestedNameSpecifier *nns = et->getQualifier();
     if (!nns) return false;
-    const clang::NamespaceDecl *nsd = nns->getAsNamespace();
+    const clang::NamespaceBaseDecl *nsd = nns->getAsNamespace();
     if (!nsd) return false;
     const clang::TypeSourceInfo *si = decl->getTypeSourceInfo();
     const clang::TypeLoc tloc = si->getTypeLoc();
@@ -2671,7 +2671,7 @@ bool HipifyAction::cubFunctionTemplateDecl(const mat::MatchFinder::MatchResult &
       if (!et) continue;
       const clang::NestedNameSpecifier *nns = et->getQualifier();
       if (!nns) continue;
-      const clang::NamespaceDecl *nsd = nns->getAsNamespace();
+      const clang::NamespaceBaseDecl *nsd = nns->getAsNamespace();
       if (!nsd) continue;
       const clang::SourceRange sr = valueDecl->getSourceRange();
       std::string name = nsd->getDeclName().getAsString();
