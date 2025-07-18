@@ -6571,19 +6571,24 @@ sub simpleSubstitutions {
     subst("cusparseZnnz", "hipsparseZnnz", "library");
     subst("cusparseZnnz_compress", "hipsparseZnnz_compress", "library");
     subst("cusparseZsctr", "hipsparseZsctr", "library");
-    subst("cutensorContract", "hiptensorContraction", "library");
-    subst("cutensorContraction", "hiptensorContraction", "library");
+    subst("cutensorContract", "hiptensorContract", "library");
+    subst("cutensorContraction", "", "library");
     subst("cutensorCreate", "hiptensorCreate", "library");
     subst("cutensorCreateContraction", "hiptensorCreateContraction", "library");
+    subst("cutensorCreateElementwiseBinary", "hiptensorCreateElementwiseBinary", "library");
+    subst("cutensorCreateElementwiseTrinary", "hiptensorCreateElementwiseTrinary", "library");
     subst("cutensorCreatePermutation", "hiptensorCreatePermutation", "library");
     subst("cutensorCreatePlan", "hiptensorCreatePlan", "library");
     subst("cutensorCreatePlanPreference", "hiptensorCreatePlanPreference", "library");
+    subst("cutensorCreateReduction", "hiptensorCreateReduction", "library");
     subst("cutensorCreateTensorDescriptor", "hiptensorCreateTensorDescriptor", "library");
     subst("cutensorDestroy", "hiptensorDestroy", "library");
     subst("cutensorDestroyOperationDescriptor", "hiptensorDestroyOperationDescriptor", "library");
     subst("cutensorDestroyPlan", "hiptensorDestroyPlan", "library");
     subst("cutensorDestroyPlanPreference", "hiptensorDestroyPlanPreference", "library");
     subst("cutensorDestroyTensorDescriptor", "hiptensorDestroyTensorDescriptor", "library");
+    subst("cutensorElementwiseBinaryExecute", "hiptensorElementwiseBinaryExecute", "library");
+    subst("cutensorElementwiseTrinaryExecute", "hiptensorElementwiseTrinaryExecute", "library");
     subst("cutensorEstimateWorkspaceSize", "hiptensorEstimateWorkspaceSize", "library");
     subst("cutensorGetCudartVersion", "hiptensorGetHiprtVersion", "library");
     subst("cutensorGetErrorString", "hiptensorGetErrorString", "library");
@@ -6600,9 +6605,11 @@ sub simpleSubstitutions {
     subst("cutensorOperationDescriptorGetAttribute", "hiptensorOperationDescriptorGetAttribute", "library");
     subst("cutensorOperationDescriptorSetAttribute", "hiptensorOperationDescriptorSetAttribute", "library");
     subst("cutensorPermutation", "hiptensorPermutation", "library");
+    subst("cutensorPermute", "hiptensorPermute", "library");
     subst("cutensorPlanGetAttribute", "hiptensorPlanGetAttribute", "library");
     subst("cutensorPlanPreferenceSetAttribute", "hiptensorPlanPreferenceSetAttribute", "library");
     subst("cutensorReadKernelCacheFromFile", "hiptensorReadKernelCacheFromFile", "library");
+    subst("cutensorReduce", "hiptensorReduce", "library");
     subst("cutensorReduction", "hiptensorReduction", "library");
     subst("cutensorWriteKernelCacheToFile", "hiptensorWriteKernelCacheToFile", "library");
     subst("nvrtcAddNameExpression", "hiprtcAddNameExpression", "library");
@@ -10627,8 +10634,6 @@ sub warnRemovedFunctions {
     "libraryPropertyType_t",
     "libraryPropertyType",
     "gesvdjInfo",
-    "cutensorReduce",
-    "cutensorPermute",
     "cutensorMgTensorDescriptor_t",
     "cutensorMgTensorDescriptor_s",
     "cutensorMgHostDevice_t",
@@ -10666,11 +10671,6 @@ sub warnRemovedFunctions {
     "cutensorMgContraction",
     "cutensorMgAlgo_t",
     "cutensorGetVersion",
-    "cutensorElementwiseTrinaryExecute",
-    "cutensorElementwiseBinaryExecute",
-    "cutensorCreateReduction",
-    "cutensorCreateElementwiseTrinary",
-    "cutensorCreateElementwiseBinary",
     "cutensorCreateContractionTrinary",
     "cutensorContractTrinary",
     "cutensorComputeDescriptor",
@@ -14043,8 +14043,6 @@ sub warnHipOnlyUnsupportedFunctions {
 }
 
 @RocOnlyUnsupportedFunctions = (
-    "cutensorReduce",
-    "cutensorPermute",
     "cutensorMgTensorDescriptor_t",
     "cutensorMgTensorDescriptor_s",
     "cutensorMgHostDevice_t",
@@ -14082,11 +14080,6 @@ sub warnHipOnlyUnsupportedFunctions {
     "cutensorMgContraction",
     "cutensorMgAlgo_t",
     "cutensorGetVersion",
-    "cutensorElementwiseTrinaryExecute",
-    "cutensorElementwiseBinaryExecute",
-    "cutensorCreateReduction",
-    "cutensorCreateElementwiseTrinary",
-    "cutensorCreateElementwiseBinary",
     "cutensorCreateContractionTrinary",
     "cutensorContractTrinary",
     "cutensorComputeDescriptor",
