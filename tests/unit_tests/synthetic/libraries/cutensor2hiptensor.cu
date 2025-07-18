@@ -69,6 +69,7 @@ int main() {
   int32_t level = 0;
   int32_t mask = 0;
   void *buf = nullptr;
+  uint64_t workspaceSizeEstimate = 0;
 
 #if CUTENSOR_MAJOR >= 1
   // CHECK: hiptensorOperator_t tensorOperator_t, OpA, OpB, OpC;
@@ -482,6 +483,46 @@ int main() {
   // HIP: hiptensorStatus_t hiptensorOperationDescriptorGetAttribute(const hiptensorHandle_t handle, hiptensorOperationDescriptor_t desc, hiptensorOperationDescriptorAttribute_t attr, void* buf, size_t sizeInBytes);
   // CHECK: status = hiptensorOperationDescriptorGetAttribute(handle, tensorOperationDescriptor_t, tensorOperationDescriptorAttribute_t, buf, sizeInBytes);
   status = cutensorOperationDescriptorGetAttribute(handle, tensorOperationDescriptor_t, tensorOperationDescriptorAttribute_t, buf, sizeInBytes);
+
+  // CUDA: cutensorStatus_t cutensorCreatePermutation(const cutensorHandle_t handle, cutensorOperationDescriptor_t* desc, const cutensorTensorDescriptor_t descA, const int32_t modeA[], cutensorOperator_t opA, const cutensorTensorDescriptor_t descB, const int32_t modeB[], const cutensorComputeDescriptor_t descCompute);
+  // HIP: hiptensorStatus_t hiptensorCreatePermutation(const hiptensorHandle_t handle, hiptensorOperationDescriptor_t* desc, const hiptensorTensorDescriptor_t descA, const int32_t modeA[], hiptensorOperator_t opA, const hiptensorTensorDescriptor_t descB, const int32_t modeB[], const hiptensorComputeDescriptor_t descCompute);
+  // CHECK: status = hiptensorCreatePermutation(handle, &tensorOperationDescriptor_t, *descA, modeA, OpA, *descB, modeB, tensorComputeDescriptor_t);
+  status = cutensorCreatePermutation(handle, &tensorOperationDescriptor_t, *descA, modeA, OpA, *descB, modeB, tensorComputeDescriptor_t);
+
+  // CUDA: cutensorStatus_t cutensorCreatePlanPreference(const cutensorHandle_t handle, cutensorPlanPreference_t* pref, cutensorAlgo_t algo, cutensorJitMode_t jitMode);
+  // HIP: hiptensorStatus_t hiptensorCreatePlanPreference(const hiptensorHandle_t handle, hiptensorPlanPreference_t* pref, hiptensorAlgo_t algo, hiptensorJitMode_t jitMode);
+  // CHECK: status = hiptensorCreatePlanPreference(handle, &tensorPlanPreference_t, tensorAlgo_t, tensorJitMode_t);
+  status = cutensorCreatePlanPreference(handle, &tensorPlanPreference_t, tensorAlgo_t, tensorJitMode_t);
+
+  // CUDA: cutensorStatus_t cutensorDestroyPlanPreference(cutensorPlanPreference_t pref);
+  // HIP: hiptensorStatus_t hiptensorDestroyPlanPreference(hiptensorPlanPreference_t pref);
+  // CHECK: status = hiptensorDestroyPlanPreference(tensorPlanPreference_t);
+  status = cutensorDestroyPlanPreference(tensorPlanPreference_t);
+
+  // CUDA: cutensorStatus_t cutensorPlanPreferenceSetAttribute(const cutensorHandle_t handle, cutensorPlanPreference_t pref, cutensorPlanPreferenceAttribute_t attr, const void* buf, size_t sizeInBytes);
+  // HIP: hiptensorStatus_t hiptensorPlanPreferenceSetAttribute(const hiptensorHandle_t handle, hiptensorPlanPreference_t pref, hiptensorPlanPreferenceAttribute_t attr, const void* buf, size_t sizeInBytes);
+  // CHECK: status = hiptensorPlanPreferenceSetAttribute(handle, tensorPlanPreference_t, tensorPlanPreferenceAttribute_t, buf, sizeInBytes);
+  status = cutensorPlanPreferenceSetAttribute(handle, tensorPlanPreference_t, tensorPlanPreferenceAttribute_t, buf, sizeInBytes);
+
+  // CUDA: cutensorStatus_t cutensorPlanGetAttribute(const cutensorHandle_t handle, const cutensorPlan_t plan, cutensorPlanAttribute_t attr, void* buf, size_t sizeInBytes);
+  // HIP: hiptensorStatus_t hiptensorPlanGetAttribute(const hiptensorHandle_t  handle, const hiptensorPlan_t plan, hiptensorPlanAttribute_t attr, void* buf, size_t sizeInBytes);
+  // CHECK: status = hiptensorPlanGetAttribute(handle, tensorPlan_t, tensorPlanAttribute_t, buf, sizeInBytes);
+  status = cutensorPlanGetAttribute(handle, tensorPlan_t, tensorPlanAttribute_t, buf, sizeInBytes);
+
+  // CUDA: cutensorStatus_t cutensorEstimateWorkspaceSize(const cutensorHandle_t handle, const cutensorOperationDescriptor_t desc, const cutensorPlanPreference_t planPref, const cutensorWorksizePreference_t workspacePref, uint64_t* workspaceSizeEstimate);
+  // HIP: hiptensorStatus_t hiptensorEstimateWorkspaceSize(const hiptensorHandle_t handle, const hiptensorOperationDescriptor_t desc, const hiptensorPlanPreference_t planPref, const hiptensorWorksizePreference_t workspacePref, uint64_t* workspaceSizeEstimate);
+  // CHECK: status = hiptensorEstimateWorkspaceSize(handle, tensorOperationDescriptor_t, tensorPlanPreference_t, tensorWorksizePreference_t, &workspaceSizeEstimate);
+  status = cutensorEstimateWorkspaceSize(handle, tensorOperationDescriptor_t, tensorPlanPreference_t, tensorWorksizePreference_t, &workspaceSizeEstimate);
+
+  // CUDA: cutensorStatus_t cutensorCreatePlan(const cutensorHandle_t handle, cutensorPlan_t* plan, const cutensorOperationDescriptor_t desc, const cutensorPlanPreference_t pref, uint64_t workspaceSizeLimit);
+  // HIP: hiptensorStatus_t hiptensorCreatePlan(const hiptensorHandle_t handle, hiptensorPlan_t* plan, const hiptensorOperationDescriptor_t desc, const hiptensorPlanPreference_t pref, uint64_t workspaceSizeLimit);
+  // CHECK: status = hiptensorCreatePlan(handle, &tensorPlan_t, tensorOperationDescriptor_t, tensorPlanPreference_t, workspaceSizeEstimate);
+  status = cutensorCreatePlan(handle, &tensorPlan_t, tensorOperationDescriptor_t, tensorPlanPreference_t, workspaceSizeEstimate);
+
+  // CUDA: cutensorStatus_t cutensorDestroyPlan(cutensorPlan_t plan);
+  // HIP: hiptensorStatus_t hiptensorDestroyPlan(hiptensorPlan_t plan);
+  // CHECK: status = hiptensorDestroyPlan(tensorPlan_t);
+  status = cutensorDestroyPlan(tensorPlan_t);
 #endif
 
   return 0;
