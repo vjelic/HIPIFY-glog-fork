@@ -2633,14 +2633,11 @@ bool HipifyAction::cubNamespacePrefix(const mat::MatchFinder::MatchResult &Resul
     if (!t) return false;
     const clang::ElaboratedType *et = t->getAs<clang::ElaboratedType>();
     if (!et) return false;
-    const clang::NestedNameSpecifier *nns = et->getQualifier();
-    if (!nns) return false;
-    const clang::NamespaceDecl *nsd = nns->getAsNamespace();
-    if (!nsd) return false;
+    std::string name = llcompat::getNamespaceDeclName(et->getQualifier());
+    if (name.empty()) return false;
     const clang::TypeSourceInfo *si = decl->getTypeSourceInfo();
     const clang::TypeLoc tloc = si->getTypeLoc();
     const clang::SourceRange sr = tloc.getSourceRange();
-    std::string name = nsd->getDeclName().getAsString();
     FindAndReplace(name, GetSubstrLocation(name, sr), CUDA_CUB_NAMESPACE_MAP);
     return true;
   }
@@ -2669,12 +2666,9 @@ bool HipifyAction::cubFunctionTemplateDecl(const mat::MatchFinder::MatchResult &
       if (!t) continue;
       const clang::ElaboratedType *et = t->getAs<clang::ElaboratedType>();
       if (!et) continue;
-      const clang::NestedNameSpecifier *nns = et->getQualifier();
-      if (!nns) continue;
-      const clang::NamespaceDecl *nsd = nns->getAsNamespace();
-      if (!nsd) continue;
+      std::string name = llcompat::getNamespaceDeclName(et->getQualifier());
+      if (name.empty()) return false;
       const clang::SourceRange sr = valueDecl->getSourceRange();
-      std::string name = nsd->getDeclName().getAsString();
       FindAndReplace(name, GetSubstrLocation(name, sr), CUDA_CUB_NAMESPACE_MAP);
       ret = true;
     }
