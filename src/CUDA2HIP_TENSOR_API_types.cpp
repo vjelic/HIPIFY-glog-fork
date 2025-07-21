@@ -228,6 +228,13 @@ const std::map<llvm::StringRef, hipCounter> CUDA_TENSOR_TYPE_NAME_MAP {
 
   {"cutensorPlanPreference_t",                         {"hiptensorPlanPreference_t",                                "", CONV_TYPE, API_TENSOR, 1, HIP_EXPERIMENTAL}},
   {"cutensorPlanPreference",                           {"hiptensorPlanPreference",                                  "", CONV_TYPE, API_TENSOR, 1, HIP_EXPERIMENTAL}},
+
+  {"cutensorComputeDescriptor",                        {"",                                                         "", CONV_TYPE, API_TENSOR, 1, UNSUPPORTED}},
+  // NOTE: cutensorComputeDescriptor_t is a pointer to struct cutensorComputeDescriptor, whereas hiptensorComputeDescriptor_t is enum
+  // NOTE: Hipification of cutensorCreateContraction -> hiptensorCreateContraction, cutensorCreatePermutation -> hiptensorCreatePermutation,
+  //       cutensorCreateElementwiseBinary -> hiptensorCreateElementwiseBinary are incorrect
+  // TODO: File a corresponding ticket to the Tensor team
+  {"cutensorComputeDescriptor_t",                      {"hiptensorComputeDescriptor_t",                             "", CONV_TYPE, API_TENSOR, 1, HIP_EXPERIMENTAL}},
 };
 
 const std::map<llvm::StringRef, cudaAPIversions> CUDA_TENSOR_TYPE_NAME_VER_MAP {
@@ -405,6 +412,8 @@ const std::map<llvm::StringRef, cudaAPIversions> CUDA_TENSOR_TYPE_NAME_VER_MAP {
   {"cutensorPlanPreference_t",                         {CUTENSOR_2000, CUDA_0,        CUDA_0        }},
   {"cutensorOperationDescriptor_t",                    {CUTENSOR_2000, CUDA_0,        CUDA_0        }},
   {"cutensorOperationDescriptor",                      {CUTENSOR_2000, CUDA_0,        CUDA_0        }},
+  {"cutensorComputeDescriptor_t",                      {CUTENSOR_2000, CUDA_0,        CUDA_0        }},
+  {"cutensorComputeDescriptor",                        {CUTENSOR_2000, CUDA_0,        CUDA_0        }},
 };
 
 const std::map<llvm::StringRef, hipAPIversions> HIP_TENSOR_TYPE_NAME_VER_MAP {
@@ -534,4 +543,8 @@ const std::map<llvm::StringRef, hipAPIversions> HIP_TENSOR_TYPE_NAME_VER_MAP {
   {"hiptensorOperationDescriptor_t",                   {HIP_7000,      HIP_0,         HIP_0,        HIP_LATEST}},
   {"hiptensorOperationDescriptor",                     {HIP_7000,      HIP_0,         HIP_0,        HIP_LATEST}},
   {"hiptensorTensorDescriptor",                        {HIP_7000,      HIP_0,         HIP_0,        HIP_LATEST}},
+};
+
+const std::map<llvm::StringRef, cudaAPIChangedVersions> CUDA_TENSOR_TYPE_CHANGED_VER_MAP {
+  {"cutensorAutotuneMode_t",                           {CUTENSOR_2000}},
 };

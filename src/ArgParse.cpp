@@ -220,6 +220,12 @@ cl::opt<std::string> ClangResourceDir("clang-resource-directory",
   cl::ZeroOrMore,
   cl::cat(ToolTemplateCategory));
 
+cl::opt<bool> HipDnnSupport("hipdnn",
+  cl::desc("Enable/disable hipDNN hipification support; disabled by default"),
+  cl::value_desc("hipdnn"),
+  cl::init(false),
+  cl::cat(ToolTemplateCategory));
+
 cl::extrahelp CommonHelp(ct::CommonOptionsParser::HelpMessage);
 
 const std::vector<std::string> hipifyOptions {
@@ -248,6 +254,7 @@ const std::vector<std::string> hipifyOptions {
   std::string(NoWarningsUndocumented.ArgStr),
   std::string(HipifyAMAP.ArgStr),
   std::string(ClangResourceDir.ArgStr),
+  std::string(HipDnnSupport.ArgStr),
 };
 
 const std::vector<std::string> hipifyOptionsWithTwoArgs {
