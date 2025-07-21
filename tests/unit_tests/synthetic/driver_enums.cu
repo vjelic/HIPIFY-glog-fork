@@ -1189,6 +1189,15 @@ int main() {
 
   // CHECK: hipStreamBatchMemOpType STREAM_MEM_OP_BARRIER = hipStreamMemOpBarrier;
   CUstreamBatchMemOpType STREAM_MEM_OP_BARRIER = CU_STREAM_MEM_OP_BARRIER;
+
+  // CHECK: hipMemRangeHandleType MemRangeHandleType;
+  // CHECK-NEXT: hipMemRangeHandleType MemRangeHandleType_enum;
+  // CHECK-NEXT: hipMemRangeHandleType MEM_RANGE_HANDLE_TYPE_DMA_BUF_FD = hipMemRangeHandleTypeDmaBufFd;
+  // CHECK-NEXT: hipMemRangeHandleType MEM_RANGE_HANDLE_TYPE_MAX = hipMemRangeHandleTypeMax;
+  CUmemRangeHandleType MemRangeHandleType;
+  CUmemRangeHandleType_enum MemRangeHandleType_enum;
+  CUmemRangeHandleType MEM_RANGE_HANDLE_TYPE_DMA_BUF_FD = CU_MEM_RANGE_HANDLE_TYPE_DMA_BUF_FD;
+  CUmemRangeHandleType MEM_RANGE_HANDLE_TYPE_MAX = CU_MEM_RANGE_HANDLE_TYPE_MAX;
 #endif
 
 #if CUDA_VERSION >= 11080
@@ -1261,6 +1270,15 @@ int main() {
   // CHECK-NEXT: hipJitOption JIT_OVERRIDE_DIRECTIVE_VALUES = hipJitOptionOverrideDirectiveValues;
   CUjit_option JIT_MAX_THREADS_PER_BLOCK = CU_JIT_MAX_THREADS_PER_BLOCK;
   CUjit_option JIT_OVERRIDE_DIRECTIVE_VALUES = CU_JIT_OVERRIDE_DIRECTIVE_VALUES;
+#endif
+
+#if CUDA_VERSION >= 12080
+  // CHECK: hipMemRangeFlags MemRangeFlags;
+  // CHECK-NEXT: hipMemRangeFlags MemRangeFlags_enum;
+  // CHECK-NEXT: hipMemRangeFlags MEM_RANGE_FLAG_DMA_BUF_MAPPING_TYPE_PCIE = hipMemRangeFlagDmaBufMappingTypePcie;
+  CUmemRangeFlags MemRangeFlags;
+  CUmemRangeFlags_enum MemRangeFlags_enum;
+  CUmemRangeFlags MEM_RANGE_FLAG_DMA_BUF_MAPPING_TYPE_PCIE = CU_MEM_RANGE_FLAG_DMA_BUF_MAPPING_TYPE_PCIE;
 #endif
 
   return 0;
