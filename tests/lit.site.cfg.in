@@ -41,6 +41,9 @@ def get_cudnn_major_ver():
     if ver == 0:
         ver_file = config.cuda_dnn_root + '/include/cudnn_version_v9.h'
         ver = get_lib_major_ver(ver_file)
+    if ver == 0:
+        ver_file = config.cuda_dnn_root + '/include/cudnn_version_v999.h'
+        ver = get_lib_major_ver(ver_file)
     return int(ver)
 
 def get_cutensor_major_ver():
