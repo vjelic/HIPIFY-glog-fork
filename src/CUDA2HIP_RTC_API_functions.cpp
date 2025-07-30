@@ -93,6 +93,11 @@ const std::map<llvm::StringRef, cudaAPIChangedVersions> CUDA_RTC_FUNCTION_CHANGE
   {"nvrtcCompileProgram",                         {CUDA_80}},
 };
 
+const std::map<llvm::StringRef, hipAPIChangedVersions> HIP_RTC_FUNCTION_CHANGED_VER_MAP {
+  {"hiprtcCreateProgram",                         {HIP_7000}},
+  {"hiprtcCompileProgram",                        {HIP_7000}},
+};
+
 const std::map<unsigned int, llvm::StringRef> CUDA_RTC_API_SECTION_MAP {
   {1, "RTC Data types"},
   {2, "RTC API functions"},

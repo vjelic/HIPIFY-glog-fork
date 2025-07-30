@@ -267,12 +267,6 @@ install(
     # Set RPATH for the binary.
     set_target_properties(hipify-clang PROPERTIES LINK_FLAGS "-Wl,--enable-new-dtags -Wl,--rpath,\\$ORIGIN/../lib" )
 
-    option(FILE_REORG_BACKWARD_COMPATIBILITY "Enable File Reorg with backward compatibility" OFF)
-
-    if(FILE_REORG_BACKWARD_COMPATIBILITY)
-      include(hipify-backward-compat.cmake)
-    endif()
-
     set(CPACK_PACKAGING_INSTALL_PREFIX "/opt/rocm" CACHE PATH "HIP Package Installation Path")
     set(BUILD_DIR ${CMAKE_CURRENT_BINARY_DIR}/packages/hipify-clang)
 
