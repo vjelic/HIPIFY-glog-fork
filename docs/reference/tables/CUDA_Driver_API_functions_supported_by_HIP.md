@@ -431,12 +431,15 @@
 |`CU_DEVICE_ATTRIBUTE_HANDLE_TYPE_POSIX_FILE_DESCRIPTOR_SUPPORTED`|10.2| | | | | | | | | |
 |`CU_DEVICE_ATTRIBUTE_HANDLE_TYPE_WIN32_HANDLE_SUPPORTED`|10.2| | | | | | | | | |
 |`CU_DEVICE_ATTRIBUTE_HANDLE_TYPE_WIN32_KMT_HANDLE_SUPPORTED`|10.2| | | | | | | | | |
+|`CU_DEVICE_ATTRIBUTE_HOST_ALLOC_DMA_BUF_SUPPORTED`|13.0| | | | | | | | | |
+|`CU_DEVICE_ATTRIBUTE_HOST_MEMORY_POOLS_SUPPORTED`|13.0| | | | | | | | | |
 |`CU_DEVICE_ATTRIBUTE_HOST_NATIVE_ATOMIC_SUPPORTED`|8.0| | | |`hipDeviceAttributeHostNativeAtomicSupported`|4.3.0| | | | |
 |`CU_DEVICE_ATTRIBUTE_HOST_NUMA_ID`|12.2| | | | | | | | | |
 |`CU_DEVICE_ATTRIBUTE_HOST_NUMA_MEMORY_POOLS_SUPPORTED`|12.9| | | | | | | | | |
 |`CU_DEVICE_ATTRIBUTE_HOST_NUMA_MULTINODE_IPC_SUPPORTED`|12.8| | | | | | | | | |
 |`CU_DEVICE_ATTRIBUTE_HOST_NUMA_VIRTUAL_MEMORY_MANAGEMENT_SUPPORTED`|12.9| | | | | | | | | |
 |`CU_DEVICE_ATTRIBUTE_HOST_REGISTER_SUPPORTED`|9.2| | | |`hipDeviceAttributeHostRegisterSupported`|6.0.0| | | | |
+|`CU_DEVICE_ATTRIBUTE_HOST_VIRTUAL_MEMORY_MANAGEMENT_SUPPORTED`|13.0| | | | | | | | | |
 |`CU_DEVICE_ATTRIBUTE_INTEGRATED`| | | | |`hipDeviceAttributeIntegrated`|1.9.0| | | | |
 |`CU_DEVICE_ATTRIBUTE_IPC_EVENT_SUPPORTED`|12.0| | | | | | | | | |
 |`CU_DEVICE_ATTRIBUTE_KERNEL_EXEC_TIMEOUT`| | | | |`hipDeviceAttributeKernelExecTimeout`|2.10.0| | | | |
@@ -517,6 +520,7 @@
 |`CU_DEVICE_ATTRIBUTE_MULTI_GPU_BOARD_GROUP_ID`| | | | |`hipDeviceAttributeMultiGpuBoardGroupId`|4.3.0| | | | |
 |`CU_DEVICE_ATTRIBUTE_NUMA_CONFIG`|12.2| | | | | | | | | |
 |`CU_DEVICE_ATTRIBUTE_NUMA_ID`|12.2| | | | | | | | | |
+|`CU_DEVICE_ATTRIBUTE_ONLY_PARTIAL_HOST_NATIVE_ATOMIC_SUPPORTED`|13.0| | | | | | | | | |
 |`CU_DEVICE_ATTRIBUTE_PAGEABLE_MEMORY_ACCESS`|8.0| | | |`hipDeviceAttributePageableMemoryAccess`|3.10.0| | | | |
 |`CU_DEVICE_ATTRIBUTE_PAGEABLE_MEMORY_ACCESS_USES_HOST_PAGE_TABLES`|9.2| | | |`hipDeviceAttributePageableMemoryAccessUsesHostPageTables`|3.10.0| | | | |
 |`CU_DEVICE_ATTRIBUTE_PCI_BUS_ID`| | | | |`hipDeviceAttributePciBusId`|1.6.0| | | | |
@@ -818,6 +822,7 @@
 |`CU_JIT_REFERENCED_KERNEL_NAMES`|11.7|12.0| | | | | | | | |
 |`CU_JIT_REFERENCED_VARIABLE_COUNT`|11.7|12.0| | | | | | | | |
 |`CU_JIT_REFERENCED_VARIABLE_NAMES`|11.7|12.0| | | | | | | | |
+|`CU_JIT_SPLIT_COMPILE`|13.0| | | | | | | | | |
 |`CU_JIT_TARGET`| | | | |`hipJitOptionTarget`|6.4.0| | | | |
 |`CU_JIT_TARGET_FROM_CUCONTEXT`| | | | |`hipJitOptionTargetFromContext`|6.4.0| | | | |
 |`CU_JIT_THREADS_PER_BLOCK`| | | | |`hipJitOptionThreadsPerBlock`|6.4.0| | | | |
@@ -1075,13 +1080,16 @@
 |`CU_TARGET_COMPUTE_100`|12.8| | | | | | | | | |
 |`CU_TARGET_COMPUTE_100A`|12.8| | | | | | | | | |
 |`CU_TARGET_COMPUTE_100F`|12.9| | | | | | | | | |
-|`CU_TARGET_COMPUTE_101`|12.8| | | | | | | | | |
-|`CU_TARGET_COMPUTE_101A`|12.8| | | | | | | | | |
-|`CU_TARGET_COMPUTE_101F`|12.9| | | | | | | | | |
+|`CU_TARGET_COMPUTE_101`|12.8| | |13.0| | | | | | |
+|`CU_TARGET_COMPUTE_101A`|12.8| | |13.0| | | | | | |
+|`CU_TARGET_COMPUTE_101F`|12.9| | |13.0| | | | | | |
 |`CU_TARGET_COMPUTE_103`|12.9| | | | | | | | | |
 |`CU_TARGET_COMPUTE_103A`|12.9| | | | | | | | | |
 |`CU_TARGET_COMPUTE_103F`|12.9| | | | | | | | | |
 |`CU_TARGET_COMPUTE_11`| | | |9.0| | | | | | |
+|`CU_TARGET_COMPUTE_110`|13.0| | | | | | | | | |
+|`CU_TARGET_COMPUTE_110A`|13.0| | | | | | | | | |
+|`CU_TARGET_COMPUTE_110F`|13.0| | | | | | | | | |
 |`CU_TARGET_COMPUTE_12`| | | |9.0| | | | | | |
 |`CU_TARGET_COMPUTE_120`|12.8| | | | | | | | | |
 |`CU_TARGET_COMPUTE_120A`|12.8| | | | | | | | | |
